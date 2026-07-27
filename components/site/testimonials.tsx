@@ -1,10 +1,26 @@
 import { Placeholder } from "./placeholder";
+import { AutoplayVideo } from "./autoplay-video";
 
+/**
+ * Testimonial data.
+ *
+ * When a real video snippet from a client is available (a short phone
+ * clip is enough), fill in `videoSrc` (local file in /public or hosted
+ * URL) and optionally `videoPoster` (a still frame). The card will then
+ * show the video instead of the before/after photo grid — facial
+ * expression and tone read more credibly than text alone.
+ *
+ * For portrait phone footage, override `videoAspect` to something like
+ * "aspect-[4/5]"; landscape defaults to aspect-video (16/9).
+ */
 type Testimonial = {
   name: string;
   age: number;
   quote: string;
   program: string;
+  videoSrc?: string;
+  videoPoster?: string;
+  videoAspect?: string;
 };
 
 const TESTIMONIALS: Testimonial[] = [
@@ -54,20 +70,29 @@ export function Testimonials() {
                 transform: i === 1 ? "translateY(-12px)" : undefined,
               }}
             >
-              <div className="grid grid-cols-2 gap-2.5">
-                <Placeholder
-                  label="Before"
-                  aspect="square"
-                  tone="cream"
-                  className="rounded-lg"
+              {t.videoSrc ? (
+                <AutoplayVideo
+                  src={t.videoSrc}
+                  poster={t.videoPoster}
+                  ariaLabel={`Video testimonial from ${t.name}`}
+                  aspect={t.videoAspect ?? "aspect-video"}
                 />
-                <Placeholder
-                  label="After"
-                  aspect="square"
-                  tone="sage"
-                  className="rounded-lg"
-                />
-              </div>
+              ) : (
+                <div className="grid grid-cols-2 gap-2.5">
+                  <Placeholder
+                    label="Before"
+                    aspect="square"
+                    tone="cream"
+                    className="rounded-lg"
+                  />
+                  <Placeholder
+                    label="After"
+                    aspect="square"
+                    tone="sage"
+                    className="rounded-lg"
+                  />
+                </div>
+              )}
 
               <blockquote className="mt-6 flex-1">
                 <p className="font-display text-[1.1rem] leading-[1.55] text-foreground/85 italic">
