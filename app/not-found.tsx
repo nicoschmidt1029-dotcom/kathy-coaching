@@ -15,7 +15,11 @@ export default function NotFound() {
   return (
     <>
       <Header />
-      <main className="relative flex flex-1 items-center overflow-hidden">
+      <main
+        id="main"
+        tabIndex={-1}
+        className="relative flex flex-1 items-center overflow-hidden focus:outline-none"
+      >
         <div
           aria-hidden
           className="pointer-events-none absolute top-[-15%] right-[-10%] -z-10 h-[520px] w-[520px] rounded-full opacity-60"

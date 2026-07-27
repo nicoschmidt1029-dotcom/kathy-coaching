@@ -14,7 +14,7 @@ export default function PrivacyPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
         <LegalShell
           eyebrow="Privacy notice"
           title="How I handle your data."

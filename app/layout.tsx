@@ -53,6 +53,12 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-[var(--sage-deep)] focus:px-4 focus:py-2 focus:text-[0.9rem] focus:text-[var(--primary-foreground)] focus:no-underline focus:outline-none focus:shadow-[0_10px_30px_-15px_rgba(60,80,60,0.5)]"
+        >
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

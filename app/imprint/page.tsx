@@ -13,7 +13,7 @@ export default function ImprintPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
         <LegalShell
           eyebrow="Legal notice"
           title="Imprint."

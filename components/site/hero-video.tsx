@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { Play, Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -130,15 +131,15 @@ function PlaceholderState({
   const hasPoster = Boolean(poster);
   return (
     <div className="relative aspect-[4/5] w-full md:aspect-[3/4]">
-      {hasPoster ? (
+      {hasPoster && poster ? (
         <>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={poster}
             alt=""
-            loading="eager"
-            decoding="async"
-            className="absolute inset-0 h-full w-full object-cover"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 42vw"
+            className="object-cover"
           />
           {/* subtle darken for the play button to read on any image */}
           <div
