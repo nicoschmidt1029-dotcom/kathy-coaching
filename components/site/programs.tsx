@@ -82,9 +82,7 @@ export function Programs() {
 
         {/* Building blocks */}
         <div className="mt-16 md:mt-20">
-          <p className="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-foreground/45">
-            The three threads · individually
-          </p>
+          <p className="caption">The three threads · individually</p>
 
           <ul className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
             {BLOCKS.map(({ name, blurb, price, Icon }) => (
@@ -127,7 +125,7 @@ export function Programs() {
         </div>
 
         {/* Complete package — featured */}
-        <div className="mt-14 overflow-hidden rounded-3xl bg-[var(--sage-deep)] text-[var(--primary-foreground)] shadow-[0_40px_80px_-40px_rgba(60,80,60,0.5)] md:mt-16">
+        <div className="mt-14 overflow-hidden rounded-2xl bg-[var(--sage-deep)] text-[var(--primary-foreground)] shadow-[0_40px_80px_-40px_rgba(60,80,60,0.5)] md:mt-16">
           <div className="grid grid-cols-1 gap-10 p-8 md:grid-cols-12 md:gap-12 md:p-14">
             <div className="md:col-span-6">
               <p className="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-[var(--primary-foreground)]/60">
@@ -182,9 +180,7 @@ export function Programs() {
         <div className="mt-16 md:mt-20">
           <div className="flex items-end justify-between gap-6 border-b border-foreground/[0.1] pb-4">
             <div>
-              <p className="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-foreground/45">
-                Prefer to start smaller?
-              </p>
+              <p className="caption">Prefer to start smaller?</p>
               <h3 className="mt-2 font-display text-2xl leading-tight font-normal">
                 Two entry points, no pressure to add more later.
               </h3>
@@ -198,18 +194,14 @@ export function Programs() {
                 className="flex items-start justify-between gap-6 rounded-2xl border border-foreground/[0.08] bg-card p-6"
               >
                 <div>
-                  <p className="font-mono text-[0.68rem] tracking-[0.16em] uppercase text-foreground/45">
-                    Entry
-                  </p>
+                  <p className="caption">Entry</p>
                   <h4 className="mt-2 font-display text-xl leading-tight font-normal">
                     {pkg.name}
                   </h4>
                   <p className="mt-2 max-w-sm text-[0.92rem] leading-relaxed text-foreground/70">
                     {pkg.blurb}
                   </p>
-                  <p className="mt-4 font-mono text-[0.7rem] tracking-[0.14em] uppercase text-foreground/50">
-                    Six weeks · 1:1
-                  </p>
+                  <p className="caption mt-4">Six weeks · 1:1</p>
                 </div>
                 <div className="shrink-0 text-right">
                   <div className="font-display text-2xl leading-none font-normal">

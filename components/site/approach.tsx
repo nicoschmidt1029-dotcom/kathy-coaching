@@ -62,9 +62,7 @@ export function Approach() {
                   </div>
                   <div>
                     <div className="flex items-baseline gap-3">
-                      <span className="font-mono text-[0.7rem] tracking-[0.18em] text-foreground/45">
-                        {number}
-                      </span>
+                      <span className="caption">{number}</span>
                       <h3 className="font-display text-xl leading-tight font-normal">
                         {title}
                       </h3>

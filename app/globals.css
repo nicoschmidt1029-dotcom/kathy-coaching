@@ -8,7 +8,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-body);
-  --font-mono: var(--font-mono);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   --font-heading: var(--font-display);
   --font-display: var(--font-display);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -268,6 +269,20 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--sage-deep);
+    font-weight: 500;
+  }
+
+  /*
+   * Second-tier label: smaller than .eyebrow, used for meta lines and
+   * inline captions (dates, program tags, tiny section sub-labels).
+   * Color and opacity can be overridden via Tailwind text-* utilities.
+   */
+  .caption {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: color-mix(in oklch, var(--foreground) 50%, transparent);
     font-weight: 500;
   }
 

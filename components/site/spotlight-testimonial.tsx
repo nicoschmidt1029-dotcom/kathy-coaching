@@ -49,7 +49,7 @@ export function SpotlightTestimonial() {
                 <div className="text-[0.98rem] font-medium text-foreground">
                   Lena, 32
                 </div>
-                <div className="mt-0.5 font-mono text-[0.72rem] tracking-[0.14em] uppercase text-foreground/50">
+                <div className="caption mt-0.5">
                   Six-week Complete program
                 </div>
               </div>

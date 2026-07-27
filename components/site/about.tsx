@@ -22,7 +22,7 @@ export function About() {
               alt={TEMP_PHOTOS.about?.alt}
               credit={TEMP_PHOTOS.about?.credit}
             />
-            <p className="mt-4 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-foreground/45">
+            <p className="caption mt-4">
               Katarina · personal trainer · nutrition coach
             </p>
           </div>
@@ -56,9 +56,7 @@ export function About() {
           </div>
 
           <div className="mt-10 rounded-2xl border border-[var(--sage)]/15 bg-[var(--sand)]/40 p-6 sm:p-7">
-            <p className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-[var(--sage-deep)]">
-              Qualifications
-            </p>
+            <p className="caption text-[var(--sage-deep)]">Qualifications</p>
             <ul className="mt-4 grid gap-3 sm:grid-cols-1">
               {QUALS.map((q) => (
                 <li key={q} className="flex items-start gap-3 text-[0.95rem]">

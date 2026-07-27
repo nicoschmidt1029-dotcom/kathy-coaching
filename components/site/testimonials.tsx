@@ -80,9 +80,7 @@ export function Testimonials() {
                   <div className="text-[0.95rem] font-medium text-foreground">
                     {t.name}, {t.age}
                   </div>
-                  <div className="mt-0.5 font-mono text-[0.7rem] tracking-[0.14em] uppercase text-foreground/45">
-                    {t.program}
-                  </div>
+                  <div className="caption mt-0.5">{t.program}</div>
                 </div>
                 <span
                   aria-hidden
@@ -95,7 +93,7 @@ export function Testimonials() {
           ))}
         </div>
 
-        <p className="mt-10 text-center font-mono text-[0.7rem] tracking-[0.16em] uppercase text-foreground/40">
+        <p className="caption mt-10 text-center">
           Before/after photos shared with permission · placeholders shown for now
         </p>
       </div>

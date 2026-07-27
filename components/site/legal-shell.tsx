@@ -21,9 +21,7 @@ export function LegalShell({
           <h1 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance">
             {title}
           </h1>
-          <p className="mt-4 font-mono text-[0.72rem] tracking-[0.14em] uppercase text-foreground/45">
-            Last updated · {updated}
-          </p>
+          <p className="caption mt-4">Last updated · {updated}</p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
