@@ -23,22 +23,12 @@ export type TempPhoto = {
 } | null;
 
 export const TEMP_PHOTOS: Record<"hero" | "spotlight" | "about", TempPhoto> = {
-  // Hero video poster — warm, contemplative, cinematic frame feel
-  hero: {
-    url: "https://images.unsplash.com/photo-1749222013825-fe2025dcf0cf?w=1200&q=80&auto=format&fit=crop",
-    alt: "TEMP: warm contemplative portrait — will be replaced with a poster frame from Katarina's real hero video",
-    credit: "Joel Timothy · Unsplash",
-  },
-  // Spotlight testimonial (Lena) — quiet side profile, editorial
-  spotlight: {
-    url: "https://images.unsplash.com/photo-1611178206064-2ae27f72b9ca?w=900&q=80&auto=format&fit=crop",
-    alt: "TEMP: quiet side-profile portrait — will be replaced with Lena's actual portrait or video snippet",
-    credit: "Noah Blaine Clark · Unsplash",
-  },
-  // About (Katarina) — warm portrait
-  about: {
-    url: "https://images.unsplash.com/photo-1552838671-0e948f9f69b5?w=900&q=80&auto=format&fit=crop",
-    alt: "TEMP: warm outdoor scene — will be replaced with Katarina's actual portrait",
-    credit: "Sara Kurfeß · Unsplash",
-  },
+  // First curation attempt (Unsplash) missed tonally — 2 of 3 were B&W and
+  // the third was a stock "woman-in-sunset" cliché that broke the "Meet
+  // Katarina" moment. Reverted to styled placeholders until a new round of
+  // curation (color portraits, face visible, warm light) — or, better,
+  // Katarina's real photos — arrives.
+  hero: null,
+  spotlight: null,
+  about: null,
 };
