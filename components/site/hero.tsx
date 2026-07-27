@@ -2,7 +2,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroVideo } from "./hero-video";
-import { TEMP_PHOTOS } from "@/lib/temp-photos";
+import { Placeholder } from "./placeholder";
+// STOCK PLACEHOLDER – replace with Katarina's own content before launch
+import { TEMP_PHOTOS, TEMP_HERO_VIDEO } from "@/lib/temp-photos";
 
 export function Hero() {
   return (
@@ -96,11 +98,32 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="animate-rise-slow md:col-span-5">
+        <div className="animate-rise-slow relative md:col-span-5">
           <HeroVideo
-            poster={TEMP_PHOTOS.hero?.url}
+            /* STOCK PLACEHOLDER – replace with Katarina's own hero video before launch */
+            src={TEMP_HERO_VIDEO?.src}
+            poster={TEMP_HERO_VIDEO?.poster ?? TEMP_PHOTOS.hero?.url}
             posterCredit={TEMP_PHOTOS.hero?.credit}
+            videoCredit={TEMP_HERO_VIDEO?.credit}
           />
+
+          {/* STOCK PLACEHOLDER – replace with Katarina's own content before launch */}
+          {TEMP_PHOTOS.heroMovementDetail && (
+            <div className="absolute -bottom-6 -left-6 hidden w-44 rotate-[-3deg] rounded-xl bg-card p-3 shadow-[0_18px_40px_-20px_rgba(60,80,60,0.35)] ring-1 ring-foreground/10 sm:block">
+              <Placeholder
+                label="Movement"
+                aspect="square"
+                tone="cream"
+                className="rounded-lg"
+                src={TEMP_PHOTOS.heroMovementDetail.url}
+                alt={TEMP_PHOTOS.heroMovementDetail.alt}
+                credit={TEMP_PHOTOS.heroMovementDetail.credit}
+              />
+              <p className="mt-2 px-1 font-display text-[0.78rem] italic text-foreground/70">
+                Six weeks. One whole person.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </section>

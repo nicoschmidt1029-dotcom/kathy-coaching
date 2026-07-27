@@ -9,6 +9,8 @@ type Props = {
   src?: string;
   poster?: string;
   posterCredit?: string;
+  /** When set alongside `src`, overlays a TEMP pill on the playing video */
+  videoCredit?: string;
   className?: string;
   ariaLabel?: string;
 };
@@ -17,6 +19,7 @@ export function HeroVideo({
   src,
   poster,
   posterCredit,
+  videoCredit,
   className,
   ariaLabel = "Introduction video from Katarina",
 }: Props) {
@@ -112,6 +115,15 @@ export function HeroVideo({
               )}
               <span>{muted ? "Tap to unmute" : "Sound on"}</span>
             </button>
+          )}
+
+          {videoCredit && (
+            <div className="pointer-events-none absolute left-2 top-2 flex max-w-[calc(100%-1rem)] items-center gap-1.5 rounded-md bg-black/55 px-2 py-1 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white/95 backdrop-blur-sm">
+              <span className="rounded-sm bg-white/20 px-1 py-px text-[0.55rem] tracking-widest">
+                TEMP
+              </span>
+              <span className="truncate">Hero video · {videoCredit}</span>
+            </div>
           )}
         </>
       ) : (
