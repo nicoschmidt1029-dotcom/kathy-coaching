@@ -22,13 +22,24 @@ export const metadata: Metadata = {
   },
   description:
     "Holistic coaching for women — and openly for men too. Personal training, nutrition guidance, and Christian mentoring with Katarina Gröflin, walked together over six weeks.",
-  metadataBase: new URL("https://katarina.example"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://katarina-coaching.vercel.app"
+  ),
   openGraph: {
-    title: "Katarina — Faith-rooted training, nutrition & mentoring",
+    title: "Katarina Gröflin — Faith-rooted training, nutrition & mentoring",
     description:
       "See your body the way God created it. Training, nutrition, and identity in Jesus — one path, walked together.",
     type: "website",
+    url: "/",
+    siteName: "Katarina Gröflin Coaching",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Katarina Gröflin — Faith-rooted training, nutrition & mentoring",
+    description:
+      "See your body the way God created it. Training, nutrition, and identity in Jesus — one path, walked together.",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

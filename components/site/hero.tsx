@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroVideo } from "./hero-video";
+import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
 export function Hero() {
   return (
@@ -96,7 +97,10 @@ export function Hero() {
         </div>
 
         <div className="animate-rise-slow md:col-span-5">
-          <HeroVideo />
+          <HeroVideo
+            poster={TEMP_PHOTOS.hero?.url}
+            posterCredit={TEMP_PHOTOS.hero?.credit}
+          />
         </div>
       </div>
     </section>

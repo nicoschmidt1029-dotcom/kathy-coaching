@@ -1,4 +1,5 @@
 import { Placeholder } from "./placeholder";
+import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
 export function SpotlightTestimonial() {
   return (
@@ -11,10 +12,13 @@ export function SpotlightTestimonial() {
           <div className="md:col-span-5">
             <div className="relative">
               <Placeholder
-                label="Lena · portrait or video snippet"
+                label="Lena portrait"
                 aspect="portrait"
                 tone="sage"
                 className="rotate-[-0.6deg]"
+                src={TEMP_PHOTOS.spotlight?.url}
+                alt={TEMP_PHOTOS.spotlight?.alt}
+                credit={TEMP_PHOTOS.spotlight?.credit}
               />
               <span
                 aria-hidden

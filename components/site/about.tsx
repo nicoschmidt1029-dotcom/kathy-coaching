@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import { Placeholder } from "./placeholder";
+import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
 const QUALS = [
   "Certified Personal Trainer",
@@ -14,9 +15,12 @@ export function About() {
         <div className="md:col-span-5">
           <div className="md:sticky md:top-28">
             <Placeholder
-              label="Portrait of Katarina"
+              label="Katarina portrait"
               aspect="portrait"
               tone="sand"
+              src={TEMP_PHOTOS.about?.url}
+              alt={TEMP_PHOTOS.about?.alt}
+              credit={TEMP_PHOTOS.about?.credit}
             />
             <p className="mt-4 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-foreground/45">
               Katarina · personal trainer · nutrition coach

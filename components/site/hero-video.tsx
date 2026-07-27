@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 type Props = {
   src?: string;
   poster?: string;
+  posterCredit?: string;
   className?: string;
   ariaLabel?: string;
 };
@@ -14,6 +15,7 @@ type Props = {
 export function HeroVideo({
   src,
   poster,
+  posterCredit,
   className,
   ariaLabel = "Introduction video from Katarina",
 }: Props) {
@@ -112,22 +114,38 @@ export function HeroVideo({
           )}
         </>
       ) : (
-        <PlaceholderState poster={poster} />
+        <PlaceholderState poster={poster} posterCredit={posterCredit} />
       )}
     </div>
   );
 }
 
-function PlaceholderState({ poster }: { poster?: string }) {
+function PlaceholderState({
+  poster,
+  posterCredit,
+}: {
+  poster?: string;
+  posterCredit?: string;
+}) {
+  const hasPoster = Boolean(poster);
   return (
     <div className="relative aspect-[4/5] w-full md:aspect-[3/4]">
-      {poster ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={poster}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+      {hasPoster ? (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={poster}
+            alt=""
+            loading="eager"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          {/* subtle darken for the play button to read on any image */}
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black/25"
+          />
+        </>
       ) : (
         <div
           aria-hidden
@@ -139,27 +157,44 @@ function PlaceholderState({ poster }: { poster?: string }) {
         />
       )}
 
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(135deg, currentColor 0 1px, transparent 1px 14px)",
-          color: "var(--foreground)",
-        }}
-      />
+      {!hasPoster && (
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(135deg, currentColor 0 1px, transparent 1px 14px)",
+            color: "var(--foreground)",
+          }}
+        />
+      )}
 
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-        <span className="flex size-16 items-center justify-center rounded-full bg-white/85 text-[var(--sage-deep)] shadow-md ring-1 ring-black/5 backdrop-blur-sm">
+        <span className="flex size-16 items-center justify-center rounded-full bg-white/95 text-[var(--sage-deep)] shadow-md ring-1 ring-black/5 backdrop-blur-sm">
           <Play className="ml-0.5 size-6" aria-hidden />
         </span>
-        <span className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-foreground/60">
-          Hero video
-        </span>
-        <span className="font-mono text-[0.62rem] uppercase tracking-[0.14em] text-foreground/40">
-          placeholder · add src prop when ready
-        </span>
+        {!hasPoster && (
+          <>
+            <span className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-foreground/60">
+              Hero video
+            </span>
+            <span className="font-mono text-[0.62rem] uppercase tracking-[0.14em] text-foreground/40">
+              placeholder · add src prop when ready
+            </span>
+          </>
+        )}
       </div>
+
+      {hasPoster && (
+        <div className="pointer-events-none absolute right-2 bottom-2 flex max-w-[calc(100%-1rem)] items-center gap-1.5 rounded-md bg-black/55 px-2 py-1 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white/95 backdrop-blur-sm">
+          <span className="rounded-sm bg-white/20 px-1 py-px text-[0.55rem] tracking-widest">
+            TEMP
+          </span>
+          <span className="truncate">
+            Hero poster · {posterCredit ?? "replace before launch"}
+          </span>
+        </div>
+      )}
     </div>
   );
 }

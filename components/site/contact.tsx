@@ -1,11 +1,62 @@
 "use client";
 
+import * as React from "react";
+import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
+type FormState =
+  | { status: "idle" }
+  | { status: "sending" }
+  | { status: "sent" }
+  | { status: "error"; message: string };
+
 export function Contact() {
+  const [state, setState] = React.useState<FormState>({ status: "idle" });
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const payload = {
+      name: (fd.get("name") ?? "").toString(),
+      email: (fd.get("email") ?? "").toString(),
+      program: (fd.get("program") ?? "").toString(),
+      message: (fd.get("message") ?? "").toString(),
+      website: (fd.get("website") ?? "").toString(),
+    };
+
+    setState({ status: "sending" });
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        error?: string;
+      };
+      if (!res.ok || !data.ok) {
+        setState({
+          status: "error",
+          message: data.error ?? "Something went wrong. Please try again.",
+        });
+        return;
+      }
+      form.reset();
+      setState({ status: "sent" });
+    } catch {
+      setState({
+        status: "error",
+        message: "Network error. Please try again in a moment.",
+      });
+    }
+  }
+
   return (
     <section
       id="contact"
@@ -62,74 +113,129 @@ export function Contact() {
         </div>
 
         <div className="md:col-span-7">
-          <form
-            className="rounded-2xl bg-[var(--primary-foreground)] p-6 text-foreground ring-1 ring-foreground/5 sm:p-8"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
-              <div className="sm:col-span-1">
-                <Label htmlFor="name" className="mb-2 text-foreground/80">
-                  Your name
-                </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder="Jane Doe"
-                  autoComplete="name"
-                  className="h-11 rounded-lg bg-background"
-                />
+          {state.status === "sent" ? (
+            <div
+              role="status"
+              aria-live="polite"
+              className="flex min-h-[420px] flex-col items-start justify-center rounded-2xl bg-[var(--primary-foreground)] p-8 text-foreground ring-1 ring-foreground/5 sm:p-10"
+            >
+              <div className="flex size-12 items-center justify-center rounded-full bg-[var(--sage)]/15 text-[var(--sage-deep)] ring-1 ring-[var(--sage)]/25">
+                <CheckCircle2 className="size-6" aria-hidden />
               </div>
-              <div className="sm:col-span-1">
-                <Label htmlFor="email" className="mb-2 text-foreground/80">
-                  Email
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="jane@example.com"
-                  autoComplete="email"
-                  className="h-11 rounded-lg bg-background"
-                />
-              </div>
-              <div className="sm:col-span-2">
-                <Label htmlFor="program" className="mb-2 text-foreground/80">
-                  Interested in
-                </Label>
-                <Input
-                  id="program"
-                  name="program"
-                  placeholder="Training only · Training + nutrition · Complete · Not sure"
-                  className="h-11 rounded-lg bg-background"
-                />
-              </div>
-              <div className="sm:col-span-2">
-                <Label htmlFor="message" className="mb-2 text-foreground/80">
-                  A little about where you are
-                </Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  placeholder="Where you are now, where you'd like to go — no need to polish it."
-                  className="min-h-32 rounded-lg bg-background"
-                />
-              </div>
-            </div>
-
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-[0.78rem] text-foreground/55">
-                I&rsquo;ll only use your email to reply about your discovery call.
+              <h3 className="mt-6 font-display text-2xl leading-tight font-normal">
+                Thank you — I got it.
+              </h3>
+              <p className="mt-3 max-w-md text-pretty text-foreground/70 sm:text-lg sm:leading-[1.65]">
+                I read every message myself. Expect a reply within two working
+                days, usually sooner. In the meantime — grace and peace to
+                you.
               </p>
-              <Button
-                type="submit"
-                size="lg"
-                className="h-11 bg-[var(--sage-deep)] px-6 text-[var(--primary-foreground)] hover:bg-[var(--sage-deep)]/90"
+              <button
+                type="button"
+                onClick={() => setState({ status: "idle" })}
+                className="mt-8 text-[0.9rem] text-[var(--sage-deep)] underline underline-offset-4 transition-colors hover:text-foreground"
               >
-                Send message
-              </Button>
+                Send another message
+              </button>
             </div>
-          </form>
+          ) : (
+            <form
+              onSubmit={onSubmit}
+              noValidate
+              className="rounded-2xl bg-[var(--primary-foreground)] p-6 text-foreground ring-1 ring-foreground/5 sm:p-8"
+            >
+              {/* Honeypot — hidden from users, harvested by bots */}
+              <label
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[-9999px] h-0 w-0 overflow-hidden opacity-0"
+              >
+                Website
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </label>
+
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
+                <div className="sm:col-span-1">
+                  <Label htmlFor="name" className="mb-2 text-foreground/80">
+                    Your name
+                  </Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Jane Doe"
+                    autoComplete="name"
+                    className="h-11 rounded-lg bg-background"
+                  />
+                </div>
+                <div className="sm:col-span-1">
+                  <Label htmlFor="email" className="mb-2 text-foreground/80">
+                    Email
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="jane@example.com"
+                    autoComplete="email"
+                    className="h-11 rounded-lg bg-background"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <Label htmlFor="program" className="mb-2 text-foreground/80">
+                    Interested in
+                  </Label>
+                  <Input
+                    id="program"
+                    name="program"
+                    placeholder="Training only · Training + nutrition · Complete · Not sure"
+                    className="h-11 rounded-lg bg-background"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <Label htmlFor="message" className="mb-2 text-foreground/80">
+                    A little about where you are
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={5}
+                    placeholder="Where you are now, where you'd like to go — no need to polish it."
+                    className="min-h-32 rounded-lg bg-background"
+                  />
+                </div>
+              </div>
+
+              {state.status === "error" && (
+                <div
+                  role="alert"
+                  className="mt-6 rounded-lg border border-destructive/25 bg-destructive/8 px-4 py-3 text-[0.9rem] text-destructive"
+                >
+                  {state.message}
+                </div>
+              )}
+
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-[0.78rem] text-foreground/55">
+                  I&rsquo;ll only use your email to reply about your discovery call.
+                </p>
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={state.status === "sending"}
+                  className="h-11 bg-[var(--sage-deep)] px-6 text-[var(--primary-foreground)] transition-colors hover:bg-[var(--sage-deep)]/90 disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  {state.status === "sending" ? "Sending…" : "Send message"}
+                </Button>
+              </div>
+            </form>
+          )}
         </div>
       </div>
     </section>
