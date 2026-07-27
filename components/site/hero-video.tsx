@@ -1,0 +1,165 @@
+"use client";
+
+import * as React from "react";
+import { Play, Volume2, VolumeX } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+type Props = {
+  src?: string;
+  poster?: string;
+  className?: string;
+  ariaLabel?: string;
+};
+
+export function HeroVideo({
+  src,
+  poster,
+  className,
+  ariaLabel = "Introduction video from Katarina",
+}: Props) {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = React.useState(true);
+  const [playing, setPlaying] = React.useState(false);
+  const [needsGesture, setNeedsGesture] = React.useState(false);
+
+  React.useEffect(() => {
+    const el = videoRef.current;
+    if (!el || !src) return;
+    el.muted = true;
+    el.play()
+      .then(() => setPlaying(true))
+      .catch(() => setNeedsGesture(true));
+  }, [src]);
+
+  const toggleMute = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.muted = !el.muted;
+    setMuted(el.muted);
+    if (el.paused) {
+      el.play()
+        .then(() => {
+          setPlaying(true);
+          setNeedsGesture(false);
+        })
+        .catch(() => {});
+    }
+  };
+
+  const startFromGesture = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.muted = false;
+    setMuted(false);
+    el.play()
+      .then(() => {
+        setPlaying(true);
+        setNeedsGesture(false);
+      })
+      .catch(() => {});
+  };
+
+  return (
+    <div
+      className={cn(
+        "relative overflow-hidden rounded-2xl bg-[oklch(0.86_0.03_145)] ring-1 ring-foreground/10 shadow-[0_30px_60px_-30px_rgba(60,80,60,0.3)]",
+        className
+      )}
+    >
+      {src ? (
+        <>
+          <video
+            ref={videoRef}
+            src={src}
+            poster={poster}
+            aria-label={ariaLabel}
+            className="aspect-[4/5] w-full object-cover md:aspect-[3/4]"
+            autoPlay
+            muted
+            loop
+            playsInline
+            onPlay={() => setPlaying(true)}
+            onPause={() => setPlaying(false)}
+          />
+
+          {needsGesture && (
+            <button
+              type="button"
+              onClick={startFromGesture}
+              className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors hover:bg-black/20"
+              aria-label="Play video with sound"
+            >
+              <span className="flex size-16 items-center justify-center rounded-full bg-white/95 text-[var(--sage-deep)] shadow-lg ring-1 ring-black/5 backdrop-blur-sm transition-transform duration-200 hover:scale-105">
+                <Play className="ml-0.5 size-6" aria-hidden />
+              </span>
+            </button>
+          )}
+
+          {playing && !needsGesture && (
+            <button
+              type="button"
+              onClick={toggleMute}
+              className="group absolute right-3 bottom-3 flex items-center gap-1.5 rounded-full bg-black/45 px-3 py-1.5 text-[0.75rem] font-medium text-white backdrop-blur-md transition-colors duration-200 hover:bg-black/60"
+              aria-label={muted ? "Unmute video" : "Mute video"}
+            >
+              {muted ? (
+                <VolumeX className="size-3.5" aria-hidden />
+              ) : (
+                <Volume2 className="size-3.5" aria-hidden />
+              )}
+              <span>{muted ? "Tap to unmute" : "Sound on"}</span>
+            </button>
+          )}
+        </>
+      ) : (
+        <PlaceholderState poster={poster} />
+      )}
+    </div>
+  );
+}
+
+function PlaceholderState({ poster }: { poster?: string }) {
+  return (
+    <div className="relative aspect-[4/5] w-full md:aspect-[3/4]">
+      {poster ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={poster}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      ) : (
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(closest-side at 30% 40%, oklch(0.92 0.04 145 / 0.9), transparent 60%), radial-gradient(closest-side at 75% 70%, oklch(0.85 0.05 78 / 0.7), transparent 60%), linear-gradient(180deg, oklch(0.88 0.03 145), oklch(0.82 0.035 145))",
+          }}
+        />
+      )}
+
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(135deg, currentColor 0 1px, transparent 1px 14px)",
+          color: "var(--foreground)",
+        }}
+      />
+
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+        <span className="flex size-16 items-center justify-center rounded-full bg-white/85 text-[var(--sage-deep)] shadow-md ring-1 ring-black/5 backdrop-blur-sm">
+          <Play className="ml-0.5 size-6" aria-hidden />
+        </span>
+        <span className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-foreground/60">
+          Hero video
+        </span>
+        <span className="font-mono text-[0.62rem] uppercase tracking-[0.14em] text-foreground/40">
+          placeholder · add src prop when ready
+        </span>
+      </div>
+    </div>
+  );
+}

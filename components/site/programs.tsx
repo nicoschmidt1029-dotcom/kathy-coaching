@@ -1,207 +1,243 @@
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { Dumbbell, Salad, Heart, Check, ArrowRight, Plus } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
-type Program = {
-  id: string;
+type Block = {
   name: string;
-  duration: string;
   blurb: string;
-  includes: string[];
-  price: string;
-  popular?: boolean;
+  price: number;
+  Icon: LucideIcon;
 };
 
-const PROGRAMS: Program[] = [
+const BLOCKS: Block[] = [
   {
-    id: "training",
-    name: "Training only",
-    duration: "6 weeks",
-    blurb: "Start with movement and build from there.",
-    includes: [
-      "Personalized training program",
-      "Weekly progress check-ins",
-      "Technique videos & feedback",
-    ],
-    price: "From €280",
+    name: "Personal training",
+    blurb:
+      "Programming, technique, accountability. Weekly sessions, adjusted to your life.",
+    price: 280,
+    Icon: Dumbbell,
   },
   {
-    id: "training-nutrition",
-    name: "Training + nutrition",
-    duration: "6 weeks",
-    blurb: "Strength and a calmer relationship with food.",
-    includes: [
-      "Everything in Training",
-      "Custom nutrition plan",
-      "Weekly recipe ideas & guidance",
-    ],
-    price: "From €420",
-    popular: true,
+    name: "Nutrition coaching",
+    blurb:
+      "A plan you can actually live with. Real food, real flexibility, no fear.",
+    price: 180,
+    Icon: Salad,
   },
   {
-    id: "complete",
-    name: "Complete: body, nutrition & spiritual mentoring",
-    duration: "6 weeks",
-    blurb: "Body, plate, and soul — worked on together.",
-    includes: [
-      "Everything above",
-      "1:1 mentoring sessions",
-      "Scripture & prayer guidance",
-    ],
-    price: "From €560",
+    name: "Spiritual mentoring",
+    blurb:
+      "Honest conversation, prayer, and biblical perspective on worth.",
+    price: 160,
+    Icon: Heart,
   },
 ];
+
+const COMPLETE_INCLUDES = [
+  "All three threads, held together with intention",
+  "Direct WhatsApp check-ins between sessions",
+  "Weekly prayer & scripture guidance woven through",
+  "Priority when new client spots open",
+  "A quiet message when I notice you’ve gone silent",
+];
+
+const ENTRY_PACKAGES = [
+  {
+    name: "Training only",
+    price: 280,
+    blurb: "Start with movement. Add the rest later, if it fits.",
+  },
+  {
+    name: "Training + nutrition",
+    price: 420,
+    blurb: "Strength and a calmer relationship with food.",
+  },
+];
+
+const SUM = BLOCKS.reduce((acc, b) => acc + b.price, 0);
+const COMPLETE_PRICE = 560;
 
 export function Programs() {
   return (
     <section id="programs" className="section-pad">
       <div className="container-page">
-        <div className="max-w-3xl">
-          <p className="eyebrow">Choose your path</p>
-          <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance">
-            Three programs. You choose where to begin.
-          </h2>
-          <p className="mt-5 text-pretty text-foreground/72 sm:text-lg sm:leading-[1.7]">
-            Every program is one-on-one and runs six weeks — long enough to
-            see real change, short enough to commit to honestly.
-          </p>
+        {/* Intro + commitment */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-6">
+            <p className="eyebrow">The programs</p>
+            <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance">
+              Three parts. One path. Choose where to begin.
+            </h2>
+          </div>
+          <div className="md:col-span-6">
+            <p className="text-pretty text-foreground/72 sm:text-lg sm:leading-[1.7]">
+              Real change asks for real participation. I take on a small
+              number of clients each month so I can be fully present for
+              each one — this isn&rsquo;t a course you consume, it&rsquo;s a
+              six-week walk we take together.
+            </p>
+          </div>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
-          {PROGRAMS.map((p) => (
-            <Card
-              key={p.id}
-              className={cn(
-                "[--card-spacing:--spacing(6)] rounded-2xl transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5",
-                p.popular
-                  ? "bg-[var(--sage-deep)] text-[var(--primary-foreground)] ring-0 shadow-[0_30px_60px_-30px_rgba(60,80,60,0.5)]"
-                  : "ring-foreground/10 hover:shadow-[0_20px_40px_-28px_rgba(60,80,60,0.35)]"
-              )}
-            >
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <span
-                    className={cn(
-                      "font-mono text-[0.7rem] tracking-[0.18em] uppercase",
-                      p.popular
-                        ? "text-[var(--primary-foreground)]/70"
-                        : "text-foreground/45"
-                    )}
-                  >
-                    {p.duration}
-                  </span>
-                  {p.popular && (
-                    <span className="rounded-full bg-[var(--primary-foreground)]/15 px-2.5 py-0.5 font-mono text-[0.65rem] tracking-[0.14em] uppercase">
-                      Most chosen
-                    </span>
-                  )}
+        {/* Building blocks */}
+        <div className="mt-16 md:mt-20">
+          <p className="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-foreground/45">
+            The three threads · individually
+          </p>
+
+          <ul className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
+            {BLOCKS.map(({ name, blurb, price, Icon }) => (
+              <li
+                key={name}
+                className="flex flex-col rounded-2xl border border-foreground/[0.08] bg-card p-6"
+              >
+                <div className="flex size-11 items-center justify-center rounded-full bg-[var(--sage)]/10 text-[var(--sage-deep)] ring-1 ring-[var(--sage)]/20">
+                  <Icon className="size-5" aria-hidden />
                 </div>
-                <CardTitle
-                  className={cn(
-                    "mt-3 font-display text-[1.55rem] leading-[1.15] font-normal",
-                    p.popular ? "text-[var(--primary-foreground)]" : ""
-                  )}
-                >
-                  {p.name}
-                </CardTitle>
-                <CardDescription
-                  className={cn(
-                    "mt-2 text-[0.95rem]",
-                    p.popular
-                      ? "text-[var(--primary-foreground)]/75"
-                      : "text-foreground/65"
-                  )}
-                >
-                  {p.blurb}
-                </CardDescription>
-              </CardHeader>
+                <h3 className="mt-5 font-display text-lg leading-tight font-normal">
+                  {name}
+                </h3>
+                <p className="mt-2 flex-1 text-[0.92rem] leading-relaxed text-foreground/70">
+                  {blurb}
+                </p>
+                <p className="mt-5 border-t border-foreground/[0.08] pt-4 text-[0.85rem] text-foreground/60">
+                  Alone{" "}
+                  <span className="ml-1 font-display text-[1.15rem] text-foreground">
+                    €{price}
+                  </span>
+                </p>
+              </li>
+            ))}
+          </ul>
 
-              <CardContent className="space-y-4">
-                <ul className="space-y-2.5">
-                  {p.includes.map((inc) => (
-                    <li
-                      key={inc}
-                      className={cn(
-                        "flex items-start gap-2.5 text-[0.92rem] leading-relaxed",
-                        p.popular
-                          ? "text-[var(--primary-foreground)]/85"
-                          : "text-foreground/75"
-                      )}
-                    >
-                      <Check
-                        className={cn(
-                          "mt-0.5 size-4 shrink-0",
-                          p.popular
-                            ? "text-[var(--primary-foreground)]"
-                            : "text-[var(--sage-deep)]"
-                        )}
-                        aria-hidden
-                      />
-                      <span>{inc}</span>
-                    </li>
-                  ))}
-                </ul>
+          {/* Visual sum */}
+          <div className="mt-8 flex flex-col items-end gap-1">
+            <div className="flex items-center gap-3 text-foreground/55">
+              <Plus className="size-4" aria-hidden />
+              <span className="font-mono text-[0.7rem] tracking-[0.18em] uppercase">
+                Individually
+              </span>
+              <span className="h-px w-8 bg-foreground/20" />
+              <span className="font-display text-2xl leading-none text-foreground/85">
+                €{SUM}
+              </span>
+            </div>
+          </div>
+        </div>
 
-                <div
-                  className={cn(
-                    "mt-6 border-t pt-5",
-                    p.popular
-                      ? "border-[var(--primary-foreground)]/15"
-                      : "border-foreground/10"
-                  )}
-                >
-                  <div
-                    className={cn(
-                      "font-display text-2xl font-normal",
-                      p.popular ? "text-[var(--primary-foreground)]" : ""
-                    )}
+        {/* Complete package — featured */}
+        <div className="mt-14 overflow-hidden rounded-3xl bg-[var(--sage-deep)] text-[var(--primary-foreground)] shadow-[0_40px_80px_-40px_rgba(60,80,60,0.5)] md:mt-16">
+          <div className="grid grid-cols-1 gap-10 p-8 md:grid-cols-12 md:gap-12 md:p-14">
+            <div className="md:col-span-6">
+              <p className="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-[var(--primary-foreground)]/60">
+                The complete path
+              </p>
+              <h3 className="mt-4 font-display text-[clamp(1.75rem,4vw,2.6rem)] leading-[1.1] font-normal text-balance text-[var(--primary-foreground)]">
+                Body, plate, and soul —
+                <br />
+                worked on together.
+              </h3>
+
+              <div className="mt-8 flex items-baseline gap-4">
+                <span className="font-display text-[3.25rem] leading-none font-normal text-[var(--primary-foreground)]">
+                  €{COMPLETE_PRICE}
+                </span>
+                <span className="font-mono text-[0.72rem] tracking-[0.14em] uppercase text-[var(--primary-foreground)]/55 line-through decoration-[var(--primary-foreground)]/40">
+                  €{SUM} individually
+                </span>
+              </div>
+              <p className="mt-4 max-w-md text-[0.98rem] leading-relaxed text-[var(--primary-foreground)]/75">
+                Less than the sum. And more than the parts — because a few
+                things only happen when all three threads are held at once.
+              </p>
+            </div>
+
+            <div className="md:col-span-6">
+              <p className="font-mono text-[0.7rem] tracking-[0.16em] uppercase text-[var(--primary-foreground)]/55">
+                What&rsquo;s only in the complete path
+              </p>
+              <ul className="mt-4 space-y-3">
+                {COMPLETE_INCLUDES.map((line) => (
+                  <li
+                    key={line}
+                    className="flex items-start gap-3 text-[0.98rem] leading-[1.55] text-[var(--primary-foreground)]/90"
                   >
-                    {p.price}
-                  </div>
-                  <p
-                    className={cn(
-                      "mt-1 text-[0.78rem]",
-                      p.popular
-                        ? "text-[var(--primary-foreground)]/60"
-                        : "text-foreground/55"
-                    )}
-                  >
-                    Six-week program · 1:1
+                    <Check
+                      className="mt-1 size-4 shrink-0 text-[var(--primary-foreground)]"
+                      aria-hidden
+                    />
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[var(--primary-foreground)]/50">
+                Six weeks · 1:1
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Entry packages */}
+        <div className="mt-16 md:mt-20">
+          <div className="flex items-end justify-between gap-6 border-b border-foreground/[0.1] pb-4">
+            <div>
+              <p className="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-foreground/45">
+                Prefer to start smaller?
+              </p>
+              <h3 className="mt-2 font-display text-2xl leading-tight font-normal">
+                Two entry points, no pressure to add more later.
+              </h3>
+            </div>
+          </div>
+
+          <ul className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
+            {ENTRY_PACKAGES.map((pkg) => (
+              <li
+                key={pkg.name}
+                className="flex items-start justify-between gap-6 rounded-2xl border border-foreground/[0.08] bg-card p-6"
+              >
+                <div>
+                  <p className="font-mono text-[0.68rem] tracking-[0.16em] uppercase text-foreground/45">
+                    Entry
+                  </p>
+                  <h4 className="mt-2 font-display text-xl leading-tight font-normal">
+                    {pkg.name}
+                  </h4>
+                  <p className="mt-2 max-w-sm text-[0.92rem] leading-relaxed text-foreground/70">
+                    {pkg.blurb}
+                  </p>
+                  <p className="mt-4 font-mono text-[0.7rem] tracking-[0.14em] uppercase text-foreground/50">
+                    Six weeks · 1:1
                   </p>
                 </div>
-              </CardContent>
-
-              <CardFooter className="border-0 bg-transparent">
-                <Button
-                  asChild
-                  size="lg"
-                  className={cn(
-                    "w-full h-11",
-                    p.popular
-                      ? "bg-[var(--primary-foreground)] text-[var(--sage-deep)] hover:bg-[var(--primary-foreground)]/90"
-                      : "bg-foreground text-background hover:bg-foreground/85"
-                  )}
-                >
-                  <Link href="#contact">Choose this program</Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+                <div className="shrink-0 text-right">
+                  <div className="font-display text-2xl leading-none font-normal">
+                    €{pkg.price}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <p className="mt-8 text-center text-[0.85rem] text-foreground/55">
-          Not sure which fits? The discovery call helps you choose — no
-          pressure either way.
-        </p>
+        {/* Single CTA */}
+        <div className="mt-16 flex flex-col items-center gap-5 text-center md:mt-20">
+          <p className="max-w-lg text-pretty text-foreground/72 sm:text-[1.05rem] sm:leading-[1.7]">
+            Not sure which fits? That&rsquo;s exactly what the discovery
+            call is for — a real conversation, no pressure either way.
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="group/button h-12 bg-[var(--sage-deep)] px-6 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--sage-deep)]/90"
+          >
+            <Link href="#contact">
+              Book a free discovery call
+              <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );

@@ -17,11 +17,11 @@ const body = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Katarina — Faith-rooted training, nutrition & mentoring",
-    template: "%s · Katarina",
+    default: "Katarina Gröflin — Faith-rooted training, nutrition & mentoring",
+    template: "%s · Katarina Gröflin",
   },
   description:
-    "Holistic coaching for women — and openly for men too. Personal training, nutrition guidance, and Christian mentoring, walked together over six weeks.",
+    "Holistic coaching for women — and openly for men too. Personal training, nutrition guidance, and Christian mentoring with Katarina Gröflin, walked together over six weeks.",
   metadataBase: new URL("https://katarina.example"),
   openGraph: {
     title: "Katarina — Faith-rooted training, nutrition & mentoring",

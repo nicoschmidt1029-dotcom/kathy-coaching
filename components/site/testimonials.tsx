@@ -9,13 +9,6 @@ type Testimonial = {
 
 const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Lena",
-    age: 32,
-    program: "Complete program",
-    quote:
-      "I came in wanting to lose weight. I left understanding that my worth was never up for negotiation. The weight came off too, quietly.",
-  },
-  {
     name: "Marcus",
     age: 41,
     program: "Training + nutrition",
@@ -29,6 +22,13 @@ const TESTIMONIALS: Testimonial[] = [
     quote:
       "Six weeks. The first program I've finished without giving up halfway. The grace she leads with is part of why.",
   },
+  {
+    name: "Sophie",
+    age: 36,
+    program: "Complete program",
+    quote:
+      "I wanted structure and got that — but also permission to stop white-knuckling my body. That shift didn't come from a plan. It came from being seen.",
+  },
 ];
 
 export function Testimonials() {
@@ -39,7 +39,7 @@ export function Testimonials() {
     >
       <div className="container-page">
         <div className="max-w-3xl">
-          <p className="eyebrow">Real stories</p>
+          <p className="eyebrow">More stories</p>
           <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance">
             What changed wasn&rsquo;t only the body.
           </h2>
