@@ -27,15 +27,30 @@ export function Hero() {
         className="absolute inset-0 bg-gradient-to-r from-[var(--foreground)]/50 via-[var(--foreground)]/15 to-transparent"
       />
 
-      <div className="relative container-page flex min-h-[640px] flex-col justify-end py-16 md:min-h-[760px] md:py-24">
+      <div className="relative container-page flex min-h-[680px] flex-col justify-end py-16 md:min-h-[800px] md:py-24">
         <div className="max-w-2xl">
+          {/* Brand mark — prominent on the hero, echoes the header wordmark
+              at display scale so the site identifies itself instantly. */}
+          <div className="animate-rise mb-8 flex items-baseline gap-3.5 md:mb-10">
+            <span className="font-display text-[clamp(2rem,4.5vw,3rem)] leading-none text-[var(--primary-foreground)]">
+              <span className="italic">K</span>athy
+            </span>
+            <span className="font-mono text-[0.72rem] tracking-[0.3em] uppercase text-[var(--clay)] md:text-[0.78rem]">
+              Coaching
+            </span>
+          </div>
+
           <p
             className="animate-rise font-mono text-[0.75rem] tracking-[0.2em] uppercase text-[var(--primary-foreground)]/80"
+            style={{ animationDelay: "80ms" }}
           >
             Holistic coaching · faith-rooted
           </p>
 
-          <h1 className="animate-rise mt-5 font-display text-[clamp(2.6rem,7vw,5.25rem)] leading-[1.02] font-normal text-[var(--primary-foreground)]">
+          <h1
+            className="animate-rise mt-5 font-display text-[clamp(2.6rem,7vw,5.25rem)] leading-[1.02] font-normal text-[var(--primary-foreground)]"
+            style={{ animationDelay: "160ms" }}
+          >
             See your body the way{" "}
             <span className="relative inline-block whitespace-nowrap">
               <em className="not-italic font-display italic">God created it.</em>
@@ -59,7 +74,7 @@ export function Hero() {
 
           <p
             className="animate-rise mt-7 max-w-xl text-pretty text-base text-[var(--primary-foreground)]/85 sm:text-lg sm:leading-[1.65]"
-            style={{ animationDelay: "120ms" }}
+            style={{ animationDelay: "240ms" }}
           >
             Personal training, nutrition guidance, and Christian mentoring —
             three threads woven into one path. Built with women in mind,
@@ -68,7 +83,7 @@ export function Hero() {
 
           <div
             className="animate-rise mt-9"
-            style={{ animationDelay: "240ms" }}
+            style={{ animationDelay: "340ms" }}
           >
             <Button
               asChild
@@ -84,7 +99,7 @@ export function Hero() {
 
           <div
             className="animate-rise mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.78rem] text-[var(--primary-foreground)]/75"
-            style={{ animationDelay: "340ms" }}
+            style={{ animationDelay: "440ms" }}
           >
             <span className="inline-flex items-center gap-2">
               <span className="size-1.5 rounded-full bg-[var(--clay)]" />
