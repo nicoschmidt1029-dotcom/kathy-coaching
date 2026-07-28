@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import { Placeholder } from "./placeholder";
+import { PortraitPlaceholder } from "./portrait-placeholder";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
 const QUALS = [
@@ -14,14 +15,18 @@ export function About() {
       <div className="container-page grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
         <div className="md:col-span-5">
           <div className="md:sticky md:top-28">
-            <Placeholder
-              label="Kathy portrait"
-              aspect="portrait"
-              tone="sand"
-              src={TEMP_PHOTOS.about?.url}
-              alt={TEMP_PHOTOS.about?.alt}
-              credit={TEMP_PHOTOS.about?.credit}
-            />
+            {TEMP_PHOTOS.about ? (
+              <Placeholder
+                label="Kathy portrait"
+                aspect="portrait"
+                tone="sand"
+                src={TEMP_PHOTOS.about.url}
+                alt={TEMP_PHOTOS.about.alt}
+                credit={TEMP_PHOTOS.about.credit}
+              />
+            ) : (
+              <PortraitPlaceholder label="Kathy portrait" />
+            )}
             <p className="caption mt-4">
               Kathy · personal trainer · nutrition coach
             </p>
