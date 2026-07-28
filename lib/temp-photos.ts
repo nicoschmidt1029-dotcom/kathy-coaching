@@ -83,10 +83,15 @@ export const TEMP_PHOTOS: Record<
   about: null,
 };
 
-// STOCK PLACEHOLDER – replace with Kathy's own hero video before launch
-// Dropped the initial Pexels yoga loop after the client feedback that it
-// read as yoga/balance rather than strength training. The hero is now
-// image-only until Kathy's own footage arrives; when it does, restore
-// this to `{ src, poster, credit }` and the HeroBackgroundVideo will
-// pick it up automatically.
-export const TEMP_HERO_VIDEO: TempVideo = null;
+// STOCK PLACEHOLDER – replace with Kathy's own video before launch
+// Pexels: "A Woman Lifting A Barbell" by cottonbro studio
+// (pexels.com/video/a-woman-lifting-a-barbell-7674502/). Self-hosted from
+// /public/videos so we don't depend on Pexels CDN availability. UHD 2732x1440,
+// ~18 MB — Kathy's own footage should replace this at a smaller optimised
+// size (target ≤ 5 MB, ~1080p h.264 with CRF 24 or an AV1/HEVC equivalent).
+export const TEMP_HERO_VIDEO: TempVideo = {
+  src: "/videos/hero-placeholder.mp4",
+  poster:
+    "https://images.unsplash.com/photo-1751456357787-fe644b095838?w=1600&q=80&auto=format&fit=crop",
+  credit: "Pexels · cottonbro studio",
+};
