@@ -13,7 +13,13 @@ type FormState =
   | { status: "sent" }
   | { status: "error"; message: string };
 
-export function Contact() {
+type Props = {
+  /** Prefilled value for the "Interested in" field — carried from the
+   *  Programs page (either a bundle click or a builder selection). */
+  prefill?: string;
+};
+
+export function Contact({ prefill }: Props = {}) {
   const [state, setState] = React.useState<FormState>({ status: "idle" });
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -193,9 +199,16 @@ export function Contact() {
                   <Input
                     id="program"
                     name="program"
+                    defaultValue={prefill}
                     placeholder="Training only · Training + nutrition · Complete · Not sure"
                     className="h-11 rounded-lg bg-background"
                   />
+                  {prefill && (
+                    <p className="mt-2 text-[0.78rem] text-foreground/55">
+                      Pre-filled from your selection on the programs page —
+                      edit freely.
+                    </p>
+                  )}
                 </div>
                 <div className="sm:col-span-2">
                   <Label htmlFor="message" className="mb-2 text-foreground/80">
