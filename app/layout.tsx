@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description:
     "Holistic coaching for women — and openly for men too. Personal training, nutrition guidance, and Christian mentoring with Kathy Coaching, walked together over six weeks.",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://kathy-coaching.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://katarina-coaching.vercel.app"
   ),
   openGraph: {
     title: "Kathy Coaching — Faith-rooted training, nutrition & mentoring",

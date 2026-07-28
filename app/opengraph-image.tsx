@@ -165,7 +165,7 @@ export default async function Image() {
               fontStyle: "normal",
             }}
           >
-            kathy-coaching.vercel.app
+            katarina-coaching.vercel.app
           </span>
         </div>
       </div>

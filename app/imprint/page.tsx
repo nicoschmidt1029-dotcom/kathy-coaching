@@ -33,7 +33,7 @@ export default function ImprintPage() {
 
         <h2>Contact</h2>
         <p>
-          Email: <Todo>hello@kathy-coaching.example</Todo>
+          Email: <Todo>hello@katarina-coaching.example</Todo>
           <br />
           Phone (optional): <Todo>+41 phone number, if you want it public</Todo>
         </p>

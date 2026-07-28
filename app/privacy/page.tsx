@@ -18,7 +18,7 @@ export default function PrivacyPage() {
       >
         <p>
           This page explains what personal data is collected when you use{" "}
-          <em>kathy-coaching.vercel.app</em>, why, how long it&rsquo;s
+          <em>katarina-coaching.vercel.app</em>, why, how long it&rsquo;s
           kept, and what rights you have. It is written to be
           understandable, not just compliant.
         </p>
@@ -42,7 +42,7 @@ export default function PrivacyPage() {
           <br />
           <Todo>postcode</Todo> Ettingen BL, Switzerland
           <br />
-          Email: <Todo>hello@kathy-coaching.example</Todo>
+          Email: <Todo>hello@katarina-coaching.example</Todo>
         </p>
 
         <h2>2. What data is collected, and why</h2>
@@ -159,7 +159,7 @@ export default function PrivacyPage() {
         </ul>
         <p>
           To exercise any of these rights, email{" "}
-          <Todo>hello@kathy-coaching.example</Todo>. A reply follows
+          <Todo>hello@katarina-coaching.example</Todo>. A reply follows
           within 30 days.
         </p>
 
