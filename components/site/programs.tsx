@@ -104,22 +104,25 @@ export function Programs() {
                     >
                       {includes.map((line) => (
                         <li key={line} className="flex items-start gap-2.5">
-                          {bundle.recommended ? (
+                          <span
+                            aria-hidden
+                            className={cn(
+                              "mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full",
+                              bundle.recommended
+                                ? "bg-[var(--primary-foreground)]"
+                                : "bg-[var(--clay)]"
+                            )}
+                          >
                             <Check
-                              className="mt-0.5 size-3.5 shrink-0 text-[var(--primary-foreground)]"
-                              aria-hidden
+                              className={cn(
+                                "size-2.5",
+                                bundle.recommended
+                                  ? "text-[var(--plum)]"
+                                  : "text-[var(--primary-foreground)]"
+                              )}
+                              strokeWidth={3.5}
                             />
-                          ) : (
-                            <span
-                              aria-hidden
-                              className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-[var(--clay)]"
-                            >
-                              <Check
-                                className="size-2.5 text-[var(--primary-foreground)]"
-                                strokeWidth={3.5}
-                              />
-                            </span>
-                          )}
+                          </span>
                           <span>{line}</span>
                         </li>
                       ))}
@@ -155,15 +158,18 @@ export function Programs() {
 
                     {/* Line-art illustration zone — only on the non-recommended
                         cards, to fill the vertical stretch that would otherwise
-                        gap between the meta and the price band. */}
+                        gap between the meta and the price band. Soft radial
+                        terracotta wash behind the icons — deliberately not the
+                        diagonal-stripe pattern used by image placeholders so
+                        the two never get confused. */}
                     {!bundle.recommended && bundle.blocks.length > 0 && (
                       <div className="relative my-7 flex flex-1 items-center justify-center gap-8 overflow-hidden rounded-xl py-5">
                         <div
                           aria-hidden
-                          className="absolute inset-0 opacity-[0.7]"
+                          className="absolute inset-0"
                           style={{
-                            backgroundImage:
-                              "repeating-linear-gradient(135deg, var(--sand) 0 1px, transparent 1px 12px)",
+                            background:
+                              "radial-gradient(ellipse at center, oklch(0.88 0.06 42 / 0.32), transparent 70%)",
                           }}
                         />
                         {bundle.blocks.map((id) => {
@@ -171,7 +177,7 @@ export function Programs() {
                           return (
                             <Icon
                               key={id}
-                              className="relative size-11 text-[var(--clay)]/75"
+                              className="relative size-11 text-[var(--clay)]/80"
                               strokeWidth={1.3}
                               aria-hidden
                             />
