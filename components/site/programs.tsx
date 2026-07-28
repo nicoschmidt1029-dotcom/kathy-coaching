@@ -1,9 +1,16 @@
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Dumbbell, Heart, Leaf } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ADDONS, BLOCKS, BUNDLES } from "@/lib/pricing";
+import { ADDONS, BLOCKS, BUNDLES, type BlockId } from "@/lib/pricing";
 import { ProgramsBuilder } from "./programs-builder";
+
+const BLOCK_ICON: Record<BlockId, LucideIcon> = {
+  training: Dumbbell,
+  nutrition: Leaf,
+  spiritual: Heart,
+};
 
 export function Programs() {
   return (
@@ -89,23 +96,30 @@ export function Programs() {
 
                     <ul
                       className={cn(
-                        "mt-5 space-y-2 text-[0.9rem]",
+                        "mt-5 space-y-2.5 text-[0.9rem]",
                         bundle.recommended
                           ? "text-[var(--primary-foreground)]/85"
-                          : "text-foreground/72"
+                          : "text-foreground/78"
                       )}
                     >
                       {includes.map((line) => (
-                        <li key={line} className="flex items-start gap-2">
-                          <Check
-                            className={cn(
-                              "mt-0.5 size-3.5 shrink-0",
-                              bundle.recommended
-                                ? "text-[var(--primary-foreground)]"
-                                : "text-[var(--plum)]"
-                            )}
-                            aria-hidden
-                          />
+                        <li key={line} className="flex items-start gap-2.5">
+                          {bundle.recommended ? (
+                            <Check
+                              className="mt-0.5 size-3.5 shrink-0 text-[var(--primary-foreground)]"
+                              aria-hidden
+                            />
+                          ) : (
+                            <span
+                              aria-hidden
+                              className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-[var(--clay)]"
+                            >
+                              <Check
+                                className="size-2.5 text-[var(--primary-foreground)]"
+                                strokeWidth={3.5}
+                              />
+                            </span>
+                          )}
                           <span>{line}</span>
                         </li>
                       ))}
@@ -139,11 +153,38 @@ export function Programs() {
                       </div>
                     )}
 
+                    {/* Line-art illustration zone — only on the non-recommended
+                        cards, to fill the vertical stretch that would otherwise
+                        gap between the meta and the price band. */}
+                    {!bundle.recommended && bundle.blocks.length > 0 && (
+                      <div className="relative my-7 flex flex-1 items-center justify-center gap-8 overflow-hidden rounded-xl py-5">
+                        <div
+                          aria-hidden
+                          className="absolute inset-0 opacity-[0.7]"
+                          style={{
+                            backgroundImage:
+                              "repeating-linear-gradient(135deg, var(--sand) 0 1px, transparent 1px 12px)",
+                          }}
+                        />
+                        {bundle.blocks.map((id) => {
+                          const Icon = BLOCK_ICON[id];
+                          return (
+                            <Icon
+                              key={id}
+                              className="relative size-11 text-[var(--clay)]/75"
+                              strokeWidth={1.3}
+                              aria-hidden
+                            />
+                          );
+                        })}
+                      </div>
+                    )}
+
                     <div
                       className={cn(
-                        "mt-auto flex items-baseline gap-3 border-t pt-5",
+                        "flex items-baseline gap-3 border-t pt-5",
                         bundle.recommended
-                          ? "border-[var(--primary-foreground)]/15"
+                          ? "mt-auto border-[var(--primary-foreground)]/15"
                           : "border-foreground/10"
                       )}
                     >
