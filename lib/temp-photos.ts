@@ -47,8 +47,8 @@ export const TEMP_PHOTOS: Record<
 > = {
   // STOCK PLACEHOLDER – replace with Kathy's own content before launch
   hero: {
-    url: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=1200&q=80&auto=format&fit=crop",
-    alt: "TEMP: generic training atmosphere — will be replaced with a hero photo of Kathy",
+    url: "https://images.unsplash.com/photo-1751456357787-fe644b095838?w=1600&q=80&auto=format&fit=crop",
+    alt: "TEMP: woman performing a barbell deadlift in a gym — will be replaced with a hero photo of Kathy",
     credit: "Unsplash",
   },
   // STOCK PLACEHOLDER – replace with Kathy's own content before launch
@@ -84,11 +84,9 @@ export const TEMP_PHOTOS: Record<
 };
 
 // STOCK PLACEHOLDER – replace with Kathy's own hero video before launch
-export const TEMP_HERO_VIDEO: TempVideo = {
-  src: "/videos/hero-placeholder.mp4",
-  // The still Unsplash hero image doubles as the poster frame shown
-  // while the video buffers.
-  poster:
-    "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=1200&q=80&auto=format&fit=crop",
-  credit: "Pexels · Martina Tomšič",
-};
+// Dropped the initial Pexels yoga loop after the client feedback that it
+// read as yoga/balance rather than strength training. The hero is now
+// image-only until Kathy's own footage arrives; when it does, restore
+// this to `{ src, poster, credit }` and the HeroBackgroundVideo will
+// pick it up automatically.
+export const TEMP_HERO_VIDEO: TempVideo = null;
