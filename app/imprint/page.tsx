@@ -22,7 +22,7 @@ export default function ImprintPage() {
 
         <h2>Operator</h2>
         <p>
-          Kathy Gröflin
+          Katarina Gröflin
           <br />
           <Todo>street and number</Todo>
           <br />
@@ -33,7 +33,7 @@ export default function ImprintPage() {
 
         <h2>Contact</h2>
         <p>
-          Email: <Todo>hello@katarina-coaching.example</Todo>
+          Email: <Todo>hello@kathy-coaching.example</Todo>
           <br />
           Phone (optional): <Todo>+41 phone number, if you want it public</Todo>
         </p>
@@ -69,7 +69,7 @@ export default function ImprintPage() {
 
         <h2>Editorial responsibility</h2>
         <p>
-          Kathy Gröflin, address as above, is responsible for the
+          Katarina Gröflin, address as above, is responsible for the
           content of this site.
         </p>
 

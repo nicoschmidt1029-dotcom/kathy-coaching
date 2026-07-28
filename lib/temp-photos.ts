@@ -1,5 +1,5 @@
 /**
- * STOCK PLACEHOLDER assets — MUST BE REPLACED WITH KATARINA'S OWN CONTENT
+ * STOCK PLACEHOLDER assets — MUST BE REPLACED WITH KATHY'S OWN CONTENT
  * BEFORE LAUNCH.
  *
  * These are curated stock (Unsplash / Pexels) picked purely for atmospheric

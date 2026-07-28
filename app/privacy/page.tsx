@@ -18,7 +18,7 @@ export default function PrivacyPage() {
       >
         <p>
           This page explains what personal data is collected when you use{" "}
-          <em>katarina-coaching.vercel.app</em>, why, how long it&rsquo;s
+          <em>kathy-coaching.vercel.app</em>, why, how long it&rsquo;s
           kept, and what rights you have. It is written to be
           understandable, not just compliant.
         </p>
@@ -36,13 +36,13 @@ export default function PrivacyPage() {
           GDPR for EU visitors) is:
         </p>
         <p>
-          Kathy Gröflin
+          Katarina Gröflin
           <br />
           <Todo>street and number</Todo>
           <br />
           <Todo>postcode</Todo> Ettingen BL, Switzerland
           <br />
-          Email: <Todo>hello@katarina-coaching.example</Todo>
+          Email: <Todo>hello@kathy-coaching.example</Todo>
         </p>
 
         <h2>2. What data is collected, and why</h2>
@@ -80,7 +80,7 @@ export default function PrivacyPage() {
             your request (Art. 6 lit. a nDSG, i.e. lawful processing tied
             to a legitimate purpose; Art. 6(1)(b) GDPR for EU visitors).
           </li>
-          <li>Recipients: Kathy Gröflin only.</li>
+          <li>Recipients: Katarina Gröflin only.</li>
           <li>
             Technical processor: Resend Inc., 2261 Market Street #5039,
             San Francisco, CA 94114, USA — sends the email from the site
@@ -159,7 +159,7 @@ export default function PrivacyPage() {
         </ul>
         <p>
           To exercise any of these rights, email{" "}
-          <Todo>hello@katarina-coaching.example</Todo>. A reply follows
+          <Todo>hello@kathy-coaching.example</Todo>. A reply follows
           within 30 days.
         </p>
 
