@@ -1,38 +1,41 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { HeroVideo } from "./hero-video";
-import { Placeholder } from "./placeholder";
+import { HeroBackgroundVideo } from "./hero-background-video";
 // STOCK PLACEHOLDER – replace with Katarina's own content before launch
 import { TEMP_PHOTOS, TEMP_HERO_VIDEO } from "@/lib/temp-photos";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-10 pb-16 md:pt-20 md:pb-28">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-0 right-[-15%] -z-10 hidden h-[640px] w-[640px] rounded-full md:block"
-        style={{
-          background:
-            "radial-gradient(closest-side, oklch(0.88 0.05 42 / 0.7), transparent 70%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute bottom-[-10%] left-[-10%] -z-10 h-[460px] w-[460px] rounded-full opacity-70"
-        style={{
-          background:
-            "radial-gradient(closest-side, oklch(0.92 0.022 78 / 0.7), transparent 70%)",
-        }}
+    <section className="relative overflow-hidden">
+      {/* STOCK PLACEHOLDER – replace with Katarina's own content before launch */}
+      <HeroBackgroundVideo
+        src={TEMP_HERO_VIDEO?.src}
+        poster={TEMP_HERO_VIDEO?.poster ?? TEMP_PHOTOS.hero?.url}
+        ariaLabel="Hero background — training and nature loop"
       />
 
-      <div className="container-page grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-16">
-        <div className="md:col-span-7">
-          <p className="eyebrow animate-rise">
+      {/* Darkening for legibility. Two stacked gradients so the text side
+          (bottom-left on desktop) stays readable while the top-right of
+          the image can breathe. */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-t from-[var(--foreground)]/85 via-[var(--foreground)]/45 to-[var(--foreground)]/25"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-r from-[var(--foreground)]/50 via-[var(--foreground)]/15 to-transparent"
+      />
+
+      <div className="relative container-page flex min-h-[640px] flex-col justify-end py-16 md:min-h-[760px] md:py-24">
+        <div className="max-w-2xl">
+          <p
+            className="animate-rise font-mono text-[0.75rem] tracking-[0.2em] uppercase text-[var(--primary-foreground)]/80"
+          >
             Holistic coaching · faith-rooted
           </p>
 
-          <h1 className="animate-rise mt-5 font-display text-[clamp(2.6rem,7vw,5.25rem)] leading-[1.02] font-normal text-foreground">
+          <h1 className="animate-rise mt-5 font-display text-[clamp(2.6rem,7vw,5.25rem)] leading-[1.02] font-normal text-[var(--primary-foreground)]">
             See your body the way{" "}
             <span className="relative inline-block whitespace-nowrap">
               <em className="not-italic font-display italic">God created it.</em>
@@ -55,7 +58,7 @@ export function Hero() {
           </h1>
 
           <p
-            className="animate-rise mt-7 max-w-xl text-pretty text-base text-foreground/72 sm:text-lg sm:leading-[1.65]"
+            className="animate-rise mt-7 max-w-xl text-pretty text-base text-[var(--primary-foreground)]/85 sm:text-lg sm:leading-[1.65]"
             style={{ animationDelay: "120ms" }}
           >
             Personal training, nutrition guidance, and Christian mentoring —
@@ -70,7 +73,7 @@ export function Hero() {
             <Button
               asChild
               size="lg"
-              className="group/button h-12 bg-[var(--plum)] px-6 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
+              className="group/button h-12 bg-[var(--primary-foreground)] px-6 text-[0.95rem] text-[var(--plum)] hover:bg-[var(--primary-foreground)]/90"
             >
               <Link href="/kontakt">
                 Book a free discovery call
@@ -80,7 +83,7 @@ export function Hero() {
           </div>
 
           <div
-            className="animate-rise mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.78rem] text-foreground/55"
+            className="animate-rise mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.78rem] text-[var(--primary-foreground)]/75"
             style={{ animationDelay: "340ms" }}
           >
             <span className="inline-flex items-center gap-2">
@@ -96,34 +99,6 @@ export function Hero() {
               5+ yrs mentoring
             </span>
           </div>
-        </div>
-
-        <div className="animate-rise-slow relative md:col-span-5">
-          <HeroVideo
-            /* STOCK PLACEHOLDER – replace with Katarina's own hero video before launch */
-            src={TEMP_HERO_VIDEO?.src}
-            poster={TEMP_HERO_VIDEO?.poster ?? TEMP_PHOTOS.hero?.url}
-            posterCredit={TEMP_PHOTOS.hero?.credit}
-            videoCredit={TEMP_HERO_VIDEO?.credit}
-          />
-
-          {/* STOCK PLACEHOLDER – replace with Katarina's own content before launch */}
-          {TEMP_PHOTOS.heroMovementDetail && (
-            <div className="absolute -bottom-6 -left-6 hidden w-44 rotate-[-3deg] rounded-xl bg-card p-3 shadow-[0_18px_40px_-20px_rgba(60,40,52,0.35)] ring-1 ring-foreground/10 sm:block">
-              <Placeholder
-                label="Movement"
-                aspect="square"
-                tone="cream"
-                className="rounded-lg"
-                src={TEMP_PHOTOS.heroMovementDetail.url}
-                alt={TEMP_PHOTOS.heroMovementDetail.alt}
-                credit={TEMP_PHOTOS.heroMovementDetail.credit}
-              />
-              <p className="mt-2 px-1 font-display text-[0.78rem] italic text-foreground/70">
-                Six weeks. One whole person.
-              </p>
-            </div>
-          )}
         </div>
       </div>
     </section>
