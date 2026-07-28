@@ -19,6 +19,15 @@ const PILLARS: Pillar[] = [
     title: "Train the body",
     body: "Strength work that meets you where you are. Progressive, sustainable, and built around the life you actually live — not someone else's.",
     Icon: Dumbbell,
+    // STOCK PLACEHOLDER – replace with Kathy's own content before launch
+    image: TEMP_PHOTOS.approachTrain
+      ? {
+          url: TEMP_PHOTOS.approachTrain.url,
+          alt: TEMP_PHOTOS.approachTrain.alt,
+          credit: TEMP_PHOTOS.approachTrain.credit,
+          slot: "Train",
+        }
+      : undefined,
   },
   {
     number: "02",

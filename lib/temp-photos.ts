@@ -38,6 +38,7 @@ export type TempVideo = {
 export const TEMP_PHOTOS: Record<
   | "hero"
   | "heroMovementDetail"
+  | "approachTrain"
   | "approachNourish"
   | "approachSoul"
   | "spotlight"
@@ -54,6 +55,15 @@ export const TEMP_PHOTOS: Record<
   heroMovementDetail: {
     url: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80&auto=format&fit=crop",
     alt: "TEMP: close-up of hands gripping dumbbells, no face — atmospheric detail",
+    credit: "Unsplash",
+  },
+  // STOCK PLACEHOLDER – replace with Kathy's own content before launch
+  // Same URL as `hero` on purpose — same atmospheric training reference
+  // in both the hero background and the Train approach card until Kathy's
+  // own photography arrives.
+  approachTrain: {
+    url: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=900&q=80&auto=format&fit=crop",
+    alt: "TEMP: barbell overhead press training — will be replaced with a photo of Kathy",
     credit: "Unsplash",
   },
   // STOCK PLACEHOLDER – replace with Kathy's own content before launch
