@@ -39,6 +39,10 @@ export type Bundle = {
   blocks: BlockId[];
   addons: AddonId[];
   recommended?: boolean;
+  /** Optional short "who this suits" line shown under the checklist */
+  bestFor?: string;
+  /** Optional format detail (session cadence, what's included) */
+  format?: string;
 };
 
 export const BLOCKS: Block[] = [
@@ -107,6 +111,8 @@ export const BUNDLES: Bundle[] = [
     duration: "6 weeks · 1:1",
     blocks: ["training"],
     addons: [],
+    bestFor: "easing back into movement, no pressure to add more yet",
+    format: "Weekly 1:1 session · async form checks between",
   },
   {
     id: "training-nutrition",
@@ -116,6 +122,8 @@ export const BUNDLES: Bundle[] = [
     duration: "6 weeks · 1:1",
     blocks: ["training", "nutrition"],
     addons: [],
+    bestFor: "when food and training feel like separate battles",
+    format: "Weekly 1:1 session · nutrition check-in midweek",
   },
   {
     id: "complete",

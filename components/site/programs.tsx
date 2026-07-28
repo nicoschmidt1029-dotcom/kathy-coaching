@@ -89,7 +89,7 @@ export function Programs() {
 
                     <ul
                       className={cn(
-                        "mt-5 flex-1 space-y-2 text-[0.9rem]",
+                        "mt-5 space-y-2 text-[0.9rem]",
                         bundle.recommended
                           ? "text-[var(--primary-foreground)]/85"
                           : "text-foreground/72"
@@ -111,9 +111,37 @@ export function Programs() {
                       ))}
                     </ul>
 
+                    {(bundle.bestFor || bundle.format) && (
+                      <div
+                        className={cn(
+                          "mt-6 space-y-1.5 text-[0.82rem] leading-relaxed",
+                          bundle.recommended
+                            ? "text-[var(--primary-foreground)]/65"
+                            : "text-foreground/60"
+                        )}
+                      >
+                        {bundle.bestFor && (
+                          <p>
+                            <span
+                              className={cn(
+                                "font-medium",
+                                bundle.recommended
+                                  ? "text-[var(--primary-foreground)]/85"
+                                  : "text-foreground/78"
+                              )}
+                            >
+                              Best for:
+                            </span>{" "}
+                            {bundle.bestFor}
+                          </p>
+                        )}
+                        {bundle.format && <p>{bundle.format}</p>}
+                      </div>
+                    )}
+
                     <div
                       className={cn(
-                        "mt-6 flex items-baseline gap-3 border-t pt-5",
+                        "mt-auto flex items-baseline gap-3 border-t pt-5",
                         bundle.recommended
                           ? "border-[var(--primary-foreground)]/15"
                           : "border-foreground/10"
