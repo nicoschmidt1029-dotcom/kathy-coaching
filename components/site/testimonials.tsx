@@ -29,7 +29,7 @@ const TESTIMONIALS: Testimonial[] = [
     age: 41,
     program: "Training + nutrition",
     quote:
-      "As a guy I wasn't sure this was for me. Katarina made it feel like coaching, not therapy — and the spiritual conversations were real, never pushy.",
+      "As a guy I wasn't sure this was for me. Kathy made it feel like coaching, not therapy — and the spiritual conversations were real, never pushy.",
   },
   {
     name: "Hannah",

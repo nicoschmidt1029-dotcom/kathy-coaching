@@ -15,7 +15,7 @@ export function About() {
         <div className="md:col-span-5">
           <div className="md:sticky md:top-28">
             <Placeholder
-              label="Katarina portrait"
+              label="Kathy portrait"
               aspect="portrait"
               tone="sand"
               src={TEMP_PHOTOS.about?.url}
@@ -23,20 +23,20 @@ export function About() {
               credit={TEMP_PHOTOS.about?.credit}
             />
             <p className="caption mt-4">
-              Katarina · personal trainer · nutrition coach
+              Kathy · personal trainer · nutrition coach
             </p>
           </div>
         </div>
 
         <div className="md:col-span-7">
-          <p className="eyebrow">Meet Katarina</p>
+          <p className="eyebrow">Meet Kathy</p>
           <h2 className="mt-5 max-w-[20ch] font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal">
             Strength, nourishment, and a quiet kind of confidence.
           </h2>
 
           <div className="mt-8 space-y-5 text-pretty text-foreground/75 sm:text-lg sm:leading-[1.7]">
             <p>
-              I&rsquo;m Katarina — a certified personal trainer and nutrition
+              I&rsquo;m Kathy — a certified personal trainer and nutrition
               coach, and a Christian. I spent years chasing what &ldquo;fit&rdquo;
               was supposed to look like, and missed the gentler truth:
               <em className="not-italic font-display"> my body was never the problem. The way I saw it was.</em>

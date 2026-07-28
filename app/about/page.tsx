@@ -6,7 +6,7 @@ import { HomeFinalCta } from "@/components/site/home-final-cta";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet Katarina Gröflin — certified personal trainer and nutrition coach, offering faith-rooted holistic coaching for body, nutrition, and soul.",
+    "Meet Kathy Gröflin — certified personal trainer and nutrition coach, offering faith-rooted holistic coaching for body, nutrition, and soul.",
 };
 
 export default function AboutPage() {

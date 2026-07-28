@@ -38,7 +38,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-foreground/[0.07] pt-6 text-[0.8rem] text-foreground/50 sm:flex-row sm:items-center">
-          <p>© {year} Katarina Coaching. All rights reserved.</p>
+          <p>© {year} Kathy Coaching. All rights reserved.</p>
           <p className="caption">Made with care</p>
         </div>
       </div>

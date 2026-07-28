@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Katarina Gröflin — Faith-rooted training, nutrition & Christian mentoring";
+  "Kathy Coaching — Faith-rooted training, nutrition & Christian mentoring";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -74,7 +74,7 @@ export default async function Image() {
               fontStyle: "normal",
             }}
           >
-            Katarina Gröflin
+            Kathy Coaching
           </span>
           <span
             style={{

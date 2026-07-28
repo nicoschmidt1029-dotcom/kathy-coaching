@@ -4,7 +4,7 @@ import { LegalShell, Todo } from "@/components/site/legal-shell";
 export const metadata: Metadata = {
   title: "Privacy",
   description:
-    "Privacy notice for Katarina Gröflin Coaching — how your data is handled under Swiss nDSG and the EU GDPR.",
+    "Privacy notice for Kathy Coaching — how your data is handled under Swiss nDSG and the EU GDPR.",
   robots: { index: true, follow: true },
 };
 
@@ -23,7 +23,7 @@ export default function PrivacyPage() {
           understandable, not just compliant.
         </p>
         <p>
-          Katarina&rsquo;s primary jurisdiction is Switzerland, so the
+          Kathy&rsquo;s primary jurisdiction is Switzerland, so the
           revised Swiss Data Protection Act (nDSG, in force since 1 Sep
           2023) applies. If you visit from an EU/EEA member state, the
           EU General Data Protection Regulation (GDPR) additionally
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
           GDPR for EU visitors) is:
         </p>
         <p>
-          Katarina Gröflin
+          Kathy Gröflin
           <br />
           <Todo>street and number</Todo>
           <br />
@@ -80,11 +80,11 @@ export default function PrivacyPage() {
             your request (Art. 6 lit. a nDSG, i.e. lawful processing tied
             to a legitimate purpose; Art. 6(1)(b) GDPR for EU visitors).
           </li>
-          <li>Recipients: Katarina Gröflin only.</li>
+          <li>Recipients: Kathy Gröflin only.</li>
           <li>
             Technical processor: Resend Inc., 2261 Market Street #5039,
             San Francisco, CA 94114, USA — sends the email from the site
-            to Katarina&rsquo;s inbox. Bound by a Data Processing Addendum
+            to Kathy&rsquo;s inbox. Bound by a Data Processing Addendum
             and Standard Contractual Clauses; Resend is enrolled in the
             Swiss-U.S. and EU-U.S. Data Privacy Frameworks.
           </li>
@@ -94,7 +94,7 @@ export default function PrivacyPage() {
             coaching relationship plus any statutory retention periods
             (10 years for accounting-related correspondence under Art. 958f
             OR,{" "}
-            <Todo>confirm scope with Katarina&rsquo;s tax advisor</Todo>).
+            <Todo>confirm scope with Kathy&rsquo;s tax advisor</Todo>).
             If nothing comes of the enquiry, the message is deleted within
             12 months.
           </li>
@@ -166,7 +166,7 @@ export default function PrivacyPage() {
         <h2>5. Automated decisions</h2>
         <p>
           There is no automated decision-making, no profiling, and no AI
-          evaluation of your enquiry. Katarina reads every message
+          evaluation of your enquiry. Kathy reads every message
           herself.
         </p>
 

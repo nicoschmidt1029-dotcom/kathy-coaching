@@ -2,13 +2,13 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroBackgroundVideo } from "./hero-background-video";
-// STOCK PLACEHOLDER – replace with Katarina's own content before launch
+// STOCK PLACEHOLDER – replace with Kathy's own content before launch
 import { TEMP_PHOTOS, TEMP_HERO_VIDEO } from "@/lib/temp-photos";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* STOCK PLACEHOLDER – replace with Katarina's own content before launch */}
+      {/* STOCK PLACEHOLDER – replace with Kathy's own content before launch */}
       <HeroBackgroundVideo
         src={TEMP_HERO_VIDEO?.src}
         poster={TEMP_HERO_VIDEO?.poster ?? TEMP_PHOTOS.hero?.url}

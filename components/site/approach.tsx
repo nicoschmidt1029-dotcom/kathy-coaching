@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Dumbbell, Salad, Heart } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-// STOCK PLACEHOLDER – replace with Katarina's own content before launch
+// STOCK PLACEHOLDER – replace with Kathy's own content before launch
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
 type Pillar = {
@@ -25,7 +25,7 @@ const PILLARS: Pillar[] = [
     title: "Nourish with intention",
     body: "A relationship with food that isn't about rules or guilt. Real meals, real flexibility, real understanding of what your body needs to thrive.",
     Icon: Salad,
-    // STOCK PLACEHOLDER – replace with Katarina's own content before launch
+    // STOCK PLACEHOLDER – replace with Kathy's own content before launch
     image: TEMP_PHOTOS.approachNourish
       ? {
           url: TEMP_PHOTOS.approachNourish.url,
@@ -40,7 +40,7 @@ const PILLARS: Pillar[] = [
     title: "Soul & identity in Jesus",
     body: "Offered, never imposed: honest conversation, prayer, and biblical perspective on worth. For anyone wanting confidence rooted in something deeper than a mirror.",
     Icon: Heart,
-    // STOCK PLACEHOLDER – replace with Katarina's own content before launch
+    // STOCK PLACEHOLDER – replace with Kathy's own content before launch
     image: TEMP_PHOTOS.approachSoul
       ? {
           url: TEMP_PHOTOS.approachSoul.url,

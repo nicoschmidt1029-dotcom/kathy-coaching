@@ -5,7 +5,7 @@ import { Contact } from "@/components/site/contact";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a free 30-minute discovery call with Katarina Gröflin. No commitment — just a real conversation about whether coaching together is a fit.",
+    "Book a free 30-minute discovery call with Kathy. No commitment — just a real conversation about whether coaching together is a fit.",
 };
 
 export default function KontaktPage() {

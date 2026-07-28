@@ -11,7 +11,7 @@ export function Wordmark({ className, onDark = false }: Props) {
   return (
     <Link
       href="/"
-      aria-label="Katarina Coaching — home"
+      aria-label="Kathy Coaching — home"
       className={cn(
         "group inline-flex items-center gap-2.5 leading-none",
         className
