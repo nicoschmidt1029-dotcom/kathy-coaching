@@ -45,7 +45,7 @@ export function Wordmark({ className, onDark = false }: Props) {
         )}
       >
         <span className="font-display text-lg tracking-tight md:text-xl">
-          <span className="italic">K</span>atarina
+          <span className="italic">K</span>athy
         </span>
         <span
           className={cn(
