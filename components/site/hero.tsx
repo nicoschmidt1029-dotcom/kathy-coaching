@@ -14,7 +14,7 @@ export function Hero() {
         className="pointer-events-none absolute top-0 right-[-15%] -z-10 hidden h-[640px] w-[640px] rounded-full md:block"
         style={{
           background:
-            "radial-gradient(closest-side, oklch(0.88 0.03 145 / 0.7), transparent 70%)",
+            "radial-gradient(closest-side, oklch(0.88 0.05 42 / 0.7), transparent 70%)",
         }}
       />
       <div
@@ -45,7 +45,7 @@ export function Hero() {
                 <path
                   d="M4 22 C 70 8, 160 6, 230 14 S 380 26, 416 12"
                   fill="none"
-                  stroke="var(--sage)"
+                  stroke="var(--clay)"
                   strokeWidth="4"
                   strokeLinecap="round"
                   className="underline-draw"
@@ -70,7 +70,7 @@ export function Hero() {
             <Button
               asChild
               size="lg"
-              className="group/button h-12 bg-[var(--sage-deep)] px-6 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--sage-deep)]/90"
+              className="group/button h-12 bg-[var(--plum)] px-6 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
             >
               <Link href="#contact">
                 Book a free discovery call
@@ -84,15 +84,15 @@ export function Hero() {
             style={{ animationDelay: "340ms" }}
           >
             <span className="inline-flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-[var(--sage)]" />
+              <span className="size-1.5 rounded-full bg-[var(--clay)]" />
               Certified Personal Trainer
             </span>
             <span className="inline-flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-[var(--sage)]" />
+              <span className="size-1.5 rounded-full bg-[var(--clay)]" />
               Certified Nutrition Coach
             </span>
             <span className="inline-flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-[var(--sage)]" />
+              <span className="size-1.5 rounded-full bg-[var(--clay)]" />
               5+ yrs mentoring
             </span>
           </div>
@@ -109,7 +109,7 @@ export function Hero() {
 
           {/* STOCK PLACEHOLDER – replace with Katarina's own content before launch */}
           {TEMP_PHOTOS.heroMovementDetail && (
-            <div className="absolute -bottom-6 -left-6 hidden w-44 rotate-[-3deg] rounded-xl bg-card p-3 shadow-[0_18px_40px_-20px_rgba(60,80,60,0.35)] ring-1 ring-foreground/10 sm:block">
+            <div className="absolute -bottom-6 -left-6 hidden w-44 rotate-[-3deg] rounded-xl bg-card p-3 shadow-[0_18px_40px_-20px_rgba(60,40,52,0.35)] ring-1 ring-foreground/10 sm:block">
               <Placeholder
                 label="Movement"
                 aspect="square"

@@ -6,7 +6,7 @@ type Props = {
   label: string;
   className?: string;
   aspect?: "portrait" | "square" | "landscape" | "wide" | "auto";
-  tone?: "sand" | "sage" | "cream";
+  tone?: "sand" | "clay" | "cream";
   /** Optional temp image URL. When present, renders an <img> and a visible TEMP pill. */
   src?: string;
   alt?: string;
@@ -23,7 +23,7 @@ const aspectMap: Record<NonNullable<Props["aspect"]>, string> = {
 
 const toneMap: Record<NonNullable<Props["tone"]>, string> = {
   sand: "bg-[oklch(0.92_0.022_78)]",
-  sage: "bg-[oklch(0.88_0.03_145)]",
+  clay: "bg-[oklch(0.88_0.05_42)]",
   cream: "bg-[oklch(0.96_0.012_82)]",
 };
 

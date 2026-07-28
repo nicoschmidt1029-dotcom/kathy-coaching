@@ -90,7 +90,7 @@ export function Programs() {
                 key={name}
                 className="flex flex-col rounded-2xl border border-foreground/[0.08] bg-card p-6"
               >
-                <div className="flex size-11 items-center justify-center rounded-full bg-[var(--sage)]/10 text-[var(--sage-deep)] ring-1 ring-[var(--sage)]/20">
+                <div className="flex size-11 items-center justify-center rounded-full bg-[var(--clay)]/10 text-[var(--plum)] ring-1 ring-[var(--clay)]/20">
                   <Icon className="size-5" aria-hidden />
                 </div>
                 <h3 className="mt-5 font-display text-lg leading-tight font-normal">
@@ -125,7 +125,7 @@ export function Programs() {
         </div>
 
         {/* Complete package — featured */}
-        <div className="mt-14 overflow-hidden rounded-2xl bg-[var(--sage-deep)] text-[var(--primary-foreground)] shadow-[0_40px_80px_-40px_rgba(60,80,60,0.5)] md:mt-16">
+        <div className="mt-14 overflow-hidden rounded-2xl bg-[var(--plum)] text-[var(--primary-foreground)] shadow-[0_40px_80px_-40px_rgba(60,40,52,0.5)] md:mt-16">
           <div className="grid grid-cols-1 gap-10 p-8 md:grid-cols-12 md:gap-12 md:p-14">
             <div className="md:col-span-6">
               <p className="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-[var(--primary-foreground)]/60">
@@ -222,7 +222,7 @@ export function Programs() {
           <Button
             asChild
             size="lg"
-            className="group/button h-12 bg-[var(--sage-deep)] px-6 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--sage-deep)]/90"
+            className="group/button h-12 bg-[var(--plum)] px-6 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
           >
             <Link href="#contact">
               Book a free discovery call

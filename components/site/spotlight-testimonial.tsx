@@ -14,7 +14,7 @@ export function SpotlightTestimonial() {
               <Placeholder
                 label="Lena portrait"
                 aspect="portrait"
-                tone="sage"
+                tone="clay"
                 className="rotate-[-0.6deg]"
                 src={TEMP_PHOTOS.spotlight?.url}
                 alt={TEMP_PHOTOS.spotlight?.alt}
@@ -22,7 +22,7 @@ export function SpotlightTestimonial() {
               />
               <span
                 aria-hidden
-                className="absolute -top-4 -left-4 font-display text-[7rem] leading-none text-[var(--sage)]/25 select-none"
+                className="absolute -top-4 -left-4 font-display text-[7rem] leading-none text-[var(--clay)]/25 select-none"
               >
                 ”
               </span>
@@ -43,7 +43,7 @@ export function SpotlightTestimonial() {
             <figcaption className="mt-8 flex items-center gap-4">
               <span
                 aria-hidden
-                className="h-px w-8 bg-[var(--sage-deep)]"
+                className="h-px w-8 bg-[var(--plum)]"
               />
               <div>
                 <div className="text-[0.98rem] font-medium text-foreground">

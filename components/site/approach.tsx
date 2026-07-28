@@ -77,7 +77,7 @@ export function Approach() {
               {PILLARS.map(({ number, title, body, Icon, image }) => (
                 <li
                   key={number}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-foreground/[0.06] bg-card transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-[var(--sage)]/30 hover:shadow-[0_20px_40px_-28px_rgba(60,80,60,0.4)]"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-foreground/[0.06] bg-card transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-[var(--clay)]/30 hover:shadow-[0_20px_40px_-28px_rgba(60,40,52,0.4)]"
                 >
                   {image && (
                     <div className="relative aspect-[16/9] w-full">
@@ -99,7 +99,7 @@ export function Approach() {
                     </div>
                   )}
                   <div className="grid grid-cols-[auto_1fr] gap-5 p-6 sm:p-7">
-                    <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[var(--sage)]/10 text-[var(--sage-deep)] ring-1 ring-[var(--sage)]/20 transition-colors group-hover:bg-[var(--sage)]/15">
+                    <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-[var(--clay)]/10 text-[var(--plum)] ring-1 ring-[var(--clay)]/20 transition-colors group-hover:bg-[var(--clay)]/15">
                       <Icon className="size-5" aria-hidden />
                     </div>
                     <div>

@@ -25,7 +25,7 @@ export default function NotFound() {
           className="pointer-events-none absolute top-[-15%] right-[-10%] -z-10 h-[520px] w-[520px] rounded-full opacity-60"
           style={{
             background:
-              "radial-gradient(closest-side, oklch(0.88 0.03 145 / 0.7), transparent 70%)",
+              "radial-gradient(closest-side, oklch(0.88 0.05 42 / 0.7), transparent 70%)",
           }}
         />
         <div
@@ -54,7 +54,7 @@ export default function NotFound() {
                   <path
                     d="M4 16 C 60 6, 130 4, 180 10 S 270 20, 296 8"
                     fill="none"
-                    stroke="var(--sage)"
+                    stroke="var(--clay)"
                     strokeWidth="3"
                     strokeLinecap="round"
                   />
@@ -71,7 +71,7 @@ export default function NotFound() {
               <Button
                 asChild
                 size="lg"
-                className="group/button h-12 bg-[var(--sage-deep)] px-6 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--sage-deep)]/90"
+                className="group/button h-12 bg-[var(--plum)] px-6 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
               >
                 <Link href="/">
                   Back to the beginning

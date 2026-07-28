@@ -65,7 +65,7 @@ export function Testimonials() {
           {TESTIMONIALS.map((t, i) => (
             <figure
               key={t.name}
-              className="group flex flex-col rounded-2xl bg-card p-6 ring-1 ring-foreground/[0.07] transition-shadow duration-300 hover:shadow-[0_24px_50px_-30px_rgba(60,80,60,0.35)]"
+              className="group flex flex-col rounded-2xl bg-card p-6 ring-1 ring-foreground/[0.07] transition-shadow duration-300 hover:shadow-[0_24px_50px_-30px_rgba(60,40,52,0.35)]"
               style={{
                 transform: i === 1 ? "translateY(-12px)" : undefined,
               }}
@@ -88,7 +88,7 @@ export function Testimonials() {
                   <Placeholder
                     label="After"
                     aspect="square"
-                    tone="sage"
+                    tone="clay"
                     className="rounded-lg"
                   />
                 </div>
@@ -109,7 +109,7 @@ export function Testimonials() {
                 </div>
                 <span
                   aria-hidden
-                  className="font-display text-3xl leading-none text-[var(--sage)]"
+                  className="font-display text-3xl leading-none text-[var(--clay)]"
                 >
                   ”
                 </span>

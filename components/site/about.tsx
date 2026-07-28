@@ -55,13 +55,13 @@ export function About() {
             </p>
           </div>
 
-          <div className="mt-10 rounded-2xl border border-[var(--sage)]/15 bg-[var(--sand)]/40 p-6 sm:p-7">
-            <p className="caption text-[var(--sage-deep)]">Qualifications</p>
+          <div className="mt-10 rounded-2xl border border-[var(--clay)]/15 bg-[var(--sand)]/40 p-6 sm:p-7">
+            <p className="caption text-[var(--plum)]">Qualifications</p>
             <ul className="mt-4 grid gap-3 sm:grid-cols-1">
               {QUALS.map((q) => (
                 <li key={q} className="flex items-start gap-3 text-[0.95rem]">
                   <CheckCircle2
-                    className="mt-0.5 size-4 shrink-0 text-[var(--sage-deep)]"
+                    className="mt-0.5 size-4 shrink-0 text-[var(--plum)]"
                     aria-hidden
                   />
                   <span className="text-foreground/80">{q}</span>

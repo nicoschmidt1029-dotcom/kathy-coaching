@@ -60,14 +60,14 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="section-pad relative overflow-hidden bg-[var(--sage-deep)] text-[var(--primary-foreground)]"
+      className="section-pad relative overflow-hidden bg-[var(--plum)] text-[var(--primary-foreground)]"
     >
       <div
         aria-hidden
         className="pointer-events-none absolute top-[-20%] right-[-15%] h-[520px] w-[520px] rounded-full opacity-30"
         style={{
           background:
-            "radial-gradient(closest-side, oklch(0.88 0.05 145), transparent 70%)",
+            "radial-gradient(closest-side, oklch(0.88 0.06 42), transparent 70%)",
         }}
       />
 
@@ -119,7 +119,7 @@ export function Contact() {
               aria-live="polite"
               className="flex min-h-[420px] flex-col items-start justify-center rounded-2xl bg-[var(--primary-foreground)] p-8 text-foreground ring-1 ring-foreground/5 sm:p-10"
             >
-              <div className="flex size-12 items-center justify-center rounded-full bg-[var(--sage)]/15 text-[var(--sage-deep)] ring-1 ring-[var(--sage)]/25">
+              <div className="flex size-12 items-center justify-center rounded-full bg-[var(--clay)]/15 text-[var(--plum)] ring-1 ring-[var(--clay)]/25">
                 <CheckCircle2 className="size-6" aria-hidden />
               </div>
               <h3 className="mt-6 font-display text-2xl leading-tight font-normal">
@@ -133,7 +133,7 @@ export function Contact() {
               <button
                 type="button"
                 onClick={() => setState({ status: "idle" })}
-                className="mt-8 text-[0.9rem] text-[var(--sage-deep)] underline underline-offset-4 transition-colors hover:text-foreground"
+                className="mt-8 text-[0.9rem] text-[var(--plum)] underline underline-offset-4 transition-colors hover:text-foreground"
               >
                 Send another message
               </button>
@@ -229,7 +229,7 @@ export function Contact() {
                   type="submit"
                   size="lg"
                   disabled={state.status === "sending"}
-                  className="h-11 bg-[var(--sage-deep)] px-6 text-[var(--primary-foreground)] transition-colors hover:bg-[var(--sage-deep)]/90 disabled:cursor-not-allowed disabled:opacity-70"
+                  className="h-11 bg-[var(--plum)] px-6 text-[var(--primary-foreground)] transition-colors hover:bg-[var(--plum)]/90 disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   {state.status === "sending" ? "Sending…" : "Send message"}
                 </Button>

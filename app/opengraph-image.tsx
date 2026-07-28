@@ -26,10 +26,10 @@ export default async function Image() {
     fetchGoogleFont("Fraunces", "ital,wght@1,400"),
   ]);
 
-  const CREAM = "#F5F0E6";
-  const CHARCOAL = "#37302A";
-  const SAGE_DEEP = "#425946";
-  const SAGE = "#7A9375";
+  const CREAM = "#F7F2EA";
+  const CHARCOAL = "#2E2622";
+  const PLUM = "#5B3A4A";
+  const CLAY = "#C97C5D";
 
   return new ImageResponse(
     (
@@ -69,7 +69,7 @@ export default async function Image() {
               fontSize: 24,
               letterSpacing: "0.24em",
               textTransform: "uppercase",
-              color: SAGE_DEEP,
+              color: PLUM,
               fontWeight: 500,
               fontStyle: "normal",
             }}
@@ -81,7 +81,7 @@ export default async function Image() {
               width: 8,
               height: 8,
               borderRadius: 4,
-              background: SAGE,
+              background: CLAY,
               display: "flex",
             }}
           />
@@ -160,7 +160,7 @@ export default async function Image() {
           <span
             style={{
               fontSize: 22,
-              color: SAGE_DEEP,
+              color: PLUM,
               fontWeight: 500,
               fontStyle: "normal",
             }}

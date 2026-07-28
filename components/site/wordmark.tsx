@@ -15,7 +15,7 @@ export function Wordmark({ className }: { className?: string }) {
       <span className="-ml-[0.05em]">atarina</span>
       <span
         aria-hidden
-        className="ml-1 h-1.5 w-1.5 rounded-full bg-[var(--sage)] transition-transform duration-300 ease-out group-hover:scale-110"
+        className="ml-1 h-1.5 w-1.5 rounded-full bg-[var(--clay)] transition-transform duration-300 ease-out group-hover:scale-110"
       />
     </Link>
   );

@@ -68,7 +68,7 @@ export function HeroVideo({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl bg-[oklch(0.86_0.03_145)] ring-1 ring-foreground/10 shadow-[0_30px_60px_-30px_rgba(60,80,60,0.3)]",
+        "relative overflow-hidden rounded-2xl bg-[oklch(0.86_0.05_42)] ring-1 ring-foreground/10 shadow-[0_30px_60px_-30px_rgba(60,40,52,0.3)]",
         className
       )}
     >
@@ -95,7 +95,7 @@ export function HeroVideo({
               className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors hover:bg-black/20"
               aria-label="Play video with sound"
             >
-              <span className="flex size-16 items-center justify-center rounded-full bg-white/95 text-[var(--sage-deep)] shadow-lg ring-1 ring-black/5 backdrop-blur-sm transition-transform duration-200 hover:scale-105">
+              <span className="flex size-16 items-center justify-center rounded-full bg-white/95 text-[var(--plum)] shadow-lg ring-1 ring-black/5 backdrop-blur-sm transition-transform duration-200 hover:scale-105">
                 <Play className="ml-0.5 size-6" aria-hidden />
               </span>
             </button>
@@ -165,7 +165,7 @@ function PlaceholderState({
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(closest-side at 30% 40%, oklch(0.92 0.04 145 / 0.9), transparent 60%), radial-gradient(closest-side at 75% 70%, oklch(0.85 0.05 78 / 0.7), transparent 60%), linear-gradient(180deg, oklch(0.88 0.03 145), oklch(0.82 0.035 145))",
+              "radial-gradient(closest-side at 30% 40%, oklch(0.92 0.06 42 / 0.9), transparent 60%), radial-gradient(closest-side at 75% 70%, oklch(0.85 0.05 78 / 0.7), transparent 60%), linear-gradient(180deg, oklch(0.88 0.05 42), oklch(0.82 0.05 42))",
           }}
         />
       )}
@@ -183,7 +183,7 @@ function PlaceholderState({
       )}
 
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-        <span className="flex size-16 items-center justify-center rounded-full bg-white/95 text-[var(--sage-deep)] shadow-md ring-1 ring-black/5 backdrop-blur-sm">
+        <span className="flex size-16 items-center justify-center rounded-full bg-white/95 text-[var(--plum)] shadow-md ring-1 ring-black/5 backdrop-blur-sm">
           <Play className="ml-0.5 size-6" aria-hidden />
         </span>
         {!hasPoster && (

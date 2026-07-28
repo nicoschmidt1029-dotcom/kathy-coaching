@@ -56,7 +56,7 @@ export function Header() {
               {item.label}
               <span
                 aria-hidden
-                className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-[var(--sage)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100"
+                className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-[var(--clay)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-x-100"
               />
             </Link>
           ))}
@@ -66,7 +66,7 @@ export function Header() {
           <Button
             asChild
             size="lg"
-            className="hidden bg-[var(--sage-deep)] text-[var(--primary-foreground)] hover:bg-[var(--sage-deep)]/90 md:inline-flex"
+            className="hidden bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90 md:inline-flex"
           >
             <Link href="#contact">Free discovery call</Link>
           </Button>
@@ -105,7 +105,7 @@ export function Header() {
                   <Button
                     asChild
                     size="lg"
-                    className="w-full bg-[var(--sage-deep)] text-[var(--primary-foreground)] hover:bg-[var(--sage-deep)]/90"
+                    className="w-full bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
                   >
                     <Link href="#contact">Free discovery call</Link>
                   </Button>

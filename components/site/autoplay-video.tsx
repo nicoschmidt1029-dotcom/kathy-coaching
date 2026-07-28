@@ -83,7 +83,7 @@ export function AutoplayVideo({
           className="absolute inset-0 flex items-center justify-center bg-black/15 transition-colors duration-200 hover:bg-black/25"
           aria-label={`Play ${ariaLabel} with sound`}
         >
-          <span className="flex size-11 items-center justify-center rounded-full bg-white/95 text-[var(--sage-deep)] shadow-md ring-1 ring-black/5 backdrop-blur-sm transition-transform duration-200 hover:scale-105">
+          <span className="flex size-11 items-center justify-center rounded-full bg-white/95 text-[var(--plum)] shadow-md ring-1 ring-black/5 backdrop-blur-sm transition-transform duration-200 hover:scale-105">
             <Play className="ml-0.5 size-4" aria-hidden />
           </span>
         </button>
