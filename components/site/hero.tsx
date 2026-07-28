@@ -109,10 +109,6 @@ export function Hero() {
               <span className="size-1.5 rounded-full bg-[var(--clay)]" />
               Certified Nutrition Coach
             </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-[var(--clay)]" />
-              5+ yrs mentoring
-            </span>
           </div>
         </div>
       </div>

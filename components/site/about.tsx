@@ -6,7 +6,6 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
 const QUALS = [
   "Certified Personal Trainer",
   "Certified Nutrition Coach",
-  "Five years in mentoring & discipleship",
 ];
 
 export function About() {
