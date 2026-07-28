@@ -1,29 +1,17 @@
-import { Header } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
+import { ApproachTeaser } from "@/components/site/approach-teaser";
 import { SpotlightTestimonial } from "@/components/site/spotlight-testimonial";
-import { About } from "@/components/site/about";
-import { Approach } from "@/components/site/approach";
-import { Programs } from "@/components/site/programs";
-import { Testimonials } from "@/components/site/testimonials";
-import { Faq } from "@/components/site/faq";
-import { Contact } from "@/components/site/contact";
-import { Footer } from "@/components/site/footer";
+import { ProgramsTeaser } from "@/components/site/programs-teaser";
+import { HomeFinalCta } from "@/components/site/home-final-cta";
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
-        <Hero />
-        <SpotlightTestimonial />
-        <About />
-        <Approach />
-        <Programs />
-        <Testimonials />
-        <Faq />
-        <Contact />
-      </main>
-      <Footer />
+      <Hero />
+      <ApproachTeaser />
+      <SpotlightTestimonial />
+      <ProgramsTeaser />
+      <HomeFinalCta />
     </>
   );
 }

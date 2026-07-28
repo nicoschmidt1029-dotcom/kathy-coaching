@@ -224,7 +224,7 @@ export function Programs() {
             size="lg"
             className="group/button h-12 bg-[var(--plum)] px-6 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
           >
-            <Link href="#contact">
+            <Link href="/kontakt">
               Book a free discovery call
               <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
             </Link>

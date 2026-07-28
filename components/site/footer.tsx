@@ -29,7 +29,7 @@ export function Footer() {
               Privacy
             </Link>
             <Link
-              href="#contact"
+              href="/kontakt"
               className="transition-colors hover:text-foreground"
             >
               Contact

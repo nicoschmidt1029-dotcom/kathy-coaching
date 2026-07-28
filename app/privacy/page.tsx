@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { Header } from "@/components/site/header";
-import { Footer } from "@/components/site/footer";
 import { LegalShell, Todo } from "@/components/site/legal-shell";
 
 export const metadata: Metadata = {
@@ -13,9 +11,7 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <>
-      <Header />
-      <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
-        <LegalShell
+      <LegalShell
           eyebrow="Privacy notice"
           title="How I handle your data."
           updated="26 July 2026"
@@ -143,8 +139,6 @@ export default function PrivacyPage() {
             communicated to existing clients directly.
           </p>
         </LegalShell>
-      </main>
-      <Footer />
     </>
   );
 }

@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Header } from "@/components/site/header";
-import { Footer } from "@/components/site/footer";
 
 export const metadata: Metadata = {
   title: "Not found",
@@ -13,12 +11,8 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <>
-      <Header />
-      <main
-        id="main"
-        tabIndex={-1}
-        className="relative flex flex-1 items-center overflow-hidden focus:outline-none"
+      <div
+        className="relative flex flex-1 items-center overflow-hidden"
       >
         <div
           aria-hidden
@@ -81,8 +75,6 @@ export default function NotFound() {
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
   );
 }

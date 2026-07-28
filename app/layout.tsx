@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/site/header";
+import { Footer } from "@/components/site/footer";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -59,7 +61,15 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        {children}
+        <Header />
+        <main
+          id="main"
+          tabIndex={-1}
+          className="flex-1 focus:outline-none"
+        >
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
