@@ -54,7 +54,7 @@ export function Placeholder({
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
-          <TempPill credit={credit} slot={label} />
+          {credit && <TempPill credit={credit} slot={label} />}
         </>
       ) : (
         <>

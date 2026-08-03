@@ -1,40 +1,45 @@
 /**
- * STOCK PLACEHOLDER assets — MUST BE REPLACED WITH KATHY'S OWN CONTENT
- * BEFORE LAUNCH.
+ * Mixed media source of truth: some slots now hold Kathy's real assets
+ * (hero video/poster, Train approach card, About portrait), others are
+ * still curated Unsplash/Pexels stock waiting on real content.
  *
- * These are curated stock (Unsplash / Pexels) picked purely for atmospheric
- * neutrality while Kathy's real photography and video footage are being
- * produced. They are hotlinked (images) or self-hosted from /public/videos
- * (video) and MUST NOT ship to a public launch as-is.
+ * The "TEMP · slot · source" pill is rendered ONLY for entries that carry
+ * a `credit` — real Kathy assets omit `credit` and render clean.
  *
- * A visible "TEMP · slot · source" pill is rendered on top of every stock
- * asset so nobody mistakes them for final content.
+ * To replace a remaining stock slot:
+ *   1. Drop the real file into `/public/images/kathy/` (or similar)
+ *   2. Swap the `url` here to the local path
+ *   3. Delete the `credit` field so the TEMP pill disappears
  *
- * To replace:
- *   1. Preferred: put the real asset in `/public/...` and swap the `url`
- *      here to the local path.
- *   2. Or set an entry to `null` and the neutral styled placeholder
- *      returns on the page with an "add real photo" label.
+ * Or set an entry to `null` for the neutral styled placeholder.
  *
- * Slots kept explicitly `null` on request (neutral placeholder stays):
- *   - about (Kathy portrait)
- *   - spotlight (Lena portrait)
- *   - testimonial before/after (Marcus, Hannah, Sophie)
+ * Slots currently on real Kathy content:
+ *   - hero        →  /images/kathy/kathy-01.jpg (poster) + kathy-video-1.mp4
+ *   - approachTrain → /images/kathy/kathy-02.jpg
+ *   - about        → /images/kathy/kathy-05.jpg
+ *
+ * Slots still on stock (waiting on real content):
+ *   - heroMovementDetail (Unsplash — currently unused in hero markup)
+ *   - approachNourish, approachSoul (Unsplash atmospheric shots)
+ *
+ * Slots kept explicitly `null`:
+ *   - spotlight  (Lena portrait — neutral placeholder stays until real photo)
  */
 
 export type TempPhoto = {
   url: string;
   alt: string;
-  credit: string;
+  /** When present, a TEMP pill is overlaid — meant for stock/placeholder assets. */
+  credit?: string;
 } | null;
 
 export type TempVideo = {
   src: string;
   poster?: string;
-  credit: string;
+  /** Same convention: pill only appears if this is set. */
+  credit?: string;
 } | null;
 
-// STOCK PLACEHOLDER – replace with Kathy's own content before launch
 export const TEMP_PHOTOS: Record<
   | "hero"
   | "heroMovementDetail"
@@ -45,11 +50,10 @@ export const TEMP_PHOTOS: Record<
   | "about",
   TempPhoto
 > = {
-  // STOCK PLACEHOLDER – replace with Kathy's own content before launch
+  // Kathy's own — side-profile seated on the running track
   hero: {
-    url: "https://images.unsplash.com/photo-1751456357787-fe644b095838?w=1600&q=80&auto=format&fit=crop",
-    alt: "TEMP: woman performing a barbell deadlift in a gym — will be replaced with a hero photo of Kathy",
-    credit: "Unsplash",
+    url: "/images/kathy/kathy-01.jpg",
+    alt: "Kathy sitting on a running track, side profile",
   },
   // STOCK PLACEHOLDER – replace with Kathy's own content before launch
   heroMovementDetail: {
@@ -57,14 +61,10 @@ export const TEMP_PHOTOS: Record<
     alt: "TEMP: close-up of hands gripping dumbbells, no face — atmospheric detail",
     credit: "Unsplash",
   },
-  // STOCK PLACEHOLDER – replace with Kathy's own content before launch
-  // Same URL as `hero` on purpose — same atmospheric training reference
-  // in both the hero background and the Train approach card until Kathy's
-  // own photography arrives.
+  // Kathy's own — back turned, seated leaning on arms, same session as hero
   approachTrain: {
-    url: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=900&q=80&auto=format&fit=crop",
-    alt: "TEMP: barbell overhead press training — will be replaced with a photo of Kathy",
-    credit: "Unsplash",
+    url: "/images/kathy/kathy-02.jpg",
+    alt: "Kathy on the track, back to camera, seated pause between sets",
   },
   // STOCK PLACEHOLDER – replace with Kathy's own content before launch
   approachNourish: {
@@ -78,20 +78,19 @@ export const TEMP_PHOTOS: Record<
     alt: "TEMP: candlelight and open book — quiet contemplative atmosphere",
     credit: "Unsplash",
   },
-  // Kept null on request — neutral placeholder stays until real portrait arrives
+  // Kept null — neutral spotlight placeholder stays until Lena provides one
   spotlight: null,
-  about: null,
+  // Kathy's own — face close-up (indoor gym setting; palette differs from
+  // the outdoor track shots but this is the only real head-on portrait)
+  about: {
+    url: "/images/kathy/kathy-05.jpg",
+    alt: "Portrait of Kathy",
+  },
 };
 
-// STOCK PLACEHOLDER – replace with Kathy's own video before launch
-// Pexels: "A Woman Lifting A Barbell" by cottonbro studio
-// (pexels.com/video/a-woman-lifting-a-barbell-7674502/). Self-hosted from
-// /public/videos so we don't depend on Pexels CDN availability. UHD 2732x1440,
-// ~18 MB — Kathy's own footage should replace this at a smaller optimised
-// size (target ≤ 5 MB, ~1080p h.264 with CRF 24 or an AV1/HEVC equivalent).
+// Kathy's own hero video — self-hosted from /public/images/kathy/
+// (~2.3 MB, mp4). The still hero photo above doubles as the poster frame.
 export const TEMP_HERO_VIDEO: TempVideo = {
-  src: "/videos/hero-placeholder.mp4",
-  poster:
-    "https://images.unsplash.com/photo-1751456357787-fe644b095838?w=1600&q=80&auto=format&fit=crop",
-  credit: "Pexels · cottonbro studio",
+  src: "/images/kathy/kathy-video-1.mp4",
+  poster: "/images/kathy/kathy-01.jpg",
 };

@@ -10,7 +10,7 @@ type Pillar = {
   title: string;
   body: string;
   Icon: LucideIcon;
-  image?: { url: string; alt: string; credit: string; slot: string };
+  image?: { url: string; alt: string; credit?: string; slot: string };
 };
 
 const PILLARS: Pillar[] = [
@@ -93,14 +93,16 @@ export function Approach() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover"
                     />
-                    <div className="pointer-events-none absolute right-2 top-2 flex max-w-[calc(100%-1rem)] items-center gap-1.5 rounded-md bg-black/55 px-2 py-1 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white/95 backdrop-blur-sm">
-                      <span className="rounded-sm bg-white/20 px-1 py-px text-[0.55rem] tracking-widest">
-                        TEMP
-                      </span>
-                      <span className="truncate">
-                        {image.slot} · {image.credit}
-                      </span>
-                    </div>
+                    {image.credit && (
+                      <div className="pointer-events-none absolute right-2 top-2 flex max-w-[calc(100%-1rem)] items-center gap-1.5 rounded-md bg-black/55 px-2 py-1 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white/95 backdrop-blur-sm">
+                        <span className="rounded-sm bg-white/20 px-1 py-px text-[0.55rem] tracking-widest">
+                          TEMP
+                        </span>
+                        <span className="truncate">
+                          {image.slot} · {image.credit}
+                        </span>
+                      </div>
+                    )}
                   </>
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[var(--sand)] to-[var(--sand)]/50">
