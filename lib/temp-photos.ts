@@ -1,10 +1,10 @@
 /**
- * Mixed media source of truth: some slots now hold Kathy's real assets
+ * Mixed media source of truth: some slots now hold Katie's real assets
  * (hero video/poster, Train approach card, About portrait), others are
  * still curated Unsplash/Pexels stock waiting on real content.
  *
  * The "TEMP · slot · source" pill is rendered ONLY for entries that carry
- * a `credit` — real Kathy assets omit `credit` and render clean.
+ * a `credit` — real Katie assets omit `credit` and render clean.
  *
  * To replace a remaining stock slot:
  *   1. Drop the real file into `/public/images/kathy/` (or similar)
@@ -13,9 +13,9 @@
  *
  * Or set an entry to `null` for the neutral styled placeholder.
  *
- * Slots currently on real Kathy content:
- *   - hero        →  /images/kathy/kathy-01.jpg (poster) + kathy-video-2.mp4
- *   - heroMovementDetail → /images/kathy/kathy-04.jpg (rendered top-right in hero)
+ * Slots currently on real Katie content:
+ *   - hero        →  /images/kathy/kathy-blazer.jpg (still; hero video disabled)
+ *   - heroMovementDetail → /images/kathy/kathy-01.jpg (track profile, top-right of hero)
  *   - approachTrain → /images/kathy/kathy-06.jpg (gym, blue top)
  *   - about        → /images/kathy/kathy-07.jpg (gym, purple top, mid-stretch)
  *
@@ -25,10 +25,14 @@
  * Slots kept explicitly `null`:
  *   - spotlight  (Lena portrait — neutral placeholder stays until real photo)
  *
+ * Unused but kept in repo:
+ *   - kathy-02.jpg (track, back view), kathy-04.jpg (track, pointing),
+ *     kathy-video-2.mp4 (real Katie clip — reusable later)
+ *
  * Do NOT use:
  *   - kathy-05.jpg       (too-tight selfie)
  *   - kathy-03.jpg       (phone video-editor screenshot — has UI chrome)
- *   - kathy-video-1.mp4  (a DIFFERENT person, not Kathy — removed from repo)
+ *   - kathy-video-1.mp4  (a DIFFERENT person, not Katie — removed from repo)
  */
 
 export type TempPhoto = {
@@ -55,28 +59,28 @@ export const TEMP_PHOTOS: Record<
   | "about",
   TempPhoto
 > = {
-  // Kathy's own — side-profile seated on the running track
+  // Katie's own — editorial portrait: beige blazer, leaning on a sunlit wall
   hero: {
-    url: "/images/kathy/kathy-01.jpg",
-    alt: "Kathy sitting on a running track, side profile",
+    url: "/images/kathy/kathy-blazer.jpg",
+    alt: "Katie in a beige blazer, leaning against a sunlit wall, looking to the side",
   },
-  // Kathy's own — track, seated side profile, arm extended in a pointing gesture
+  // Katie's own — running track, seated side profile (moved from the hero slot)
   heroMovementDetail: {
-    url: "/images/kathy/kathy-04.jpg",
-    alt: "Kathy seated on the running track, extending her arm in a dynamic gesture",
+    url: "/images/kathy/kathy-01.jpg",
+    alt: "Katie sitting on a running track, side profile",
   },
-  // Kathy's own — gym, blue top, crouched mid-workout (Train-the-body thread)
+  // Katie's own — gym, blue top, crouched mid-workout (Train-the-body thread)
   approachTrain: {
     url: "/images/kathy/kathy-06.jpg",
-    alt: "Kathy in the gym in a blue top, crouched mid-workout",
+    alt: "Katie in the gym in a blue top, crouched mid-workout",
   },
-  // STOCK PLACEHOLDER – replace with Kathy's own content before launch
+  // STOCK PLACEHOLDER – replace with Katie's own content before launch
   approachNourish: {
     url: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=80&auto=format&fit=crop",
     alt: "TEMP: buddha bowl with vegetables — atmospheric food shot for nutrition",
     credit: "Unsplash",
   },
-  // STOCK PLACEHOLDER – replace with Kathy's own content before launch
+  // STOCK PLACEHOLDER – replace with Katie's own content before launch
   approachSoul: {
     url: "https://images.unsplash.com/photo-1604745372175-27daa24a0a0e?w=900&q=80&auto=format&fit=crop",
     alt: "TEMP: candlelight and open book — quiet contemplative atmosphere",
@@ -84,19 +88,15 @@ export const TEMP_PHOTOS: Record<
   },
   // Kept null — neutral spotlight placeholder stays until Lena provides one
   spotlight: null,
-  // Kathy's own — gym, purple top, stretching forward on the mat, looking
+  // Katie's own — gym, purple top, stretching forward on the mat, looking
   // to camera. More distance / less selfie than the tight kathy-05 crop.
   about: {
     url: "/images/kathy/kathy-07.jpg",
-    alt: "Portrait of Kathy stretching in the gym, looking toward the camera",
+    alt: "Portrait of Katie stretching in the gym, looking toward the camera",
   },
 };
 
-// Kathy's own hero video — self-hosted from /public/images/kathy/
-// (~1.4 MB, 478x850 portrait). object-cover center-crops it into the wide
-// hero; the still hero photo above doubles as the poster frame.
-// NB: kathy-video-1.mp4 showed a DIFFERENT person and was removed — do not use it.
-export const TEMP_HERO_VIDEO: TempVideo = {
-  src: "/images/kathy/kathy-video-2.mp4",
-  poster: "/images/kathy/kathy-01.jpg",
-};
+// Hero video disabled — the hero now uses the still blazer portrait above.
+// kathy-video-2.mp4 (real Katie, 478x850) stays in the repo for later reuse;
+// kathy-video-1.mp4 was a DIFFERENT person and was removed.
+export const TEMP_HERO_VIDEO: TempVideo = null;

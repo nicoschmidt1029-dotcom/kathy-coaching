@@ -8,11 +8,12 @@ import { TEMP_PHOTOS, TEMP_HERO_VIDEO } from "@/lib/temp-photos";
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* STOCK PLACEHOLDER – replace with Kathy's own content before launch */}
+      {/* Hero still: Katie's editorial blazer portrait (see lib/temp-photos.ts) */}
       <HeroBackgroundVideo
         src={TEMP_HERO_VIDEO?.src}
         poster={TEMP_HERO_VIDEO?.poster ?? TEMP_PHOTOS.hero?.url}
         ariaLabel="Hero background — training and nature loop"
+        objectPosition="50% 22%"
       />
 
       {/* Darkening for legibility. Two stacked gradients so the text side
@@ -56,7 +57,7 @@ export function Hero() {
               at display scale so the site identifies itself instantly. */}
           <div className="animate-rise mb-8 flex items-baseline gap-3.5 md:mb-10">
             <span className="font-display text-[clamp(2rem,4.5vw,3rem)] leading-none text-[var(--primary-foreground)]">
-              <span className="italic">K</span>athy
+              <span className="italic">K</span>atie
             </span>
             <span className="font-mono text-[0.72rem] tracking-[0.3em] uppercase text-[var(--clay)] md:text-[0.78rem]">
               Coaching

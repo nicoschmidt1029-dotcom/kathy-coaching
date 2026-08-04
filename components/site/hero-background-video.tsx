@@ -10,6 +10,8 @@ type Props = {
   poster?: string;
   className?: string;
   ariaLabel?: string;
+  /** CSS object-position for the poster/video (e.g. "50% 20%" to keep a face in frame). */
+  objectPosition?: string;
 };
 
 /**
@@ -22,6 +24,7 @@ export function HeroBackgroundVideo({
   poster,
   className,
   ariaLabel = "Background loop",
+  objectPosition,
 }: Props) {
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = React.useState(true);
@@ -56,6 +59,7 @@ export function HeroBackgroundVideo({
           priority
           sizes="100vw"
           className="object-cover"
+          style={objectPosition ? { objectPosition } : undefined}
         />
       )}
 
@@ -69,6 +73,7 @@ export function HeroBackgroundVideo({
             "absolute inset-0 h-full w-full object-cover transition-opacity duration-700",
             videoPlaying ? "opacity-100" : "opacity-0"
           )}
+          style={objectPosition ? { objectPosition } : undefined}
           autoPlay
           muted
           loop
