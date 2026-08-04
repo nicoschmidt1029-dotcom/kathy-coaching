@@ -2,24 +2,35 @@
 
 Source of truth: `lib/temp-photos.ts`. Real assets live in `public/images/kathy/`.
 
-## Current slot mapping (2026-08-04)
+## Current slot mapping
 
-| Slot | File | Notes |
-|------|------|-------|
-| `hero` (poster) | `kathy-01.jpg` | track, side profile seated |
-| `TEMP_HERO_VIDEO` | `kathy-video-1.mp4` | track, poster = kathy-01 |
-| `approachTrain` (Train-the-body) | `kathy-07.jpg` | gym, mid-stretch on mat — swapped in from kathy-02 |
-| `heroMovementDetail` (Movement-Detail) | `kathy-04.jpg` | track, pointing gesture — swapped in from Unsplash stock |
-| `about` | `kathy-05.jpg` | gym portrait, head-on |
-| `approachNourish` | Unsplash stock | still placeholder (nutrition) |
-| `approachSoul` | Unsplash stock | still placeholder (contemplative) |
-| `spotlight` | `null` | neutral placeholder |
+| Slot | File | Where | Notes |
+|------|------|-------|-------|
+| `hero` (poster) | `kathy-01.jpg` | home hero | track, side profile seated |
+| `TEMP_HERO_VIDEO` | `kathy-video-2.mp4` | home hero | 478×850 portrait, center-cropped |
+| `heroMovementDetail` | `kathy-04.jpg` | home hero (top-right) | track, pointing gesture |
+| `approachTrain` (Train the body) | `kathy-06.jpg` | `/about` | gym, blue top |
+| `about` ("Meet Kathy") | `kathy-07.jpg` | `/about` | gym, purple top, mid-stretch |
+| `approachNourish` | Unsplash stock | `/about` | placeholder (nutrition) |
+| `approachSoul` | Unsplash stock | `/about` | placeholder (contemplative) |
+| `spotlight` | `null` | `/testimonials` | neutral placeholder |
 
-## Open follow-ups
+## Do NOT use
 
-- **Movement-Detail** stays a **photo** for now. The `heroMovementDetail` slot is
-  defined but **not yet rendered** in `components/site/hero.tsx` — making it visible
-  is a separate, larger change (deferred). Later option: swap to `kathy-video-2.mp4`.
-- `kathy-03.jpg` is a phone video-editor **screenshot** (UI chrome visible) — do NOT
-  use it anywhere.
-- `kathy-04.jpg`/`kathy-01.jpg` and `kathy-05.jpg`/`kathy-06.jpg` are near-duplicates.
+- `kathy-05.jpg` — too-tight selfie.
+- `kathy-03.jpg` — phone video-editor screenshot (UI chrome visible).
+- `kathy-video-1.mp4` — a **different person**, not Kathy. Removed from the repo.
+
+## Unused but usable
+
+- `kathy-02.jpg` — track, back to camera. Alt hero still, or a section accent.
+
+## Missing / to be supplied by Kathy
+
+- **Higher-res hero video.** `kathy-video-2.mp4` is only 478 px wide; upscaled to a
+  full-bleed hero it stays soft. A landscape or higher-resolution clip would sharpen it.
+- **A real head-on portrait** for "Meet Kathy" if `kathy-07` (side-on stretch) isn't
+  ideal — direct eye contact, some breathing room.
+- **Nutrition + faith imagery** to replace the two Unsplash stock threads
+  (`approachNourish`, `approachSoul`) on `/about`.
+- **Real client photos** for the `spotlight` testimonial (currently `null`).

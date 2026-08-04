@@ -14,16 +14,21 @@
  * Or set an entry to `null` for the neutral styled placeholder.
  *
  * Slots currently on real Kathy content:
- *   - hero        →  /images/kathy/kathy-01.jpg (poster) + kathy-video-1.mp4
- *   - approachTrain → /images/kathy/kathy-07.jpg (gym stretch)
- *   - heroMovementDetail → /images/kathy/kathy-04.jpg (still unused in hero markup)
- *   - about        → /images/kathy/kathy-05.jpg
+ *   - hero        →  /images/kathy/kathy-01.jpg (poster) + kathy-video-2.mp4
+ *   - heroMovementDetail → /images/kathy/kathy-04.jpg (rendered top-right in hero)
+ *   - approachTrain → /images/kathy/kathy-06.jpg (gym, blue top)
+ *   - about        → /images/kathy/kathy-07.jpg (gym, purple top, mid-stretch)
  *
  * Slots still on stock (waiting on real content):
  *   - approachNourish, approachSoul (Unsplash atmospheric shots)
  *
  * Slots kept explicitly `null`:
  *   - spotlight  (Lena portrait — neutral placeholder stays until real photo)
+ *
+ * Do NOT use:
+ *   - kathy-05.jpg       (too-tight selfie)
+ *   - kathy-03.jpg       (phone video-editor screenshot — has UI chrome)
+ *   - kathy-video-1.mp4  (a DIFFERENT person, not Kathy — removed from repo)
  */
 
 export type TempPhoto = {
@@ -60,10 +65,10 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-04.jpg",
     alt: "Kathy seated on the running track, extending her arm in a dynamic gesture",
   },
-  // Kathy's own — gym, mid-stretch on the mat, looking to camera
+  // Kathy's own — gym, blue top, crouched mid-workout (Train-the-body thread)
   approachTrain: {
-    url: "/images/kathy/kathy-07.jpg",
-    alt: "Kathy stretching forward on a mat in the gym, focused on the camera",
+    url: "/images/kathy/kathy-06.jpg",
+    alt: "Kathy in the gym in a blue top, crouched mid-workout",
   },
   // STOCK PLACEHOLDER – replace with Kathy's own content before launch
   approachNourish: {
@@ -79,17 +84,19 @@ export const TEMP_PHOTOS: Record<
   },
   // Kept null — neutral spotlight placeholder stays until Lena provides one
   spotlight: null,
-  // Kathy's own — face close-up (indoor gym setting; palette differs from
-  // the outdoor track shots but this is the only real head-on portrait)
+  // Kathy's own — gym, purple top, stretching forward on the mat, looking
+  // to camera. More distance / less selfie than the tight kathy-05 crop.
   about: {
-    url: "/images/kathy/kathy-05.jpg",
-    alt: "Portrait of Kathy",
+    url: "/images/kathy/kathy-07.jpg",
+    alt: "Portrait of Kathy stretching in the gym, looking toward the camera",
   },
 };
 
 // Kathy's own hero video — self-hosted from /public/images/kathy/
-// (~2.3 MB, mp4). The still hero photo above doubles as the poster frame.
+// (~1.4 MB, 478x850 portrait). object-cover center-crops it into the wide
+// hero; the still hero photo above doubles as the poster frame.
+// NB: kathy-video-1.mp4 showed a DIFFERENT person and was removed — do not use it.
 export const TEMP_HERO_VIDEO: TempVideo = {
-  src: "/images/kathy/kathy-video-1.mp4",
+  src: "/images/kathy/kathy-video-2.mp4",
   poster: "/images/kathy/kathy-01.jpg",
 };
