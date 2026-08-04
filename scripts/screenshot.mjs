@@ -7,7 +7,8 @@
  *
  * Usage:
  *   npm run screenshot                       # "/" at lg + xl
- *   npm run screenshot -- /about /programme  # specific routes
+ *   npm run screenshot -- about programme    # specific routes (leading slash optional;
+ *                                            #   omit it on Git Bash to avoid path munging)
  *   SHOT_URL=http://localhost:3111 npm run screenshot
  *   SHOT_WIDTHS=390,1024,1440 npm run screenshot -- /
  *
@@ -28,10 +29,11 @@ const OUT = ".shots";
 
 const slug = (route) =>
   route.replace(/^\/+|\/+$/g, "").replace(/\//g, "-") || "home";
+const toUrl = (route) => BASE + (route.startsWith("/") ? route : "/" + route);
 
 async function ensureReachable() {
   try {
-    const res = await fetch(BASE + routes[0], { method: "HEAD" });
+    const res = await fetch(toUrl(routes[0]), { method: "HEAD" });
     if (!res.ok && res.status >= 500) throw new Error(`HTTP ${res.status}`);
   } catch (err) {
     console.error(
@@ -52,7 +54,7 @@ try {
       deviceScaleFactor: 2,
     });
     for (const route of routes) {
-      const url = BASE + (route.startsWith("/") ? route : "/" + route);
+      const url = toUrl(route);
       await page.goto(url, { waitUntil: "networkidle", timeout: 60_000 });
       await sleep(1000); // let entrance animations settle
       const file = `${OUT}/${slug(route)}-${width}.png`;
