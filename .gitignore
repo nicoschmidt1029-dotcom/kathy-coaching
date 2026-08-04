@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# screenshots (npm run screenshot)
+/.shots/
+
 # next.js
 /.next/
 /out/
