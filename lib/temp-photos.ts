@@ -15,11 +15,11 @@
  *
  * Slots currently on real Kathy content:
  *   - hero        →  /images/kathy/kathy-01.jpg (poster) + kathy-video-1.mp4
- *   - approachTrain → /images/kathy/kathy-02.jpg
+ *   - approachTrain → /images/kathy/kathy-07.jpg (gym stretch)
+ *   - heroMovementDetail → /images/kathy/kathy-04.jpg (still unused in hero markup)
  *   - about        → /images/kathy/kathy-05.jpg
  *
  * Slots still on stock (waiting on real content):
- *   - heroMovementDetail (Unsplash — currently unused in hero markup)
  *   - approachNourish, approachSoul (Unsplash atmospheric shots)
  *
  * Slots kept explicitly `null`:
@@ -55,16 +55,15 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-01.jpg",
     alt: "Kathy sitting on a running track, side profile",
   },
-  // STOCK PLACEHOLDER – replace with Kathy's own content before launch
+  // Kathy's own — track, seated side profile, arm extended in a pointing gesture
   heroMovementDetail: {
-    url: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80&auto=format&fit=crop",
-    alt: "TEMP: close-up of hands gripping dumbbells, no face — atmospheric detail",
-    credit: "Unsplash",
+    url: "/images/kathy/kathy-04.jpg",
+    alt: "Kathy seated on the running track, extending her arm in a dynamic gesture",
   },
-  // Kathy's own — back turned, seated leaning on arms, same session as hero
+  // Kathy's own — gym, mid-stretch on the mat, looking to camera
   approachTrain: {
-    url: "/images/kathy/kathy-02.jpg",
-    alt: "Kathy on the track, back to camera, seated pause between sets",
+    url: "/images/kathy/kathy-07.jpg",
+    alt: "Kathy stretching forward on a mat in the gym, focused on the camera",
   },
   // STOCK PLACEHOLDER – replace with Kathy's own content before launch
   approachNourish: {
