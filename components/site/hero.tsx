@@ -1,8 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HeroBackgroundVideo } from "./hero-background-video";
-// STOCK PLACEHOLDER – replace with Kathy's own content before launch
 import { TEMP_PHOTOS, TEMP_HERO_VIDEO } from "@/lib/temp-photos";
 
 export function Hero() {
@@ -26,6 +26,29 @@ export function Hero() {
         aria-hidden
         className="absolute inset-0 bg-gradient-to-r from-[var(--foreground)]/50 via-[var(--foreground)]/15 to-transparent"
       />
+
+      {/* Movement detail — a framed still peeking into the hero's top-right,
+          the area the gradients intentionally leave lighter. Desktop only and
+          non-interactive, so it never competes with the headline (bottom-left). */}
+      {TEMP_PHOTOS.heroMovementDetail && (
+        <div
+          className="animate-rise pointer-events-none absolute top-24 right-6 z-10 hidden w-[clamp(180px,17vw,250px)] lg:block xl:right-12"
+          style={{ animationDelay: "520ms" }}
+        >
+          <div className="relative aspect-[3/4] rotate-[2.5deg] overflow-hidden rounded-[3px] border border-[var(--primary-foreground)]/20 shadow-2xl shadow-black/40">
+            <Image
+              src={TEMP_PHOTOS.heroMovementDetail.url}
+              alt={TEMP_PHOTOS.heroMovementDetail.alt}
+              fill
+              sizes="250px"
+              className="object-cover"
+            />
+          </div>
+          <span className="mt-2 block text-right font-mono text-[0.66rem] tracking-[0.24em] uppercase text-[var(--primary-foreground)]/70">
+            In motion
+          </span>
+        </div>
+      )}
 
       <div className="relative container-page flex min-h-[680px] flex-col justify-end py-16 md:min-h-[800px] md:py-24">
         <div className="max-w-2xl">
