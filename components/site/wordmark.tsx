@@ -11,7 +11,7 @@ export function Wordmark({ className, onDark = false }: Props) {
   return (
     <Link
       href="/"
-      aria-label="Kathy Coaching — home"
+      aria-label="Katie Coaching — home"
       className={cn(
         "group inline-flex items-center gap-2.5 leading-none",
         className
@@ -45,7 +45,7 @@ export function Wordmark({ className, onDark = false }: Props) {
         )}
       >
         <span className="font-display text-lg tracking-tight md:text-xl">
-          <span className="italic">K</span>athy
+          <span className="italic">K</span>atie
         </span>
         <span
           className={cn(

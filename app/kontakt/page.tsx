@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a free 30-minute discovery call with Kathy. No commitment — just a real conversation about whether coaching together is a fit.",
+    "Book a free 30-minute discovery call with Katie. No commitment — just a real conversation about whether coaching together is a fit.",
 };
 
 function pick<T extends string>(

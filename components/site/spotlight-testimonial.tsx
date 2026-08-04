@@ -36,7 +36,7 @@ export function SpotlightTestimonial() {
               I came in wanting to lose weight. Six weeks later, the weight
               had shifted — but the bigger thing was quieter. For the first
               time in years I looked in the mirror without doing math.
-              Kathy didn&rsquo;t sell me a program; she walked with me
+              Katie didn&rsquo;t sell me a program; she walked with me
               through one.
             </blockquote>
 

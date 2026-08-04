@@ -16,7 +16,7 @@ export function About() {
           <div className="md:sticky md:top-28">
             {TEMP_PHOTOS.about ? (
               <Placeholder
-                label="Kathy portrait"
+                label="Katie portrait"
                 aspect="portrait"
                 tone="sand"
                 src={TEMP_PHOTOS.about.url}
@@ -24,38 +24,31 @@ export function About() {
                 credit={TEMP_PHOTOS.about.credit}
               />
             ) : (
-              <PortraitPlaceholder label="Kathy portrait" />
+              <PortraitPlaceholder label="Katie portrait" />
             )}
             <p className="caption mt-4">
-              Kathy · personal trainer · nutrition coach
+              Katie · personal trainer · nutrition coach
             </p>
           </div>
         </div>
 
         <div className="md:col-span-7">
-          <p className="eyebrow">Meet Kathy</p>
+          <p className="eyebrow">Meet Katie</p>
           <h2 className="mt-5 max-w-[20ch] font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal">
             Strength, nourishment, and a quiet kind of confidence.
           </h2>
 
           <div className="mt-8 space-y-5 text-pretty text-foreground/75 sm:text-lg sm:leading-[1.7]">
             <p>
-              I&rsquo;m Kathy — a certified personal trainer and nutrition
-              coach, and a Christian. I spent years chasing what &ldquo;fit&rdquo;
-              was supposed to look like, and missed the gentler truth:
-              <em className="not-italic font-display"> my body was never the problem. The way I saw it was.</em>
+              We all have a calling in life.{" "}
+              <em className="not-italic font-display">My calling is to help people.</em>
             </p>
             <p>
-              Today I help people train with purpose, eat without fear, and
-              rediscover their identity in Jesus. Not as three separate
-              projects — as one whole person, finally moving in the same
-              direction.
-            </p>
-            <p className="text-foreground/65">
-              Most clients come for a body that feels stronger. Many stay
-              because something quieter shifts: a relationship with food
-              without guilt, and a sense of worth that doesn&rsquo;t depend on
-              what the scale says.
+              After my study at SNF Academy, where I studied Personal Trainer
+              and Nutrition coach, and graduating from Awakening School of
+              Ministry, I help people move forward in their lives. With the
+              right diet, the right mindset, and the right exercise.{" "}
+              <em className="not-italic font-display">At any age.</em>
             </p>
           </div>
 

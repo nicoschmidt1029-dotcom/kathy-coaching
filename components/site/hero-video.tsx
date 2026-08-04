@@ -21,7 +21,7 @@ export function HeroVideo({
   posterCredit,
   videoCredit,
   className,
-  ariaLabel = "Introduction video from Kathy",
+  ariaLabel = "Introduction video from Katie",
 }: Props) {
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = React.useState(true);

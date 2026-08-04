@@ -6,7 +6,7 @@ import { HomeFinalCta } from "@/components/site/home-final-cta";
 export const metadata: Metadata = {
   title: "Testimonials",
   description:
-    "What clients say about six weeks with Kathy — real names, real programs, what actually changed.",
+    "What clients say about six weeks with Katie — real names, real programs, what actually changed.",
 };
 
 export default function TestimonialsPage() {

@@ -3,7 +3,7 @@ import { LegalShell, Todo } from "@/components/site/legal-shell";
 
 export const metadata: Metadata = {
   title: "Imprint",
-  description: "Legal notice (Impressum) for Kathy Coaching, Ettingen (BL), Switzerland.",
+  description: "Legal notice (Impressum) for Katie Coaching, Ettingen (BL), Switzerland.",
   robots: { index: true, follow: true },
 };
 
@@ -76,7 +76,7 @@ export default function ImprintPage() {
         <h2>Dispute resolution</h2>
         <p>
           There is no obligation under Swiss law to participate in a
-          consumer arbitration procedure. Kathy is not, at this time,
+          consumer arbitration procedure. Katie is not, at this time,
           willing to participate in one either. EU-resident visitors may
           use the European Commission&rsquo;s online dispute resolution
           platform at{" "}
