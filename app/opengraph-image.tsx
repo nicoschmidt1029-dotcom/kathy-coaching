@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { SITE_HOST } from "@/lib/site-url";
 
 export const alt =
   "Katie Coaching — Faith-rooted training, nutrition & Christian mentoring";
@@ -165,7 +166,7 @@ export default async function Image() {
               fontStyle: "normal",
             }}
           >
-            katarina-coaching.vercel.app
+            {SITE_HOST}
           </span>
         </div>
       </div>

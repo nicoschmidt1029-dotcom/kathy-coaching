@@ -3,6 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
+import { SITE_URL } from "@/lib/site-url";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -24,9 +25,7 @@ export const metadata: Metadata = {
   },
   description:
     "Holistic coaching for women — and openly for men too. Personal training, nutrition guidance, and Christian mentoring with Katie Coaching, walked together over six weeks.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://katarina-coaching.vercel.app"
-  ),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     title: "Katie Coaching — Faith-rooted training, nutrition & mentoring",
     description:
