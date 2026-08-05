@@ -38,9 +38,7 @@ export function Testimonials() {
       <div className="container-page">
         <div className="max-w-3xl">
           <p className="eyebrow">{t("eyebrow")}</p>
-          <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance">
-            {t("title")}
-          </h2>
+          <h2 className="section-title">{t("title")}</h2>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-7">
@@ -49,7 +47,7 @@ export function Testimonials() {
             return (
               <figure
                 key={item.key}
-                className="group flex flex-col rounded-2xl bg-card p-6 ring-1 ring-foreground/[0.07] transition-shadow duration-300 hover:shadow-[0_24px_50px_-30px_rgba(60,40,52,0.35)]"
+                className="card-surface card-pad group flex flex-col transition-shadow duration-300 hover:shadow-[0_24px_50px_-30px_rgba(60,40,52,0.35)]"
                 style={{
                   transform: i === 1 ? "translateY(-12px)" : undefined,
                 }}

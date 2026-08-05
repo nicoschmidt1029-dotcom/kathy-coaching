@@ -308,6 +308,73 @@
     padding-inline: clamp(1.25rem, 4vw, 2.5rem);
     max-width: 76rem;
   }
+
+  /*
+   * Section rhythm — one definition each, so no page can drift.
+   *
+   * Every section follows the same three-part head:
+   *   .eyebrow  →  .section-title  →  .section-lede
+   * and the vertical gaps live here rather than as per-component mt-* utilities.
+   */
+  .section-title {
+    font-family: var(--font-display), ui-serif, Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: -0.028em;
+    text-wrap: balance;
+    margin-top: 1.25rem;
+  }
+
+  /* Sub-section heading — one step down, same family and rhythm. */
+  .section-title-sm {
+    font-family: var(--font-display), ui-serif, Georgia, serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    line-height: 1.15;
+    font-weight: 400;
+    letter-spacing: -0.024em;
+    text-wrap: balance;
+    margin-top: 0.75rem;
+  }
+
+  /* Card / list-item heading — the smallest display size in use. */
+  .card-title {
+    font-family: var(--font-display), ui-serif, Georgia, serif;
+    font-size: 1.125rem;
+    line-height: 1.25;
+    font-weight: 400;
+    letter-spacing: -0.018em;
+  }
+
+  .section-lede {
+    margin-top: 1.5rem;
+    max-width: 36rem;
+    color: color-mix(in oklch, var(--foreground) 72%, transparent);
+    text-wrap: pretty;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  @media (min-width: 640px) {
+    .section-lede { font-size: 1.125rem; }
+  }
+
+  /*
+   * Identical padding for every content card on the site: bundle cards,
+   * thread cards, testimonial cards, the contact panel, the builder's
+   * block rows. Compact chips (the optional-extras row) sit one tier below
+   * at p-4 — that is the only intentional exception.
+   */
+  .card-pad { padding: 1.5rem; }
+  @media (min-width: 640px) {
+    .card-pad { padding: 1.75rem; }
+  }
+
+  /* Neutral card surface — cream panel, hairline ring, shared radius. */
+  .card-surface {
+    border-radius: var(--radius-2xl);
+    background: var(--card);
+    box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--foreground) 7%, transparent);
+  }
 }
 
 @layer utilities {

@@ -62,9 +62,13 @@
     "videoAlt": "Hero background — training and nature loop"
   },
   "approach": {
+    "_comment": "systemName is the site-wide name of the method. It appears on home, about and programs — change it in this one place and every mention follows. Pending Katie's final wording.",
+    "systemName": "The Three Threads Approach",
     "eyebrow": "The approach",
     "title": "Three threads. One whole person.",
     "intro": "Training without nutrition is incomplete. Nutrition without rest of soul is exhausting. We work all three — gently, deliberately.",
+    "definition": "One method, three threads that hold together: what you do with your body, what you put on your plate, and what you believe about your worth. Pull one and the others move.",
+    "threadLabel": "Thread {number} of 3",
     "readMore": "Read the full approach",
     "train": {
       "title": "Train the body",
@@ -92,9 +96,40 @@
     "story": "After my study at SNF Academy, where I studied Personal Trainer and Nutrition coach, and graduating from Awakening School of Ministry, I help people move forward in their lives. With the right diet, the right mindset, and the right exercise. <em>At any age.</em>",
     "portraitLabel": "Katie portrait",
     "portraitCaption": "Katie · personal trainer · nutrition coach",
-    "qualificationsTitle": "Qualifications",
-    "qualTrainer": "Certified Personal Trainer",
-    "qualNutrition": "Certified Nutrition Coach"
+    "statsTitle": "The short version",
+    "statYearsLabel": "Years coaching",
+    "statClientsLabel": "People accompanied",
+    "statFormatLabel": "Every program",
+    "statFormatValue": "6 weeks · 1:1",
+    "qualificationsTitle": "Training & certification",
+    "qualTrainerTitle": "Personal Trainer",
+    "qualTrainerIssuer": "SNF Academy",
+    "qualNutritionTitle": "Nutrition Coach",
+    "qualNutritionIssuer": "SNF Academy",
+    "qualMinistryTitle": "Graduate, School of Ministry",
+    "qualMinistryIssuer": "Awakening School of Ministry",
+    "qualIssuedBy": "Issued by"
+  },
+  "howIWork": {
+    "eyebrow": "How I work",
+    "title": "Six weeks, and what actually happens in them.",
+    "intro": "No mystery about the method. This is the sequence every program follows, so you know what you are saying yes to before you say it.",
+    "step1": {
+      "title": "The first conversation",
+      "body": "No script, no sales call. You tell me where you are, what you have already tried, and what you want the next months to feel like. I ask questions. At the end we both know whether this is a fit — and if it isn't, I will say so."
+    },
+    "step2": {
+      "title": "Your starting point",
+      "body": "Before anything gets planned, we look at what is actually there: how you move today, how you eat in a normal week, what your schedule really allows, and any injury or limit I need to design around."
+    },
+    "step3": {
+      "title": "The plan, in writing",
+      "body": "You get your training and nutrition plan written down, built for the week you have rather than an ideal one. We meet one-on-one every week, and between sessions you can send me form videos and questions."
+    },
+    "step4": {
+      "title": "Adjusting as we go",
+      "body": "A plan that survives contact with a real week is the only kind worth having. Each week we look at what worked and what didn't, and adjust — load, meals, or expectations. By week six you should be able to run it without me."
+    }
   },
   "mission": {
     "eyebrow": "My mission",
@@ -138,6 +173,7 @@
     "eyebrow": "The programs",
     "title": "Three parts. One path. You choose how much.",
     "intro": "Real change asks for real participation. I take on a small number of clients each month so I can be fully present for each one — this isn't a course you consume, it's a six-week walk we take together.",
+    "systemNote": "Every building block below is one thread of {system}. Take a single thread, or work all three together.",
     "readyMade": "Ready-made",
     "readyMadeTitle": "Three bundles, quick to choose.",
     "readyMadeAside": "Prefer to skip the choosing? Pick one.",

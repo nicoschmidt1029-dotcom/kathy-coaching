@@ -11,6 +11,7 @@
  *                                            #   omit it on Git Bash to avoid path munging)
  *   SHOT_URL=http://localhost:3111 npm run screenshot
  *   SHOT_WIDTHS=390,1024,1440 npm run screenshot -- /
+ *   SHOT_FULL=1 npm run screenshot -- about   # whole page, not just the fold
  *
  * Output: .shots/<route>-<width>.png  (git-ignored)
  */
@@ -23,6 +24,9 @@ const WIDTHS = (process.env.SHOT_WIDTHS ?? "1024,1440")
   .split(",")
   .map((w) => parseInt(w.trim(), 10))
   .filter((w) => Number.isFinite(w) && w > 0);
+const FULL_PAGE = ["1", "true", "yes"].includes(
+  (process.env.SHOT_FULL ?? "").toLowerCase()
+);
 const ROUTES = process.argv.slice(2).filter((a) => !a.startsWith("-"));
 const routes = ROUTES.length ? ROUTES : ["/"];
 const OUT = ".shots";
@@ -58,7 +62,7 @@ try {
       await page.goto(url, { waitUntil: "networkidle", timeout: 60_000 });
       await sleep(1000); // let entrance animations settle
       const file = `${OUT}/${slug(route)}-${width}.png`;
-      await page.screenshot({ path: file });
+      await page.screenshot({ path: file, fullPage: FULL_PAGE });
       console.log(`✓ ${file}  (${url})`);
     }
     await page.close();

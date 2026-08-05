@@ -14,17 +14,15 @@ export function Faq() {
   return (
     <section id="faq" className="section-pad">
       <div className="container-page grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
-        <div className="md:col-span-4">
+        {/* 5/7 rather than 4/8: at the shared .section-title scale a 4-column
+            head column forces the headline into four ragged lines. */}
+        <div className="md:col-span-5">
           <p className="eyebrow">{t("eyebrow")}</p>
-          <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance">
-            {t("title")}
-          </h2>
-          <p className="mt-5 text-pretty text-foreground/70 sm:text-[1.05rem] sm:leading-[1.7]">
-            {t("intro")}
-          </p>
+          <h2 className="section-title">{t("title")}</h2>
+          <p className="section-lede">{t("intro")}</p>
         </div>
 
-        <div className="md:col-span-8">
+        <div className="md:col-span-7">
           <Accordion
             type="single"
             collapsible

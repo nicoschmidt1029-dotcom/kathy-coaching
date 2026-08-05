@@ -20,10 +20,10 @@ export function HomeFinalCta() {
         <p className="font-mono text-[0.75rem] tracking-[0.18em] uppercase text-[var(--primary-foreground)]/70">
           {t("eyebrow")}
         </p>
-        <h2 className="mx-auto mt-5 max-w-3xl font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance text-[var(--primary-foreground)]">
+        <h2 className="section-title mx-auto max-w-3xl text-[var(--primary-foreground)]">
           {t("title")}
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-pretty text-[var(--primary-foreground)]/80 sm:text-lg sm:leading-[1.7]">
+        <p className="section-lede mx-auto max-w-xl text-[var(--primary-foreground)]/80">
           {t("body")}
         </p>
         <div className="mt-10 flex justify-center">

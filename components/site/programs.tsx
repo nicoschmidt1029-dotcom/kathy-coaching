@@ -4,7 +4,7 @@ import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { ADDONS, BLOCKS, BUNDLES, type BlockId } from "@/lib/pricing";
+import { BUNDLES, type BlockId } from "@/lib/pricing";
 import { ProgramsBuilder } from "./programs-builder";
 
 const BLOCK_ICON: Record<BlockId, LucideIcon> = {
@@ -16,6 +16,7 @@ const BLOCK_ICON: Record<BlockId, LucideIcon> = {
 export function Programs() {
   const t = useTranslations("programs");
   const p = useTranslations("pricing");
+  const approach = useTranslations("approach");
 
   return (
     <section id="programs" className="section-pad">
@@ -24,13 +25,14 @@ export function Programs() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-6">
             <p className="eyebrow">{t("eyebrow")}</p>
-            <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance">
-              {t("title")}
-            </h2>
+            <h2 className="section-title">{t("title")}</h2>
           </div>
           <div className="md:col-span-6">
-            <p className="text-pretty text-foreground/72 sm:text-lg sm:leading-[1.7]">
-              {t("intro")}
+            <p className="section-lede mt-0 max-w-none">{t("intro")}</p>
+            {/* Ties the three blocks back to the named method — see
+                approach.systemName. */}
+            <p className="mt-5 max-w-none text-[0.95rem] leading-relaxed text-foreground/60">
+              {t("systemNote", { system: approach("systemName") })}
             </p>
           </div>
         </div>
@@ -40,9 +42,7 @@ export function Programs() {
           <div className="flex items-end justify-between gap-6 border-b border-foreground/[0.1] pb-5">
             <div>
               <p className="caption">{t("readyMade")}</p>
-              <h3 className="mt-2 font-display text-2xl leading-tight font-normal">
-                {t("readyMadeTitle")}
-              </h3>
+              <h3 className="section-title-sm">{t("readyMadeTitle")}</h3>
             </div>
             <p className="hidden max-w-xs text-right text-[0.85rem] text-foreground/60 sm:block">
               {t("readyMadeAside")}
@@ -59,7 +59,7 @@ export function Programs() {
                 <li key={bundle.id} className="flex">
                   <div
                     className={cn(
-                      "flex w-full flex-col rounded-2xl p-6 transition-[transform,box-shadow] duration-300 sm:p-7",
+                      "card-pad flex w-full flex-col rounded-2xl transition-[transform,box-shadow] duration-300",
                       bundle.recommended
                         ? "bg-[var(--plum)] text-[var(--primary-foreground)] shadow-[0_30px_60px_-30px_rgba(60,40,52,0.5)]"
                         : "bg-card ring-1 ring-foreground/10 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-28px_rgba(60,40,52,0.35)]"
@@ -72,7 +72,7 @@ export function Programs() {
                     )}
                     <h4
                       className={cn(
-                        "font-display text-xl leading-tight font-normal",
+                        "card-title text-xl",
                         bundle.recommended
                           ? "text-[var(--primary-foreground)]"
                           : ""
@@ -237,12 +237,8 @@ export function Programs() {
         <div className="mt-20 md:mt-28">
           <div className="max-w-3xl">
             <p className="caption">{t("buildOwn")}</p>
-            <h3 className="mt-3 font-display text-[clamp(1.75rem,4vw,2.5rem)] leading-tight font-normal text-balance">
-              {t("buildOwnTitle")}
-            </h3>
-            <p className="mt-5 text-pretty text-foreground/72 sm:text-[1.05rem] sm:leading-[1.7]">
-              {t("buildOwnIntro")}
-            </p>
+            <h3 className="section-title-sm">{t("buildOwnTitle")}</h3>
+            <p className="section-lede max-w-none">{t("buildOwnIntro")}</p>
           </div>
 
           <div className="mt-10 md:mt-14">

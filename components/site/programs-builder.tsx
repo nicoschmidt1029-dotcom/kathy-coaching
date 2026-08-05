@@ -82,7 +82,7 @@ export function ProgramsBuilder() {
                   onClick={() => toggleBlock(block.id)}
                   aria-pressed={selected}
                   className={cn(
-                    "group flex w-full items-start gap-4 rounded-2xl border-2 bg-card p-5 text-left transition-[border-color,box-shadow,transform] duration-200",
+                    "card-pad group flex w-full items-start gap-4 rounded-2xl border-2 bg-card text-left transition-[border-color,box-shadow,transform] duration-200",
                     selected
                       ? "border-[var(--plum)] shadow-[0_16px_36px_-20px_rgba(60,40,52,0.28)]"
                       : "border-foreground/[0.08] hover:border-foreground/25"
@@ -105,7 +105,7 @@ export function ProgramsBuilder() {
                   </span>
                   <span className="flex-1">
                     <span className="flex items-baseline justify-between gap-3">
-                      <span className="font-display text-lg leading-tight font-normal">
+                      <span className="card-title">
                         {p(`blocks.${block.id}.name`)}
                       </span>
                       <span className="caption whitespace-nowrap text-foreground/70">
@@ -169,7 +169,7 @@ export function ProgramsBuilder() {
       {/* Live price panel */}
       <div className="md:col-span-5">
         <div className="md:sticky md:top-24">
-          <div className="rounded-2xl bg-[var(--plum)] p-6 text-[var(--primary-foreground)] shadow-[0_30px_60px_-30px_rgba(60,40,52,0.4)] sm:p-8">
+          <div className="card-pad rounded-2xl bg-[var(--plum)] text-[var(--primary-foreground)] shadow-[0_30px_60px_-30px_rgba(60,40,52,0.4)]">
             <p className="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-[var(--primary-foreground)]/65">
               {t("panelTitle")}
             </p>

@@ -12,14 +12,10 @@ export function ProgramsTeaser() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-6">
             <p className="eyebrow">{t("eyebrow")}</p>
-            <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance">
-              {t("teaserTitle")}
-            </h2>
+            <h2 className="section-title">{t("teaserTitle")}</h2>
           </div>
           <div className="md:col-span-6">
-            <p className="text-pretty text-foreground/72 sm:text-lg sm:leading-[1.7]">
-              {t("teaserIntro")}
-            </p>
+            <p className="section-lede mt-0 max-w-none">{t("teaserIntro")}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
               <Button
                 asChild

@@ -10,33 +10,15 @@ type PillarKey = "train" | "nourish" | "soul";
 
 type Pillar = {
   key: PillarKey;
-  number: string;
   Icon: LucideIcon;
   image: TempPhoto;
 };
 
 const PILLARS: Pillar[] = [
-  {
-    key: "train",
-    number: "01",
-    Icon: Dumbbell,
-    // STOCK PLACEHOLDER – replace with Katie's own content before launch
-    image: TEMP_PHOTOS.approachTrain,
-  },
-  {
-    key: "nourish",
-    number: "02",
-    Icon: Salad,
-    // STOCK PLACEHOLDER – replace with Katie's own content before launch
-    image: TEMP_PHOTOS.approachNourish,
-  },
-  {
-    key: "soul",
-    number: "03",
-    Icon: Heart,
-    // STOCK PLACEHOLDER – replace with Katie's own content before launch
-    image: TEMP_PHOTOS.approachSoul,
-  },
+  // STOCK PLACEHOLDER – replace with Katie's own content before launch
+  { key: "train", Icon: Dumbbell, image: TEMP_PHOTOS.approachTrain },
+  { key: "nourish", Icon: Salad, image: TEMP_PHOTOS.approachNourish },
+  { key: "soul", Icon: Heart, image: TEMP_PHOTOS.approachSoul },
 ];
 
 export function Approach() {
@@ -49,19 +31,19 @@ export function Approach() {
     >
       <div className="container-page">
         <div className="max-w-2xl">
-          <p className="eyebrow">{t("eyebrow")}</p>
-          <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance">
-            {t("title")}
-          </h2>
-          <p className="mt-6 max-w-xl text-pretty text-foreground/72 sm:text-lg sm:leading-[1.7]">
+          {/* Same name as on home and /programme — see approach.systemName. */}
+          <p className="eyebrow">{t("systemName")}</p>
+          <h2 className="section-title">{t("title")}</h2>
+          <p className="section-lede">{t("definition")}</p>
+          <p className="mt-4 max-w-xl text-pretty text-foreground/72 sm:text-[1.05rem] sm:leading-[1.7]">
             {t("intro")}
           </p>
         </div>
 
         <ul className="mt-14 grid grid-cols-1 gap-16 md:mt-20 md:grid-cols-3 md:gap-8">
-          {PILLARS.map(({ key, number, Icon, image }) => (
+          {PILLARS.map(({ key, Icon, image }, i) => (
             <li key={key} className="flex flex-col">
-              {/* Top: image (Nourish / Soul) or tinted panel with icon (Train) */}
+              {/* Every thread card uses the same 4:3 frame, image or not. */}
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                 {image ? (
                   <>
@@ -97,16 +79,14 @@ export function Approach() {
               {/* Overlapping text card, offset upward into the image */}
               <div
                 className={cn(
-                  "relative z-10 mx-3 -mt-14 rounded-2xl bg-card p-6 ring-1 ring-foreground/[0.08]",
-                  "shadow-[0_24px_50px_-24px_rgba(60,40,52,0.22)] md:mx-5 md:-mt-16 md:p-7"
+                  "card-surface card-pad relative z-10 mx-3 -mt-14",
+                  "shadow-[0_24px_50px_-24px_rgba(60,40,52,0.22)] md:mx-5 md:-mt-16"
                 )}
               >
-                <div className="flex items-baseline gap-3">
-                  <span className="caption">{number}</span>
-                  <h3 className="font-display text-xl leading-tight font-normal">
-                    {t(`${key}.title`)}
-                  </h3>
-                </div>
+                <span className="caption">
+                  {t("threadLabel", { number: String(i + 1) })}
+                </span>
+                <h3 className="card-title mt-2 text-xl">{t(`${key}.title`)}</h3>
                 <p className="mt-3 max-w-prose text-[0.95rem] leading-relaxed text-foreground/72">
                   {t(`${key}.body`)}
                 </p>

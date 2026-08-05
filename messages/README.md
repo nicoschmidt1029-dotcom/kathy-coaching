@@ -28,7 +28,8 @@ Rules:
 | Section | Keys | DE | SK |
 |---|---|---|---|
 | `about` — bio paragraphs | `calling`, `story` | ✅ translated | ✅ translated (PDF original) |
-| `about` — headings, caption, qualifications | `eyebrow`, `title`, `portraitCaption`, `qual*` | ❌ English | ❌ English |
+| `about` — headings, caption, stats, qualifications | `eyebrow`, `title`, `portraitCaption`, `stat*`, `qual*` | ❌ English | ❌ English |
+| `howIWork` — the four-step method | `eyebrow`, `title`, `intro`, `step1`–`step4` | ❌ English | ❌ English |
 | `mission` — headline + body | `title`, `p1`–`p4` | ✅ translated | ✅ translated (PDF original) |
 | `mission` — eyebrow | `eyebrow` | ❌ English | ❌ English |
 | `hero` | all | ❌ English | ❌ English |
@@ -54,6 +55,15 @@ Rules:
   language, not just swapping a string.
 - **Image alt texts** (`lib/temp-photos.ts`) — tied to the temporary photo
   slots; worth localizing once the final photos are in.
+
+## The name of the method
+
+`approach.systemName` ("The Three Threads Approach") is the site-wide name of
+Katie's method. It is rendered on the home page, on `/about` and on
+`/programme` from this single key — renaming the method means editing one
+line per locale, nothing else. **Katie still has to confirm the final
+wording.** When translating, decide per language whether the name is
+translated or kept in English as a brand term.
 
 ## Adding a fourth locale
 

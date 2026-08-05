@@ -4,6 +4,7 @@ import { alternatesFor } from "@/i18n/metadata";
 import { About } from "@/components/site/about";
 import { Mission } from "@/components/site/mission";
 import { Approach } from "@/components/site/approach";
+import { HowIWork } from "@/components/site/how-i-work";
 import { HomeFinalCta } from "@/components/site/home-final-cta";
 
 export async function generateMetadata({
@@ -30,8 +31,10 @@ export default async function AboutPage({
 
   return (
     <>
+      {/* Who → what the method is → how it actually runs → why it matters */}
       <About />
       <Approach />
+      <HowIWork />
       <Mission />
       <HomeFinalCta />
     </>

@@ -16,27 +16,28 @@ export function ApproachTeaser() {
     <section className="section-pad relative overflow-hidden bg-[var(--sand)]/40">
       <div className="container-page">
         <div className="max-w-2xl">
-          <p className="eyebrow">{t("eyebrow")}</p>
-          <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance">
-            {t("title")}
-          </h2>
-          <p className="mt-5 max-w-xl text-pretty text-foreground/72 sm:text-lg sm:leading-[1.7]">
-            {t("intro")}
-          </p>
+          {/* The method is named here and on /about and /programme — one key,
+              one name, so the three threads read as one system. */}
+          <p className="eyebrow">{t("systemName")}</p>
+          <h2 className="section-title">{t("title")}</h2>
+          <p className="section-lede">{t("definition")}</p>
         </div>
 
         <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
-          {THREADS.map(({ key, Icon }) => (
+          {THREADS.map(({ key, Icon }, i) => (
             <li
               key={key}
-              className="flex flex-col rounded-2xl border border-foreground/[0.06] bg-card p-6 transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-[var(--clay)]/30 hover:shadow-[0_20px_40px_-28px_rgba(60,40,52,0.4)]"
+              className="card-surface card-pad flex flex-col transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-28px_rgba(60,40,52,0.4)]"
             >
-              <div className="flex size-11 items-center justify-center rounded-full bg-[var(--clay)]/10 text-[var(--plum)] ring-1 ring-[var(--clay)]/20">
-                <Icon className="size-5" aria-hidden />
+              <div className="flex items-center justify-between gap-3">
+                <span className="flex size-11 items-center justify-center rounded-full bg-[var(--clay)]/10 text-[var(--plum)] ring-1 ring-[var(--clay)]/20">
+                  <Icon className="size-5" aria-hidden />
+                </span>
+                <span className="caption">
+                  {t("threadLabel", { number: String(i + 1) })}
+                </span>
               </div>
-              <h3 className="mt-5 font-display text-lg leading-tight font-normal">
-                {t(`${key}.title`)}
-              </h3>
+              <h3 className="card-title mt-5">{t(`${key}.title`)}</h3>
               <p className="mt-2 flex-1 text-[0.92rem] leading-relaxed text-foreground/70">
                 {t(`${key}.teaser`)}
               </p>

@@ -83,10 +83,12 @@ export function Contact({ prefill }: Props = {}) {
           <p className="font-mono text-[0.75rem] tracking-[0.18em] uppercase text-[var(--primary-foreground)]/70">
             {t("eyebrow")}
           </p>
-          <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance text-[var(--primary-foreground)]">
+          <h2 className="section-title text-[var(--primary-foreground)]">
             {t("title")}
           </h2>
-          <p className="mt-6 max-w-md text-pretty text-[var(--primary-foreground)]/80 sm:text-lg sm:leading-[1.7]">
+          {/* .section-lede's ink is tuned for cream ground — on the plum band
+              the colour is overridden, the type scale stays shared. */}
+          <p className="section-lede max-w-md text-[var(--primary-foreground)]/80">
             {t("intro")}
           </p>
 
@@ -123,14 +125,12 @@ export function Contact({ prefill }: Props = {}) {
             <div
               role="status"
               aria-live="polite"
-              className="flex min-h-[420px] flex-col items-start justify-center rounded-2xl bg-[var(--primary-foreground)] p-8 text-foreground ring-1 ring-foreground/5 sm:p-10"
+              className="card-pad flex min-h-[420px] flex-col items-start justify-center rounded-2xl bg-[var(--primary-foreground)] text-foreground ring-1 ring-foreground/5"
             >
               <div className="flex size-12 items-center justify-center rounded-full bg-[var(--clay)]/15 text-[var(--plum)] ring-1 ring-[var(--clay)]/25">
                 <CheckCircle2 className="size-6" aria-hidden />
               </div>
-              <h3 className="mt-6 font-display text-2xl leading-tight font-normal">
-                {t("sentTitle")}
-              </h3>
+              <h3 className="card-title mt-6 text-2xl">{t("sentTitle")}</h3>
               <p className="mt-3 max-w-md text-pretty text-foreground/70 sm:text-lg sm:leading-[1.65]">
                 {t("sentBody")}
               </p>
@@ -146,7 +146,7 @@ export function Contact({ prefill }: Props = {}) {
             <form
               onSubmit={onSubmit}
               noValidate
-              className="rounded-2xl bg-[var(--primary-foreground)] p-6 text-foreground ring-1 ring-foreground/5 sm:p-8"
+              className="card-pad rounded-2xl bg-[var(--primary-foreground)] text-foreground ring-1 ring-foreground/5"
             >
               {/* Honeypot — hidden from users, harvested by bots */}
               <label
