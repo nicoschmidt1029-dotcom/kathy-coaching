@@ -84,10 +84,15 @@ export function Hero() {
               em: (chunks) => (
                 <span className="relative inline-block whitespace-nowrap">
                   <em className="not-italic font-display italic">{chunks}</em>
+                  {/* Height is pinned in em, not left to the viewBox ratio:
+                      with preserveAspectRatio="none" and an auto height the
+                      stroke grows taller the wider the phrase gets, and a long
+                      translation ends up struck through rather than
+                      underlined. */}
                   <svg
                     aria-hidden
                     viewBox="0 0 420 32"
-                    className="absolute left-0 -bottom-3 w-full"
+                    className="absolute left-0 -bottom-2 h-[0.3em] w-full"
                     preserveAspectRatio="none"
                   >
                     <path

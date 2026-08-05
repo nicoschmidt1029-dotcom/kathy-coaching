@@ -40,10 +40,11 @@ export default function NotFound() {
               em: (chunks) => (
                 <span className="relative inline-block whitespace-nowrap">
                   <em className="not-italic font-display italic">{chunks}</em>
+                  {/* Fixed em height — see the note in hero.tsx. */}
                   <svg
                     aria-hidden
                     viewBox="0 0 300 24"
-                    className="absolute left-0 -bottom-2 w-full"
+                    className="absolute left-0 -bottom-2 h-[0.26em] w-full"
                     preserveAspectRatio="none"
                   >
                     <path
