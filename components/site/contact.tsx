@@ -29,7 +29,8 @@ export function Contact({ prefill }: Props = {}) {
     const payload = {
       name: (fd.get("name") ?? "").toString(),
       email: (fd.get("email") ?? "").toString(),
-      program: (fd.get("program") ?? "").toString(),
+      language: (fd.get("language") ?? "").toString(),
+      location: (fd.get("location") ?? "").toString(),
       message: (fd.get("message") ?? "").toString(),
       website: (fd.get("website") ?? "").toString(),
     };
@@ -83,11 +84,12 @@ export function Contact({ prefill }: Props = {}) {
             Let&rsquo;s talk
           </p>
           <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance text-[var(--primary-foreground)]">
-            A free 30-minute discovery call.
+            Let&rsquo;s start a conversation.
           </h2>
           <p className="mt-6 max-w-md text-pretty text-[var(--primary-foreground)]/80 sm:text-lg sm:leading-[1.7]">
-            Tell me a little about where you are and where you&rsquo;d like to
-            go. No commitment — just a real conversation about whether we&rsquo;re a good fit.
+            Tell me a little about you — where you&rsquo;re writing from, what
+            language feels most comfortable, and where you&rsquo;d like to go.
+            I&rsquo;ll get back to you personally, no fixed format yet.
           </p>
 
           <dl className="mt-10 space-y-4 text-[0.95rem]">
@@ -96,7 +98,8 @@ export function Contact({ prefill }: Props = {}) {
                 Format
               </dt>
               <dd className="mt-1 text-[var(--primary-foreground)]/85">
-                Online (Zoom or Google Meet) — or in person on request.
+                We&rsquo;ll figure out what works together — call, message, or
+                in person.
               </dd>
             </div>
             <div>
@@ -104,7 +107,7 @@ export function Contact({ prefill }: Props = {}) {
                 Languages
               </dt>
               <dd className="mt-1 text-[var(--primary-foreground)]/85">
-                English · German
+                English · Deutsch · Slovenčina
               </dd>
             </div>
             <div>
@@ -192,33 +195,45 @@ export function Contact({ prefill }: Props = {}) {
                     className="h-11 rounded-lg bg-background"
                   />
                 </div>
-                <div className="sm:col-span-2">
-                  <Label htmlFor="program" className="mb-2 text-foreground/80">
-                    Interested in
+                <div className="sm:col-span-1">
+                  <Label htmlFor="language" className="mb-2 text-foreground/80">
+                    Language you&rsquo;re most comfortable in
+                  </Label>
+                  <select
+                    id="language"
+                    name="language"
+                    defaultValue=""
+                    className="h-11 w-full rounded-lg border border-input bg-background px-2.5 text-base outline-none transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 md:text-sm"
+                  >
+                    <option value="">No preference</option>
+                    <option value="English">English</option>
+                    <option value="Deutsch">Deutsch</option>
+                    <option value="Slovenčina">Slovenčina</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div className="sm:col-span-1">
+                  <Label htmlFor="location" className="mb-2 text-foreground/80">
+                    Where are you writing from?
                   </Label>
                   <Input
-                    id="program"
-                    name="program"
-                    defaultValue={prefill}
-                    placeholder="Training only · Training + nutrition · Complete · Not sure"
+                    id="location"
+                    name="location"
+                    placeholder="Country or city (optional)"
+                    autoComplete="country-name"
                     className="h-11 rounded-lg bg-background"
                   />
-                  {prefill && (
-                    <p className="mt-2 text-[0.78rem] text-foreground/55">
-                      Pre-filled from your selection on the programs page —
-                      edit freely.
-                    </p>
-                  )}
                 </div>
                 <div className="sm:col-span-2">
                   <Label htmlFor="message" className="mb-2 text-foreground/80">
-                    A little about where you are
+                    A little about where you are, where you&rsquo;d like to go
                   </Label>
                   <Textarea
                     id="message"
                     name="message"
                     required
                     rows={5}
+                    defaultValue={prefill ? `Interested in: ${prefill}\n\n` : undefined}
                     placeholder="Where you are now, where you'd like to go — no need to polish it."
                     className="min-h-32 rounded-lg bg-background"
                   />
@@ -236,7 +251,7 @@ export function Contact({ prefill }: Props = {}) {
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-[0.78rem] text-foreground/55">
-                  I&rsquo;ll only use your email to reply about your discovery call.
+                  I&rsquo;ll only use your email to reply to you personally.
                 </p>
                 <Button
                   type="submit"

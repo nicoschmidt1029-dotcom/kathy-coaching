@@ -16,7 +16,7 @@ const FAQS = [
   },
   {
     q: "How does a program actually work?",
-    a: "We start with a free 30-minute discovery call to make sure we're a good fit. After that, you receive your personalized plan, we meet weekly (online or in person), and you have me as a guide through the whole six weeks.",
+    a: "We start with a free, no-pressure conversation to make sure we're a good fit. After that, you receive your personalized plan, we meet weekly (online or in person), and you have me as a guide through the whole six weeks.",
   },
   {
     q: "Do I need a gym membership?",
@@ -38,8 +38,8 @@ export function Faq() {
             Honest answers, before you commit.
           </h2>
           <p className="mt-5 text-pretty text-foreground/70 sm:text-[1.05rem] sm:leading-[1.7]">
-            Still wondering something not listed here? Send it on the
-            discovery call — that&rsquo;s what it&rsquo;s for.
+            Still wondering something not listed here? Send it along when you
+            reach out — that&rsquo;s what the first conversation is for.
           </p>
         </div>
 

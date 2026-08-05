@@ -115,7 +115,7 @@ export function Hero() {
               className="group/button h-12 bg-[var(--primary-foreground)] px-6 text-[0.95rem] text-[var(--plum)] hover:bg-[var(--primary-foreground)]/90"
             >
               <Link href="/kontakt">
-                Book a free discovery call
+                Start a conversation
                 <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
               </Link>
             </Button>

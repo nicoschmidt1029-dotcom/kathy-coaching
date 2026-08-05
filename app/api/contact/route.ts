@@ -4,7 +4,8 @@ import { Resend } from "resend";
 type Body = {
   name?: string;
   email?: string;
-  program?: string;
+  language?: string;
+  location?: string;
   message?: string;
   website?: string; // honeypot — must remain empty
 };
@@ -101,7 +102,8 @@ export async function POST(req: Request) {
   const name = body.name?.trim();
   const email = body.email?.trim();
   const message = body.message?.trim();
-  const program = body.program?.trim() ?? "";
+  const language = body.language?.trim() ?? "";
+  const location = body.location?.trim() ?? "";
 
   if (!name || !email || !message) {
     return NextResponse.json(
@@ -145,11 +147,12 @@ export async function POST(req: Request) {
       from,
       to,
       replyTo: email,
-      subject: `Discovery call request — ${name}`,
+      subject: `New message from the website — ${name}`,
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
-        `Interested in: ${program || "(not specified)"}`,
+        `Language: ${language || "(no preference)"}`,
+        `Writing from: ${location || "(not specified)"}`,
         "",
         "Message:",
         message,

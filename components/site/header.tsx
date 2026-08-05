@@ -86,7 +86,7 @@ export function Header() {
             size="lg"
             className="hidden bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90 md:inline-flex"
           >
-            <Link href="/kontakt">Free discovery call</Link>
+            <Link href="/kontakt">Start a conversation</Link>
           </Button>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -132,7 +132,7 @@ export function Header() {
                     size="lg"
                     className="w-full bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
                   >
-                    <Link href="/kontakt">Free discovery call</Link>
+                    <Link href="/kontakt">Start a conversation</Link>
                   </Button>
                 </SheetClose>
               </div>

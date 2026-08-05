@@ -18,12 +18,12 @@ export function HomeFinalCta() {
           When you&rsquo;re ready
         </p>
         <h2 className="mx-auto mt-5 max-w-3xl font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance text-[var(--primary-foreground)]">
-          A free 30-minute discovery call — no commitment, just a conversation.
+          Let&rsquo;s start a conversation — no fixed format, no pressure.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-pretty text-[var(--primary-foreground)]/80 sm:text-lg sm:leading-[1.7]">
-          Tell me where you are and where you&rsquo;d like to go. If we&rsquo;re
-          a fit, we&rsquo;ll take it from there. If not, you&rsquo;ll leave with
-          a clearer next step either way.
+          Tell me where you are and where you&rsquo;d like to go. We&rsquo;ll
+          figure out what works together — call, message, or in person — and
+          take it from there.
         </p>
         <div className="mt-10 flex justify-center">
           <Button
@@ -32,7 +32,7 @@ export function HomeFinalCta() {
             className="group/button h-12 bg-[var(--primary-foreground)] px-6 text-[0.95rem] text-[var(--plum)] hover:bg-[var(--primary-foreground)]/90"
           >
             <Link href="/kontakt">
-              Book a free discovery call
+              Start a conversation
               <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
             </Link>
           </Button>

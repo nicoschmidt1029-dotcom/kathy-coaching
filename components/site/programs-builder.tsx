@@ -248,7 +248,7 @@ export function ProgramsBuilder() {
                   className="group/button mt-6 h-12 w-full bg-[var(--primary-foreground)] px-6 text-[var(--plum)] hover:bg-[var(--primary-foreground)]/90"
                 >
                   <Link href={contactHref}>
-                    Book a discovery call
+                    Start a conversation
                     <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
                   </Link>
                 </Button>
