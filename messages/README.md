@@ -25,22 +25,26 @@ Rules:
 
 ## Status
 
+**DE is complete** — 213 of the 220 keys are translated and the remaining
+seven are intentional (brand name, wordmark, the two issuing institutions,
+and the language list, which reads the same in every language). **SK still
+needs everything except the bio and mission.**
+
 | Section | Keys | DE | SK |
 |---|---|---|---|
-| `about` — bio paragraphs | `calling`, `story` | ✅ translated | ✅ translated (PDF original) |
-| `about` — headings, caption, stats, qualifications | `eyebrow`, `title`, `portraitCaption`, `stat*`, `qual*` | ❌ English | ❌ English |
-| `howIWork` — the four-step method | `eyebrow`, `title`, `intro`, `step1`–`step4` | ❌ English | ❌ English |
-| `mission` — headline + body | `title`, `p1`–`p4` | ✅ translated | ✅ translated (PDF original) |
-| `mission` — eyebrow | `eyebrow` | ❌ English | ❌ English |
-| `hero` | all | ❌ English | ❌ English |
-| `approach` (3 threads, teaser + full) | all | ❌ English | ❌ English |
-| `programs` + `builder` + `pricing` | all | ❌ English | ❌ English |
-| `testimonials` + `spotlight` | all | ❌ English | ❌ English |
-| `faq` (5 Q&A) | all | ❌ English | ❌ English |
-| `contact` (form labels, states) | all | ❌ English | ❌ English |
-| `finalCta` | all | ❌ English | ❌ English |
-| `nav`, `footer`, `wordmark`, `language`, `notFound` | all | ❌ English | ❌ English |
-| `pages` (SEO titles + descriptions) | all | ❌ English | ❌ English |
+| `about` — bio paragraphs | `calling`, `story` | ✅ from Nico | ✅ Katarína's PDF original |
+| `mission` — headline + body | `title`, `p1`–`p4` | ✅ from Nico | ✅ Katarína's PDF original |
+| `about` — headings, caption, stats, qualifications | `eyebrow`, `title`, `portraitCaption`, `stat*`, `qual*` | ✅ translated | ❌ English |
+| `hero` | all | ✅ translated | ❌ English |
+| `approach` (3 threads, teaser + full) | all | ✅ translated | ❌ English |
+| `howIWork` — the four-step method | all | ✅ translated | ❌ English |
+| `programs` + `builder` + `pricing` | all | ✅ translated | ❌ English |
+| `testimonials` + `spotlight` | all | ✅ translated | ❌ English |
+| `faq` (5 Q&A) | all | ✅ translated | ❌ English |
+| `contact` (form labels, states) | all | ✅ translated | ❌ English |
+| `finalCta` | all | ✅ translated | ❌ English |
+| `nav`, `footer`, `language`, `notFound` | all | ✅ translated | ❌ English |
+| `pages` (SEO titles + descriptions) | all | ✅ translated | ❌ English |
 
 ### Not in the message files at all (English only, by design)
 

@@ -1,29 +1,330 @@
 {
   "_status": {
-    "translated": "about (calling, story) + mission (title, p1–p4) — deutscher Originaltext von Nico",
-    "note": "Jeder Key, der hier fehlt, fällt automatisch auf messages/en.json zurück — /de rendert also vollständig, nur eben auf Englisch. Zum Übersetzen: Key-Pfad aus en.json hier übernehmen und den deutschen Text als Wert eintragen. Keys niemals leer lassen (leerer String überschreibt das Englische mit nichts). Offene Abschnitte siehe messages/README.md.",
-    "todo": [
-      "hero",
-      "approach",
-      "programs / builder / pricing",
-      "testimonials / spotlight",
-      "faq",
-      "contact",
-      "finalCta",
-      "footer / nav / notFound",
-      "pages (SEO-Titles und -Descriptions)",
-      "about — eyebrow, title, portraitCaption, qualifications (im Originaltext nicht enthalten)"
+    "translated": "vollständig — alle Namespaces übersetzt",
+    "note": "Bio und Mission stammen wörtlich von Nico, der Rest ist übersetzt und darf frei überschrieben werden. Keys, die hier fehlen, fallen auf messages/en.json zurück — bewusst weggelassen sind nur meta.siteName, wordmark.name/tagline (Marke), about.qual*Issuer (Eigennamen der Institutionen) und contact.languagesValue (Sprachnamen stehen in ihrer eigenen Sprache). Keys niemals leer lassen: ein leerer String überschreibt das Englische mit nichts.",
+    "openQuestions": [
+      "approach.systemName ist hier als „Der Drei-Fäden-Ansatz\" übersetzt statt den englischen Markenbegriff stehen zu lassen — Katie entscheidet, was ihr lieber ist.",
+      "Rechtstexte /imprint und /privacy sind weiterhin Englisch und liegen nicht in den Message-Files (siehe README).",
+      "Das OG-Bild ist für alle Sprachen Englisch."
     ]
   },
+  "meta": {
+    "titleDefault": "Katie Coaching — Training, Ernährung & Mentoring, im Glauben verwurzelt",
+    "titleTemplate": "%s · Katie Coaching",
+    "description": "Ganzheitliches Coaching für Frauen — und ausdrücklich auch für Männer. Personal Training, Ernährungsbegleitung und christliches Mentoring mit Katie Coaching, sechs Wochen gemeinsam gegangen.",
+    "ogDescription": "Sieh deinen Körper so, wie Gott ihn geschaffen hat. Training, Ernährung und Identität in Jesus — ein Weg, gemeinsam gegangen."
+  },
+  "pages": {
+    "about": {
+      "title": "Über mich",
+      "description": "Lerne Katie Gröflin kennen — zertifizierte Personal Trainerin und Ernährungsberaterin, mit ganzheitlichem Coaching für Körper, Ernährung und Seele."
+    },
+    "programs": {
+      "title": "Programme",
+      "description": "Drei Sechs-Wochen-Programme, eins zu eins. Nur Training, Training + Ernährung, oder der ganze Weg mit geistlichem Mentoring. Ehrliche Preise."
+    },
+    "testimonials": {
+      "title": "Stimmen",
+      "description": "Was Klientinnen und Klienten über sechs Wochen mit Katie sagen — echte Namen, echte Programme, was sich wirklich verändert hat."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Komm mit Katie ins Gespräch — erzähl ihr, wo du stehst, wohin du willst und in welcher Sprache du dich am wohlsten fühlst."
+    },
+    "imprint": {
+      "title": "Impressum",
+      "description": "Impressum für Katie Coaching, Ettingen (BL), Schweiz."
+    },
+    "privacy": {
+      "title": "Datenschutz",
+      "description": "Datenschutzerklärung von Katie Coaching — wie deine Daten nach Schweizer revDSG und EU-DSGVO behandelt werden."
+    }
+  },
+  "wordmark": {
+    "ariaLabel": "Katie Coaching — Startseite"
+  },
+  "nav": {
+    "about": "Über mich",
+    "programs": "Programme",
+    "testimonials": "Stimmen",
+    "contact": "Kontakt",
+    "cta": "Lass uns reden",
+    "menu": "Menü",
+    "openMenu": "Menü öffnen",
+    "skipToMain": "Zum Hauptinhalt springen"
+  },
+  "language": {
+    "label": "Sprache",
+    "switchTo": "Sprache auf {language} umstellen"
+  },
+  "hero": {
+    "eyebrow": "Ganzheitliches Coaching · im Glauben verwurzelt",
+    "headline": "Sieh deinen Körper so, <em>wie Gott ihn geschaffen hat.</em>",
+    "body": "Personal Training, Ernährungsbegleitung und christliches Mentoring — drei Fäden, zu einem Weg verwoben. Für Frauen gedacht, für Männer ausdrücklich offen.",
+    "cta": "Lass uns reden",
+    "credentialTrainer": "Zertifizierte Personal Trainerin",
+    "credentialNutrition": "Zertifizierte Ernährungsberaterin",
+    "inMotion": "In Bewegung",
+    "videoAlt": "Hintergrundvideo — Training und Natur im Loop"
+  },
+  "approach": {
+    "systemName": "Der Drei-Fäden-Ansatz",
+    "eyebrow": "Der Ansatz",
+    "title": "Drei Fäden. Ein ganzer Mensch.",
+    "intro": "Training ohne Ernährung bleibt unvollständig. Ernährung ohne Ruhe für die Seele zermürbt auf Dauer. Wir arbeiten an allen dreien — behutsam und mit Absicht.",
+    "definition": "Eine Methode, drei Fäden, die zusammenhalten: was du mit deinem Körper machst, was auf deinen Teller kommt, und was du über deinen eigenen Wert glaubst. Zieh an einem, und die anderen bewegen sich mit.",
+    "threadLabel": "Faden {number} von 3",
+    "readMore": "Den ganzen Ansatz lesen",
+    "train": {
+      "title": "Den Körper trainieren",
+      "teaser": "Krafttraining, gebaut um das Leben, das du wirklich lebst.",
+      "body": "Krafttraining, das dich dort abholt, wo du stehst. Schrittweise, durchhaltbar und um das Leben herum gebaut, das du wirklich lebst — nicht um das von jemand anderem.",
+      "slot": "Training"
+    },
+    "nourish": {
+      "title": "Bewusst nähren",
+      "teaser": "Echtes Essen, echte Flexibilität, keine Angst und keine Regeln.",
+      "body": "Ein Verhältnis zum Essen, in dem es nicht um Regeln oder Schuld geht. Echte Mahlzeiten, echte Flexibilität, ein echtes Verständnis dafür, was dein Körper braucht, um aufzublühen.",
+      "slot": "Ernährung"
+    },
+    "soul": {
+      "title": "Seele & Identität in Jesus",
+      "teaser": "Angeboten, nie aufgedrängt — Wert, der tiefer reicht als ein Spiegel.",
+      "body": "Angeboten, nie aufgedrängt: ehrliche Gespräche, Gebet und ein biblischer Blick auf den eigenen Wert. Für alle, die ein Selbstvertrauen suchen, das tiefer wurzelt als ein Spiegelbild.",
+      "slot": "Seele"
+    }
+  },
   "about": {
+    "eyebrow": "Katie kennenlernen",
+    "title": "Kraft, Nahrung und eine stille Art von Selbstvertrauen.",
     "calling": "Wir alle haben eine Berufung im Leben. <em>Meine Berufung ist es, Menschen zu helfen.</em>",
-    "story": "Nach meinem Studium an der SNF Academy, wo ich Personal Trainer und Ernährungsberatung studiert habe, und meinem Abschluss an der Awakening School of Ministry, helfe ich Menschen, in ihrem Leben voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung und der richtigen Bewegung. <em>In jedem Alter.</em>"
+    "story": "Nach meinem Studium an der SNF Academy, wo ich Personal Trainer und Ernährungsberatung studiert habe, und meinem Abschluss an der Awakening School of Ministry, helfe ich Menschen, in ihrem Leben voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung und der richtigen Bewegung. <em>In jedem Alter.</em>",
+    "portraitLabel": "Porträt von Katie",
+    "portraitCaption": "Katie · Personal Trainerin · Ernährungsberaterin",
+    "statsTitle": "Die Kurzfassung",
+    "statYearsLabel": "Jahre Coaching",
+    "statClientsLabel": "Begleitete Menschen",
+    "statFormatLabel": "Jedes Programm",
+    "statFormatValue": "6 Wochen · 1:1",
+    "qualificationsTitle": "Ausbildung & Zertifizierung",
+    "qualTrainerTitle": "Personal Trainerin",
+    "qualNutritionTitle": "Ernährungsberaterin",
+    "qualMinistryTitle": "Abschluss, School of Ministry",
+    "qualIssuedBy": "Ausgestellt von"
+  },
+  "howIWork": {
+    "eyebrow": "So arbeite ich",
+    "title": "Sechs Wochen — und was darin wirklich passiert.",
+    "intro": "Kein Geheimnis um die Methode. Das ist der Ablauf, dem jedes Programm folgt, damit du weißt, wozu du ja sagst, bevor du ja sagst.",
+    "step1": {
+      "title": "Das erste Gespräch",
+      "body": "Kein Skript, kein Verkaufsgespräch. Du erzählst mir, wo du stehst, was du schon probiert hast und wie sich die nächsten Monate anfühlen sollen. Ich stelle Fragen. Am Ende wissen wir beide, ob es passt — und wenn nicht, sage ich es dir."
+    },
+    "step2": {
+      "title": "Dein Ausgangspunkt",
+      "body": "Bevor irgendetwas geplant wird, schauen wir auf das, was tatsächlich da ist: wie du dich heute bewegst, wie du in einer normalen Woche isst, was dein Alltag wirklich zulässt, und welche Verletzungen oder Grenzen ich einplanen muss."
+    },
+    "step3": {
+      "title": "Der Plan, schriftlich",
+      "body": "Du bekommst deinen Trainings- und Ernährungsplan schriftlich — gebaut für die Woche, die du hast, nicht für eine ideale. Wir sehen uns jede Woche eins zu eins, und zwischen den Terminen kannst du mir Technikvideos und Fragen schicken."
+    },
+    "step4": {
+      "title": "Anpassen unterwegs",
+      "body": "Ein Plan, der den Kontakt mit einer echten Woche übersteht, ist der einzige, der etwas taugt. Jede Woche schauen wir, was funktioniert hat und was nicht, und passen an — Belastung, Mahlzeiten oder Erwartungen. In Woche sechs solltest du ihn ohne mich weiterführen können."
+    }
   },
   "mission": {
+    "eyebrow": "Meine Mission",
     "title": "Deine besten Jahre liegen nicht hinter dir — sie sind die, die du erst noch erschaffst.",
     "p1": "Es ist nie zu spät für Veränderung und Verbesserung. Es liegt ganz bei dir. Jeder Tag ist eine neue Chance, ein erfülltes Leben zu beginnen, in dem du dich am besten fühlst. Das Wichtigste ist, sich zu entscheiden, nicht aufzugeben, und anzufangen.",
     "p2": "Willst du abnehmen? Oder mehr Muskeln aufbauen? Oder gesünder essen und leben, weißt aber nicht genau wie? Oder hat dich das Leben geistlich und mental erschöpft?",
     "p3": "Lass es dich wissen: Es ist nie zu spät.",
     "p4": "Und ich werde alles tun, um dir zu helfen."
+  },
+  "spotlight": {
+    "eyebrow": "Eine Klientin von kürzlich",
+    "quote": "Ich kam, um abzunehmen. Sechs Wochen später hatte sich das Gewicht verschoben — aber das Größere war leiser. Zum ersten Mal seit Jahren habe ich in den Spiegel geschaut, ohne zu rechnen. Katie hat mir kein Programm verkauft; sie ist mit mir hindurchgegangen.",
+    "name": "Lena, 32",
+    "program": "Sechs Wochen, der ganze Weg",
+    "portraitLabel": "Porträt von Lena"
+  },
+  "testimonials": {
+    "eyebrow": "Mehr Geschichten",
+    "title": "Was sich verändert hat, war nicht nur der Körper.",
+    "note": "Vorher-Nachher-Fotos mit Einverständnis geteilt · vorerst Platzhalter",
+    "before": "Vorher",
+    "after": "Nachher",
+    "videoLabel": "Video-Stimme von {name}",
+    "marcus": {
+      "name": "Marcus, 41",
+      "program": "Training + Ernährung",
+      "quote": "Als Mann war ich mir nicht sicher, ob das für mich ist. Bei Katie hat es sich nach Coaching angefühlt, nicht nach Therapie — und die geistlichen Gespräche waren echt, nie aufdringlich."
+    },
+    "hannah": {
+      "name": "Hannah, 27",
+      "program": "Der ganze Weg",
+      "quote": "Sechs Wochen. Das erste Programm, das ich zu Ende gebracht habe, ohne auf halber Strecke aufzugeben. Die Gnade, mit der sie führt, ist ein Teil davon, warum."
+    },
+    "sophie": {
+      "name": "Sophie, 36",
+      "program": "Der ganze Weg",
+      "quote": "Ich wollte Struktur und habe sie bekommen — aber auch die Erlaubnis, meinen Körper nicht länger zu bekämpfen. Diese Verschiebung kam nicht von einem Plan. Sie kam davon, gesehen zu werden."
+    }
+  },
+  "programs": {
+    "eyebrow": "Die Programme",
+    "title": "Drei Teile. Ein Weg. Du entscheidest, wie viel.",
+    "intro": "Echte Veränderung verlangt echtes Mitmachen. Ich nehme jeden Monat nur wenige Menschen an, damit ich für jede und jeden ganz da sein kann — das hier ist kein Kurs, den man konsumiert, sondern sechs Wochen, die wir gemeinsam gehen.",
+    "systemNote": "Jeder Baustein unten ist ein Faden aus {system}. Nimm einen einzelnen Faden — oder arbeite an allen dreien.",
+    "readyMade": "Fertig geschnürt",
+    "readyMadeTitle": "Drei Pakete, schnell entschieden.",
+    "readyMadeAside": "Keine Lust zu wählen? Nimm eins.",
+    "mostChosen": "Am häufigsten gewählt",
+    "bestFor": "Am besten für:",
+    "chooseBundle": "Dieses Paket wählen",
+    "buildOwn": "Oder stell dir selbst zusammen",
+    "buildOwnTitle": "Setz dir die Mischung zusammen, die zu deinem Leben passt.",
+    "buildOwnIntro": "Wähl eine beliebige Kombination aus Bausteinen und Extras — der Preis rechnet sich beim Klicken neu. Zwei Bausteine zusammen ergeben 5 % Paketrabatt, drei Bausteine 10 %. Extras bleiben zum Einzelpreis, und genau deshalb ist das Komplettpaket oben der bessere Deal, wenn du sie alle dabeihaben willst.",
+    "teaserTitle": "Drei Programme. Du wählst, wo du anfängst.",
+    "teaserIntro": "Nur Training, Training + Ernährung, oder der ganze Weg — Körper, Teller und Seele zusammengehalten. Alles eins zu eins, alles sechs Wochen. Echte Veränderung verlangt echtes Mitmachen, deshalb nehme ich jeden Monat nur wenige Menschen an.",
+    "teaserCta": "Programme & Preise ansehen",
+    "teaserSecondary": "Unsicher? Lass uns erst reden"
+  },
+  "builder": {
+    "blocksTitle": "Bausteine",
+    "addonsTitle": "Optionale Extras",
+    "panelTitle": "Deine Zusammenstellung",
+    "empty": "Wähl einen oder mehrere Bausteine. Die Preise rechnen sich live zusammen — ab zwei Bausteinen greift der Paketrabatt.",
+    "discount": "Paketrabatt ({percent} % auf Bausteine)",
+    "total": "Gesamt · 6 Wochen",
+    "matchBundle": "Das entspricht dem Paket <strong>{name}</strong> oben.",
+    "matchCheaper": "Das entspricht dem Paket <strong>{name}</strong> oben — als Paket ist es {difference} € günstiger ({price} €).",
+    "cta": "Lass uns reden",
+    "carried": "Deine Auswahl wird ins Formular übernommen"
+  },
+  "pricing": {
+    "duration": "6 Wochen · 1:1",
+    "blocks": {
+      "training": {
+        "name": "Personal Training",
+        "blurb": "Programmgestaltung, Technik, Verbindlichkeit. Wöchentliche Einheiten, an dein Leben angepasst."
+      },
+      "nutrition": {
+        "name": "Ernährungscoaching",
+        "blurb": "Ein Plan, mit dem du wirklich leben kannst. Echtes Essen, echte Flexibilität, keine Angst."
+      },
+      "spiritual": {
+        "name": "Geistliches Mentoring",
+        "blurb": "Ehrliche Gespräche, Gebet und ein biblischer Blick auf den eigenen Wert."
+      }
+    },
+    "addons": {
+      "whatsapp": {
+        "name": "Direkte WhatsApp-Check-ins",
+        "blurb": "Unterstützung zwischen den Terminen, wenn du sie brauchst."
+      },
+      "prayer": {
+        "name": "Wöchentliches Gebet & Bibelwort",
+        "blurb": "Ein kurzer Gebetsmoment, in die Woche eingewoben."
+      },
+      "priority": {
+        "name": "Vorrang bei neuen Plätzen",
+        "blurb": "Als Erste dran, wenn ein neuer Monat aufgeht."
+      }
+    },
+    "bundles": {
+      "training-only": {
+        "name": "Nur Training",
+        "blurb": "Fang mit Bewegung an. Der Rest kann später dazukommen, wenn er passt.",
+        "bestFor": "den sanften Wiedereinstieg in Bewegung, ohne Druck, gleich mehr dazuzunehmen",
+        "format": "Wöchentliche 1:1-Einheit · Technik-Checks dazwischen"
+      },
+      "training-nutrition": {
+        "name": "Training + Ernährung",
+        "blurb": "Kraft und ein ruhigeres Verhältnis zum Essen.",
+        "bestFor": "wenn Essen und Training sich wie zwei getrennte Kämpfe anfühlen",
+        "format": "Wöchentliche 1:1-Einheit · Ernährungs-Check-in unter der Woche"
+      },
+      "complete": {
+        "name": "Der ganze Weg",
+        "blurb": "Körper, Teller und Seele — plus alle Extras inklusive."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Fragen",
+    "title": "Ehrliche Antworten, bevor du dich festlegst.",
+    "intro": "Noch etwas offen, das hier nicht steht? Schreib es einfach dazu, wenn du dich meldest — genau dafür ist das erste Gespräch da.",
+    "believer": {
+      "q": "Muss ich gläubig sein, um mit dir zu arbeiten?",
+      "a": "Nein. Das geistliche Mentoring ist ein Angebot, nie eine Bedingung. „Nur Training\" und „Training + Ernährung\" funktionieren für alle, unabhängig vom Glauben. „Der ganze Weg\" ist für die gedacht, die diese Dimension ausdrücklich dabeihaben wollen."
+    },
+    "women": {
+      "q": "Ist das nur für Frauen?",
+      "a": "Es ist zuerst mit Blick auf Frauen entstanden — Männer sind aber ausdrücklich willkommen, besonders im Training und in der Ernährung. „Der ganze Weg\" funktioniert für alle, die bereit sind, in allen drei Bereichen ehrlich zu sein."
+    },
+    "how": {
+      "q": "Wie läuft ein Programm konkret ab?",
+      "a": "Wir beginnen mit einem kostenlosen, druckfreien Gespräch, um zu sehen, ob es passt. Danach bekommst du deinen persönlichen Plan, wir sehen uns wöchentlich (online oder vor Ort), und du hast mich die ganzen sechs Wochen als Begleitung."
+    },
+    "gym": {
+      "q": "Brauche ich ein Fitnessstudio-Abo?",
+      "a": "Für die meisten Programme nicht. Ich baue das Training um das herum, was dir zur Verfügung steht — zu Hause, im Studio oder irgendwo dazwischen. Das klären wir, wenn du dich meldest."
+    },
+    "beginner": {
+      "q": "Was, wenn ich seit Jahren nicht trainiert habe — oder noch nie?",
+      "a": "Das trifft auf die meisten zu, mit denen ich arbeite. Alles wird um deinen Ausgangspunkt herum gebaut. Keine Voraussetzungen, keine Bewertung. Das Ziel ist Fortschritt, den du durchhältst, keine Bestrafung."
+    }
+  },
+  "contact": {
+    "eyebrow": "Lass uns reden",
+    "title": "Lass uns ins Gespräch kommen.",
+    "intro": "Erzähl mir ein bisschen von dir — woher du schreibst, in welcher Sprache du dich am wohlsten fühlst und wohin du willst. Ich melde mich persönlich zurück, ganz ohne festes Format.",
+    "formatLabel": "Format",
+    "formatValue": "Wir finden gemeinsam heraus, was passt — Anruf, Nachricht oder persönlich.",
+    "languagesLabel": "Sprachen",
+    "replyLabel": "Antwort innerhalb von",
+    "replyValue": "Zwei Werktagen, meistens schneller.",
+    "nameLabel": "Dein Name",
+    "namePlaceholder": "Anna Muster",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "anna@beispiel.ch",
+    "languageLabel": "Sprache, in der du dich am wohlsten fühlst",
+    "languageNoPreference": "Keine Präferenz",
+    "languageOther": "Andere",
+    "locationLabel": "Woher schreibst du?",
+    "locationPlaceholder": "Land oder Stadt (optional)",
+    "messageLabel": "Ein bisschen dazu, wo du stehst und wohin du willst",
+    "messagePlaceholder": "Wo du gerade stehst, wohin du möchtest — es muss nicht ausgefeilt sein.",
+    "prefillPrefix": "Interesse an: {selection}",
+    "privacyNote": "Deine E-Mail-Adresse nutze ich nur, um dir persönlich zu antworten.",
+    "submit": "Nachricht senden",
+    "submitting": "Wird gesendet…",
+    "genericError": "Da ist etwas schiefgelaufen. Bitte versuch es noch einmal.",
+    "networkError": "Netzwerkfehler. Bitte versuch es gleich noch einmal.",
+    "sentTitle": "Danke — ist angekommen.",
+    "sentBody": "Ich lese jede Nachricht selbst. Antwort innerhalb von zwei Werktagen, meistens schneller. Bis dahin — Gnade und Frieden für dich.",
+    "sendAnother": "Noch eine Nachricht senden",
+    "legalPrefix": "Rechtliches:"
+  },
+  "finalCta": {
+    "eyebrow": "Wenn du bereit bist",
+    "title": "Lass uns reden — kein festes Format, kein Druck.",
+    "body": "Erzähl mir, wo du stehst und wohin du willst. Wir finden gemeinsam heraus, was passt — Anruf, Nachricht oder persönlich — und gehen von dort weiter.",
+    "cta": "Lass uns reden"
+  },
+  "footer": {
+    "blurb": "Ganzheitliches Coaching für Körper, Ernährung und Seele — im Glauben verwurzelt, offen für alle.",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "contact": "Kontakt",
+    "copyright": "© {year} Katie Coaching. Alle Rechte vorbehalten.",
+    "madeWithCare": "Mit Sorgfalt gemacht"
+  },
+  "notFound": {
+    "eyebrow": "404 · diese Seite ist umgezogen oder gab es nie",
+    "title": "Du bist ein kleines Stück <em>vom Weg ab.</em>",
+    "body": "Vielleicht ist der Link alt, vielleicht hat sich etwas verschoben. Zurück nach Hause ist es nur ein Klick — nichts verloren.",
+    "cta": "Zurück zum Anfang"
   }
 }
