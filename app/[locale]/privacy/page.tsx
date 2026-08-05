@@ -37,6 +37,7 @@ export default async function PrivacyPage({
         eyebrow="Privacy notice · Datenschutz"
         title="How I handle your data."
         updated="28 July 2026"
+        draft
       >
         <p>
           This page explains what personal data is collected when you use{" "}
@@ -64,7 +65,7 @@ export default async function PrivacyPage({
           <br />
           <Todo>postcode</Todo> Ettingen BL, Switzerland
           <br />
-          Email: <Todo>hello@katarina-coaching.example</Todo>
+          Email: <Todo>the address Katarina wants published here</Todo>
         </p>
 
         <h2>2. What data is collected, and why</h2>
@@ -91,10 +92,11 @@ export default async function PrivacyPage({
 
         <h3>2.2 When you use the contact form</h3>
         <p>
-          The contact form collects your name, email address, the program
-          you&rsquo;re interested in (optional), and your message. This
-          data is used only to reply to your enquiry and, if you become a
-          client, to arrange the discovery call.
+          The contact form collects your name, email address, the language
+          you prefer to be answered in (optional), where you are writing
+          from (optional), and your message. This data is used only to
+          reply to your enquiry and, if you become a client, to arrange
+          the work that follows.
         </p>
         <ul>
           <li>
@@ -181,8 +183,8 @@ export default async function PrivacyPage({
         </ul>
         <p>
           To exercise any of these rights, email{" "}
-          <Todo>hello@katarina-coaching.example</Todo>. A reply follows
-          within 30 days.
+          <Todo>the address Katarina wants published here</Todo>. A reply
+          follows within 30 days.
         </p>
 
         <h2>5. Automated decisions</h2>

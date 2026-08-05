@@ -37,6 +37,7 @@ export default async function ImprintPage({
         eyebrow="Legal notice · Impressum"
         title="Imprint."
         updated="28 July 2026"
+        draft
       >
         <p>
           Information provided in accordance with Art. 3 lit. s of the
@@ -47,7 +48,7 @@ export default async function ImprintPage({
         <p>
           Katarina Gröflin
           <br />
-          <Todo>street and number</Todo>
+          <Todo>street and house number</Todo>
           <br />
           <Todo>postcode</Todo> Ettingen BL
           <br />
@@ -56,38 +57,53 @@ export default async function ImprintPage({
 
         <h2>Contact</h2>
         <p>
-          Email: <Todo>hello@katarina-coaching.example</Todo>
+          Email: <Todo>the address Katarina wants published here</Todo>
           <br />
-          Phone (optional): <Todo>+41 phone number, if you want it public</Todo>
+          Phone: <Todo>a number, or confirmation that none is published</Todo>
         </p>
 
         <h2>Business identification</h2>
         <p>
           UID (Unternehmens-Identifikationsnummer):{" "}
-          <Todo>CHE-xxx.xxx.xxx or note “not registered — sole proprietorship below CHF 100,000 turnover”</Todo>
+          <Todo>
+            the UID, or confirmation that the business is not registered
+          </Todo>
           <br />
           MWST-Nr. (VAT):{" "}
-          <Todo>CHE-xxx.xxx.xxx MWST, or note “not VAT-registered”</Todo>
+          <Todo>
+            the VAT number, or confirmation that the business is not
+            VAT-registered
+          </Todo>
           <br />
           Commercial register (Handelsregister):{" "}
-          <Todo>entry details, or note “not required at current turnover”</Todo>
+          <Todo>
+            the register entry, or confirmation that no entry is required
+          </Todo>
         </p>
 
         <h2>Professional titles</h2>
         <p>
           Personal Trainer &amp; Nutrition Coach —{" "}
-          <Todo>issuing body of each certificate</Todo>. These are not
+          <Todo>the body that issued each certificate</Todo>. These are not
           state-regulated professions in Switzerland; no cantonal licence
           or chamber membership is required. Voluntary recognition (e.g.
           EMR / ASCA / RME for complementary nutrition services) —{" "}
-          <Todo>add EMR/ASCA/RME number if applicable, otherwise remove</Todo>.
+          <Todo>
+            the registration number if one exists, otherwise this sentence is
+            deleted
+          </Todo>
+          .
         </p>
 
         <h2>Professional liability insurance</h2>
         <p>
-          Insurer: <Todo>insurer name</Todo>,{" "}
-          <Todo>insurer address</Todo>. Coverage: Switzerland{" "}
-          <Todo>(add EU if you coach clients abroad)</Todo>.
+          Insurer: <Todo>name of the insurer</Todo>,{" "}
+          <Todo>address of the insurer</Todo>. Coverage:{" "}
+          <Todo>
+            the territory the policy actually covers — do not assume Switzerland
+            only
+          </Todo>
+          .
         </p>
 
         <h2>Editorial responsibility</h2>

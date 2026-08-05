@@ -66,15 +66,18 @@ export function About() {
           {/* Concrete numbers. Two of the three are waiting on Katie — shown
               as TODO rather than filled with a plausible-looking guess. */}
           <dl className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-foreground/[0.08] sm:grid-cols-3">
+            {/* Placeholders stay at body size — at display scale the pill
+                wraps over three lines and the row reads as broken rather
+                than as pending. Only a real figure gets the big type. */}
             <div className="bg-background px-5 py-5">
               <dt className="caption">{t("statYearsLabel")}</dt>
-              <dd className="mt-2 font-display text-[1.6rem] leading-none">
+              <dd className="mt-2.5 leading-snug">
                 <Todo>years</Todo>
               </dd>
             </div>
             <div className="bg-background px-5 py-5">
               <dt className="caption">{t("statClientsLabel")}</dt>
-              <dd className="mt-2 font-display text-[1.6rem] leading-none">
+              <dd className="mt-2.5 leading-snug">
                 <Todo>count</Todo>
               </dd>
             </div>
