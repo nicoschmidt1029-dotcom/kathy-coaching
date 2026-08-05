@@ -26,3 +26,21 @@ export const LOCALE_LABELS: Record<Locale, { short: string; name: string }> = {
   de: { short: "DE", name: "Deutsch" },
   sk: { short: "SK", name: "Slovenčina" },
 };
+
+/**
+ * Locales whose copy has not been checked by a native speaker.
+ *
+ * Slovak was drafted by an AI, not written by Katarína and not reviewed by
+ * anyone who speaks the language — the error risk is materially higher than
+ * for German, which Nico supplied and can read. Visitors on a draft locale
+ * get a quiet notice saying so, rather than being shown possibly-wrong copy
+ * as if it were finished.
+ *
+ * Remove a locale from this list the moment its translation has been
+ * reviewed; nothing else needs changing.
+ */
+export const DRAFT_LOCALES: readonly Locale[] = ["sk"];
+
+export function isDraftLocale(locale: string): locale is Locale {
+  return (DRAFT_LOCALES as readonly string[]).includes(locale);
+}

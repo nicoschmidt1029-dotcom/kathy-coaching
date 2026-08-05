@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import "../globals.css";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
+import { TranslationNotice } from "@/components/site/translation-notice";
 import { routing } from "@/i18n/routing";
 import { alternatesFor } from "@/i18n/metadata";
 import { SITE_URL } from "@/lib/site-url";
@@ -90,6 +91,8 @@ export default async function LocaleLayout({
             {t("skipToMain")}
           </a>
           <Header />
+          {/* Renders nothing unless this locale is still a draft. */}
+          <TranslationNotice locale={locale} />
           <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
             {children}
           </main>

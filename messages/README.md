@@ -25,26 +25,37 @@ Rules:
 
 ## Status
 
-**DE is complete** — 213 of the 220 keys are translated and the remaining
-seven are intentional (brand name, wordmark, the two issuing institutions,
-and the language list, which reads the same in every language). **SK still
-needs everything except the bio and mission.**
+**DE is complete** — 213 of the 221 keys are translated and the remaining
+eight are intentional (brand name, wordmark, the two issuing institutions,
+and the language list, which reads the same in every language).
+
+**SK is a draft and has not been reviewed by a native speaker.** Only the
+bio and mission come from Katarína; everything else was drafted by an AI,
+which carries a materially higher error risk than the German — Nico
+supplied that text and can read it back. Until someone checks it, `sk` is
+listed in `DRAFT_LOCALES` (`i18n/routing.ts`) and every page on `/sk`
+carries a quiet notice saying the translation is still being reviewed.
+**After review: remove `sk` from `DRAFT_LOCALES` and update the `_status`
+block in `sk.json`.**
 
 | Section | Keys | DE | SK |
 |---|---|---|---|
 | `about` — bio paragraphs | `calling`, `story` | ✅ from Nico | ✅ Katarína's PDF original |
 | `mission` — headline + body | `title`, `p1`–`p4` | ✅ from Nico | ✅ Katarína's PDF original |
+| `hero` | all | ✅ translated | ⚠️ AI draft |
+| `approach` (3 threads, teaser + full) | all | ✅ translated | ⚠️ AI draft |
+| `programs` + `builder` + `pricing` | all | ✅ translated | ⚠️ AI draft |
+| `testimonials` + `spotlight` | all | ✅ translated | ⚠️ AI draft |
+| `contact` (form labels, states) | all | ✅ translated | ⚠️ AI draft |
+| `nav` + `language` | all | ✅ translated | ⚠️ AI draft |
 | `about` — headings, caption, stats, qualifications | `eyebrow`, `title`, `portraitCaption`, `stat*`, `qual*` | ✅ translated | ❌ English |
-| `hero` | all | ✅ translated | ❌ English |
-| `approach` (3 threads, teaser + full) | all | ✅ translated | ❌ English |
 | `howIWork` — the four-step method | all | ✅ translated | ❌ English |
-| `programs` + `builder` + `pricing` | all | ✅ translated | ❌ English |
-| `testimonials` + `spotlight` | all | ✅ translated | ❌ English |
+| `mission` — eyebrow | `eyebrow` | ✅ translated | ❌ English |
 | `faq` (5 Q&A) | all | ✅ translated | ❌ English |
-| `contact` (form labels, states) | all | ✅ translated | ❌ English |
 | `finalCta` | all | ✅ translated | ❌ English |
-| `nav`, `footer`, `language`, `notFound` | all | ✅ translated | ❌ English |
+| `footer`, `notFound` | all | ✅ translated | ❌ English |
 | `pages` (SEO titles + descriptions) | all | ✅ translated | ❌ English |
+| `translationNotice` | `draft` | — (not shown) | ⚠️ AI draft |
 
 ### Not in the message files at all (English only, by design)
 

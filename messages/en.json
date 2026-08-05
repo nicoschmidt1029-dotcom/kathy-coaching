@@ -51,6 +51,10 @@
     "label": "Language",
     "switchTo": "Switch language to {language}"
   },
+  "translationNotice": {
+    "_comment": "Shown only on locales listed in DRAFT_LOCALES (i18n/routing.ts). English is the source version, so this never appears on /en — the key exists for fallback safety.",
+    "draft": "This translation is still being reviewed. The English version is the original."
+  },
   "hero": {
     "eyebrow": "Holistic coaching · faith-rooted",
     "headline": "See your body the way <em>God created it.</em>",

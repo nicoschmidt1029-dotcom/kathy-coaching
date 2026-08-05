@@ -63,7 +63,9 @@ export function Header() {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "group relative text-[0.92rem] transition-colors duration-200",
+                  // nowrap: two-word labels in other languages ("O mne")
+                  // otherwise break across lines in the narrow desktop nav
+                  "group relative whitespace-nowrap text-[0.92rem] transition-colors duration-200",
                   active
                     ? "text-foreground"
                     : "text-foreground/72 hover:text-foreground"

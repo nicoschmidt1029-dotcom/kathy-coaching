@@ -1,19 +1,74 @@
 {
   "_status": {
-    "translated": "about (calling, story) + mission (title, p1–p4) — Katarínin originálny text z KATEY COACHING.pdf, prevzatý doslovne",
-    "note": "Každý chýbajúci kľúč automaticky prechádza na messages/en.json, takže /sk sa zobrazí celé — zvyšok zatiaľ po anglicky. Preklady musia prísť od Kataríny, nie zo strojového prekladu. Zoznam otvorených sekcií: messages/README.md.",
-    "todo": [
-      "hero",
-      "approach",
-      "programs / builder / pricing",
-      "testimonials / spotlight",
-      "faq",
-      "contact",
+    "WARNING": "DRAFT — NEEDS NATIVE SPEAKER REVIEW",
+    "translated": "about.calling/story + mission.title/p1–p4 sú Katarínin vlastný text z KATEY COACHING.pdf, prevzatý doslovne. VŠETKO OSTATNÉ je koncept vygenerovaný AI (Claude), nie Katarínou, a neskontroloval ho žiadny rodený hovoriaci.",
+    "risk": "Riziko chýb je tu vyššie než v de.json: nemecký text dodal Nico a vie si ho prečítať, slovenský nie. Očakávajte chyby v pádoch, rode a idiómoch. Kým to Katarína neskontroluje, návštevníkom sa na /sk zobrazuje poznámka (translationNotice.draft) — pozri DRAFT_LOCALES v i18n/routing.ts.",
+    "afterReview": "Po kontrole: odstráňte 'sk' z DRAFT_LOCALES v i18n/routing.ts a upravte tento blok.",
+    "genderNote": "Katarínin pôvodný text v mission.p4 používa mužský tvar („aby som ti pomohol\"). Koncepty nižšie používajú ženský tvar („odpovedala\", „prijímam\"), keďže hovorí žena. Nechali sme oboje tak, ako je — Katarína nech rozhodne, čo je správne.",
+    "notTranslated": [
+      "about — eyebrow, title, portraitCaption, stats, qualifications",
+      "howIWork — celá sekcia",
+      "mission.eyebrow",
+      "faq — všetkých 5 otázok",
       "finalCta",
-      "footer / nav / notFound",
-      "pages (SEO tituly a popisy)",
-      "about — eyebrow, title, portraitCaption, qualifications (v PDF neboli)"
+      "footer, notFound",
+      "pages — SEO tituly a popisy",
+      "/imprint a /privacy — právne texty, zámerne nikdy strojovo neprekladané"
     ]
+  },
+  "translationNotice": {
+    "draft": "Slovenský preklad sa ešte kontroluje. Anglická verzia je pôvodná."
+  },
+  "nav": {
+    "about": "O mne",
+    "programs": "Programy",
+    "testimonials": "Ohlasy",
+    "contact": "Kontakt",
+    "cta": "Poďme sa porozprávať",
+    "menu": "Menu",
+    "openMenu": "Otvoriť menu",
+    "skipToMain": "Preskočiť na hlavný obsah"
+  },
+  "language": {
+    "label": "Jazyk",
+    "switchTo": "Prepnúť jazyk na {language}"
+  },
+  "hero": {
+    "eyebrow": "Celostný koučing · zakorenený vo viere",
+    "headline": "Pozri sa na svoje telo tak, <em>ako ho stvoril Boh.</em>",
+    "body": "Osobný tréning, výživové poradenstvo a kresťanský mentoring — tri nite votkané do jednej cesty. Vytvorené s myšlienkou na ženy, otvorené aj pre mužov.",
+    "cta": "Poďme sa porozprávať",
+    "credentialTrainer": "Certifikovaná osobná trénerka",
+    "credentialNutrition": "Certifikovaná výživová poradkyňa",
+    "inMotion": "V pohybe",
+    "videoAlt": "Video v pozadí — tréning a príroda v slučke"
+  },
+  "approach": {
+    "systemName": "Prístup troch nití",
+    "eyebrow": "Prístup",
+    "title": "Tri nite. Jeden celý človek.",
+    "intro": "Tréning bez výživy zostáva neúplný. Výživa bez pokoja pre dušu časom vyčerpáva. Pracujeme na všetkých troch — pomaly a s rozmyslom.",
+    "definition": "Jedna metóda, tri nite, ktoré držia spolu: čo robíš so svojím telom, čo máš na tanieri a čomu veríš o svojej vlastnej hodnote. Potiahni za jednu a ostatné sa pohnú s ňou.",
+    "threadLabel": "Niť {number} z 3",
+    "readMore": "Prečítať si celý prístup",
+    "train": {
+      "title": "Trénovať telo",
+      "teaser": "Silový tréning postavený na živote, ktorý naozaj žiješ.",
+      "body": "Silový tréning, ktorý ťa berie tam, kde práve si. Postupný, udržateľný a postavený na živote, ktorý naozaj žiješ — nie na cudzom.",
+      "slot": "Tréning"
+    },
+    "nourish": {
+      "title": "Vedome sa vyživovať",
+      "teaser": "Skutočné jedlo, skutočná flexibilita, žiadny strach ani pravidlá.",
+      "body": "Vzťah k jedlu, v ktorom nejde o pravidlá ani o vinu. Skutočné jedlá, skutočná flexibilita, skutočné pochopenie toho, čo tvoje telo potrebuje, aby prekvitalo.",
+      "slot": "Výživa"
+    },
+    "soul": {
+      "title": "Duša a identita v Ježišovi",
+      "teaser": "Ponúknuté, nikdy nanútené — hodnota hlbšia než zrkadlo.",
+      "body": "Ponúknuté, nikdy nanútené: úprimné rozhovory, modlitba a biblický pohľad na vlastnú hodnotu. Pre každého, kto hľadá sebavedomie zakorenené hlbšie než v zrkadle.",
+      "slot": "Duša"
+    }
   },
   "about": {
     "calling": "Všetci máme calling v živote. <em>Môj povolanie je pomáhať ľuďom.</em>",
@@ -25,5 +80,146 @@
     "p2": "Chceš schudnúť? Alebo chceš viacej svalstva? Alebo chceš sa stravovať a žiť zdravšie, ale nie si si istý ako na to? Alebo ťa život duchovne a psychicky vyčerpal?",
     "p3": "Let me tell you. Nikdy nie je pozde.",
     "p4": "Urobím všetko pre to, aby som ti pomohol"
+  },
+  "spotlight": {
+    "eyebrow": "Nedávna klientka",
+    "quote": "Prišla som schudnúť. O šesť týždňov neskôr sa váha posunula — ale to väčšie bolo tichšie. Prvýkrát po rokoch som sa pozrela do zrkadla bez počítania. Katie mi nepredala program; prešla ňou spolu so mnou.",
+    "name": "Lena, 32",
+    "program": "Šesť týždňov, celá cesta",
+    "portraitLabel": "Portrét Leny"
+  },
+  "testimonials": {
+    "eyebrow": "Ďalšie príbehy",
+    "title": "To, čo sa zmenilo, nebolo len telo.",
+    "note": "Fotky pred a po zdieľané so súhlasom · zatiaľ zástupné",
+    "before": "Pred",
+    "after": "Po",
+    "videoLabel": "Video referencia od {name}",
+    "marcus": {
+      "name": "Marcus, 41",
+      "program": "Tréning + výživa",
+      "quote": "Ako chlap som si nebol istý, či je to pre mňa. U Katie to pôsobilo ako koučing, nie ako terapia — a duchovné rozhovory boli skutočné, nikdy dotieravé."
+    },
+    "hannah": {
+      "name": "Hannah, 27",
+      "program": "Celá cesta",
+      "quote": "Šesť týždňov. Prvý program, ktorý som dokončila bez toho, aby som to v polovici vzdala. Milosť, s ktorou vedie, je časť toho prečo."
+    },
+    "sophie": {
+      "name": "Sophie, 36",
+      "program": "Celá cesta",
+      "quote": "Chcela som štruktúru a dostala som ju — ale aj dovolenie prestať bojovať so svojím telom. Tá zmena neprišla z plánu. Prišla z toho, že ma niekto videl."
+    }
+  },
+  "programs": {
+    "eyebrow": "Programy",
+    "title": "Tri časti. Jedna cesta. Ty rozhoduješ, koľko.",
+    "intro": "Skutočná zmena si vyžaduje skutočnú účasť. Každý mesiac prijímam len málo ľudí, aby som tu mohla byť pre každého naplno — toto nie je kurz, ktorý sa konzumuje, ale šesť týždňov, ktoré prejdeme spolu.",
+    "systemNote": "Každý stavebný blok nižšie je jednou niťou z {system}. Vezmi si jednu niť — alebo pracuj na všetkých troch.",
+    "readyMade": "Hotové balíky",
+    "readyMadeTitle": "Tri balíky, rýchla voľba.",
+    "readyMadeAside": "Nechce sa ti vyberať? Vezmi si jeden.",
+    "mostChosen": "Najčastejšie volené",
+    "bestFor": "Najlepšie pre:",
+    "chooseBundle": "Vybrať tento balík",
+    "buildOwn": "Alebo si poskladaj vlastný",
+    "buildOwnTitle": "Poskladaj si kombináciu, ktorá sadne tvojmu životu.",
+    "buildOwnIntro": "Vyber si ľubovoľnú kombináciu blokov a doplnkov — cena sa prepočítava pri každom kliknutí. Dva bloky spolu majú 5 % zľavu, tri bloky 10 %. Doplnky zostávajú za samostatnú cenu, a práve preto je kompletný balík vyššie výhodnejší, ak ich chceš mať všetky.",
+    "teaserTitle": "Tri programy. Ty si vyberieš, kde začneš.",
+    "teaserIntro": "Len tréning, tréning + výživa, alebo celá cesta — telo, tanier a duša pohromade. Všetko jeden na jedného, všetko šesť týždňov. Skutočná zmena si vyžaduje skutočnú účasť, preto každý mesiac prijímam len málo ľudí.",
+    "teaserCta": "Pozrieť programy a ceny",
+    "teaserSecondary": "Nie si si istý? Najprv sa porozprávajme"
+  },
+  "builder": {
+    "blocksTitle": "Stavebné bloky",
+    "addonsTitle": "Voliteľné doplnky",
+    "panelTitle": "Tvoja zostava",
+    "empty": "Vyber si jeden alebo viac blokov. Ceny sa počítajú naživo — od dvoch blokov sa uplatní zľava.",
+    "discount": "Zľava za balík ({percent} % na bloky)",
+    "total": "Spolu · 6 týždňov",
+    "matchBundle": "To zodpovedá balíku <strong>{name}</strong> vyššie.",
+    "matchCheaper": "To zodpovedá balíku <strong>{name}</strong> vyššie — ako balík je o {difference} € lacnejší ({price} €).",
+    "cta": "Poďme sa porozprávať",
+    "carried": "Tvoj výber sa prenesie do formulára"
+  },
+  "pricing": {
+    "duration": "6 týždňov · 1:1",
+    "blocks": {
+      "training": {
+        "name": "Osobný tréning",
+        "blurb": "Zostavenie programu, technika, zodpovednosť. Týždenné tréningy prispôsobené tvojmu životu."
+      },
+      "nutrition": {
+        "name": "Výživové poradenstvo",
+        "blurb": "Plán, s ktorým sa dá naozaj žiť. Skutočné jedlo, skutočná flexibilita, žiadny strach."
+      },
+      "spiritual": {
+        "name": "Duchovný mentoring",
+        "blurb": "Úprimné rozhovory, modlitba a biblický pohľad na vlastnú hodnotu."
+      }
+    },
+    "addons": {
+      "whatsapp": {
+        "name": "Priame check-iny cez WhatsApp",
+        "blurb": "Podpora medzi stretnutiami, keď ju potrebuješ."
+      },
+      "prayer": {
+        "name": "Týždenná modlitba a Božie slovo",
+        "blurb": "Krátka chvíľa modlitby votkaná do týždňa."
+      },
+      "priority": {
+        "name": "Prednosť pri nových miestach",
+        "blurb": "Prvá na rade, keď sa otvorí nový mesiac."
+      }
+    },
+    "bundles": {
+      "training-only": {
+        "name": "Len tréning",
+        "blurb": "Začni pohybom. Zvyšok môže prísť neskôr, ak sadne.",
+        "bestFor": "jemný návrat k pohybu, bez tlaku hneď pridávať viac",
+        "format": "Týždenný tréning 1:1 · kontrola techniky medzitým"
+      },
+      "training-nutrition": {
+        "name": "Tréning + výživa",
+        "blurb": "Sila a pokojnejší vzťah k jedlu.",
+        "bestFor": "keď jedlo a tréning pôsobia ako dva oddelené boje",
+        "format": "Týždenný tréning 1:1 · výživový check-in v strede týždňa"
+      },
+      "complete": {
+        "name": "Celá cesta",
+        "blurb": "Telo, tanier a duša — plus všetky doplnky v cene."
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Ozvi sa",
+    "title": "Poďme sa porozprávať.",
+    "intro": "Napíš mi niečo o sebe — odkiaľ píšeš, v akom jazyku sa cítiš najlepšie a kam sa chceš dostať. Ozvem sa ti osobne, bez pevného formátu.",
+    "formatLabel": "Formát",
+    "formatValue": "Spoločne prídeme na to, čo sadne — telefonát, správa alebo osobne.",
+    "languagesLabel": "Jazyky",
+    "replyLabel": "Odpoveď do",
+    "replyValue": "Dvoch pracovných dní, väčšinou skôr.",
+    "nameLabel": "Tvoje meno",
+    "namePlaceholder": "Anna Nováková",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "anna@priklad.sk",
+    "languageLabel": "Jazyk, v ktorom sa cítiš najlepšie",
+    "languageNoPreference": "Bez preferencie",
+    "languageOther": "Iný",
+    "locationLabel": "Odkiaľ píšeš?",
+    "locationPlaceholder": "Krajina alebo mesto (nepovinné)",
+    "messageLabel": "Niečo o tom, kde si a kam sa chceš dostať",
+    "messagePlaceholder": "Kde práve si, kam by si sa chcel dostať — nemusí to byť vybrúsené.",
+    "prefillPrefix": "Záujem o: {selection}",
+    "privacyNote": "Tvoju e-mailovú adresu použijem len na to, aby som ti osobne odpovedala.",
+    "submit": "Odoslať správu",
+    "submitting": "Odosiela sa…",
+    "genericError": "Niečo sa pokazilo. Skús to prosím znova.",
+    "networkError": "Chyba siete. Skús to prosím o chvíľu znova.",
+    "sentTitle": "Ďakujem — dorazilo to.",
+    "sentBody": "Každú správu čítam sama. Odpoveď do dvoch pracovných dní, väčšinou skôr. Zatiaľ — milosť a pokoj tebe.",
+    "sendAnother": "Poslať ďalšiu správu",
+    "legalPrefix": "Právne:"
   }
 }
