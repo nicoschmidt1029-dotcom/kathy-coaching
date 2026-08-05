@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { alternatesFor } from "@/i18n/metadata";
 import { Contact } from "@/components/site/contact";
+import { Link } from "@/i18n/navigation";
 import {
   ADDONS,
   BLOCKS,
@@ -10,11 +12,19 @@ import {
   type BlockId,
 } from "@/lib/pricing";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Start a conversation with Katie — tell her where you are, where you'd like to go, and the language you're most comfortable in.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "pages.contact" });
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: alternatesFor(locale, "/kontakt"),
+  };
+}
 
 function pick<T extends string>(
   value: string | string[] | undefined,
@@ -28,28 +38,36 @@ function pick<T extends string>(
 }
 
 export default async function KontaktPage({
+  params,
   searchParams,
 }: {
+  params: Promise<{ locale: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const params = await searchParams;
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const query = await searchParams;
+  const p = await getTranslations({ locale, namespace: "pricing" });
+  const t = await getTranslations({ locale, namespace: "contact" });
+  const footer = await getTranslations({ locale, namespace: "footer" });
 
   const bundleId =
-    typeof params.bundle === "string" &&
-    BUNDLES.some((b) => b.id === params.bundle)
-      ? params.bundle
+    typeof query.bundle === "string" &&
+    BUNDLES.some((b) => b.id === query.bundle)
+      ? query.bundle
       : undefined;
 
   const blockIds = pick<BlockId>(
-    params.blocks,
+    query.blocks,
     BLOCKS.map((b) => b.id) as readonly BlockId[]
   );
   const addonIds = pick<AddonId>(
-    params.addons,
+    query.addons,
     ADDONS.map((a) => a.id) as readonly AddonId[]
   );
 
-  const prefill = summarize(blockIds, addonIds, bundleId);
+  const prefill = summarize(p, blockIds, addonIds, bundleId);
 
   return (
     <>
@@ -57,19 +75,19 @@ export default async function KontaktPage({
       <section className="border-t border-foreground/[0.08] py-10">
         <div className="container-page text-center text-[0.85rem] text-foreground/55">
           <p>
-            Legal:{" "}
+            {t("legalPrefix")}{" "}
             <Link
               href="/imprint"
               className="underline underline-offset-2 hover:text-foreground"
             >
-              Imprint
+              {footer("imprint")}
             </Link>{" "}
             ·{" "}
             <Link
               href="/privacy"
               className="underline underline-offset-2 hover:text-foreground"
             >
-              Privacy
+              {footer("privacy")}
             </Link>
           </p>
         </div>

@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -8,10 +9,12 @@ type Props = {
 };
 
 export function Wordmark({ className, onDark = false }: Props) {
+  const t = useTranslations("wordmark");
+
   return (
     <Link
       href="/"
-      aria-label="Katie Coaching — home"
+      aria-label={t("ariaLabel")}
       className={cn(
         "group inline-flex items-center gap-2.5 leading-none",
         className
@@ -45,7 +48,8 @@ export function Wordmark({ className, onDark = false }: Props) {
         )}
       >
         <span className="font-display text-lg tracking-tight md:text-xl">
-          <span className="italic">K</span>atie
+          <span className="italic">{t("name").charAt(0)}</span>
+          {t("name").slice(1)}
         </span>
         <span
           className={cn(
@@ -55,7 +59,7 @@ export function Wordmark({ className, onDark = false }: Props) {
               : "text-[var(--plum)]/70"
           )}
         >
-          Coaching
+          {t("tagline")}
         </span>
       </span>
     </Link>

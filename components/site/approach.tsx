@@ -1,67 +1,47 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Dumbbell, Salad, Heart } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 // STOCK PLACEHOLDER – replace with Katie's own content before launch
-import { TEMP_PHOTOS } from "@/lib/temp-photos";
+import { TEMP_PHOTOS, type TempPhoto } from "@/lib/temp-photos";
+
+type PillarKey = "train" | "nourish" | "soul";
 
 type Pillar = {
+  key: PillarKey;
   number: string;
-  title: string;
-  body: string;
   Icon: LucideIcon;
-  image?: { url: string; alt: string; credit?: string; slot: string };
+  image: TempPhoto;
 };
 
 const PILLARS: Pillar[] = [
   {
+    key: "train",
     number: "01",
-    title: "Train the body",
-    body: "Strength work that meets you where you are. Progressive, sustainable, and built around the life you actually live — not someone else's.",
     Icon: Dumbbell,
     // STOCK PLACEHOLDER – replace with Katie's own content before launch
-    image: TEMP_PHOTOS.approachTrain
-      ? {
-          url: TEMP_PHOTOS.approachTrain.url,
-          alt: TEMP_PHOTOS.approachTrain.alt,
-          credit: TEMP_PHOTOS.approachTrain.credit,
-          slot: "Train",
-        }
-      : undefined,
+    image: TEMP_PHOTOS.approachTrain,
   },
   {
+    key: "nourish",
     number: "02",
-    title: "Nourish with intention",
-    body: "A relationship with food that isn't about rules or guilt. Real meals, real flexibility, real understanding of what your body needs to thrive.",
     Icon: Salad,
     // STOCK PLACEHOLDER – replace with Katie's own content before launch
-    image: TEMP_PHOTOS.approachNourish
-      ? {
-          url: TEMP_PHOTOS.approachNourish.url,
-          alt: TEMP_PHOTOS.approachNourish.alt,
-          credit: TEMP_PHOTOS.approachNourish.credit,
-          slot: "Nourish",
-        }
-      : undefined,
+    image: TEMP_PHOTOS.approachNourish,
   },
   {
+    key: "soul",
     number: "03",
-    title: "Soul & identity in Jesus",
-    body: "Offered, never imposed: honest conversation, prayer, and biblical perspective on worth. For anyone wanting confidence rooted in something deeper than a mirror.",
     Icon: Heart,
     // STOCK PLACEHOLDER – replace with Katie's own content before launch
-    image: TEMP_PHOTOS.approachSoul
-      ? {
-          url: TEMP_PHOTOS.approachSoul.url,
-          alt: TEMP_PHOTOS.approachSoul.alt,
-          credit: TEMP_PHOTOS.approachSoul.credit,
-          slot: "Soul",
-        }
-      : undefined,
+    image: TEMP_PHOTOS.approachSoul,
   },
 ];
 
 export function Approach() {
+  const t = useTranslations("approach");
+
   return (
     <section
       id="approach"
@@ -69,19 +49,18 @@ export function Approach() {
     >
       <div className="container-page">
         <div className="max-w-2xl">
-          <p className="eyebrow">The approach</p>
+          <p className="eyebrow">{t("eyebrow")}</p>
           <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance">
-            Three threads. One whole person.
+            {t("title")}
           </h2>
           <p className="mt-6 max-w-xl text-pretty text-foreground/72 sm:text-lg sm:leading-[1.7]">
-            Training without nutrition is incomplete. Nutrition without rest
-            of soul is exhausting. We work all three — gently, deliberately.
+            {t("intro")}
           </p>
         </div>
 
         <ul className="mt-14 grid grid-cols-1 gap-16 md:mt-20 md:grid-cols-3 md:gap-8">
-          {PILLARS.map(({ number, title, body, Icon, image }) => (
-            <li key={number} className="flex flex-col">
+          {PILLARS.map(({ key, number, Icon, image }) => (
+            <li key={key} className="flex flex-col">
               {/* Top: image (Nourish / Soul) or tinted panel with icon (Train) */}
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                 {image ? (
@@ -99,7 +78,7 @@ export function Approach() {
                           TEMP
                         </span>
                         <span className="truncate">
-                          {image.slot} · {image.credit}
+                          {t(`${key}.slot`)} · {image.credit}
                         </span>
                       </div>
                     )}
@@ -125,11 +104,11 @@ export function Approach() {
                 <div className="flex items-baseline gap-3">
                   <span className="caption">{number}</span>
                   <h3 className="font-display text-xl leading-tight font-normal">
-                    {title}
+                    {t(`${key}.title`)}
                   </h3>
                 </div>
                 <p className="mt-3 max-w-prose text-[0.95rem] leading-relaxed text-foreground/72">
-                  {body}
+                  {t(`${key}.body`)}
                 </p>
               </div>
             </li>

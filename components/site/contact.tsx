@@ -1,11 +1,13 @@
 "use client";
 
 import * as React from "react";
+import { useTranslations } from "next-intl";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { LOCALE_LABELS, routing, type Locale } from "@/i18n/routing";
 
 type FormState =
   | { status: "idle" }
@@ -14,12 +16,13 @@ type FormState =
   | { status: "error"; message: string };
 
 type Props = {
-  /** Prefilled value for the "Interested in" field — carried from the
-   *  Programs page (either a bundle click or a builder selection). */
+  /** Prefilled program summary — carried from the Programs page (either a
+   *  bundle click or a builder selection) and seeded into the message body. */
   prefill?: string;
 };
 
 export function Contact({ prefill }: Props = {}) {
+  const t = useTranslations("contact");
   const [state, setState] = React.useState<FormState>({ status: "idle" });
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -50,17 +53,14 @@ export function Contact({ prefill }: Props = {}) {
       if (!res.ok || !data.ok) {
         setState({
           status: "error",
-          message: data.error ?? "Something went wrong. Please try again.",
+          message: data.error ?? t("genericError"),
         });
         return;
       }
       form.reset();
       setState({ status: "sent" });
     } catch {
-      setState({
-        status: "error",
-        message: "Network error. Please try again in a moment.",
-      });
+      setState({ status: "error", message: t("networkError") });
     }
   }
 
@@ -81,41 +81,38 @@ export function Contact({ prefill }: Props = {}) {
       <div className="container-page grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
         <div className="md:col-span-5">
           <p className="font-mono text-[0.75rem] tracking-[0.18em] uppercase text-[var(--primary-foreground)]/70">
-            Let&rsquo;s talk
+            {t("eyebrow")}
           </p>
           <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance text-[var(--primary-foreground)]">
-            Let&rsquo;s start a conversation.
+            {t("title")}
           </h2>
           <p className="mt-6 max-w-md text-pretty text-[var(--primary-foreground)]/80 sm:text-lg sm:leading-[1.7]">
-            Tell me a little about you — where you&rsquo;re writing from, what
-            language feels most comfortable, and where you&rsquo;d like to go.
-            I&rsquo;ll get back to you personally, no fixed format yet.
+            {t("intro")}
           </p>
 
           <dl className="mt-10 space-y-4 text-[0.95rem]">
             <div>
               <dt className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[var(--primary-foreground)]/55">
-                Format
+                {t("formatLabel")}
               </dt>
               <dd className="mt-1 text-[var(--primary-foreground)]/85">
-                We&rsquo;ll figure out what works together — call, message, or
-                in person.
+                {t("formatValue")}
               </dd>
             </div>
             <div>
               <dt className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[var(--primary-foreground)]/55">
-                Languages
+                {t("languagesLabel")}
               </dt>
               <dd className="mt-1 text-[var(--primary-foreground)]/85">
-                English · Deutsch · Slovenčina
+                {t("languagesValue")}
               </dd>
             </div>
             <div>
               <dt className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[var(--primary-foreground)]/55">
-                Reply within
+                {t("replyLabel")}
               </dt>
               <dd className="mt-1 text-[var(--primary-foreground)]/85">
-                Two working days, usually sooner.
+                {t("replyValue")}
               </dd>
             </div>
           </dl>
@@ -132,19 +129,17 @@ export function Contact({ prefill }: Props = {}) {
                 <CheckCircle2 className="size-6" aria-hidden />
               </div>
               <h3 className="mt-6 font-display text-2xl leading-tight font-normal">
-                Thank you — I got it.
+                {t("sentTitle")}
               </h3>
               <p className="mt-3 max-w-md text-pretty text-foreground/70 sm:text-lg sm:leading-[1.65]">
-                I read every message myself. Expect a reply within two working
-                days, usually sooner. In the meantime — grace and peace to
-                you.
+                {t("sentBody")}
               </p>
               <button
                 type="button"
                 onClick={() => setState({ status: "idle" })}
                 className="mt-8 text-[0.9rem] text-[var(--plum)] underline underline-offset-4 transition-colors hover:text-foreground"
               >
-                Send another message
+                {t("sendAnother")}
               </button>
             </div>
           ) : (
@@ -170,71 +165,82 @@ export function Contact({ prefill }: Props = {}) {
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
                 <div className="sm:col-span-1">
                   <Label htmlFor="name" className="mb-2 text-foreground/80">
-                    Your name
+                    {t("nameLabel")}
                   </Label>
                   <Input
                     id="name"
                     name="name"
                     required
-                    placeholder="Jane Doe"
+                    placeholder={t("namePlaceholder")}
                     autoComplete="name"
                     className="h-11 rounded-lg bg-background"
                   />
                 </div>
                 <div className="sm:col-span-1">
                   <Label htmlFor="email" className="mb-2 text-foreground/80">
-                    Email
+                    {t("emailLabel")}
                   </Label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     required
-                    placeholder="jane@example.com"
+                    placeholder={t("emailPlaceholder")}
                     autoComplete="email"
                     className="h-11 rounded-lg bg-background"
                   />
                 </div>
                 <div className="sm:col-span-1">
                   <Label htmlFor="language" className="mb-2 text-foreground/80">
-                    Language you&rsquo;re most comfortable in
+                    {t("languageLabel")}
                   </Label>
+                  {/* Options stay in their own language on purpose — a visitor
+                      picking "Slovenčina" reads it the same in every locale. */}
                   <select
                     id="language"
                     name="language"
                     defaultValue=""
                     className="h-11 w-full rounded-lg border border-input bg-background px-2.5 text-base outline-none transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 md:text-sm"
                   >
-                    <option value="">No preference</option>
-                    <option value="English">English</option>
-                    <option value="Deutsch">Deutsch</option>
-                    <option value="Slovenčina">Slovenčina</option>
-                    <option value="Other">Other</option>
+                    <option value="">{t("languageNoPreference")}</option>
+                    {routing.locales.map((locale) => (
+                      <option
+                        key={locale}
+                        value={LOCALE_LABELS[locale as Locale].name}
+                      >
+                        {LOCALE_LABELS[locale as Locale].name}
+                      </option>
+                    ))}
+                    <option value="Other">{t("languageOther")}</option>
                   </select>
                 </div>
                 <div className="sm:col-span-1">
                   <Label htmlFor="location" className="mb-2 text-foreground/80">
-                    Where are you writing from?
+                    {t("locationLabel")}
                   </Label>
                   <Input
                     id="location"
                     name="location"
-                    placeholder="Country or city (optional)"
+                    placeholder={t("locationPlaceholder")}
                     autoComplete="country-name"
                     className="h-11 rounded-lg bg-background"
                   />
                 </div>
                 <div className="sm:col-span-2">
                   <Label htmlFor="message" className="mb-2 text-foreground/80">
-                    A little about where you are, where you&rsquo;d like to go
+                    {t("messageLabel")}
                   </Label>
                   <Textarea
                     id="message"
                     name="message"
                     required
                     rows={5}
-                    defaultValue={prefill ? `Interested in: ${prefill}\n\n` : undefined}
-                    placeholder="Where you are now, where you'd like to go — no need to polish it."
+                    defaultValue={
+                      prefill
+                        ? `${t("prefillPrefix", { selection: prefill })}\n\n`
+                        : undefined
+                    }
+                    placeholder={t("messagePlaceholder")}
                     className="min-h-32 rounded-lg bg-background"
                   />
                 </div>
@@ -251,7 +257,7 @@ export function Contact({ prefill }: Props = {}) {
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-[0.78rem] text-foreground/55">
-                  I&rsquo;ll only use your email to reply to you personally.
+                  {t("privacyNote")}
                 </p>
                 <Button
                   type="submit"
@@ -259,7 +265,7 @@ export function Contact({ prefill }: Props = {}) {
                   disabled={state.status === "sending"}
                   className="h-11 bg-[var(--plum)] px-6 text-[var(--primary-foreground)] transition-colors hover:bg-[var(--plum)]/90 disabled:cursor-not-allowed disabled:opacity-70"
                 >
-                  {state.status === "sending" ? "Sending…" : "Send message"}
+                  {state.status === "sending" ? t("submitting") : t("submit")}
                 </Button>
               </div>
             </form>

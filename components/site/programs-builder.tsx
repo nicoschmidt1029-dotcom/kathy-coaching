@@ -1,9 +1,10 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ArrowRight, Check, Dumbbell, Salad, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import {
   ADDONS,
@@ -21,6 +22,9 @@ const BLOCK_ICON = {
 } as const;
 
 export function ProgramsBuilder() {
+  const t = useTranslations("builder");
+  const p = useTranslations("pricing");
+
   const [blocks, setBlocks] = React.useState<Set<BlockId>>(new Set());
   const [addons, setAddons] = React.useState<Set<AddonId>>(new Set());
 
@@ -60,13 +64,13 @@ export function ProgramsBuilder() {
     if (blocks.size > 0) params.set("blocks", blockIds.join(","));
     if (addons.size > 0) params.set("addons", addonIds.join(","));
     return `/kontakt?${params.toString()}`;
-  }, [hasSelection, blockIds, addonIds]);
+  }, [hasSelection, blocks.size, addons.size, blockIds, addonIds]);
 
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-10">
       {/* Toggles */}
       <div className="md:col-span-7">
-        <p className="caption">Building blocks</p>
+        <p className="caption">{t("blocksTitle")}</p>
         <ul className="mt-4 grid gap-3">
           {BLOCKS.map((block) => {
             const Icon = BLOCK_ICON[block.id];
@@ -102,14 +106,14 @@ export function ProgramsBuilder() {
                   <span className="flex-1">
                     <span className="flex items-baseline justify-between gap-3">
                       <span className="font-display text-lg leading-tight font-normal">
-                        {block.name}
+                        {p(`blocks.${block.id}.name`)}
                       </span>
                       <span className="caption whitespace-nowrap text-foreground/70">
                         €{block.price}
                       </span>
                     </span>
                     <span className="mt-1.5 block text-[0.92rem] leading-relaxed text-foreground/68">
-                      {block.blurb}
+                      {p(`blocks.${block.id}.blurb`)}
                     </span>
                   </span>
                 </button>
@@ -118,7 +122,7 @@ export function ProgramsBuilder() {
           })}
         </ul>
 
-        <p className="caption mt-10">Optional extras</p>
+        <p className="caption mt-10">{t("addonsTitle")}</p>
         <ul className="mt-4 grid gap-3 sm:grid-cols-3">
           {ADDONS.map((addon) => {
             const selected = addons.has(addon.id);
@@ -137,7 +141,7 @@ export function ProgramsBuilder() {
                 >
                   <span className="flex w-full items-start justify-between gap-2">
                     <span className="font-display text-[1rem] leading-tight font-normal">
-                      {addon.name}
+                      {p(`addons.${addon.id}.name`)}
                     </span>
                     <span
                       className={cn(
@@ -152,7 +156,7 @@ export function ProgramsBuilder() {
                     </span>
                   </span>
                   <span className="mt-2 text-[0.85rem] leading-relaxed text-foreground/62">
-                    {addon.blurb}
+                    {p(`addons.${addon.id}.blurb`)}
                   </span>
                   <span className="caption mt-3">€{addon.price}</span>
                 </button>
@@ -167,13 +171,12 @@ export function ProgramsBuilder() {
         <div className="md:sticky md:top-24">
           <div className="rounded-2xl bg-[var(--plum)] p-6 text-[var(--primary-foreground)] shadow-[0_30px_60px_-30px_rgba(60,40,52,0.4)] sm:p-8">
             <p className="font-mono text-[0.72rem] tracking-[0.18em] uppercase text-[var(--primary-foreground)]/65">
-              Your setup
+              {t("panelTitle")}
             </p>
 
             {!hasSelection ? (
               <p className="mt-5 text-[0.98rem] leading-relaxed text-[var(--primary-foreground)]/75">
-                Pick one or more building blocks. Prices tally live — and a
-                bundle discount kicks in from two blocks onward.
+                {t("empty")}
               </p>
             ) : (
               <>
@@ -185,7 +188,7 @@ export function ProgramsBuilder() {
                         key={id}
                         className="flex items-baseline justify-between gap-3 text-[0.95rem] text-[var(--primary-foreground)]/88"
                       >
-                        <span>{b.name}</span>
+                        <span>{p(`blocks.${id}.name`)}</span>
                         <span className="font-mono text-[0.85rem] text-[var(--primary-foreground)]/72">
                           €{b.price}
                         </span>
@@ -199,7 +202,7 @@ export function ProgramsBuilder() {
                         key={id}
                         className="flex items-baseline justify-between gap-3 text-[0.9rem] text-[var(--primary-foreground)]/72"
                       >
-                        <span>+ {a.name}</span>
+                        <span>+ {p(`addons.${id}.name`)}</span>
                         <span className="font-mono text-[0.8rem] text-[var(--primary-foreground)]/60">
                           €{a.price}
                         </span>
@@ -211,8 +214,9 @@ export function ProgramsBuilder() {
                 {price.blockDiscount > 0 && (
                   <div className="mt-4 flex items-baseline justify-between border-t border-[var(--primary-foreground)]/15 pt-4 text-[0.9rem] text-[var(--clay)]">
                     <span>
-                      Bundle discount ({Math.round(price.discountPercent * 100)}%
-                      on blocks)
+                      {t("discount", {
+                        percent: String(Math.round(price.discountPercent * 100)),
+                      })}
                     </span>
                     <span className="font-mono text-[0.85rem]">
                       −€{price.blockDiscount}
@@ -222,7 +226,7 @@ export function ProgramsBuilder() {
 
                 <div className="mt-6 flex items-baseline justify-between border-t border-[var(--primary-foreground)]/15 pt-6">
                   <span className="font-mono text-[0.7rem] tracking-[0.18em] uppercase text-[var(--primary-foreground)]/60">
-                    Total · 6 weeks
+                    {t("total")}
                   </span>
                   <span className="font-display text-[2.5rem] leading-none font-normal">
                     €{price.total}
@@ -231,14 +235,19 @@ export function ProgramsBuilder() {
 
                 {match && (
                   <p className="mt-5 rounded-lg bg-[var(--primary-foreground)]/10 px-4 py-3 text-[0.85rem] leading-relaxed text-[var(--primary-foreground)]/88">
-                    That matches the{" "}
-                    <strong className="font-medium text-[var(--primary-foreground)]">
-                      {match.name}
-                    </strong>{" "}
-                    bundle above
-                    {match.price !== price.total && price.total > match.price
-                      ? ` — the bundle is €${price.total - match.price} cheaper (€${match.price}).`
-                      : "."}
+                    {t.rich(
+                      price.total > match.price ? "matchCheaper" : "matchBundle",
+                      {
+                        name: p(`bundles.${match.id}.name`),
+                        difference: String(price.total - match.price),
+                        price: String(match.price),
+                        strong: (chunks) => (
+                          <strong className="font-medium text-[var(--primary-foreground)]">
+                            {chunks}
+                          </strong>
+                        ),
+                      }
+                    )}
                   </p>
                 )}
 
@@ -248,13 +257,13 @@ export function ProgramsBuilder() {
                   className="group/button mt-6 h-12 w-full bg-[var(--primary-foreground)] px-6 text-[var(--plum)] hover:bg-[var(--primary-foreground)]/90"
                 >
                   <Link href={contactHref}>
-                    Start a conversation
+                    {t("cta")}
                     <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
                   </Link>
                 </Button>
 
                 <p className="mt-3 text-center text-[0.75rem] text-[var(--primary-foreground)]/55">
-                  Your selection is carried into the form
+                  {t("carried")}
                 </p>
               </>
             )}

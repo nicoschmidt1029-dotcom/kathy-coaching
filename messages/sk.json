@@ -1,0 +1,29 @@
+{
+  "_status": {
+    "translated": "about (calling, story) + mission (title, p1–p4) — Katarínin originálny text z KATEY COACHING.pdf, prevzatý doslovne",
+    "note": "Každý chýbajúci kľúč automaticky prechádza na messages/en.json, takže /sk sa zobrazí celé — zvyšok zatiaľ po anglicky. Preklady musia prísť od Kataríny, nie zo strojového prekladu. Zoznam otvorených sekcií: messages/README.md.",
+    "todo": [
+      "hero",
+      "approach",
+      "programs / builder / pricing",
+      "testimonials / spotlight",
+      "faq",
+      "contact",
+      "finalCta",
+      "footer / nav / notFound",
+      "pages (SEO tituly a popisy)",
+      "about — eyebrow, title, portraitCaption, qualifications (v PDF neboli)"
+    ]
+  },
+  "about": {
+    "calling": "Všetci máme calling v živote. <em>Môj povolanie je pomáhať ľuďom.</em>",
+    "story": "Po absolvovaní štúdia na SNF Akademy, kde som študovala Osobný tréner and výživový poradca, a graduation from Awakening School of Ministry pomáham ľuďom zmeniť jedálny lístok, nájsť pozitívny vzťah k športu a pochopiť aký je každý človek jedinečny a dôležitý."
+  },
+  "mission": {
+    "title": "Tvoje najlepšie roky nie sú za tebou, sú to tie, ktoré si ešte len vytvoríš.",
+    "p1": "Nikdy nie je pozde na zmenu a zlepšenie. Všetko záleží na tebe. Každý deň je novou príležitosťou začať plnohodnotný život, kde sa cítiš najlepšie. Najdôležitejšie je rozhodnúť sa nevzdávať a začať niečo robiť.",
+    "p2": "Chceš schudnúť? Alebo chceš viacej svalstva? Alebo chceš sa stravovať a žiť zdravšie, ale nie si si istý ako na to? Alebo ťa život duchovne a psychicky vyčerpal?",
+    "p3": "Let me tell you. Nikdy nie je pozde.",
+    "p4": "Urobím všetko pre to, aby som ti pomohol"
+  }
+}

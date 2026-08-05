@@ -1,6 +1,12 @@
 import { ImageResponse } from "next/og";
 import { SITE_HOST } from "@/lib/site-url";
 
+/**
+ * TRANSLATION TODO: the same English card is generated for /en, /de and /sk.
+ * The headline is hand-split across two lines (roman + italic accent), which
+ * does not survive a naive translation — localizing this needs a per-locale
+ * line break, not just a swapped string.
+ */
 export const alt =
   "Katie Coaching — Faith-rooted training, nutrition & Christian mentoring";
 export const size = { width: 1200, height: 630 };

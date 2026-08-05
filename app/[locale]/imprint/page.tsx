@@ -1,13 +1,36 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { alternatesFor } from "@/i18n/metadata";
 import { LegalShell, Todo } from "@/components/site/legal-shell";
 
-export const metadata: Metadata = {
-  title: "Imprint",
-  description: "Legal notice (Impressum) for Katie Coaching, Ettingen (BL), Switzerland.",
-  robots: { index: true, follow: true },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "pages.imprint" });
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: alternatesFor(locale, "/imprint"),
+    robots: { index: true, follow: true },
+  };
+}
 
-export default function ImprintPage() {
+/**
+ * TRANSLATION TODO: the body below is English only. Legal texts are not
+ * machine-translated here on purpose — the German and Slovak versions need
+ * to be written (or reviewed) by someone who can stand behind them.
+ */
+export default async function ImprintPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <LegalShell

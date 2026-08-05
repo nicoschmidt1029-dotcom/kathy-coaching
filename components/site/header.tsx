@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,15 +12,17 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Wordmark } from "./wordmark";
+import { LanguageSwitcher } from "./language-switcher";
 import { cn } from "@/lib/utils";
 
 const NAV = [
-  { label: "About", href: "/about" },
-  { label: "Programs", href: "/programme" },
-  { label: "Testimonials", href: "/testimonials" },
-  { label: "Contact", href: "/kontakt" },
-];
+  { key: "about", href: "/about" },
+  { key: "programs", href: "/programme" },
+  { key: "testimonials", href: "/testimonials" },
+  { key: "contact", href: "/kontakt" },
+] as const;
 
 function isActivePath(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -32,6 +33,7 @@ export function Header() {
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
+  const t = useTranslations("nav");
 
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -67,7 +69,7 @@ export function Header() {
                     : "text-foreground/72 hover:text-foreground"
                 )}
               >
-                {item.label}
+                {t(item.key)}
                 <span
                   aria-hidden
                   className={cn(
@@ -80,13 +82,15 @@ export function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 md:gap-3">
+          <LanguageSwitcher className="hidden md:flex" />
+
           <Button
             asChild
             size="lg"
             className="hidden bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90 md:inline-flex"
           >
-            <Link href="/kontakt">Start a conversation</Link>
+            <Link href="/kontakt">{t("cta")}</Link>
           </Button>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -94,7 +98,7 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon-lg"
-                aria-label="Open menu"
+                aria-label={t("openMenu")}
                 className="md:hidden"
               >
                 <Menu />
@@ -103,7 +107,7 @@ export function Header() {
             <SheetContent side="right" className="bg-background p-0">
               <SheetHeader className="border-b border-foreground/[0.06] px-6 py-5">
                 <SheetTitle className="font-display text-lg font-normal">
-                  Menu
+                  {t("menu")}
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-3 py-4">
@@ -119,20 +123,21 @@ export function Header() {
                           active ? "text-[var(--plum)]" : "text-foreground"
                         )}
                       >
-                        {item.label}
+                        {t(item.key)}
                       </Link>
                     </SheetClose>
                   );
                 })}
               </nav>
               <div className="mt-auto border-t border-foreground/[0.06] p-5">
+                <LanguageSwitcher size="lg" className="mb-4 justify-center" />
                 <SheetClose asChild>
                   <Button
                     asChild
                     size="lg"
                     className="w-full bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
                   >
-                    <Link href="/kontakt">Start a conversation</Link>
+                    <Link href="/kontakt">{t("cta")}</Link>
                   </Button>
                 </SheetClose>
               </div>

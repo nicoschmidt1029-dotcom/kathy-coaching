@@ -1,8 +1,11 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 
 export function HomeFinalCta() {
+  const t = useTranslations("finalCta");
+
   return (
     <section className="section-pad relative overflow-hidden bg-[var(--plum)] text-[var(--primary-foreground)]">
       <div
@@ -15,15 +18,13 @@ export function HomeFinalCta() {
       />
       <div className="container-page text-center">
         <p className="font-mono text-[0.75rem] tracking-[0.18em] uppercase text-[var(--primary-foreground)]/70">
-          When you&rsquo;re ready
+          {t("eyebrow")}
         </p>
         <h2 className="mx-auto mt-5 max-w-3xl font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance text-[var(--primary-foreground)]">
-          Let&rsquo;s start a conversation — no fixed format, no pressure.
+          {t("title")}
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-pretty text-[var(--primary-foreground)]/80 sm:text-lg sm:leading-[1.7]">
-          Tell me where you are and where you&rsquo;d like to go. We&rsquo;ll
-          figure out what works together — call, message, or in person — and
-          take it from there.
+          {t("body")}
         </p>
         <div className="mt-10 flex justify-center">
           <Button
@@ -32,7 +33,7 @@ export function HomeFinalCta() {
             className="group/button h-12 bg-[var(--primary-foreground)] px-6 text-[0.95rem] text-[var(--plum)] hover:bg-[var(--primary-foreground)]/90"
           >
             <Link href="/kontakt">
-              Start a conversation
+              {t("cta")}
               <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
             </Link>
           </Button>

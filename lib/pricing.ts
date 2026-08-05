@@ -1,12 +1,16 @@
 /**
  * Central pricing config for the /programme page.
  *
- * Single source of truth for:
+ * Single source of truth for the *structure and numbers*:
  *   - Building blocks (Personal training, Nutrition, Spiritual mentoring)
  *   - Optional add-ons (WhatsApp, prayer, priority)
  *   - Bundle discount tiers
  *   - Ready-made fixed bundles
  *   - Live price + bundle-match calculators
+ *
+ * All *display copy* (names, blurbs, "best for", format lines) lives in
+ * messages/*.json under the `pricing` namespace, keyed by the same ids used
+ * here — so prices stay in one place and translations in another.
  *
  * Change prices, add extras, or tune discounts here — every consumer
  * (fixed-bundle cards, interactive builder, contact-form prefill) reads
@@ -15,79 +19,31 @@
 
 export type BlockId = "training" | "nutrition" | "spiritual";
 export type AddonId = "whatsapp" | "prayer" | "priority";
+export type BundleId = "training-only" | "training-nutrition" | "complete";
 
-export type Block = {
-  id: BlockId;
-  name: string;
-  blurb: string;
-  price: number;
-};
-
-export type Addon = {
-  id: AddonId;
-  name: string;
-  blurb: string;
-  price: number;
-};
+export type Block = { id: BlockId; price: number };
+export type Addon = { id: AddonId; price: number };
 
 export type Bundle = {
-  id: "training-only" | "training-nutrition" | "complete";
-  name: string;
-  blurb: string;
+  id: BundleId;
   price: number;
-  duration: string;
   blocks: BlockId[];
   addons: AddonId[];
   recommended?: boolean;
-  /** Optional short "who this suits" line shown under the checklist */
-  bestFor?: string;
-  /** Optional format detail (session cadence, what's included) */
-  format?: string;
+  /** Whether messages carry a "best for" / "format" line for this bundle. */
+  hasMeta?: boolean;
 };
 
 export const BLOCKS: Block[] = [
-  {
-    id: "training",
-    name: "Personal training",
-    blurb:
-      "Programming, technique, accountability. Weekly sessions, adjusted to your life.",
-    price: 280,
-  },
-  {
-    id: "nutrition",
-    name: "Nutrition coaching",
-    blurb:
-      "A plan you can actually live with. Real food, real flexibility, no fear.",
-    price: 180,
-  },
-  {
-    id: "spiritual",
-    name: "Spiritual mentoring",
-    blurb:
-      "Honest conversation, prayer, and biblical perspective on worth.",
-    price: 160,
-  },
+  { id: "training", price: 280 },
+  { id: "nutrition", price: 180 },
+  { id: "spiritual", price: 160 },
 ];
 
 export const ADDONS: Addon[] = [
-  {
-    id: "whatsapp",
-    name: "Direct WhatsApp check-ins",
-    blurb: "Between-session support when you need it.",
-    price: 30,
-  },
-  {
-    id: "prayer",
-    name: "Weekly prayer & scripture",
-    blurb: "A short prayer moment woven into the week.",
-    price: 40,
-  },
-  {
-    id: "priority",
-    name: "Priority on new spots",
-    blurb: "First in line when a new client month opens.",
-    price: 25,
-  },
+  { id: "whatsapp", price: 30 },
+  { id: "prayer", price: 40 },
+  { id: "priority", price: 25 },
 ];
 
 /**
@@ -105,32 +61,21 @@ export const BUNDLE_DISCOUNTS: Record<number, number> = {
 export const BUNDLES: Bundle[] = [
   {
     id: "training-only",
-    name: "Training only",
-    blurb: "Start with movement. Add the rest later, if it fits.",
     price: 280,
-    duration: "6 weeks · 1:1",
     blocks: ["training"],
     addons: [],
-    bestFor: "easing back into movement, no pressure to add more yet",
-    format: "Weekly 1:1 session · async form checks between",
+    hasMeta: true,
   },
   {
     id: "training-nutrition",
-    name: "Training + nutrition",
-    blurb: "Strength and a calmer relationship with food.",
     price: 435,
-    duration: "6 weeks · 1:1",
     blocks: ["training", "nutrition"],
     addons: [],
-    bestFor: "when food and training feel like separate battles",
-    format: "Weekly 1:1 session · nutrition check-in midweek",
+    hasMeta: true,
   },
   {
     id: "complete",
-    name: "Complete path",
-    blurb: "Body, plate, and soul — plus every add-on thrown in.",
     price: 560,
-    duration: "6 weeks · 1:1",
     blocks: ["training", "nutrition", "spiritual"],
     addons: ["whatsapp", "prayer", "priority"],
     recommended: true,
@@ -186,28 +131,33 @@ export function matchesBundle(
 }
 
 /**
+ * Resolves a `pricing.*` message key — pass `useTranslations("pricing")` or
+ * `getTranslations("pricing")` so summaries come back in the visitor's
+ * language.
+ */
+export type PricingTranslator = (key: string) => string;
+
+/**
  * Build a human-readable summary from a selection. Used by the contact
  * form prefill to show the visitor (and Katie in the reply email) what
  * combination was assembled before booking.
  */
 export function summarize(
+  t: PricingTranslator,
   blockIds: BlockId[],
   addonIds: AddonId[],
   bundleId?: string
 ): string {
   if (bundleId) {
     const bundle = BUNDLES.find((b) => b.id === bundleId);
-    if (bundle) return `${bundle.name} — €${bundle.price}, ${bundle.duration}`;
+    if (bundle) {
+      return `${t(`bundles.${bundle.id}.name`)} — €${bundle.price}, ${t("duration")}`;
+    }
   }
   if (blockIds.length === 0 && addonIds.length === 0) return "";
-  const blockNames = blockIds
-    .map((id) => BLOCKS.find((b) => b.id === id)?.name)
-    .filter(Boolean);
-  const addonNames = addonIds
-    .map((id) => ADDONS.find((a) => a.id === id)?.name)
-    .filter(Boolean)
-    .map((n) => `+ ${n}`);
+  const blockNames = blockIds.map((id) => t(`blocks.${id}.name`));
+  const addonNames = addonIds.map((id) => `+ ${t(`addons.${id}.name`)}`);
   const price = calculatePrice(blockIds, addonIds);
   const parts = [...blockNames, ...addonNames].join(" · ");
-  return `${parts} — €${price.total}, 6 weeks`;
+  return `${parts} — €${price.total}, ${t("duration")}`;
 }

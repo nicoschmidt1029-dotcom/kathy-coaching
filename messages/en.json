@@ -1,0 +1,293 @@
+{
+  "meta": {
+    "siteName": "Katie Coaching",
+    "titleDefault": "Katie Coaching — Faith-rooted training, nutrition & mentoring",
+    "titleTemplate": "%s · Katie Coaching",
+    "description": "Holistic coaching for women — and openly for men too. Personal training, nutrition guidance, and Christian mentoring with Katie Coaching, walked together over six weeks.",
+    "ogDescription": "See your body the way God created it. Training, nutrition, and identity in Jesus — one path, walked together."
+  },
+  "pages": {
+    "about": {
+      "title": "About",
+      "description": "Meet Katie Gröflin — certified personal trainer and nutrition coach, offering faith-rooted holistic coaching for body, nutrition, and soul."
+    },
+    "programs": {
+      "title": "Programs",
+      "description": "Three six-week programs, one-on-one. Training only, training + nutrition, or the complete path with faith mentoring. Value-honest pricing."
+    },
+    "testimonials": {
+      "title": "Testimonials",
+      "description": "What clients say about six weeks with Katie — real names, real programs, what actually changed."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Start a conversation with Katie — tell her where you are, where you'd like to go, and the language you're most comfortable in."
+    },
+    "imprint": {
+      "title": "Imprint",
+      "description": "Legal notice (Impressum) for Katie Coaching, Ettingen (BL), Switzerland."
+    },
+    "privacy": {
+      "title": "Privacy",
+      "description": "Privacy notice for Katie Coaching — how your data is handled under Swiss nDSG and the EU GDPR."
+    }
+  },
+  "wordmark": {
+    "name": "Katie",
+    "tagline": "Coaching",
+    "ariaLabel": "Katie Coaching — home"
+  },
+  "nav": {
+    "about": "About",
+    "programs": "Programs",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "cta": "Start a conversation",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "skipToMain": "Skip to main content"
+  },
+  "language": {
+    "label": "Language",
+    "switchTo": "Switch language to {language}"
+  },
+  "hero": {
+    "eyebrow": "Holistic coaching · faith-rooted",
+    "headline": "See your body the way <em>God created it.</em>",
+    "body": "Personal training, nutrition guidance, and Christian mentoring — three threads woven into one path. Built with women in mind, openly for men too.",
+    "cta": "Start a conversation",
+    "credentialTrainer": "Certified Personal Trainer",
+    "credentialNutrition": "Certified Nutrition Coach",
+    "inMotion": "In motion",
+    "videoAlt": "Hero background — training and nature loop"
+  },
+  "approach": {
+    "eyebrow": "The approach",
+    "title": "Three threads. One whole person.",
+    "intro": "Training without nutrition is incomplete. Nutrition without rest of soul is exhausting. We work all three — gently, deliberately.",
+    "readMore": "Read the full approach",
+    "train": {
+      "title": "Train the body",
+      "teaser": "Strength work built around the life you actually live.",
+      "body": "Strength work that meets you where you are. Progressive, sustainable, and built around the life you actually live — not someone else's.",
+      "slot": "Train"
+    },
+    "nourish": {
+      "title": "Nourish with intention",
+      "teaser": "Real food, real flexibility, no fear or rules.",
+      "body": "A relationship with food that isn't about rules or guilt. Real meals, real flexibility, real understanding of what your body needs to thrive.",
+      "slot": "Nourish"
+    },
+    "soul": {
+      "title": "Soul & identity in Jesus",
+      "teaser": "Offered, never imposed — worth deeper than a mirror.",
+      "body": "Offered, never imposed: honest conversation, prayer, and biblical perspective on worth. For anyone wanting confidence rooted in something deeper than a mirror.",
+      "slot": "Soul"
+    }
+  },
+  "about": {
+    "eyebrow": "Meet Katie",
+    "title": "Strength, nourishment, and a quiet kind of confidence.",
+    "calling": "We all have a calling in life. <em>My calling is to help people.</em>",
+    "story": "After my study at SNF Academy, where I studied Personal Trainer and Nutrition coach, and graduating from Awakening School of Ministry, I help people move forward in their lives. With the right diet, the right mindset, and the right exercise. <em>At any age.</em>",
+    "portraitLabel": "Katie portrait",
+    "portraitCaption": "Katie · personal trainer · nutrition coach",
+    "qualificationsTitle": "Qualifications",
+    "qualTrainer": "Certified Personal Trainer",
+    "qualNutrition": "Certified Nutrition Coach"
+  },
+  "mission": {
+    "eyebrow": "My mission",
+    "title": "Your best years are not behind you — they're the ones you're about to create.",
+    "p1": "It's never too late for change and improvement. It's all up to you. Every day is a new opportunity to start a fulfilling life where you feel your best. The most important thing is to decide not to give up and start doing.",
+    "p2": "Do you want to lose weight? Or do you want more muscle? Or do you want to eat and live healthier, but you're not sure how? Or has life exhausted you spiritually and mentally?",
+    "p3": "Let me tell you. It's never too late.",
+    "p4": "And I will do my best to help you."
+  },
+  "spotlight": {
+    "eyebrow": "A recent client",
+    "quote": "I came in wanting to lose weight. Six weeks later, the weight had shifted — but the bigger thing was quieter. For the first time in years I looked in the mirror without doing math. Katie didn't sell me a program; she walked with me through one.",
+    "name": "Lena, 32",
+    "program": "Six-week Complete program",
+    "portraitLabel": "Lena portrait"
+  },
+  "testimonials": {
+    "eyebrow": "More stories",
+    "title": "What changed wasn't only the body.",
+    "note": "Before/after photos shared with permission · placeholders shown for now",
+    "before": "Before",
+    "after": "After",
+    "videoLabel": "Video testimonial from {name}",
+    "marcus": {
+      "name": "Marcus, 41",
+      "program": "Training + nutrition",
+      "quote": "As a guy I wasn't sure this was for me. Katie made it feel like coaching, not therapy — and the spiritual conversations were real, never pushy."
+    },
+    "hannah": {
+      "name": "Hannah, 27",
+      "program": "Complete program",
+      "quote": "Six weeks. The first program I've finished without giving up halfway. The grace she leads with is part of why."
+    },
+    "sophie": {
+      "name": "Sophie, 36",
+      "program": "Complete program",
+      "quote": "I wanted structure and got that — but also permission to stop white-knuckling my body. That shift didn't come from a plan. It came from being seen."
+    }
+  },
+  "programs": {
+    "eyebrow": "The programs",
+    "title": "Three parts. One path. You choose how much.",
+    "intro": "Real change asks for real participation. I take on a small number of clients each month so I can be fully present for each one — this isn't a course you consume, it's a six-week walk we take together.",
+    "readyMade": "Ready-made",
+    "readyMadeTitle": "Three bundles, quick to choose.",
+    "readyMadeAside": "Prefer to skip the choosing? Pick one.",
+    "mostChosen": "Most chosen",
+    "bestFor": "Best for:",
+    "chooseBundle": "Choose this bundle",
+    "buildOwn": "Or build your own",
+    "buildOwnTitle": "Assemble the mix that fits your life.",
+    "buildOwnIntro": "Pick any combination of blocks and extras — the price recalculates as you click. Two blocks together get a 5% bundle discount, three blocks unlock 10%. Add-ons stay solo-priced, which is why the Complete bundle above is the better deal when you want them all included.",
+    "teaserTitle": "Three programs. You choose where to begin.",
+    "teaserIntro": "Training only, training + nutrition, or the complete path — body, plate, and soul held together. All one-on-one, all six weeks. Real change asks for real participation, so I take on a small number of clients each month.",
+    "teaserCta": "See programs & pricing",
+    "teaserSecondary": "Not sure? Talk it through first"
+  },
+  "builder": {
+    "blocksTitle": "Building blocks",
+    "addonsTitle": "Optional extras",
+    "panelTitle": "Your setup",
+    "empty": "Pick one or more building blocks. Prices tally live — and a bundle discount kicks in from two blocks onward.",
+    "discount": "Bundle discount ({percent}% on blocks)",
+    "total": "Total · 6 weeks",
+    "matchBundle": "That matches the <strong>{name}</strong> bundle above.",
+    "matchCheaper": "That matches the <strong>{name}</strong> bundle above — the bundle is €{difference} cheaper (€{price}).",
+    "cta": "Start a conversation",
+    "carried": "Your selection is carried into the form"
+  },
+  "pricing": {
+    "duration": "6 weeks · 1:1",
+    "blocks": {
+      "training": {
+        "name": "Personal training",
+        "blurb": "Programming, technique, accountability. Weekly sessions, adjusted to your life."
+      },
+      "nutrition": {
+        "name": "Nutrition coaching",
+        "blurb": "A plan you can actually live with. Real food, real flexibility, no fear."
+      },
+      "spiritual": {
+        "name": "Spiritual mentoring",
+        "blurb": "Honest conversation, prayer, and biblical perspective on worth."
+      }
+    },
+    "addons": {
+      "whatsapp": {
+        "name": "Direct WhatsApp check-ins",
+        "blurb": "Between-session support when you need it."
+      },
+      "prayer": {
+        "name": "Weekly prayer & scripture",
+        "blurb": "A short prayer moment woven into the week."
+      },
+      "priority": {
+        "name": "Priority on new spots",
+        "blurb": "First in line when a new client month opens."
+      }
+    },
+    "bundles": {
+      "training-only": {
+        "name": "Training only",
+        "blurb": "Start with movement. Add the rest later, if it fits.",
+        "bestFor": "easing back into movement, no pressure to add more yet",
+        "format": "Weekly 1:1 session · async form checks between"
+      },
+      "training-nutrition": {
+        "name": "Training + nutrition",
+        "blurb": "Strength and a calmer relationship with food.",
+        "bestFor": "when food and training feel like separate battles",
+        "format": "Weekly 1:1 session · nutrition check-in midweek"
+      },
+      "complete": {
+        "name": "Complete path",
+        "blurb": "Body, plate, and soul — plus every add-on thrown in."
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Honest answers, before you commit.",
+    "intro": "Still wondering something not listed here? Send it along when you reach out — that's what the first conversation is for.",
+    "believer": {
+      "q": "Do I have to be a believer to work with you?",
+      "a": "No. The spiritual mentoring is offered, never required. The Training Only and Training + Nutrition programs work for anyone, regardless of faith background. The Complete program is built for those specifically wanting that dimension included."
+    },
+    "women": {
+      "q": "Is this only for women?",
+      "a": "It's built with women in mind first — but men are openly welcome, especially in the training and nutrition programs. The Complete program works for anyone willing to be honest about all three areas."
+    },
+    "how": {
+      "q": "How does a program actually work?",
+      "a": "We start with a free, no-pressure conversation to make sure we're a good fit. After that, you receive your personalized plan, we meet weekly (online or in person), and you have me as a guide through the whole six weeks."
+    },
+    "gym": {
+      "q": "Do I need a gym membership?",
+      "a": "Not for most programs. I design the training around what you have access to — home, gym, or somewhere in between. We can talk this through when you reach out."
+    },
+    "beginner": {
+      "q": "What if I haven't trained in years — or ever?",
+      "a": "That's most of who I work with. Everything is built around your starting point. No prerequisites, no judgment. The goal is sustainable progress, not punishment."
+    }
+  },
+  "contact": {
+    "eyebrow": "Let's talk",
+    "title": "Let's start a conversation.",
+    "intro": "Tell me a little about you — where you're writing from, what language feels most comfortable, and where you'd like to go. I'll get back to you personally, no fixed format yet.",
+    "formatLabel": "Format",
+    "formatValue": "We'll figure out what works together — call, message, or in person.",
+    "languagesLabel": "Languages",
+    "languagesValue": "English · Deutsch · Slovenčina",
+    "replyLabel": "Reply within",
+    "replyValue": "Two working days, usually sooner.",
+    "nameLabel": "Your name",
+    "namePlaceholder": "Jane Doe",
+    "emailLabel": "Email",
+    "emailPlaceholder": "jane@example.com",
+    "languageLabel": "Language you're most comfortable in",
+    "languageNoPreference": "No preference",
+    "languageOther": "Other",
+    "locationLabel": "Where are you writing from?",
+    "locationPlaceholder": "Country or city (optional)",
+    "messageLabel": "A little about where you are, where you'd like to go",
+    "messagePlaceholder": "Where you are now, where you'd like to go — no need to polish it.",
+    "prefillPrefix": "Interested in: {selection}",
+    "privacyNote": "I'll only use your email to reply to you personally.",
+    "submit": "Send message",
+    "submitting": "Sending…",
+    "genericError": "Something went wrong. Please try again.",
+    "networkError": "Network error. Please try again in a moment.",
+    "sentTitle": "Thank you — I got it.",
+    "sentBody": "I read every message myself. Expect a reply within two working days, usually sooner. In the meantime — grace and peace to you.",
+    "sendAnother": "Send another message",
+    "legalPrefix": "Legal:"
+  },
+  "finalCta": {
+    "eyebrow": "When you're ready",
+    "title": "Let's start a conversation — no fixed format, no pressure.",
+    "body": "Tell me where you are and where you'd like to go. We'll figure out what works together — call, message, or in person — and take it from there.",
+    "cta": "Start a conversation"
+  },
+  "footer": {
+    "blurb": "Holistic coaching for body, nutrition, and soul — rooted in faith, open to everyone.",
+    "imprint": "Imprint",
+    "privacy": "Privacy",
+    "contact": "Contact",
+    "copyright": "© {year} Katie Coaching. All rights reserved.",
+    "madeWithCare": "Made with care"
+  },
+  "notFound": {
+    "eyebrow": "404 · this page moved or never existed",
+    "title": "You're a little <em>off the path.</em>",
+    "body": "The link might be old, or something moved. The way back home is a click away — nothing lost.",
+    "cta": "Back to the beginning"
+  }
+}

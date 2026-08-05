@@ -1,0 +1,29 @@
+{
+  "_status": {
+    "translated": "about (calling, story) + mission (title, p1–p4) — deutscher Originaltext von Nico",
+    "note": "Jeder Key, der hier fehlt, fällt automatisch auf messages/en.json zurück — /de rendert also vollständig, nur eben auf Englisch. Zum Übersetzen: Key-Pfad aus en.json hier übernehmen und den deutschen Text als Wert eintragen. Keys niemals leer lassen (leerer String überschreibt das Englische mit nichts). Offene Abschnitte siehe messages/README.md.",
+    "todo": [
+      "hero",
+      "approach",
+      "programs / builder / pricing",
+      "testimonials / spotlight",
+      "faq",
+      "contact",
+      "finalCta",
+      "footer / nav / notFound",
+      "pages (SEO-Titles und -Descriptions)",
+      "about — eyebrow, title, portraitCaption, qualifications (im Originaltext nicht enthalten)"
+    ]
+  },
+  "about": {
+    "calling": "Wir alle haben eine Berufung im Leben. <em>Meine Berufung ist es, Menschen zu helfen.</em>",
+    "story": "Nach meinem Studium an der SNF Academy, wo ich Personal Trainer und Ernährungsberatung studiert habe, und meinem Abschluss an der Awakening School of Ministry, helfe ich Menschen, in ihrem Leben voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung und der richtigen Bewegung. <em>In jedem Alter.</em>"
+  },
+  "mission": {
+    "title": "Deine besten Jahre liegen nicht hinter dir — sie sind die, die du erst noch erschaffst.",
+    "p1": "Es ist nie zu spät für Veränderung und Verbesserung. Es liegt ganz bei dir. Jeder Tag ist eine neue Chance, ein erfülltes Leben zu beginnen, in dem du dich am besten fühlst. Das Wichtigste ist, sich zu entscheiden, nicht aufzugeben, und anzufangen.",
+    "p2": "Willst du abnehmen? Oder mehr Muskeln aufbauen? Oder gesünder essen und leben, weißt aber nicht genau wie? Oder hat dich das Leben geistlich und mental erschöpft?",
+    "p3": "Lass es dich wissen: Es ist nie zu spät.",
+    "p4": "Und ich werde alles tun, um dir zu helfen."
+  }
+}

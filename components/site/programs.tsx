@@ -1,7 +1,8 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ArrowRight, Check, Dumbbell, Heart, Leaf } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { ADDONS, BLOCKS, BUNDLES, type BlockId } from "@/lib/pricing";
 import { ProgramsBuilder } from "./programs-builder";
@@ -13,23 +14,23 @@ const BLOCK_ICON: Record<BlockId, LucideIcon> = {
 };
 
 export function Programs() {
+  const t = useTranslations("programs");
+  const p = useTranslations("pricing");
+
   return (
     <section id="programs" className="section-pad">
       <div className="container-page">
         {/* Intro + commitment */}
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-6">
-            <p className="eyebrow">The programs</p>
+            <p className="eyebrow">{t("eyebrow")}</p>
             <h2 className="mt-5 font-display text-[clamp(2rem,5vw,3.4rem)] leading-[1.05] font-normal text-balance">
-              Three parts. One path. You choose how much.
+              {t("title")}
             </h2>
           </div>
           <div className="md:col-span-6">
             <p className="text-pretty text-foreground/72 sm:text-lg sm:leading-[1.7]">
-              Real change asks for real participation. I take on a small
-              number of clients each month so I can be fully present for
-              each one — this isn&rsquo;t a course you consume, it&rsquo;s a
-              six-week walk we take together.
+              {t("intro")}
             </p>
           </div>
         </div>
@@ -38,25 +39,21 @@ export function Programs() {
         <div className="mt-16 md:mt-20">
           <div className="flex items-end justify-between gap-6 border-b border-foreground/[0.1] pb-5">
             <div>
-              <p className="caption">Ready-made</p>
+              <p className="caption">{t("readyMade")}</p>
               <h3 className="mt-2 font-display text-2xl leading-tight font-normal">
-                Three bundles, quick to choose.
+                {t("readyMadeTitle")}
               </h3>
             </div>
             <p className="hidden max-w-xs text-right text-[0.85rem] text-foreground/60 sm:block">
-              Prefer to skip the choosing? Pick one.
+              {t("readyMadeAside")}
             </p>
           </div>
 
           <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
             {BUNDLES.map((bundle) => {
               const includes = [
-                ...bundle.blocks.map(
-                  (id) => BLOCKS.find((b) => b.id === id)!.name
-                ),
-                ...bundle.addons.map(
-                  (id) => `+ ${ADDONS.find((a) => a.id === id)!.name}`
-                ),
+                ...bundle.blocks.map((id) => p(`blocks.${id}.name`)),
+                ...bundle.addons.map((id) => `+ ${p(`addons.${id}.name`)}`),
               ];
               return (
                 <li key={bundle.id} className="flex">
@@ -70,7 +67,7 @@ export function Programs() {
                   >
                     {bundle.recommended && (
                       <span className="mb-4 inline-flex w-fit items-center rounded-full bg-[var(--primary-foreground)]/15 px-2.5 py-0.5 font-mono text-[0.65rem] tracking-[0.16em] uppercase text-[var(--primary-foreground)]">
-                        Most chosen
+                        {t("mostChosen")}
                       </span>
                     )}
                     <h4
@@ -81,7 +78,7 @@ export function Programs() {
                           : ""
                       )}
                     >
-                      {bundle.name}
+                      {p(`bundles.${bundle.id}.name`)}
                     </h4>
                     <p
                       className={cn(
@@ -91,7 +88,7 @@ export function Programs() {
                           : "text-foreground/65"
                       )}
                     >
-                      {bundle.blurb}
+                      {p(`bundles.${bundle.id}.blurb`)}
                     </p>
 
                     <ul
@@ -128,7 +125,7 @@ export function Programs() {
                       ))}
                     </ul>
 
-                    {(bundle.bestFor || bundle.format) && (
+                    {bundle.hasMeta && (
                       <div
                         className={cn(
                           "mt-6 space-y-1.5 text-[0.82rem] leading-relaxed",
@@ -137,22 +134,20 @@ export function Programs() {
                             : "text-foreground/60"
                         )}
                       >
-                        {bundle.bestFor && (
-                          <p>
-                            <span
-                              className={cn(
-                                "font-medium",
-                                bundle.recommended
-                                  ? "text-[var(--primary-foreground)]/85"
-                                  : "text-foreground/78"
-                              )}
-                            >
-                              Best for:
-                            </span>{" "}
-                            {bundle.bestFor}
-                          </p>
-                        )}
-                        {bundle.format && <p>{bundle.format}</p>}
+                        <p>
+                          <span
+                            className={cn(
+                              "font-medium",
+                              bundle.recommended
+                                ? "text-[var(--primary-foreground)]/85"
+                                : "text-foreground/78"
+                            )}
+                          >
+                            {t("bestFor")}
+                          </span>{" "}
+                          {p(`bundles.${bundle.id}.bestFor`)}
+                        </p>
+                        <p>{p(`bundles.${bundle.id}.format`)}</p>
                       </div>
                     )}
 
@@ -212,7 +207,7 @@ export function Programs() {
                             : ""
                         )}
                       >
-                        {bundle.duration}
+                        {p("duration")}
                       </span>
                     </div>
 
@@ -227,7 +222,7 @@ export function Programs() {
                       )}
                     >
                       <Link href={`/kontakt?bundle=${bundle.id}`}>
-                        Choose this bundle
+                        {t("chooseBundle")}
                         <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
                       </Link>
                     </Button>
@@ -241,16 +236,12 @@ export function Programs() {
         {/* Section B — build your own */}
         <div className="mt-20 md:mt-28">
           <div className="max-w-3xl">
-            <p className="caption">Or build your own</p>
+            <p className="caption">{t("buildOwn")}</p>
             <h3 className="mt-3 font-display text-[clamp(1.75rem,4vw,2.5rem)] leading-tight font-normal text-balance">
-              Assemble the mix that fits your life.
+              {t("buildOwnTitle")}
             </h3>
             <p className="mt-5 text-pretty text-foreground/72 sm:text-[1.05rem] sm:leading-[1.7]">
-              Pick any combination of blocks and extras — the price
-              recalculates as you click. Two blocks together get a 5% bundle
-              discount, three blocks unlock 10%. Add-ons stay solo-priced,
-              which is why the Complete bundle above is the better deal when
-              you want them all included.
+              {t("buildOwnIntro")}
             </p>
           </div>
 

@@ -1,14 +1,36 @@
 import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { alternatesFor } from "@/i18n/metadata";
 import { LegalShell, Todo } from "@/components/site/legal-shell";
 
-export const metadata: Metadata = {
-  title: "Privacy",
-  description:
-    "Privacy notice for Katie Coaching — how your data is handled under Swiss nDSG and the EU GDPR.",
-  robots: { index: true, follow: true },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "pages.privacy" });
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: alternatesFor(locale, "/privacy"),
+    robots: { index: true, follow: true },
+  };
+}
 
-export default function PrivacyPage() {
+/**
+ * TRANSLATION TODO: the body below is English only. Legal texts are not
+ * machine-translated here on purpose — the German and Slovak versions need
+ * to be written (or reviewed) by someone who can stand behind them.
+ */
+export default async function PrivacyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <LegalShell
