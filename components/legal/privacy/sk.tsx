@@ -1,3 +1,18 @@
+/* ==========================================================================
+ * LEGAL CONTENT - NOT YET VERIFIED BY A LAWYER OR SWISS LEGAL EXPERT -
+ * review before this page is considered final
+ * --------------------------------------------------------------------------
+ * Applies to the whole text, not just the <Todo> placeholders: the nDSG and
+ * GDPR citations, the stated legal bases, the retention periods, and the
+ * claims about Vercel's and Resend's transfer mechanisms. None of it has been
+ * checked by anyone qualified in Swiss data protection law, and
+ * adequacy-decision and framework claims in particular can go stale.
+ *
+ * This file carries a second, independent risk: it is also an unreviewed
+ * machine translation (see below). Legal wording and language review are two
+ * separate sign-offs — neither has happened.
+ * ========================================================================== */
+
 import { Todo } from "@/components/site/todo";
 import { SITE_HOST } from "@/lib/site-url";
 

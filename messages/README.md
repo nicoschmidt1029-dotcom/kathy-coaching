@@ -81,9 +81,17 @@ insurer or email.
 The labels around the documents (eyebrow, title, draft badge, placeholder
 wording) *are* message keys, under `legal`.
 
-**The Slovak legal text is an unreviewed AI draft**, like the rest of `/sk` —
-and it matters more here than in marketing copy. Both Slovak files carry that
-warning at the top.
+**None of the legal content has been checked by a lawyer.** Every file in
+`components/legal/` opens with:
+
+> LEGAL CONTENT - NOT YET VERIFIED BY A LAWYER OR SWISS LEGAL EXPERT - review
+> before this page is considered final
+
+That is separate from the `<Todo>` placeholders. Those mark facts Katie still
+has to supply; the banner marks the text *around* them — legal bases, article
+citations, liability wording, completeness — as unreviewed. Two sign-offs are
+outstanding: a Swiss legal expert on the content of all three versions, and a
+native speaker on the Slovak translation. The Slovak files carry both warnings.
 
 ### Not in the message files at all (English only, by design)
 

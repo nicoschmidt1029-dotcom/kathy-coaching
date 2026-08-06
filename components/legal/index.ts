@@ -1,3 +1,17 @@
+/* ==========================================================================
+ * LEGAL CONTENT - NOT YET VERIFIED BY A LAWYER OR SWISS LEGAL EXPERT -
+ * review before this page is considered final
+ * --------------------------------------------------------------------------
+ * Every document reachable from this file carries the same warning at its
+ * own head. It is separate from the <Todo> placeholders: those mark facts
+ * Katie still has to supply, this marks the surrounding text — legal bases,
+ * article citations, liability wording, completeness — as unreviewed.
+ *
+ * Two sign-offs are outstanding before Katarína can rely on these pages:
+ *   1. a Swiss lawyer or legal expert on the content of all three versions;
+ *   2. a native speaker on the Slovak translation.
+ * ========================================================================== */
+
 import type { Locale } from "@/i18n/routing";
 import { ImprintBodyEn } from "./imprint/en";
 import { ImprintBodyDe } from "./imprint/de";

@@ -1,3 +1,15 @@
+/* ==========================================================================
+ * LEGAL CONTENT - NOT YET VERIFIED BY A LAWYER OR SWISS LEGAL EXPERT -
+ * review before this page is considered final
+ * --------------------------------------------------------------------------
+ * Gilt für den gesamten Text, nicht nur für die <Todo>-Platzhalter: Wahl der
+ * Rechtsgrundlage, Artikelverweise, Haftungs- und Urheberrechtsformulierungen
+ * und die Frage, ob die Angaben für Katarinas tatsächliche Tätigkeit
+ * vollständig sind. Nichts davon hat jemand mit Schweizer Rechtskenntnis
+ * geprüft. Diese Fassung ist zudem aus dem Englischen übersetzt — auch die
+ * Übersetzung juristischer Begriffe gehört gegengelesen.
+ * ========================================================================== */
+
 import { Todo } from "@/components/site/todo";
 
 /**

@@ -1,3 +1,15 @@
+/* ==========================================================================
+ * LEGAL CONTENT - NOT YET VERIFIED BY A LAWYER OR SWISS LEGAL EXPERT -
+ * review before this page is considered final
+ * --------------------------------------------------------------------------
+ * Gilt für den gesamten Text, nicht nur für die <Todo>-Platzhalter: die nDSG-
+ * und DSGVO-Verweise, die genannten Rechtsgrundlagen, die Aufbewahrungsfristen
+ * und die Aussagen zu den Übermittlungsmechanismen von Vercel und Resend.
+ * Nichts davon hat jemand mit Schweizer Datenschutzkenntnis geprüft, und
+ * gerade Angemessenheitsbeschlüsse und Framework-Zertifizierungen veralten.
+ * Diese Fassung ist zudem aus dem Englischen übersetzt.
+ * ========================================================================== */
+
 import { Todo } from "@/components/site/todo";
 import { SITE_HOST } from "@/lib/site-url";
 

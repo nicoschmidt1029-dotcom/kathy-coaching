@@ -1,3 +1,14 @@
+/* ==========================================================================
+ * LEGAL CONTENT - NOT YET VERIFIED BY A LAWYER OR SWISS LEGAL EXPERT -
+ * review before this page is considered final
+ * --------------------------------------------------------------------------
+ * This is not about the <Todo> placeholders, which flag facts Katie has yet
+ * to supply. It is about everything around them: the choice of legal basis,
+ * the article citations, the liability and copyright wording, and whether the
+ * disclosures are complete for how she actually operates. None of that has
+ * been checked by anyone qualified in Swiss law.
+ * ========================================================================== */
+
 import { Todo } from "@/components/site/todo";
 
 /**

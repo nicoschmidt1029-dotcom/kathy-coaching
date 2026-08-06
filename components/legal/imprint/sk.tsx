@@ -1,3 +1,17 @@
+/* ==========================================================================
+ * LEGAL CONTENT - NOT YET VERIFIED BY A LAWYER OR SWISS LEGAL EXPERT -
+ * review before this page is considered final
+ * --------------------------------------------------------------------------
+ * Applies to the whole text, not just the <Todo> placeholders: the choice of
+ * legal basis, the article citations, the liability and copyright wording,
+ * and whether the disclosures are complete for how Katarína actually
+ * operates. None of it has been checked by anyone qualified in Swiss law.
+ *
+ * This file carries a second, independent risk: it is also an unreviewed
+ * machine translation (see below). Legal wording and language review are two
+ * separate sign-offs — neither has happened.
+ * ========================================================================== */
+
 import { Todo } from "@/components/site/todo";
 
 /**
