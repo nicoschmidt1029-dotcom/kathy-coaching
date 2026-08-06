@@ -12,6 +12,7 @@
  *   SHOT_URL=http://localhost:3111 npm run screenshot
  *   SHOT_WIDTHS=390,1024,1440 npm run screenshot -- /
  *   SHOT_FULL=1 npm run screenshot -- about   # whole page, not just the fold
+ *   SHOT_SETTLE=2000 npm run screenshot       # extra ms before the shot
  *
  * Output: .shots/<route>-<width>.png  (git-ignored)
  */
@@ -27,6 +28,7 @@ const WIDTHS = (process.env.SHOT_WIDTHS ?? "1024,1440")
 const FULL_PAGE = ["1", "true", "yes"].includes(
   (process.env.SHOT_FULL ?? "").toLowerCase()
 );
+const SETTLE_MS = Number(process.env.SHOT_SETTLE ?? 1000);
 const ROUTES = process.argv.slice(2).filter((a) => !a.startsWith("-"));
 const routes = ROUTES.length ? ROUTES : ["/"];
 const OUT = ".shots";
@@ -47,6 +49,28 @@ async function ensureReachable() {
   }
 }
 
+/**
+ * Wait for what a screenshot actually depends on: web fonts decoded and
+ * images decoded. Without this, dropping networkidle would trade flakiness
+ * for fallback type and half-empty image frames.
+ *
+ * Each wait is capped and failure-tolerant — a single stuck image should
+ * cost a blurry corner, not the whole run.
+ */
+async function waitForPaintable(page) {
+  await page
+    .evaluate(() => document.fonts?.ready)
+    .catch(() => {});
+  await page
+    .waitForFunction(
+      () =>
+        Array.from(document.images).every((img) => img.complete || !img.src),
+      undefined,
+      { timeout: 15_000 }
+    )
+    .catch(() => {});
+}
+
 await ensureReachable();
 mkdirSync(OUT, { recursive: true });
 
@@ -59,8 +83,16 @@ try {
     });
     for (const route of routes) {
       const url = toUrl(route);
-      await page.goto(url, { waitUntil: "networkidle", timeout: 60_000 });
-      await sleep(1000); // let entrance animations settle
+      /*
+       * domcontentloaded, not networkidle. Against the live deployment
+       * networkidle regularly never fires — something keeps a connection warm
+       * and the run dies on a 60s timeout — while the page itself has been
+       * ready for seconds. So: navigate, then wait for the things that
+       * actually affect a screenshot.
+       */
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60_000 });
+      await waitForPaintable(page);
+      await sleep(SETTLE_MS); // let entrance animations settle
       const file = `${OUT}/${slug(route)}-${width}.png`;
       await page.screenshot({ path: file, fullPage: FULL_PAGE });
       console.log(`✓ ${file}  (${url})`);
