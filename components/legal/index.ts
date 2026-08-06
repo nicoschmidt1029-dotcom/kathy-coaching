@@ -21,6 +21,19 @@ import { PrivacyBodyDe } from "./privacy/de";
 import { PrivacyBodySk } from "./privacy/sk";
 
 /**
+ * Whether the legal review has happened.
+ *
+ * While this is false, /imprint and /privacy are served `noindex` in every
+ * language and kept out of the sitemap: an incomplete, lawyer-unreviewed
+ * legal notice should not be the version search engines carry, and an indexed
+ * copy outlives the page it was taken from.
+ *
+ * Flip to true once a Swiss legal expert has signed off — the pages return to
+ * `index: true` and to the sitemap. This one constant is the whole switch.
+ */
+export const LEGAL_REVIEWED = false;
+
+/**
  * Legal documents, one component per locale.
  *
  * These are not UI strings and deliberately do not live in messages/*.json: a

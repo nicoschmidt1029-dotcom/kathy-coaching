@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { alternatesFor } from "@/i18n/metadata";
 import { routing, type Locale } from "@/i18n/routing";
 import { LegalShell } from "@/components/site/legal-shell";
-import { PRIVACY_BODIES } from "@/components/legal";
+import { PRIVACY_BODIES, LEGAL_REVIEWED } from "@/components/legal";
 
 export async function generateMetadata({
   params,
@@ -16,7 +16,9 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     alternates: alternatesFor(locale, "/privacy"),
-    robots: { index: true, follow: true },
+    // noindex until the legal review is done — see LEGAL_REVIEWED.
+    // follow stays on: the links out of this page are fine to crawl.
+    robots: { index: LEGAL_REVIEWED, follow: true },
   };
 }
 
