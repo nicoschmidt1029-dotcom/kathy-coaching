@@ -13,6 +13,7 @@
  *   SHOT_WIDTHS=390,1024,1440 npm run screenshot -- /
  *   SHOT_FULL=1 npm run screenshot -- about   # whole page, not just the fold
  *   SHOT_SETTLE=2000 npm run screenshot       # extra ms before the shot
+ *   SHOT_SCALE=1 npm run screenshot           # 1x instead of retina, ~4x smaller files
  *
  * Output: .shots/<route>-<width>.png  (git-ignored)
  */
@@ -29,6 +30,8 @@ const FULL_PAGE = ["1", "true", "yes"].includes(
   (process.env.SHOT_FULL ?? "").toLowerCase()
 );
 const SETTLE_MS = Number(process.env.SHOT_SETTLE ?? 1000);
+/** Retina by default — drop to 1 when the files have to be small enough to send. */
+const SCALE = Number(process.env.SHOT_SCALE ?? 2);
 const ROUTES = process.argv.slice(2).filter((a) => !a.startsWith("-"));
 const routes = ROUTES.length ? ROUTES : ["/"];
 const OUT = ".shots";
@@ -79,7 +82,7 @@ try {
   for (const width of WIDTHS) {
     const page = await browser.newPage({
       viewport: { width, height: Math.round(width * 0.66) },
-      deviceScaleFactor: 2,
+      deviceScaleFactor: SCALE,
     });
     for (const route of routes) {
       const url = toUrl(route);
