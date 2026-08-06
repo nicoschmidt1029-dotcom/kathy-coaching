@@ -11,7 +11,7 @@
   "meta": {
     "titleDefault": "Katie Coaching — Training, Ernährung & Mentoring, im Glauben verwurzelt",
     "titleTemplate": "%s · Katie Coaching",
-    "description": "Ganzheitliches Coaching für Frauen — und ausdrücklich auch für Männer. Personal Training, Ernährungsbegleitung und christliches Mentoring mit Katie Coaching, sechs Wochen gemeinsam gegangen.",
+    "description": "Ganzheitliches Coaching für Frauen — und ausdrücklich auch für Männer. Personal Training, Ernährungsbegleitung und christliches Mentoring mit Katie Coaching, sechs Wochen, die wir gemeinsam gehen.",
     "ogDescription": "Sieh deinen Körper so, wie Gott ihn geschaffen hat. Training, Ernährung und Identität in Jesus — ein Weg, gemeinsam gegangen."
   },
   "pages": {
@@ -24,7 +24,7 @@
       "description": "Drei Sechs-Wochen-Programme, eins zu eins. Nur Training, Training + Ernährung, oder der ganze Weg mit geistlichem Mentoring. Ehrliche Preise."
     },
     "testimonials": {
-      "title": "Stimmen",
+      "title": "Erfahrungen",
       "description": "Beispielgeschichten, die als Platzhalter stehen, bis echte Klientinnen und Klienten ihre eigenen teilen."
     },
     "contact": {
@@ -46,7 +46,7 @@
   "nav": {
     "about": "Über mich",
     "programs": "Programme",
-    "testimonials": "Stimmen",
+    "testimonials": "Erfahrungen",
     "contact": "Kontakt",
     "cta": "Lass uns reden",
     "menu": "Menü",
@@ -138,7 +138,7 @@
     }
   },
   "mission": {
-    "eyebrow": "Meine Mission",
+    "eyebrow": "Worum es mir geht",
     "title": "Deine besten Jahre liegen nicht hinter dir — sie sind die, die du erst noch erschaffst.",
     "p1": "Es ist nie zu spät für Veränderung und Verbesserung. Es liegt ganz bei dir. Jeder Tag ist eine neue Chance, ein erfülltes Leben zu beginnen, in dem du dich am besten fühlst. Das Wichtigste ist, sich zu entscheiden, nicht aufzugeben, und anzufangen.",
     "p2": "Willst du abnehmen? Oder mehr Muskeln aufbauen? Oder gesünder essen und leben, weißt aber nicht genau wie? Oder hat dich das Leben geistlich und mental erschöpft?",
@@ -158,7 +158,7 @@
   "testimonials": {
     "eyebrow": "Mehr Geschichten",
     "title": "Was sich verändert hat, war nicht nur der Körper.",
-    "videoLabel": "Video-Stimme von {name}",
+    "videoLabel": "Videobeitrag von {name}",
     "marcus": {
       "name": "Marcus, 41",
       "program": "Training + Ernährung",
@@ -224,7 +224,7 @@
     },
     "addons": {
       "whatsapp": {
-        "name": "Direkte WhatsApp-Check-ins",
+        "name": "Kurzer Draht per WhatsApp",
         "blurb": "Unterstützung zwischen den Terminen, wenn du sie brauchst."
       },
       "prayer": {
@@ -241,13 +241,13 @@
         "name": "Nur Training",
         "blurb": "Fang mit Bewegung an. Der Rest kann später dazukommen, wenn er passt.",
         "bestFor": "den sanften Wiedereinstieg in Bewegung, ohne Druck, gleich mehr dazuzunehmen",
-        "format": "Wöchentliche 1:1-Einheit · Technik-Checks dazwischen"
+        "format": "Wöchentliche 1:1-Einheit · Technik-Rückmeldung dazwischen"
       },
       "training-nutrition": {
         "name": "Training + Ernährung",
         "blurb": "Kraft und ein ruhigeres Verhältnis zum Essen.",
         "bestFor": "wenn Essen und Training sich wie zwei getrennte Kämpfe anfühlen",
-        "format": "Wöchentliche 1:1-Einheit · Ernährungs-Check-in unter der Woche"
+        "format": "Wöchentliche 1:1-Einheit · Ernährungs-Rücksprache unter der Woche"
       },
       "complete": {
         "name": "Der ganze Weg",
@@ -307,7 +307,7 @@
     "genericError": "Da ist etwas schiefgelaufen. Bitte versuch es noch einmal.",
     "networkError": "Netzwerkfehler. Bitte versuch es gleich noch einmal.",
     "sentTitle": "Danke — ist angekommen.",
-    "sentBody": "Ich lese jede Nachricht selbst. Antwort innerhalb von zwei Werktagen, meistens schneller. Bis dahin — Gnade und Frieden für dich.",
+    "sentBody": "Ich lese jede Nachricht selbst. Antwort innerhalb von zwei Werktagen, meistens schneller. Bis dahin: Gnade und Frieden.",
     "sendAnother": "Noch eine Nachricht senden",
     "legalPrefix": "Rechtliches:"
   },
@@ -333,7 +333,7 @@
     "updatedLabel": "Zuletzt aktualisiert · {date}",
     "noticeLabel": "Unvollständiges Dokument",
     "noticeBody": "Dieser Text ist nicht fertig. Jedes mit <mark>NOCH AUSZUFÜLLEN</mark> markierte Feld wartet auf Angaben von Katarina Gröflin — an keiner dieser Stellen stehen Beispiel- oder Platzhalterdaten. Solange sie fehlen, erfüllt diese Seite die Informationspflichten nicht, für die sie gedacht ist.",
-    "imprintEyebrow": "Rechtliche Angaben · Impressum",
+    "imprintEyebrow": "Rechtliche Angaben",
     "imprintTitle": "Impressum.",
     "privacyEyebrow": "Datenschutzerklärung",
     "privacyTitle": "Wie ich mit deinen Daten umgehe."
