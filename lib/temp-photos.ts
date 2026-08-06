@@ -22,8 +22,9 @@
  * Slots still on stock (waiting on real content):
  *   - approachNourish, approachSoul (Unsplash atmospheric shots)
  *
- * Slots kept explicitly `null`:
- *   - spotlight  (Lena portrait — neutral placeholder stays until real photo)
+ * The testimonial slots are gone entirely rather than sitting here as `null`:
+ * the people quoted are invented, so there was never a photo coming. See
+ * lib/content-status.ts.
  *
  * Unused but kept in repo:
  *   - kathy-02.jpg (track, back view), kathy-04.jpg (track, pointing),
@@ -55,7 +56,6 @@ export const TEMP_PHOTOS: Record<
   | "approachTrain"
   | "approachNourish"
   | "approachSoul"
-  | "spotlight"
   | "about",
   TempPhoto
 > = {
@@ -86,8 +86,6 @@ export const TEMP_PHOTOS: Record<
     alt: "TEMP: candlelight and open book — quiet contemplative atmosphere",
     credit: "Unsplash",
   },
-  // Kept null — neutral spotlight placeholder stays until Lena provides one
-  spotlight: null,
   // Katie's own — gym, purple top, stretching forward on the mat, looking
   // to camera. More distance / less selfie than the tight kathy-05 crop.
   about: {

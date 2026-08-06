@@ -1,58 +1,62 @@
 import { useTranslations } from "next-intl";
-import { Placeholder } from "./placeholder";
 import { SampleNotice } from "./sample-notice";
-import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
-export function SpotlightTestimonial() {
+type Props = {
+  /**
+   * Whether to render the sample-content notice. Off on /testimonials, where
+   * the section directly below carries it and two identical boxes on one
+   * page read as a glitch rather than as emphasis.
+   */
+  showNotice?: boolean;
+};
+
+/**
+ * A single quote, set large.
+ *
+ * There is no portrait slot: the person is invented, so a framed
+ * "add real photo" box was reserving space for a photo that will never
+ * exist of them. The oversized quote mark carries the composition instead —
+ * a quote block that admits it is only a quote reads better than one built
+ * around an absent face.
+ */
+export function SpotlightTestimonial({ showNotice = true }: Props = {}) {
   const t = useTranslations("spotlight");
 
   return (
     <section id="spotlight" className="relative overflow-hidden py-16 md:py-24">
       <div className="container-page">
-        <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-5">
-            <div className="relative">
-              <Placeholder
-                label={t("portraitLabel")}
-                aspect="portrait"
-                tone="clay"
-                className="rotate-[-0.6deg]"
-                src={TEMP_PHOTOS.spotlight?.url}
-                alt={TEMP_PHOTOS.spotlight?.alt}
-                credit={TEMP_PHOTOS.spotlight?.credit}
-              />
-              <span
-                aria-hidden
-                className="absolute -top-4 -left-4 font-display text-[7rem] leading-none text-[var(--clay)]/25 select-none"
-              >
-                ”
-              </span>
-            </div>
-          </div>
+        <figure className="max-w-[46rem]">
+          <p className="eyebrow">{t("eyebrow")}</p>
 
-          <figure className="md:col-span-7">
-            <p className="eyebrow">{t("eyebrow")}</p>
+          {/* In flow rather than absolutely placed, so it can never land on
+              top of the eyebrow — and it echoes the smaller mark on the
+              testimonial cards below. */}
+          <span
+            aria-hidden
+            className="mt-4 block font-display text-[5rem] leading-[0.5] text-[var(--clay)]/30 select-none md:text-[7rem]"
+          >
+            ”
+          </span>
 
-            <blockquote className="mt-6 font-display text-[clamp(1.5rem,3.2vw,2.35rem)] leading-[1.28] font-normal italic text-foreground/90 text-balance">
-              {t("quote")}
-            </blockquote>
+          <blockquote className="mt-6 font-display text-[clamp(1.5rem,3.2vw,2.35rem)] leading-[1.28] font-normal italic text-foreground/90 text-balance">
+            {t("quote")}
+          </blockquote>
 
-            <figcaption className="mt-8 flex items-center gap-4">
-              <span aria-hidden className="h-px w-8 bg-[var(--plum)]" />
-              <div>
-                <div className="text-[0.98rem] font-medium text-foreground">
-                  {t("name")}
-                </div>
-                <div className="caption mt-0.5">{t("program")}</div>
+          <figcaption className="mt-8 flex items-center gap-4">
+            <span aria-hidden className="h-px w-8 bg-[var(--plum)]" />
+            <div>
+              <div className="text-[0.98rem] font-medium text-foreground">
+                {t("name")}
               </div>
-            </figcaption>
+              <div className="caption mt-0.5">{t("program")}</div>
+            </div>
+          </figcaption>
 
-            {/* This quote is the trust anchor directly under the hero on the
-                home page — the one place an unmarked invention does the most
-                damage. */}
-            <SampleNotice className="mt-8" />
-          </figure>
-        </div>
+          {/* On the home page this quote is the trust anchor directly under
+              the hero — the one place an unmarked invention does the most
+              damage. */}
+          {showNotice && <SampleNotice className="mt-8" />}
+        </figure>
       </div>
     </section>
   );

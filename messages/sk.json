@@ -32,7 +32,7 @@
     },
     "testimonials": {
       "title": "Ohlasy",
-      "description": "Čo hovoria klientky a klienti o šiestich týždňoch s Katie — skutočné mená, skutočné programy, čo sa naozaj zmenilo."
+      "description": "Ukážkové príbehy, ktoré tu zostávajú ako zástupný obsah, kým sa neozvú skutoční klienti."
     },
     "contact": {
       "title": "Kontakt",
@@ -160,14 +160,11 @@
     "eyebrow": "Ukážkový príbeh",
     "quote": "Prišla som schudnúť. O šesť týždňov neskôr sa váha posunula — ale to väčšie bolo tichšie. Prvýkrát po rokoch som sa pozrela do zrkadla bez počítania. Katie mi nepredala program; prešla ňou spolu so mnou.",
     "name": "Lena, 32",
-    "program": "Šesť týždňov, celá cesta",
-    "portraitLabel": "Portrét Leny"
+    "program": "Šesť týždňov, celá cesta"
   },
   "testimonials": {
     "eyebrow": "Ďalšie príbehy",
     "title": "To, čo sa zmenilo, nebolo len telo.",
-    "before": "Pred",
-    "after": "Po",
     "videoLabel": "Video referencia od {name}",
     "marcus": {
       "name": "Marcus, 41",

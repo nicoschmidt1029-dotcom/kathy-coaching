@@ -17,7 +17,7 @@
     },
     "testimonials": {
       "title": "Testimonials",
-      "description": "What clients say about six weeks with Katie — real names, real programs, what actually changed."
+      "description": "Sample stories, kept as placeholders until real clients share theirs."
     },
     "contact": {
       "title": "Contact",
@@ -156,14 +156,11 @@
     "eyebrow": "Example story",
     "quote": "I came in wanting to lose weight. Six weeks later, the weight had shifted — but the bigger thing was quieter. For the first time in years I looked in the mirror without doing math. Katie didn't sell me a program; she walked with me through one.",
     "name": "Lena, 32",
-    "program": "Six-week Complete program",
-    "portraitLabel": "Lena portrait"
+    "program": "Six-week Complete program"
   },
   "testimonials": {
     "eyebrow": "More stories",
     "title": "What changed wasn't only the body.",
-    "before": "Before",
-    "after": "After",
     "videoLabel": "Video testimonial from {name}",
     "marcus": {
       "name": "Marcus, 41",

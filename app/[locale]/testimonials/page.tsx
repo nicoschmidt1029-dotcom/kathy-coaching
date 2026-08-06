@@ -32,7 +32,9 @@ export default async function TestimonialsPage({
 
   return (
     <>
-      <SpotlightTestimonial />
+      {/* The Testimonials section below carries the sample notice for the
+          whole page. */}
+      <SpotlightTestimonial showNotice={false} />
       <Testimonials />
       <HomeFinalCta />
     </>
