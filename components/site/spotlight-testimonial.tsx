@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Placeholder } from "./placeholder";
+import { SampleNotice } from "./sample-notice";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
 export function SpotlightTestimonial() {
@@ -45,6 +46,11 @@ export function SpotlightTestimonial() {
                 <div className="caption mt-0.5">{t("program")}</div>
               </div>
             </figcaption>
+
+            {/* This quote is the trust anchor directly under the hero on the
+                home page — the one place an unmarked invention does the most
+                damage. */}
+            <SampleNotice className="mt-8" />
           </figure>
         </div>
       </div>

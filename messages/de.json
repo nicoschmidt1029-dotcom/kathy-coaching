@@ -145,8 +145,12 @@
     "p3": "Lass es dich wissen: Es ist nie zu spät.",
     "p4": "Und ich werde alles tun, um dir zu helfen."
   },
+  "sampleNotice": {
+    "label": "Beispielinhalt",
+    "body": "Diese Geschichten sind beim Bau der Website entstanden. Sie stammen nicht von echten Klientinnen oder Klienten, und es hat nie jemand Vorher-Nachher-Fotos geteilt. Sie stehen hier als Platzhalter, bis Katie echte hat."
+  },
   "spotlight": {
-    "eyebrow": "Eine Klientin von kürzlich",
+    "eyebrow": "Beispielgeschichte",
     "quote": "Ich kam, um abzunehmen. Sechs Wochen später hatte sich das Gewicht verschoben — aber das Größere war leiser. Zum ersten Mal seit Jahren habe ich in den Spiegel geschaut, ohne zu rechnen. Katie hat mir kein Programm verkauft; sie ist mit mir hindurchgegangen.",
     "name": "Lena, 32",
     "program": "Sechs Wochen, der ganze Weg",
@@ -155,7 +159,6 @@
   "testimonials": {
     "eyebrow": "Mehr Geschichten",
     "title": "Was sich verändert hat, war nicht nur der Körper.",
-    "note": "Vorher-Nachher-Fotos mit Einverständnis geteilt · vorerst Platzhalter",
     "before": "Vorher",
     "after": "Nachher",
     "videoLabel": "Video-Stimme von {name}",

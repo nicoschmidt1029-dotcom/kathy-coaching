@@ -152,8 +152,12 @@
     "p3": "Let me tell you. Nikdy nie je pozde.",
     "p4": "Urobím všetko pre to, aby som ti pomohol"
   },
+  "sampleNotice": {
+    "label": "Ukážkový obsah",
+    "body": "Tieto príbehy vznikli pri tvorbe stránky. Nepochádzajú od skutočných klientok ani klientov a nikto nezdieľal žiadne fotografie pred a po. Zostávajú tu ako zástupný obsah, kým Katie nebude mať skutočné."
+  },
   "spotlight": {
-    "eyebrow": "Nedávna klientka",
+    "eyebrow": "Ukážkový príbeh",
     "quote": "Prišla som schudnúť. O šesť týždňov neskôr sa váha posunula — ale to väčšie bolo tichšie. Prvýkrát po rokoch som sa pozrela do zrkadla bez počítania. Katie mi nepredala program; prešla ňou spolu so mnou.",
     "name": "Lena, 32",
     "program": "Šesť týždňov, celá cesta",
@@ -162,7 +166,6 @@
   "testimonials": {
     "eyebrow": "Ďalšie príbehy",
     "title": "To, čo sa zmenilo, nebolo len telo.",
-    "note": "Fotky pred a po zdieľané so súhlasom · zatiaľ zástupné",
     "before": "Pred",
     "after": "Po",
     "videoLabel": "Video referencia od {name}",

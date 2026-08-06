@@ -147,8 +147,13 @@
     "p3": "Let me tell you. It's never too late.",
     "p4": "And I will do my best to help you."
   },
+  "sampleNotice": {
+    "_comment": "Shown next to the testimonials while TESTIMONIALS_ARE_REAL is false (lib/content-status.ts). Delete nothing here when real stories arrive — flip the flag.",
+    "label": "Sample content",
+    "body": "These stories were written while the site was being built. They are not from real clients, and no before/after photos have been shared with anyone. They stay here as a placeholder until Katie has real ones to put in their place."
+  },
   "spotlight": {
-    "eyebrow": "A recent client",
+    "eyebrow": "Example story",
     "quote": "I came in wanting to lose weight. Six weeks later, the weight had shifted — but the bigger thing was quieter. For the first time in years I looked in the mirror without doing math. Katie didn't sell me a program; she walked with me through one.",
     "name": "Lena, 32",
     "program": "Six-week Complete program",
@@ -157,7 +162,6 @@
   "testimonials": {
     "eyebrow": "More stories",
     "title": "What changed wasn't only the body.",
-    "note": "Before/after photos shared with permission · placeholders shown for now",
     "before": "Before",
     "after": "After",
     "videoLabel": "Video testimonial from {name}",

@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Placeholder } from "./placeholder";
 import { AutoplayVideo } from "./autoplay-video";
+import { SampleNotice } from "./sample-notice";
 
 /**
  * Testimonial copy lives in messages/*.json under `testimonials.<key>`.
@@ -39,6 +40,9 @@ export function Testimonials() {
         <div className="max-w-3xl">
           <p className="eyebrow">{t("eyebrow")}</p>
           <h2 className="section-title">{t("title")}</h2>
+          {/* Above the cards, not below: a reader should know what they are
+              looking at before they read a quote, not after. */}
+          <SampleNotice className="mt-8" />
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-7">
@@ -103,7 +107,6 @@ export function Testimonials() {
           })}
         </div>
 
-        <p className="caption mt-10 text-center">{t("note")}</p>
       </div>
     </section>
   );
