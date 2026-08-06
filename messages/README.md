@@ -10,7 +10,7 @@ a complete page — untranslated sections just show up in English.
 
 1. Find the key path in `en.json` (e.g. `faq.believer.q`).
 2. Recreate that path in `de.json` / `sk.json` and put the translation in.
-3. Remove the section from the `_status.todo` list in that file.
+3. Update the `_status` block in that file.
 
 Rules:
 
@@ -21,7 +21,9 @@ Rules:
   markup, not printed as text.
 - Placeholders in curly braces (`{name}`, `{year}`, `{percent}`) must survive
   the translation exactly as written.
-- Slovak translations come from Katarína, not from machine translation.
+- The Slovak bio and mission are Katarína's own words and are quoted
+  verbatim, including the English fragments she left in them ("calling",
+  "Let me tell you"). Do not tidy those up without asking her.
 
 ## Status
 
@@ -48,14 +50,18 @@ block in `sk.json`.**
 | `testimonials` + `spotlight` | all | ✅ translated | ⚠️ AI draft |
 | `contact` (form labels, states) | all | ✅ translated | ⚠️ AI draft |
 | `nav` + `language` | all | ✅ translated | ⚠️ AI draft |
-| `about` — headings, caption, stats, qualifications | `eyebrow`, `title`, `portraitCaption`, `stat*`, `qual*` | ✅ translated | ❌ English |
-| `howIWork` — the four-step method | all | ✅ translated | ❌ English |
-| `mission` — eyebrow | `eyebrow` | ✅ translated | ❌ English |
-| `faq` (5 Q&A) | all | ✅ translated | ❌ English |
-| `finalCta` | all | ✅ translated | ❌ English |
-| `footer`, `notFound` | all | ✅ translated | ❌ English |
-| `pages` (SEO titles + descriptions) | all | ✅ translated | ❌ English |
+| `about` — headings, caption, stats, qualifications | `eyebrow`, `title`, `portraitCaption`, `stat*`, `qual*` | ✅ translated | ⚠️ AI draft |
+| `howIWork` — the four-step method | all | ✅ translated | ⚠️ AI draft |
+| `mission` — eyebrow | `eyebrow` | ✅ translated | ⚠️ AI draft |
+| `faq` (5 Q&A) | all | ✅ translated | ⚠️ AI draft |
+| `finalCta` | all | ✅ translated | ⚠️ AI draft |
+| `footer`, `notFound` | all | ✅ translated | ⚠️ AI draft |
+| `pages` (SEO titles + descriptions) | all | ✅ translated | ⚠️ AI draft |
 | `translationNotice` | `draft` | — (not shown) | ⚠️ AI draft |
+
+Every section on `/sk` is now drafted; nothing falls back to English except
+the brand name, the wordmark, the two issuing institutions and the language
+list, all of which read the same in any language.
 
 ### Not in the message files at all (English only, by design)
 

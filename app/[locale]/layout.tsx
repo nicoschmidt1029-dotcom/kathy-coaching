@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Fraunces, Inter } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import "../globals.css";
@@ -10,19 +9,7 @@ import { TranslationNotice } from "@/components/site/translation-notice";
 import { routing } from "@/i18n/routing";
 import { alternatesFor } from "@/i18n/metadata";
 import { SITE_URL } from "@/lib/site-url";
-
-const display = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-  axes: ["opsz"],
-});
-
-const body = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
+import { FONT_CLASSES } from "@/lib/fonts";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -78,10 +65,7 @@ export default async function LocaleLayout({
   const t = await getTranslations("nav");
 
   return (
-    <html
-      lang={locale}
-      className={`${display.variable} ${body.variable} h-full antialiased`}
-    >
+    <html lang={locale} className={`${FONT_CLASSES} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <NextIntlClientProvider>
           <a

@@ -6,18 +6,49 @@
     "afterReview": "Po kontrole: odstráňte 'sk' z DRAFT_LOCALES v i18n/routing.ts a upravte tento blok.",
     "genderNote": "Katarínin pôvodný text v mission.p4 používa mužský tvar („aby som ti pomohol\"). Koncepty nižšie používajú ženský tvar („odpovedala\", „prijímam\"), keďže hovorí žena. Nechali sme oboje tak, ako je — Katarína nech rozhodne, čo je správne.",
     "notTranslated": [
-      "about — eyebrow, title, portraitCaption, stats, qualifications",
-      "howIWork — celá sekcia",
-      "mission.eyebrow",
-      "faq — všetkých 5 otázok",
-      "finalCta",
-      "footer, notFound",
-      "pages — SEO tituly a popisy",
-      "/imprint a /privacy — právne texty, zámerne nikdy strojovo neprekladané"
+      "/imprint a /privacy — právne texty; zámerne nikdy strojovo neprekladané, musí ich napísať alebo skontrolovať niekto, kto za ne ručí",
+      "OG obrázok — pre všetky jazyky anglický",
+      "meta.siteName, wordmark.name/tagline — značka",
+      "about.qual*Issuer — vlastné mená inštitúcií (SNF Academy, Awakening School of Ministry)",
+      "contact.languagesValue — názvy jazykov sú v každom jazyku rovnaké"
     ]
   },
   "translationNotice": {
     "draft": "Slovenský preklad sa ešte kontroluje. Anglická verzia je pôvodná."
+  },
+  "meta": {
+    "titleDefault": "Katie Coaching — tréning, výživa a mentoring zakorenené vo viere",
+    "description": "Celostný koučing pre ženy — a otvorene aj pre mužov. Osobný tréning, výživové poradenstvo a kresťanský mentoring s Katie Coaching, šesť týždňov prejdených spolu.",
+    "ogDescription": "Pozri sa na svoje telo tak, ako ho stvoril Boh. Tréning, výživa a identita v Ježišovi — jedna cesta, prejdená spolu."
+  },
+  "pages": {
+    "about": {
+      "title": "O mne",
+      "description": "Spoznaj Katie Gröflin — certifikovanú osobnú trénerku a výživovú poradkyňu, ktorá ponúka celostný koučing pre telo, výživu a dušu."
+    },
+    "programs": {
+      "title": "Programy",
+      "description": "Tri šesťtýždňové programy, jeden na jedného. Len tréning, tréning + výživa, alebo celá cesta s duchovným mentoringom. Poctivé ceny."
+    },
+    "testimonials": {
+      "title": "Ohlasy",
+      "description": "Čo hovoria klientky a klienti o šiestich týždňoch s Katie — skutočné mená, skutočné programy, čo sa naozaj zmenilo."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Ozvi sa Katie — napíš jej, kde si, kam sa chceš dostať a v akom jazyku sa cítiš najlepšie."
+    },
+    "imprint": {
+      "title": "Právne informácie",
+      "description": "Právne informácie pre Katie Coaching, Ettingen (BL), Švajčiarsko."
+    },
+    "privacy": {
+      "title": "Ochrana údajov",
+      "description": "Zásady ochrany osobných údajov Katie Coaching — ako sa narába s tvojimi údajmi podľa švajčiarskeho revDSG a európskeho GDPR."
+    }
+  },
+  "wordmark": {
+    "ariaLabel": "Katie Coaching — domovská stránka"
   },
   "nav": {
     "about": "O mne",
@@ -71,10 +102,46 @@
     }
   },
   "about": {
+    "eyebrow": "Spoznaj Katie",
+    "title": "Sila, výživa a tichý druh sebavedomia.",
     "calling": "Všetci máme calling v živote. <em>Môj povolanie je pomáhať ľuďom.</em>",
-    "story": "Po absolvovaní štúdia na SNF Akademy, kde som študovala Osobný tréner and výživový poradca, a graduation from Awakening School of Ministry pomáham ľuďom zmeniť jedálny lístok, nájsť pozitívny vzťah k športu a pochopiť aký je každý človek jedinečny a dôležitý."
+    "story": "Po absolvovaní štúdia na SNF Akademy, kde som študovala Osobný tréner and výživový poradca, a graduation from Awakening School of Ministry pomáham ľuďom zmeniť jedálny lístok, nájsť pozitívny vzťah k športu a pochopiť aký je každý človek jedinečny a dôležitý.",
+    "portraitLabel": "Portrét Katie",
+    "portraitCaption": "Katie · osobná trénerka · výživová poradkyňa",
+    "statsTitle": "Krátka verzia",
+    "statYearsLabel": "Rokov koučovania",
+    "statClientsLabel": "Sprevádzaných ľudí",
+    "statFormatLabel": "Každý program",
+    "statFormatValue": "6 týždňov · 1:1",
+    "qualificationsTitle": "Vzdelanie a certifikácia",
+    "qualTrainerTitle": "Osobná trénerka",
+    "qualNutritionTitle": "Výživová poradkyňa",
+    "qualMinistryTitle": "Absolventka School of Ministry",
+    "qualIssuedBy": "Vydal"
+  },
+  "howIWork": {
+    "eyebrow": "Ako pracujem",
+    "title": "Šesť týždňov — a čo sa v nich naozaj deje.",
+    "intro": "Žiadne tajomstvo okolo metódy. Toto je postup, ktorým prechádza každý program, aby si vedel, čomu hovoríš áno, ešte predtým, než to povieš.",
+    "step1": {
+      "title": "Prvý rozhovor",
+      "body": "Žiadny scenár, žiadny predajný hovor. Povieš mi, kde práve si, čo si už skúšal a ako sa majú najbližšie mesiace cítiť. Ja sa pýtam. Na konci obaja vieme, či to sadne — a ak nie, poviem ti to."
+    },
+    "step2": {
+      "title": "Tvoj východiskový bod",
+      "body": "Skôr než sa čokoľvek naplánuje, pozrieme sa na to, čo tu naozaj je: ako sa dnes hýbeš, ako ješ v bežnom týždni, čo ti tvoj rozvrh naozaj dovolí a aké zranenia či obmedzenia musím zohľadniť."
+    },
+    "step3": {
+      "title": "Plán, písomne",
+      "body": "Tréningový a výživový plán dostaneš písomne — postavený na týždni, ktorý máš, nie na ideálnom. Stretávame sa každý týždeň jeden na jedného a medzi stretnutiami mi môžeš posielať videá techniky a otázky."
+    },
+    "step4": {
+      "title": "Priebežné úpravy",
+      "body": "Jediný plán, ktorý za niečo stojí, je ten, čo prežije stret so skutočným týždňom. Každý týždeň sa pozrieme, čo fungovalo a čo nie, a upravíme — záťaž, jedlá alebo očakávania. V šiestom týždni by si ho mal zvládnuť viesť aj bezo mňa."
+    }
   },
   "mission": {
+    "eyebrow": "Moja misia",
     "title": "Tvoje najlepšie roky nie sú za tebou, sú to tie, ktoré si ešte len vytvoríš.",
     "p1": "Nikdy nie je pozde na zmenu a zlepšenie. Všetko záleží na tebe. Každý deň je novou príležitosťou začať plnohodnotný život, kde sa cítiš najlepšie. Najdôležitejšie je rozhodnúť sa nevzdávať a začať niečo robiť.",
     "p2": "Chceš schudnúť? Alebo chceš viacej svalstva? Alebo chceš sa stravovať a žiť zdravšie, ale nie si si istý ako na to? Alebo ťa život duchovne a psychicky vyčerpal?",
@@ -191,6 +258,31 @@
       }
     }
   },
+  "faq": {
+    "eyebrow": "Otázky",
+    "title": "Úprimné odpovede, skôr než sa rozhodneš.",
+    "intro": "Chýba ti tu niečo? Napíš to rovno, keď sa ozveš — presne na to je prvý rozhovor.",
+    "believer": {
+      "q": "Musím byť veriaci, aby som s tebou mohol pracovať?",
+      "a": "Nie. Duchovný mentoring je ponuka, nikdy podmienka. „Len tréning\" a „Tréning + výživa\" fungujú pre každého, bez ohľadu na vieru. „Celá cesta\" je pre tých, ktorí túto rovinu chcú mať výslovne pri sebe."
+    },
+    "women": {
+      "q": "Je to len pre ženy?",
+      "a": "Vzniklo to najprv s myšlienkou na ženy — muži sú však výslovne vítaní, najmä pri tréningu a výžive. „Celá cesta\" funguje pre každého, kto je ochotný byť úprimný vo všetkých troch oblastiach."
+    },
+    "how": {
+      "q": "Ako program konkrétne prebieha?",
+      "a": "Začíname bezplatným rozhovorom bez tlaku, aby sme videli, či to sadne. Potom dostaneš svoj osobný plán, stretávame sa každý týždeň (online alebo osobne) a celých šesť týždňov ma máš ako sprievodkyňu."
+    },
+    "gym": {
+      "q": "Potrebujem členstvo vo fitku?",
+      "a": "Pri väčšine programov nie. Tréning staviam na tom, k čomu máš prístup — doma, vo fitku alebo niekde medzi tým. Vyjasníme si to, keď sa ozveš."
+    },
+    "beginner": {
+      "q": "Čo ak som roky netrénoval — alebo nikdy?",
+      "a": "To platí pre väčšinu tých, s ktorými pracujem. Všetko sa stavia na tvojom východiskovom bode. Žiadne podmienky, žiadne hodnotenie. Cieľom je pokrok, ktorý udržíš, nie trest."
+    }
+  },
   "contact": {
     "eyebrow": "Ozvi sa",
     "title": "Poďme sa porozprávať.",
@@ -221,5 +313,25 @@
     "sentBody": "Každú správu čítam sama. Odpoveď do dvoch pracovných dní, väčšinou skôr. Zatiaľ — milosť a pokoj tebe.",
     "sendAnother": "Poslať ďalšiu správu",
     "legalPrefix": "Právne:"
+  },
+  "finalCta": {
+    "eyebrow": "Keď budeš pripravený",
+    "title": "Poďme sa porozprávať — bez pevného formátu, bez tlaku.",
+    "body": "Povedz mi, kde si a kam sa chceš dostať. Spoločne prídeme na to, čo sadne — telefonát, správa alebo osobne — a odtiaľ pokračujeme.",
+    "cta": "Poďme sa porozprávať"
+  },
+  "footer": {
+    "blurb": "Celostný koučing pre telo, výživu a dušu — zakorenený vo viere, otvorený pre každého.",
+    "imprint": "Právne informácie",
+    "privacy": "Ochrana údajov",
+    "contact": "Kontakt",
+    "copyright": "© {year} Katie Coaching. Všetky práva vyhradené.",
+    "madeWithCare": "Vytvorené s citom"
+  },
+  "notFound": {
+    "eyebrow": "404 · táto stránka sa presunula alebo nikdy neexistovala",
+    "title": "Trochu si <em>zišiel z cesty.</em>",
+    "body": "Možno je odkaz starý, možno sa niečo presunulo. Späť domov je to len jedno kliknutie — nič nie je stratené.",
+    "cta": "Späť na začiatok"
   }
 }
