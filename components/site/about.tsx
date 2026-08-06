@@ -13,9 +13,9 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  * from her, hence the TODO markers.
  */
 const QUALS = [
-  { title: "qualTrainerTitle", issuer: "qualTrainerIssuer", todo: "exact certificate designation" },
-  { title: "qualNutritionTitle", issuer: "qualNutritionIssuer", todo: "exact certificate designation" },
-  { title: "qualMinistryTitle", issuer: "qualMinistryIssuer", todo: "graduation year" },
+  { title: "qualTrainerTitle", issuer: "qualTrainerIssuer", todo: "todoCertificate" },
+  { title: "qualNutritionTitle", issuer: "qualNutritionIssuer", todo: "todoCertificate" },
+  { title: "qualMinistryTitle", issuer: "qualMinistryIssuer", todo: "todoGraduation" },
 ] as const;
 
 export function About() {
@@ -72,13 +72,13 @@ export function About() {
             <div className="bg-background px-5 py-5">
               <dt className="caption">{t("statYearsLabel")}</dt>
               <dd className="mt-2.5 leading-snug">
-                <Todo>years</Todo>
+                <Todo>{t("todoYears")}</Todo>
               </dd>
             </div>
             <div className="bg-background px-5 py-5">
               <dt className="caption">{t("statClientsLabel")}</dt>
               <dd className="mt-2.5 leading-snug">
-                <Todo>count</Todo>
+                <Todo>{t("todoClients")}</Todo>
               </dd>
             </div>
             <div className="bg-background px-5 py-5">
@@ -106,7 +106,7 @@ export function About() {
                     </p>
                     <p className="mt-1 text-[0.85rem] text-foreground/60">
                       {t("qualIssuedBy")} {t(qual.issuer)} ·{" "}
-                      <Todo>{qual.todo}</Todo>
+                      <Todo>{t(qual.todo)}</Todo>
                     </p>
                   </div>
                 </li>

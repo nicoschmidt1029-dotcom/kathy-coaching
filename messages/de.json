@@ -101,6 +101,10 @@
     "story": "Nach meinem Studium an der SNF Academy, wo ich Personal Trainer und Ernährungsberatung studiert habe, und meinem Abschluss an der Awakening School of Ministry, helfe ich Menschen, in ihrem Leben voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung und der richtigen Bewegung. <em>In jedem Alter.</em>",
     "portraitLabel": "Porträt von Katie",
     "portraitCaption": "Katie · Personal Trainerin · Ernährungsberaterin",
+    "todoYears": "Jahre",
+    "todoClients": "Anzahl",
+    "todoCertificate": "genaue Bezeichnung des Zertifikats",
+    "todoGraduation": "Abschlussjahr",
     "statsTitle": "Die Kurzfassung",
     "statYearsLabel": "Jahre Coaching",
     "statClientsLabel": "Begleitete Menschen",
@@ -320,6 +324,19 @@
     "contact": "Kontakt",
     "copyright": "© {year} Katie Coaching. Alle Rechte vorbehalten.",
     "madeWithCare": "Mit Sorgfalt gemacht"
+  },
+  "legal": {
+    "toBeSupplied": "NOCH AUSZUFÜLLEN",
+    "stillToBeSupplied": "Noch auszufüllen:",
+    "notSuppliedYet": "Diese Angabe liegt noch nicht vor.",
+    "draftLabel": "Entwurf · noch nicht in Kraft",
+    "updatedLabel": "Zuletzt aktualisiert · {date}",
+    "noticeLabel": "Unvollständiges Dokument",
+    "noticeBody": "Dieser Text ist nicht fertig. Jedes mit <mark>NOCH AUSZUFÜLLEN</mark> markierte Feld wartet auf Angaben von Katarina Gröflin — an keiner dieser Stellen stehen Beispiel- oder Platzhalterdaten. Solange sie fehlen, erfüllt diese Seite die Informationspflichten nicht, für die sie gedacht ist.",
+    "imprintEyebrow": "Rechtliche Angaben · Impressum",
+    "imprintTitle": "Impressum.",
+    "privacyEyebrow": "Datenschutzerklärung",
+    "privacyTitle": "Wie ich mit deinen Daten umgehe."
   },
   "notFound": {
     "eyebrow": "404 · diese Seite ist umgezogen oder gab es nie",

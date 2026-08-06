@@ -100,6 +100,10 @@
     "story": "After my study at SNF Academy, where I studied Personal Trainer and Nutrition coach, and graduating from Awakening School of Ministry, I help people move forward in their lives. With the right diet, the right mindset, and the right exercise. <em>At any age.</em>",
     "portraitLabel": "Katie portrait",
     "portraitCaption": "Katie · personal trainer · nutrition coach",
+    "todoYears": "years",
+    "todoClients": "count",
+    "todoCertificate": "exact certificate designation",
+    "todoGraduation": "graduation year",
     "statsTitle": "The short version",
     "statYearsLabel": "Years coaching",
     "statClientsLabel": "People accompanied",
@@ -323,6 +327,20 @@
     "contact": "Contact",
     "copyright": "© {year} Katie Coaching. All rights reserved.",
     "madeWithCare": "Made with care"
+  },
+  "legal": {
+    "_comment": "Labels around the legal documents. The documents themselves are JSX per locale in components/legal/ — legal prose is a document, not a set of UI strings.",
+    "toBeSupplied": "TO BE SUPPLIED",
+    "stillToBeSupplied": "Still to be supplied:",
+    "notSuppliedYet": "This information has not been supplied yet.",
+    "draftLabel": "Draft · not yet in force",
+    "updatedLabel": "Last updated · {date}",
+    "noticeLabel": "Incomplete document",
+    "noticeBody": "This notice is not finished. Every field marked <mark>TO BE SUPPLIED</mark> is still waiting on information from Katarina Gröflin — nothing in those places has been filled in with example or placeholder data. Until they are completed, this page does not satisfy the legal disclosure duties it is meant to cover.",
+    "imprintEyebrow": "Legal notice · Impressum",
+    "imprintTitle": "Imprint.",
+    "privacyEyebrow": "Privacy notice · Datenschutz",
+    "privacyTitle": "How I handle your data."
   },
   "notFound": {
     "eyebrow": "404 · this page moved or never existed",

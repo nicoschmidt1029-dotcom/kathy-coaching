@@ -63,13 +63,30 @@ Every section on `/sk` is now drafted; nothing falls back to English except
 the brand name, the wordmark, the two issuing institutions and the language
 list, all of which read the same in any language.
 
+### Legal documents live outside the message files
+
+`/imprint` and `/privacy` exist in all three languages, but as components in
+`components/legal/` — one file per document per locale — not as message keys.
+A legal notice has to be read, reviewed and signed off as a whole; split into
+a hundred keys it becomes unreviewable, and a key falling back to another
+language mid-document would be worse than a missing button label.
+
+All three versions rest on the same Swiss basis (Art. 3 lit. s UWG for the
+imprint, nDSG plus GDPR for the privacy notice) — **not the German TMG**. The
+article citations are identical across languages on purpose; only the prose
+around them is translated. Every fact Katie has to supply is a `<Todo>`
+placeholder in every language, and no version invents an address, UID,
+insurer or email.
+
+The labels around the documents (eyebrow, title, draft badge, placeholder
+wording) *are* message keys, under `legal`.
+
+**The Slovak legal text is an unreviewed AI draft**, like the rest of `/sk` —
+and it matters more here than in marketing copy. Both Slovak files carry that
+warning at the top.
+
 ### Not in the message files at all (English only, by design)
 
-- **`/imprint` and `/privacy` bodies** — legal texts, hardcoded in
-  `app/[locale]/imprint/page.tsx` and `.../privacy/page.tsx`. Not
-  machine-translated on purpose: the German and Slovak versions need someone
-  who can stand behind them. Their SEO title/description *are* in
-  `pages.imprint` / `pages.privacy` and can be translated.
 - **The Open Graph card** (`app/[locale]/opengraph-image.tsx`) — one English
   image for all three locales. Its headline is hand-split across two lines
   (roman + italic accent), so localizing it means picking a line break per

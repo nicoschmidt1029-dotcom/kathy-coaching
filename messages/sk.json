@@ -5,8 +5,8 @@
     "risk": "Riziko chýb je tu vyššie než v de.json: nemecký text dodal Nico a vie si ho prečítať, slovenský nie. Očakávajte chyby v pádoch, rode a idiómoch. Kým to Katarína neskontroluje, návštevníkom sa na /sk zobrazuje poznámka (translationNotice.draft) — pozri DRAFT_LOCALES v i18n/routing.ts.",
     "afterReview": "Po kontrole: odstráňte 'sk' z DRAFT_LOCALES v i18n/routing.ts a upravte tento blok.",
     "genderNote": "Katarínin pôvodný text v mission.p4 používa mužský tvar („aby som ti pomohol\"). Koncepty nižšie používajú ženský tvar („odpovedala\", „prijímam\"), keďže hovorí žena. Nechali sme oboje tak, ako je — Katarína nech rozhodne, čo je správne.",
+    "legalNote": "Právne texty (/imprint, /privacy) sú preložené, ale nie sú v tomto súbore — sú to komponenty v components/legal/sk.tsx. Aj tie sú AI koncept a potrebujú kontrolu; pri právnom texte je chybné slovo drahšie než v marketingovom.",
     "notTranslated": [
-      "/imprint a /privacy — právne texty; zámerne nikdy strojovo neprekladané, musí ich napísať alebo skontrolovať niekto, kto za ne ručí",
       "OG obrázok — pre všetky jazyky anglický",
       "meta.siteName, wordmark.name/tagline — značka",
       "about.qual*Issuer — vlastné mená inštitúcií (SNF Academy, Awakening School of Ministry)",
@@ -108,6 +108,10 @@
     "story": "Po absolvovaní štúdia na SNF Akademy, kde som študovala Osobný tréner and výživový poradca, a graduation from Awakening School of Ministry pomáham ľuďom zmeniť jedálny lístok, nájsť pozitívny vzťah k športu a pochopiť aký je každý človek jedinečny a dôležitý.",
     "portraitLabel": "Portrét Katie",
     "portraitCaption": "Katie · osobná trénerka · výživová poradkyňa",
+    "todoYears": "roky",
+    "todoClients": "počet",
+    "todoCertificate": "presný názov certifikátu",
+    "todoGraduation": "rok ukončenia",
     "statsTitle": "Krátka verzia",
     "statYearsLabel": "Rokov koučovania",
     "statClientsLabel": "Sprevádzaných ľudí",
@@ -327,6 +331,19 @@
     "contact": "Kontakt",
     "copyright": "© {year} Katie Coaching. Všetky práva vyhradené.",
     "madeWithCare": "Vytvorené s citom"
+  },
+  "legal": {
+    "toBeSupplied": "ZATIAĽ NEDOPLNENÉ",
+    "stillToBeSupplied": "Zatiaľ nedoplnené:",
+    "notSuppliedYet": "Tento údaj zatiaľ nebol doplnený.",
+    "draftLabel": "Návrh · zatiaľ neplatné",
+    "updatedLabel": "Naposledy upravené · {date}",
+    "noticeLabel": "Nedokončený dokument",
+    "noticeBody": "Tento text nie je dokončený. Každé pole označené <mark>ZATIAĽ NEDOPLNENÉ</mark> čaká na údaje od Kataríny Gröflin — na žiadnom z týchto miest nie sú vzorové ani zástupné údaje. Kým sa nedoplnia, táto stránka nespĺňa informačné povinnosti, na ktoré je určená.",
+    "imprintEyebrow": "Právne informácie · Impressum",
+    "imprintTitle": "Právne informácie.",
+    "privacyEyebrow": "Ochrana osobných údajov",
+    "privacyTitle": "Ako narábam s tvojimi údajmi."
   },
   "notFound": {
     "eyebrow": "404 · táto stránka sa presunula alebo nikdy neexistovala",
