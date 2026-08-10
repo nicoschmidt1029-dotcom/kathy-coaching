@@ -403,6 +403,7 @@
     .display-hollow { -webkit-text-stroke-width: 2px; }
   }
 
+
   /* Neutral card surface — cream panel, hairline ring, shared radius. */
   .card-surface {
     border-radius: var(--radius-2xl);

@@ -22,29 +22,45 @@ export function About() {
 
   return (
     <section id="about" className="section-pad">
-      <div className="container-page grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
-        <div className="md:col-span-5">
-          <div className="md:sticky md:top-28">
-            {TEMP_PHOTOS.about ? (
-              <Placeholder
-                label={t("portraitLabel")}
-                aspect="portrait"
-                tone="sand"
-                src={TEMP_PHOTOS.about.url}
-                alt={TEMP_PHOTOS.about.alt}
-                credit={TEMP_PHOTOS.about.credit}
-              />
-            ) : (
-              <PortraitPlaceholder label={t("portraitLabel")} />
-            )}
-            <p className="caption mt-4">{t("portraitCaption")}</p>
+      <div className="container-page">
+        <p className="eyebrow">{t("eyebrow")}</p>
+
+        {/* The title straddles the photograph: the hollow first word lands on
+            the image, the solid remainder on the cream beside it. This is the
+            move the reference site is built on, and the reason it reads as
+            designed rather than laid out. Below md the columns stack, so the
+            overlap is switched off and the title simply sits above. */}
+        <div className="relative mt-6 grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
+          {/* Two words, not the sentence. An overlapping title has to be a
+              label — the full headline at display size covered the portrait
+              and ran straight through the body copy. */}
+          <h2 className="display-title pointer-events-none z-10 md:absolute md:top-4 md:left-0">
+            <span className="display-hollow">
+              {t("overlapTitle").split(" ")[0]}
+            </span>{" "}
+            {t("overlapTitle").split(" ").slice(1).join(" ")}
+          </h2>
+
+          <div className="md:col-span-5">
+            <div className="md:sticky md:top-28">
+              {TEMP_PHOTOS.about ? (
+                <Placeholder
+                  label={t("portraitLabel")}
+                  aspect="portrait"
+                  tone="sand"
+                  src={TEMP_PHOTOS.about.url}
+                  alt={TEMP_PHOTOS.about.alt}
+                  credit={TEMP_PHOTOS.about.credit}
+                />
+              ) : (
+                <PortraitPlaceholder label={t("portraitLabel")} />
+              )}
+              <p className="caption mt-4">{t("portraitCaption")}</p>
+            </div>
           </div>
-        </div>
 
-        <div className="md:col-span-7">
-          <p className="eyebrow">{t("eyebrow")}</p>
-          <h2 className="section-title max-w-[20ch]">{t("title")}</h2>
-
+          <div className="md:col-span-7 md:pt-[7rem] lg:pt-[9rem]">
+          <h3 className="section-title-sm mt-0 max-w-[20ch]">{t("title")}</h3>
           <div className="mt-8 space-y-5 text-pretty text-foreground/75 sm:text-lg sm:leading-[1.7]">
             <p>
               {t.rich("calling", {
@@ -108,6 +124,7 @@ export function About() {
                 </li>
               ))}
             </ul>
+          </div>
           </div>
         </div>
       </div>
