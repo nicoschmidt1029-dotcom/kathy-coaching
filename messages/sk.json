@@ -12,7 +12,8 @@
       "meta.siteName, wordmark.name/tagline — značka",
       "about.qual*Issuer — vlastné mená inštitúcií (SNF Academy, Awakening School of Ministry)",
       "contact.languagesValue — názvy jazykov sú v každom jazyku rovnaké"
-    ]
+    ],
+    "bioNote": "about.story bol skratený (2026-08-10) na Nicovu žiadosť, aby bolo na stránke menej textu. Pôvodné Katarínino znenie z KATEY COACHING.pdf je zachované vedľa v kľúči about._storyOriginal — nič sa nestratilo. about.calling zostáva doslovný. Nech Katarína potvrdí, či jej skrátená verzia vyhovuje."
   },
   "translationNotice": {
     "draft": "Slovenský preklad sa ešte kontroluje. Anglická verzia je pôvodná."
@@ -107,7 +108,7 @@
     "eyebrow": "Spoznaj Katie",
     "title": "Sila, výživa a tichý druh sebavedomia.",
     "calling": "Všetci máme calling v živote. <em>Môj povolanie je pomáhať ľuďom.</em>",
-    "story": "Po absolvovaní štúdia na SNF Akademy, kde som študovala Osobný tréner and výživový poradca, a graduation from Awakening School of Ministry pomáham ľuďom zmeniť jedálny lístok, nájsť pozitívny vzťah k športu a pochopiť aký je každý človek jedinečny a dôležitý.",
+    "story": "Vyštudovala som na SNF Akademy, absolvovala Awakening School of Ministry. Pomáham ľuďom zmeniť jedálny lístok, nájsť pozitívny vzťah k športu a pochopiť, aký je každý človek jedinečný a dôležitý.",
     "portraitLabel": "Portrét Katie",
     "portraitCaption": "Katie · osobná trénerka · výživová poradkyňa",
     "todoYears": "roky",
@@ -123,7 +124,8 @@
     "qualTrainerTitle": "Osobná trénerka",
     "qualNutritionTitle": "Výživová poradkyňa",
     "qualMinistryTitle": "Absolventka School of Ministry",
-    "qualIssuedBy": "Vydané:"
+    "qualIssuedBy": "Vydané:",
+    "_storyOriginal": "Po absolvovaní štúdia na SNF Akademy, kde som študovala Osobný tréner and výživový poradca, a graduation from Awakening School of Ministry pomáham ľuďom zmeniť jedálny lístok, nájsť pozitívny vzťah k športu a pochopiť aký je každý človek jedinečny a dôležitý."
   },
   "howIWork": {
     "eyebrow": "Ako pracujem",
@@ -273,23 +275,23 @@
     "intro": "Ešte niečo? Spýtaj sa, keď napíšeš.",
     "believer": {
       "q": "Musím veriť v Boha, aby sme mohli spolupracovať?",
-      "a": "Nie. Duchovný mentoring je ponuka, nikdy podmienka. „Len tréning\" a „Tréning + výživa\" fungujú pre každého, bez ohľadu na vieru. „Celá cesta\" je pre tých, ktorí túto rovinu chcú mať výslovne pri sebe."
+      "a": "Nie. Duchovná časť je ponuka, nikdy podmienka. Dva z troch programov ju vynechávajú úplne."
     },
     "women": {
       "q": "Je to len pre ženy?",
-      "a": "Vzniklo to predovšetkým pre ženy — muži sú však výslovne vítaní, najmä pri tréningu a výžive. „Celá cesta\" funguje pre každého, kto je ochotný byť úprimný vo všetkých troch oblastiach."
+      "a": "Vzniklo to predovšetkým pre ženy — muži sú výslovne vítaní, najmä pri tréningu a výžive."
     },
     "how": {
       "q": "Ako program konkrétne prebieha?",
-      "a": "Začíname bezplatným rozhovorom bez tlaku, aby sme videli, či to sadne. Potom dostaneš svoj osobný plán, stretávame sa každý týždeň (online alebo osobne) a celých šesť týždňov ma máš ako sprievodkyňu."
+      "a": "Najprv bezplatný rozhovor. Potom tvoj plán, týždenné stretnutie jeden na jedného a ja po tvojom boku šesť týždňov."
     },
     "gym": {
       "q": "Potrebujem členstvo vo fitku?",
-      "a": "Pri väčšine programov nie. Tréning staviam na tom, k čomu máš prístup — doma, vo fitku alebo niekde medzi tým. Vyjasníme si to, keď sa ozveš."
+      "a": "Väčšinou nie. Tréning staviam na tom, čo máš — doma, vo fitku alebo niekde medzi tým."
     },
     "beginner": {
       "q": "Čo ak nemám za sebou roky tréningu — alebo vôbec žiadny?",
-      "a": "To platí pre väčšinu tých, s ktorými pracujem. Všetko sa stavia na tvojom východiskovom bode. Žiadne podmienky, žiadne hodnotenie. Cieľom je pokrok, ktorý udržíš, nie trest."
+      "a": "To platí pre väčšinu tých, s ktorými pracujem. Žiadne podmienky, žiadne hodnotenie."
     }
   },
   "contact": {

@@ -99,7 +99,7 @@
     "eyebrow": "Katie kennenlernen",
     "title": "Kraft, Nahrung und eine stille Art von Selbstvertrauen.",
     "calling": "Wir alle haben eine Berufung im Leben. <em>Meine Berufung ist es, Menschen zu helfen.</em>",
-    "story": "Nach meinem Studium an der SNF Academy, wo ich Personal Trainer und Ernährungsberatung studiert habe, und meinem Abschluss an der Awakening School of Ministry, helfe ich Menschen, in ihrem Leben voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung und der richtigen Bewegung. <em>In jedem Alter.</em>",
+    "story": "Ausgebildet an der SNF Academy, Abschluss an der Awakening School of Ministry. Ich helfe Menschen voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung, der richtigen Bewegung. <em>In jedem Alter.</em>",
     "portraitLabel": "Porträt von Katie",
     "portraitCaption": "Katie · Personal Trainerin · Ernährungsberaterin",
     "todoYears": "Jahre",
@@ -115,7 +115,8 @@
     "qualTrainerTitle": "Personal Trainerin",
     "qualNutritionTitle": "Ernährungsberaterin",
     "qualMinistryTitle": "Abschluss, School of Ministry",
-    "qualIssuedBy": "Ausgestellt von"
+    "qualIssuedBy": "Ausgestellt von",
+    "_storyOriginal": "Nach meinem Studium an der SNF Academy, wo ich Personal Trainer und Ernährungsberatung studiert habe, und meinem Abschluss an der Awakening School of Ministry, helfe ich Menschen, in ihrem Leben voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung und der richtigen Bewegung. <em>In jedem Alter.</em>"
   },
   "howIWork": {
     "eyebrow": "So arbeite ich",
@@ -265,23 +266,23 @@
     "intro": "Noch etwas offen? Frag einfach, wenn du schreibst.",
     "believer": {
       "q": "Muss ich gläubig sein, um mit dir zu arbeiten?",
-      "a": "Nein. Das geistliche Mentoring ist ein Angebot, nie eine Bedingung. „Nur Training\" und „Training + Ernährung\" funktionieren für alle, unabhängig vom Glauben. „Der ganze Weg\" ist für die gedacht, die diese Dimension ausdrücklich dabeihaben wollen."
+      "a": "Nein. Der geistliche Teil ist ein Angebot, nie eine Bedingung. Zwei der drei Programme lassen ihn ganz weg."
     },
     "women": {
       "q": "Ist das nur für Frauen?",
-      "a": "Es ist zuerst mit Blick auf Frauen entstanden — Männer sind aber ausdrücklich willkommen, besonders im Training und in der Ernährung. „Der ganze Weg\" funktioniert für alle, die bereit sind, in allen drei Bereichen ehrlich zu sein."
+      "a": "Zuerst mit Blick auf Frauen entstanden — Männer sind ausdrücklich willkommen, vor allem bei Training und Ernährung."
     },
     "how": {
       "q": "Wie läuft ein Programm konkret ab?",
-      "a": "Wir beginnen mit einem kostenlosen, druckfreien Gespräch, um zu sehen, ob es passt. Danach bekommst du deinen persönlichen Plan, wir sehen uns wöchentlich (online oder vor Ort), und du hast mich die ganzen sechs Wochen als Begleitung."
+      "a": "Zuerst ein kostenloses Gespräch. Dann dein Plan, eine wöchentliche Einheit eins zu eins, und ich sechs Wochen an deiner Seite."
     },
     "gym": {
       "q": "Brauche ich ein Fitnessstudio-Abo?",
-      "a": "Für die meisten Programme nicht. Ich baue das Training um das herum, was dir zur Verfügung steht — zu Hause, im Studio oder irgendwo dazwischen. Das klären wir, wenn du dich meldest."
+      "a": "Meistens nicht. Ich baue das Training um das herum, was du hast — zu Hause, im Studio oder dazwischen."
     },
     "beginner": {
       "q": "Was, wenn ich seit Jahren nicht trainiert habe — oder noch nie?",
-      "a": "Das trifft auf die meisten zu, mit denen ich arbeite. Alles wird um deinen Ausgangspunkt herum gebaut. Keine Voraussetzungen, keine Bewertung. Das Ziel ist Fortschritt, den du durchhältst, keine Bestrafung."
+      "a": "Das trifft auf die meisten zu, mit denen ich arbeite. Keine Voraussetzungen, keine Bewertung."
     }
   },
   "contact": {

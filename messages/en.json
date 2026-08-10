@@ -98,7 +98,7 @@
     "eyebrow": "Meet Katie",
     "title": "Strength, nourishment, and a quiet kind of confidence.",
     "calling": "We all have a calling in life. <em>My calling is to help people.</em>",
-    "story": "After my study at SNF Academy, where I studied Personal Trainer and Nutrition coach, and graduating from Awakening School of Ministry, I help people move forward in their lives. With the right diet, the right mindset, and the right exercise. <em>At any age.</em>",
+    "story": "Trained at SNF Academy, graduated from Awakening School of Ministry. I help people move forward — the right food, the right mindset, the right movement. <em>At any age.</em>",
     "portraitLabel": "Katie portrait",
     "portraitCaption": "Katie · personal trainer · nutrition coach",
     "todoYears": "years",
@@ -117,7 +117,8 @@
     "qualNutritionIssuer": "SNF Academy",
     "qualMinistryTitle": "Graduate, School of Ministry",
     "qualMinistryIssuer": "Awakening School of Ministry",
-    "qualIssuedBy": "Issued by"
+    "qualIssuedBy": "Issued by",
+    "_storyOriginal": "After my study at SNF Academy, where I studied Personal Trainer and Nutrition coach, and graduating from Awakening School of Ministry, I help people move forward in their lives. With the right diet, the right mindset, and the right exercise. <em>At any age.</em>"
   },
   "howIWork": {
     "eyebrow": "How I work",
@@ -268,23 +269,23 @@
     "intro": "Anything else? Ask when you write.",
     "believer": {
       "q": "Do I have to be a believer to work with you?",
-      "a": "No. The spiritual mentoring is offered, never required. The Training Only and Training + Nutrition programs work for anyone, regardless of faith background. The Complete program is built for those specifically wanting that dimension included."
+      "a": "No. The spiritual part is offered, never required. Two of the three programs leave it out entirely."
     },
     "women": {
       "q": "Is this only for women?",
-      "a": "It's built with women in mind first — but men are openly welcome, especially in the training and nutrition programs. The Complete program works for anyone willing to be honest about all three areas."
+      "a": "Built with women in mind first — men are openly welcome, especially in training and nutrition."
     },
     "how": {
       "q": "How does a program actually work?",
-      "a": "We start with a free, no-pressure conversation to make sure we're a good fit. After that, you receive your personalized plan, we meet weekly (online or in person), and you have me as a guide through the whole six weeks."
+      "a": "A free conversation first. Then your plan, a weekly one-on-one session, and me alongside for six weeks."
     },
     "gym": {
       "q": "Do I need a gym membership?",
-      "a": "Not for most programs. I design the training around what you have access to — home, gym, or somewhere in between. We can talk this through when you reach out."
+      "a": "Usually not. I build the training around what you have — home, gym, or in between."
     },
     "beginner": {
       "q": "What if I haven't trained in years — or ever?",
-      "a": "That's most of who I work with. Everything is built around your starting point. No prerequisites, no judgment. The goal is sustainable progress, not punishment."
+      "a": "That is most of who I work with. No prerequisites, no judgment."
     }
   },
   "contact": {
