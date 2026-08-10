@@ -17,12 +17,12 @@ export default getRequestConfig(async ({ requestLocale }) => {
     : routing.defaultLocale;
 
   const en = (await import("../messages/en.json")).default;
-  const messages =
+  const merged =
     locale === "en"
       ? en
       : deepMerge(en, (await import(`../messages/${locale}.json`)).default);
 
-  return { locale, messages };
+  return { locale, messages: stripNotes(merged) };
 });
 
 type Messages = { [key: string]: string | Messages };
@@ -39,6 +39,26 @@ function deepMerge(base: Messages, override: Messages): Messages {
       current !== null
         ? deepMerge(current, value)
         : value;
+  }
+  return out;
+}
+
+/**
+ * Drop the underscore-prefixed keys before the messages leave the server.
+ *
+ * The message files carry notes for whoever edits them next — `_status` in
+ * de.json and sk.json, `_comment` on individual namespaces. NextIntlClientProvider
+ * hands the whole message object to the browser, so without this every visitor
+ * downloads them, and "DRAFT — NEEDS NATIVE SPEAKER REVIEW" sits in the page
+ * source of a live site. Harmless, but it is documentation for us, not payload
+ * for them.
+ */
+function stripNotes(messages: Messages): Messages {
+  const out: Messages = {};
+  for (const [key, value] of Object.entries(messages)) {
+    if (key.startsWith("_")) continue;
+    out[key] =
+      typeof value === "object" && value !== null ? stripNotes(value) : value;
   }
   return out;
 }
