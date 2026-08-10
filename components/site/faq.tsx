@@ -14,16 +14,14 @@ export function Faq() {
 
   return (
     <section id="faq" className="section-pad">
-      <div className="container-page grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
-        {/* 5/7 rather than 4/8: at the shared .section-title scale a 4-column
-            head column forces the headline into four ragged lines. */}
-        <div className="md:col-span-5">
-          <p className="eyebrow">{t("eyebrow")}</p>
-          <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
-          <p className="section-lede">{t("intro")}</p>
-        </div>
+      <div className="container-page">
+        {/* Head across the full width. Beside the accordion, the display
+            title had four columns to live in and broke every other word. */}
+        <p className="eyebrow">{t("eyebrow")}</p>
+        <DisplayTitle className="mt-6 max-w-[16ch]">{t("title")}</DisplayTitle>
+        <p className="section-lede">{t("intro")}</p>
 
-        <div className="md:col-span-7">
+        <div className="mt-14">
           <Accordion
             type="single"
             collapsible

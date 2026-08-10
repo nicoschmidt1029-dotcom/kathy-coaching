@@ -19,12 +19,13 @@ export function Programs() {
     <section id="programs" className="section-pad">
       <div className="container-page">
         {/* Intro + commitment */}
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-6">
-            <p className="eyebrow">{t("eyebrow")}</p>
-            <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
-          </div>
-          <div className="md:col-span-6">
+        {/* Display type sets its own width; boxed in a six-column well it
+            broke into five cramped lines. */}
+        <p className="eyebrow">{t("eyebrow")}</p>
+        <DisplayTitle className="mt-6 max-w-[15ch]">{t("title")}</DisplayTitle>
+
+        <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
+          <div className="md:col-span-7">
             <p className="section-lede mt-0 max-w-none">{t("intro")}</p>
             {/* Ties the three blocks back to the named method — see
                 approach.systemName. */}
@@ -242,7 +243,10 @@ export function Programs() {
             builder. The band breaks that up and puts a face to what is being
             bought. */}
         {TEMP_PHOTOS.programsBand && (
-          <div className="relative mt-20 aspect-[16/7] overflow-hidden rounded-2xl md:mt-24">
+          /* Breaks the page container on purpose: a band that runs edge to
+             edge is the one place this layout stops behaving like a document
+             and behaves like a magazine. */
+          <div className="relative mt-24 aspect-[16/7] w-screen max-w-none overflow-hidden md:mt-32 left-1/2 -translate-x-1/2">
             <Image
               src={TEMP_PHOTOS.programsBand.url}
               alt={TEMP_PHOTOS.programsBand.alt}

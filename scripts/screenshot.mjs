@@ -60,6 +60,26 @@ async function ensureReachable() {
  * Each wait is capped and failure-tolerant — a single stuck image should
  * cost a blurry corner, not the whole run.
  */
+/**
+ * Walk the page top to bottom, then back up, before a full-page capture.
+ *
+ * next/image lazy-loads anything below the fold. Without this the readiness
+ * check passes — those images have not started loading, so nothing is
+ * pending — and the capture shows empty frames for every picture past the
+ * first screen. That misreads as a broken page.
+ */
+async function scrollThrough(page) {
+  await page.evaluate(async () => {
+    const step = window.innerHeight * 0.8;
+    for (let y = 0; y < document.body.scrollHeight; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => setTimeout(r, 120));
+    }
+    window.scrollTo(0, 0);
+    await new Promise((r) => setTimeout(r, 200));
+  });
+}
+
 async function waitForPaintable(page) {
   await page
     .evaluate(() => document.fonts?.ready)
@@ -94,6 +114,7 @@ try {
        * actually affect a screenshot.
        */
       await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60_000 });
+      if (FULL_PAGE) await scrollThrough(page);
       await waitForPaintable(page);
       await sleep(SETTLE_MS); // let entrance animations settle
       const file = `${OUT}/${slug(route)}-${width}.png`;
