@@ -3,92 +3,58 @@ import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
-import { HeroBackgroundVideo } from "./hero-background-video";
-import { TEMP_PHOTOS, TEMP_HERO_VIDEO } from "@/lib/temp-photos";
+import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
+/**
+ * Split hero on the site's own cream, photo on the right.
+ *
+ * It used to be text laid over a darkened full-bleed photo. That reads moody,
+ * but two gradient scrims are needed to keep the type legible, and everything
+ * ends up sitting in a grey haze. On a light ground the type is simply black
+ * on cream, the photo is unmuddied, and the page reads as considered rather
+ * than atmospheric — which is what "expensive" actually means here.
+ *
+ * The eyebrow names the reader, not the coach. "Holistic coaching ·
+ * faith-rooted" described Katie; a visitor deciding in two seconds needs to
+ * know whether this is for them.
+ */
 export function Hero() {
   const t = useTranslations("hero");
   const brand = useTranslations("wordmark");
+  const photo = TEMP_PHOTOS.hero;
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Hero still: Katie's editorial blazer portrait (see lib/temp-photos.ts) */}
-      <HeroBackgroundVideo
-        src={TEMP_HERO_VIDEO?.src}
-        poster={TEMP_HERO_VIDEO?.poster ?? TEMP_PHOTOS.hero?.url}
-        ariaLabel={t("videoAlt")}
-        objectPosition="50% 22%"
-      />
-
-      {/* Darkening for legibility. Two stacked gradients so the text side
-          (bottom-left on desktop) stays readable while the top-right of
-          the image can breathe. */}
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-gradient-to-t from-[var(--foreground)]/85 via-[var(--foreground)]/45 to-[var(--foreground)]/25"
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-gradient-to-r from-[var(--foreground)]/50 via-[var(--foreground)]/15 to-transparent"
-      />
-
-      {/* Movement detail — a framed still peeking into the hero's top-right,
-          the area the gradients intentionally leave lighter. Desktop only and
-          non-interactive, so it never competes with the headline (bottom-left). */}
-      {TEMP_PHOTOS.heroMovementDetail && (
-        <div
-          className="animate-rise pointer-events-none absolute top-24 right-6 z-10 hidden w-[clamp(180px,17vw,250px)] lg:block xl:right-12"
-          style={{ animationDelay: "520ms" }}
-        >
-          <div className="relative aspect-[3/4] rotate-[2.5deg] overflow-hidden rounded-[3px] border border-[var(--primary-foreground)]/20 shadow-2xl shadow-black/40">
-            <Image
-              src={TEMP_PHOTOS.heroMovementDetail.url}
-              alt={TEMP_PHOTOS.heroMovementDetail.alt}
-              fill
-              sizes="250px"
-              className="object-cover"
-            />
-          </div>
-          <span className="mt-2 block text-right font-mono text-[0.66rem] tracking-[0.24em] uppercase text-[var(--primary-foreground)]/70">
-            {t("inMotion")}
-          </span>
-        </div>
-      )}
-
-      <div className="relative container-page flex min-h-[680px] flex-col justify-end py-16 md:min-h-[800px] md:py-24">
-        <div className="max-w-2xl">
-          {/* Brand mark — prominent on the hero, echoes the header wordmark
-              at display scale so the site identifies itself instantly. */}
-          <div className="animate-rise mb-8 flex items-baseline gap-3.5 md:mb-10">
-            <span className="font-display text-[clamp(2rem,4.5vw,3rem)] leading-none text-[var(--primary-foreground)]">
+    <section className="relative overflow-hidden bg-background">
+      <div className="container-page grid grid-cols-1 items-center gap-12 py-16 md:grid-cols-12 md:gap-14 md:py-24 lg:gap-20">
+        <div className="md:col-span-6 lg:col-span-7">
+          <div className="animate-rise mb-10 flex items-baseline gap-3.5">
+            <span className="font-display text-[clamp(1.75rem,3.4vw,2.4rem)] leading-none">
               <span className="italic">{brand("name").charAt(0)}</span>
               {brand("name").slice(1)}
             </span>
-            <span className="font-mono text-[0.72rem] tracking-[0.3em] uppercase text-[var(--clay)] md:text-[0.78rem]">
+            <span className="font-mono text-[0.7rem] tracking-[0.3em] uppercase text-[var(--clay)]">
               {brand("tagline")}
             </span>
           </div>
 
           <p
-            className="animate-rise font-mono text-[0.75rem] tracking-[0.2em] uppercase text-[var(--primary-foreground)]/80"
+            className="animate-rise eyebrow"
             style={{ animationDelay: "80ms" }}
           >
             {t("eyebrow")}
           </p>
 
           <h1
-            className="animate-rise mt-5 font-display text-[clamp(2.6rem,7vw,5.25rem)] leading-[1.02] font-normal text-[var(--primary-foreground)]"
+            /* Capped lower than a full-bleed hero would allow: the emphasised
+               fragment carries the underline and must not wrap, so it has to
+               fit the text column in the longest language, not just English. */
+            className="animate-rise mt-6 font-display text-[clamp(2.3rem,4vw,3.5rem)] leading-[1.06] font-normal"
             style={{ animationDelay: "160ms" }}
           >
             {t.rich("headline", {
               em: (chunks) => (
                 <span className="relative inline-block whitespace-nowrap">
                   <em className="not-italic font-display italic">{chunks}</em>
-                  {/* Height is pinned in em, not left to the viewBox ratio:
-                      with preserveAspectRatio="none" and an auto height the
-                      stroke grows taller the wider the phrase gets, and a long
-                      translation ends up struck through rather than
-                      underlined. */}
                   <svg
                     aria-hidden
                     viewBox="0 0 420 32"
@@ -110,23 +76,20 @@ export function Hero() {
           </h1>
 
           <p
-            className="animate-rise mt-7 max-w-xl text-pretty text-base text-[var(--primary-foreground)]/85 sm:text-lg sm:leading-[1.65]"
+            className="animate-rise mt-8 max-w-md text-pretty text-foreground/70 sm:text-lg sm:leading-[1.7]"
             style={{ animationDelay: "240ms" }}
           >
             {t("body")}
           </p>
 
-          {/* Two exits, not one. The primary asks for a conversation; the
-              secondary is for the larger group who are not ready to write yet
-              and would otherwise have nowhere to go but the back button. */}
           <div
-            className="animate-rise mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6"
+            className="animate-rise mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6"
             style={{ animationDelay: "340ms" }}
           >
             <Button
               asChild
               size="lg"
-              className="group/button h-12 bg-[var(--primary-foreground)] px-6 text-[0.95rem] text-[var(--plum)] hover:bg-[var(--primary-foreground)]/90"
+              className="group/button h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
             >
               <Link href="/kontakt">
                 {t("cta")}
@@ -136,7 +99,7 @@ export function Hero() {
 
             <Link
               href="/about#how-i-work"
-              className="group inline-flex items-center gap-1.5 text-[0.95rem] text-[var(--primary-foreground)]/80 underline-offset-4 transition-colors hover:text-[var(--primary-foreground)] hover:underline"
+              className="group inline-flex items-center gap-1.5 text-[0.95rem] text-foreground/65 underline-offset-4 transition-colors hover:text-foreground hover:underline"
             >
               {t("secondary")}
               <ArrowRight
@@ -147,7 +110,7 @@ export function Hero() {
           </div>
 
           <div
-            className="animate-rise mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.78rem] text-[var(--primary-foreground)]/75"
+            className="animate-rise mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-foreground/[0.08] pt-6 text-[0.78rem] text-foreground/55"
             style={{ animationDelay: "440ms" }}
           >
             <span className="inline-flex items-center gap-2">
@@ -160,6 +123,21 @@ export function Hero() {
             </span>
           </div>
         </div>
+
+        {photo && (
+          <div className="animate-rise-slow md:col-span-6 lg:col-span-5">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+              <Image
+                src={photo.url}
+                alt={photo.alt}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover object-[50%_25%]"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

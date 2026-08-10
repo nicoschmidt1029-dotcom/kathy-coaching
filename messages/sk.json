@@ -66,9 +66,9 @@
     "switchTo": "Prepnúť jazyk na {language}"
   },
   "hero": {
-    "eyebrow": "Celostný koučing · zakorenený vo viere",
-    "headline": "Pozri sa na svoje telo tak, <em>ako ho stvoril Boh.</em>",
-    "body": "Osobný tréning, výživové poradenstvo a kresťanský mentoring — tri nite votkané do jednej cesty. Určené predovšetkým ženám, otvorené aj mužom.",
+    "eyebrow": "Pre ženy, ktoré hľadajú silu a hĺbku",
+    "headline": "Pozri sa na svoje telo, <em>ako ho stvoril Boh.</em>",
+    "body": "Tréning, výživa a viera — jedna cesta, šesť týždňov, prejdená spolu.",
     "cta": "Poďme sa porozprávať",
     "credentialTrainer": "Certifikovaná osobná trénerka",
     "credentialNutrition": "Certifikovaná výživová poradkyňa",
@@ -80,26 +80,26 @@
     "systemName": "Prístup troch nití",
     "eyebrow": "Prístup",
     "title": "Tri nite. Jeden celý človek.",
-    "intro": "Tréning bez výživy zostáva neúplný. Výživa bez pokoja v duši časom vyčerpá. Pracujeme na všetkých troch — pomaly a s rozmyslom.",
-    "definition": "Jedna metóda, tri nite, ktoré držia spolu: čo robíš so svojím telom, čo máš na tanieri a ako vnímaš vlastnú hodnotu. Potiahni za jednu a ostatné sa pohnú s ňou.",
+    "intro": "Tréning bez výživy zostáva neúplný. Výživa bez pokoja v duši vyčerpá.",
+    "definition": "Tri nite, ktoré držia spolu: tvoje telo, tvoj tanier a to, ako vnímaš vlastnú hodnotu. Potiahni za jednu a ostatné sa pohnú.",
     "threadLabel": "Niť {number} z 3",
     "readMore": "Prečítať si celý prístup",
     "train": {
       "title": "Trénovať telo",
       "teaser": "Silový tréning postavený na živote, ktorý naozaj žiješ.",
-      "body": "Silový tréning, ktorý ťa berie tam, kde práve si. Postupný, udržateľný a postavený na živote, ktorý naozaj žiješ — nie na cudzom.",
+      "body": "Silový tréning, ktorý ťa berie tam, kde si. Postupný, udržateľný, postavený na tvojom skutočnom týždni.",
       "slot": "Tréning"
     },
     "nourish": {
       "title": "Vedome sa vyživovať",
       "teaser": "Skutočné jedlo, skutočná flexibilita, žiadny strach ani pravidlá.",
-      "body": "Vzťah k jedlu, v ktorom nejde o pravidlá ani o vinu. Skutočné jedlá, skutočná flexibilita, skutočné pochopenie toho, čo tvoje telo potrebuje, aby prekvitalo.",
+      "body": "Jedlo bez pravidiel a bez viny. Skutočné jedlá, skutočná flexibilita, skutočné pochopenie toho, čo tvoje telo potrebuje.",
       "slot": "Výživa"
     },
     "soul": {
       "title": "Duša a identita v Ježišovi",
       "teaser": "Ponúknuté, nikdy nanútené — hodnota, ktorá siaha hlbšie než zrkadlo.",
-      "body": "Ponúknuté, nikdy nanútené: úprimné rozhovory, modlitba a biblický pohľad na vlastnú hodnotu. Pre každého, kto hľadá sebavedomie zakorenené hlbšie než v zrkadle.",
+      "body": "Ponúknuté, nikdy nanútené. Úprimné rozhovory, modlitba a pohľad na vlastnú hodnotu, ktorý nezávisí od zrkadla.",
       "slot": "Duša"
     }
   },
@@ -128,22 +128,22 @@
   "howIWork": {
     "eyebrow": "Ako pracujem",
     "title": "Šesť týždňov — a čo sa v nich naozaj deje.",
-    "intro": "Žiadne tajomstvo okolo metódy. Toto je postup, ktorým prechádza každý program — nech je jasné, čomu hovoríš áno, ešte predtým, než to povieš.",
+    "intro": "Postup, ktorým prechádza každý program.",
     "step1": {
       "title": "Prvý rozhovor",
-      "body": "Žiadny scenár, žiadny predajný hovor. Povieš mi, kde práve si, s čím máš skúsenosti a ako sa majú najbližšie mesiace cítiť. Ja sa pýtam. Na konci obaja vieme, či to sadne — a ak nie, poviem ti to."
+      "body": "Žiadny scenár, žiadny predajný hovor. Povieš mi, kde si; ja sa pýtam. Na konci obaja vieme, či to sadne."
     },
     "step2": {
       "title": "Tvoj východiskový bod",
-      "body": "Skôr než sa čokoľvek naplánuje, pozrieme sa na to, čo tu naozaj je: ako sa dnes hýbeš, ako ješ v bežnom týždni, čo ti tvoj rozvrh naozaj dovolí a aké zranenia či obmedzenia musím zohľadniť."
+      "body": "Skôr než sa plánuje: ako sa dnes hýbeš, ako ješ v bežnom týždni a čo ti tvoj deň naozaj dovolí."
     },
     "step3": {
       "title": "Plán, písomne",
-      "body": "Tréningový a výživový plán dostaneš písomne — postavený na týždni, ktorý máš, nie na ideálnom. Stretávame sa každý týždeň jeden na jedného a medzi stretnutiami mi môžeš posielať videá techniky a otázky."
+      "body": "Tvoj plán, písomne a postavený na týždni, ktorý máš. Stretávame sa každý týždeň jeden na jedného."
     },
     "step4": {
       "title": "Priebežné úpravy",
-      "body": "Jediný plán, ktorý za niečo stojí, je ten, čo prežije stret so skutočným týždňom. Každý týždeň sa pozrieme, čo fungovalo a čo nie, a upravíme — záťaž, jedlá alebo očakávania. V šiestom týždni by mal fungovať aj bezo mňa."
+      "body": "Každý týždeň sa pozrieme, čo fungovalo, a upravíme. V šiestom týždni ho vedieš aj bezo mňa."
     }
   },
   "mission": {
@@ -187,7 +187,7 @@
   "programs": {
     "eyebrow": "Programy",
     "title": "Tri časti. Jedna cesta. Ty rozhoduješ, koľko.",
-    "intro": "Skutočná zmena si vyžaduje skutočnú účasť. Každý mesiac prijímam len málo ľudí, aby som tu mohla byť pre každého naplno — toto nie je kurz, ktorý sa konzumuje, ale šesť týždňov, ktoré prejdeme spolu.",
+    "intro": "Každý mesiac prijímam len málo ľudí, aby som tu mohla byť pre každého naplno.",
     "systemNote": "Každá časť nižšie je jednou niťou z {system}. Vezmi si jednu niť — alebo pracuj na všetkých troch.",
     "readyMade": "Hotové balíky",
     "readyMadeTitle": "Tri balíky, rýchla voľba.",
@@ -197,9 +197,9 @@
     "chooseBundle": "Vybrať tento balík",
     "buildOwn": "Alebo si poskladaj vlastný",
     "buildOwnTitle": "Poskladaj si kombináciu, ktorá sadne tvojmu životu.",
-    "buildOwnIntro": "Vyber si ľubovoľnú kombináciu častí a doplnkov — cena sa prepočítava pri každom kliknutí. Dve časti spolu majú 5 % zľavu, tri časti 10 %. Doplnky zostávajú za samostatnú cenu, a práve preto je kompletný balík vyššie výhodnejší, ak ich chceš mať všetky.",
+    "buildOwnIntro": "Ľubovoľná kombinácia častí a doplnkov. Dve časti: 5 % zľava, tri: 10 %.",
     "teaserTitle": "Tri programy. Ty si vyberieš, kde začneš.",
-    "teaserIntro": "Len tréning, tréning + výživa, alebo celá cesta — telo, tanier a duša pohromade. Všetko jeden na jedného, všetko šesť týždňov. Skutočná zmena si vyžaduje skutočnú účasť, preto každý mesiac prijímam len málo ľudí.",
+    "teaserIntro": "Len tréning, tréning + výživa, alebo celá cesta. Všetko jeden na jedného, všetko šesť týždňov.",
     "teaserCta": "Pozrieť programy a ceny",
     "teaserSecondary": "Ešte váhaš? Najprv sa porozprávajme"
   },

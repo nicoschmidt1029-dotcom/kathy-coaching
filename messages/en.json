@@ -56,9 +56,9 @@
     "draft": "This translation is still being reviewed. The English version is the original."
   },
   "hero": {
-    "eyebrow": "Holistic coaching · faith-rooted",
+    "eyebrow": "For women who want strength and depth",
     "headline": "See your body the way <em>God created it.</em>",
-    "body": "Personal training, nutrition guidance, and Christian mentoring — three threads woven into one path. Built with women in mind, openly for men too.",
+    "body": "Training, nutrition and faith — one path, six weeks, walked together.",
     "cta": "Start a conversation",
     "credentialTrainer": "Certified Personal Trainer",
     "credentialNutrition": "Certified Nutrition Coach",
@@ -71,26 +71,26 @@
     "systemName": "The Three Threads Approach",
     "eyebrow": "The approach",
     "title": "Three threads. One whole person.",
-    "intro": "Training without nutrition is incomplete. Nutrition without rest of soul is exhausting. We work all three — gently, deliberately.",
-    "definition": "One method, three threads that hold together: what you do with your body, what you put on your plate, and what you believe about your worth. Pull one and the others move.",
+    "intro": "Training without nutrition is incomplete. Nutrition without rest of soul is exhausting.",
+    "definition": "Three threads that hold together: your body, your plate, and what you believe about your worth. Pull one and the others move.",
     "threadLabel": "Thread {number} of 3",
     "readMore": "Read the full approach",
     "train": {
       "title": "Train the body",
       "teaser": "Strength work built around the life you actually live.",
-      "body": "Strength work that meets you where you are. Progressive, sustainable, and built around the life you actually live — not someone else's.",
+      "body": "Strength work that meets you where you are. Progressive, sustainable, built around your actual week.",
       "slot": "Train"
     },
     "nourish": {
       "title": "Nourish with intention",
       "teaser": "Real food, real flexibility, no fear or rules.",
-      "body": "A relationship with food that isn't about rules or guilt. Real meals, real flexibility, real understanding of what your body needs to thrive.",
+      "body": "Food without rules or guilt. Real meals, real flexibility, real understanding of what your body needs.",
       "slot": "Nourish"
     },
     "soul": {
       "title": "Soul & identity in Jesus",
       "teaser": "Offered, never imposed — worth deeper than a mirror.",
-      "body": "Offered, never imposed: honest conversation, prayer, and biblical perspective on worth. For anyone wanting confidence rooted in something deeper than a mirror.",
+      "body": "Offered, never imposed. Honest conversation, prayer, and a view of worth that does not depend on a mirror.",
       "slot": "Soul"
     }
   },
@@ -122,22 +122,22 @@
   "howIWork": {
     "eyebrow": "How I work",
     "title": "Six weeks, and what actually happens in them.",
-    "intro": "No mystery about the method. This is the sequence every program follows, so you know what you are saying yes to before you say it.",
+    "intro": "The sequence every program follows.",
     "step1": {
       "title": "The first conversation",
-      "body": "No script, no sales call. You tell me where you are, what you have already tried, and what you want the next months to feel like. I ask questions. At the end we both know whether this is a fit — and if it isn't, I will say so."
+      "body": "No script, no sales call. You tell me where you are; I ask questions. At the end we both know whether this is a fit."
     },
     "step2": {
       "title": "Your starting point",
-      "body": "Before anything gets planned, we look at what is actually there: how you move today, how you eat in a normal week, what your schedule really allows, and any injury or limit I need to design around."
+      "body": "Before anything is planned: how you move now, how you eat in a normal week, and what your schedule really allows."
     },
     "step3": {
       "title": "The plan, in writing",
-      "body": "You get your training and nutrition plan written down, built for the week you have rather than an ideal one. We meet one-on-one every week, and between sessions you can send me form videos and questions."
+      "body": "Your plan, written down and built for the week you have. We meet one-on-one every week."
     },
     "step4": {
       "title": "Adjusting as we go",
-      "body": "A plan that survives contact with a real week is the only kind worth having. Each week we look at what worked and what didn't, and adjust — load, meals, or expectations. By week six you should be able to run it without me."
+      "body": "Every week we look at what worked and adjust. By week six you can run it without me."
     }
   },
   "mission": {
@@ -182,7 +182,7 @@
   "programs": {
     "eyebrow": "The programs",
     "title": "Three parts. One path. You choose how much.",
-    "intro": "Real change asks for real participation. I take on a small number of clients each month so I can be fully present for each one — this isn't a course you consume, it's a six-week walk we take together.",
+    "intro": "I take a small number of clients each month, so I can be fully present for each one.",
     "systemNote": "Every building block below is one thread of {system}. Take a single thread, or work all three together.",
     "readyMade": "Ready-made",
     "readyMadeTitle": "Three bundles, quick to choose.",
@@ -192,9 +192,9 @@
     "chooseBundle": "Choose this bundle",
     "buildOwn": "Or build your own",
     "buildOwnTitle": "Assemble the mix that fits your life.",
-    "buildOwnIntro": "Pick any combination of blocks and extras — the price recalculates as you click. Two blocks together get a 5% bundle discount, three blocks unlock 10%. Add-ons stay solo-priced, which is why the Complete bundle above is the better deal when you want them all included.",
+    "buildOwnIntro": "Any combination of parts and extras. Two parts get 5% off, three get 10%.",
     "teaserTitle": "Three programs. You choose where to begin.",
-    "teaserIntro": "Training only, training + nutrition, or the complete path — body, plate, and soul held together. All one-on-one, all six weeks. Real change asks for real participation, so I take on a small number of clients each month.",
+    "teaserIntro": "Training only, training + nutrition, or the whole path. All one-on-one, all six weeks.",
     "teaserCta": "See programs & pricing",
     "teaserSecondary": "Not sure? Talk it through first"
   },

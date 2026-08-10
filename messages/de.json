@@ -58,9 +58,9 @@
     "switchTo": "Sprache auf {language} umstellen"
   },
   "hero": {
-    "eyebrow": "Ganzheitliches Coaching · im Glauben verwurzelt",
-    "headline": "Sieh deinen Körper so, <em>wie Gott ihn geschaffen hat.</em>",
-    "body": "Personal Training, Ernährungsbegleitung und christliches Mentoring — drei Fäden, zu einem Weg verwoben. Für Frauen gedacht, für Männer ausdrücklich offen.",
+    "eyebrow": "Für Frauen, die Kraft und Tiefe suchen",
+    "headline": "Sieh deinen Körper, <em>wie Gott ihn schuf.</em>",
+    "body": "Training, Ernährung und Glaube — ein Weg, sechs Wochen, gemeinsam gegangen.",
     "cta": "Lass uns reden",
     "credentialTrainer": "Zertifizierte Personal Trainerin",
     "credentialNutrition": "Zertifizierte Ernährungsberaterin",
@@ -72,26 +72,26 @@
     "systemName": "Der Drei-Fäden-Ansatz",
     "eyebrow": "Der Ansatz",
     "title": "Drei Fäden. Ein ganzer Mensch.",
-    "intro": "Training ohne Ernährung bleibt unvollständig. Ernährung ohne Ruhe für die Seele zermürbt auf Dauer. Wir arbeiten an allen dreien — behutsam und mit Absicht.",
-    "definition": "Eine Methode, drei Fäden, die zusammenhalten: was du mit deinem Körper machst, was auf deinen Teller kommt, und was du über deinen eigenen Wert glaubst. Zieh an einem, und die anderen bewegen sich mit.",
+    "intro": "Training ohne Ernährung bleibt unvollständig. Ernährung ohne Ruhe für die Seele zermürbt.",
+    "definition": "Drei Fäden, die zusammenhalten: dein Körper, dein Teller, und was du über deinen Wert glaubst. Zieh an einem, und die anderen bewegen sich mit.",
     "threadLabel": "Faden {number} von 3",
     "readMore": "Den ganzen Ansatz lesen",
     "train": {
       "title": "Den Körper trainieren",
       "teaser": "Krafttraining, gebaut um das Leben, das du wirklich lebst.",
-      "body": "Krafttraining, das dich dort abholt, wo du stehst. Schrittweise, durchhaltbar und um das Leben herum gebaut, das du wirklich lebst — nicht um das von jemand anderem.",
+      "body": "Krafttraining, das dich dort abholt, wo du stehst. Schrittweise, durchhaltbar, um deine echte Woche herum gebaut.",
       "slot": "Training"
     },
     "nourish": {
       "title": "Bewusst nähren",
       "teaser": "Echtes Essen, echte Flexibilität, keine Angst und keine Regeln.",
-      "body": "Ein Verhältnis zum Essen, in dem es nicht um Regeln oder Schuld geht. Echte Mahlzeiten, echte Flexibilität, ein echtes Verständnis dafür, was dein Körper braucht, um aufzublühen.",
+      "body": "Essen ohne Regeln und ohne Schuld. Echte Mahlzeiten, echte Flexibilität, echtes Verständnis für das, was dein Körper braucht.",
       "slot": "Ernährung"
     },
     "soul": {
       "title": "Seele & Identität in Jesus",
       "teaser": "Angeboten, nie aufgedrängt — Wert, der tiefer reicht als ein Spiegel.",
-      "body": "Angeboten, nie aufgedrängt: ehrliche Gespräche, Gebet und ein biblischer Blick auf den eigenen Wert. Für alle, die ein Selbstvertrauen suchen, das tiefer wurzelt als ein Spiegelbild.",
+      "body": "Angeboten, nie aufgedrängt. Ehrliche Gespräche, Gebet und ein Blick auf den eigenen Wert, der nicht vom Spiegel abhängt.",
       "slot": "Seele"
     }
   },
@@ -120,22 +120,22 @@
   "howIWork": {
     "eyebrow": "So arbeite ich",
     "title": "Sechs Wochen — und was darin wirklich passiert.",
-    "intro": "Kein Geheimnis um die Methode. Das ist der Ablauf, dem jedes Programm folgt, damit du weißt, wozu du ja sagst, bevor du ja sagst.",
+    "intro": "Der Ablauf, dem jedes Programm folgt.",
     "step1": {
       "title": "Das erste Gespräch",
-      "body": "Kein Skript, kein Verkaufsgespräch. Du erzählst mir, wo du stehst, was du schon probiert hast und wie sich die nächsten Monate anfühlen sollen. Ich stelle Fragen. Am Ende wissen wir beide, ob es passt — und wenn nicht, sage ich es dir."
+      "body": "Kein Skript, kein Verkaufsgespräch. Du erzählst, wo du stehst; ich frage nach. Am Ende wissen wir beide, ob es passt."
     },
     "step2": {
       "title": "Dein Ausgangspunkt",
-      "body": "Bevor irgendetwas geplant wird, schauen wir auf das, was tatsächlich da ist: wie du dich heute bewegst, wie du in einer normalen Woche isst, was dein Alltag wirklich zulässt, und welche Verletzungen oder Grenzen ich einplanen muss."
+      "body": "Bevor geplant wird: wie du dich heute bewegst, wie du in einer normalen Woche isst, und was dein Alltag wirklich zulässt."
     },
     "step3": {
       "title": "Der Plan, schriftlich",
-      "body": "Du bekommst deinen Trainings- und Ernährungsplan schriftlich — gebaut für die Woche, die du hast, nicht für eine ideale. Wir sehen uns jede Woche eins zu eins, und zwischen den Terminen kannst du mir Technikvideos und Fragen schicken."
+      "body": "Dein Plan, schriftlich und für die Woche gebaut, die du hast. Wir sehen uns jede Woche eins zu eins."
     },
     "step4": {
       "title": "Anpassen unterwegs",
-      "body": "Ein Plan, der den Kontakt mit einer echten Woche übersteht, ist der einzige, der etwas taugt. Jede Woche schauen wir, was funktioniert hat und was nicht, und passen an — Belastung, Mahlzeiten oder Erwartungen. In Woche sechs solltest du ihn ohne mich weiterführen können."
+      "body": "Jede Woche schauen wir, was funktioniert hat, und passen an. In Woche sechs führst du ihn ohne mich weiter."
     }
   },
   "mission": {
@@ -179,7 +179,7 @@
   "programs": {
     "eyebrow": "Die Programme",
     "title": "Drei Teile. Ein Weg. Du entscheidest, wie viel.",
-    "intro": "Echte Veränderung verlangt echtes Mitmachen. Ich nehme jeden Monat nur wenige Menschen an, damit ich für jede und jeden ganz da sein kann — das hier ist kein Kurs, den man konsumiert, sondern sechs Wochen, die wir gemeinsam gehen.",
+    "intro": "Ich nehme jeden Monat nur wenige Menschen an, um für jede und jeden ganz da zu sein.",
     "systemNote": "Jeder Baustein unten ist ein Faden aus {system}. Nimm einen einzelnen Faden — oder arbeite an allen dreien.",
     "readyMade": "Fertig geschnürt",
     "readyMadeTitle": "Drei Pakete, schnell entschieden.",
@@ -189,9 +189,9 @@
     "chooseBundle": "Dieses Paket wählen",
     "buildOwn": "Oder stell dir selbst zusammen",
     "buildOwnTitle": "Setz dir die Mischung zusammen, die zu deinem Leben passt.",
-    "buildOwnIntro": "Wähl eine beliebige Kombination aus Bausteinen und Extras — der Preis rechnet sich beim Klicken neu. Zwei Bausteine zusammen ergeben 5 % Paketrabatt, drei Bausteine 10 %. Extras bleiben zum Einzelpreis, und genau deshalb ist das Komplettpaket oben der bessere Deal, wenn du sie alle dabeihaben willst.",
+    "buildOwnIntro": "Beliebige Kombination aus Bausteinen und Extras. Zwei Bausteine: 5 % Rabatt, drei: 10 %.",
     "teaserTitle": "Drei Programme. Du wählst, wo du anfängst.",
-    "teaserIntro": "Nur Training, Training + Ernährung, oder der ganze Weg — Körper, Teller und Seele zusammengehalten. Alles eins zu eins, alles sechs Wochen. Echte Veränderung verlangt echtes Mitmachen, deshalb nehme ich jeden Monat nur wenige Menschen an.",
+    "teaserIntro": "Nur Training, Training + Ernährung, oder der ganze Weg. Alles eins zu eins, alles sechs Wochen.",
     "teaserCta": "Programme & Preise ansehen",
     "teaserSecondary": "Unsicher? Lass uns erst reden"
   },
