@@ -125,19 +125,19 @@
     "intro": "The sequence every program follows.",
     "step1": {
       "title": "The first conversation",
-      "body": "No script, no sales call. You tell me where you are; I ask questions. At the end we both know whether this is a fit."
+      "body": "No script. You talk, I ask. We both find out if it fits."
     },
     "step2": {
       "title": "Your starting point",
-      "body": "Before anything is planned: how you move now, how you eat in a normal week, and what your schedule really allows."
+      "body": "How you move, how you eat, what your week actually allows."
     },
     "step3": {
       "title": "The plan, in writing",
-      "body": "Your plan, written down and built for the week you have. We meet one-on-one every week."
+      "body": "Your plan in writing. One-on-one every week."
     },
     "step4": {
       "title": "Adjusting as we go",
-      "body": "Every week we look at what worked and adjust. By week six you can run it without me."
+      "body": "Every week we adjust. By week six you run it without me."
     }
   },
   "mission": {
@@ -192,7 +192,7 @@
     "chooseBundle": "Choose this bundle",
     "buildOwn": "Or build your own",
     "buildOwnTitle": "Assemble the mix that fits your life.",
-    "buildOwnIntro": "Any combination of parts and extras. Two parts get 5% off, three get 10%.",
+    "buildOwnIntro": "Two parts get 5% off, three get 10%.",
     "teaserTitle": "Three programs. You choose where to begin.",
     "teaserIntro": "Training only, training + nutrition, or the whole path. All one-on-one, all six weeks.",
     "teaserCta": "See programs & pricing",
@@ -265,7 +265,7 @@
   "faq": {
     "eyebrow": "Questions",
     "title": "Honest answers, before you commit.",
-    "intro": "Still wondering something not listed here? Send it along when you reach out — that's what the first conversation is for.",
+    "intro": "Anything else? Ask when you write.",
     "believer": {
       "q": "Do I have to be a believer to work with you?",
       "a": "No. The spiritual mentoring is offered, never required. The Training Only and Training + Nutrition programs work for anyone, regardless of faith background. The Complete program is built for those specifically wanting that dimension included."
@@ -290,7 +290,7 @@
   "contact": {
     "eyebrow": "Let's talk",
     "title": "Let's start a conversation.",
-    "intro": "Tell me a little about you — where you're writing from, what language feels most comfortable, and where you'd like to go. I'll get back to you personally, no fixed format yet.",
+    "intro": "Tell me where you are and what language you prefer. I answer personally.",
     "formatLabel": "Format",
     "formatValue": "We'll figure out what works together — call, message, or in person.",
     "languagesLabel": "Languages",
@@ -322,7 +322,7 @@
   "finalCta": {
     "eyebrow": "When you're ready",
     "title": "Let's start a conversation — no fixed format, no pressure.",
-    "body": "Tell me where you are and where you'd like to go. We'll figure out what works together — call, message, or in person — and take it from there.",
+    "body": "Call, message or in person — we work out what fits.",
     "cta": "Start a conversation"
   },
   "footer": {

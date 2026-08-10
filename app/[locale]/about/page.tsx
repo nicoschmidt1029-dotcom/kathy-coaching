@@ -5,7 +5,6 @@ import { About } from "@/components/site/about";
 import { Mission } from "@/components/site/mission";
 import { Approach } from "@/components/site/approach";
 import { HowIWork } from "@/components/site/how-i-work";
-import { HomeFinalCta } from "@/components/site/home-final-cta";
 
 export async function generateMetadata({
   params,
@@ -35,8 +34,8 @@ export default async function AboutPage({
       <About />
       <Approach />
       <HowIWork />
+      {/* Mission carries the closing CTA — see the note in mission.tsx. */}
       <Mission />
-      <HomeFinalCta />
     </>
   );
 }

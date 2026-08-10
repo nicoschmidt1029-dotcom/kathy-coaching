@@ -123,19 +123,19 @@
     "intro": "Der Ablauf, dem jedes Programm folgt.",
     "step1": {
       "title": "Das erste Gespräch",
-      "body": "Kein Skript, kein Verkaufsgespräch. Du erzählst, wo du stehst; ich frage nach. Am Ende wissen wir beide, ob es passt."
+      "body": "Kein Skript. Du erzählst, ich frage. Wir finden heraus, ob es passt."
     },
     "step2": {
       "title": "Dein Ausgangspunkt",
-      "body": "Bevor geplant wird: wie du dich heute bewegst, wie du in einer normalen Woche isst, und was dein Alltag wirklich zulässt."
+      "body": "Wie du dich bewegst, wie du isst, was deine Woche zulässt."
     },
     "step3": {
       "title": "Der Plan, schriftlich",
-      "body": "Dein Plan, schriftlich und für die Woche gebaut, die du hast. Wir sehen uns jede Woche eins zu eins."
+      "body": "Dein Plan, schriftlich. Jede Woche eins zu eins."
     },
     "step4": {
       "title": "Anpassen unterwegs",
-      "body": "Jede Woche schauen wir, was funktioniert hat, und passen an. In Woche sechs führst du ihn ohne mich weiter."
+      "body": "Jede Woche passen wir an. In Woche sechs führst du ihn ohne mich."
     }
   },
   "mission": {
@@ -189,7 +189,7 @@
     "chooseBundle": "Dieses Paket wählen",
     "buildOwn": "Oder stell dir selbst zusammen",
     "buildOwnTitle": "Setz dir die Mischung zusammen, die zu deinem Leben passt.",
-    "buildOwnIntro": "Beliebige Kombination aus Bausteinen und Extras. Zwei Bausteine: 5 % Rabatt, drei: 10 %.",
+    "buildOwnIntro": "Zwei Bausteine: 5 % Rabatt, drei: 10 %.",
     "teaserTitle": "Drei Programme. Du wählst, wo du anfängst.",
     "teaserIntro": "Nur Training, Training + Ernährung, oder der ganze Weg. Alles eins zu eins, alles sechs Wochen.",
     "teaserCta": "Programme & Preise ansehen",
@@ -262,7 +262,7 @@
   "faq": {
     "eyebrow": "Fragen",
     "title": "Ehrliche Antworten, bevor du dich festlegst.",
-    "intro": "Noch etwas offen, das hier nicht steht? Schreib es einfach dazu, wenn du dich meldest — genau dafür ist das erste Gespräch da.",
+    "intro": "Noch etwas offen? Frag einfach, wenn du schreibst.",
     "believer": {
       "q": "Muss ich gläubig sein, um mit dir zu arbeiten?",
       "a": "Nein. Das geistliche Mentoring ist ein Angebot, nie eine Bedingung. „Nur Training\" und „Training + Ernährung\" funktionieren für alle, unabhängig vom Glauben. „Der ganze Weg\" ist für die gedacht, die diese Dimension ausdrücklich dabeihaben wollen."
@@ -287,7 +287,7 @@
   "contact": {
     "eyebrow": "Lass uns reden",
     "title": "Lass uns ins Gespräch kommen.",
-    "intro": "Erzähl mir ein bisschen von dir — woher du schreibst, in welcher Sprache du dich am wohlsten fühlst und wohin du willst. Ich melde mich persönlich zurück, ganz ohne festes Format.",
+    "intro": "Erzähl mir, wo du stehst und in welcher Sprache du dich wohlfühlst. Ich antworte persönlich.",
     "formatLabel": "Format",
     "formatValue": "Wir finden gemeinsam heraus, was passt — Anruf, Nachricht oder persönlich.",
     "languagesLabel": "Sprachen",
@@ -318,7 +318,7 @@
   "finalCta": {
     "eyebrow": "Wenn du bereit bist",
     "title": "Lass uns reden — kein festes Format, kein Druck.",
-    "body": "Erzähl mir, wo du stehst und wohin du willst. Wir finden gemeinsam heraus, was passt — Anruf, Nachricht oder persönlich — und gehen von dort weiter.",
+    "body": "Anruf, Nachricht oder persönlich — wir finden heraus, was passt.",
     "cta": "Lass uns reden"
   },
   "footer": {

@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import { CheckCircle2 } from "lucide-react";
 import { Placeholder } from "./placeholder";
 import { PortraitPlaceholder } from "./portrait-placeholder";
 import { Todo } from "./todo";
@@ -89,26 +88,23 @@ export function About() {
             </div>
           </dl>
 
-          <div className="card-pad mt-8 rounded-2xl border border-[var(--clay)]/15 bg-[var(--sand)]/40">
-            <p className="caption text-[var(--plum)]">
-              {t("qualificationsTitle")}
-            </p>
-            <ul className="mt-5 grid gap-4">
+          {/* One line per qualification, no card. The boxed three-row version
+              with a separate issuer line under each was four elements deep for
+              information that fits on one line. */}
+          <div className="mt-10">
+            <p className="caption">{t("qualificationsTitle")}</p>
+            <ul className="mt-4 space-y-2.5">
               {QUALS.map((qual) => (
-                <li key={qual.title} className="flex items-start gap-3">
-                  <CheckCircle2
-                    className="mt-1 size-4 shrink-0 text-[var(--plum)]"
-                    aria-hidden
-                  />
-                  <div>
-                    <p className="text-[0.95rem] text-foreground/85">
-                      {t(qual.title)}
-                    </p>
-                    <p className="mt-1 text-[0.85rem] text-foreground/60">
-                      {t("qualIssuedBy")} {t(qual.issuer)} ·{" "}
-                      <Todo>{t(qual.todo)}</Todo>
-                    </p>
-                  </div>
+                <li
+                  key={qual.title}
+                  className="flex flex-wrap items-baseline gap-x-2 text-[0.95rem] text-foreground/80"
+                >
+                  <span>{t(qual.title)}</span>
+                  <span aria-hidden className="text-foreground/30">
+                    ·
+                  </span>
+                  <span className="text-foreground/55">{t(qual.issuer)}</span>
+                  <Todo>{t(qual.todo)}</Todo>
                 </li>
               ))}
             </ul>

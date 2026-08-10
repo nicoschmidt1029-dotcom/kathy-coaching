@@ -88,8 +88,11 @@ export function Approach() {
                   {t("threadLabel", { number: String(i + 1) })}
                 </span>
                 <h3 className="card-title mt-2 text-xl">{t(`${key}.title`)}</h3>
-                <p className="mt-3 max-w-prose text-[0.95rem] leading-relaxed text-foreground/72">
-                  {t(`${key}.body`)}
+                {/* The one-line teaser, not the paragraph. The long `body`
+                    said the same thing at four times the length, and three of
+                    them in a row turned this section into an essay. */}
+                <p className="mt-3 text-[0.95rem] leading-relaxed text-foreground/72">
+                  {t(`${key}.teaser`)}
                 </p>
               </div>
             </li>

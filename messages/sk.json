@@ -131,19 +131,19 @@
     "intro": "Postup, ktorým prechádza každý program.",
     "step1": {
       "title": "Prvý rozhovor",
-      "body": "Žiadny scenár, žiadny predajný hovor. Povieš mi, kde si; ja sa pýtam. Na konci obaja vieme, či to sadne."
+      "body": "Žiadny scenár. Ty hovoríš, ja sa pýtam. Zistíme, či to sadne."
     },
     "step2": {
       "title": "Tvoj východiskový bod",
-      "body": "Skôr než sa plánuje: ako sa dnes hýbeš, ako ješ v bežnom týždni a čo ti tvoj deň naozaj dovolí."
+      "body": "Ako sa hýbeš, ako ješ, čo ti tvoj týždeň dovolí."
     },
     "step3": {
       "title": "Plán, písomne",
-      "body": "Tvoj plán, písomne a postavený na týždni, ktorý máš. Stretávame sa každý týždeň jeden na jedného."
+      "body": "Tvoj plán písomne. Každý týždeň jeden na jedného."
     },
     "step4": {
       "title": "Priebežné úpravy",
-      "body": "Každý týždeň sa pozrieme, čo fungovalo, a upravíme. V šiestom týždni ho vedieš aj bezo mňa."
+      "body": "Každý týždeň upravíme. V šiestom týždni ho vedieš bez mňa."
     }
   },
   "mission": {
@@ -197,7 +197,7 @@
     "chooseBundle": "Vybrať tento balík",
     "buildOwn": "Alebo si poskladaj vlastný",
     "buildOwnTitle": "Poskladaj si kombináciu, ktorá sadne tvojmu životu.",
-    "buildOwnIntro": "Ľubovoľná kombinácia častí a doplnkov. Dve časti: 5 % zľava, tri: 10 %.",
+    "buildOwnIntro": "Dve časti: 5 % zľava, tri: 10 %.",
     "teaserTitle": "Tri programy. Ty si vyberieš, kde začneš.",
     "teaserIntro": "Len tréning, tréning + výživa, alebo celá cesta. Všetko jeden na jedného, všetko šesť týždňov.",
     "teaserCta": "Pozrieť programy a ceny",
@@ -270,7 +270,7 @@
   "faq": {
     "eyebrow": "Otázky",
     "title": "Úprimné odpovede, skôr než sa rozhodneš.",
-    "intro": "Chýba ti tu niečo? Napíš to rovno, keď sa ozveš — presne na to je prvý rozhovor.",
+    "intro": "Ešte niečo? Spýtaj sa, keď napíšeš.",
     "believer": {
       "q": "Musím veriť v Boha, aby sme mohli spolupracovať?",
       "a": "Nie. Duchovný mentoring je ponuka, nikdy podmienka. „Len tréning\" a „Tréning + výživa\" fungujú pre každého, bez ohľadu na vieru. „Celá cesta\" je pre tých, ktorí túto rovinu chcú mať výslovne pri sebe."
@@ -295,7 +295,7 @@
   "contact": {
     "eyebrow": "Ozvi sa",
     "title": "Poďme sa porozprávať.",
-    "intro": "Napíš mi niečo o sebe — odkiaľ píšeš, v akom jazyku sa cítiš najlepšie a kam sa chceš dostať. Ozvem sa ti osobne, bez pevného formátu.",
+    "intro": "Napíš mi, kde si a v akom jazyku sa cítiš najlepšie. Odpoviem osobne.",
     "formatLabel": "Formát",
     "formatValue": "Spoločne prídeme na to, čo sadne — telefonát, správa alebo osobne.",
     "languagesLabel": "Jazyky",
@@ -326,7 +326,7 @@
   "finalCta": {
     "eyebrow": "Keď na to príde čas",
     "title": "Poďme sa porozprávať — bez pevného formátu, bez tlaku.",
-    "body": "Povedz mi, kde si a kam sa chceš dostať. Spoločne prídeme na to, čo sadne — telefonát, správa alebo osobne — a odtiaľ pokračujeme.",
+    "body": "Telefonát, správa alebo osobne — spolu prídeme na to, čo sadne.",
     "cta": "Poďme sa porozprávať"
   },
   "footer": {
