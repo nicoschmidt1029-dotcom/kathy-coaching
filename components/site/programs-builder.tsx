@@ -7,7 +7,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { BLOCK_ART } from "@/lib/block-art";
+import { ADDON_ART, BLOCK_ART } from "@/lib/block-art";
 import {
   ADDONS,
   BLOCKS,
@@ -136,6 +136,21 @@ export function ProgramsBuilder() {
                       : "border-foreground/[0.08] hover:border-foreground/25"
                   )}
                 >
+                  {/* Drawing above the name, not beside it. In a
+                      three-across grid, putting it on the left squeezed the
+                      name into three ragged lines. */}
+                  <span
+                    className="relative mb-3 h-14 w-full overflow-hidden rounded-lg"
+                    aria-hidden
+                  >
+                    <Image
+                      src={ADDON_ART[addon.id]}
+                      alt=""
+                      fill
+                      sizes="140px"
+                      className="scale-[2] object-contain"
+                    />
+                  </span>
                   <span className="flex w-full items-start justify-between gap-2">
                     <span className="font-display text-[1rem] leading-tight font-normal">
                       {p(`addons.${addon.id}.name`)}
