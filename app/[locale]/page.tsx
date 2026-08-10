@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/site/hero";
 import { ApproachTeaser } from "@/components/site/approach-teaser";
+import { HomeBand } from "@/components/site/home-band";
 import { ProgramsTeaser } from "@/components/site/programs-teaser";
 import { HomeFinalCta } from "@/components/site/home-final-cta";
 
@@ -16,6 +17,8 @@ export default async function Home({
     <>
       <Hero />
       <ApproachTeaser />
+      {/* The page's one pause — see home-band.tsx. */}
+      <HomeBand />
       <ProgramsTeaser />
       <HomeFinalCta />
     </>

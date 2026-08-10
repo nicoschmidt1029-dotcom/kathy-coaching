@@ -57,6 +57,7 @@ export const TEMP_PHOTOS: Record<
   | "approachNourish"
   | "approachSoul"
   | "programsBand"
+  | "homeBand"
   | "about",
   TempPhoto
 > = {
@@ -87,6 +88,13 @@ export const TEMP_PHOTOS: Record<
   approachSoul: {
     url: "/images/illustrations/soul.png",
     alt: "Line illustration: an open book beside a lit candle, a cup and a sprig of leaves",
+  },
+  // Katie's own — running track, seated from behind, looking down the lane.
+  // The home page's visual pause: full bleed, no text over it. It is the only
+  // place on the site that asks for nothing at all.
+  homeBand: {
+    url: "/images/kathy/kathy-02.jpg",
+    alt: "Katie sitting on a running track, seen from behind, looking down the lane",
   },
   // Katie's own — running track, seated, looking off. The programs page was
   // the only one with no photo of her at all: three cards, a price table and

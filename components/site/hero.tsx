@@ -20,23 +20,12 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  */
 export function Hero() {
   const t = useTranslations("hero");
-  const brand = useTranslations("wordmark");
   const photo = TEMP_PHOTOS.hero;
 
   return (
     <section className="relative overflow-hidden bg-background">
       <div className="container-page grid grid-cols-1 items-center gap-12 py-16 md:grid-cols-12 md:gap-14 md:py-24 lg:gap-20">
-        <div className="md:col-span-6 lg:col-span-7">
-          <div className="animate-rise mb-10 flex items-baseline gap-3.5">
-            <span className="font-display text-[clamp(1.75rem,3.4vw,2.4rem)] leading-none">
-              <span className="italic">{brand("name").charAt(0)}</span>
-              {brand("name").slice(1)}
-            </span>
-            <span className="font-mono text-[0.7rem] tracking-[0.3em] uppercase text-[var(--clay)]">
-              {brand("tagline")}
-            </span>
-          </div>
-
+        <div className="md:col-span-6">
           <p
             className="animate-rise eyebrow"
             style={{ animationDelay: "80ms" }}
@@ -125,8 +114,8 @@ export function Hero() {
         </div>
 
         {photo && (
-          <div className="animate-rise-slow md:col-span-6 lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+          <div className="animate-rise-slow md:col-span-6">
+            <div className="relative aspect-[4/5] min-h-[26rem] overflow-hidden rounded-2xl md:min-h-[34rem] lg:min-h-[40rem]">
               <Image
                 src={photo.url}
                 alt={photo.alt}
