@@ -1,19 +1,13 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { ArrowRight, Check, Dumbbell, Heart, Leaf } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { BUNDLES, type BlockId } from "@/lib/pricing";
+import { BUNDLES } from "@/lib/pricing";
+import { BLOCK_ART } from "@/lib/block-art";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
 import { ProgramsBuilder } from "./programs-builder";
-
-const BLOCK_ICON: Record<BlockId, LucideIcon> = {
-  training: Dumbbell,
-  nutrition: Leaf,
-  spiritual: Heart,
-};
 
 export function Programs() {
   const t = useTranslations("programs");
@@ -167,33 +161,26 @@ export function Programs() {
                       </div>
                     )}
 
-                    {/* Line-art illustration zone — only on the non-recommended
-                        cards, to fill the vertical stretch that would otherwise
-                        gap between the meta and the price band. Soft radial
-                        terracotta wash behind the icons — deliberately not the
-                        diagonal-stripe pattern used by image placeholders so
-                        the two never get confused. */}
+                    {/* One drawing per block the bundle contains, so a card
+                        shows at a glance what is in it. Replaces a radial wash
+                        behind three lucide glyphs, which read as stock UI on an
+                        otherwise hand-drawn page. */}
                     {!bundle.recommended && bundle.blocks.length > 0 && (
-                      <div className="relative my-7 flex flex-1 items-center justify-center gap-8 overflow-hidden rounded-xl py-5">
-                        <div
-                          aria-hidden
-                          className="absolute inset-0"
-                          style={{
-                            background:
-                              "radial-gradient(ellipse at center, oklch(0.88 0.06 42 / 0.32), transparent 70%)",
-                          }}
-                        />
-                        {bundle.blocks.map((id) => {
-                          const Icon = BLOCK_ICON[id];
-                          return (
-                            <Icon
-                              key={id}
-                              className="relative size-11 text-[var(--clay)]/80"
-                              strokeWidth={1.3}
-                              aria-hidden
+                      <div className="my-7 flex flex-1 items-center justify-center gap-3">
+                        {bundle.blocks.map((id) => (
+                          <div
+                            key={id}
+                            className="relative aspect-square w-full max-w-[7.5rem] overflow-hidden rounded-xl"
+                          >
+                            <Image
+                              src={BLOCK_ART[id]}
+                              alt=""
+                              fill
+                              sizes="120px"
+                              className="scale-[1.75] object-cover"
                             />
-                          );
-                        })}
+                          </div>
+                        ))}
                       </div>
                     )}
 

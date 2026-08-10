@@ -2,10 +2,12 @@
 
 import * as React from "react";
 import { useTranslations } from "next-intl";
-import { ArrowRight, Check, Dumbbell, Salad, Heart } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import { BLOCK_ART } from "@/lib/block-art";
 import {
   ADDONS,
   BLOCKS,
@@ -14,12 +16,6 @@ import {
   type AddonId,
   type BlockId,
 } from "@/lib/pricing";
-
-const BLOCK_ICON = {
-  training: Dumbbell,
-  nutrition: Salad,
-  spiritual: Heart,
-} as const;
 
 export function ProgramsBuilder() {
   const t = useTranslations("builder");
@@ -73,7 +69,6 @@ export function ProgramsBuilder() {
         <p className="caption">{t("blocksTitle")}</p>
         <ul className="mt-4 grid gap-3">
           {BLOCKS.map((block) => {
-            const Icon = BLOCK_ICON[block.id];
             const selected = blocks.has(block.id);
             return (
               <li key={block.id}>
@@ -88,19 +83,21 @@ export function ProgramsBuilder() {
                       : "border-foreground/[0.08] hover:border-foreground/25"
                   )}
                 >
-                  <span
-                    className={cn(
-                      "mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-full ring-1 transition-colors duration-200",
-                      selected
-                        ? "bg-[var(--plum)] text-[var(--primary-foreground)] ring-[var(--plum)]"
-                        : "bg-[var(--clay)]/10 text-[var(--plum)] ring-[var(--clay)]/25"
-                    )}
-                    aria-hidden
-                  >
-                    {selected ? (
-                      <Check className="size-4" />
-                    ) : (
-                      <Icon className="size-4" />
+                  {/* The block's own drawing, not a generic glyph. Selection
+                      is shown by a check badge over the corner so the picture
+                      stays visible either way. */}
+                  <span className="relative mt-0.5 size-14 shrink-0 overflow-hidden rounded-xl" aria-hidden>
+                    <Image
+                      src={BLOCK_ART[block.id]}
+                      alt=""
+                      fill
+                      sizes="56px"
+                      className="scale-[1.85] object-cover"
+                    />
+                    {selected && (
+                      <span className="absolute -right-0.5 -top-0.5 flex size-5 items-center justify-center rounded-full bg-[var(--plum)] text-[var(--primary-foreground)]">
+                        <Check className="size-3" strokeWidth={3} />
+                      </span>
                     )}
                   </span>
                   <span className="flex-1">
