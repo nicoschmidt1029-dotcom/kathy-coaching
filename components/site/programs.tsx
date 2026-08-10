@@ -10,13 +10,18 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
 import { ProgramsBuilder } from "./programs-builder";
 import { DisplayTitle } from "./display-title";
 
-export function Programs() {
+type Props = {
+  /** Onepager: only the three ready-made bundles, no builder. */
+  bundlesOnly?: boolean;
+};
+
+export function Programs({ bundlesOnly = false }: Props = {}) {
   const t = useTranslations("programs");
   const p = useTranslations("pricing");
   const approach = useTranslations("approach");
 
   return (
-    <section id="programs" className="section-pad">
+    <section id="programme" className="section-pad">
       <div className="container-page">
         {/* Intro + commitment */}
         {/* Display type sets its own width; boxed in a six-column well it
@@ -226,7 +231,7 @@ export function Programs() {
                           : "bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
                       )}
                     >
-                      <Link href={`/kontakt?bundle=${bundle.id}`}>
+                      <Link href={`/?bundle=${bundle.id}#kontakt`}>
                         {t("chooseBundle")}
                         <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
                       </Link>
@@ -257,18 +262,21 @@ export function Programs() {
           </div>
         )}
 
-        {/* Section B — build your own */}
-        <div className="mt-20 md:mt-28">
-          <div className="max-w-3xl">
-            <p className="caption">{t("buildOwn")}</p>
-            <h3 className="section-title-sm">{t("buildOwnTitle")}</h3>
-            <p className="section-lede max-w-none">{t("buildOwnIntro")}</p>
-          </div>
+        {/* Section B — build your own. Off on the one-pager: a calculator
+            mid-scroll is a wall, and the three bundles carry the offer. */}
+        {!bundlesOnly && (
+          <div className="mt-20 md:mt-28">
+            <div className="max-w-3xl">
+              <p className="caption">{t("buildOwn")}</p>
+              <h3 className="section-title-sm">{t("buildOwnTitle")}</h3>
+              <p className="section-lede max-w-none">{t("buildOwnIntro")}</p>
+            </div>
 
-          <div className="mt-10 md:mt-14">
-            <ProgramsBuilder />
+            <div className="mt-10 md:mt-14">
+              <ProgramsBuilder />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

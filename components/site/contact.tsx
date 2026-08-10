@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { LOCALE_LABELS, routing, type Locale } from "@/i18n/routing";
+import { DisplayTitle } from "./display-title";
 
 type FormState =
   | { status: "idle" }
@@ -66,12 +67,12 @@ export function Contact({ prefill }: Props = {}) {
 
   return (
     <section
-      id="contact"
-      className="section-pad relative overflow-hidden bg-[var(--plum)] text-[var(--primary-foreground)]"
+      id="kontakt"
+      className="section-pad relative overflow-hidden"
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute top-[-20%] right-[-15%] h-[520px] w-[520px] rounded-full opacity-30"
+        className="pointer-events-none absolute top-[-20%] right-[-15%] h-[520px] w-[520px] rounded-full opacity-25"
         style={{
           background:
             "radial-gradient(closest-side, oklch(0.88 0.06 42), transparent 70%)",
@@ -80,40 +81,32 @@ export function Contact({ prefill }: Props = {}) {
 
       <div className="container-page grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
         <div className="md:col-span-5">
-          <p className="font-mono text-[0.75rem] tracking-[0.18em] uppercase text-[var(--primary-foreground)]/70">
-            {t("eyebrow")}
-          </p>
-          <h2 className="section-title text-[var(--primary-foreground)]">
-            {t("title")}
-          </h2>
-          {/* .section-lede's ink is tuned for cream ground — on the plum band
-              the colour is overridden, the type scale stays shared. */}
-          <p className="section-lede max-w-md text-[var(--primary-foreground)]/80">
-            {t("intro")}
-          </p>
+          <p className="eyebrow">{t("eyebrow")}</p>
+          <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
+          <p className="section-lede max-w-md">{t("intro")}</p>
 
           <dl className="mt-10 space-y-4 text-[0.95rem]">
             <div>
-              <dt className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[var(--primary-foreground)]/55">
+              <dt className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-foreground/60">
                 {t("formatLabel")}
               </dt>
-              <dd className="mt-1 text-[var(--primary-foreground)]/85">
+              <dd className="mt-1 text-foreground/60">
                 {t("formatValue")}
               </dd>
             </div>
             <div>
-              <dt className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[var(--primary-foreground)]/55">
+              <dt className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-foreground/60">
                 {t("languagesLabel")}
               </dt>
-              <dd className="mt-1 text-[var(--primary-foreground)]/85">
+              <dd className="mt-1 text-foreground/60">
                 {t("languagesValue")}
               </dd>
             </div>
             <div>
-              <dt className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[var(--primary-foreground)]/55">
+              <dt className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-foreground/60">
                 {t("replyLabel")}
               </dt>
-              <dd className="mt-1 text-[var(--primary-foreground)]/85">
+              <dd className="mt-1 text-foreground/60">
                 {t("replyValue")}
               </dd>
             </div>
@@ -125,7 +118,7 @@ export function Contact({ prefill }: Props = {}) {
             <div
               role="status"
               aria-live="polite"
-              className="card-pad flex min-h-[420px] flex-col items-start justify-center rounded-2xl bg-[var(--primary-foreground)] text-foreground ring-1 ring-foreground/5"
+              className="card-pad flex min-h-[420px] flex-col items-start justify-center rounded-2xl card-surface"
             >
               <div className="flex size-12 items-center justify-center rounded-full bg-[var(--clay)]/15 text-[var(--plum)] ring-1 ring-[var(--clay)]/25">
                 <CheckCircle2 className="size-6" aria-hidden />
@@ -146,7 +139,7 @@ export function Contact({ prefill }: Props = {}) {
             <form
               onSubmit={onSubmit}
               noValidate
-              className="card-pad rounded-2xl bg-[var(--primary-foreground)] text-foreground ring-1 ring-foreground/5"
+              className="card-pad rounded-2xl card-surface"
             >
               {/* Honeypot — hidden from users, harvested by bots */}
               <label

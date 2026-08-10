@@ -12,27 +12,21 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
-import { Link, usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import { Wordmark } from "./wordmark";
 import { LanguageSwitcher } from "./language-switcher";
 import { cn } from "@/lib/utils";
 
+/** One page now, so the nav jumps to sections rather than routes. */
 const NAV = [
-  { key: "about", href: "/about" },
-  { key: "programs", href: "/programme" },
-  { key: "testimonials", href: "/testimonials" },
-  { key: "contact", href: "/kontakt" },
+  { key: "about", href: "/#about" },
+  { key: "programs", href: "/#programme" },
+  { key: "contact", href: "/#kontakt" },
 ] as const;
-
-function isActivePath(pathname: string, href: string) {
-  if (href === "/") return pathname === "/";
-  return pathname === href || pathname.startsWith(href + "/");
-}
 
 export function Header() {
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
-  const pathname = usePathname();
   const t = useTranslations("nav");
 
   React.useEffect(() => {
@@ -56,19 +50,15 @@ export function Header() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {NAV.map((item) => {
-            const active = isActivePath(pathname, item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                aria-current={active ? "page" : undefined}
-                className={cn(
+                                className={cn(
                   // nowrap: two-word labels in other languages ("O mne")
                   // otherwise break across lines in the narrow desktop nav
                   "group relative whitespace-nowrap text-[0.92rem] transition-colors duration-200",
-                  active
-                    ? "text-foreground"
-                    : "text-foreground/72 hover:text-foreground"
+                  "text-foreground/72 hover:text-foreground"
                 )}
               >
                 {t(item.key)}
@@ -76,7 +66,7 @@ export function Header() {
                   aria-hidden
                   className={cn(
                     "absolute -bottom-1 left-0 h-px w-full origin-left bg-[var(--clay)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
-                    active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    "scale-x-0 group-hover:scale-x-100"
                   )}
                 />
               </Link>
@@ -92,7 +82,7 @@ export function Header() {
             size="lg"
             className="hidden bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90 md:inline-flex"
           >
-            <Link href="/kontakt">{t("cta")}</Link>
+            <Link href="/#kontakt">{t("cta")}</Link>
           </Button>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -114,15 +104,13 @@ export function Header() {
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-3 py-4">
                 {NAV.map((item) => {
-                  const active = isActivePath(pathname, item.href);
                   return (
                     <SheetClose key={item.href} asChild>
                       <Link
                         href={item.href}
-                        aria-current={active ? "page" : undefined}
-                        className={cn(
+                                                className={cn(
                           "rounded-lg px-3 py-3 font-display text-2xl tracking-tight transition-colors hover:bg-[var(--sand)]/70",
-                          active ? "text-[var(--plum)]" : "text-foreground"
+                          "text-foreground"
                         )}
                       >
                         {t(item.key)}
@@ -139,7 +127,7 @@ export function Header() {
                     size="lg"
                     className="w-full bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
                   >
-                    <Link href="/kontakt">{t("cta")}</Link>
+                    <Link href="/#kontakt">{t("cta")}</Link>
                   </Button>
                 </SheetClose>
               </div>

@@ -7,10 +7,6 @@ import { TESTIMONIALS_ARE_REAL } from "@/lib/content-status";
 /** Path → how often it changes / how important it is. */
 const ROUTES = [
   { path: "", changeFrequency: "monthly", priority: 1 },
-  { path: "/about", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/programme", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/testimonials", changeFrequency: "monthly", priority: 0.6, sample: true },
-  { path: "/kontakt", changeFrequency: "monthly", priority: 0.7 },
   { path: "/imprint", changeFrequency: "yearly", priority: 0.3, legal: true },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3, legal: true },
 ] as const;
