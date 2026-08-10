@@ -3,7 +3,6 @@ import { useTranslations } from "next-intl";
 import { Dumbbell, Salad, Heart } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-// STOCK PLACEHOLDER – replace with Katie's own content before launch
 import { TEMP_PHOTOS, type TempPhoto } from "@/lib/temp-photos";
 
 type PillarKey = "train" | "nourish" | "soul";
@@ -15,7 +14,9 @@ type Pillar = {
 };
 
 const PILLARS: Pillar[] = [
-  // STOCK PLACEHOLDER – replace with Katie's own content before launch
+  // Train is a photo of Katie; Nourish and Soul are line illustrations. The
+  // mix is deliberate — the body thread shows a person, the other two show
+  // the things around one.
   { key: "train", Icon: Dumbbell, image: TEMP_PHOTOS.approachTrain },
   { key: "nourish", Icon: Salad, image: TEMP_PHOTOS.approachNourish },
   { key: "soul", Icon: Heart, image: TEMP_PHOTOS.approachSoul },

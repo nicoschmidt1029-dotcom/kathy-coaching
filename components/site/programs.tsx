@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ArrowRight, Check, Dumbbell, Heart, Leaf } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -5,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { BUNDLES, type BlockId } from "@/lib/pricing";
+import { TEMP_PHOTOS } from "@/lib/temp-photos";
 import { ProgramsBuilder } from "./programs-builder";
 
 const BLOCK_ICON: Record<BlockId, LucideIcon> = {
@@ -70,9 +72,23 @@ export function Programs() {
                         {t("mostChosen")}
                       </span>
                     )}
+                    {/* Scope label above the name: tells you at a glance how
+                        much of the method a bundle covers, and ties the cards
+                        back to the three threads instead of reading as three
+                        unrelated products. */}
+                    <span
+                      className={cn(
+                        "caption",
+                        bundle.recommended
+                          ? "text-[var(--primary-foreground)]/60"
+                          : ""
+                      )}
+                    >
+                      {p(`bundles.${bundle.id}.scope`)}
+                    </span>
                     <h4
                       className={cn(
-                        "card-title text-xl",
+                        "card-title mt-1.5 text-xl",
                         bundle.recommended
                           ? "text-[var(--primary-foreground)]"
                           : ""
@@ -232,6 +248,22 @@ export function Programs() {
             })}
           </ul>
         </div>
+
+        {/* A person, between the price cards and the calculator. This page had
+            no photo of Katie at all — three cards, a price table and a
+            builder. The band breaks that up and puts a face to what is being
+            bought. */}
+        {TEMP_PHOTOS.programsBand && (
+          <div className="relative mt-20 aspect-[16/7] overflow-hidden rounded-2xl md:mt-24">
+            <Image
+              src={TEMP_PHOTOS.programsBand.url}
+              alt={TEMP_PHOTOS.programsBand.alt}
+              fill
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              className="object-cover object-[50%_38%]"
+            />
+          </div>
+        )}
 
         {/* Section B — build your own */}
         <div className="mt-20 md:mt-28">

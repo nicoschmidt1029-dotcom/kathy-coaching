@@ -63,7 +63,8 @@
     "credentialTrainer": "Certified Personal Trainer",
     "credentialNutrition": "Certified Nutrition Coach",
     "inMotion": "In motion",
-    "videoAlt": "Hero background — training and nature loop"
+    "videoAlt": "Hero background — training and nature loop",
+    "secondary": "See how I work"
   },
   "approach": {
     "_comment": "systemName is the site-wide name of the method. It appears on home, about and programs — change it in this one place and every mention follows. Pending Katie's final wording.",
@@ -244,17 +245,20 @@
         "name": "Training only",
         "blurb": "Start with movement. Add the rest later, if it fits.",
         "bestFor": "easing back into movement, no pressure to add more yet",
-        "format": "Weekly 1:1 session · async form checks between"
+        "format": "Weekly 1:1 session · async form checks between",
+        "scope": "One thread"
       },
       "training-nutrition": {
         "name": "Training + nutrition",
         "blurb": "Strength and a calmer relationship with food.",
         "bestFor": "when food and training feel like separate battles",
-        "format": "Weekly 1:1 session · nutrition check-in midweek"
+        "format": "Weekly 1:1 session · nutrition check-in midweek",
+        "scope": "Two threads"
       },
       "complete": {
         "name": "Complete path",
-        "blurb": "Body, plate, and soul — plus every add-on thrown in."
+        "blurb": "Body, plate, and soul — plus every add-on thrown in.",
+        "scope": "All three threads"
       }
     }
   },

@@ -73,7 +73,8 @@
     "credentialTrainer": "Certifikovaná osobná trénerka",
     "credentialNutrition": "Certifikovaná výživová poradkyňa",
     "inMotion": "V pohybe",
-    "videoAlt": "Video v pozadí — tréning a príroda v slučke"
+    "videoAlt": "Video v pozadí — tréning a príroda v slučke",
+    "secondary": "Ako pracujem"
   },
   "approach": {
     "systemName": "Prístup troch nití",
@@ -249,17 +250,20 @@
         "name": "Len tréning",
         "blurb": "Začni pohybom. Zvyšok môže prísť neskôr, ak sadne.",
         "bestFor": "jemný návrat k pohybu, bez tlaku hneď pridávať viac",
-        "format": "Týždenný tréning 1:1 · kontrola techniky medzitým"
+        "format": "Týždenný tréning 1:1 · kontrola techniky medzitým",
+        "scope": "Jedna niť"
       },
       "training-nutrition": {
         "name": "Tréning + výživa",
         "blurb": "Sila a pokojnejší vzťah k jedlu.",
         "bestFor": "keď jedlo a tréning pôsobia ako dva oddelené boje",
-        "format": "Týždenný tréning 1:1 · kontrola stravy v polovici týždňa"
+        "format": "Týždenný tréning 1:1 · kontrola stravy v polovici týždňa",
+        "scope": "Dve nite"
       },
       "complete": {
         "name": "Celá cesta",
-        "blurb": "Telo, tanier a duša — plus všetky doplnky v cene."
+        "blurb": "Telo, tanier a duša — plus všetky doplnky v cene.",
+        "scope": "Všetky tri nite"
       }
     }
   },

@@ -116,7 +116,13 @@ export function Hero() {
             {t("body")}
           </p>
 
-          <div className="animate-rise mt-9" style={{ animationDelay: "340ms" }}>
+          {/* Two exits, not one. The primary asks for a conversation; the
+              secondary is for the larger group who are not ready to write yet
+              and would otherwise have nowhere to go but the back button. */}
+          <div
+            className="animate-rise mt-9 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6"
+            style={{ animationDelay: "340ms" }}
+          >
             <Button
               asChild
               size="lg"
@@ -127,6 +133,17 @@ export function Hero() {
                 <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
               </Link>
             </Button>
+
+            <Link
+              href="/about#how-i-work"
+              className="group inline-flex items-center gap-1.5 text-[0.95rem] text-[var(--primary-foreground)]/80 underline-offset-4 transition-colors hover:text-[var(--primary-foreground)] hover:underline"
+            >
+              {t("secondary")}
+              <ArrowRight
+                className="size-4 transition-transform duration-200 group-hover:translate-x-0.5"
+                aria-hidden
+              />
+            </Link>
           </div>
 
           <div

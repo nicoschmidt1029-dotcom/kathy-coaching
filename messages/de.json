@@ -65,7 +65,8 @@
     "credentialTrainer": "Zertifizierte Personal Trainerin",
     "credentialNutrition": "Zertifizierte Ernährungsberaterin",
     "inMotion": "In Bewegung",
-    "videoAlt": "Hintergrundvideo — Training und Natur im Loop"
+    "videoAlt": "Hintergrundvideo — Training und Natur im Loop",
+    "secondary": "So arbeite ich"
   },
   "approach": {
     "systemName": "Der Drei-Fäden-Ansatz",
@@ -241,17 +242,20 @@
         "name": "Nur Training",
         "blurb": "Fang mit Bewegung an. Der Rest kann später dazukommen, wenn er passt.",
         "bestFor": "den sanften Wiedereinstieg in Bewegung, ohne Druck, gleich mehr dazuzunehmen",
-        "format": "Wöchentliche 1:1-Einheit · Technik-Rückmeldung dazwischen"
+        "format": "Wöchentliche 1:1-Einheit · Technik-Rückmeldung dazwischen",
+        "scope": "Ein Faden"
       },
       "training-nutrition": {
         "name": "Training + Ernährung",
         "blurb": "Kraft und ein ruhigeres Verhältnis zum Essen.",
         "bestFor": "wenn Essen und Training sich wie zwei getrennte Kämpfe anfühlen",
-        "format": "Wöchentliche 1:1-Einheit · Ernährungs-Rücksprache unter der Woche"
+        "format": "Wöchentliche 1:1-Einheit · Ernährungs-Rücksprache unter der Woche",
+        "scope": "Zwei Fäden"
       },
       "complete": {
         "name": "Der ganze Weg",
-        "blurb": "Körper, Teller und Seele — plus alle Extras inklusive."
+        "blurb": "Körper, Teller und Seele — plus alle Extras inklusive.",
+        "scope": "Alle drei Fäden"
       }
     }
   },

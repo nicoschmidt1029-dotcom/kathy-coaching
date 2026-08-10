@@ -56,6 +56,7 @@ export const TEMP_PHOTOS: Record<
   | "approachTrain"
   | "approachNourish"
   | "approachSoul"
+  | "programsBand"
   | "about",
   TempPhoto
 > = {
@@ -74,17 +75,25 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-06.jpg",
     alt: "Katie in the gym in a blue top, crouched mid-workout",
   },
-  // STOCK PLACEHOLDER – replace with Katie's own content before launch
+  // Commissioned line illustration — terracotta on cream, drawn for this site.
+  // Replaced an Unsplash buddha bowl: stock food photography made the thread
+  // look like a recipe blog, and it was the only image not of Katie's world.
   approachNourish: {
-    url: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=80&auto=format&fit=crop",
-    alt: "TEMP: buddha bowl with vegetables — atmospheric food shot for nutrition",
-    credit: "Unsplash",
+    url: "/images/illustrations/nourish.png",
+    alt: "Line illustration: a table with a bowl of grains, vegetables, a jug and a folded cloth",
   },
-  // STOCK PLACEHOLDER – replace with Katie's own content before launch
+  // Commissioned line illustration — same hand as the Nourish one, so the
+  // three threads read as one set instead of two photos and a drawing.
   approachSoul: {
-    url: "https://images.unsplash.com/photo-1604745372175-27daa24a0a0e?w=900&q=80&auto=format&fit=crop",
-    alt: "TEMP: candlelight and open book — quiet contemplative atmosphere",
-    credit: "Unsplash",
+    url: "/images/illustrations/soul.png",
+    alt: "Line illustration: an open book beside a lit candle, a cup and a sprig of leaves",
+  },
+  // Katie's own — running track, seated, looking off. The programs page was
+  // the only one with no photo of her at all: three cards, a price table and
+  // a calculator. This puts a person back into it.
+  programsBand: {
+    url: "/images/kathy/kathy-04.jpg",
+    alt: "Katie sitting on a running track, looking into the distance",
   },
   // Katie's own — gym, purple top, stretching forward on the mat, looking
   // to camera. More distance / less selfie than the tight kathy-05 crop.
