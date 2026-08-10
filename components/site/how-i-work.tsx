@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { DisplayTitle } from "./display-title";
 
 const STEPS = [
   { key: "step1", img: "/images/illustrations/step-talk.png" },
@@ -28,7 +29,7 @@ export function HowIWork() {
       <div className="container-page">
         <div className="max-w-2xl">
           <p className="eyebrow">{t("eyebrow")}</p>
-          <h2 className="section-title">{t("title")}</h2>
+          <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
           <p className="section-lede">{t("intro")}</p>
         </div>
 

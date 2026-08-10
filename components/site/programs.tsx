@@ -8,6 +8,7 @@ import { BUNDLES } from "@/lib/pricing";
 import { BLOCK_ART } from "@/lib/block-art";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
 import { ProgramsBuilder } from "./programs-builder";
+import { DisplayTitle } from "./display-title";
 
 export function Programs() {
   const t = useTranslations("programs");
@@ -21,7 +22,7 @@ export function Programs() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-6">
             <p className="eyebrow">{t("eyebrow")}</p>
-            <h2 className="section-title">{t("title")}</h2>
+            <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
           </div>
           <div className="md:col-span-6">
             <p className="section-lede mt-0 max-w-none">{t("intro")}</p>

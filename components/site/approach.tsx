@@ -4,6 +4,7 @@ import { Dumbbell, Salad, Heart } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TEMP_PHOTOS, type TempPhoto } from "@/lib/temp-photos";
+import { DisplayTitle } from "./display-title";
 
 type PillarKey = "train" | "nourish" | "soul";
 
@@ -28,13 +29,13 @@ export function Approach() {
   return (
     <section
       id="approach"
-      className="section-pad relative overflow-hidden bg-[var(--sand)]/40"
+      className="section-pad relative overflow-hidden"
     >
       <div className="container-page">
         <div className="max-w-2xl">
           {/* Same name as on home and /programme — see approach.systemName. */}
           <p className="eyebrow">{t("systemName")}</p>
-          <h2 className="section-title">{t("title")}</h2>
+          <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
           <p className="section-lede">{t("definition")}</p>
           <p className="mt-4 max-w-xl text-pretty text-foreground/72 sm:text-[1.05rem] sm:leading-[1.7]">
             {t("intro")}

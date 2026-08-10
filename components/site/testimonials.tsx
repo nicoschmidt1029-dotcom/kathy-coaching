@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { AutoplayVideo } from "./autoplay-video";
 import { SampleNotice } from "./sample-notice";
+import { DisplayTitle } from "./display-title";
 
 /**
  * Testimonial copy lives in messages/*.json under `testimonials.<key>`.
@@ -36,12 +37,12 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="section-pad relative overflow-hidden bg-[var(--sand)]/40"
+      className="section-pad relative overflow-hidden"
     >
       <div className="container-page">
         <div className="max-w-3xl">
           <p className="eyebrow">{t("eyebrow")}</p>
-          <h2 className="section-title">{t("title")}</h2>
+          <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
           {/* Above the cards, not below: a reader should know what they are
               looking at before they read a quote, not after. */}
           <SampleNotice className="mt-8" />

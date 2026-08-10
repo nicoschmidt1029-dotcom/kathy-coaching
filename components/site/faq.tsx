@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { DisplayTitle } from "./display-title";
 
 const FAQ_KEYS = ["believer", "women", "how", "gym", "beginner"] as const;
 
@@ -18,7 +19,7 @@ export function Faq() {
             head column forces the headline into four ragged lines. */}
         <div className="md:col-span-5">
           <p className="eyebrow">{t("eyebrow")}</p>
-          <h2 className="section-title">{t("title")}</h2>
+          <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
           <p className="section-lede">{t("intro")}</p>
         </div>
 

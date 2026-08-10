@@ -1,51 +1,82 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Dumbbell, Salad, Heart, ArrowRight } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { DisplayTitle } from "./display-title";
+import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
-const THREADS: { key: "train" | "nourish" | "soul"; Icon: LucideIcon }[] = [
-  { key: "train", Icon: Dumbbell },
-  { key: "nourish", Icon: Salad },
-  { key: "soul", Icon: Heart },
-];
+const THREADS = [
+  { key: "train", image: TEMP_PHOTOS.approachTrain },
+  { key: "nourish", image: TEMP_PHOTOS.approachNourish },
+  { key: "soul", image: TEMP_PHOTOS.approachSoul },
+] as const;
 
+/**
+ * The three threads, as alternating bands rather than a card grid.
+ *
+ * The grid version put three small boxes side by side with a lucide glyph in
+ * each — the same three threads that are illustrated on /about and
+ * /programme, drawn here as generic icons. It was also the reason the home
+ * page ran 3700px with a single image on it.
+ *
+ * Bands read slower and give each thread a picture at a size worth looking
+ * at. Odd rows put the image left, even rows right, which is the one bit of
+ * rhythm a page of full-width sections needs.
+ */
 export function ApproachTeaser() {
   const t = useTranslations("approach");
 
   return (
-    <section className="section-pad relative overflow-hidden bg-[var(--sand)]/40">
+    <section className="section-pad relative overflow-hidden">
       <div className="container-page">
-        <div className="max-w-2xl">
-          {/* The method is named here and on /about and /programme — one key,
-              one name, so the three threads read as one system. */}
+        <div className="max-w-3xl">
           <p className="eyebrow">{t("systemName")}</p>
-          <h2 className="section-title">{t("title")}</h2>
-          <p className="section-lede">{t("definition")}</p>
+          <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
+          <p className="section-lede mt-8">{t("definition")}</p>
         </div>
 
-        <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
-          {THREADS.map(({ key, Icon }, i) => (
+        <ul className="mt-20 space-y-20 md:mt-28 md:space-y-28">
+          {THREADS.map(({ key, image }, i) => (
             <li
               key={key}
-              className="card-surface card-pad flex flex-col transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-28px_rgba(60,40,52,0.4)]"
+              className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-14"
             >
-              <div className="flex items-center justify-between gap-3">
-                <span className="flex size-11 items-center justify-center rounded-full bg-[var(--clay)]/10 text-[var(--plum)] ring-1 ring-[var(--clay)]/20">
-                  <Icon className="size-5" aria-hidden />
-                </span>
+              {image && (
+                <div
+                  className={
+                    i % 2 === 1
+                      ? "md:order-2 md:col-span-6"
+                      : "md:col-span-6"
+                  }
+                >
+                  <div className="relative aspect-[5/4] overflow-hidden rounded-2xl">
+                    <Image
+                      src={image.url}
+                      alt={image.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 45vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              )}
+
+              <div className={i % 2 === 1 ? "md:order-1 md:col-span-6" : "md:col-span-6"}>
                 <span className="caption">
                   {t("threadLabel", { number: String(i + 1) })}
                 </span>
+                <h3 className="mt-3 font-display text-[clamp(1.6rem,3.2vw,2.4rem)] leading-tight font-normal">
+                  {t(`${key}.title`)}
+                </h3>
+                <p className="mt-4 max-w-md text-pretty text-foreground/68 sm:text-lg sm:leading-[1.7]">
+                  {t(`${key}.teaser`)}
+                </p>
               </div>
-              <h3 className="card-title mt-5">{t(`${key}.title`)}</h3>
-              <p className="mt-2 flex-1 text-[0.92rem] leading-relaxed text-foreground/70">
-                {t(`${key}.teaser`)}
-              </p>
             </li>
           ))}
         </ul>
 
-        <div className="mt-10">
+        <div className="mt-20">
           <Link
             href="/about"
             className="group inline-flex items-center gap-1.5 text-[0.95rem] text-[var(--plum)] transition-colors hover:text-foreground"

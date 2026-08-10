@@ -369,6 +369,40 @@
     .card-pad { padding: 1.75rem; }
   }
 
+  /*
+   * Oversized section title, used as a graphic element rather than as a
+   * heading that happens to be large.
+   *
+   * The reference this follows (coachjermaine.de) carries its sections with
+   * type alone: the title runs far bigger than the copy, part of it hollow,
+   * and it is allowed to overlap what sits beside it. That is what gives a
+   * page character without adding colour — which is the whole point here,
+   * since the palette stays quiet on purpose.
+   *
+   * Fraunces rather than the reference's grotesk: the size and the hollow
+   * cut carry the effect, and the serif is what keeps this Katie's brand
+   * instead of a fitness label.
+   */
+  .display-title {
+    font-family: var(--font-display), ui-serif, Georgia, serif;
+    font-size: clamp(3rem, 11vw, 9rem);
+    line-height: 0.92;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+
+  /* Hollow cut. -webkit-text-stroke is the only cross-browser way to outline
+     text; paint-order keeps the stroke from eating the counters. */
+  .display-hollow {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--clay);
+    paint-order: stroke fill;
+  }
+  @media (min-width: 768px) {
+    .display-hollow { -webkit-text-stroke-width: 2px; }
+  }
+
   /* Neutral card surface — cream panel, hairline ring, shared radius. */
   .card-surface {
     border-radius: var(--radius-2xl);
