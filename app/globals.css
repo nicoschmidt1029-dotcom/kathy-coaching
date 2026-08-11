@@ -403,6 +403,21 @@
     .display-hollow { -webkit-text-stroke-width: 2px; }
   }
 
+  /* Same cut, light stroke. For a hollow word that lands on a photograph:
+     the terracotta outline is legible on the cream illustrations but sinks
+     into a photo. Applied per section in JSX, not as a responsive variant —
+     Tailwind variants only reach utilities it generates, never a custom
+     component class. */
+  .display-hollow-onphoto {
+    color: transparent;
+    -webkit-text-stroke: 1.5px oklch(1 0 0 / 0.92);
+    paint-order: stroke fill;
+    text-shadow: 0 1px 24px oklch(0.2 0 0 / 0.35);
+  }
+  @media (min-width: 768px) {
+    .display-hollow-onphoto { -webkit-text-stroke-width: 2px; }
+  }
+
 
   /* Neutral card surface — cream panel, hairline ring, shared radius. */
   .card-surface {

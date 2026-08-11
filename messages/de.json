@@ -80,19 +80,22 @@
       "title": "Den Körper trainieren",
       "teaser": "Krafttraining, gebaut um das Leben, das du wirklich lebst.",
       "body": "Krafttraining, das dich dort abholt, wo du stehst. Schrittweise, durchhaltbar, um deine echte Woche herum gebaut.",
-      "slot": "Training"
+      "slot": "Training",
+      "label": "Der Körper"
     },
     "nourish": {
       "title": "Bewusst nähren",
       "teaser": "Echtes Essen, echte Flexibilität, keine Angst und keine Regeln.",
       "body": "Essen ohne Regeln und ohne Schuld. Echte Mahlzeiten, echte Flexibilität, echtes Verständnis für das, was dein Körper braucht.",
-      "slot": "Ernährung"
+      "slot": "Ernährung",
+      "label": "Der Teller"
     },
     "soul": {
       "title": "Seele & Identität in Jesus",
       "teaser": "Angeboten, nie aufgedrängt — Wert, der tiefer reicht als ein Spiegel.",
       "body": "Angeboten, nie aufgedrängt. Ehrliche Gespräche, Gebet und ein Blick auf den eigenen Wert, der nicht vom Spiegel abhängt.",
-      "slot": "Seele"
+      "slot": "Seele",
+      "label": "Die Seele"
     }
   },
   "about": {

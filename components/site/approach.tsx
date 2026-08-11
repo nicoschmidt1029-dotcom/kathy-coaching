@@ -1,12 +1,15 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { DisplayTitle } from "./display-title";
+import { cn } from "@/lib/utils";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
 const PILLARS = [
-  { key: "train", image: TEMP_PHOTOS.approachTrain },
-  { key: "nourish", image: TEMP_PHOTOS.approachNourish },
-  { key: "soul", image: TEMP_PHOTOS.approachSoul },
+  // onPhoto: the hollow half of the label lands on a photograph rather than
+  // on a cream illustration, so its outline has to switch to white.
+  { key: "train", image: TEMP_PHOTOS.approachTrain, onPhoto: true },
+  { key: "nourish", image: TEMP_PHOTOS.approachNourish, onPhoto: false },
+  { key: "soul", image: TEMP_PHOTOS.approachSoul, onPhoto: false },
 ] as const;
 
 /**
@@ -36,12 +39,42 @@ export function Approach() {
           </p>
         </div>
 
-        <ul className="mt-20 space-y-20 md:mt-28 md:space-y-28">
-          {PILLARS.map(({ key, image }, i) => (
+        <ul className="mt-20 space-y-24 md:mt-28 md:space-y-40">
+          {PILLARS.map(({ key, image, onPhoto }, i) => (
             <li
               key={key}
-              className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-14"
+              className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-14"
             >
+              {/* Straddles the photograph like the About title: the hollow
+                  word lands on the image, the solid one on the cream. The
+                  label sits on whichever side the image is, so the hollow
+                  half is always the half over the picture. Off below md,
+                  where the columns stack and there is no edge to cross. */}
+              <h3
+                className={cn(
+                  "display-title pointer-events-none z-10 hidden md:absolute md:top-0 md:block",
+                  i % 2 === 0 ? "md:right-0 md:text-right" : "md:left-0"
+                )}
+              >
+                {i % 2 === 0 ? (
+                  /* Image on the right: hollow word last, so the outline is
+                     the half that lands on the picture. */
+                  <>
+                    {t(`${key}.label`).split(" ").slice(0, -1).join(" ")}{" "}
+                    <span className={onPhoto ? "display-hollow-onphoto" : "display-hollow"}>
+                      {t(`${key}.label`).split(" ").slice(-1)}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span className={onPhoto ? "display-hollow-onphoto" : "display-hollow"}>
+                      {t(`${key}.label`).split(" ")[0]}
+                    </span>{" "}
+                    {t(`${key}.label`).split(" ").slice(1).join(" ")}
+                  </>
+                )}
+              </h3>
+
               {image && (
                 <div
                   className={

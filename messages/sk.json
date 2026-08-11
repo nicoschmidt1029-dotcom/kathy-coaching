@@ -89,19 +89,22 @@
       "title": "Trénovať telo",
       "teaser": "Silový tréning postavený na živote, ktorý naozaj žiješ.",
       "body": "Silový tréning, ktorý ťa berie tam, kde si. Postupný, udržateľný, postavený na tvojom skutočnom týždni.",
-      "slot": "Tréning"
+      "slot": "Tréning",
+      "label": "Telo"
     },
     "nourish": {
       "title": "Vedome sa vyživovať",
       "teaser": "Skutočné jedlo, skutočná flexibilita, žiadny strach ani pravidlá.",
       "body": "Jedlo bez pravidiel a bez viny. Skutočné jedlá, skutočná flexibilita, skutočné pochopenie toho, čo tvoje telo potrebuje.",
-      "slot": "Výživa"
+      "slot": "Výživa",
+      "label": "Tanier"
     },
     "soul": {
       "title": "Duša a identita v Ježišovi",
       "teaser": "Ponúknuté, nikdy nanútené — hodnota, ktorá siaha hlbšie než zrkadlo.",
       "body": "Ponúknuté, nikdy nanútené. Úprimné rozhovory, modlitba a pohľad na vlastnú hodnotu, ktorý nezávisí od zrkadla.",
-      "slot": "Duša"
+      "slot": "Duša",
+      "label": "Duša"
     }
   },
   "about": {

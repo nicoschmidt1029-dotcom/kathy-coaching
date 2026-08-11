@@ -79,19 +79,22 @@
       "title": "Train the body",
       "teaser": "Strength work built around the life you actually live.",
       "body": "Strength work that meets you where you are. Progressive, sustainable, built around your actual week.",
-      "slot": "Train"
+      "slot": "Train",
+      "label": "The body"
     },
     "nourish": {
       "title": "Nourish with intention",
       "teaser": "Real food, real flexibility, no fear or rules.",
       "body": "Food without rules or guilt. Real meals, real flexibility, real understanding of what your body needs.",
-      "slot": "Nourish"
+      "slot": "Nourish",
+      "label": "The plate"
     },
     "soul": {
       "title": "Soul & identity in Jesus",
       "teaser": "Offered, never imposed — worth deeper than a mirror.",
       "body": "Offered, never imposed. Honest conversation, prayer, and a view of worth that does not depend on a mirror.",
-      "slot": "Soul"
+      "slot": "Soul",
+      "label": "The soul"
     }
   },
   "about": {
