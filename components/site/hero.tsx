@@ -15,7 +15,7 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  * than atmospheric — which is what "expensive" actually means here.
  *
  * The eyebrow names the reader, not the coach. "Holistic coaching ·
- * faith-rooted" described Katie; a visitor deciding in two seconds needs to
+ * faith-rooted" described Katey; a visitor deciding in two seconds needs to
  * know whether this is for them.
  */
 export function Hero() {

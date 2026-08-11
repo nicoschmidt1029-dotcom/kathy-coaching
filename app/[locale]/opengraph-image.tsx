@@ -8,7 +8,7 @@ import { SITE_HOST } from "@/lib/site-url";
  * line break, not just a swapped string.
  */
 export const alt =
-  "Katie Coaching — Faith-rooted training, nutrition & Christian mentoring";
+  "Katey Coaching — Faith-rooted training, nutrition & Christian mentoring";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -81,7 +81,7 @@ export default async function Image() {
               fontStyle: "normal",
             }}
           >
-            Katie Coaching
+            Katey Coaching
           </span>
           <span
             style={{

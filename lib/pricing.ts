@@ -139,7 +139,7 @@ export type PricingTranslator = (key: string) => string;
 
 /**
  * Build a human-readable summary from a selection. Used by the contact
- * form prefill to show the visitor (and Katie in the reply email) what
+ * form prefill to show the visitor (and Katey in the reply email) what
  * combination was assembled before booking.
  */
 export function summarize(

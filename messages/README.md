@@ -74,7 +74,7 @@ language mid-document would be worse than a missing button label.
 All three versions rest on the same Swiss basis (Art. 3 lit. s UWG for the
 imprint, nDSG plus GDPR for the privacy notice) — **not the German TMG**. The
 article citations are identical across languages on purpose; only the prose
-around them is translated. Every fact Katie has to supply is a `<Todo>`
+around them is translated. Every fact Katey has to supply is a `<Todo>`
 placeholder in every language, and no version invents an address, UID,
 insurer or email.
 
@@ -87,7 +87,7 @@ wording) *are* message keys, under `legal`.
 > LEGAL CONTENT - NOT YET VERIFIED BY A LAWYER OR SWISS LEGAL EXPERT - review
 > before this page is considered final
 
-That is separate from the `<Todo>` placeholders. Those mark facts Katie still
+That is separate from the `<Todo>` placeholders. Those mark facts Katey still
 has to supply; the banner marks the text *around* them — legal bases, article
 citations, liability wording, completeness — as unreviewed. Two sign-offs are
 outstanding: a Swiss legal expert on the content of all three versions, and a
@@ -105,9 +105,9 @@ native speaker on the Slovak translation. The Slovak files carry both warnings.
 ## The name of the method
 
 `approach.systemName` ("The Three Threads Approach") is the site-wide name of
-Katie's method. It is rendered on the home page, on `/about` and on
+Katey's method. It is rendered on the home page, on `/about` and on
 `/programme` from this single key — renaming the method means editing one
-line per locale, nothing else. **Katie still has to confirm the final
+line per locale, nothing else. **Katey still has to confirm the final
 wording.** When translating, decide per language whether the name is
 translated or kept in English as a brand term.
 

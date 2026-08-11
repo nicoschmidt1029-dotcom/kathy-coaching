@@ -2,7 +2,7 @@
  * LEGAL CONTENT - NOT YET VERIFIED BY A LAWYER OR SWISS LEGAL EXPERT -
  * review before this page is considered final
  * --------------------------------------------------------------------------
- * This is not about the <Todo> placeholders, which flag facts Katie has yet
+ * This is not about the <Todo> placeholders, which flag facts Katey has yet
  * to supply. It is about everything around them: the choice of legal basis,
  * the article citations, the liability and copyright wording, and whether the
  * disclosures are complete for how she actually operates. None of that has
@@ -16,7 +16,7 @@ import { Todo } from "@/components/site/todo";
  *
  * Swiss law throughout: Art. 3 lit. s UWG, not the German TMG. Keep the
  * article citations byte-identical across the three languages; only the
- * surrounding prose is translated. No real data anywhere — every fact Katie
+ * surrounding prose is translated. No real data anywhere — every fact Katey
  * has to supply stays a <Todo>.
  */
 export function ImprintBodyEn() {
@@ -94,7 +94,7 @@ export function ImprintBodyEn() {
       <h2>Dispute resolution</h2>
       <p>
         There is no obligation under Swiss law to participate in a consumer
-        arbitration procedure. Katie is not, at this time, willing to
+        arbitration procedure. Katey is not, at this time, willing to
         participate in one either. EU-resident visitors may use the European
         Commission&rsquo;s online dispute resolution platform at{" "}
         <a href="https://ec.europa.eu/consumers/odr" rel="noopener noreferrer">

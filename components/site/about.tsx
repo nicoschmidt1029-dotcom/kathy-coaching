@@ -8,7 +8,7 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  * Certifications, spelled out with the issuing institution rather than left
  * as a bare "Certified Personal Trainer" — the institution is the part that
  * carries weight. SNF Academy and Awakening School of Ministry are named in
- * Katie's own bio text; the exact certificate designations still need to come
+ * Katey's own bio text; the exact certificate designations still need to come
  * from her, hence the TODO markers.
  */
 const QUALS = [
@@ -78,7 +78,7 @@ export function About() {
             </p>
           </div>
 
-          {/* Concrete numbers. Two of the three are waiting on Katie — shown
+          {/* Concrete numbers. Two of the three are waiting on Katey — shown
               as TODO rather than filled with a plausible-looking guess. */}
           <dl className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-foreground/[0.08] sm:grid-cols-3">
             {/* Placeholders stay at body size — at display scale the pill

@@ -4,7 +4,7 @@
  * --------------------------------------------------------------------------
  * Every document reachable from this file carries the same warning at its
  * own head. It is separate from the <Todo> placeholders: those mark facts
- * Katie still has to supply, this marks the surrounding text — legal bases,
+ * Katey still has to supply, this marks the surrounding text — legal bases,
  * article citations, liability wording, completeness — as unreviewed.
  *
  * Two sign-offs are outstanding before Katarína can rely on these pages:
@@ -44,7 +44,7 @@ export const LEGAL_REVIEWED = false;
  *
  * The Swiss basis is identical in all three (Art. 3 lit. s UWG for the
  * imprint, nDSG plus GDPR for the privacy notice) — only the prose around the
- * citations is translated, and no version invents data Katie has not given.
+ * citations is translated, and no version invents data Katey has not given.
  */
 export const IMPRINT_BODIES: Record<Locale, () => React.ReactNode> = {
   en: ImprintBodyEn,

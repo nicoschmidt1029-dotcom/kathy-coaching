@@ -1,10 +1,10 @@
 import { useTranslations } from "next-intl";
 
 /**
- * Visible placeholder for a fact only Katie can supply.
+ * Visible placeholder for a fact only Katey can supply.
  *
  * Deliberately loud, and worded in the visitor's language rather than
- * developer shorthand: whoever reads this page — visitor, client, or Katie
+ * developer shorthand: whoever reads this page — visitor, client, or Katey
  * herself — must be able to tell at a glance that the information is missing.
  *
  * The children describe *what is needed*, never a sample value. A plausible

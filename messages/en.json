@@ -1,15 +1,15 @@
 {
   "meta": {
-    "siteName": "Katie Coaching",
-    "titleDefault": "Katie Coaching — Faith-rooted training, nutrition & mentoring",
-    "titleTemplate": "%s · Katie Coaching",
-    "description": "Holistic coaching for women — and openly for men too. Personal training, nutrition guidance, and Christian mentoring with Katie Coaching, walked together over six weeks.",
+    "siteName": "Katey Coaching",
+    "titleDefault": "Katey Coaching — Faith-rooted training, nutrition & mentoring",
+    "titleTemplate": "%s · Katey Coaching",
+    "description": "Holistic coaching for women — and openly for men too. Personal training, nutrition guidance, and Christian mentoring with Katey Coaching, walked together over six weeks.",
     "ogDescription": "See your body the way God created it. Training, nutrition, and identity in Jesus — one path, walked together."
   },
   "pages": {
     "about": {
       "title": "About",
-      "description": "Meet Katie Gröflin — certified personal trainer and nutrition coach, offering faith-rooted holistic coaching for body, nutrition, and soul."
+      "description": "Meet Katey Gröflin — certified personal trainer and nutrition coach, offering faith-rooted holistic coaching for body, nutrition, and soul."
     },
     "programs": {
       "title": "Programs",
@@ -21,21 +21,21 @@
     },
     "contact": {
       "title": "Contact",
-      "description": "Start a conversation with Katie — tell her where you are, where you'd like to go, and the language you're most comfortable in."
+      "description": "Start a conversation with Katey — tell her where you are, where you'd like to go, and the language you're most comfortable in."
     },
     "imprint": {
       "title": "Imprint",
-      "description": "Legal notice (Impressum) for Katie Coaching, Ettingen (BL), Switzerland."
+      "description": "Legal notice (Impressum) for Katey Coaching, Ettingen (BL), Switzerland."
     },
     "privacy": {
       "title": "Privacy",
-      "description": "Privacy notice for Katie Coaching — how your data is handled under Swiss nDSG and the EU GDPR."
+      "description": "Privacy notice for Katey Coaching — how your data is handled under Swiss nDSG and the EU GDPR."
     }
   },
   "wordmark": {
-    "name": "Katie",
+    "name": "Katey",
     "tagline": "Coaching",
-    "ariaLabel": "Katie Coaching — home"
+    "ariaLabel": "Katey Coaching — home"
   },
   "nav": {
     "about": "About",
@@ -67,7 +67,7 @@
     "secondary": "See how I work"
   },
   "approach": {
-    "_comment": "systemName is the site-wide name of the method. It appears on home, about and programs — change it in this one place and every mention follows. Pending Katie's final wording.",
+    "_comment": "systemName is the site-wide name of the method. It appears on home, about and programs — change it in this one place and every mention follows. Pending Katey's final wording.",
     "systemName": "The Three Threads Approach",
     "eyebrow": "The approach",
     "title": "Three threads. One whole person.",
@@ -98,12 +98,12 @@
     }
   },
   "about": {
-    "eyebrow": "Meet Katie",
+    "eyebrow": "Meet Katey",
     "title": "Strength, nourishment, and a quiet kind of confidence.",
     "calling": "We all have a calling in life. <em>My calling is to help people.</em>",
     "story": "Trained at SNF Academy, graduated from Awakening School of Ministry. I help people move forward — the right food, the right mindset, the right movement. <em>At any age.</em>",
-    "portraitLabel": "Katie portrait",
-    "portraitCaption": "Katie · personal trainer · nutrition coach",
+    "portraitLabel": "Katey portrait",
+    "portraitCaption": "Katey · personal trainer · nutrition coach",
     "todoYears": "years",
     "todoClients": "count",
     "todoCertificate": "exact certificate designation",
@@ -122,7 +122,7 @@
     "qualMinistryIssuer": "Awakening School of Ministry",
     "qualIssuedBy": "Issued by",
     "_storyOriginal": "After my study at SNF Academy, where I studied Personal Trainer and Nutrition coach, and graduating from Awakening School of Ministry, I help people move forward in their lives. With the right diet, the right mindset, and the right exercise. <em>At any age.</em>",
-    "overlapTitle": "About Katie"
+    "overlapTitle": "About Katey"
   },
   "howIWork": {
     "eyebrow": "How I work",
@@ -156,11 +156,11 @@
   "sampleNotice": {
     "_comment": "Shown next to the testimonials while TESTIMONIALS_ARE_REAL is false (lib/content-status.ts). Delete nothing here when real stories arrive — flip the flag.",
     "label": "Sample content",
-    "body": "These stories were written while the site was being built. They are not from real clients, and no before/after photos have been shared with anyone. They stay here as a placeholder until Katie has real ones to put in their place."
+    "body": "These stories were written while the site was being built. They are not from real clients, and no before/after photos have been shared with anyone. They stay here as a placeholder until Katey has real ones to put in their place."
   },
   "spotlight": {
     "eyebrow": "Example story",
-    "quote": "I came in wanting to lose weight. Six weeks later, the weight had shifted — but the bigger thing was quieter. For the first time in years I looked in the mirror without doing math. Katie didn't sell me a program; she walked with me through one.",
+    "quote": "I came in wanting to lose weight. Six weeks later, the weight had shifted — but the bigger thing was quieter. For the first time in years I looked in the mirror without doing math. Katey didn't sell me a program; she walked with me through one.",
     "name": "Lena, 32",
     "program": "Six-week Complete program"
   },
@@ -171,7 +171,7 @@
     "marcus": {
       "name": "Marcus, 41",
       "program": "Training + nutrition",
-      "quote": "As a guy I wasn't sure this was for me. Katie made it feel like coaching, not therapy — and the spiritual conversations were real, never pushy."
+      "quote": "As a guy I wasn't sure this was for me. Katey made it feel like coaching, not therapy — and the spiritual conversations were real, never pushy."
     },
     "hannah": {
       "name": "Hannah, 27",
@@ -335,7 +335,7 @@
     "imprint": "Imprint",
     "privacy": "Privacy",
     "contact": "Contact",
-    "copyright": "© {year} Katie Coaching. All rights reserved.",
+    "copyright": "© {year} Katey Coaching. All rights reserved.",
     "madeWithCare": "Made with care"
   },
   "legal": {

@@ -244,7 +244,7 @@ export function Programs({ bundlesOnly = false }: Props = {}) {
         </div>
 
         {/* A person, between the price cards and the calculator. This page had
-            no photo of Katie at all — three cards, a price table and a
+            no photo of Katey at all — three cards, a price table and a
             builder. The band breaks that up and puts a face to what is being
             bought. */}
         {TEMP_PHOTOS.programsBand && (

@@ -102,7 +102,7 @@ export function ImprintBodyDe() {
       <p>
         Nach Schweizer Recht besteht keine Pflicht, an einem
         Streitbeilegungsverfahren für Konsumentinnen und Konsumenten
-        teilzunehmen. Katie ist derzeit auch nicht bereit, an einem solchen
+        teilzunehmen. Katey ist derzeit auch nicht bereit, an einem solchen
         teilzunehmen. Besucherinnen und Besucher mit Wohnsitz in der EU können
         die Online-Streitbeilegungsplattform der Europäischen Kommission nutzen:{" "}
         <a href="https://ec.europa.eu/consumers/odr" rel="noopener noreferrer">

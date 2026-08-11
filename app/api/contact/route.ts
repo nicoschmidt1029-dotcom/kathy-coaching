@@ -134,7 +134,7 @@ export async function POST(req: Request) {
       {
         ok: false,
         error:
-          "The contact form isn’t connected yet. Please email Katie directly for now.",
+          "The contact form isn’t connected yet. Please email Katey directly for now.",
       },
       { status: 503 }
     );

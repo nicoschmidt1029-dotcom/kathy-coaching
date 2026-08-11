@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { DisplayTitle } from "./display-title";
 
 /**
- * Katie's mission, as one statement.
+ * Katey's mission, as one statement.
  *
  * On the site's own cream like everything else — the plum band it used to sit
  * on was one of five different section grounds, and a page that changes

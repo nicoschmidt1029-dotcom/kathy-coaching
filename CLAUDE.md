@@ -17,7 +17,7 @@ Verbesserungen bitte, NIEMALS einfach abwarten oder nur Kleinigkeiten
    nur eine einzelne kleine Änderung zu machen. Zeig mir die Optionen,
    bevor du sie umsetzt.
 
-3. Marken-Richtlinien für dieses Projekt (Katie Coaching):
+3. Marken-Richtlinien für dieses Projekt (Katey Coaching):
    - Ruhig, warm, vertrauensbasiert - NIEMALS Verkaufsdruck, Rabatt-
      Banner, Dringlichkeits-Sprache
    - Farben: Terracotta #C97C5D, Deep Plum #5B3A4A, Warm Cream #F7F2EA

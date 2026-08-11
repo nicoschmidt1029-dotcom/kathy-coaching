@@ -40,7 +40,7 @@ export function PrivacyBodySk() {
         spĺňala predpisy.
       </p>
       <p>
-        Katie pôsobí predovšetkým vo Švajčiarsku, preto sa uplatňuje revidovaný
+        Katey pôsobí predovšetkým vo Švajčiarsku, preto sa uplatňuje revidovaný
         švajčiarsky zákon o ochrane údajov (nDSG, účinný od 1. septembra 2023).
         Ak pristupuješ z členského štátu EÚ/EHP, dodatočne sa uplatňuje
         európske nariadenie GDPR; obidva súbory práv sa dodržiavajú spoločne.
@@ -97,8 +97,8 @@ export function PrivacyBodySk() {
         <li>Príjemca: výhradne Katarína Gröflin.</li>
         <li>
           Technický sprostredkovateľ: Resend Inc., 2261 Market Street #5039,
-          San Francisco, CA 94114, USA — odosiela e-mail zo stránky do Katinej
-          schránky. Viazaný Data Processing Addendum a štandardnými zmluvnými
+          San Francisco, CA 94114, USA — odosiela e-mail zo stránky do schránky
+          Katey. Viazaný Data Processing Addendum a štandardnými zmluvnými
           doložkami; Resend je certifikovaný v rámcoch Swiss-U.S. a EU-U.S.
           Data Privacy Framework.
         </li>
@@ -107,7 +107,7 @@ export function PrivacyBodySk() {
           vznikne spolupráca — po dobu trvania koučingového vzťahu plus zákonné
           lehoty uchovávania (10 rokov pre korešpondenciu relevantnú pre
           účtovníctvo podľa čl. 958f OR,{" "}
-          <Todo>rozsah overiť s Katinou daňovou poradkyňou</Todo>). Ak z otázky
+          <Todo>rozsah overiť s daňovou poradkyňou Katey</Todo>). Ak z otázky
           nič nevznikne, správa sa vymaže do 12 mesiacov.
         </li>
       </ul>
@@ -177,7 +177,7 @@ export function PrivacyBodySk() {
       <h2>5. Automatizované rozhodovanie</h2>
       <p>
         Neprebieha žiadne automatizované rozhodovanie, žiadne profilovanie a
-        žiadne vyhodnocovanie tvojej otázky umelou inteligenciou. Katie číta
+        žiadne vyhodnocovanie tvojej otázky umelou inteligenciou. Katey číta
         každú správu sama.
       </p>
 

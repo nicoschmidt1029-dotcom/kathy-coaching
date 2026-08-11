@@ -101,7 +101,7 @@ export function ImprintBodySk() {
       <h2>Riešenie sporov</h2>
       <p>
         Podľa švajčiarskeho práva neexistuje povinnosť zúčastniť sa
-        spotrebiteľského rozhodcovského konania. Katie sa na ňom v súčasnosti
+        spotrebiteľského rozhodcovského konania. Katey sa na ňom v súčasnosti
         ani zúčastniť nechce. Návštevníci s bydliskom v EÚ môžu využiť
         platformu Európskej komisie na riešenie sporov online:{" "}
         <a href="https://ec.europa.eu/consumers/odr" rel="noopener noreferrer">

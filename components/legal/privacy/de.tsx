@@ -31,7 +31,7 @@ export function PrivacyBodyDe() {
         versteht — nicht nur so, dass sie den Vorschriften genügt.
       </p>
       <p>
-        Katies Hauptsitz ist die Schweiz, deshalb gilt das revidierte
+        Kateys Hauptsitz ist die Schweiz, deshalb gilt das revidierte
         Datenschutzgesetz (nDSG, in Kraft seit 1. September 2023). Wenn du aus
         einem EU-/EWR-Staat zugreifst, gilt zusätzlich die
         EU-Datenschutz-Grundverordnung (DSGVO); beide Rechtekataloge werden
@@ -94,7 +94,7 @@ export function PrivacyBodyDe() {
         <li>
           Technische Auftragsbearbeiterin: Resend Inc., 2261 Market Street
           #5039, San Francisco, CA 94114, USA — versendet die E-Mail von der
-          Website an Katies Postfach. Gebunden durch ein Data Processing
+          Website an Kateys Postfach. Gebunden durch ein Data Processing
           Addendum und Standardvertragsklauseln; Resend ist im Swiss-U.S. und
           im EU-U.S. Data Privacy Framework zertifiziert.
         </li>
@@ -103,7 +103,7 @@ export function PrivacyBodyDe() {
           und — falls eine Zusammenarbeit entsteht — für die Dauer der
           Coaching-Beziehung zuzüglich gesetzlicher Aufbewahrungsfristen
           (10 Jahre für buchhaltungsrelevante Korrespondenz nach Art. 958f OR,{" "}
-          <Todo>Umfang mit Katies Steuerberatung klären</Todo>). Führt die
+          <Todo>Umfang mit Kateys Steuerberatung klären</Todo>). Führt die
           Anfrage zu nichts, wird die Nachricht innerhalb von 12 Monaten
           gelöscht.
         </li>
@@ -180,7 +180,7 @@ export function PrivacyBodyDe() {
       <h2>5. Automatisierte Entscheidungen</h2>
       <p>
         Es findet keine automatisierte Entscheidungsfindung statt, kein
-        Profiling und keine KI-Auswertung deiner Anfrage. Katie liest jede
+        Profiling und keine KI-Auswertung deiner Anfrage. Katey liest jede
         Nachricht selbst.
       </p>
 

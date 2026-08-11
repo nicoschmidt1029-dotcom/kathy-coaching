@@ -3,21 +3,21 @@
     "translated": "vollständig — alle Namespaces übersetzt",
     "note": "Bio und Mission stammen wörtlich von Nico, der Rest ist übersetzt und darf frei überschrieben werden. Keys, die hier fehlen, fallen auf messages/en.json zurück — bewusst weggelassen sind nur meta.siteName, wordmark.name/tagline (Marke), about.qual*Issuer (Eigennamen der Institutionen) und contact.languagesValue (Sprachnamen stehen in ihrer eigenen Sprache). Keys niemals leer lassen: ein leerer String überschreibt das Englische mit nichts.",
     "openQuestions": [
-      "approach.systemName ist hier als „Der Drei-Fäden-Ansatz\" übersetzt statt den englischen Markenbegriff stehen zu lassen — Katie entscheidet, was ihr lieber ist.",
+      "approach.systemName ist hier als „Der Drei-Fäden-Ansatz\" übersetzt statt den englischen Markenbegriff stehen zu lassen — Katey entscheidet, was ihr lieber ist.",
       "Rechtstexte /imprint und /privacy sind übersetzt, liegen aber als Komponenten in components/legal/ (siehe README) — und sind juristisch ungeprüft.",
       "Das OG-Bild ist für alle Sprachen Englisch."
     ]
   },
   "meta": {
-    "titleDefault": "Katie Coaching — Training, Ernährung & Mentoring, im Glauben verwurzelt",
-    "titleTemplate": "%s · Katie Coaching",
-    "description": "Ganzheitliches Coaching für Frauen — und ausdrücklich auch für Männer. Personal Training, Ernährungsbegleitung und christliches Mentoring mit Katie Coaching, sechs Wochen, die wir gemeinsam gehen.",
+    "titleDefault": "Katey Coaching — Training, Ernährung & Mentoring, im Glauben verwurzelt",
+    "titleTemplate": "%s · Katey Coaching",
+    "description": "Ganzheitliches Coaching für Frauen — und ausdrücklich auch für Männer. Personal Training, Ernährungsbegleitung und christliches Mentoring mit Katey Coaching, sechs Wochen, die wir gemeinsam gehen.",
     "ogDescription": "Sieh deinen Körper so, wie Gott ihn geschaffen hat. Training, Ernährung und Identität in Jesus — ein Weg, gemeinsam gegangen."
   },
   "pages": {
     "about": {
       "title": "Über mich",
-      "description": "Lerne Katie Gröflin kennen — zertifizierte Personal Trainerin und Ernährungsberaterin, mit ganzheitlichem Coaching für Körper, Ernährung und Seele."
+      "description": "Lerne Katey Gröflin kennen — zertifizierte Personal Trainerin und Ernährungsberaterin, mit ganzheitlichem Coaching für Körper, Ernährung und Seele."
     },
     "programs": {
       "title": "Programme",
@@ -29,19 +29,19 @@
     },
     "contact": {
       "title": "Kontakt",
-      "description": "Komm mit Katie ins Gespräch — erzähl ihr, wo du stehst, wohin du willst und in welcher Sprache du dich am wohlsten fühlst."
+      "description": "Komm mit Katey ins Gespräch — erzähl ihr, wo du stehst, wohin du willst und in welcher Sprache du dich am wohlsten fühlst."
     },
     "imprint": {
       "title": "Impressum",
-      "description": "Impressum für Katie Coaching, Ettingen (BL), Schweiz."
+      "description": "Impressum für Katey Coaching, Ettingen (BL), Schweiz."
     },
     "privacy": {
       "title": "Datenschutz",
-      "description": "Datenschutzerklärung von Katie Coaching — wie deine Daten nach Schweizer revDSG und EU-DSGVO behandelt werden."
+      "description": "Datenschutzerklärung von Katey Coaching — wie deine Daten nach Schweizer revDSG und EU-DSGVO behandelt werden."
     }
   },
   "wordmark": {
-    "ariaLabel": "Katie Coaching — Startseite"
+    "ariaLabel": "Katey Coaching — Startseite"
   },
   "nav": {
     "about": "Über mich",
@@ -99,12 +99,12 @@
     }
   },
   "about": {
-    "eyebrow": "Katie kennenlernen",
+    "eyebrow": "Katey kennenlernen",
     "title": "Kraft, Nahrung und eine stille Art von Selbstvertrauen.",
     "calling": "Wir alle haben eine Berufung im Leben. <em>Meine Berufung ist es, Menschen zu helfen.</em>",
     "story": "Ausgebildet an der SNF Academy, Abschluss an der Awakening School of Ministry. Ich helfe Menschen voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung, der richtigen Bewegung. <em>In jedem Alter.</em>",
-    "portraitLabel": "Porträt von Katie",
-    "portraitCaption": "Katie · Personal Trainerin · Ernährungsberaterin",
+    "portraitLabel": "Porträt von Katey",
+    "portraitCaption": "Katey · Personal Trainerin · Ernährungsberaterin",
     "todoYears": "Jahre",
     "todoClients": "Anzahl",
     "todoCertificate": "genaue Bezeichnung des Zertifikats",
@@ -120,7 +120,7 @@
     "qualMinistryTitle": "Abschluss, School of Ministry",
     "qualIssuedBy": "Ausgestellt von",
     "_storyOriginal": "Nach meinem Studium an der SNF Academy, wo ich Personal Trainer und Ernährungsberatung studiert habe, und meinem Abschluss an der Awakening School of Ministry, helfe ich Menschen, in ihrem Leben voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung und der richtigen Bewegung. <em>In jedem Alter.</em>",
-    "overlapTitle": "Über Katie"
+    "overlapTitle": "Über Katey"
   },
   "howIWork": {
     "eyebrow": "So arbeite ich",
@@ -153,11 +153,11 @@
   },
   "sampleNotice": {
     "label": "Beispielinhalt",
-    "body": "Diese Geschichten sind beim Bau der Website entstanden. Sie stammen nicht von echten Klientinnen oder Klienten, und es hat nie jemand Vorher-Nachher-Fotos geteilt. Sie stehen hier als Platzhalter, bis Katie echte hat."
+    "body": "Diese Geschichten sind beim Bau der Website entstanden. Sie stammen nicht von echten Klientinnen oder Klienten, und es hat nie jemand Vorher-Nachher-Fotos geteilt. Sie stehen hier als Platzhalter, bis Katey echte hat."
   },
   "spotlight": {
     "eyebrow": "Beispielgeschichte",
-    "quote": "Ich kam, um abzunehmen. Sechs Wochen später hatte sich das Gewicht verschoben — aber das Größere war leiser. Zum ersten Mal seit Jahren habe ich in den Spiegel geschaut, ohne zu rechnen. Katie hat mir kein Programm verkauft; sie ist mit mir hindurchgegangen.",
+    "quote": "Ich kam, um abzunehmen. Sechs Wochen später hatte sich das Gewicht verschoben — aber das Größere war leiser. Zum ersten Mal seit Jahren habe ich in den Spiegel geschaut, ohne zu rechnen. Katey hat mir kein Programm verkauft; sie ist mit mir hindurchgegangen.",
     "name": "Lena, 32",
     "program": "Sechs Wochen, der ganze Weg"
   },
@@ -168,7 +168,7 @@
     "marcus": {
       "name": "Marcus, 41",
       "program": "Training + Ernährung",
-      "quote": "Als Mann war ich mir nicht sicher, ob das für mich ist. Bei Katie hat es sich nach Coaching angefühlt, nicht nach Therapie — und die geistlichen Gespräche waren echt, nie aufdringlich."
+      "quote": "Als Mann war ich mir nicht sicher, ob das für mich ist. Bei Katey hat es sich nach Coaching angefühlt, nicht nach Therapie — und die geistlichen Gespräche waren echt, nie aufdringlich."
     },
     "hannah": {
       "name": "Hannah, 27",
@@ -331,7 +331,7 @@
     "imprint": "Impressum",
     "privacy": "Datenschutz",
     "contact": "Kontakt",
-    "copyright": "© {year} Katie Coaching. Alle Rechte vorbehalten.",
+    "copyright": "© {year} Katey Coaching. Alle Rechte vorbehalten.",
     "madeWithCare": "Mit Sorgfalt gemacht"
   },
   "legal": {
