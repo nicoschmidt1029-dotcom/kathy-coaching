@@ -34,7 +34,7 @@ export function Wordmark({ className, onDark = false }: Props) {
       <svg
         aria-hidden
         viewBox="0 0 28 34"
-        className="size-8 shrink-0 transition-transform duration-300 ease-out group-hover:-translate-y-0.5"
+        className="size-9 shrink-0 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 md:size-10"
       >
         {/* Halo arc — a near-full circle, open at the base, wider than the
             figure it rings. Traced from the arc in Katey's own mark. */}
@@ -76,14 +76,14 @@ export function Wordmark({ className, onDark = false }: Props) {
         )}
       >
         <span
-          className="font-[family-name:var(--font-script)] text-[1.85rem] leading-none tracking-wide md:text-[2.15rem]"
+          className="font-[family-name:var(--font-script)] text-[2.15rem] leading-none tracking-wide md:text-[2.5rem]"
           style={{ color: markColor }}
         >
           {t("name")}
         </span>
         <span
           className={cn(
-            "font-mono text-[0.62rem] tracking-[0.3em] uppercase md:text-[0.68rem]",
+            "hidden whitespace-nowrap font-mono text-[0.66rem] tracking-[0.3em] uppercase sm:inline md:text-[0.72rem]",
             onDark
               ? "text-[var(--primary-foreground)]/70"
               : "text-[var(--clay)]/85"

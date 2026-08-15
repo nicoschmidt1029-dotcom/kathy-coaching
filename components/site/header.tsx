@@ -20,6 +20,7 @@ import { cn } from "@/lib/utils";
 /** One page now, so the nav jumps to sections rather than routes. */
 const NAV = [
   { key: "about", href: "/#about" },
+  { key: "approach", href: "/#approach" },
   { key: "mission", href: "/#mission" },
   { key: "programs", href: "/#programme" },
   { key: "contact", href: "/#kontakt" },

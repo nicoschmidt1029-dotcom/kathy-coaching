@@ -19,3 +19,19 @@
  *   - DRAFT_LOCALES    (i18n/routing.ts)            — Slovak is a draft
  */
 export const TESTIMONIALS_ARE_REAL = false;
+
+/**
+ * Still pending from Katarina — not gated behind a flag like the constant
+ * above, just a checklist so it isn't forgotten. Ask again next session if
+ * any of these are still open.
+ *
+ *   - about.tsx stats: years coaching, people accompanied (removed from the
+ *     page on her request rather than shown as "NOCH AUSZUFÜLLEN" — see the
+ *     component's own comment)
+ *   - about.tsx qualifications: exact certificate designations for the SNF
+ *     Academy trainer/nutrition certs, and the Awakening School of Ministry
+ *     graduation year
+ *   - imprint page: street address, postal code, public email, phone (or
+ *     confirmation none will be published) — see components/legal
+ *   - legal texts generally: unreviewed, see LEGAL_REVIEWED above
+ */

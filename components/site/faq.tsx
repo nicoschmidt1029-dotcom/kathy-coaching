@@ -31,12 +31,12 @@ export function Faq() {
               <AccordionItem
                 key={key}
                 value={key}
-                className="border-b border-foreground/10"
+                className="group border-b border-foreground/10"
               >
-                <AccordionTrigger className="py-6 font-display text-lg font-normal text-foreground hover:no-underline sm:text-xl">
+                <AccordionTrigger className="py-7 font-display text-[1.3rem] font-normal text-foreground transition-colors hover:text-[var(--plum)] hover:no-underline sm:text-[1.55rem] **:data-[slot=accordion-trigger-icon]:text-[var(--clay)] **:data-[slot=accordion-trigger-icon]:size-5">
                   {t(`${key}.q`)}
                 </AccordionTrigger>
-                <AccordionContent className="max-w-2xl pb-6 text-[0.98rem] leading-[1.7] text-foreground/72">
+                <AccordionContent className="max-w-2xl pb-7 text-[1.02rem] leading-[1.75] text-foreground/72">
                   {t(`${key}.a`)}
                 </AccordionContent>
               </AccordionItem>

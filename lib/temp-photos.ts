@@ -100,10 +100,15 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-07.jpg",
     alt: "Katey stretching in the gym, looking toward the camera",
   },
-  // Katey's own — gym, blue top, crouched mid-workout (Train-the-body thread)
+  // Katey's own — running track, seen from behind. Was the HomeBand photo
+  // (a standalone full-bleed pause section between Approach and How I Work);
+  // Katarina didn't like the gym photo that used to be here and asked for
+  // the HomeBand photo moved into this slot instead, so HomeBand is retired
+  // and this thread carries it. Warm track red/green also reads better next
+  // to the gold palette than the gym did.
   approachTrain: {
-    url: "/images/kathy/kathy-06.jpg",
-    alt: "Katey in the gym in a blue top, crouched mid-workout",
+    url: "/images/kathy/kathy-02.jpg",
+    alt: "Katey sitting on a running track, seen from behind, looking down the lane",
   },
   // Commissioned line illustration — terracotta on cream, drawn for this site.
   // Replaced an Unsplash buddha bowl: stock food photography made the thread
@@ -119,15 +124,19 @@ export const TEMP_PHOTOS: Record<
     alt: "Line illustration: an open book beside a lit candle, a cup and a sprig of leaves",
   },
   // Katey's own — running track, seated from behind, looking down the lane.
-  // The home page's visual pause: full bleed, no text over it. It is the only
-  // place on the site that asks for nothing at all.
+  // Was the home page's standalone full-bleed pause section; that section
+  // is retired and this same photo now lives in Approach's first thread
+  // instead (see approachTrain above). Kept assigned here, one edit away,
+  // in case the pause section comes back with a different photo later.
   homeBand: {
     url: "/images/kathy/kathy-02.jpg",
     alt: "Katey sitting on a running track, seen from behind, looking down the lane",
   },
-  // Katey's own — running track, seated, looking off. The programs page was
-  // the only one with no photo of her at all: three cards, a price table and
-  // a calculator. This puts a person back into it.
+  // Katey's own — running track, seated, looking off. Was the full-bleed
+  // band under the Programs pricing cards; Katarina asked for that band
+  // removed (the three drawn block-icons on the "Der ganze Weg" card now do
+  // the work of putting something visual into that gap instead). Kept
+  // assigned here, one edit away, for reuse elsewhere.
   programsBand: {
     url: "/images/kathy/kathy-04.jpg",
     alt: "Katey sitting on a running track, looking into the distance",

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useTranslations } from "next-intl";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Clock, Globe, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -75,7 +75,7 @@ export function Contact({ prefill }: Props = {}) {
         className="pointer-events-none absolute top-[-20%] right-[-15%] h-[520px] w-[520px] rounded-full opacity-25"
         style={{
           background:
-            "radial-gradient(closest-side, oklch(0.88 0.06 42), transparent 70%)",
+            "radial-gradient(closest-side, oklch(0.88 0.06 82), transparent 70%)",
         }}
       />
 
@@ -85,32 +85,45 @@ export function Contact({ prefill }: Props = {}) {
           <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
           <p className="section-lede max-w-md">{t("intro")}</p>
 
-          <dl className="mt-10 space-y-4 text-[0.95rem]">
-            <div>
-              <dt className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-foreground/60">
-                {t("formatLabel")}
-              </dt>
-              <dd className="mt-1 text-foreground/60">
+          {/* Three short, icon-led lines instead of stacked label/sentence
+              pairs — the same three facts, but scannable rather than read.
+              The dt keeps the full label for screen readers; sighted users
+              get the icon as the anchor and a short value beside it. */}
+          <ul className="mt-10 space-y-3.5 text-[0.95rem] text-foreground/70">
+            <li className="flex items-center gap-3">
+              <MessageCircle
+                aria-hidden
+                className="size-[1.1rem] shrink-0 text-[var(--clay)]"
+                strokeWidth={1.75}
+              />
+              <span>
+                <span className="sr-only">{t("formatLabel")}: </span>
                 {t("formatValue")}
-              </dd>
-            </div>
-            <div>
-              <dt className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-foreground/60">
-                {t("languagesLabel")}
-              </dt>
-              <dd className="mt-1 text-foreground/60">
+              </span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Globe
+                aria-hidden
+                className="size-[1.1rem] shrink-0 text-[var(--clay)]"
+                strokeWidth={1.75}
+              />
+              <span>
+                <span className="sr-only">{t("languagesLabel")}: </span>
                 {t("languagesValue")}
-              </dd>
-            </div>
-            <div>
-              <dt className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-foreground/60">
-                {t("replyLabel")}
-              </dt>
-              <dd className="mt-1 text-foreground/60">
+              </span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Clock
+                aria-hidden
+                className="size-[1.1rem] shrink-0 text-[var(--clay)]"
+                strokeWidth={1.75}
+              />
+              <span>
+                <span className="sr-only">{t("replyLabel")}: </span>
                 {t("replyValue")}
-              </dd>
-            </div>
-          </dl>
+              </span>
+            </li>
+          </ul>
         </div>
 
         <div className="md:col-span-7">

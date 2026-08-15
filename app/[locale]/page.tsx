@@ -2,7 +2,6 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/site/hero";
 import { About } from "@/components/site/about";
 import { Approach } from "@/components/site/approach";
-import { HomeBand } from "@/components/site/home-band";
 import { HowIWork } from "@/components/site/how-i-work";
 import { Programs } from "@/components/site/programs";
 import { Faq } from "@/components/site/faq";
@@ -77,7 +76,6 @@ export default async function Home({
       <Hero />
       <About />
       <Approach />
-      <HomeBand />
       <HowIWork />
       <Programs bundlesOnly />
       <Faq />

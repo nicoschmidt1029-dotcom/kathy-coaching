@@ -6,7 +6,6 @@ import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { BUNDLES } from "@/lib/pricing";
 import { BLOCK_ART } from "@/lib/block-art";
-import { TEMP_PHOTOS } from "@/lib/temp-photos";
 import { ProgramsBuilder } from "./programs-builder";
 import { DisplayTitle } from "./display-title";
 
@@ -171,13 +170,22 @@ export function Programs({ bundlesOnly = false }: Props = {}) {
                     {/* One drawing per block the bundle contains, so a card
                         shows at a glance what is in it. Replaces a radial wash
                         behind three lucide glyphs, which read as stock UI on an
-                        otherwise hand-drawn page. */}
-                    {!bundle.recommended && bundle.blocks.length > 0 && (
+                        otherwise hand-drawn page. Used to skip the recommended
+                        card, which is why it looked unfinished next to the
+                        other two — it now gets all three block drawings
+                        (training + nutrition + spiritual), since "Der ganze
+                        Weg" is literally all three blocks. A light chip
+                        behind each drawing keeps the terracotta linework
+                        visible on the card's dark ground. */}
+                    {bundle.blocks.length > 0 && (
                       <div className="my-7 flex flex-1 items-center justify-center gap-3">
                         {bundle.blocks.map((id) => (
                           <div
                             key={id}
-                            className="relative aspect-square w-full max-w-[7.5rem] overflow-hidden rounded-xl"
+                            className={cn(
+                              "relative aspect-square w-full max-w-[7.5rem] overflow-hidden rounded-xl",
+                              bundle.recommended && "bg-[var(--primary-foreground)]/92"
+                            )}
                           >
                             <Image
                               src={BLOCK_ART[id]}
@@ -242,25 +250,6 @@ export function Programs({ bundlesOnly = false }: Props = {}) {
             })}
           </ul>
         </div>
-
-        {/* A person, between the price cards and the calculator. This page had
-            no photo of Katey at all — three cards, a price table and a
-            builder. The band breaks that up and puts a face to what is being
-            bought. */}
-        {TEMP_PHOTOS.programsBand && (
-          /* Breaks the page container on purpose: a band that runs edge to
-             edge is the one place this layout stops behaving like a document
-             and behaves like a magazine. */
-          <div className="relative mt-24 aspect-[16/7] w-screen max-w-none overflow-hidden md:mt-32 left-1/2 -translate-x-1/2">
-            <Image
-              src={TEMP_PHOTOS.programsBand.url}
-              alt={TEMP_PHOTOS.programsBand.alt}
-              fill
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              className="object-cover object-[50%_38%]"
-            />
-          </div>
-        )}
 
         {/* Section B — build your own. Off on the one-pager: a calculator
             mid-scroll is a wall, and the three bundles carry the offer. */}
