@@ -353,10 +353,10 @@
    */
   .section-title {
     font-family: var(--font-display), ui-serif, Georgia, serif;
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    line-height: 1.05;
+    font-size: clamp(1.85rem, 3.6vw, 2.75rem);
+    line-height: 1.12;
     font-weight: 400;
-    letter-spacing: -0.028em;
+    letter-spacing: -0.012em;
     text-wrap: balance;
     margin-top: 1.25rem;
   }
@@ -364,10 +364,10 @@
   /* Sub-section heading — one step down, same family and rhythm. */
   .section-title-sm {
     font-family: var(--font-display), ui-serif, Georgia, serif;
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    line-height: 1.15;
+    font-size: clamp(1.5rem, 2.8vw, 2rem);
+    line-height: 1.2;
     font-weight: 400;
-    letter-spacing: -0.024em;
+    letter-spacing: -0.01em;
     text-wrap: balance;
     margin-top: 0.75rem;
   }
@@ -375,10 +375,10 @@
   /* Card / list-item heading — the smallest display size in use. */
   .card-title {
     font-family: var(--font-display), ui-serif, Georgia, serif;
-    font-size: 1.125rem;
-    line-height: 1.25;
+    font-size: 1.25rem;
+    line-height: 1.3;
     font-weight: 400;
-    letter-spacing: -0.018em;
+    letter-spacing: -0.006em;
   }
 
   .section-lede {
@@ -405,52 +405,49 @@
   }
 
   /*
-   * Oversized section title, used as a graphic element rather than as a
-   * heading that happens to be large.
-   *
-   * The reference this follows (coachjermaine.de) carries its sections with
-   * type alone: the title runs far bigger than the copy, part of it hollow,
-   * and it is allowed to overlap what sits beside it. That is what gives a
-   * page character without adding colour — which is the whole point here,
-   * since the palette stays quiet on purpose.
-   *
-   * Fraunces rather than the reference's grotesk: the size and the hollow
-   * cut carry the effect, and the serif is what keeps this Katie's brand
-   * instead of a fitness label.
+   * Section-graphic title — one notch above .section-title, for the handful
+   * of places that want a touch more presence (the mission band, the FAQ
+   * head). This used to run up to 9rem (144px) and was allowed to overlap
+   * photographs, following a different reference (coachjermaine.de) that
+   * carried sections on oversized type alone. Katarina asked for the
+   * opposite: sized like the DWA reference — a headline that reads as an
+   * elegant heading, not a poster — and text is never laid over a photo
+   * anymore (see approach.tsx / about.tsx, which used to straddle their
+   * images this way and now sit above them like every other section).
    */
   .display-title {
     font-family: var(--font-display), ui-serif, Georgia, serif;
-    font-size: clamp(3rem, 11vw, 9rem);
-    line-height: 0.92;
+    font-size: clamp(2.25rem, 4.4vw, 3.5rem);
+    line-height: 1.05;
     font-weight: 400;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.01em;
     text-wrap: balance;
   }
 
-  /* Hollow cut. -webkit-text-stroke is the only cross-browser way to outline
-     text; paint-order keeps the stroke from eating the counters. */
+  /* Hollow cut, kept subtle now that the type it sits on is reading-sized
+     rather than poster-sized — a thin serif at a thick stroke width looks
+     bolded rather than outlined. -webkit-text-stroke is the only
+     cross-browser way to outline text; paint-order keeps the stroke from
+     eating the counters. */
   .display-hollow {
     color: transparent;
-    -webkit-text-stroke: 1.5px var(--clay);
+    -webkit-text-stroke: 1px var(--clay);
     paint-order: stroke fill;
   }
   @media (min-width: 768px) {
-    .display-hollow { -webkit-text-stroke-width: 2px; }
+    .display-hollow { -webkit-text-stroke-width: 1.25px; }
   }
 
-  /* Same cut, light stroke. For a hollow word that lands on a photograph:
-     the terracotta outline is legible on the cream illustrations but sinks
-     into a photo. Applied per section in JSX, not as a responsive variant —
-     Tailwind variants only reach utilities it generates, never a custom
-     component class. */
+  /* Same cut, light stroke — kept for any hollow word that still lands on a
+     photograph elsewhere on the site. */
   .display-hollow-onphoto {
     color: transparent;
-    -webkit-text-stroke: 1.5px oklch(1 0 0 / 0.92);
+    -webkit-text-stroke: 1px oklch(1 0 0 / 0.92);
     paint-order: stroke fill;
     text-shadow: 0 1px 24px oklch(0.2 0 0 / 0.35);
   }
   @media (min-width: 768px) {
-    .display-hollow-onphoto { -webkit-text-stroke-width: 2px; }
+    .display-hollow-onphoto { -webkit-text-stroke-width: 1.25px; }
   }
 
   /* Same cut, cream stroke on a flat dark ground (the petrol mission band).
@@ -458,11 +455,11 @@
      outline needs no separation from it. */
   .display-hollow-light {
     color: transparent;
-    -webkit-text-stroke: 1.5px var(--primary-foreground);
+    -webkit-text-stroke: 1px var(--primary-foreground);
     paint-order: stroke fill;
   }
   @media (min-width: 768px) {
-    .display-hollow-light { -webkit-text-stroke-width: 2px; }
+    .display-hollow-light { -webkit-text-stroke-width: 1.25px; }
   }
 
 

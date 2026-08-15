@@ -1,4 +1,4 @@
-import { Fraunces, Inter, Pinyon_Script } from "next/font/google";
+import { Instrument_Serif, Inter, Pinyon_Script } from "next/font/google";
 
 /**
  * Shared font instances.
@@ -7,11 +7,22 @@ import { Fraunces, Inter, Pinyon_Script } from "next/font/google";
  * them: the locale layout and the global not-found page, which sits outside
  * that layout and has to render its own <html> shell.
  */
-export const display = Fraunces({
+/**
+ * Display face. Was Fraunces — a soft, quirky old-style serif that got
+ * heavier and more idiosyncratic the bigger it ran, which is part of why
+ * the oversized display titles read as "too much" rather than elegant.
+ * Instrument Serif is the restrained, single-weight editorial serif behind
+ * the reference site's headlines (Create with Danielle's DWA landing
+ * page) — thin strokes, a genuine italic, calm at both body and display
+ * sizes. Single weight only (400), so no bold display headings — the
+ * scale carries the hierarchy instead, same as the reference.
+ */
+export const display = Instrument_Serif({
   subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
   variable: "--font-display",
   display: "swap",
-  axes: ["opsz"],
 });
 
 export const body = Inter({

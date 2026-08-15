@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { DisplayTitle } from "./display-title";
 import { Placeholder } from "./placeholder";
 import { PortraitPlaceholder } from "./portrait-placeholder";
 import { Todo } from "./todo";
@@ -25,22 +26,13 @@ export function About() {
       <div className="container-page">
         <p className="eyebrow">{t("eyebrow")}</p>
 
-        {/* The title straddles the photograph: the hollow first word lands on
-            the image, the solid remainder on the cream beside it. This is the
-            move the reference site is built on, and the reason it reads as
-            designed rather than laid out. Below md the columns stack, so the
-            overlap is switched off and the title simply sits above. */}
-        <div className="relative mt-6 grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
-          {/* Two words, not the sentence. An overlapping title has to be a
-              label — the full headline at display size covered the portrait
-              and ran straight through the body copy. */}
-          <h2 className="display-title pointer-events-none z-10 md:absolute md:top-4 md:left-0">
-            <span className="display-hollow">
-              {t("overlapTitle").split(" ")[0]}
-            </span>{" "}
-            {t("overlapTitle").split(" ").slice(1).join(" ")}
-          </h2>
+        {/* Used to straddle the photograph — the hollow first word landing on
+            the portrait, following a different design reference. Katarina
+            asked for text to stay off photos, so the title now sits above
+            the grid like every other section on the site. */}
+        <DisplayTitle className="mt-6">{t("overlapTitle")}</DisplayTitle>
 
+        <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
             <div className="md:sticky md:top-28">
               {TEMP_PHOTOS.about ? (
@@ -59,7 +51,7 @@ export function About() {
             </div>
           </div>
 
-          <div className="md:col-span-7 md:pt-[7rem] lg:pt-[9rem]">
+          <div className="md:col-span-7">
           <h3 className="section-title-sm mt-0 max-w-[20ch]">{t("title")}</h3>
           <div className="mt-8 space-y-5 text-pretty text-foreground/75 sm:text-lg sm:leading-[1.7]">
             <p>
