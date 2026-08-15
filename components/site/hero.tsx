@@ -28,6 +28,13 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  * The eyebrow names the reader, not the coach. "Holistic coaching ·
  * faith-rooted" described Katey; a visitor deciding in two seconds needs to
  * know whether this is for them.
+ *
+ * One CTA, not two: a single "choose a program" button that scrolls to
+ * /#programme, in the site's dark-petrol-blue primary colour (Katarina's
+ * request). The old second link ("see how I work") and the credential
+ * badges are gone — the badges duplicated what the Katey/about section
+ * already says about her qualifications, and she asked for that to live
+ * in exactly one place.
  */
 export function Hero() {
   const t = useTranslations("hero");
@@ -83,44 +90,19 @@ export function Hero() {
           </p>
 
           <div
-            className="animate-rise mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6"
+            className="animate-rise mt-10"
             style={{ animationDelay: "340ms" }}
           >
             <Button
               asChild
               size="lg"
-              className="group/button h-12 bg-[var(--primary-foreground)] px-7 text-[0.95rem] text-[var(--petrol-deep)] hover:bg-[var(--primary-foreground)]/90"
+              className="group/button h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90"
             >
-              <Link href="/kontakt">
+              <Link href="/#programme">
                 {t("cta")}
                 <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
               </Link>
             </Button>
-
-            <Link
-              href="/about#how-i-work"
-              className="group inline-flex items-center gap-1.5 text-[0.95rem] text-[var(--primary-foreground)]/70 underline-offset-4 transition-colors hover:text-[var(--primary-foreground)] hover:underline"
-            >
-              {t("secondary")}
-              <ArrowRight
-                className="size-4 transition-transform duration-200 group-hover:translate-x-0.5"
-                aria-hidden
-              />
-            </Link>
-          </div>
-
-          <div
-            className="animate-rise mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-[var(--primary-foreground)]/15 pt-6 text-[0.78rem] text-[var(--primary-foreground)]/60"
-            style={{ animationDelay: "440ms" }}
-          >
-            <span className="inline-flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-[var(--clay)]" />
-              {t("credentialTrainer")}
-            </span>
-            <span className="inline-flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-[var(--clay)]" />
-              {t("credentialNutrition")}
-            </span>
           </div>
         </div>
 

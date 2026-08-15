@@ -62,24 +62,25 @@
   /*
    * Gold + mustard + beige palette — matches Katey's own brand board
    * ("Farben: Gold, Senfgelb, Beige, Weiß"; Wirkung: positiv, energiegeladen,
-   * selbstbewusst). Replaces the earlier plum/terracotta/petrol system: same
-   * structural roles (primary, accent, chip, three grounds + tint), retuned
-   * to the five brand-board swatches so the site and the logo read as one
-   * thing.
+   * selbstbewusst) — plus a dark petrol blue for titles and buttons, added
+   * on Katarina's explicit request afterwards: keep the beige/bronze ground
+   * as it is, "fine-tune" the petrol blue in for anything that reads as
+   * primary/CTA.
    *
-   * Reference hex targets, lifted from the swatch row:
+   * Reference hex targets:
    *   #FBF8F2  near-white (background)
    *   #2E2822  warm charcoal (text)
-   *   #C9973E  gold (--clay slot, warm accent — swatch 1/5)
-   *   #7A5A1E  deep bronze-gold (--plum slot, primary CTA — darkened for AAA)
-   *   #F1E6D6  pale beige (--sand slot — swatch 3)
+   *   #C9973E  gold (--clay slot, decorative accent — icons, underlines)
+   *   #1B2E3D  dark petrol blue (--plum slot, primary — titles + buttons)
+   *   #F1E6D6  pale beige (--sand slot)
    *
    * WCAG check on the near-white ground:
-   *   charcoal on background ~ 12:1  (AAA)
-   *   deep gold on background ~ 8:1  (AAA)
+   *   charcoal on background ~ 12:1     (AAA)
+   *   dark petrol blue on background ~ 11:1 (AAA)
    *   mustard gold on background ~ 2.6:1 (AA large text only — never body copy)
-   * → Primary CTAs use the deep gold, mustard is reserved for accents,
-   *   underlines, small badges, icon washes, focus rings.
+   * → Primary CTAs and eyebrow labels use the dark petrol blue; mustard gold
+   *   is reserved for decorative accents — icon washes, underlines, small
+   *   badges — never for text that needs to stay readable at body size.
    */
   --background: oklch(0.978 0.012 85);
   --foreground: oklch(0.245 0.014 60);
@@ -90,8 +91,10 @@
   --popover: oklch(0.99 0.007 82);
   --popover-foreground: oklch(0.245 0.014 60);
 
-  /* Primary = deep bronze-gold (AAA on near-white) */
-  --primary: oklch(0.44 0.09 78);
+  /* Primary = dark petrol blue (AAA on near-white). Katarina's own request:
+     keep the beige/bronze ground as it is, "fine-tune" a dark petrol blue
+     in for titles and buttons — everything that reads as primary/CTA. */
+  --primary: oklch(0.32 0.06 220);
   --primary-foreground: oklch(0.978 0.012 85);
 
   /* Secondary = pale beige chip */
@@ -102,7 +105,7 @@
   --muted-foreground: oklch(0.50 0.03 65);
 
   --accent: oklch(0.88 0.07 82);
-  --accent-foreground: oklch(0.44 0.09 78);
+  --accent-foreground: oklch(0.32 0.06 220);
 
   --destructive: oklch(0.55 0.18 28);
 
@@ -120,7 +123,7 @@
 
   --sidebar: oklch(0.955 0.02 82);
   --sidebar-foreground: oklch(0.245 0.014 60);
-  --sidebar-primary: oklch(0.44 0.09 78);
+  --sidebar-primary: oklch(0.32 0.06 220);
   --sidebar-primary-foreground: oklch(0.978 0.012 85);
   --sidebar-accent: oklch(0.91 0.032 80);
   --sidebar-accent-foreground: oklch(0.32 0.03 65);
@@ -129,7 +132,7 @@
 
   /* Signature accents */
   --clay: oklch(0.70 0.13 82);     /* Mustard gold  #C9973E — swatch 1/5 */
-  --plum: oklch(0.44 0.09 78);     /* Deep bronze-gold #7A5A1E — swatch 1, darkened for AAA */
+  --plum: oklch(0.32 0.06 220);    /* Dark petrol blue — titles + buttons, kept in the `--plum` slot so every existing bg-[var(--plum)] button follows without a rename */
   --sand: oklch(0.91 0.032 80);    /* Pale beige   #F1E6D6 — swatch 3 */
 
   /*

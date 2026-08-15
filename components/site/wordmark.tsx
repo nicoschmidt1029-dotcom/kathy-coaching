@@ -10,7 +10,10 @@ type Props = {
 
 export function Wordmark({ className, onDark = false }: Props) {
   const t = useTranslations("wordmark");
-  const markColor = onDark ? "var(--primary-foreground)" : "var(--plum)";
+  // Always gold, never the site's petrol-blue --plum: this is Katey's actual
+  // logo colour (her brand board is gold/mustard/beige), independent of
+  // whatever the primary CTA colour happens to be.
+  const markColor = onDark ? "var(--primary-foreground)" : "var(--clay)";
 
   return (
     <Link
@@ -83,7 +86,7 @@ export function Wordmark({ className, onDark = false }: Props) {
             "font-mono text-[0.62rem] tracking-[0.3em] uppercase md:text-[0.68rem]",
             onDark
               ? "text-[var(--primary-foreground)]/70"
-              : "text-[var(--plum)]/75"
+              : "text-[var(--clay)]/85"
           )}
         >
           {t("tagline")}

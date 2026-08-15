@@ -28,7 +28,7 @@ export function Mission() {
   const t = useTranslations("mission");
 
   return (
-    <section className="section-pad relative overflow-hidden bg-[var(--petrol-deep)] text-[var(--primary-foreground)]">
+    <section id="mission" className="section-pad relative overflow-hidden bg-[var(--petrol-deep)] text-[var(--primary-foreground)]">
       <div className="container-page">
         <p className="eyebrow text-[var(--primary-foreground)]/60">
           {t("eyebrow")}

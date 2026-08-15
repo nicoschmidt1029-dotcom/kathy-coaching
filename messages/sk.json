@@ -55,7 +55,8 @@
     "ariaLabel": "Katey Coaching — domovská stránka"
   },
   "nav": {
-    "about": "O mne",
+    "about": "Katey",
+    "mission": "Moje poslanie",
     "programs": "Programy",
     "testimonials": "Príbehy",
     "contact": "Kontakt",
@@ -70,14 +71,11 @@
   },
   "hero": {
     "eyebrow": "Pre ženy, ktoré hľadajú silu a hĺbku",
-    "headline": "Pozri sa na svoje telo, <em>ako ho stvoril Boh.</em>",
-    "body": "Tréning, výživa a viera — jedna cesta, šesť týždňov, prejdená spolu.",
-    "cta": "Poďme sa porozprávať",
-    "credentialTrainer": "Certifikovaná osobná trénerka",
-    "credentialNutrition": "Certifikovaná výživová poradkyňa",
+    "headline": "Verím, že v každom človeku je potenciál, ktorý ešte neobjavil. Niekedy stačí <em>správny smer.</em>",
+    "body": "Individuálny tréning · Jedálniček podľa tvojich cieľov · Duchovné sprevádzanie",
+    "cta": "Vyber si program",
     "inMotion": "V pohybe",
-    "videoAlt": "Video v pozadí — tréning a príroda v slučke",
-    "secondary": "Ako pracujem"
+    "videoAlt": "Video v pozadí — tréning a príroda v slučke"
   },
   "approach": {
     "systemName": "Prístup troch nití",

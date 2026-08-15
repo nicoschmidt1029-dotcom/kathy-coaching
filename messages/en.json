@@ -38,7 +38,8 @@
     "ariaLabel": "Katey Coaching — home"
   },
   "nav": {
-    "about": "About",
+    "about": "Katey",
+    "mission": "My mission",
     "programs": "Programs",
     "testimonials": "Testimonials",
     "contact": "Contact",
@@ -57,14 +58,11 @@
   },
   "hero": {
     "eyebrow": "For women who want strength and depth",
-    "headline": "See your body the way <em>God created it.</em>",
-    "body": "Training, nutrition and faith — one path, six weeks, walked together.",
-    "cta": "Start a conversation",
-    "credentialTrainer": "Certified Personal Trainer",
-    "credentialNutrition": "Certified Nutrition Coach",
+    "headline": "I believe every person carries potential inside them they haven't discovered yet. Sometimes you just need <em>the right direction.</em>",
+    "body": "One-on-one training · Meal plan based on your goals · Spiritual health",
+    "cta": "Choose a program",
     "inMotion": "In motion",
-    "videoAlt": "Hero background — training and nature loop",
-    "secondary": "See how I work"
+    "videoAlt": "Hero background — training and nature loop"
   },
   "approach": {
     "_comment": "systemName is the site-wide name of the method. It appears on home, about and programs — change it in this one place and every mention follows. Pending Katey's final wording.",

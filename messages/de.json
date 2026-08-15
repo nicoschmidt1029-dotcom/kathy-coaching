@@ -46,7 +46,8 @@
     "ariaLabel": "Katey Coaching — Startseite"
   },
   "nav": {
-    "about": "Über mich",
+    "about": "Katey",
+    "mission": "Meine Mission",
     "programs": "Programme",
     "testimonials": "Erfahrungen",
     "contact": "Kontakt",
@@ -61,14 +62,11 @@
   },
   "hero": {
     "eyebrow": "Für Frauen, die Kraft und Tiefe suchen",
-    "headline": "Sieh deinen Körper, <em>wie Gott ihn schuf.</em>",
-    "body": "Training, Ernährung und Glaube — ein Weg, sechs Wochen, gemeinsam gegangen.",
-    "cta": "Lass uns reden",
-    "credentialTrainer": "Zertifizierte Personal Trainerin",
-    "credentialNutrition": "Zertifizierte Ernährungsberaterin",
+    "headline": "Ich glaube, dass in jedem Menschen ein Potenzial steckt, das er noch nicht entdeckt hat. Manchmal braucht es nur <em>die richtige Richtung.</em>",
+    "body": "1:1-Training · Ernährungsplan nach deinen Zielen · Geistliche Begleitung",
+    "cta": "Wähle ein Programm",
     "inMotion": "In Bewegung",
-    "videoAlt": "Hintergrundvideo — Training und Natur im Loop",
-    "secondary": "So arbeite ich"
+    "videoAlt": "Hintergrundvideo — Training und Natur im Loop"
   },
   "approach": {
     "systemName": "Der Drei-Fäden-Ansatz",
