@@ -17,8 +17,10 @@
  *   - hero        →  /images/kathy/kathy-blazer-wide.png (blazer portrait, background AI-widened by Katarina herself)
  *   - heroBlazer  →  /images/kathy/kathy-blazer.jpg (the original, un-widened crop — not currently rendered)
  *   - heroMovementDetail → /images/kathy/kathy-07.jpg (gym, purple top, mid-stretch)
- *   - approachTrain → /images/kathy/kathy-06.jpg (gym, blue top)
  *   - about        → /images/kathy/kathy-01.jpg (running track, side profile)
+ *
+ * approachTrain is a commissioned illustration (block-training.png), not a
+ * photo — see its own comment below for why.
  *
  * about was kathy-07 (gym) until the gold/mustard rebrand — the gym's neon
  * green wall clashed hard with the new palette and there is no tool here to
@@ -44,7 +46,8 @@
  *
  * Unused but kept in repo:
  *   - kathy-02.jpg (track, back view), kathy-04.jpg (track, pointing),
- *     kathy-video-2.mp4 (real Katey clip — reusable later)
+ *     kathy-06.jpg (gym, blue top — was approachTrain before it moved to
+ *     an illustration), kathy-video-2.mp4 (real Katey clip — reusable later)
  *
  * Do NOT use:
  *   - kathy-05.jpg       (too-tight selfie)
@@ -100,15 +103,18 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-07.jpg",
     alt: "Katey stretching in the gym, looking toward the camera",
   },
-  // Katey's own — running track, seen from behind. Was the HomeBand photo
-  // (a standalone full-bleed pause section between Approach and How I Work);
-  // Katarina didn't like the gym photo that used to be here and asked for
-  // the HomeBand photo moved into this slot instead, so HomeBand is retired
-  // and this thread carries it. Warm track red/green also reads better next
-  // to the gold palette than the gym did.
+  // Commissioned line illustration — same hand and hue as Nourish and Soul.
+  // This thread ran a real photo of Katey (first the gym shot, briefly the
+  // HomeBand track photo) while the other two threads ran drawings, which
+  // read as an unplanned mix. Katarina asked for full consistency across
+  // all three, so this switches to the matching illustration too — reusing
+  // the kettlebell/towel art already drawn for the Personal Training block
+  // elsewhere on the site (see lib/block-art.ts) rather than commissioning
+  // a fourth drawing for the same subject. Rendered zoomed in — see the
+  // `zoom` note on approach.tsx's PILLARS.
   approachTrain: {
-    url: "/images/kathy/kathy-02.jpg",
-    alt: "Katey sitting on a running track, seen from behind, looking down the lane",
+    url: "/images/illustrations/block-training.png",
+    alt: "Line illustration: a kettlebell beside a folded towel",
   },
   // Commissioned line illustration — terracotta on cream, drawn for this site.
   // Replaced an Unsplash buddha bowl: stock food photography made the thread

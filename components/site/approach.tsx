@@ -1,15 +1,23 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Apple, Dumbbell, Heart } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { DisplayTitle } from "./display-title";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
 const PILLARS = [
   // icon: the same three glyphs (dumbbell, apple, heart) that ring the
   // figure on Katey's own logo — one per thread, in the same order.
-  { key: "train", image: TEMP_PHOTOS.approachTrain, icon: Dumbbell },
-  { key: "nourish", image: TEMP_PHOTOS.approachNourish, icon: Apple },
-  { key: "soul", image: TEMP_PHOTOS.approachSoul, icon: Heart },
+  //
+  // zoom: block-training.png was drawn as a small chip icon for the pricing
+  // cards — a kettlebell and towel centred in a lot of empty canvas. Nourish
+  // and Soul are full table-top scenes that fill their frame edge to edge;
+  // dropped in at the same crop, training would read as mostly blank space.
+  // Scaling and re-centring it onto just the kettlebell/towel cluster gets
+  // it to fill the frame the same way the other two do.
+  { key: "train", image: TEMP_PHOTOS.approachTrain, icon: Dumbbell, zoom: true },
+  { key: "nourish", image: TEMP_PHOTOS.approachNourish, icon: Apple, zoom: false },
+  { key: "soul", image: TEMP_PHOTOS.approachSoul, icon: Heart, zoom: false },
 ] as const;
 
 /**
@@ -47,7 +55,7 @@ export function Approach() {
         </div>
 
         <ul className="mt-20 space-y-20 md:mt-24 md:space-y-28">
-          {PILLARS.map(({ key, image, icon: Icon }, i) => (
+          {PILLARS.map(({ key, image, icon: Icon, zoom }, i) => (
             <li
               key={key}
               className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-14"
@@ -64,7 +72,10 @@ export function Approach() {
                       alt={image.alt}
                       fill
                       sizes="(max-width: 768px) 100vw, 45vw"
-                      className="object-cover"
+                      className={cn(
+                        "object-cover",
+                        zoom && "scale-[2.3] object-[48%_54%]"
+                      )}
                     />
                   </div>
                 </div>
