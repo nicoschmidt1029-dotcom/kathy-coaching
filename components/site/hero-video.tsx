@@ -68,7 +68,7 @@ export function HeroVideo({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-2xl bg-[oklch(0.86_0.05_42)] ring-1 ring-foreground/10 shadow-[0_30px_60px_-30px_rgba(60,40,52,0.3)]",
+        "relative overflow-hidden rounded-2xl bg-[oklch(0.86_0.05_82)] ring-1 ring-foreground/10 shadow-[0_30px_60px_-30px_rgba(60,40,52,0.3)]",
         className
       )}
     >
@@ -165,7 +165,7 @@ function PlaceholderState({
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(closest-side at 30% 40%, oklch(0.92 0.06 42 / 0.9), transparent 60%), radial-gradient(closest-side at 75% 70%, oklch(0.85 0.05 78 / 0.7), transparent 60%), linear-gradient(180deg, oklch(0.88 0.05 42), oklch(0.82 0.05 42))",
+              "radial-gradient(closest-side at 30% 40%, oklch(0.92 0.06 82 / 0.9), transparent 60%), radial-gradient(closest-side at 75% 70%, oklch(0.85 0.05 80 / 0.7), transparent 60%), linear-gradient(180deg, oklch(0.88 0.05 82), oklch(0.82 0.05 82))",
           }}
         />
       )}

@@ -23,7 +23,7 @@ export function NotFoundContent() {
         className="pointer-events-none absolute top-[-15%] right-[-10%] -z-10 h-[520px] w-[520px] rounded-full opacity-60"
         style={{
           background:
-            "radial-gradient(closest-side, oklch(0.88 0.05 42 / 0.7), transparent 70%)",
+            "radial-gradient(closest-side, oklch(0.88 0.05 82 / 0.7), transparent 70%)",
         }}
       />
       <div
@@ -31,7 +31,7 @@ export function NotFoundContent() {
         className="pointer-events-none absolute bottom-[-15%] left-[-10%] -z-10 h-[420px] w-[420px] rounded-full opacity-60"
         style={{
           background:
-            "radial-gradient(closest-side, oklch(0.92 0.022 78 / 0.7), transparent 70%)",
+            "radial-gradient(closest-side, oklch(0.92 0.022 80 / 0.7), transparent 70%)",
         }}
       />
 
@@ -72,7 +72,7 @@ export function NotFoundContent() {
             <Button
               asChild
               size="lg"
-              className="group/button h-12 bg-[var(--plum)] px-6 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
+              className="group/button h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
             >
               <Link href="/">
                 {t("cta")}

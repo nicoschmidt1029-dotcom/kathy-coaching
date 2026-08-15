@@ -256,7 +256,7 @@ export function Contact({ prefill }: Props = {}) {
                   type="submit"
                   size="lg"
                   disabled={state.status === "sending"}
-                  className="h-11 bg-[var(--plum)] px-6 text-[var(--primary-foreground)] transition-colors hover:bg-[var(--plum)]/90 disabled:cursor-not-allowed disabled:opacity-70"
+                  className="h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] transition-colors hover:bg-[var(--plum)]/90 disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   {state.status === "sending" ? t("submitting") : t("submit")}
                 </Button>

@@ -7,11 +7,12 @@ type Props = {
 
 /**
  * Editorial portrait placeholder — used where a real photo will land later
- * but a plain grey box would look unfinished. Renders a Fraunces italic
- * "K" monogram over a soft warm gradient with a scattered line-art
- * botanical pattern in terracotta, plus a small brushstroke echoing the
- * hero underline motif. Deliberately abstract: no face, no silhouette,
- * no AI portrait — reads as design, not as person.
+ * but a plain grey box would look unfinished. Renders an italic "K"
+ * monogram (the site's display serif, Instrument Serif) over a soft warm
+ * gradient with a scattered line-art botanical pattern in gold, plus a
+ * small brushstroke echoing the hero underline motif. Deliberately
+ * abstract: no face, no silhouette, no AI portrait — reads as design, not
+ * as person.
  */
 export function PortraitPlaceholder({ label, className }: Props) {
   return (
@@ -22,7 +23,7 @@ export function PortraitPlaceholder({ label, className }: Props) {
       )}
       style={{
         background:
-          "linear-gradient(160deg, var(--sand) 0%, oklch(0.90 0.04 60) 100%)",
+          "linear-gradient(160deg, var(--sand) 0%, oklch(0.90 0.04 82) 100%)",
       }}
     >
       {/* Scattered line-art botanical pattern — small leaves at low opacity
@@ -86,11 +87,11 @@ export function PortraitPlaceholder({ label, className }: Props) {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(closest-side at 50% 44%, oklch(0.92 0.05 42 / 0.32), transparent 62%)",
+            "radial-gradient(closest-side at 50% 44%, oklch(0.92 0.05 82 / 0.32), transparent 62%)",
         }}
       />
 
-      {/* Fraunces italic monogram — Light weight for the finer serif */}
+      {/* Italic display-serif monogram */}
       <div className="absolute inset-0 flex items-center justify-center">
         <span
           aria-hidden

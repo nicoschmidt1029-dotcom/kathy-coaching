@@ -225,7 +225,7 @@ export function Programs({ bundlesOnly = false }: Props = {}) {
                       asChild
                       size="lg"
                       className={cn(
-                        "group/button mt-6 h-11 w-full",
+                        "group/button mt-6 h-12 w-full text-[0.95rem]",
                         bundle.recommended
                           ? "bg-[var(--primary-foreground)] text-[var(--plum)] hover:bg-[var(--primary-foreground)]/90"
                           : "bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"

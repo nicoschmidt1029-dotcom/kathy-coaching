@@ -266,7 +266,7 @@ export function ProgramsBuilder() {
                 <Button
                   asChild
                   size="lg"
-                  className="group/button mt-6 h-12 w-full bg-[var(--primary-foreground)] px-6 text-[var(--plum)] hover:bg-[var(--primary-foreground)]/90"
+                  className="group/button mt-6 h-12 w-full bg-[var(--primary-foreground)] px-7 text-[0.95rem] text-[var(--plum)] hover:bg-[var(--primary-foreground)]/90"
                 >
                   <Link href={contactHref}>
                     {t("cta")}

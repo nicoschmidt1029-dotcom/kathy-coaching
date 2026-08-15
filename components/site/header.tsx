@@ -81,7 +81,7 @@ export function Header() {
           <Button
             asChild
             size="lg"
-            className="hidden bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90 md:inline-flex"
+            className="hidden h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90 md:inline-flex"
           >
             <Link href="/#kontakt">{t("cta")}</Link>
           </Button>
@@ -126,7 +126,7 @@ export function Header() {
                   <Button
                     asChild
                     size="lg"
-                    className="w-full bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
+                    className="h-12 w-full bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
                   >
                     <Link href="/#kontakt">{t("cta")}</Link>
                   </Button>
