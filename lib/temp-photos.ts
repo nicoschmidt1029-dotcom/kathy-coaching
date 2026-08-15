@@ -15,9 +15,16 @@
  *
  * Slots currently on real Katey content:
  *   - hero        →  /images/kathy/kathy-blazer.jpg (still; hero video disabled)
- *   - heroMovementDetail → /images/kathy/kathy-01.jpg (track profile, top-right of hero)
+ *   - heroMovementDetail → /images/kathy/kathy-07.jpg (gym, purple top, mid-stretch)
  *   - approachTrain → /images/kathy/kathy-06.jpg (gym, blue top)
- *   - about        → /images/kathy/kathy-07.jpg (gym, purple top, mid-stretch)
+ *   - about        → /images/kathy/kathy-01.jpg (running track, side profile)
+ *
+ * about was kathy-07 (gym) until the gold/mustard rebrand — the gym's neon
+ * green wall clashed hard with the new palette and there is no tool here to
+ * repaint just the background without touching her skin/face too, so the
+ * slot moved to the track photo instead, which is warm-toned already.
+ * kathy-07 stays assigned to heroMovementDetail, which no component
+ * currently renders, so it is effectively unused but easy to bring back.
  *
  * Slots still on stock (waiting on real content):
  *   - approachNourish, approachSoul (Unsplash atmospheric shots)
@@ -66,10 +73,12 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-blazer.jpg",
     alt: "Katey in a beige blazer, leaning against a sunlit wall, looking to the side",
   },
-  // Katey's own — running track, seated side profile (moved from the hero slot)
+  // Katey's own — gym, purple top, stretching forward on the mat. Not
+  // currently rendered anywhere (no component reads this slot); kept
+  // assigned rather than set to null so it is one edit away from reuse.
   heroMovementDetail: {
-    url: "/images/kathy/kathy-01.jpg",
-    alt: "Katey sitting on a running track, side profile",
+    url: "/images/kathy/kathy-07.jpg",
+    alt: "Katey stretching in the gym, looking toward the camera",
   },
   // Katey's own — gym, blue top, crouched mid-workout (Train-the-body thread)
   approachTrain: {
@@ -103,11 +112,12 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-04.jpg",
     alt: "Katey sitting on a running track, looking into the distance",
   },
-  // Katey's own — gym, purple top, stretching forward on the mat, looking
-  // to camera. More distance / less selfie than the tight kathy-05 crop.
+  // Katey's own — running track, seated side profile, looking off into the
+  // distance. Warm red track and greenery read gold rather than clashing,
+  // which the gym photo formerly here did not.
   about: {
-    url: "/images/kathy/kathy-07.jpg",
-    alt: "Portrait of Katey stretching in the gym, looking toward the camera",
+    url: "/images/kathy/kathy-01.jpg",
+    alt: "Portrait of Katey sitting on a running track, side profile",
   },
 };
 
