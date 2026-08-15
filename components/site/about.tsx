@@ -57,14 +57,14 @@ export function About() {
             <p>
               {t.rich("calling", {
                 em: (chunks) => (
-                  <em className="not-italic font-display">{chunks}</em>
+                  <em className="not-italic font-display italic">{chunks}</em>
                 ),
               })}
             </p>
             <p>
               {t.rich("story", {
                 em: (chunks) => (
-                  <em className="not-italic font-display">{chunks}</em>
+                  <em className="not-italic font-display italic">{chunks}</em>
                 ),
               })}
             </p>

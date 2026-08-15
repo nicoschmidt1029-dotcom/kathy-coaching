@@ -29,14 +29,16 @@ async function fetchGoogleFont(family: string, params: string) {
 
 export default async function Image() {
   const [regular, italic] = await Promise.all([
-    fetchGoogleFont("Fraunces", "wght@500"),
-    fetchGoogleFont("Fraunces", "ital,wght@1,400"),
+    fetchGoogleFont("Instrument+Serif", "wght@400"),
+    fetchGoogleFont("Instrument+Serif", "ital,wght@1,400"),
   ]);
 
-  const CREAM = "#F7F2EA";
-  const CHARCOAL = "#2E2622";
-  const PLUM = "#5B3A4A";
-  const CLAY = "#C97C5D";
+  // Matches app/globals.css :root — kept in hex here because Satori (the
+  // renderer behind next/og) can't read CSS custom properties.
+  const CREAM = "#FBF8F2";
+  const CHARCOAL = "#2E2822";
+  const PETROL = "#1B2E3D";
+  const GOLD = "#C9973E";
 
   return new ImageResponse(
     (
@@ -51,7 +53,7 @@ export default async function Image() {
           background: CREAM,
           color: CHARCOAL,
           padding: "72px 88px",
-          fontFamily: "Fraunces",
+          fontFamily: "Instrument Serif",
         }}
       >
         {/* Soft sand wash, bottom-left — kept off-canvas so it doesn't overlap the meta row */}
@@ -76,8 +78,8 @@ export default async function Image() {
               fontSize: 24,
               letterSpacing: "0.24em",
               textTransform: "uppercase",
-              color: PLUM,
-              fontWeight: 500,
+              color: PETROL,
+              fontWeight: 400,
               fontStyle: "normal",
             }}
           >
@@ -88,7 +90,7 @@ export default async function Image() {
               width: 8,
               height: 8,
               borderRadius: 4,
-              background: CLAY,
+              background: GOLD,
               display: "flex",
             }}
           />
@@ -108,12 +110,12 @@ export default async function Image() {
               fontSize: 96,
               lineHeight: 1.02,
               letterSpacing: "-0.035em",
-              fontWeight: 500,
+              fontWeight: 400,
               fontStyle: "normal",
               color: CHARCOAL,
             }}
           >
-            See your body the way
+            Sometimes you just need
           </span>
           <span
             style={{
@@ -125,7 +127,7 @@ export default async function Image() {
               color: CHARCOAL,
             }}
           >
-            God created it.
+            the right direction.
           </span>
           <span
             style={{
@@ -134,13 +136,13 @@ export default async function Image() {
               lineHeight: 1.35,
               letterSpacing: "-0.01em",
               color: "rgba(55, 48, 42, 0.62)",
-              fontWeight: 500,
+              fontWeight: 400,
               fontStyle: "normal",
               maxWidth: 820,
             }}
           >
-            Personal training, nutrition &amp; Christian mentoring — one path,
-            walked together.
+            One-on-one training · meal plan based on your goals · spiritual
+            health.
           </span>
         </div>
 
@@ -158,7 +160,7 @@ export default async function Image() {
               letterSpacing: "0.22em",
               textTransform: "uppercase",
               color: "rgba(55, 48, 42, 0.5)",
-              fontWeight: 500,
+              fontWeight: 400,
               fontStyle: "normal",
             }}
           >
@@ -167,8 +169,8 @@ export default async function Image() {
           <span
             style={{
               fontSize: 22,
-              color: PLUM,
-              fontWeight: 500,
+              color: PETROL,
+              fontWeight: 400,
               fontStyle: "normal",
             }}
           >
@@ -181,13 +183,13 @@ export default async function Image() {
       ...size,
       fonts: [
         {
-          name: "Fraunces",
+          name: "Instrument Serif",
           data: regular,
-          weight: 500,
+          weight: 400,
           style: "normal",
         },
         {
-          name: "Fraunces",
+          name: "Instrument Serif",
           data: italic,
           weight: 400,
           style: "italic",
