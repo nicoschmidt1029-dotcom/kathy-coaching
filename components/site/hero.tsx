@@ -7,24 +7,14 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
 import { TempPill } from "./placeholder";
 
 /**
- * Split hero on the site's own cream, photo on the right.
- *
- * It used to be text laid over a darkened full-bleed photo. That reads moody,
- * but two gradient scrims are needed to keep the type legible, and everything
- * ends up sitting in a grey haze. On a light ground the type is simply black
- * on cream, the photo is unmuddied, and the page reads as considered rather
- * than atmospheric — which is what "expensive" actually means here.
- *
- * The ground is petrol-deep — a deep bronze-gold now, matching Katey's own
- * brand board (gold, mustard, beige, white). Cream was chosen to get away
- * from the grey haze of the old scrim-over-photo hero, and that reasoning
- * still holds — but a light hero on a light page meant the site opened with
- * no colour at all. Dark ground, unmuddied photo beside it, type simply
- * cream on bronze: the contrast comes from the layout, not from a gradient
- * laid over a picture.
- *
- * The mustard accent stays mustard here — it is the one accent with enough
- * warmth to carry on a dark bronze ground.
+ * Full-bleed photo hero, text laid over it — Katarina's own instruction
+ * ("nice photo as a background"). An earlier version of this hero tried the
+ * same thing and moved away from it because two gradient scrims were needed
+ * to keep the type legible; the fix here is one scrim, not two: a single
+ * left-to-right gradient in --petrol-deep (the site's own dark ground
+ * colour, not plain black) so the text sits on a "surface" that belongs to
+ * the palette, and the photo stays clear on the right where nothing needs
+ * to be read.
  *
  * The eyebrow names the reader, not the coach. "Holistic coaching ·
  * faith-rooted" described Katey; a visitor deciding in two seconds needs to
@@ -42,11 +32,32 @@ export function Hero() {
   const photo = TEMP_PHOTOS.hero;
 
   return (
-    <section className="relative overflow-hidden bg-[var(--petrol-deep)] text-[var(--primary-foreground)]">
-      <div className="container-page grid grid-cols-1 items-center gap-12 py-16 md:grid-cols-12 md:gap-14 md:py-24 lg:gap-20">
-        <div className="md:col-span-6">
+    <section className="relative isolate flex min-h-[34rem] items-center overflow-hidden py-20 md:min-h-[42rem] md:py-28 lg:min-h-[46rem]">
+      {photo && (
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src={photo.url}
+            alt={photo.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[32%_42%]"
+          />
+          {/* One scrim, not two: dark on the left where the type sits, clear
+              on the right where the photo needs to stay a photo. */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--petrol-deep)]/92 via-[var(--petrol-deep)]/55 to-[var(--petrol-deep)]/10" />
+          {/* A second, much lighter pass bottom-to-top keeps the CTA button
+              and credential dots legible even where the horizontal scrim
+              alone would be thin. */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--petrol-deep)]/45 via-transparent to-transparent" />
+          {photo.credit && <TempPill credit={photo.credit} slot="Hero" />}
+        </div>
+      )}
+
+      <div className="container-page text-[var(--primary-foreground)]">
+        <div className="max-w-xl">
           <p
-            className="animate-rise eyebrow text-[var(--primary-foreground)]/60"
+            className="animate-rise eyebrow text-[var(--primary-foreground)]/65"
             style={{ animationDelay: "80ms" }}
           >
             {t("eyebrow")}
@@ -84,7 +95,7 @@ export function Hero() {
           </h1>
 
           <p
-            className="animate-rise mt-8 max-w-md text-pretty text-[var(--primary-foreground)]/75 sm:text-lg sm:leading-[1.7]"
+            className="animate-rise mt-8 max-w-md text-pretty text-[var(--primary-foreground)]/80 sm:text-lg sm:leading-[1.7]"
             style={{ animationDelay: "240ms" }}
           >
             {t("body")}
@@ -106,24 +117,6 @@ export function Hero() {
             </Button>
           </div>
         </div>
-
-        {photo && (
-          <div className="animate-rise-slow md:col-span-6">
-            <div className="relative aspect-[4/5] min-h-[26rem] overflow-hidden rounded-2xl md:min-h-[34rem] lg:min-h-[40rem]">
-              <Image
-                src={photo.url}
-                alt={photo.alt}
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 40vw"
-                className="object-cover object-[28%_50%]"
-              />
-              {photo.credit && (
-                <TempPill credit={photo.credit} slot="Hero" />
-              )}
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
