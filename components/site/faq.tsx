@@ -13,7 +13,7 @@ export function Faq() {
   const t = useTranslations("faq");
 
   return (
-    <section id="faq" className="section-pad">
+    <section id="faq" className="bg-[var(--petrol-tint)] section-pad">
       <div className="container-page">
         {/* Head across the full width. Beside the accordion, the display
             title had four columns to live in and broke every other word. */}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Apple, Dumbbell, Heart } from "lucide-react";
 import { DisplayTitle } from "./display-title";
 import { cn } from "@/lib/utils";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
@@ -7,9 +8,11 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
 const PILLARS = [
   // onPhoto: the hollow half of the label lands on a photograph rather than
   // on a cream illustration, so its outline has to switch to white.
-  { key: "train", image: TEMP_PHOTOS.approachTrain, onPhoto: true },
-  { key: "nourish", image: TEMP_PHOTOS.approachNourish, onPhoto: false },
-  { key: "soul", image: TEMP_PHOTOS.approachSoul, onPhoto: false },
+  // icon: the same three glyphs (dumbbell, apple, heart) that ring the
+  // figure on Katey's own logo — one per thread, in the same order.
+  { key: "train", image: TEMP_PHOTOS.approachTrain, onPhoto: true, icon: Dumbbell },
+  { key: "nourish", image: TEMP_PHOTOS.approachNourish, onPhoto: false, icon: Apple },
+  { key: "soul", image: TEMP_PHOTOS.approachSoul, onPhoto: false, icon: Heart },
 ] as const;
 
 /**
@@ -28,7 +31,7 @@ export function Approach() {
   const t = useTranslations("approach");
 
   return (
-    <section id="approach" className="section-pad relative overflow-hidden">
+    <section id="approach" className="bg-[var(--petrol-tint)] section-pad relative overflow-hidden">
       <div className="container-page">
         <div className="max-w-3xl">
           <p className="eyebrow">{t("systemName")}</p>
@@ -40,7 +43,7 @@ export function Approach() {
         </div>
 
         <ul className="mt-20 space-y-24 md:mt-28 md:space-y-40">
-          {PILLARS.map(({ key, image, onPhoto }, i) => (
+          {PILLARS.map(({ key, image, onPhoto, icon: Icon }, i) => (
             <li
               key={key}
               className="relative grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-14"
@@ -81,13 +84,21 @@ export function Approach() {
                     i % 2 === 0 ? "md:order-2 md:col-span-6" : "md:col-span-6"
                   }
                 >
-                  <div className="relative aspect-[5/4] overflow-hidden rounded-2xl">
+                  <div
+                    className={cn(
+                      "relative aspect-[5/4] overflow-hidden rounded-2xl",
+                      key === "train" && "photo-warm-wash"
+                    )}
+                  >
                     <Image
                       src={image.url}
                       alt={image.alt}
                       fill
                       sizes="(max-width: 768px) 100vw, 45vw"
-                      className="object-cover"
+                      className={cn(
+                        "object-cover",
+                        key === "train" && "photo-warm-grade"
+                      )}
                     />
                   </div>
                 </div>
@@ -98,8 +109,15 @@ export function Approach() {
                   i % 2 === 0 ? "md:order-1 md:col-span-6" : "md:col-span-6"
                 }
               >
-                <span className="caption">
-                  {t("threadLabel", { number: String(i + 1) })}
+                <span className="inline-flex items-center gap-2">
+                  <Icon
+                    aria-hidden
+                    className="size-4 text-[var(--clay)]"
+                    strokeWidth={1.75}
+                  />
+                  <span className="caption">
+                    {t("threadLabel", { number: String(i + 1) })}
+                  </span>
                 </span>
                 <h3 className="mt-3 font-display text-[clamp(1.6rem,3.2vw,2.4rem)] leading-tight font-normal">
                   {t(`${key}.title`)}

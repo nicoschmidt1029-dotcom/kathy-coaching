@@ -44,6 +44,9 @@
   --color-clay: var(--clay);
   --color-plum: var(--plum);
   --color-sand: var(--sand);
+  --color-petrol: var(--petrol);
+  --color-petrol-deep: var(--petrol-deep);
+  --color-petrol-tint: var(--petrol-tint);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -57,71 +60,100 @@
 
 :root {
   /*
-   * Warm cream + terracotta + plum palette.
+   * Gold + mustard + beige palette — matches Katey's own brand board
+   * ("Farben: Gold, Senfgelb, Beige, Weiß"; Wirkung: positiv, energiegeladen,
+   * selbstbewusst). Replaces the earlier plum/terracotta/petrol system: same
+   * structural roles (primary, accent, chip, three grounds + tint), retuned
+   * to the five brand-board swatches so the site and the logo read as one
+   * thing.
    *
-   * Reference hex targets:
-   *   #F7F2EA  cream (background)
-   *   #2E2622  warm charcoal (text)
-   *   #C97C5D  terracotta (--clay, warm accent)
-   *   #5B3A4A  deep plum (--plum, primary CTA)
+   * Reference hex targets, lifted from the swatch row:
+   *   #FBF8F2  near-white (background)
+   *   #2E2822  warm charcoal (text)
+   *   #C9973E  gold (--clay slot, warm accent — swatch 1/5)
+   *   #7A5A1E  deep bronze-gold (--plum slot, primary CTA — darkened for AAA)
+   *   #F1E6D6  pale beige (--sand slot — swatch 3)
    *
-   * WCAG check on cream ground:
-   *   charcoal on cream ~ 12:1  (AAA)
-   *   plum on cream ~ 9:1       (AAA)
-   *   terracotta on cream ~ 3:1 (AA large text only — never body copy)
-   * → Primary CTAs use plum, terracotta is reserved for accents,
+   * WCAG check on the near-white ground:
+   *   charcoal on background ~ 12:1  (AAA)
+   *   deep gold on background ~ 8:1  (AAA)
+   *   mustard gold on background ~ 2.6:1 (AA large text only — never body copy)
+   * → Primary CTAs use the deep gold, mustard is reserved for accents,
    *   underlines, small badges, icon washes, focus rings.
    */
-  --background: oklch(0.965 0.014 78);
-  --foreground: oklch(0.245 0.012 45);
+  --background: oklch(0.978 0.012 85);
+  --foreground: oklch(0.245 0.014 60);
 
-  --card: oklch(0.985 0.008 72);
-  --card-foreground: oklch(0.245 0.012 45);
+  --card: oklch(0.99 0.007 82);
+  --card-foreground: oklch(0.245 0.014 60);
 
-  --popover: oklch(0.985 0.008 72);
-  --popover-foreground: oklch(0.245 0.012 45);
+  --popover: oklch(0.99 0.007 82);
+  --popover-foreground: oklch(0.245 0.014 60);
 
-  /* Primary = deep plum (AAA on cream) */
-  --primary: oklch(0.345 0.055 348);
-  --primary-foreground: oklch(0.965 0.014 78);
+  /* Primary = deep bronze-gold (AAA on near-white) */
+  --primary: oklch(0.44 0.09 78);
+  --primary-foreground: oklch(0.978 0.012 85);
 
-  /* Secondary = warm beige chip */
-  --secondary: oklch(0.90 0.022 62);
-  --secondary-foreground: oklch(0.30 0.014 45);
+  /* Secondary = pale beige chip */
+  --secondary: oklch(0.91 0.032 80);
+  --secondary-foreground: oklch(0.32 0.03 65);
 
-  --muted: oklch(0.93 0.014 72);
-  --muted-foreground: oklch(0.48 0.02 55);
+  --muted: oklch(0.94 0.02 82);
+  --muted-foreground: oklch(0.50 0.03 65);
 
-  --accent: oklch(0.88 0.06 42);
-  --accent-foreground: oklch(0.345 0.055 348);
+  --accent: oklch(0.88 0.07 82);
+  --accent-foreground: oklch(0.44 0.09 78);
 
   --destructive: oklch(0.55 0.18 28);
 
-  --border: oklch(0.87 0.015 68);
-  --input: oklch(0.87 0.015 68);
-  --ring: oklch(0.55 0.10 42);
+  --border: oklch(0.88 0.022 78);
+  --input: oklch(0.88 0.022 78);
+  --ring: oklch(0.68 0.11 82);
 
-  --chart-1: oklch(0.645 0.115 42);
-  --chart-2: oklch(0.55 0.06 62);
-  --chart-3: oklch(0.345 0.055 348);
-  --chart-4: oklch(0.72 0.04 68);
-  --chart-5: oklch(0.42 0.08 42);
+  --chart-1: oklch(0.70 0.13 82);
+  --chart-2: oklch(0.60 0.08 78);
+  --chart-3: oklch(0.44 0.09 78);
+  --chart-4: oklch(0.80 0.05 84);
+  --chart-5: oklch(0.35 0.06 75);
 
   --radius: 0.75rem;
 
-  --sidebar: oklch(0.945 0.014 68);
-  --sidebar-foreground: oklch(0.245 0.012 45);
-  --sidebar-primary: oklch(0.345 0.055 348);
-  --sidebar-primary-foreground: oklch(0.965 0.014 78);
-  --sidebar-accent: oklch(0.90 0.022 62);
-  --sidebar-accent-foreground: oklch(0.30 0.014 45);
-  --sidebar-border: oklch(0.87 0.015 68);
-  --sidebar-ring: oklch(0.55 0.10 42);
+  --sidebar: oklch(0.955 0.02 82);
+  --sidebar-foreground: oklch(0.245 0.014 60);
+  --sidebar-primary: oklch(0.44 0.09 78);
+  --sidebar-primary-foreground: oklch(0.978 0.012 85);
+  --sidebar-accent: oklch(0.91 0.032 80);
+  --sidebar-accent-foreground: oklch(0.32 0.03 65);
+  --sidebar-border: oklch(0.88 0.022 78);
+  --sidebar-ring: oklch(0.68 0.11 82);
 
   /* Signature accents */
-  --clay: oklch(0.645 0.115 42);   /* Terracotta #C97C5D */
-  --plum: oklch(0.345 0.055 348);  /* Deep Plum   #5B3A4A */
-  --sand: oklch(0.90 0.028 62);    /* Warm beige, tuned toward clay */
+  --clay: oklch(0.70 0.13 82);     /* Mustard gold  #C9973E — swatch 1/5 */
+  --plum: oklch(0.44 0.09 78);     /* Deep bronze-gold #7A5A1E — swatch 1, darkened for AAA */
+  --sand: oklch(0.91 0.032 80);    /* Pale beige   #F1E6D6 — swatch 3 */
+
+  /*
+   * "Petrol" keeps its variable names from the earlier palette (renaming
+   * would touch every section component); the colour itself is now a deep,
+   * warm bronze-gold rather than a blue-green. Same structural role as
+   * before: three grounds in descending weight (hero, mission band,
+   * footer), one pale tint carrying the sections between them.
+   *
+   *   --petrol-deep  #3A2A10  cream on it ~ 12:1 (AAA) — grounds
+   *   --petrol       #C9973E  large fills, icon washes, rules — never body text
+   */
+  --petrol-deep: oklch(0.30 0.045 70);
+  --petrol: oklch(0.70 0.13 82);
+
+  /*
+   * The pale end of the same hue — pale beige (swatch 4), warmer and pinker
+   * than the plain background so alternating the two still gives the scroll
+   * a rhythm.
+   *
+   * Light enough that nothing on it needs recolouring — charcoal body text
+   * still clears AAA, so a section can be moved onto it by adding one class.
+   */
+  --petrol-tint: oklch(0.93 0.028 68);
 }
 
 .dark {
@@ -152,9 +184,9 @@
   --sidebar-border: oklch(1 0 0 / 8%);
   --sidebar-ring: oklch(0.72 0.08 42);
 
-  --clay: oklch(0.72 0.08 42);
-  --plum: oklch(0.55 0.06 348);
-  --sand: oklch(0.30 0.022 62);
+  --clay: oklch(0.75 0.13 82);
+  --plum: oklch(0.72 0.10 80);
+  --sand: oklch(0.32 0.03 75);
 }
 
 @layer base {
@@ -186,7 +218,7 @@
 
   /* Custom selection */
   ::selection {
-    background-color: oklch(0.645 0.115 42 / 0.22);
+    background-color: oklch(0.70 0.13 82 / 0.28);
     color: var(--foreground);
   }
 
@@ -194,13 +226,13 @@
   ::-webkit-scrollbar { width: 10px; height: 10px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb {
-    background: oklch(0.55 0.10 42 / 0.28);
+    background: oklch(0.60 0.10 80 / 0.32);
     border-radius: 999px;
     border: 2px solid transparent;
     background-clip: padding-box;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.45 0.10 42 / 0.5);
+    background: oklch(0.48 0.09 78 / 0.55);
     background-clip: padding-box;
     border: 2px solid transparent;
   }
@@ -418,6 +450,18 @@
     .display-hollow-onphoto { -webkit-text-stroke-width: 2px; }
   }
 
+  /* Same cut, cream stroke on a flat dark ground (the petrol mission band).
+     No text-shadow here — unlike a photograph the ground is even, so the
+     outline needs no separation from it. */
+  .display-hollow-light {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--primary-foreground);
+    paint-order: stroke fill;
+  }
+  @media (min-width: 768px) {
+    .display-hollow-light { -webkit-text-stroke-width: 2px; }
+  }
+
 
   /* Neutral card surface — cream panel, hairline ring, shared radius. */
   .card-surface {
@@ -430,6 +474,42 @@
 @layer utilities {
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
+
+  /*
+   * Warm gold grade for Katey's real photos.
+   *
+   * The photos were shot before the gold/mustard rebrand and carry whatever
+   * ambient colour their rooms had (cool gym light, a blue top, a purple
+   * top) — next to the new palette they read as a different site. Repainting
+   * clothing or backgrounds needs image generation this environment doesn't
+   * have; a colour grade is the honest substitute available in CSS. A
+   * sepia+saturate base pulls every photo toward gold/brown, then a
+   * translucent bronze wash (mix-blend: multiply) ties the shadows to
+   * --petrol-deep and a soft gold sits over the highlights (mix-blend:
+   * soft-light) — same two-step grade a photo editor would use, done live.
+   */
+  .photo-warm-grade {
+    /* grayscale first kills off-brand hues (gym-wall green, cool blues) so
+       the sepia pass has nothing but warm tone left to work with; saturate
+       then restores punch inside that narrower, gold-leaning range. */
+    filter: grayscale(0.55) sepia(0.65) saturate(1.5) brightness(1.03) contrast(1.05);
+  }
+  .photo-warm-wash {
+    position: relative;
+  }
+  .photo-warm-wash::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      160deg,
+      oklch(0.70 0.13 82 / 0.30) 0%,
+      oklch(0.44 0.09 78 / 0.24) 55%,
+      oklch(0.30 0.045 70 / 0.38) 100%
+    );
+    mix-blend-mode: multiply;
+  }
 
   /* Subtle paper grain — earned, not sprayed */
   .grain::before {

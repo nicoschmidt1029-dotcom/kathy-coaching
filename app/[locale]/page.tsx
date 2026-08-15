@@ -6,6 +6,7 @@ import { HomeBand } from "@/components/site/home-band";
 import { HowIWork } from "@/components/site/how-i-work";
 import { Programs } from "@/components/site/programs";
 import { Faq } from "@/components/site/faq";
+import { Mission } from "@/components/site/mission";
 import { Contact } from "@/components/site/contact";
 import {
   ADDONS,
@@ -80,6 +81,7 @@ export default async function Home({
       <HowIWork />
       <Programs bundlesOnly />
       <Faq />
+      <Mission />
       <Contact prefill={prefill} />
     </>
   );

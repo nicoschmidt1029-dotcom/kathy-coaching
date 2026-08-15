@@ -14,6 +14,17 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  * on cream, the photo is unmuddied, and the page reads as considered rather
  * than atmospheric — which is what "expensive" actually means here.
  *
+ * The ground is petrol-deep — a deep bronze-gold now, matching Katey's own
+ * brand board (gold, mustard, beige, white). Cream was chosen to get away
+ * from the grey haze of the old scrim-over-photo hero, and that reasoning
+ * still holds — but a light hero on a light page meant the site opened with
+ * no colour at all. Dark ground, unmuddied photo beside it, type simply
+ * cream on bronze: the contrast comes from the layout, not from a gradient
+ * laid over a picture.
+ *
+ * The mustard accent stays mustard here — it is the one accent with enough
+ * warmth to carry on a dark bronze ground.
+ *
  * The eyebrow names the reader, not the coach. "Holistic coaching ·
  * faith-rooted" described Katey; a visitor deciding in two seconds needs to
  * know whether this is for them.
@@ -23,11 +34,11 @@ export function Hero() {
   const photo = TEMP_PHOTOS.hero;
 
   return (
-    <section className="relative overflow-hidden bg-background">
+    <section className="relative overflow-hidden bg-[var(--petrol-deep)] text-[var(--primary-foreground)]">
       <div className="container-page grid grid-cols-1 items-center gap-12 py-16 md:grid-cols-12 md:gap-14 md:py-24 lg:gap-20">
         <div className="md:col-span-6">
           <p
-            className="animate-rise eyebrow"
+            className="animate-rise eyebrow text-[var(--primary-foreground)]/60"
             style={{ animationDelay: "80ms" }}
           >
             {t("eyebrow")}
@@ -65,7 +76,7 @@ export function Hero() {
           </h1>
 
           <p
-            className="animate-rise mt-8 max-w-md text-pretty text-foreground/70 sm:text-lg sm:leading-[1.7]"
+            className="animate-rise mt-8 max-w-md text-pretty text-[var(--primary-foreground)]/75 sm:text-lg sm:leading-[1.7]"
             style={{ animationDelay: "240ms" }}
           >
             {t("body")}
@@ -78,7 +89,7 @@ export function Hero() {
             <Button
               asChild
               size="lg"
-              className="group/button h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
+              className="group/button h-12 bg-[var(--primary-foreground)] px-7 text-[0.95rem] text-[var(--petrol-deep)] hover:bg-[var(--primary-foreground)]/90"
             >
               <Link href="/kontakt">
                 {t("cta")}
@@ -88,7 +99,7 @@ export function Hero() {
 
             <Link
               href="/about#how-i-work"
-              className="group inline-flex items-center gap-1.5 text-[0.95rem] text-foreground/65 underline-offset-4 transition-colors hover:text-foreground hover:underline"
+              className="group inline-flex items-center gap-1.5 text-[0.95rem] text-[var(--primary-foreground)]/70 underline-offset-4 transition-colors hover:text-[var(--primary-foreground)] hover:underline"
             >
               {t("secondary")}
               <ArrowRight
@@ -99,7 +110,7 @@ export function Hero() {
           </div>
 
           <div
-            className="animate-rise mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-foreground/[0.08] pt-6 text-[0.78rem] text-foreground/55"
+            className="animate-rise mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-[var(--primary-foreground)]/15 pt-6 text-[0.78rem] text-[var(--primary-foreground)]/60"
             style={{ animationDelay: "440ms" }}
           >
             <span className="inline-flex items-center gap-2">
@@ -115,14 +126,14 @@ export function Hero() {
 
         {photo && (
           <div className="animate-rise-slow md:col-span-6">
-            <div className="relative aspect-[4/5] min-h-[26rem] overflow-hidden rounded-2xl md:min-h-[34rem] lg:min-h-[40rem]">
+            <div className="photo-warm-wash relative aspect-[4/5] min-h-[26rem] overflow-hidden rounded-2xl md:min-h-[34rem] lg:min-h-[40rem]">
               <Image
                 src={photo.url}
                 alt={photo.alt}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 40vw"
-                className="object-cover object-[50%_25%]"
+                className="photo-warm-grade object-cover object-[50%_25%]"
               />
             </div>
           </div>

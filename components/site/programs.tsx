@@ -251,13 +251,13 @@ export function Programs({ bundlesOnly = false }: Props = {}) {
           /* Breaks the page container on purpose: a band that runs edge to
              edge is the one place this layout stops behaving like a document
              and behaves like a magazine. */
-          <div className="relative mt-24 aspect-[16/7] w-screen max-w-none overflow-hidden md:mt-32 left-1/2 -translate-x-1/2">
+          <div className="photo-warm-wash relative mt-24 aspect-[16/7] w-screen max-w-none overflow-hidden md:mt-32 left-1/2 -translate-x-1/2">
             <Image
               src={TEMP_PHOTOS.programsBand.url}
               alt={TEMP_PHOTOS.programsBand.alt}
               fill
               sizes="(max-width: 1200px) 100vw, 1200px"
-              className="object-cover object-[50%_38%]"
+              className="photo-warm-grade object-cover object-[50%_38%]"
             />
           </div>
         )}

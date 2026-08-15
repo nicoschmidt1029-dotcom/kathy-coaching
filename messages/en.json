@@ -34,7 +34,7 @@
   },
   "wordmark": {
     "name": "Katey",
-    "tagline": "Coaching",
+    "tagline": "Energy. Strength. You.",
     "ariaLabel": "Katey Coaching — home"
   },
   "nav": {
@@ -336,7 +336,8 @@
     "privacy": "Privacy",
     "contact": "Contact",
     "copyright": "© {year} Katey Coaching. All rights reserved.",
-    "madeWithCare": "Made with care"
+    "madeWithCare": "Made with care",
+    "claim": "Living healthy has always been my passion."
   },
   "legal": {
     "_comment": "Labels around the legal documents. The documents themselves are JSX per locale in components/legal/ — legal prose is a document, not a set of UI strings.",

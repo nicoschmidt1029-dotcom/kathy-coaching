@@ -50,6 +50,8 @@
     }
   },
   "wordmark": {
+    "name": "Katey",
+    "tagline": "Energia. Sila. Ty.",
     "ariaLabel": "Katey Coaching — domovská stránka"
   },
   "nav": {
@@ -341,7 +343,8 @@
     "privacy": "Ochrana údajov",
     "contact": "Kontakt",
     "copyright": "© {year} Katey Coaching. Všetky práva vyhradené.",
-    "madeWithCare": "Vytvorené s citom"
+    "madeWithCare": "Vytvorené s citom",
+    "claim": "Zdravý život bol vždy mojou vášňou."
   },
   "legal": {
     "toBeSupplied": "ZATIAĽ NEDOPLNENÉ",

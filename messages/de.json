@@ -41,6 +41,8 @@
     }
   },
   "wordmark": {
+    "name": "Katey",
+    "tagline": "Energie. Stärke. Du.",
     "ariaLabel": "Katey Coaching — Startseite"
   },
   "nav": {
@@ -332,7 +334,8 @@
     "privacy": "Datenschutz",
     "contact": "Kontakt",
     "copyright": "© {year} Katey Coaching. Alle Rechte vorbehalten.",
-    "madeWithCare": "Mit Sorgfalt gemacht"
+    "madeWithCare": "Mit Sorgfalt gemacht",
+    "claim": "Gesund zu leben war schon immer meine Leidenschaft."
   },
   "legal": {
     "toBeSupplied": "NOCH AUSZUFÜLLEN",
