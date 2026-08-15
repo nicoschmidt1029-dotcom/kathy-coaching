@@ -14,7 +14,7 @@
  * Or set an entry to `null` for the neutral styled placeholder.
  *
  * Slots currently on real Katey content:
- *   - hero        →  /images/kathy/kathy-blazer.jpg (still; hero video disabled)
+ *   - heroBlazer  →  /images/kathy/kathy-blazer.jpg (not currently rendered — see `hero` below)
  *   - heroMovementDetail → /images/kathy/kathy-07.jpg (gym, purple top, mid-stretch)
  *   - approachTrain → /images/kathy/kathy-06.jpg (gym, blue top)
  *   - about        → /images/kathy/kathy-01.jpg (running track, side profile)
@@ -25,6 +25,12 @@
  * slot moved to the track photo instead, which is warm-toned already.
  * kathy-07 stays assigned to heroMovementDetail, which no component
  * currently renders, so it is effectively unused but easy to bring back.
+ *
+ * hero is Unsplash stock (sunset silhouette) rather than heroBlazer, on
+ * Katarina's own instruction: use a fitting stock photo (sport + body +
+ * spirit) if one can be found, her real blazer photo only as a fallback.
+ * heroBlazer stays in the file, one edit away, for whenever she sends new
+ * photos (she mentioned Sunday) or if the stock choice should be reverted.
  *
  * Slots still on stock (waiting on real content):
  *   - approachNourish, approachSoul (Unsplash atmospheric shots)
@@ -59,6 +65,7 @@ export type TempVideo = {
 
 export const TEMP_PHOTOS: Record<
   | "hero"
+  | "heroBlazer"
   | "heroMovementDetail"
   | "approachTrain"
   | "approachNourish"
@@ -68,8 +75,20 @@ export const TEMP_PHOTOS: Record<
   | "about",
   TempPhoto
 > = {
-  // Katey's own — editorial portrait: beige blazer, leaning on a sunlit wall
+  // Stock — silhouette in a tree-pose stretch at sunset, arms raised (echoes
+  // the raised-arms figure in Katey's own logo). Warm gold/orange light fits
+  // the site's palette directly; body (the pose) and spirit (the stillness,
+  // the sunrise) both read without needing to be a photo of Katey herself.
+  // Swap for her real photos once she has new ones (she mentioned Sunday).
   hero: {
+    url: "/images/stock/hero-sunset-yoga.jpg",
+    alt: "Silhouette of a woman in a yoga tree pose, arms raised overhead, facing a golden sunset over calm water",
+    credit: "Lāsma Artmane on Unsplash",
+  },
+  // Katey's own — editorial portrait: beige blazer, leaning on a sunlit wall.
+  // Kept here, one edit away, for whenever the hero should go back to a real
+  // photo of her instead of the stock silhouette above.
+  heroBlazer: {
     url: "/images/kathy/kathy-blazer.jpg",
     alt: "Katey in a beige blazer, leaning against a sunlit wall, looking to the side",
   },

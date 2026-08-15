@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
+import { TempPill } from "./placeholder";
 
 /**
  * Split hero on the site's own cream, photo on the right.
@@ -115,8 +116,11 @@ export function Hero() {
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 40vw"
-                className="object-cover object-[50%_25%]"
+                className="object-cover object-[28%_50%]"
               />
+              {photo.credit && (
+                <TempPill credit={photo.credit} slot="Hero" />
+              )}
             </div>
           </div>
         )}
