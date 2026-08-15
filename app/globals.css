@@ -475,42 +475,6 @@
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
 
-  /*
-   * Warm gold grade for Katey's real photos.
-   *
-   * The photos were shot before the gold/mustard rebrand and carry whatever
-   * ambient colour their rooms had (cool gym light, a blue top, a purple
-   * top) — next to the new palette they read as a different site. Repainting
-   * clothing or backgrounds needs image generation this environment doesn't
-   * have; a colour grade is the honest substitute available in CSS. A
-   * sepia+saturate base pulls every photo toward gold/brown, then a
-   * translucent bronze wash (mix-blend: multiply) ties the shadows to
-   * --petrol-deep and a soft gold sits over the highlights (mix-blend:
-   * soft-light) — same two-step grade a photo editor would use, done live.
-   */
-  .photo-warm-grade {
-    /* grayscale first kills off-brand hues (gym-wall green, cool blues) so
-       the sepia pass has nothing but warm tone left to work with; saturate
-       then restores punch inside that narrower, gold-leaning range. */
-    filter: grayscale(0.55) sepia(0.65) saturate(1.5) brightness(1.03) contrast(1.05);
-  }
-  .photo-warm-wash {
-    position: relative;
-  }
-  .photo-warm-wash::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(
-      160deg,
-      oklch(0.70 0.13 82 / 0.30) 0%,
-      oklch(0.44 0.09 78 / 0.24) 55%,
-      oklch(0.30 0.045 70 / 0.38) 100%
-    );
-    mix-blend-mode: multiply;
-  }
-
   /* Subtle paper grain — earned, not sprayed */
   .grain::before {
     content: "";

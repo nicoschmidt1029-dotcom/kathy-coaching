@@ -19,14 +19,14 @@ export function HomeBand() {
   return (
     <section
       aria-hidden
-      className="photo-warm-wash relative left-1/2 aspect-[3/4] w-screen max-w-none -translate-x-1/2 overflow-hidden sm:aspect-[16/9] lg:aspect-[21/9]"
+      className="relative left-1/2 aspect-[3/4] w-screen max-w-none -translate-x-1/2 overflow-hidden sm:aspect-[16/9] lg:aspect-[21/9]"
     >
       <Image
         src={photo.url}
         alt=""
         fill
         sizes="100vw"
-        className="photo-warm-grade object-cover object-[50%_35%]"
+        className="object-cover object-[50%_35%]"
       />
     </section>
   );

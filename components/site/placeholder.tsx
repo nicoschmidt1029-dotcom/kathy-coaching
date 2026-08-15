@@ -42,7 +42,6 @@ export function Placeholder({
         "relative w-full overflow-hidden rounded-2xl ring-1 ring-foreground/10",
         aspectMap[aspect],
         !src && toneMap[tone],
-        src && "photo-warm-wash",
         className
       )}
     >
@@ -53,7 +52,7 @@ export function Placeholder({
             alt={alt ?? ""}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="photo-warm-grade object-cover"
+            className="object-cover"
           />
           {credit && <TempPill credit={credit} slot={label} />}
         </>

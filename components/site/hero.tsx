@@ -126,14 +126,14 @@ export function Hero() {
 
         {photo && (
           <div className="animate-rise-slow md:col-span-6">
-            <div className="photo-warm-wash relative aspect-[4/5] min-h-[26rem] overflow-hidden rounded-2xl md:min-h-[34rem] lg:min-h-[40rem]">
+            <div className="relative aspect-[4/5] min-h-[26rem] overflow-hidden rounded-2xl md:min-h-[34rem] lg:min-h-[40rem]">
               <Image
                 src={photo.url}
                 alt={photo.alt}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 40vw"
-                className="photo-warm-grade object-cover object-[50%_25%]"
+                className="object-cover object-[50%_25%]"
               />
             </div>
           </div>

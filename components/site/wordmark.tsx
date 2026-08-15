@@ -30,37 +30,38 @@ export function Wordmark({ className, onDark = false }: Props) {
       */}
       <svg
         aria-hidden
-        viewBox="0 0 26 32"
-        className="size-7 shrink-0 transition-transform duration-300 ease-out group-hover:-translate-y-0.5"
+        viewBox="0 0 28 34"
+        className="size-8 shrink-0 transition-transform duration-300 ease-out group-hover:-translate-y-0.5"
       >
-        {/* Halo arc, open at the bottom */}
+        {/* Halo arc — a near-full circle, open at the base, wider than the
+            figure it rings. Traced from the arc in Katey's own mark. */}
         <path
-          d="M2 15 C 2 5, 9 1, 13 1 C 17 1, 24 5, 24 15"
+          d="M3 21 C -1 10, 5 1, 14 1 C 23 1, 29 10, 25 21"
           fill="none"
           stroke={markColor}
-          strokeWidth="1.3"
+          strokeWidth="1.2"
           strokeLinecap="round"
         />
         {/* Arms, raised in a V from the shoulders */}
         <path
-          d="M9.5 12 C 8 9, 6.3 7, 5 4.5"
+          d="M10.6 16.2 C 9.2 12.6, 7.9 9, 7.2 5.4"
           fill="none"
           stroke={markColor}
-          strokeWidth="1.6"
+          strokeWidth="1.7"
           strokeLinecap="round"
         />
         <path
-          d="M16.5 12 C 18 9, 19.7 7, 21 4.5"
+          d="M17.4 16.2 C 18.8 12.6, 20.1 9, 20.8 5.4"
           fill="none"
           stroke={markColor}
-          strokeWidth="1.6"
+          strokeWidth="1.7"
           strokeLinecap="round"
         />
         {/* Head */}
-        <circle cx="13" cy="10.4" r="2.1" fill={markColor} />
-        {/* Torso, tapered at the waist */}
+        <circle cx="14" cy="14.5" r="2.5" fill={markColor} />
+        {/* Torso, tapered at the waist, cropped flat at mid-thigh */}
         <path
-          d="M9.6 13.6 C 8.6 16.4, 8.7 19.3, 10 22 L 16 22 C 17.3 19.3, 17.4 16.4, 16.4 13.6 C 15 12.6, 11 12.6, 9.6 13.6 Z"
+          d="M10.7 17.3 C 9.3 20.4, 9.4 23.8, 11.1 27 L 16.9 27 C 18.6 23.8, 18.7 20.4, 17.3 17.3 C 15.4 16, 12.6 16, 10.7 17.3 Z"
           fill={markColor}
         />
       </svg>

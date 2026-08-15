@@ -84,21 +84,13 @@ export function Approach() {
                     i % 2 === 0 ? "md:order-2 md:col-span-6" : "md:col-span-6"
                   }
                 >
-                  <div
-                    className={cn(
-                      "relative aspect-[5/4] overflow-hidden rounded-2xl",
-                      key === "train" && "photo-warm-wash"
-                    )}
-                  >
+                  <div className="relative aspect-[5/4] overflow-hidden rounded-2xl">
                     <Image
                       src={image.url}
                       alt={image.alt}
                       fill
                       sizes="(max-width: 768px) 100vw, 45vw"
-                      className={cn(
-                        "object-cover",
-                        key === "train" && "photo-warm-grade"
-                      )}
+                      className="object-cover"
                     />
                   </div>
                 </div>
