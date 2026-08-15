@@ -10,11 +10,14 @@ import { TempPill } from "./placeholder";
  * Full-bleed photo hero, text laid over it — Katarina's own instruction
  * ("nice photo as a background"). An earlier version of this hero tried the
  * same thing and moved away from it because two gradient scrims were needed
- * to keep the type legible; the fix here is one scrim, not two: a single
- * left-to-right gradient in --petrol-deep (the site's own dark ground
- * colour, not plain black) so the text sits on a "surface" that belongs to
- * the palette, and the photo stays clear on the right where nothing needs
- * to be read.
+ * to keep the type legible; the fix here is one scrim, not two.
+ *
+ * The photo itself dictates the side the scrim and text sit on: Katarina is
+ * on the left third of this frame (she had the background AI-widened
+ * herself, specifically for this use), with open sunlit wall running the
+ * rest of the way — so, unlike a generic hero, the dark side has to be the
+ * right, not the left, or the text would sit directly over her. She asked
+ * explicitly not to be hidden by it.
  *
  * The eyebrow names the reader, not the coach. "Holistic coaching ·
  * faith-rooted" described Katey; a visitor deciding in two seconds needs to
@@ -41,20 +44,20 @@ export function Hero() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[32%_42%]"
+            className="object-cover object-[22%_28%]"
           />
-          {/* One scrim, not two: dark on the left where the type sits, clear
-              on the right where the photo needs to stay a photo. */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[var(--petrol-deep)]/92 via-[var(--petrol-deep)]/55 to-[var(--petrol-deep)]/10" />
+          {/* Reversed from the previous stock photo's hero: dark on the
+              right, where the text now sits, clear on the left, which is
+              exactly where Katarina needs to stay visible. */}
+          <div className="absolute inset-0 bg-gradient-to-l from-[var(--petrol-deep)]/92 via-[var(--petrol-deep)]/45 to-transparent" />
           {/* A second, much lighter pass bottom-to-top keeps the CTA button
-              and credential dots legible even where the horizontal scrim
-              alone would be thin. */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--petrol-deep)]/45 via-transparent to-transparent" />
+              legible even where the horizontal scrim alone would be thin. */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--petrol-deep)]/40 via-transparent to-transparent" />
           {photo.credit && <TempPill credit={photo.credit} slot="Hero" />}
         </div>
       )}
 
-      <div className="container-page text-[var(--primary-foreground)]">
+      <div className="container-page flex justify-end text-[var(--primary-foreground)]">
         <div className="max-w-xl">
           <p
             className="animate-rise eyebrow text-[var(--primary-foreground)]/65"

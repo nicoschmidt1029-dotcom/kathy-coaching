@@ -14,7 +14,8 @@
  * Or set an entry to `null` for the neutral styled placeholder.
  *
  * Slots currently on real Katey content:
- *   - heroBlazer  →  /images/kathy/kathy-blazer.jpg (not currently rendered — see `hero` below)
+ *   - hero        →  /images/kathy/kathy-blazer-wide.png (blazer portrait, background AI-widened by Katarina herself)
+ *   - heroBlazer  →  /images/kathy/kathy-blazer.jpg (the original, un-widened crop — not currently rendered)
  *   - heroMovementDetail → /images/kathy/kathy-07.jpg (gym, purple top, mid-stretch)
  *   - approachTrain → /images/kathy/kathy-06.jpg (gym, blue top)
  *   - about        → /images/kathy/kathy-01.jpg (running track, side profile)
@@ -26,11 +27,13 @@
  * kathy-07 stays assigned to heroMovementDetail, which no component
  * currently renders, so it is effectively unused but easy to bring back.
  *
- * hero is Unsplash stock (sunset silhouette) rather than heroBlazer, on
- * Katarina's own instruction: use a fitting stock photo (sport + body +
- * spirit) if one can be found, her real blazer photo only as a fallback.
- * heroBlazer stays in the file, one edit away, for whenever she sends new
- * photos (she mentioned Sunday) or if the stock choice should be reverted.
+ * hero briefly ran an Unsplash stock photo (sunset yoga silhouette) while
+ * waiting on a real one wide enough for a full-bleed background. Katarina
+ * sent kathy-blazer-wide.png instead — her own blazer portrait with the
+ * background extended (she had this generated herself), so the real photo
+ * now fills that role directly. heroBlazer (the un-widened original) and
+ * the stock silhouette both stay out of the render path but easy to bring
+ * back if needed — see hero.tsx and git history for the stock photo file.
  *
  * Slots still on stock (waiting on real content):
  *   - approachNourish, approachSoul (Unsplash atmospheric shots)
@@ -75,15 +78,13 @@ export const TEMP_PHOTOS: Record<
   | "about",
   TempPhoto
 > = {
-  // Stock — silhouette in a tree-pose stretch at sunset, arms raised (echoes
-  // the raised-arms figure in Katey's own logo). Warm gold/orange light fits
-  // the site's palette directly; body (the pose) and spirit (the stillness,
-  // the sunrise) both read without needing to be a photo of Katey herself.
-  // Swap for her real photos once she has new ones (she mentioned Sunday).
+  // Katey's own — the beige-blazer portrait, background extended wide (she
+  // had this done herself). Widescreen with her kept to the left third and
+  // open sunlit wall to the right, built for exactly this use: a full-bleed
+  // hero with real headroom for text that doesn't have to sit over her.
   hero: {
-    url: "/images/stock/hero-sunset-yoga.jpg",
-    alt: "Silhouette of a woman in a yoga tree pose, arms raised overhead, facing a golden sunset over calm water",
-    credit: "Lāsma Artmane on Unsplash",
+    url: "/images/kathy/kathy-blazer-wide.png",
+    alt: "Katey in a beige blazer, leaning against a sunlit wall, looking to the side, with open wall space to the right",
   },
   // Katey's own — editorial portrait: beige blazer, leaning on a sunlit wall.
   // Kept here, one edit away, for whenever the hero should go back to a real
