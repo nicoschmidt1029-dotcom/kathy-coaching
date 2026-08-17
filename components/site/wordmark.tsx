@@ -39,7 +39,7 @@ export function Wordmark({ className, onDark = false }: Props) {
         <Image
           src={logoImage}
           alt={t("ariaLabel")}
-          className="h-12 w-auto object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 sm:h-14 md:h-16"
+          className="h-16 w-auto object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 sm:h-20 md:h-24"
           priority
         />
       </Link>
