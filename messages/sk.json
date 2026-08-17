@@ -57,12 +57,10 @@
   },
   "nav": {
     "about": "Katey",
-    "approach": "Prístup",
     "mission": "Moje poslanie",
     "programs": "Programy",
     "testimonials": "Príbehy",
     "contact": "Kontakt",
-    "cta": "Poďme sa porozprávať",
     "menu": "Menu",
     "openMenu": "Otvoriť menu",
     "skipToMain": "Preskočiť na hlavný obsah"
@@ -72,7 +70,6 @@
     "switchTo": "Prepnúť jazyk na {language}"
   },
   "hero": {
-    "eyebrow": "Pre ženy, ktoré hľadajú silu a hĺbku",
     "headline": "Verím, že v každom človeku je potenciál, ktorý ešte neobjavil. Niekedy stačí <em>správny smer.</em>",
     "body": "Individuálny tréning · Jedálniček podľa tvojich cieľov · Duchovné sprevádzanie",
     "cta": "Vyber si program",
@@ -116,10 +113,6 @@
     "story": "Vyštudovala som na SNF Akademy, absolvovala Awakening School of Ministry. Pomáham ľuďom zmeniť jedálny lístok, nájsť pozitívny vzťah k športu a pochopiť, aký je každý človek jedinečný a dôležitý.",
     "portraitLabel": "Portrét Katey",
     "portraitCaption": "Katey · osobná trénerka · výživová poradkyňa",
-    "qualificationsTitle": "Vzdelanie a certifikácia",
-    "qualTrainerTitle": "Osobná trénerka",
-    "qualNutritionTitle": "Výživová poradkyňa",
-    "qualMinistryTitle": "Absolventka School of Ministry",
     "_storyOriginal": "Po absolvovaní štúdia na SNF Akademy, kde som študovala Osobný tréner and výživový poradca, a graduation from Awakening School of Ministry pomáham ľuďom zmeniť jedálny lístok, nájsť pozitívny vzťah k športu a pochopiť aký je každý človek jedinečny a dôležitý.",
     "overlapTitle": "O Katey"
   },
@@ -291,9 +284,9 @@
     }
   },
   "contact": {
-    "eyebrow": "Ozvi sa",
-    "title": "Poďme sa porozprávať.",
-    "intro": "Napíš mi, kde si a v akom jazyku sa cítiš najlepšie. Odpoviem osobne.",
+    "eyebrow": "Kontakt",
+    "title": "Môžem ti pomôcť?",
+    "intro": "Napíš mi, kde si. Odpoviem osobne.",
     "formatLabel": "Formát",
     "formatValue": "Telefonát, správa alebo osobne",
     "languagesLabel": "Jazyky",
@@ -303,11 +296,6 @@
     "namePlaceholder": "Anna Nováková",
     "emailLabel": "E-mail",
     "emailPlaceholder": "anna@priklad.sk",
-    "languageLabel": "Jazyk, v ktorom sa cítiš najlepšie",
-    "languageNoPreference": "Bez preferencie",
-    "languageOther": "Iný",
-    "locationLabel": "Odkiaľ píšeš?",
-    "locationPlaceholder": "Krajina alebo mesto (nepovinné)",
     "messageLabel": "Niečo o tom, kde si a kam sa chceš dostať",
     "messagePlaceholder": "Kde práve si, kam smeruješ — nemusí to byť vybrúsené.",
     "prefillPrefix": "Záujem o: {selection}",

@@ -165,7 +165,7 @@ function PlaceholderState({
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(closest-side at 30% 40%, oklch(0.92 0.06 82 / 0.9), transparent 60%), radial-gradient(closest-side at 75% 70%, oklch(0.85 0.05 80 / 0.7), transparent 60%), linear-gradient(180deg, oklch(0.88 0.05 82), oklch(0.82 0.05 82))",
+              "radial-gradient(closest-side at 30% 40%, oklch(0.92 0.012 78 / 0.9), transparent 60%), radial-gradient(closest-side at 75% 70%, oklch(0.85 0.010 78 / 0.7), transparent 60%), linear-gradient(180deg, oklch(0.88 0.010 78), oklch(0.82 0.010 78))",
           }}
         />
       )}

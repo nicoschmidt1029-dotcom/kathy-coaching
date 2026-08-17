@@ -23,7 +23,7 @@ export function NotFoundContent() {
         className="pointer-events-none absolute top-[-15%] right-[-10%] -z-10 h-[520px] w-[520px] rounded-full opacity-60"
         style={{
           background:
-            "radial-gradient(closest-side, oklch(0.88 0.05 82 / 0.7), transparent 70%)",
+            "radial-gradient(closest-side, oklch(0.90 0.012 78 / 0.7), transparent 70%)",
         }}
       />
       <div

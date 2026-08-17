@@ -5,22 +5,14 @@ import { PortraitPlaceholder } from "./portrait-placeholder";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
 /**
- * Certifications, spelled out with the issuing institution rather than left
- * as a bare "Certified Personal Trainer" — the institution is the part that
- * carries weight. SNF Academy and Awakening School of Ministry are named in
- * Katey's own bio text. The exact certificate designations and stats below
- * (years coaching, people accompanied) are still pending from Katarina — see
- * the reminder note in lib/content-status.ts. Katarina asked for the visible
- * "NOCH AUSZUFÜLLEN" flags to come off the live page rather than sit there
- * as a permanent placeholder; the outstanding-info list lives in code
- * comments and project memory instead.
+ * Katarina's rule for this section: "What I studied is written in Katey —
+ * I don't need to be mentioned anywhere else." The separate qualifications
+ * list (SNF Academy, Awakening School of Ministry, one row per cert) used
+ * to sit below the bio and repeated exactly what the `story` paragraph
+ * already says. Removed — the bio text is now the only place her training
+ * is mentioned on the whole site. Exact certificate designations are still
+ * pending from her; see lib/content-status.ts.
  */
-const QUALS = [
-  { title: "qualTrainerTitle", issuer: "qualTrainerIssuer" },
-  { title: "qualNutritionTitle", issuer: "qualNutritionIssuer" },
-  { title: "qualMinistryTitle", issuer: "qualMinistryIssuer" },
-] as const;
-
 export function About() {
   const t = useTranslations("about");
 
@@ -79,30 +71,6 @@ export function About() {
               ),
             })}
           </p>
-
-          {/* One line per qualification, no card. The boxed three-row version
-              with a separate issuer line under each was four elements deep for
-              information that fits on one line. No TODO flags: Katarina asked
-              for the page to look finished, not to sit there flagged as
-              incomplete — see lib/content-status.ts for what's still pending
-              from her. */}
-          <div className="mt-10">
-            <p className="caption">{t("qualificationsTitle")}</p>
-            <ul className="mt-4 space-y-2.5">
-              {QUALS.map((qual) => (
-                <li
-                  key={qual.title}
-                  className="flex flex-wrap items-baseline gap-x-2 text-[0.95rem] text-foreground/80"
-                >
-                  <span>{t(qual.title)}</span>
-                  <span aria-hidden className="text-foreground/30">
-                    ·
-                  </span>
-                  <span className="text-foreground/55">{t(qual.issuer)}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
           </div>
         </div>
       </div>

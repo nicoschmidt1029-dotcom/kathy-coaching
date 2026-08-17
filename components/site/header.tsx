@@ -17,12 +17,12 @@ import { Wordmark } from "./wordmark";
 import { LanguageSwitcher } from "./language-switcher";
 import { cn } from "@/lib/utils";
 
-/** One page now, so the nav jumps to sections rather than routes. */
+/** Mostly one page — nav jumps to sections — except Programs, which is its
+ *  own route (see app/[locale]/programme/page.tsx). */
 const NAV = [
   { key: "about", href: "/#about" },
-  { key: "approach", href: "/#approach" },
   { key: "mission", href: "/#mission" },
-  { key: "programs", href: "/#programme" },
+  { key: "programs", href: "/programme" },
   { key: "contact", href: "/#kontakt" },
 ] as const;
 
@@ -79,14 +79,6 @@ export function Header() {
         <div className="flex items-center gap-2 md:gap-3">
           <LanguageSwitcher className="hidden md:flex" />
 
-          <Button
-            asChild
-            size="lg"
-            className="hidden h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90 md:inline-flex"
-          >
-            <Link href="/#kontakt">{t("cta")}</Link>
-          </Button>
-
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button
@@ -122,16 +114,7 @@ export function Header() {
                 })}
               </nav>
               <div className="mt-auto border-t border-foreground/[0.06] p-5">
-                <LanguageSwitcher size="lg" className="mb-4 justify-center" />
-                <SheetClose asChild>
-                  <Button
-                    asChild
-                    size="lg"
-                    className="h-12 w-full bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
-                  >
-                    <Link href="/#kontakt">{t("cta")}</Link>
-                  </Button>
-                </SheetClose>
+                <LanguageSwitcher size="lg" className="justify-center" />
               </div>
             </SheetContent>
           </Sheet>

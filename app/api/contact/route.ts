@@ -4,8 +4,6 @@ import { Resend } from "resend";
 type Body = {
   name?: string;
   email?: string;
-  language?: string;
-  location?: string;
   message?: string;
   website?: string; // honeypot — must remain empty
 };
@@ -102,8 +100,6 @@ export async function POST(req: Request) {
   const name = body.name?.trim();
   const email = body.email?.trim();
   const message = body.message?.trim();
-  const language = body.language?.trim() ?? "";
-  const location = body.location?.trim() ?? "";
 
   if (!name || !email || !message) {
     return NextResponse.json(
@@ -151,8 +147,6 @@ export async function POST(req: Request) {
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
-        `Language: ${language || "(no preference)"}`,
-        `Writing from: ${location || "(not specified)"}`,
         "",
         "Message:",
         message,

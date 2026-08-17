@@ -19,16 +19,14 @@ import { TempPill } from "./placeholder";
  * right, not the left, or the text would sit directly over her. She asked
  * explicitly not to be hidden by it.
  *
- * The eyebrow names the reader, not the coach. "Holistic coaching ·
- * faith-rooted" described Katey; a visitor deciding in two seconds needs to
- * know whether this is for them.
+ * No eyebrow line — Katarina asked for "For women who want strength and
+ * depth" to come off; the headline now carries the hero on its own.
  *
- * One CTA, not two: a single "choose a program" button that scrolls to
- * /#programme, in the site's dark-petrol-blue primary colour (Katarina's
- * request). The old second link ("see how I work") and the credential
- * badges are gone — the badges duplicated what the Katey/about section
- * already says about her qualifications, and she asked for that to live
- * in exactly one place.
+ * One CTA, not two: a single "choose a program" button that goes to the
+ * Programs page, in the site's primary colour. The old second link ("see
+ * how I work") and the credential badges are gone — the badges duplicated
+ * what the Katey/about section already says about her qualifications, and
+ * she asked for that to live in exactly one place.
  */
 export function Hero() {
   const t = useTranslations("hero");
@@ -59,19 +57,12 @@ export function Hero() {
 
       <div className="container-page flex justify-end text-[var(--primary-foreground)]">
         <div className="max-w-xl">
-          <p
-            className="animate-rise eyebrow text-[var(--primary-foreground)]/65"
-            style={{ animationDelay: "80ms" }}
-          >
-            {t("eyebrow")}
-          </p>
-
           <h1
             /* Capped lower than a full-bleed hero would allow: the emphasised
                fragment carries the underline and must not wrap, so it has to
                fit the text column in the longest language, not just English. */
-            className="animate-rise mt-6 font-display text-[clamp(2.3rem,4vw,3.5rem)] leading-[1.06] font-normal"
-            style={{ animationDelay: "160ms" }}
+            className="animate-rise font-display text-[clamp(2.3rem,4vw,3.5rem)] leading-[1.06] font-normal"
+            style={{ animationDelay: "80ms" }}
           >
             {t.rich("headline", {
               em: (chunks) => (
@@ -99,21 +90,21 @@ export function Hero() {
 
           <p
             className="animate-rise mt-8 max-w-md text-pretty text-[var(--primary-foreground)]/80 sm:text-lg sm:leading-[1.7]"
-            style={{ animationDelay: "240ms" }}
+            style={{ animationDelay: "180ms" }}
           >
             {t("body")}
           </p>
 
           <div
             className="animate-rise mt-10"
-            style={{ animationDelay: "340ms" }}
+            style={{ animationDelay: "280ms" }}
           >
             <Button
               asChild
               size="lg"
               className="group/button h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90"
             >
-              <Link href="/#programme">
+              <Link href="/programme">
                 {t("cta")}
                 <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
               </Link>

@@ -10,16 +10,19 @@ const nextConfig: NextConfig = {
   images: {},
 
   /**
-   * The site became one page. These keep every link already shared alive:
-   * /de/about lands on /de#about rather than a 404.
+   * The site is mostly one page. These keep every link already shared
+   * alive: /de/about lands on /de#about rather than a 404.
    *
    * Temporary, not permanent — a 308 is cached by browsers forever, and if
    * any of these ever becomes its own page again that cache is unfixable.
+   *
+   * programme is NOT in this map — it graduated to a real route
+   * (app/[locale]/programme/page.tsx), so redirecting it here would hijack
+   * that page instead of serving it.
    */
   async redirects() {
     const anchors: Record<string, string> = {
       about: "about",
-      programme: "programme",
       testimonials: "approach",
       kontakt: "kontakt",
     };

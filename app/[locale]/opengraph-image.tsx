@@ -35,10 +35,10 @@ export default async function Image() {
 
   // Matches app/globals.css :root — kept in hex here because Satori (the
   // renderer behind next/og) can't read CSS custom properties.
-  const CREAM = "#FBF8F2";
-  const CHARCOAL = "#2E2822";
+  const CREAM = "#F7F4ED";
+  const CHARCOAL = "#33322E";
   const PETROL = "#1B2E3D";
-  const GOLD = "#C9973E";
+  const GOLD = "#B08F55";
 
   return new ImageResponse(
     (

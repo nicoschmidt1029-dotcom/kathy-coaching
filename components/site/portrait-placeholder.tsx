@@ -23,7 +23,7 @@ export function PortraitPlaceholder({ label, className }: Props) {
       )}
       style={{
         background:
-          "linear-gradient(160deg, var(--sand) 0%, oklch(0.90 0.04 82) 100%)",
+          "linear-gradient(160deg, var(--sand) 0%, oklch(0.90 0.010 76) 100%)",
       }}
     >
       {/* Scattered line-art botanical pattern — small leaves at low opacity
@@ -87,7 +87,7 @@ export function PortraitPlaceholder({ label, className }: Props) {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(closest-side at 50% 44%, oklch(0.92 0.05 82 / 0.32), transparent 62%)",
+            "radial-gradient(closest-side at 50% 44%, oklch(0.92 0.012 78 / 0.32), transparent 62%)",
         }}
       />
 

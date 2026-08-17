@@ -39,12 +39,10 @@
   },
   "nav": {
     "about": "Katey",
-    "approach": "The approach",
     "mission": "My mission",
     "programs": "Programs",
     "testimonials": "Testimonials",
     "contact": "Contact",
-    "cta": "Start a conversation",
     "menu": "Menu",
     "openMenu": "Open menu",
     "skipToMain": "Skip to main content"
@@ -58,7 +56,6 @@
     "draft": "This translation is still being reviewed. The English version is the original."
   },
   "hero": {
-    "eyebrow": "For women who want strength and depth",
     "headline": "I believe every person carries potential inside them they haven't discovered yet. Sometimes you just need <em>the right direction.</em>",
     "body": "One-on-one training · Meal plan based on your goals · Spiritual health",
     "cta": "Choose a program",
@@ -103,13 +100,6 @@
     "story": "Trained at SNF Academy, graduated from Awakening School of Ministry. I help people move forward — the right food, the right mindset, the right movement. <em>At any age.</em>",
     "portraitLabel": "Katey portrait",
     "portraitCaption": "Katey · personal trainer · nutrition coach",
-    "qualificationsTitle": "Training & certification",
-    "qualTrainerTitle": "Personal Trainer",
-    "qualTrainerIssuer": "SNF Academy",
-    "qualNutritionTitle": "Nutrition Coach",
-    "qualNutritionIssuer": "SNF Academy",
-    "qualMinistryTitle": "Graduate, School of Ministry",
-    "qualMinistryIssuer": "Awakening School of Ministry",
     "_storyOriginal": "After my study at SNF Academy, where I studied Personal Trainer and Nutrition coach, and graduating from Awakening School of Ministry, I help people move forward in their lives. With the right diet, the right mindset, and the right exercise. <em>At any age.</em>",
     "overlapTitle": "About Katey"
   },
@@ -282,9 +272,9 @@
     }
   },
   "contact": {
-    "eyebrow": "Let's talk",
-    "title": "Let's start a conversation.",
-    "intro": "Tell me where you are and what language you prefer. I answer personally.",
+    "eyebrow": "Contact",
+    "title": "Can I help you?",
+    "intro": "Tell me where you are. I answer personally.",
     "formatLabel": "Format",
     "formatValue": "Call, message, or in person",
     "languagesLabel": "Languages",
@@ -295,11 +285,6 @@
     "namePlaceholder": "Jane Doe",
     "emailLabel": "Email",
     "emailPlaceholder": "jane@example.com",
-    "languageLabel": "Language you're most comfortable in",
-    "languageNoPreference": "No preference",
-    "languageOther": "Other",
-    "locationLabel": "Where are you writing from?",
-    "locationPlaceholder": "Country or city (optional)",
     "messageLabel": "A little about where you are, where you'd like to go",
     "messagePlaceholder": "Where you are now, where you'd like to go — no need to polish it.",
     "prefillPrefix": "Interested in: {selection}",

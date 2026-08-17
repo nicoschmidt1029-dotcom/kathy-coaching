@@ -22,9 +22,9 @@ const aspectMap: Record<NonNullable<Props["aspect"]>, string> = {
 };
 
 const toneMap: Record<NonNullable<Props["tone"]>, string> = {
-  sand: "bg-[oklch(0.92_0.022_80)]",
-  clay: "bg-[oklch(0.88_0.05_82)]",
-  cream: "bg-[oklch(0.96_0.012_85)]",
+  sand: "bg-[oklch(0.91_0.007_75)]",
+  clay: "bg-[oklch(0.88_0.014_76)]",
+  cream: "bg-[oklch(0.96_0.008_78)]",
 };
 
 export function Placeholder({

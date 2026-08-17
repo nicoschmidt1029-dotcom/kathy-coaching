@@ -60,103 +60,94 @@
 
 :root {
   /*
-   * Gold + mustard + beige palette — matches Katey's own brand board
-   * ("Farben: Gold, Senfgelb, Beige, Weiß"; Wirkung: positiv, energiegeladen,
-   * selbstbewusst) — plus a dark petrol blue for titles and buttons, added
-   * on Katarina's explicit request afterwards: keep the beige/bronze ground
-   * as it is, "fine-tune" the petrol blue in for anything that reads as
-   * primary/CTA.
+   * Minimal ivory + warm-gray + charcoal palette — Katarina's own request
+   * (17 Aug), replacing the earlier gold/mustard brand-board palette:
+   * "I think something like warm ivory or light sand background... a
+   * soft, warm gray... not a blue gray... a deep charcoal instead of pure
+   * black... the warm gray is for secondary sections, just to separate
+   * areas without strong lines." Dark petrol blue stays for primary/CTA —
+   * she reconfirmed that explicitly, separately, after asking for the
+   * rest to go minimal.
    *
    * Reference hex targets:
-   *   #FBF8F2  near-white (background)
-   *   #2E2822  warm charcoal (text)
-   *   #C9973E  gold (--clay slot, decorative accent — icons, underlines)
-   *   #1B2E3D  dark petrol blue (--plum slot, primary — titles + buttons)
-   *   #F1E6D6  pale beige (--sand slot)
+   *   #F8F5EF  warm ivory (background)
+   *   #E9E5DD  soft warm dove-gray (secondary sections — --sand / --petrol-tint)
+   *   #33322E  deep charcoal, not pure black (text)
+   *   #1B2E3D  dark petrol blue (primary — titles + buttons, unchanged)
+   *   #B08F55  muted warm gold (decorative accents only — the logo mark,
+   *            a hairline underline — desaturated from the old vivid
+   *            mustard so it reads as "a little warmth", not as a second
+   *            brand colour competing with the petrol blue)
    *
-   * WCAG check on the near-white ground:
-   *   charcoal on background ~ 12:1     (AAA)
-   *   dark petrol blue on background ~ 11:1 (AAA)
-   *   mustard gold on background ~ 2.6:1 (AA large text only — never body copy)
-   * → Primary CTAs and eyebrow labels use the dark petrol blue; mustard gold
-   *   is reserved for decorative accents — icon washes, underlines, small
-   *   badges — never for text that needs to stay readable at body size.
+   * WCAG check on the ivory ground:
+   *   charcoal on background ~ 11:1         (AAA)
+   *   dark petrol blue on background ~ 10:1 (AAA)
+   *   muted gold on background ~ 2.3:1      (AA large text only — never body copy)
    */
-  --background: oklch(0.978 0.012 85);
-  --foreground: oklch(0.245 0.014 60);
+  --background: oklch(0.975 0.010 78);
+  --foreground: oklch(0.24 0.010 60);
 
-  --card: oklch(0.99 0.007 82);
-  --card-foreground: oklch(0.245 0.014 60);
+  --card: oklch(0.985 0.006 78);
+  --card-foreground: oklch(0.24 0.010 60);
 
-  --popover: oklch(0.99 0.007 82);
-  --popover-foreground: oklch(0.245 0.014 60);
+  --popover: oklch(0.985 0.006 78);
+  --popover-foreground: oklch(0.24 0.010 60);
 
-  /* Primary = dark petrol blue (AAA on near-white). Katarina's own request:
-     keep the beige/bronze ground as it is, "fine-tune" a dark petrol blue
-     in for titles and buttons — everything that reads as primary/CTA. */
+  /* Primary = dark petrol blue (AAA on ivory). Kept exactly as Katarina
+     first specified it, reconfirmed after the rest of the palette went
+     minimal: every button and CTA on the site. */
   --primary: oklch(0.32 0.06 220);
-  --primary-foreground: oklch(0.978 0.012 85);
+  --primary-foreground: oklch(0.975 0.010 78);
 
-  /* Secondary = pale beige chip */
-  --secondary: oklch(0.91 0.032 80);
-  --secondary-foreground: oklch(0.32 0.03 65);
+  /* Secondary = warm dove-gray chip */
+  --secondary: oklch(0.91 0.006 75);
+  --secondary-foreground: oklch(0.30 0.010 65);
 
-  --muted: oklch(0.94 0.02 82);
-  --muted-foreground: oklch(0.50 0.03 65);
+  --muted: oklch(0.93 0.006 76);
+  --muted-foreground: oklch(0.48 0.012 65);
 
-  --accent: oklch(0.88 0.07 82);
+  --accent: oklch(0.89 0.010 75);
   --accent-foreground: oklch(0.32 0.06 220);
 
   --destructive: oklch(0.55 0.18 28);
 
-  --border: oklch(0.88 0.022 78);
-  --input: oklch(0.88 0.022 78);
-  --ring: oklch(0.68 0.11 82);
+  --border: oklch(0.87 0.008 72);
+  --input: oklch(0.87 0.008 72);
+  --ring: oklch(0.68 0.09 82);
 
-  --chart-1: oklch(0.70 0.13 82);
-  --chart-2: oklch(0.60 0.08 78);
-  --chart-3: oklch(0.44 0.09 78);
-  --chart-4: oklch(0.80 0.05 84);
-  --chart-5: oklch(0.35 0.06 75);
+  --chart-1: oklch(0.62 0.05 78);
+  --chart-2: oklch(0.55 0.04 72);
+  --chart-3: oklch(0.32 0.06 220);
+  --chart-4: oklch(0.78 0.03 80);
+  --chart-5: oklch(0.35 0.03 68);
 
   --radius: 0.75rem;
 
-  --sidebar: oklch(0.955 0.02 82);
-  --sidebar-foreground: oklch(0.245 0.014 60);
+  --sidebar: oklch(0.95 0.007 76);
+  --sidebar-foreground: oklch(0.24 0.010 60);
   --sidebar-primary: oklch(0.32 0.06 220);
-  --sidebar-primary-foreground: oklch(0.978 0.012 85);
-  --sidebar-accent: oklch(0.91 0.032 80);
-  --sidebar-accent-foreground: oklch(0.32 0.03 65);
-  --sidebar-border: oklch(0.88 0.022 78);
-  --sidebar-ring: oklch(0.68 0.11 82);
+  --sidebar-primary-foreground: oklch(0.975 0.010 78);
+  --sidebar-accent: oklch(0.91 0.006 75);
+  --sidebar-accent-foreground: oklch(0.30 0.010 65);
+  --sidebar-border: oklch(0.87 0.008 72);
+  --sidebar-ring: oklch(0.68 0.09 82);
 
   /* Signature accents */
-  --clay: oklch(0.70 0.13 82);     /* Mustard gold  #C9973E — swatch 1/5 */
+  --clay: oklch(0.62 0.035 75);    /* Muted warm gold #B08F55 — decorative only: the logo mark, hairline underlines. Desaturated from the old vivid mustard on purpose. */
   --plum: oklch(0.32 0.06 220);    /* Dark petrol blue — titles + buttons, kept in the `--plum` slot so every existing bg-[var(--plum)] button follows without a rename */
-  --sand: oklch(0.91 0.032 80);    /* Pale beige   #F1E6D6 — swatch 3 */
+  --sand: oklch(0.91 0.006 75);    /* Warm dove-gray, same as --secondary */
 
   /*
-   * "Petrol" keeps its variable names from the earlier palette (renaming
-   * would touch every section component); the colour itself is now a deep,
-   * warm bronze-gold rather than a blue-green. Same structural role as
-   * before: three grounds in descending weight (hero, mission band,
-   * footer), one pale tint carrying the sections between them.
-   *
-   *   --petrol-deep  #3A2A10  cream on it ~ 12:1 (AAA) — grounds
-   *   --petrol       #C9973E  large fills, icon washes, rules — never body text
+   * "Petrol" keeps its variable names from the gold-era palette (renaming
+   * would touch every section component); the colours themselves are now
+   * deep charcoal and warm dove-gray, matching the rest of this minimal
+   * palette. Same structural role as before: three dark grounds
+   * (hero, mission band, footer), one pale tint carrying the sections
+   * between them.
    */
-  --petrol-deep: oklch(0.30 0.045 70);
-  --petrol: oklch(0.70 0.13 82);
-
-  /*
-   * The pale end of the same hue — pale beige (swatch 4), warmer and pinker
-   * than the plain background so alternating the two still gives the scroll
-   * a rhythm.
-   *
-   * Light enough that nothing on it needs recolouring — charcoal body text
-   * still clears AAA, so a section can be moved onto it by adding one class.
-   */
-  --petrol-tint: oklch(0.93 0.028 68);
+  --petrol-deep: oklch(0.20 0.010 60);   /* Deep charcoal ground — cream on it ~ 14:1 (AAA) */
+  --petrol: oklch(0.55 0.015 70);        /* Muted warm mid-gray — large fills, rules — never body text */
+  --petrol-tint: oklch(0.93 0.006 76);   /* Same warm dove-gray as --secondary/--sand */
 }
 
 .dark {

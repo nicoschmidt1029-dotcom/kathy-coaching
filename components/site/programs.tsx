@@ -9,12 +9,7 @@ import { BLOCK_ART } from "@/lib/block-art";
 import { ProgramsBuilder } from "./programs-builder";
 import { DisplayTitle } from "./display-title";
 
-type Props = {
-  /** Onepager: only the three ready-made bundles, no builder. */
-  bundlesOnly?: boolean;
-};
-
-export function Programs({ bundlesOnly = false }: Props = {}) {
+export function Programs() {
   const t = useTranslations("programs");
   const p = useTranslations("pricing");
   const approach = useTranslations("approach");
@@ -251,21 +246,20 @@ export function Programs({ bundlesOnly = false }: Props = {}) {
           </ul>
         </div>
 
-        {/* Section B — build your own. Off on the one-pager: a calculator
-            mid-scroll is a wall, and the three bundles carry the offer. */}
-        {!bundlesOnly && (
-          <div className="mt-20 md:mt-28">
-            <div className="max-w-3xl">
-              <p className="caption">{t("buildOwn")}</p>
-              <h3 className="section-title-sm">{t("buildOwnTitle")}</h3>
-              <p className="section-lede max-w-none">{t("buildOwnIntro")}</p>
-            </div>
-
-            <div className="mt-10 md:mt-14">
-              <ProgramsBuilder />
-            </div>
+        {/* Section B — build your own. Programs has its own page now (was a
+            one-pager section), so a calculator here is a destination, not a
+            wall mid-scroll. */}
+        <div className="mt-20 md:mt-28">
+          <div className="max-w-3xl">
+            <p className="caption">{t("buildOwn")}</p>
+            <h3 className="section-title-sm">{t("buildOwnTitle")}</h3>
+            <p className="section-lede max-w-none">{t("buildOwnIntro")}</p>
           </div>
-        )}
+
+          <div className="mt-10 md:mt-14">
+            <ProgramsBuilder />
+          </div>
+        </div>
       </div>
     </section>
   );

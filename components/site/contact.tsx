@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { LOCALE_LABELS, routing, type Locale } from "@/i18n/routing";
 import { DisplayTitle } from "./display-title";
 
 type FormState =
@@ -33,8 +32,6 @@ export function Contact({ prefill }: Props = {}) {
     const payload = {
       name: (fd.get("name") ?? "").toString(),
       email: (fd.get("email") ?? "").toString(),
-      language: (fd.get("language") ?? "").toString(),
-      location: (fd.get("location") ?? "").toString(),
       message: (fd.get("message") ?? "").toString(),
       website: (fd.get("website") ?? "").toString(),
     };
@@ -75,7 +72,7 @@ export function Contact({ prefill }: Props = {}) {
         className="pointer-events-none absolute top-[-20%] right-[-15%] h-[520px] w-[520px] rounded-full opacity-25"
         style={{
           background:
-            "radial-gradient(closest-side, oklch(0.88 0.06 82), transparent 70%)",
+            "radial-gradient(closest-side, oklch(0.90 0.015 78), transparent 70%)",
         }}
       />
 
@@ -193,42 +190,6 @@ export function Contact({ prefill }: Props = {}) {
                     required
                     placeholder={t("emailPlaceholder")}
                     autoComplete="email"
-                    className="h-11 rounded-lg bg-background"
-                  />
-                </div>
-                <div className="sm:col-span-1">
-                  <Label htmlFor="language" className="mb-2 text-foreground/80">
-                    {t("languageLabel")}
-                  </Label>
-                  {/* Options stay in their own language on purpose — a visitor
-                      picking "Slovenčina" reads it the same in every locale. */}
-                  <select
-                    id="language"
-                    name="language"
-                    defaultValue=""
-                    className="h-11 w-full rounded-lg border border-input bg-background px-2.5 text-base outline-none transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 md:text-sm"
-                  >
-                    <option value="">{t("languageNoPreference")}</option>
-                    {routing.locales.map((locale) => (
-                      <option
-                        key={locale}
-                        value={LOCALE_LABELS[locale as Locale].name}
-                      >
-                        {LOCALE_LABELS[locale as Locale].name}
-                      </option>
-                    ))}
-                    <option value="Other">{t("languageOther")}</option>
-                  </select>
-                </div>
-                <div className="sm:col-span-1">
-                  <Label htmlFor="location" className="mb-2 text-foreground/80">
-                    {t("locationLabel")}
-                  </Label>
-                  <Input
-                    id="location"
-                    name="location"
-                    placeholder={t("locationPlaceholder")}
-                    autoComplete="country-name"
                     className="h-11 rounded-lg bg-background"
                   />
                 </div>

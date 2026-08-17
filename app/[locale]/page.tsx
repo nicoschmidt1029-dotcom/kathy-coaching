@@ -3,7 +3,6 @@ import { Hero } from "@/components/site/hero";
 import { About } from "@/components/site/about";
 import { Approach } from "@/components/site/approach";
 import { HowIWork } from "@/components/site/how-i-work";
-import { Programs } from "@/components/site/programs";
 import { Faq } from "@/components/site/faq";
 import { Mission } from "@/components/site/mission";
 import { Contact } from "@/components/site/contact";
@@ -28,19 +27,21 @@ function pick<T extends string>(
 }
 
 /**
- * The whole site, on one page.
+ * Almost the whole site, on one page — the one exception is Programs,
+ * split out to its own route (app/[locale]/programme/page.tsx) on
+ * Katarina's request. Sections here carry the ids the header and the
+ * retired routes point at: #about, #approach, #how-i-work, #faq, #kontakt.
+ * /about and /testimonials redirect here (see next.config.ts) so links
+ * already shared still land somewhere; /programme is now a real page, not
+ * a redirect.
  *
- * Sections carry the ids the header and the retired routes point at: #about,
- * #approach, #how-i-work, #programme, #faq, #kontakt. /about, /programme and
- * /testimonials redirect here (see next.config.ts) so links already shared
- * still land somewhere.
+ * Imprint and privacy stay separate pages too. They have to be reachable on
+ * their own URL, and burying a legal notice inside a scroll is the opposite
+ * of what a legal notice is for.
  *
- * Imprint and privacy stay separate pages. They have to be reachable on their
- * own URL, and burying a legal notice inside a scroll is the opposite of what
- * a legal notice is for.
- *
- * The pricing builder is left off on purpose: on a page you scroll through
- * once, a calculator is a wall. The three bundles carry the offer.
+ * `prefill` is still built here, not on the Programs page: a bundle chosen
+ * there links to `/?bundle=…#kontakt`, and Contact — which reads this
+ * value — only lives on this page.
  */
 export default async function Home({
   params,
@@ -77,7 +78,6 @@ export default async function Home({
       <About />
       <Approach />
       <HowIWork />
-      <Programs bundlesOnly />
       <Faq />
       <Mission />
       <Contact prefill={prefill} />

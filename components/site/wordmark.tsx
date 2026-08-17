@@ -30,42 +30,62 @@ export function Wordmark({ className, onDark = false }: Props) {
         and a heart ringing it — too much detail to survive at wordmark
         size, so only the figure and the arc carry over; those two elements
         are what the eye actually registers first in her original.
+
+        Redrawn (twice) for closer fidelity to her actual mark: the figure is
+        four solid shapes — two arms, a head, a torso — in flat colour like a
+        paper cutout, rather than thin stroked outlines, which read as a
+        sketch rather than a logo at small sizes. Each shape also carries a
+        matching stroke equal to its own fill: with several shapes
+        overlapping, browsers can render a hairline anti-aliasing seam right
+        at the boundary even though the colour is identical on both sides;
+        the stroke "chokes" that seam shut. The small gap at each armpit is
+        deliberate, not a bug — it is there in the reference too, where the
+        raised arm and the neck don't touch.
       */}
       <svg
         aria-hidden
-        viewBox="0 0 28 34"
+        viewBox="0 0 40 52"
         className="size-9 shrink-0 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 md:size-10"
       >
-        {/* Halo arc — a near-full circle, open at the base, wider than the
-            figure it rings. Traced from the arc in Katey's own mark. */}
+        {/* Halo arc — traced from Katey's own mark: it starts low on the
+            left (roughly hip height), sweeps up over the head, and ends
+            higher on the right, near where the apple sits in her full
+            logo. Asymmetric on purpose, not a centred semicircle. */}
         <path
-          d="M3 21 C -1 10, 5 1, 14 1 C 23 1, 29 10, 25 21"
+          d="M0 32 C -4 12, 14 -4, 20 -4 C 28 -4, 42 8, 38 20"
           fill="none"
           stroke={markColor}
-          strokeWidth="1.2"
+          strokeWidth="1.8"
           strokeLinecap="round"
         />
-        {/* Arms, raised in a V from the shoulders */}
+        {/* One solid silhouette, like a paper cutout, rather than stroked
+            outlines — arms, head and torso are each a filled shape in the
+            same flat gold, so the seams between them disappear. */}
         <path
-          d="M10.6 16.2 C 9.2 12.6, 7.9 9, 7.2 5.4"
-          fill="none"
-          stroke={markColor}
-          strokeWidth="1.7"
-          strokeLinecap="round"
-        />
-        <path
-          d="M17.4 16.2 C 18.8 12.6, 20.1 9, 20.8 5.4"
-          fill="none"
-          stroke={markColor}
-          strokeWidth="1.7"
-          strokeLinecap="round"
-        />
-        {/* Head */}
-        <circle cx="14" cy="14.5" r="2.5" fill={markColor} />
-        {/* Torso, tapered at the waist, cropped flat at mid-thigh */}
-        <path
-          d="M10.7 17.3 C 9.3 20.4, 9.4 23.8, 11.1 27 L 16.9 27 C 18.6 23.8, 18.7 20.4, 17.3 17.3 C 15.4 16, 12.6 16, 10.7 17.3 Z"
+          d="M13 18.5 C 11 13, 9.5 8, 8.5 3 L 11.5 3 C 12.7 8, 14 13, 15.5 18 Z"
           fill={markColor}
+          stroke={markColor}
+          strokeWidth="0.6"
+        />
+        <path
+          d="M27 18.5 C 29 13, 30.5 8, 31.5 3 L 28.5 3 C 27.3 8, 26 13, 24.5 18 Z"
+          fill={markColor}
+          stroke={markColor}
+          strokeWidth="0.6"
+        />
+        <circle
+          cx="20"
+          cy="14.8"
+          r="4.2"
+          fill={markColor}
+          stroke={markColor}
+          strokeWidth="0.6"
+        />
+        <path
+          d="M13 18.5 C 14.5 22, 16 25, 17 28 C 14 30.5, 12 32.5, 12 35 L 12 44 L 18 44 C 18.3 41, 18.8 38.3, 20 36 C 21.2 38.3, 21.7 41, 22 44 L 28 44 L 28 35 C 28 32.5, 26 30.5, 23 28 C 24 25, 25.5 22, 27 18.5 L 13 18.5 Z"
+          fill={markColor}
+          stroke={markColor}
+          strokeWidth="0.6"
         />
       </svg>
 

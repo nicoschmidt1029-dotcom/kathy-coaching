@@ -47,12 +47,10 @@
   },
   "nav": {
     "about": "Katey",
-    "approach": "Der Ansatz",
     "mission": "Meine Mission",
     "programs": "Programme",
     "testimonials": "Erfahrungen",
     "contact": "Kontakt",
-    "cta": "Lass uns reden",
     "menu": "Menü",
     "openMenu": "Menü öffnen",
     "skipToMain": "Zum Hauptinhalt springen"
@@ -62,7 +60,6 @@
     "switchTo": "Sprache auf {language} umstellen"
   },
   "hero": {
-    "eyebrow": "Für Frauen, die Kraft und Tiefe suchen",
     "headline": "Ich glaube, dass in jedem Menschen ein Potenzial steckt, das er noch nicht entdeckt hat. Manchmal braucht es nur <em>die richtige Richtung.</em>",
     "body": "1:1-Training · Ernährungsplan nach deinen Zielen · Geistliche Begleitung",
     "cta": "Wähle ein Programm",
@@ -106,10 +103,6 @@
     "story": "Ausgebildet an der SNF Academy, Abschluss an der Awakening School of Ministry. Ich helfe Menschen voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung, der richtigen Bewegung. <em>In jedem Alter.</em>",
     "portraitLabel": "Porträt von Katey",
     "portraitCaption": "Katey · Personal Trainerin · Ernährungsberaterin",
-    "qualificationsTitle": "Ausbildung & Zertifizierung",
-    "qualTrainerTitle": "Personal Trainerin",
-    "qualNutritionTitle": "Ernährungsberaterin",
-    "qualMinistryTitle": "Abschluss, School of Ministry",
     "_storyOriginal": "Nach meinem Studium an der SNF Academy, wo ich Personal Trainer und Ernährungsberatung studiert habe, und meinem Abschluss an der Awakening School of Ministry, helfe ich Menschen, in ihrem Leben voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung und der richtigen Bewegung. <em>In jedem Alter.</em>",
     "overlapTitle": "Über Katey"
   },
@@ -281,9 +274,9 @@
     }
   },
   "contact": {
-    "eyebrow": "Lass uns reden",
-    "title": "Lass uns ins Gespräch kommen.",
-    "intro": "Erzähl mir, wo du stehst und in welcher Sprache du dich wohlfühlst. Ich antworte persönlich.",
+    "eyebrow": "Kontakt",
+    "title": "Kann ich dir helfen?",
+    "intro": "Erzähl mir, wo du stehst. Ich antworte persönlich.",
     "formatLabel": "Format",
     "formatValue": "Anruf, Nachricht oder persönlich",
     "languagesLabel": "Sprachen",
@@ -293,11 +286,6 @@
     "namePlaceholder": "Anna Muster",
     "emailLabel": "E-Mail",
     "emailPlaceholder": "anna@beispiel.ch",
-    "languageLabel": "Sprache, in der du dich am wohlsten fühlst",
-    "languageNoPreference": "Keine Präferenz",
-    "languageOther": "Andere",
-    "locationLabel": "Woher schreibst du?",
-    "locationPlaceholder": "Land oder Stadt (optional)",
     "messageLabel": "Ein bisschen dazu, wo du stehst und wohin du willst",
     "messagePlaceholder": "Wo du gerade stehst, wohin du möchtest — es muss nicht ausgefeilt sein.",
     "prefillPrefix": "Interesse an: {selection}",
