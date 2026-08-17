@@ -88,38 +88,26 @@ export function Hero() {
 
   return (
     <section className="relative isolate overflow-hidden">
-      {/* Desktop/tablet: full-bleed, video kept to the left third at its own
-          aspect (not cropped) with a blurred scaled-up copy of itself
-          filling the rest of the band, same composition the blazer photo
-          used to. Below md there's no room for text beside an uncropped
-          portrait clip without the two overlapping, so this variant is
-          hidden there in favour of the stacked one below. */}
+      {/* Desktop/tablet: genuine full-bleed, video object-cover like a
+          normal wide hero band — per Katarina's explicit choice (asked
+          directly: crop it wide rather than keep the blurred-pad/portrait
+          look). Source is a vertical phone clip, so this crops in hard on
+          the vertical axis to fill a wide band; 50%/32% keeps hands, head
+          and torso in frame through the push-up rather than feet, which
+          matters more for reading "she's doing a push-up" at a glance. */}
       <div className="relative hidden min-h-[42rem] items-center py-28 md:flex lg:min-h-[46rem]">
         {(video || photo) && (
           <div className="absolute inset-0 -z-10">
             {video ? (
-              <>
-                <video
-                  src={video.src}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  aria-hidden
-                  className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl brightness-[0.6]"
-                />
-                <div className="absolute inset-0 flex items-center justify-start pl-[4%]">
-                  <video
-                    src={video.src}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    aria-hidden
-                    className="h-[92%] w-auto rounded-xl object-contain shadow-[0_30px_60px_-25px_rgba(0,0,0,0.5)]"
-                  />
-                </div>
-              </>
+              <video
+                src={video.src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-hidden
+                className="absolute inset-0 h-full w-full object-cover object-[50%_46%]"
+              />
             ) : (
               photo && (
                 <Image
