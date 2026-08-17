@@ -1,6 +1,8 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import logoImage from "@/public/images/logo/katey-coaching-logo.png";
 
 type Props = {
   className?: string;
@@ -14,6 +16,35 @@ export function Wordmark({ className, onDark = false }: Props) {
   // logo colour (her brand board is gold/mustard/beige), independent of
   // whatever the primary CTA colour happens to be.
   const markColor = onDark ? "var(--primary-foreground)" : "var(--clay)";
+
+  if (!onDark) {
+    /*
+      Header/light-background variant: the real logo file Katarina sent
+      (17 Aug — "KC" monogram, leaf, dumbbell, gold heart line, "KATEY
+      COACHING" + "HEALTH · FITNESS · FAITH"), cropped down to just the
+      artwork (it arrived as a screenshot of a phone photo grid, with a
+      black border and slivers of neighbouring photos) and used as-is —
+      not redrawn or rebuilt from text, per Katarina's explicit
+      instruction. Height-constrained rather than width-constrained: the
+      source is a near-square badge, not a wide horizontal lockup, so
+      sizing it to the requested ~200px width would make the header far
+      taller than the rest of the site's chrome.
+    */
+    return (
+      <Link
+        href="/"
+        aria-label={t("ariaLabel")}
+        className={cn("group inline-flex shrink-0 items-center", className)}
+      >
+        <Image
+          src={logoImage}
+          alt={t("ariaLabel")}
+          className="h-12 w-auto object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 sm:h-14 md:h-16"
+          priority
+        />
+      </Link>
+    );
+  }
 
   return (
     <Link
