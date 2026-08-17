@@ -7,17 +7,17 @@ import { TEMP_HERO_VIDEO, TEMP_PHOTOS } from "@/lib/temp-photos";
 import { TempPill } from "./placeholder";
 
 /**
- * Full-bleed photo hero, text laid over it — Katarina's own instruction
- * ("nice photo as a background"). An earlier version of this hero tried the
- * same thing and moved away from it because two gradient scrims were needed
- * to keep the type legible; the fix here is one scrim, not two.
+ * Split hero: text on one side, a full portrait video/photo card on the
+ * other — replaces an earlier full-bleed version.
  *
- * The photo itself dictates the side the scrim and text sit on: Katarina is
- * on the left third of this frame (she had the background AI-widened
- * herself, specifically for this use), with open sunlit wall running the
- * rest of the way — so, unlike a generic hero, the dark side has to be the
- * right, not the left, or the text would sit directly over her. She asked
- * explicitly not to be hidden by it.
+ * The full-bleed approach (photo/video as the whole background, text laid
+ * over a scrim) worked for the wide blazer portrait it was built for, but
+ * broke once the source became a vertical phone clip (pike push-up into a
+ * mobility flow): object-cover on a 9:16 clip stretched across a wide band
+ * crops hands and feet at most viewport widths — Katarina's own complaint
+ * ("man sieht die Person nur halb"). A card keeps the clip closer to its
+ * native aspect, so the crop stays modest top/bottom instead of amputating
+ * limbs left/right.
  *
  * No eyebrow line — Katarina asked for "For women who want strength and
  * depth" to come off; the headline now carries the hero on its own.
@@ -34,53 +34,11 @@ export function Hero() {
   const video = TEMP_HERO_VIDEO;
 
   return (
-    <section className="relative isolate flex min-h-[34rem] items-center overflow-hidden py-20 md:min-h-[42rem] md:py-28 lg:min-h-[46rem]">
-      {(video || photo) && (
-        <div className="absolute inset-0 -z-10">
-          {video ? (
-            /* Vertical phone footage (pike push-up into a mobility flow),
-               object-cover crops it into this wide band the same way the
-               still photo used to — 25%/22% keeps her roughly centred so
-               the crop doesn't clip hands or feet at any viewport width. */
-            <video
-              src={video.src}
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-hidden
-              className="absolute inset-0 h-full w-full object-cover object-[25%_22%]"
-            />
-          ) : (
-            photo && (
-              <Image
-                src={photo.url}
-                alt={photo.alt}
-                fill
-                priority
-                sizes="100vw"
-                className="object-cover object-[22%_28%]"
-              />
-            )
-          )}
-          {/* Reversed from the previous stock photo's hero: dark on the
-              right, where the text now sits, clear on the left, which is
-              exactly where Katarina needs to stay visible. */}
-          <div className="absolute inset-0 bg-gradient-to-l from-[var(--petrol-deep)]/92 via-[var(--petrol-deep)]/45 to-transparent" />
-          {/* A second, much lighter pass bottom-to-top keeps the CTA button
-              legible even where the horizontal scrim alone would be thin. */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--petrol-deep)]/40 via-transparent to-transparent" />
-          {!video && photo?.credit && <TempPill credit={photo.credit} slot="Hero" />}
-        </div>
-      )}
-
-      <div className="container-page flex justify-end text-[var(--primary-foreground)]">
-        <div className="max-w-xl">
+    <section className="section-pad">
+      <div className="container-page grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-10">
+        <div className="md:col-span-6 lg:col-span-5">
           <h1
-            /* Capped lower than a full-bleed hero would allow: the emphasised
-               fragment carries the underline and must not wrap, so it has to
-               fit the text column in the longest language, not just English. */
-            className="animate-rise font-display text-[clamp(2.3rem,4vw,3.5rem)] leading-[1.06] font-normal"
+            className="animate-rise font-display text-[clamp(2.3rem,4vw,3.5rem)] leading-[1.06] font-normal text-foreground"
             style={{ animationDelay: "80ms" }}
           >
             {t.rich("headline", {
@@ -108,7 +66,7 @@ export function Hero() {
           </h1>
 
           <p
-            className="animate-rise mt-8 max-w-md text-pretty text-[var(--primary-foreground)]/80 sm:text-lg sm:leading-[1.7]"
+            className="animate-rise mt-8 max-w-md text-pretty text-foreground/70 sm:text-lg sm:leading-[1.7]"
             style={{ animationDelay: "180ms" }}
           >
             {t("body")}
@@ -121,7 +79,7 @@ export function Hero() {
             <Button
               asChild
               size="lg"
-              className="group/button h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90"
+              className="group/button h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
             >
               <Link href="/programme">
                 {t("cta")}
@@ -130,6 +88,38 @@ export function Hero() {
             </Button>
           </div>
         </div>
+
+        {(video || photo) && (
+          <div className="md:col-span-6 md:col-start-7 lg:col-span-6 lg:col-start-7">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_30px_60px_-30px_rgba(60,40,52,0.35)]">
+              {video ? (
+                <video
+                  src={video.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-hidden
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              ) : (
+                photo && (
+                  <>
+                    <Image
+                      src={photo.url}
+                      alt={photo.alt}
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 100vw, 45vw"
+                      className="object-cover"
+                    />
+                    {photo.credit && <TempPill credit={photo.credit} slot="Hero" />}
+                  </>
+                )
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
