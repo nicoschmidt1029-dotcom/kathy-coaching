@@ -41,7 +41,7 @@ export function ImprintBodyDe() {
 
       <h2>Kontakt</h2>
       <p>
-        E-Mail: <Todo>die Adresse, die Katarina hier veröffentlichen möchte</Todo>
+        E-Mail: katey.coaching.newlife@gmail.com
         <br />
         Telefon:{" "}
         <Todo>eine Nummer, oder die Bestätigung, dass keine veröffentlicht wird</Todo>

@@ -40,7 +40,7 @@ export function ImprintBodyEn() {
 
       <h2>Contact</h2>
       <p>
-        Email: <Todo>the address Katarina wants published here</Todo>
+        Email: katey.coaching.newlife@gmail.com
         <br />
         Phone: <Todo>a number, or confirmation that none is published</Todo>
       </p>

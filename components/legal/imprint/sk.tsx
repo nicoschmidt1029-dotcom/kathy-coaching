@@ -49,7 +49,7 @@ export function ImprintBodySk() {
 
       <h2>Kontakt</h2>
       <p>
-        E-mail: <Todo>adresa, ktorú tu chce Katarína zverejniť</Todo>
+        E-mail: katey.coaching.newlife@gmail.com
         <br />
         Telefón:{" "}
         <Todo>číslo, alebo potvrdenie, že sa žiadne nezverejňuje</Todo>
