@@ -159,7 +159,11 @@ export const TEMP_PHOTOS: Record<
   },
 };
 
-// Hero video disabled — the hero now uses the still blazer portrait above.
-// kathy-video-2.mp4 (real Katey, 478x850) stays in the repo for later reuse;
-// kathy-video-1.mp4 was a DIFFERENT person and was removed.
-export const TEMP_HERO_VIDEO: TempVideo = null;
+// Katey's own — pike push-up into a mobility flow (crawl/lunge), cut
+// together from two clips she sent 16/17 Aug (see components/site/hero.tsx
+// for how it's cropped into the full-bleed hero). Replaces the still blazer
+// portrait, per her request to show her actually training instead of a
+// posed shot. kathy-video-2.mp4 stays in the repo, unused, for later reuse.
+export const TEMP_HERO_VIDEO: TempVideo = {
+  src: "/images/kathy/kathy-hero-video.mp4",
+};

@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
-import { TEMP_PHOTOS } from "@/lib/temp-photos";
+import { TEMP_HERO_VIDEO, TEMP_PHOTOS } from "@/lib/temp-photos";
 import { TempPill } from "./placeholder";
 
 /**
@@ -31,19 +31,38 @@ import { TempPill } from "./placeholder";
 export function Hero() {
   const t = useTranslations("hero");
   const photo = TEMP_PHOTOS.hero;
+  const video = TEMP_HERO_VIDEO;
 
   return (
     <section className="relative isolate flex min-h-[34rem] items-center overflow-hidden py-20 md:min-h-[42rem] md:py-28 lg:min-h-[46rem]">
-      {photo && (
+      {(video || photo) && (
         <div className="absolute inset-0 -z-10">
-          <Image
-            src={photo.url}
-            alt={photo.alt}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-[22%_28%]"
-          />
+          {video ? (
+            /* Vertical phone footage (pike push-up into a mobility flow),
+               object-cover crops it into this wide band the same way the
+               still photo used to — 25%/22% keeps her roughly centred so
+               the crop doesn't clip hands or feet at any viewport width. */
+            <video
+              src={video.src}
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-hidden
+              className="absolute inset-0 h-full w-full object-cover object-[25%_22%]"
+            />
+          ) : (
+            photo && (
+              <Image
+                src={photo.url}
+                alt={photo.alt}
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover object-[22%_28%]"
+              />
+            )
+          )}
           {/* Reversed from the previous stock photo's hero: dark on the
               right, where the text now sits, clear on the left, which is
               exactly where Katarina needs to stay visible. */}
@@ -51,7 +70,7 @@ export function Hero() {
           {/* A second, much lighter pass bottom-to-top keeps the CTA button
               legible even where the horizontal scrim alone would be thin. */}
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--petrol-deep)]/40 via-transparent to-transparent" />
-          {photo.credit && <TempPill credit={photo.credit} slot="Hero" />}
+          {!video && photo?.credit && <TempPill credit={photo.credit} slot="Hero" />}
         </div>
       )}
 
