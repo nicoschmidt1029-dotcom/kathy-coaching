@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import logoImage from "@/public/images/logo/katey-coaching-logo.png";
+import logoImage from "@/public/images/logo/katey-coaching-monogram.png";
 
 type Props = {
   className?: string;
@@ -20,26 +20,34 @@ export function Wordmark({ className, onDark = false }: Props) {
   if (!onDark) {
     /*
       Header/light-background variant: the real logo file Katarina sent
-      (17 Aug — "KC" monogram, leaf, dumbbell, gold heart line, "KATEY
-      COACHING" + "HEALTH · FITNESS · FAITH"), cropped down to just the
-      artwork (it arrived as a screenshot of a phone photo grid, with a
-      black border and slivers of neighbouring photos) and used as-is —
-      not redrawn or rebuilt from text, per Katarina's explicit
-      instruction. Height-constrained rather than width-constrained: the
-      source is a near-square badge, not a wide horizontal lockup, so
-      sizing it to the requested ~200px width would make the header far
-      taller than the rest of the site's chrome.
+      (17 Aug), cropped down to just the mark — "KC" monogram, leaf,
+      dumbbell, gold heart line — with the background keyed out to
+      transparency (ffmpeg colorkey) so it sits directly on the header's
+      cream, not inside a visible rectangle. Not redrawn or rebuilt from
+      text, per Katarina's explicit instruction — this is the same
+      artwork, just cropped tighter and the paper background removed.
+
+      The "KATEY COACHING" wordmark and "HEALTH · FITNESS · FAITH"
+      tagline rows are dropped from this crop: at header scale (~110–
+      150px wide) they read as illegible grey noise, and Katarina asked
+      for the tagline to be optional and the header to prioritise a
+      clean mark over full lockup text. Width-constrained now, not
+      height-constrained — the monogram-only crop is a wide ~8:5 mark,
+      not a near-square badge, so a width target actually fits.
     */
     return (
       <Link
         href="/"
         aria-label={t("ariaLabel")}
-        className={cn("group inline-flex shrink-0 items-center", className)}
+        className={cn(
+          "group inline-flex shrink-0 items-center",
+          className
+        )}
       >
         <Image
           src={logoImage}
           alt={t("ariaLabel")}
-          className="h-16 w-auto object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 sm:h-20 md:h-24"
+          className="h-auto w-[104px] object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 sm:w-[122px] md:w-[136px]"
           priority
         />
       </Link>
