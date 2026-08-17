@@ -7,17 +7,16 @@ import { TEMP_HERO_VIDEO, TEMP_PHOTOS } from "@/lib/temp-photos";
 import { TempPill } from "./placeholder";
 
 /**
- * Split hero: text on one side, a full portrait video/photo card on the
- * other — replaces an earlier full-bleed version.
+ * Full-bleed hero again, per Katarina's follow-up ("breitkant... wie
+ * geplant") — she liked the split-card version's content (video starts on
+ * the push-up, whole body visible) but wanted the wide background back.
  *
- * The full-bleed approach (photo/video as the whole background, text laid
- * over a scrim) worked for the wide blazer portrait it was built for, but
- * broke once the source became a vertical phone clip (pike push-up into a
- * mobility flow): object-cover on a 9:16 clip stretched across a wide band
- * crops hands and feet at most viewport widths — Katarina's own complaint
- * ("man sieht die Person nur halb"). A card keeps the clip closer to its
- * native aspect, so the crop stays modest top/bottom instead of amputating
- * limbs left/right.
+ * The vertical clip (720x1280) can't object-cover a wide band without
+ * cropping her out of frame — that was the original problem. Fix here
+ * instead of reverting to that crop: a blurred, scaled-up copy of the same
+ * clip fills the full-bleed band edge-to-edge, and the real (sharp,
+ * uncropped) video sits centred on top at its own aspect ratio, like a
+ * video letterboxed on Instagram/YouTube. Full width, nobody cropped out.
  *
  * No eyebrow line — Katarina asked for "For women who want strength and
  * depth" to come off; the headline now carries the hero on its own.
@@ -28,69 +27,133 @@ import { TempPill } from "./placeholder";
  * what the Katey/about section already says about her qualifications, and
  * she asked for that to live in exactly one place.
  */
+function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
+  return (
+    <>
+      <h1
+        className="animate-rise font-display text-[clamp(2.3rem,4vw,3.5rem)] leading-[1.06] font-normal"
+        style={{ animationDelay: "80ms" }}
+      >
+        {t.rich("headline", {
+          em: (chunks) => (
+            <span className="relative inline-block whitespace-nowrap">
+              <em className="not-italic font-display italic">{chunks}</em>
+              <svg
+                aria-hidden
+                viewBox="0 0 420 32"
+                className="absolute left-0 -bottom-2 h-[0.3em] w-full"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M4 22 C 70 8, 160 6, 230 14 S 380 26, 416 12"
+                  fill="none"
+                  stroke="var(--clay)"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  className="underline-draw"
+                />
+              </svg>
+            </span>
+          ),
+        })}
+      </h1>
+
+      <p
+        className="animate-rise mt-8 max-w-md text-pretty sm:text-lg sm:leading-[1.7]"
+        style={{ animationDelay: "180ms" }}
+      >
+        {t("body")}
+      </p>
+
+      <div className="animate-rise mt-10" style={{ animationDelay: "280ms" }}>
+        <Button
+          asChild
+          size="lg"
+          className="group/button h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90"
+        >
+          <Link href="/programme">
+            {t("cta")}
+            <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
+          </Link>
+        </Button>
+      </div>
+    </>
+  );
+}
+
 export function Hero() {
   const t = useTranslations("hero");
   const photo = TEMP_PHOTOS.hero;
   const video = TEMP_HERO_VIDEO;
 
   return (
-    <section className="section-pad">
-      <div className="container-page grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-10">
-        <div className="md:col-span-6 lg:col-span-5">
-          <h1
-            className="animate-rise font-display text-[clamp(2.3rem,4vw,3.5rem)] leading-[1.06] font-normal text-foreground"
-            style={{ animationDelay: "80ms" }}
-          >
-            {t.rich("headline", {
-              em: (chunks) => (
-                <span className="relative inline-block whitespace-nowrap">
-                  <em className="not-italic font-display italic">{chunks}</em>
-                  <svg
+    <section className="relative isolate overflow-hidden">
+      {/* Desktop/tablet: full-bleed, video kept to the left third at its own
+          aspect (not cropped) with a blurred scaled-up copy of itself
+          filling the rest of the band, same composition the blazer photo
+          used to. Below md there's no room for text beside an uncropped
+          portrait clip without the two overlapping, so this variant is
+          hidden there in favour of the stacked one below. */}
+      <div className="relative hidden min-h-[42rem] items-center py-28 md:flex lg:min-h-[46rem]">
+        {(video || photo) && (
+          <div className="absolute inset-0 -z-10">
+            {video ? (
+              <>
+                <video
+                  src={video.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-hidden
+                  className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl brightness-[0.6]"
+                />
+                <div className="absolute inset-0 flex items-center justify-start pl-[4%]">
+                  <video
+                    src={video.src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
                     aria-hidden
-                    viewBox="0 0 420 32"
-                    className="absolute left-0 -bottom-2 h-[0.3em] w-full"
-                    preserveAspectRatio="none"
-                  >
-                    <path
-                      d="M4 22 C 70 8, 160 6, 230 14 S 380 26, 416 12"
-                      fill="none"
-                      stroke="var(--clay)"
-                      strokeWidth="4"
-                      strokeLinecap="round"
-                      className="underline-draw"
-                    />
-                  </svg>
-                </span>
-              ),
-            })}
-          </h1>
+                    className="h-[92%] w-auto rounded-xl object-contain shadow-[0_30px_60px_-25px_rgba(0,0,0,0.5)]"
+                  />
+                </div>
+              </>
+            ) : (
+              photo && (
+                <Image
+                  src={photo.url}
+                  alt={photo.alt}
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="object-cover object-[22%_28%]"
+                />
+              )
+            )}
+            <div className="absolute inset-0 bg-gradient-to-l from-[var(--petrol-deep)]/92 via-[var(--petrol-deep)]/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--petrol-deep)]/40 via-transparent to-transparent" />
+            {!video && photo?.credit && <TempPill credit={photo.credit} slot="Hero" />}
+          </div>
+        )}
 
-          <p
-            className="animate-rise mt-8 max-w-md text-pretty text-foreground/70 sm:text-lg sm:leading-[1.7]"
-            style={{ animationDelay: "180ms" }}
-          >
-            {t("body")}
-          </p>
-
-          <div
-            className="animate-rise mt-10"
-            style={{ animationDelay: "280ms" }}
-          >
-            <Button
-              asChild
-              size="lg"
-              className="group/button h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
-            >
-              <Link href="/programme">
-                {t("cta")}
-                <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
-              </Link>
-            </Button>
+        <div className="container-page flex justify-end text-[var(--primary-foreground)]">
+          <div className="max-w-xl [&_p]:text-[var(--primary-foreground)]/80">
+            <HeroCopy t={t} />
           </div>
         </div>
+      </div>
 
+      {/* Mobile: stacked instead of overlaid — a full-width video/photo card
+          above plain text on the ivory background, so nothing has to share
+          space with the headline. */}
+      <div className="section-pad flex flex-col gap-8 md:hidden">
+        <div className="container-page text-foreground [&_p]:text-foreground/70">
+          <HeroCopy t={t} />
+        </div>
         {(video || photo) && (
-          <div className="md:col-span-6 md:col-start-7 lg:col-span-6 lg:col-start-7">
+          <div className="container-page">
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_30px_60px_-30px_rgba(60,40,52,0.35)]">
               {video ? (
                 <video
@@ -109,8 +172,7 @@ export function Hero() {
                       src={photo.url}
                       alt={photo.alt}
                       fill
-                      priority
-                      sizes="(max-width: 768px) 100vw, 45vw"
+                      sizes="100vw"
                       className="object-cover"
                     />
                     {photo.credit && <TempPill credit={photo.credit} slot="Hero" />}
