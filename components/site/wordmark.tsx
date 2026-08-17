@@ -25,69 +25,44 @@ export function Wordmark({ className, onDark = false }: Props) {
       )}
     >
       {/*
-        Small mark after Katey's own logo: a figure with arms raised under a
-        halo arc. Her brand board draws this large, with an apple, a dumbbell
-        and a heart ringing it — too much detail to survive at wordmark
-        size, so only the figure and the arc carry over; those two elements
-        are what the eye actually registers first in her original.
+        Small mark after the new "KC" monogram Katarina sent (17 Aug):
+        a serif "K" with a script "C" swashed through it, black, with a
+        gold leaf/dumbbell/heart sprig underneath — replaces the earlier
+        raised-arms figure, which followed her older brand board.
 
-        Redrawn (twice) for closer fidelity to her actual mark: the figure is
-        four solid shapes — two arms, a head, a torso — in flat colour like a
-        paper cutout, rather than thin stroked outlines, which read as a
-        sketch rather than a logo at small sizes. Each shape also carries a
-        matching stroke equal to its own fill: with several shapes
-        overlapping, browsers can render a hairline anti-aliasing seam right
-        at the boundary even though the colour is identical on both sides;
-        the stroke "chokes" that seam shut. The small gap at each armpit is
-        deliberate, not a bug — it is there in the reference too, where the
-        raised arm and the neck don't touch.
+        Only the two interlocked letters carry over here — the leaf,
+        dumbbell and heart accents were already dropped from the old mark
+        at this size for the same reason (illegible below ~14px), and
+        that reasoning applies just as much to a second set of accents.
+        Built from the site's own two display faces rather than traced
+        paths: K in Instrument Serif, C in Pinyon Script, overlapped with
+        a negative margin — text glyphs hold up at small sizes in a way
+        hand-drawn letterforms this fine usually don't.
+
+        Monogram colour is independent of `markColor` (which is the
+        wordmark's gold): the reference logo's K/C are solid black, only
+        the decorative sprig around it is gold, so the letters use
+        --foreground/cream instead of gold even though the script name
+        beside them stays gold.
       */}
-      <svg
+      <span
         aria-hidden
-        viewBox="0 0 40 52"
-        className="size-9 shrink-0 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 md:size-10"
+        className="relative inline-flex shrink-0 items-center transition-transform duration-300 ease-out group-hover:-translate-y-0.5"
+        style={{ width: "1.5em", height: "1em", fontSize: "2.25rem" }}
       >
-        {/* Halo arc — traced from Katey's own mark: it starts low on the
-            left (roughly hip height), sweeps up over the head, and ends
-            higher on the right, near where the apple sits in her full
-            logo. Asymmetric on purpose, not a centred semicircle. */}
-        <path
-          d="M0 32 C -4 12, 14 -4, 20 -4 C 28 -4, 42 8, 38 20"
-          fill="none"
-          stroke={markColor}
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
-        {/* One solid silhouette, like a paper cutout, rather than stroked
-            outlines — arms, head and torso are each a filled shape in the
-            same flat gold, so the seams between them disappear. */}
-        <path
-          d="M13 18.5 C 11 13, 9.5 8, 8.5 3 L 11.5 3 C 12.7 8, 14 13, 15.5 18 Z"
-          fill={markColor}
-          stroke={markColor}
-          strokeWidth="0.6"
-        />
-        <path
-          d="M27 18.5 C 29 13, 30.5 8, 31.5 3 L 28.5 3 C 27.3 8, 26 13, 24.5 18 Z"
-          fill={markColor}
-          stroke={markColor}
-          strokeWidth="0.6"
-        />
-        <circle
-          cx="20"
-          cy="14.8"
-          r="4.2"
-          fill={markColor}
-          stroke={markColor}
-          strokeWidth="0.6"
-        />
-        <path
-          d="M13 18.5 C 14.5 22, 16 25, 17 28 C 14 30.5, 12 32.5, 12 35 L 12 44 L 18 44 C 18.3 41, 18.8 38.3, 20 36 C 21.2 38.3, 21.7 41, 22 44 L 28 44 L 28 35 C 28 32.5, 26 30.5, 23 28 C 24 25, 25.5 22, 27 18.5 L 13 18.5 Z"
-          fill={markColor}
-          stroke={markColor}
-          strokeWidth="0.6"
-        />
-      </svg>
+        <span
+          className="absolute left-0 top-[0.02em] font-[family-name:var(--font-display)] text-[0.72em] leading-none"
+          style={{ color: onDark ? "var(--primary-foreground)" : "var(--foreground)" }}
+        >
+          K
+        </span>
+        <span
+          className="absolute left-[0.34em] top-[-0.16em] font-[family-name:var(--font-script)] text-[0.92em] leading-none"
+          style={{ color: onDark ? "var(--primary-foreground)" : "var(--foreground)" }}
+        >
+          C
+        </span>
+      </span>
 
       <span
         className={cn(
