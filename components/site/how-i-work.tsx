@@ -25,7 +25,7 @@ export function HowIWork() {
   const t = useTranslations("howIWork");
 
   return (
-    <section id="how-i-work" className="bg-[var(--petrol-tint)] section-pad">
+    <section id="how-i-work" className="section-pad">
       <div className="container-page">
         <div className="max-w-2xl">
           <p className="eyebrow">{t("eyebrow")}</p>

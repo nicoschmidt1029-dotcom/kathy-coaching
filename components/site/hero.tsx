@@ -95,7 +95,11 @@ export function Hero() {
           the vertical axis to fill a wide band; 50%/32% keeps hands, head
           and torso in frame through the push-up rather than feet, which
           matters more for reading "she's doing a push-up" at a glance. */}
-      <div className="relative hidden min-h-[42rem] items-center py-28 md:flex lg:min-h-[46rem]">
+      {/* Full-screen landing view now that Home is only this section —
+          fills the viewport below the sticky header (h-16/h-20) so video +
+          headline + nav is the entire first view, nothing else competing
+          underneath. */}
+      <div className="relative hidden min-h-[calc(100svh-5rem)] items-center py-20 md:flex">
         {(video || photo) && (
           <div className="absolute inset-0 -z-10">
             {video ? (

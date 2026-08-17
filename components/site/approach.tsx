@@ -45,7 +45,7 @@ export function Approach() {
   const t = useTranslations("approach");
 
   return (
-    <section id="approach" className="bg-[var(--petrol-tint)] section-pad relative overflow-hidden">
+    <section id="approach" className="section-pad relative overflow-hidden">
       <div className="container-page">
         <div className="max-w-3xl">
           <p className="eyebrow">{t("systemName")}</p>

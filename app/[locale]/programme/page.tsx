@@ -4,19 +4,17 @@ import { alternatesFor } from "@/i18n/metadata";
 import { Programs } from "@/components/site/programs";
 
 /**
- * Programs, on its own page — split out of the one-pager on Katarina's
- * request ("one page yes but program should be an extra one"). Everything
- * else on the site is still a single scroll; this is the one exception.
+ * Programs — was the first section split out of the one-pager ("one page
+ * yes but program should be an extra one"); the rest of the site followed
+ * the same pattern later (Katey, Mission, Contact all real routes now too).
  *
  * The builder is included here (bundlesOnly is left at its default,
- * false), unlike the version that used to sit on the home page — the
- * reasoning that kept it off the one-pager ("a calculator mid-scroll is a
- * wall") doesn't apply to a page someone navigated to specifically to
- * compare options.
+ * false) — a calculator is a destination on a page someone navigated to
+ * specifically to compare options, not a wall mid-scroll.
  *
- * Bundle "choose this" links still point at `/?bundle=…#kontakt` (see
- * programs.tsx) — Contact lives on the home page, not here, so a
- * selection made on this page carries back there to the form.
+ * Bundle "choose this" links point at `/kontakt?bundle=…` (see
+ * programs.tsx) — Contact is its own page, so a selection made here
+ * carries over to the form there.
  */
 export async function generateMetadata({
   params,

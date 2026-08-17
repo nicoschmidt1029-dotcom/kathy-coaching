@@ -40,7 +40,7 @@ export function Programs() {
             <p className="section-lede mt-0 max-w-none">{t("intro")}</p>
             {/* Ties the three blocks back to the named method — see
                 approach.systemName. */}
-            <p className="mt-5 max-w-none text-[0.95rem] leading-relaxed text-foreground/60">
+            <p className="mt-5 max-w-none text-[0.95rem] leading-relaxed text-foreground/78">
               {t("systemNote", { system: approach("systemName") })}
             </p>
           </div>
@@ -49,14 +49,14 @@ export function Programs() {
               Approach "Train" thread, same colour grade so the two pages
               feel like one shared set of assets rather than two shoots. */}
           {TEMP_PHOTOS.programsIntro && (
-            <div className="md:col-span-5">
+            <div className="md:col-span-5 md:-mt-10">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                 <Image
                   src={TEMP_PHOTOS.programsIntro.url}
                   alt={TEMP_PHOTOS.programsIntro.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 35vw"
-                  className="object-cover saturate-[0.85] sepia-[0.12] contrast-[1.03]"
+                  className="object-cover object-[50%_20%] saturate-[0.85] sepia-[0.12] contrast-[1.03]"
                 />
               </div>
             </div>
@@ -70,7 +70,7 @@ export function Programs() {
               <p className="caption">{t("readyMade")}</p>
               <h3 className="section-title-sm">{t("readyMadeTitle")}</h3>
             </div>
-            <p className="hidden max-w-xs text-right text-[0.85rem] text-foreground/60 sm:block">
+            <p className="hidden max-w-xs text-right text-[0.85rem] text-foreground/75 sm:block">
               {t("readyMadeAside")}
             </p>
           </div>
@@ -125,7 +125,7 @@ export function Programs() {
                         "mt-2 text-[0.92rem] leading-relaxed",
                         bundle.recommended
                           ? "text-[var(--primary-foreground)]/78"
-                          : "text-foreground/65"
+                          : "text-foreground/80"
                       )}
                     >
                       {p(`bundles.${bundle.id}.blurb`)}
@@ -136,7 +136,7 @@ export function Programs() {
                         "mt-5 space-y-2.5 text-[0.9rem]",
                         bundle.recommended
                           ? "text-[var(--primary-foreground)]/85"
-                          : "text-foreground/78"
+                          : "text-foreground/85"
                       )}
                     >
                       {includes.map((line) => (
@@ -171,7 +171,7 @@ export function Programs() {
                           "mt-6 space-y-1.5 text-[0.82rem] leading-relaxed",
                           bundle.recommended
                             ? "text-[var(--primary-foreground)]/65"
-                            : "text-foreground/60"
+                            : "text-foreground/72"
                         )}
                       >
                         <p>
@@ -180,7 +180,7 @@ export function Programs() {
                               "font-medium",
                               bundle.recommended
                                 ? "text-[var(--primary-foreground)]/85"
-                                : "text-foreground/78"
+                                : "text-foreground/88"
                             )}
                           >
                             {t("bestFor")}
@@ -268,7 +268,7 @@ export function Programs() {
                           : "bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
                       )}
                     >
-                      <Link href={`/?bundle=${bundle.id}#kontakt`}>
+                      <Link href={`/kontakt?bundle=${bundle.id}`}>
                         {t("chooseBundle")}
                         <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
                       </Link>

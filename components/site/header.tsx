@@ -12,24 +12,26 @@ import {
   SheetTrigger,
   SheetClose,
 } from "@/components/ui/sheet";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Wordmark } from "./wordmark";
 import { LanguageSwitcher } from "./language-switcher";
 import { cn } from "@/lib/utils";
 
-/** Mostly one page — nav jumps to sections — except Programs, which is its
- *  own route (see app/[locale]/programme/page.tsx). */
+/** Every item is a real route now, not an anchor on the home scroll —
+ *  Katarina's explicit request: clicking a nav item navigates to its own
+ *  page instead of scrolling down from Home. */
 const NAV = [
-  { key: "about", href: "/#about" },
-  { key: "mission", href: "/#mission" },
+  { key: "about", href: "/katey" },
+  { key: "mission", href: "/mission" },
   { key: "programs", href: "/programme" },
-  { key: "contact", href: "/#kontakt" },
+  { key: "contact", href: "/kontakt" },
 ] as const;
 
 export function Header() {
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const t = useTranslations("nav");
+  const pathname = usePathname();
 
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -52,15 +54,19 @@ export function Header() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {NAV.map((item) => {
+            const active = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={active ? "page" : undefined}
                                 className={cn(
                   // nowrap: two-word labels in other languages ("O mne")
                   // otherwise break across lines in the narrow desktop nav
                   "group relative whitespace-nowrap text-[0.92rem] transition-colors duration-200",
-                  "text-foreground/72 hover:text-foreground"
+                  active
+                    ? "text-foreground"
+                    : "text-foreground/72 hover:text-foreground"
                 )}
               >
                 {t(item.key)}
@@ -68,7 +74,7 @@ export function Header() {
                   aria-hidden
                   className={cn(
                     "absolute -bottom-1 left-0 h-px w-full origin-left bg-[var(--clay)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
-                    "scale-x-0 group-hover:scale-x-100"
+                    active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                   )}
                 />
               </Link>

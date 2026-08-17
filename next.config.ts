@@ -10,25 +10,26 @@ const nextConfig: NextConfig = {
   images: {},
 
   /**
-   * The site is mostly one page. These keep every link already shared
-   * alive: /de/about lands on /de#about rather than a 404.
+   * Keeps every link already shared alive after the site moved from a
+   * one-page scroll to real per-section routes (Katarina's request):
+   * /de/about now lands on /de/katey rather than a 404.
    *
    * Temporary, not permanent — a 308 is cached by browsers forever, and if
-   * any of these ever becomes its own page again that cache is unfixable.
+   * any of these old paths ever needs a different destination that cache
+   * is unfixable.
    *
-   * programme is NOT in this map — it graduated to a real route
-   * (app/[locale]/programme/page.tsx), so redirecting it here would hijack
-   * that page instead of serving it.
+   * programme and kontakt are NOT in this map — both are real routes
+   * (app/[locale]/programme, app/[locale]/kontakt), so redirecting them
+   * here would hijack the page instead of serving it.
    */
   async redirects() {
-    const anchors: Record<string, string> = {
-      about: "about",
-      testimonials: "approach",
-      kontakt: "kontakt",
+    const destinations: Record<string, string> = {
+      about: "katey",
+      testimonials: "katey",
     };
-    return Object.entries(anchors).map(([path, hash]) => ({
-      source: `/:locale(en|de|sk)/${path}`,
-      destination: `/:locale#${hash}`,
+    return Object.entries(destinations).map(([from, to]) => ({
+      source: `/:locale(en|de|sk)/${from}`,
+      destination: `/:locale/${to}`,
       permanent: false,
     }));
   },
