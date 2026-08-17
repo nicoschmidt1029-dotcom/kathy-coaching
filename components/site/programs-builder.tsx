@@ -2,12 +2,19 @@
 
 import * as React from "react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
-import { ArrowRight, Check } from "lucide-react";
+import {
+  Apple,
+  ArrowRight,
+  Check,
+  Dumbbell,
+  Heart,
+  MessageCircle,
+  Sparkles,
+  Star,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { ADDON_ART, BLOCK_ART } from "@/lib/block-art";
 import {
   ADDONS,
   BLOCKS,
@@ -16,6 +23,21 @@ import {
   type AddonId,
   type BlockId,
 } from "@/lib/pricing";
+
+// Same lucide glyphs as the bundle cards on this page and the thread labels
+// on Approach — replaces the commissioned scene drawings, which cropped
+// awkwardly at these small sizes (see programs.tsx for the fuller note).
+const BLOCK_ICON: Record<BlockId, typeof Dumbbell> = {
+  training: Dumbbell,
+  nutrition: Apple,
+  spiritual: Heart,
+};
+
+const ADDON_ICON: Record<AddonId, typeof Dumbbell> = {
+  whatsapp: MessageCircle,
+  prayer: Sparkles,
+  priority: Star,
+};
 
 export function ProgramsBuilder() {
   const t = useTranslations("builder");
@@ -70,6 +92,7 @@ export function ProgramsBuilder() {
         <ul className="mt-4 grid gap-3">
           {BLOCKS.map((block) => {
             const selected = blocks.has(block.id);
+            const Icon = BLOCK_ICON[block.id];
             return (
               <li key={block.id}>
                 <button
@@ -83,16 +106,22 @@ export function ProgramsBuilder() {
                       : "border-foreground/[0.08] hover:border-foreground/25"
                   )}
                 >
-                  {/* The block's own drawing, not a generic glyph. Selection
-                      is shown by a check badge over the corner so the picture
-                      stays visible either way. */}
-                  <span className="relative mt-0.5 size-14 shrink-0 overflow-hidden rounded-xl" aria-hidden>
-                    <Image
-                      src={BLOCK_ART[block.id]}
-                      alt=""
-                      fill
-                      sizes="56px"
-                      className="scale-[1.85] object-cover"
+                  {/* A single glyph, not the commissioned scene drawing — same
+                      icon used on the bundle cards above. Selection is shown
+                      by a check badge over the corner. */}
+                  <span
+                    className={cn(
+                      "relative mt-0.5 flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-xl",
+                      selected ? "bg-[var(--plum)]/10" : "bg-[var(--sand)]"
+                    )}
+                    aria-hidden
+                  >
+                    <Icon
+                      className={cn(
+                        "size-6",
+                        selected ? "text-[var(--plum)]" : "text-[var(--clay)]"
+                      )}
+                      strokeWidth={1.5}
                     />
                     {selected && (
                       <span className="absolute -right-0.5 -top-0.5 flex size-5 items-center justify-center rounded-full bg-[var(--plum)] text-[var(--primary-foreground)]">
@@ -123,6 +152,7 @@ export function ProgramsBuilder() {
         <ul className="mt-4 grid gap-3 sm:grid-cols-3">
           {ADDONS.map((addon) => {
             const selected = addons.has(addon.id);
+            const Icon = ADDON_ICON[addon.id];
             return (
               <li key={addon.id}>
                 <button
@@ -136,19 +166,21 @@ export function ProgramsBuilder() {
                       : "border-foreground/[0.08] hover:border-foreground/25"
                   )}
                 >
-                  {/* Drawing above the name, not beside it. In a
-                      three-across grid, putting it on the left squeezed the
-                      name into three ragged lines. */}
+                  {/* A single glyph above the name, not the commissioned
+                      drawing — same idea as the block cards above. */}
                   <span
-                    className="relative mb-3 h-14 w-full overflow-hidden rounded-lg"
+                    className={cn(
+                      "mb-3 flex h-14 w-14 items-center justify-center rounded-lg",
+                      selected ? "bg-[var(--plum)]/10" : "bg-[var(--sand)]"
+                    )}
                     aria-hidden
                   >
-                    <Image
-                      src={ADDON_ART[addon.id]}
-                      alt=""
-                      fill
-                      sizes="140px"
-                      className="scale-[2] object-contain"
+                    <Icon
+                      className={cn(
+                        "size-5",
+                        selected ? "text-[var(--plum)]" : "text-[var(--clay)]"
+                      )}
+                      strokeWidth={1.5}
                     />
                   </span>
                   <span className="flex w-full items-start justify-between gap-2">
