@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Apple, Dumbbell, Heart } from "lucide-react";
+import { Apple, ArrowRight, Dumbbell, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { DisplayTitle } from "./display-title";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
@@ -8,17 +10,17 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
 const PILLARS = [
   // icon: the same three glyphs (dumbbell, apple, heart) that ring the
   // figure on Katey's own logo — one per thread, in the same order.
-  //
-  // zoom: block-training.png was drawn as a small chip icon for the pricing
-  // cards — a kettlebell and towel centred in a lot of empty canvas. Nourish
-  // and Soul are full table-top scenes that fill their frame edge to edge;
-  // dropped in at the same crop, training would read as mostly blank space.
-  // Scaling and re-centring it onto just the kettlebell/towel cluster gets
-  // it to fill the frame the same way the other two do.
-  { key: "train", image: TEMP_PHOTOS.approachTrain, icon: Dumbbell, zoom: true },
-  { key: "nourish", image: TEMP_PHOTOS.approachNourish, icon: Apple, zoom: false },
-  { key: "soul", image: TEMP_PHOTOS.approachSoul, icon: Heart, zoom: false },
+  { key: "train", image: TEMP_PHOTOS.approachTrain, icon: Dumbbell, zoom: false, photo: true },
+  { key: "nourish", image: TEMP_PHOTOS.approachNourish, icon: Apple, zoom: false, photo: false },
+  { key: "soul", image: TEMP_PHOTOS.approachSoul, icon: Heart, zoom: false, photo: false },
 ] as const;
+
+// Shared warm-toned grade for real photos in this section (not the line
+// illustrations, which are already drawn in the site's palette) — Katarina
+// asked for the three threads to read as one consistent set of colours as
+// real photos replace the drawings one at a time, rather than each photo
+// carrying its own original white balance.
+const PHOTO_GRADE = "saturate-[0.85] sepia-[0.12] contrast-[1.03]";
 
 /**
  * The three threads in full, as alternating bands.
@@ -55,7 +57,7 @@ export function Approach() {
         </div>
 
         <ul className="mt-20 space-y-20 md:mt-24 md:space-y-28">
-          {PILLARS.map(({ key, image, icon: Icon, zoom }, i) => (
+          {PILLARS.map(({ key, image, icon: Icon, zoom, photo }, i) => (
             <li
               key={key}
               className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-14"
@@ -74,7 +76,8 @@ export function Approach() {
                       sizes="(max-width: 768px) 100vw, 45vw"
                       className={cn(
                         "object-cover",
-                        zoom && "scale-[2.3] object-[48%_54%]"
+                        zoom && "scale-[2.3] object-[48%_54%]",
+                        photo && PHOTO_GRADE
                       )}
                     />
                   </div>
@@ -106,6 +109,18 @@ export function Approach() {
             </li>
           ))}
         </ul>
+
+        {/* Programs moved to its own page (Katarina's request); the
+            one-pager needs its own way there instead of relying on the
+            header nav alone. */}
+        <div className="mt-16 flex justify-center md:mt-20">
+          <Button asChild size="lg" className="group/button h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90">
+            <Link href="/programme">
+              {t("viewProgramsCta")}
+              <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );

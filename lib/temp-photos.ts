@@ -19,8 +19,8 @@
  *   - heroMovementDetail → /images/kathy/kathy-07.jpg (gym, purple top, mid-stretch)
  *   - about        → /images/kathy/kathy-01.jpg (running track, side profile)
  *
- * approachTrain is a commissioned illustration (block-training.png), not a
- * photo — see its own comment below for why.
+ * approachTrain is a real Katey photo (kathy-08-stretch.jpg) — see its own
+ * comment below.
  *
  * about was kathy-07 (gym) until the gold/mustard rebrand — the gym's neon
  * green wall clashed hard with the new palette and there is no tool here to
@@ -77,6 +77,7 @@ export const TEMP_PHOTOS: Record<
   | "approachNourish"
   | "approachSoul"
   | "programsBand"
+  | "programsIntro"
   | "homeBand"
   | "about",
   TempPhoto
@@ -103,18 +104,13 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-07.jpg",
     alt: "Katey stretching in the gym, looking toward the camera",
   },
-  // Commissioned line illustration — same hand and hue as Nourish and Soul.
-  // This thread ran a real photo of Katey (first the gym shot, briefly the
-  // HomeBand track photo) while the other two threads ran drawings, which
-  // read as an unplanned mix. Katarina asked for full consistency across
-  // all three, so this switches to the matching illustration too — reusing
-  // the kettlebell/towel art already drawn for the Personal Training block
-  // elsewhere on the site (see lib/block-art.ts) rather than commissioning
-  // a fourth drawing for the same subject. Rendered zoomed in — see the
-  // `zoom` note on approach.tsx's PILLARS.
+  // Katey's own — new stretch/lunge shot on the track (sent 17 Aug), replacing
+  // the block-training illustration. She asked for this thread specifically to
+  // go back to a real photo; Nourish and Soul are still illustrations pending
+  // real photos for those two themes (see note above the record).
   approachTrain: {
-    url: "/images/illustrations/block-training.png",
-    alt: "Line illustration: a kettlebell beside a folded towel",
+    url: "/images/kathy/kathy-08-stretch.jpg",
+    alt: "Katey mid-stretch on a running track, arms and legs extended",
   },
   // Commissioned line illustration — terracotta on cream, drawn for this site.
   // Replaced an Unsplash buddha bowl: stock food photography made the thread
@@ -146,6 +142,13 @@ export const TEMP_PHOTOS: Record<
   programsBand: {
     url: "/images/kathy/kathy-04.jpg",
     alt: "Katey sitting on a running track, looking into the distance",
+  },
+  // Katey's own — new photo (sent 17 Aug), drinking from a bottle mid-session,
+  // same shoot/grade as approachTrain — sits beside the intro text at the top
+  // of the Programs page.
+  programsIntro: {
+    url: "/images/kathy/kathy-09-bottle.jpg",
+    alt: "Katey drinking water during a training session",
   },
   // Katey's own — running track, seated side profile, looking off into the
   // distance. Warm red track and greenery read gold rather than clashing,

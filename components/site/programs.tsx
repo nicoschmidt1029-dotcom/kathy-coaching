@@ -1,13 +1,25 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { ArrowRight, Check } from "lucide-react";
+import { Apple, ArrowRight, Check, Dumbbell, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { BUNDLES } from "@/lib/pricing";
-import { BLOCK_ART } from "@/lib/block-art";
+import { BUNDLES, type BlockId } from "@/lib/pricing";
+import { TEMP_PHOTOS } from "@/lib/temp-photos";
 import { ProgramsBuilder } from "./programs-builder";
 import { DisplayTitle } from "./display-title";
+
+// Simple lucide glyphs, not the commissioned scene drawings (kettlebell+towel,
+// plate+cutlery+orange, book+candle): those read fine full-size on the
+// Approach page, but cropped into a small square card here they clip
+// awkwardly and looked more like an unfinished AI sketch than a chosen
+// design. A single centred icon on a flat chip reads as intentional at any
+// size — same glyphs already used next to each thread label in Approach.
+const BLOCK_ICON: Record<BlockId, typeof Dumbbell> = {
+  training: Dumbbell,
+  nutrition: Apple,
+  spiritual: Heart,
+};
 
 export function Programs() {
   const t = useTranslations("programs");
@@ -32,6 +44,23 @@ export function Programs() {
               {t("systemNote", { system: approach("systemName") })}
             </p>
           </div>
+
+          {/* Katey's own photo beside the intro — same 17 Aug shoot as the
+              Approach "Train" thread, same colour grade so the two pages
+              feel like one shared set of assets rather than two shoots. */}
+          {TEMP_PHOTOS.programsIntro && (
+            <div className="md:col-span-5">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+                <Image
+                  src={TEMP_PHOTOS.programsIntro.url}
+                  alt={TEMP_PHOTOS.programsIntro.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 35vw"
+                  className="object-cover saturate-[0.85] sepia-[0.12] contrast-[1.03]"
+                />
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Section A — ready-made bundles */}
@@ -162,35 +191,40 @@ export function Programs() {
                       </div>
                     )}
 
-                    {/* One drawing per block the bundle contains, so a card
-                        shows at a glance what is in it. Replaces a radial wash
-                        behind three lucide glyphs, which read as stock UI on an
-                        otherwise hand-drawn page. Used to skip the recommended
-                        card, which is why it looked unfinished next to the
-                        other two — it now gets all three block drawings
-                        (training + nutrition + spiritual), since "Der ganze
-                        Weg" is literally all three blocks. A light chip
-                        behind each drawing keeps the terracotta linework
-                        visible on the card's dark ground. */}
+                    {/* One glyph per block the bundle contains, so a card
+                        shows at a glance what is in it — same icon used next
+                        to each thread label on the Approach page, so the two
+                        pages read as one system. Covers the recommended card
+                        too, which is why it gets all three (training +
+                        nutrition + spiritual): "Der ganze Weg" is literally
+                        all three blocks. */}
                     {bundle.blocks.length > 0 && (
-                      <div className="my-7 flex flex-1 items-center justify-center gap-3">
-                        {bundle.blocks.map((id) => (
-                          <div
-                            key={id}
-                            className={cn(
-                              "relative aspect-square w-full max-w-[7.5rem] overflow-hidden rounded-xl",
-                              bundle.recommended && "bg-[var(--primary-foreground)]/92"
-                            )}
-                          >
-                            <Image
-                              src={BLOCK_ART[id]}
-                              alt=""
-                              fill
-                              sizes="120px"
-                              className="scale-[1.75] object-cover"
-                            />
-                          </div>
-                        ))}
+                      <div className="my-7 flex flex-1 items-center justify-center gap-4">
+                        {bundle.blocks.map((id) => {
+                          const Icon = BLOCK_ICON[id];
+                          return (
+                            <div
+                              key={id}
+                              className={cn(
+                                "flex aspect-square w-full max-w-[5rem] items-center justify-center rounded-xl",
+                                bundle.recommended
+                                  ? "bg-[var(--primary-foreground)]/12"
+                                  : "bg-[var(--sand)]"
+                              )}
+                            >
+                              <Icon
+                                aria-hidden
+                                className={cn(
+                                  "size-6",
+                                  bundle.recommended
+                                    ? "text-[var(--primary-foreground)]"
+                                    : "text-[var(--clay)]"
+                                )}
+                                strokeWidth={1.5}
+                              />
+                            </div>
+                          );
+                        })}
                       </div>
                     )}
 
