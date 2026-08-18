@@ -91,10 +91,9 @@ export function Hero() {
       {/* Desktop/tablet: genuine full-bleed, video object-cover like a
           normal wide hero band — per Katarina's explicit choice (asked
           directly: crop it wide rather than keep the blurred-pad/portrait
-          look). Source is a vertical phone clip, so this crops in hard on
-          the vertical axis to fill a wide band; 50%/32% keeps hands, head
-          and torso in frame through the push-up rather than feet, which
-          matters more for reading "she's doing a push-up" at a glance. */}
+          look). Source is now a true 16:9 landscape clip (workout-hero.mp4),
+          so a plain center crop keeps the whole movement in frame without
+          the vertical-clip cropping bias the old phone-shot source needed. */}
       {/* Full-screen landing view now that Home is only this section —
           fills the viewport below the sticky header (h-16/h-20) so video +
           headline + nav is the entire first view, nothing else competing
@@ -110,7 +109,7 @@ export function Hero() {
                 loop
                 playsInline
                 aria-hidden
-                className="absolute inset-0 h-full w-full object-cover object-[50%_46%]"
+                className="absolute inset-0 h-full w-full object-cover object-center"
               />
             ) : (
               photo && (

@@ -186,5 +186,5 @@ export const TEMP_PHOTOS: Record<
 // portrait, per her request to show her actually training instead of a
 // posed shot. kathy-video-2.mp4 stays in the repo, unused, for later reuse.
 export const TEMP_HERO_VIDEO: TempVideo = {
-  src: "/images/kathy/kathy-hero-video.mp4",
+  src: "/videos/workout-hero.mp4",
 };
