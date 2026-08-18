@@ -45,13 +45,11 @@
  * (hands arranging figs, olives, walnuts and bread on a wood board — warm,
  * natural light, on-palette) — see nourish-fig-bread-styling.png.
  *
- * Slots still needing real content (2026-08-18 review):
- *   - approachSoul renders soul.png, a commissioned line illustration
- *     (candle/book/cup) for "Seele & Identität in Jesus" — real photography
- *     was requested to replace it (warm, reflective, faith-themed — e.g. an
- *     open Bible in natural light, hands near it, quiet still life; NOT
- *     cartoon/line-art, not a posed "praying model" stock shot). No local
- *     asset fits; needs a real sourced/commissioned photo. Left as-is.
+ * approachSoul was soul.png, a commissioned line illustration (candle/
+ * book/cup) — replaced 2026-08-18 the same way as approachNourish, with a
+ * real photographic still life Katarina supplied directly (open Bible,
+ * lit candle, mug, olive branches, warm wood table) — see
+ * soul-bible-candle-styling.png.
  *
  * The testimonial slots are gone entirely rather than sitting here as `null`:
  * the people quoted are invented, so there was never a photo coming. See
@@ -134,15 +132,16 @@ export const TEMP_PHOTOS: Record<
     url: "/images/nourish/nourish-fig-bread-styling.png",
     alt: "Hands arranging halved figs, olives, walnuts and fresh bread on a rustic wooden board, warm natural light",
   },
-  // Commissioned line illustration — book, candle, leaves — not a photo of
-  // Katey. She was explicit that this thread shouldn't show her a second/
-  // third time in a row; this illustration already matches the soft,
-  // warm, sand-toned editorial direction she asked for as its
-  // replacement, so no new asset was needed. kathy-02.jpg (the photo this
-  // slot briefly held) is still assigned to homeBand, unused elsewhere.
+  // Was a commissioned line illustration (book, candle, leaves) — not a
+  // photo of Katey, since she was explicit that this thread shouldn't show
+  // her a second/third time in a row. Replaced 2026-08-18 with a real
+  // photographic still life she supplied directly (open Bible, lit candle,
+  // mug, olive branches, warm wood table) — same soft, warm, sand-toned
+  // editorial direction, now as an actual photo instead of an illustration.
+  // The old illustration file stays in the repo, just unassigned.
   approachSoul: {
-    url: "/images/illustrations/soul.png",
-    alt: "Line illustration: an open book beside a lit candle, a cup and a sprig of leaves",
+    url: "/images/soul/soul-bible-candle-styling.png",
+    alt: "An open Bible, a lit candle, a mug and olive branches on a warm wooden table",
   },
   // Katey's own — running track, seated from behind, looking down the lane.
   // Was the home page's standalone full-bleed pause section; that section

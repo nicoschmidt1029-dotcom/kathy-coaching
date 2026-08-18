@@ -43,7 +43,11 @@ const PILLARS = [
     image: TEMP_PHOTOS.approachSoul,
     icon: Heart,
     zoom: false,
-    objectPosition: undefined,
+    // Still life is close to the 5:4 container's own ratio, so cover only
+    // trims a little off each side — biasing slightly left keeps the
+    // candle fully in frame while the Bible (center) and mug (right) stay
+    // comfortably inside the crop too.
+    objectPosition: "46% 50%",
   },
 ] as const;
 
