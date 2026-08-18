@@ -37,14 +37,15 @@
  * the stock silhouette both stay out of the render path but easy to bring
  * back if needed — see hero.tsx and git history for the stock photo file.
  *
+ * approachNourish was kathy-04.jpg (running track) — didn't communicate
+ * nutrition at all, and kathy-04 is also used a second time on programsBand
+ * (separate, unrelated duplicate — programsBand isn't currently rendered
+ * anywhere live, see below). Replaced 2026-08-18 with a commissioned/
+ * AI-generated editorial food-styling photo Katarina supplied directly
+ * (hands arranging figs, olives, walnuts and bread on a wood board — warm,
+ * natural light, on-palette) — see nourish-fig-bread-styling.png.
+ *
  * Slots still needing real content (2026-08-18 review):
- *   - approachNourish currently renders kathy-04.jpg (running track) for the
- *     "Bewusst nähren" / nutrition thread — doesn't communicate nutrition at
- *     all, and kathy-04 is already used a second time on programsBand
- *     (duplicate use, separate issue). No unused local asset fits "conscious
- *     nourishment" (elegant meal, whole foods, warm kitchen, hands preparing
- *     food) in this repo's palette. Needs a real sourced/commissioned photo;
- *     left as-is rather than forcing a bad match.
  *   - approachSoul renders soul.png, a commissioned line illustration
  *     (candle/book/cup) for "Seele & Identität in Jesus" — real photography
  *     was requested to replace it (warm, reflective, faith-themed — e.g. an
@@ -130,8 +131,8 @@ export const TEMP_PHOTOS: Record<
   // and drawings, even where there's no literal food photo of hers — same
   // shoot/grade as approachTrain so it still reads as one consistent set.
   approachNourish: {
-    url: "/images/kathy/kathy-04.jpg",
-    alt: "Katey sitting on a running track, relaxed, looking into the distance",
+    url: "/images/nourish/nourish-fig-bread-styling.png",
+    alt: "Hands arranging halved figs, olives, walnuts and fresh bread on a rustic wooden board, warm natural light",
   },
   // Commissioned line illustration — book, candle, leaves — not a photo of
   // Katey. She was explicit that this thread shouldn't show her a second/

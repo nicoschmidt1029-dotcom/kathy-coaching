@@ -19,9 +19,32 @@ const PILLARS = [
   // commissioned illustration instead (book, candle, leaves), which
   // already matches the "soft, warm, editorial, sand-toned" direction she
   // asked for without needing a new asset.
-  { key: "train", image: TEMP_PHOTOS.approachTrain, icon: Dumbbell, zoom: false },
-  { key: "nourish", image: TEMP_PHOTOS.approachNourish, icon: Apple, zoom: false },
-  { key: "soul", image: TEMP_PHOTOS.approachSoul, icon: Heart, zoom: false },
+  {
+    key: "train",
+    image: TEMP_PHOTOS.approachTrain,
+    icon: Dumbbell,
+    zoom: false,
+    objectPosition: undefined,
+  },
+  {
+    key: "nourish",
+    image: TEMP_PHOTOS.approachNourish,
+    icon: Apple,
+    zoom: false,
+    // Editorial food-styling shot: hands, halved figs and the bread sit in
+    // the upper-center/right of the frame, with looser tablecloth/olive-oil
+    // detail along the left edge — biasing the crop right-of-center keeps
+    // both hands, the figs and the bread readable instead of centering on
+    // the tablecloth.
+    objectPosition: "62% 42%",
+  },
+  {
+    key: "soul",
+    image: TEMP_PHOTOS.approachSoul,
+    icon: Heart,
+    zoom: false,
+    objectPosition: undefined,
+  },
 ] as const;
 
 /**
@@ -59,7 +82,7 @@ export function Approach() {
         </div>
 
         <ul className="mt-20 space-y-20 md:mt-24 md:space-y-28">
-          {PILLARS.map(({ key, image, icon: Icon, zoom }, i) => (
+          {PILLARS.map(({ key, image, icon: Icon, zoom, objectPosition }, i) => (
             <li
               key={key}
               className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-14"
@@ -80,6 +103,11 @@ export function Approach() {
                         "object-cover",
                         zoom && "scale-[2.3] object-[48%_54%]"
                       )}
+                      style={
+                        !zoom && objectPosition
+                          ? { objectPosition }
+                          : undefined
+                      }
                     />
                   </div>
                 </div>
