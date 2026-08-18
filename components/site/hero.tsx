@@ -127,6 +127,7 @@ export function Hero() {
                 muted
                 loop
                 playsInline
+                preload="auto"
                 aria-hidden
                 className="absolute inset-0 h-full w-full object-cover object-center"
               />
@@ -184,11 +185,16 @@ export function Hero() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_30px_60px_-30px_rgba(60,40,52,0.35)]">
               {video ? (
                 <video
-                  src={video.src}
+                  // Lighter mobile-specific re-encode (see lib/temp-photos.ts)
+                  // — the desktop file was stalling playback on mobile
+                  // networks; falls back to the same file desktop uses if
+                  // srcMobile isn't set.
+                  src={video.srcMobile ?? video.src}
                   autoPlay
                   muted
                   loop
                   playsInline
+                  preload="auto"
                   aria-hidden
                   className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
                 />

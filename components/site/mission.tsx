@@ -32,7 +32,7 @@ export function Mission() {
   const photo = TEMP_PHOTOS.homeBand;
 
   return (
-    <section id="mission" className="section-pad relative overflow-hidden">
+    <section id="mission" className="section-pad section-pad-top-tight relative overflow-hidden">
       {/* gap-12 -> gap-8 on mobile only (md:gap-16 unchanged): keeps
           Katarina's photo closer under the statement instead of a large
           gap, per her mobile-pass note. */}

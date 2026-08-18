@@ -67,7 +67,7 @@ export function Contact({ prefill }: Props = {}) {
   return (
     <section
       id="kontakt"
-      className="section-pad relative overflow-hidden"
+      className="section-pad section-pad-top-tight relative overflow-hidden"
     >
       <div
         aria-hidden

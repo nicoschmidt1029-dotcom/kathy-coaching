@@ -43,10 +43,17 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 w-full transition-[background-color,backdrop-filter,border-color] duration-300",
+        // Permanent hairline restored, 2026-08-18 client pass: Katarina
+        // remembered a soft gray line under the header that had gone
+        // missing — it used to only appear once `scrolled` was true. Now
+        // always present at very low opacity so the header reads as a
+        // defined, premium band against the ivory body even at the top
+        // of the page; the scrolled state still adds the blur/opaque
+        // background on top of it, it just no longer owns the border.
+        "sticky top-0 z-40 w-full border-b border-foreground/[0.06] shadow-[0_1px_16px_-4px_rgba(30,26,20,0.06)] transition-[background-color,backdrop-filter] duration-300",
         scrolled
-          ? "border-b border-foreground/[0.06] bg-background/75 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
+          ? "bg-background/75 backdrop-blur-md"
+          : "bg-transparent"
       )}
     >
       {/* Mobile header compacted: py-2.5 (was py-3, matching the desktop
@@ -65,11 +72,17 @@ export function Header() {
                 aria-current={active ? "page" : undefined}
                                 className={cn(
                   // nowrap: two-word labels in other languages ("O mne")
-                  // otherwise break across lines in the narrow desktop nav
-                  "group relative whitespace-nowrap text-[0.92rem] transition-colors duration-200",
+                  // otherwise break across lines in the narrow desktop nav.
+                  // 2026-08-18 client pass: text bumped 0.92rem -> 0.97rem
+                  // and given a touch of letter-spacing (tracking-[0.01em])
+                  // — both subtle, per Katarina's "slightly bigger, not
+                  // dramatic" note — and inactive opacity raised from /72
+                  // to /82 so it reads as confident dark-gray rather than
+                  // washed-out light gray against the ivory header.
+                  "group relative whitespace-nowrap text-[0.97rem] tracking-[0.01em] transition-colors duration-200",
                   active
                     ? "text-foreground"
-                    : "text-foreground/72 hover:text-foreground"
+                    : "text-foreground/82 hover:text-foreground"
                 )}
               >
                 {t(item.key)}
@@ -99,30 +112,69 @@ export function Header() {
                 <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-background p-0">
+            {/*
+              2026-08-18 client design pass: "der menu ist einfach gross und
+              sieht unprofessionell aus" — the previous drawer was a flat
+              list of same-weight links with a lot of dead air around them.
+              Redesigned to borrow the same type-contrast move the rest of
+              the site uses (.eyebrow small-caps label, big display serif,
+              gold hairline accents): each item now gets a small mono index
+              number, a large confident display-serif label, and a hairline
+              divider between rows instead of empty padding doing the work.
+              The current page gets the gold (--clay) index + underline
+              treatment so it reads as a real "you are here" state, echoing
+              the desktop active-link underline.
+            */}
+            <SheetContent side="right" className="flex flex-col bg-background p-0">
               <SheetHeader className="border-b border-foreground/[0.06] px-6 py-5">
-                <SheetTitle className="font-display text-lg font-normal">
+                <SheetTitle className="eyebrow text-left font-mono text-xs font-medium">
                   {t("menu")}
                 </SheetTitle>
               </SheetHeader>
-              <nav className="flex flex-col gap-1 px-3 py-4">
-                {NAV.map((item) => {
+              <nav className="flex flex-1 flex-col justify-center px-6">
+                {NAV.map((item, i) => {
+                  const active = pathname === item.href;
                   return (
                     <SheetClose key={item.href} asChild>
                       <Link
                         href={item.href}
-                                                className={cn(
-                          "rounded-lg px-3 py-3 font-display text-2xl tracking-tight transition-colors hover:bg-[var(--sand)]/70",
-                          "text-foreground"
+                        aria-current={active ? "page" : undefined}
+                        className={cn(
+                          "group relative flex items-baseline gap-4 border-t border-foreground/[0.08] py-5 first:border-t-0 transition-colors",
+                          i === NAV.length - 1 && "border-b border-foreground/[0.08]"
                         )}
                       >
-                        {t(item.key)}
+                        <span
+                          aria-hidden
+                          className={cn(
+                            "font-mono text-[0.72rem] tracking-[0.1em] transition-colors",
+                            active ? "text-[var(--clay)]" : "text-foreground/40"
+                          )}
+                        >
+                          0{i + 1}
+                        </span>
+                        <span
+                          className={cn(
+                            "font-display text-[2rem] leading-none tracking-tight transition-colors sm:text-[2.15rem]",
+                            active
+                              ? "text-foreground"
+                              : "text-foreground/70 group-hover:text-foreground"
+                          )}
+                        >
+                          {t(item.key)}
+                        </span>
+                        {active && (
+                          <span
+                            aria-hidden
+                            className="absolute bottom-3 left-0 h-px w-8 bg-[var(--clay)]"
+                          />
+                        )}
                       </Link>
                     </SheetClose>
                   );
                 })}
               </nav>
-              <div className="mt-auto border-t border-foreground/[0.06] p-5">
+              <div className="border-t border-foreground/[0.06] p-5">
                 <LanguageSwitcher size="lg" className="justify-center" />
               </div>
             </SheetContent>

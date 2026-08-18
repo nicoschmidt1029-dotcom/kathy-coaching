@@ -341,6 +341,18 @@
     padding-block: clamp(3.25rem, 9vw, 8rem);
   }
 
+  /* Tighter top offset for a page's very first section only — added
+     2026-08-18 client pass: Mission/Programs/Contact each open with
+     `.section-pad`'s full clamp (up to 8rem/128px) stacked under the
+     header, so the headline/photo sat below the fold on first load.
+     This overrides just padding-block-start (later in source, same
+     layer, so it wins for that axis only) — padding-block-end from
+     .section-pad is untouched, so the section's bottom rhythm and every
+     other mid-page use of .section-pad is unaffected. */
+  .section-pad-top-tight {
+    padding-block-start: clamp(1.75rem, 4.5vw, 3.75rem);
+  }
+
   .container-page {
     width: 100%;
     margin-inline: auto;

@@ -75,6 +75,11 @@ export type TempPhoto = {
 
 export type TempVideo = {
   src: string;
+  /** Lighter, audio-stripped re-encode for the mobile hero card — falls
+   *  back to `src` if not set. Mobile networks stalling on the full
+   *  desktop file (5Mbps, unused audio track) was why the mobile hero
+   *  video wasn't playing smoothly. */
+  srcMobile?: string;
   poster?: string;
   /** Same convention: pill only appears if this is set. */
   credit?: string;
@@ -188,4 +193,9 @@ export const TEMP_PHOTOS: Record<
 // posed shot. kathy-video-2.mp4 stays in the repo, unused, for later reuse.
 export const TEMP_HERO_VIDEO: TempVideo = {
   src: "/videos/workout-hero.mp4",
+  // 640x360, no audio track, faststart — 3.8MB vs the desktop file's 43MB
+  // (720p + an unused AAC track, since the video is always muted). That
+  // gap was stalling playback on mobile connections. Same footage, just a
+  // much lighter re-encode sized for the mobile hero's small 4:3 card.
+  srcMobile: "/videos/workout-hero-mobile.mp4",
 };

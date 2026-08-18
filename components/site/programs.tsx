@@ -27,7 +27,7 @@ export function Programs() {
   const approach = useTranslations("approach");
 
   return (
-    <section id="programme" className="section-pad">
+    <section id="programme" className="section-pad section-pad-top-tight">
       <div className="container-page">
         {/* Intro + commitment. Title now lives inside the grid's text
             column (not above it) so it shares the same row-start as the
