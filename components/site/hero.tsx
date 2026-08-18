@@ -98,7 +98,11 @@ export function Hero() {
           fills the viewport below the sticky header (h-16/h-20) so video +
           headline + nav is the entire first view, nothing else competing
           underneath. */}
-      <div className="relative hidden min-h-[calc(100svh-5rem)] items-center py-20 md:flex">
+      {/* Header height is intrinsic now (logo height + padding), not a fixed
+          h-24 — it grew to fit the complete logo (was ~6rem, now ~10rem at
+          md+ with the full KC + name + tagline lockup), so the offset here
+          moved with it. */}
+      <div className="relative hidden min-h-[calc(100svh-10rem)] items-center py-20 md:flex">
         {(video || photo) && (
           <div className="absolute inset-0 -z-10">
             {video ? (

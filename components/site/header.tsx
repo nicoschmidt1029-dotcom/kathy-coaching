@@ -49,7 +49,7 @@ export function Header() {
           : "border-b border-transparent bg-transparent"
       )}
     >
-      <div className="container-page flex h-20 items-center justify-between gap-6 md:h-24">
+      <div className="container-page flex items-center justify-between gap-6 py-3 md:py-4">
         <Wordmark />
 
         <nav className="hidden items-center gap-8 md:flex">
