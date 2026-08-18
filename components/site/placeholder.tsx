@@ -11,6 +11,9 @@ type Props = {
   src?: string;
   alt?: string;
   credit?: string;
+  /** Katarina's black-and-white photography direction: one clean
+   *  monochrome image per section, not several competing colour photos. */
+  grayscale?: boolean;
 };
 
 const aspectMap: Record<NonNullable<Props["aspect"]>, string> = {
@@ -35,6 +38,7 @@ export function Placeholder({
   src,
   alt,
   credit,
+  grayscale = false,
 }: Props) {
   return (
     <div
@@ -52,7 +56,7 @@ export function Placeholder({
             alt={alt ?? ""}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
+            className={cn("object-cover", grayscale && "grayscale")}
           />
           {credit && <TempPill credit={credit} slot={label} />}
         </>

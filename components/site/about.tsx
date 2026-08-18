@@ -38,6 +38,7 @@ export function About() {
                   src={TEMP_PHOTOS.about.url}
                   alt={TEMP_PHOTOS.about.alt}
                   credit={TEMP_PHOTOS.about.credit}
+                  grayscale
                 />
               ) : (
                 <PortraitPlaceholder label={t("portraitLabel")} />

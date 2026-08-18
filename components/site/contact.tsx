@@ -2,12 +2,14 @@
 
 import * as React from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { CheckCircle2, Clock, Globe, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { DisplayTitle } from "./display-title";
+import { TEMP_PHOTOS } from "@/lib/temp-photos";
 
 type FormState =
   | { status: "idle" }
@@ -78,6 +80,17 @@ export function Contact({ prefill }: Props = {}) {
 
       <div className="container-page grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
         <div className="md:col-span-5">
+          {TEMP_PHOTOS.heroBlazer && (
+            <div className="relative mb-8 aspect-[4/5] max-w-xs overflow-hidden rounded-2xl">
+              <Image
+                src={TEMP_PHOTOS.heroBlazer.url}
+                alt={TEMP_PHOTOS.heroBlazer.alt}
+                fill
+                sizes="(max-width: 768px) 60vw, 20vw"
+                className="object-cover grayscale"
+              />
+            </div>
+          )}
           <p className="eyebrow">{t("eyebrow")}</p>
           <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
           <p className="section-lede max-w-md">{t("intro")}</p>

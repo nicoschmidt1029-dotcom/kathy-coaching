@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import logoImage from "@/public/images/logo/katey-coaching-monogram.png";
+import logoImage from "@/public/images/logo/katey-coaching-full.png";
 
 type Props = {
   className?: string;
@@ -20,20 +20,22 @@ export function Wordmark({ className, onDark = false }: Props) {
   if (!onDark) {
     /*
       Header/light-background variant: the real logo file Katarina sent
-      (17 Aug), cropped down to just the mark — "KC" monogram, leaf,
-      dumbbell, gold heart line — with the background keyed out to
-      transparency (ffmpeg colorkey) so it sits directly on the header's
-      cream, not inside a visible rectangle. Not redrawn or rebuilt from
-      text, per Katarina's explicit instruction — this is the same
-      artwork, just cropped tighter and the paper background removed.
+      (17 Aug), cropped down to the monogram + "KATEY COACHING" + the gold
+      line/heart divider, with the background keyed out to transparency
+      (ffmpeg colorkey) so it sits directly on the header's cream, not
+      inside a visible rectangle. Not redrawn or rebuilt from text, per
+      Katarina's explicit instruction — this is the same artwork, just
+      cropped and the paper background removed.
 
-      The "KATEY COACHING" wordmark and "HEALTH · FITNESS · FAITH"
-      tagline rows are dropped from this crop: at header scale (~110–
-      150px wide) they read as illegible grey noise, and Katarina asked
-      for the tagline to be optional and the header to prioritise a
-      clean mark over full lockup text. Width-constrained now, not
-      height-constrained — the monogram-only crop is a wide ~8:5 mark,
-      not a near-square badge, so a width target actually fits.
+      Only the "HEALTH · FITNESS · FAITH" tagline row is dropped — at
+      header scale it read as illegible grey noise. She was explicit that
+      the wordmark + divider line shouldn't be missing even though the
+      tagline is optional, so this crop keeps everything except that one
+      row.
+
+      Nudged down a couple pixels (translate-y) rather than sitting
+      dead-centre in the row: she asked for it to feel lower, with more
+      breathing room above than a pure vertical centre gives it.
     */
     return (
       <Link
@@ -47,7 +49,7 @@ export function Wordmark({ className, onDark = false }: Props) {
         <Image
           src={logoImage}
           alt={t("ariaLabel")}
-          className="h-auto w-[104px] object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 sm:w-[122px] md:w-[136px]"
+          className="h-auto w-[92px] translate-y-1 object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 sm:w-[104px] md:w-[116px]"
           priority
         />
       </Link>

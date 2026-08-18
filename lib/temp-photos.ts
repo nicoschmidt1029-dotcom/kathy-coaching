@@ -112,18 +112,21 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-08-stretch.jpg",
     alt: "Katey mid-stretch on a running track, arms and legs extended",
   },
-  // Commissioned line illustration — terracotta on cream, drawn for this site.
-  // Replaced an Unsplash buddha bowl: stock food photography made the thread
-  // look like a recipe blog, and it was the only image not of Katey's world.
+  // Katey's own — running track, seated, relaxed, looking off into the
+  // distance. Replaces the commissioned line illustration: Katarina asked
+  // for all three Approach threads to run real photos, not a mix of photos
+  // and drawings, even where there's no literal food photo of hers — same
+  // shoot/grade as approachTrain so it still reads as one consistent set.
   approachNourish: {
-    url: "/images/illustrations/nourish.png",
-    alt: "Line illustration: a table with a bowl of grains, vegetables, a jug and a folded cloth",
+    url: "/images/kathy/kathy-04.jpg",
+    alt: "Katey sitting on a running track, relaxed, looking into the distance",
   },
-  // Commissioned line illustration — same hand as the Nourish one, so the
-  // three threads read as one set instead of two photos and a drawing.
+  // Katey's own — running track, seated from behind, looking down the lane.
+  // Same reasoning as approachNourish above: a real photo instead of the
+  // commissioned illustration, per Katarina's request.
   approachSoul: {
-    url: "/images/illustrations/soul.png",
-    alt: "Line illustration: an open book beside a lit candle, a cup and a sprig of leaves",
+    url: "/images/kathy/kathy-02.jpg",
+    alt: "Katey sitting on a running track, seen from behind, looking down the lane",
   },
   // Katey's own — running track, seated from behind, looking down the lane.
   // Was the home page's standalone full-bleed pause section; that section

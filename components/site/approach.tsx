@@ -11,16 +11,16 @@ const PILLARS = [
   // icon: the same three glyphs (dumbbell, apple, heart) that ring the
   // figure on Katey's own logo — one per thread, in the same order.
   { key: "train", image: TEMP_PHOTOS.approachTrain, icon: Dumbbell, zoom: false, photo: true },
-  { key: "nourish", image: TEMP_PHOTOS.approachNourish, icon: Apple, zoom: false, photo: false },
-  { key: "soul", image: TEMP_PHOTOS.approachSoul, icon: Heart, zoom: false, photo: false },
+  { key: "nourish", image: TEMP_PHOTOS.approachNourish, icon: Apple, zoom: false, photo: true },
+  { key: "soul", image: TEMP_PHOTOS.approachSoul, icon: Heart, zoom: false, photo: true },
 ] as const;
 
-// Shared warm-toned grade for real photos in this section (not the line
-// illustrations, which are already drawn in the site's palette) — Katarina
-// asked for the three threads to read as one consistent set of colours as
-// real photos replace the drawings one at a time, rather than each photo
-// carrying its own original white balance.
-const PHOTO_GRADE = "saturate-[0.85] sepia-[0.12] contrast-[1.03]";
+// Black and white, not the earlier warm-toned colour grade — Katarina's
+// later direction: the site should run on primarily monochrome editorial
+// photography rather than several full-colour photos competing on one
+// page. Applied uniformly across all three threads so they still read as
+// one consistent set, just in the site's other agreed style now.
+const PHOTO_GRADE = "grayscale contrast-[1.05]";
 
 /**
  * The three threads in full, as alternating bands.

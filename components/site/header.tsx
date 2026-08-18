@@ -49,7 +49,7 @@ export function Header() {
           : "border-b border-transparent bg-transparent"
       )}
     >
-      <div className="container-page flex h-16 items-center justify-between gap-6 md:h-20">
+      <div className="container-page flex h-20 items-center justify-between gap-6 md:h-24">
         <Wordmark />
 
         <nav className="hidden items-center gap-8 md:flex">

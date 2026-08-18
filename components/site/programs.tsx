@@ -49,14 +49,14 @@ export function Programs() {
               Approach "Train" thread, same colour grade so the two pages
               feel like one shared set of assets rather than two shoots. */}
           {TEMP_PHOTOS.programsIntro && (
-            <div className="md:col-span-5 md:-mt-10">
+            <div className="md:col-span-5 md:-mt-24">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                 <Image
                   src={TEMP_PHOTOS.programsIntro.url}
                   alt={TEMP_PHOTOS.programsIntro.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 35vw"
-                  className="object-cover object-[50%_20%] saturate-[0.85] sepia-[0.12] contrast-[1.03]"
+                  className="object-cover object-[50%_20%] grayscale contrast-[1.05]"
                 />
               </div>
             </div>
