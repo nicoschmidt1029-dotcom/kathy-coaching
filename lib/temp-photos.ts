@@ -164,12 +164,13 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-04.jpg",
     alt: "Katey sitting on a running track, looking into the distance",
   },
-  // Katey's own — new photo (sent 17 Aug), drinking from a bottle mid-session,
-  // same shoot/grade as approachTrain — sits beside the intro text at the top
-  // of the Programs page.
+  // Katey's own — replaced 2026-08-18 (she asked for the drinking shot swapped
+  // out): full-length shot on the sports court, shading her eyes with one
+  // hand, bottle in the other. Portrait 3:4 source is close to the 4:5
+  // container, so object-cover only trims a little off top/bottom.
   programsIntro: {
-    url: "/images/kathy/kathy-09-bottle.jpg",
-    alt: "Katey drinking water during a training session",
+    url: "/images/kathy/kathy-10-court-shade.jpg",
+    alt: "Katey standing on an outdoor sports court, shading her eyes with one hand and holding a water bottle in the other",
   },
   // Katey's own — running track, seated side profile, looking off into the
   // distance. Warm red track and greenery read gold rather than clashing,

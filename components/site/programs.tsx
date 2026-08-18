@@ -47,8 +47,7 @@ export function Programs() {
             </p>
           </div>
 
-          {/* Katey's own photo beside the intro — same 17 Aug shoot as the
-              Approach "Train" thread. */}
+          {/* Katey's own photo beside the intro. */}
           {TEMP_PHOTOS.programsIntro && (
             <div className="md:col-span-5">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
@@ -57,7 +56,7 @@ export function Programs() {
                   alt={TEMP_PHOTOS.programsIntro.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 35vw"
-                  className="object-cover object-[50%_20%]"
+                  className="object-cover object-[50%_35%]"
                 />
               </div>
             </div>
