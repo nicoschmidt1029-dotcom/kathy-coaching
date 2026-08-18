@@ -49,7 +49,10 @@ export function Header() {
           : "border-b border-transparent bg-transparent"
       )}
     >
-      <div className="container-page flex items-center justify-between gap-6 py-3 md:py-4">
+      {/* Mobile header compacted: py-2.5 (was py-3, matching the desktop
+          py-4 ratio less closely so the row doesn't carry so much empty
+          air above/below the taller full-lockup logo) — md+ untouched. */}
+      <div className="container-page flex items-center justify-between gap-6 py-2.5 md:py-4">
         <Wordmark />
 
         <nav className="hidden items-center gap-8 md:flex">

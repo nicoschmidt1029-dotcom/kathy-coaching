@@ -44,12 +44,26 @@ export function Wordmark({ className, onDark = false }: Props) {
     <Link
       href="/"
       aria-label={t("ariaLabel")}
-      className={cn("group inline-flex shrink-0 items-center", className)}
+      className="group inline-flex shrink-0 items-center"
     >
       <Image
         src={onDark ? logoImageOnDark : logoImage}
         alt={t("ariaLabel")}
-        className="h-auto w-[112px] object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 sm:w-[128px] md:w-[148px]"
+        // Mobile base bumped from 112px to 150px (mobile-first pass,
+        // 2026-08-18): at the 320-430px test widths only the base class
+        // applies (sm: doesn't kick in until 640px), and 112px read as too
+        // small relative to the header's other requirement (less vertical
+        // padding) — 150px keeps the full lockup (monogram + name + gold
+        // line + tagline) legible without the header needing extra height.
+        // sm/md unchanged (128px / 148px) — this is a mobile-only change.
+        // `className` (the size override, e.g. footer's wider 190px mobile
+        // logo) is merged here via cn/twMerge — not on the outer Link — so
+        // the passed width utility actually wins over these defaults
+        // instead of just resizing an empty wrapper around a fixed-size img.
+        className={cn(
+          "h-auto w-[150px] object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 md:w-[148px]",
+          className
+        )}
         priority
       />
     </Link>

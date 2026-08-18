@@ -50,7 +50,10 @@ export function Programs() {
           {/* Katey's own photo beside the intro. */}
           {TEMP_PHOTOS.programsIntro && (
             <div className="md:col-span-5">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+              {/* aspect-[4/3] on mobile (md:aspect-[4/5] restores desktop) —
+                  the full 4/5 portrait read as excessively tall stacked
+                  under the intro copy at phone widths. */}
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl md:aspect-[4/5]">
                 <Image
                   src={TEMP_PHOTOS.programsIntro.url}
                   alt={TEMP_PHOTOS.programsIntro.alt}

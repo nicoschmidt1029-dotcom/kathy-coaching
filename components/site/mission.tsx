@@ -33,7 +33,10 @@ export function Mission() {
 
   return (
     <section id="mission" className="section-pad relative overflow-hidden">
-      <div className="container-page grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-16">
+      {/* gap-12 -> gap-8 on mobile only (md:gap-16 unchanged): keeps
+          Katarina's photo closer under the statement instead of a large
+          gap, per her mobile-pass note. */}
+      <div className="container-page grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-16">
         <div className="md:col-span-7">
           <p className="eyebrow">{t("eyebrow")}</p>
 

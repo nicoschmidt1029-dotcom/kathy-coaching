@@ -329,8 +329,16 @@
     font-weight: 500;
   }
 
+  /* Mobile floor lowered 4.5rem (72px) -> 3.25rem (52px) — 2026-08-18
+     mobile pass: 9vw stays small below ~800px viewport width, so the old
+     4.5rem minimum was what actually rendered at every mobile section
+     boundary (Approach, Programs, Mission, Contact, FAQ), reading as an
+     oversized gap. 52px sits inside the client's ~48-72px section-gap
+     target. The vw-driven upper half and the 8rem desktop cap are
+     unchanged, so desktop (>=1024px, well past the crossover) is
+     unaffected. */
   .section-pad {
-    padding-block: clamp(4.5rem, 9vw, 8rem);
+    padding-block: clamp(3.25rem, 9vw, 8rem);
   }
 
   .container-page {

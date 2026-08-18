@@ -30,8 +30,15 @@ import { TempPill } from "./placeholder";
 function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
   return (
     <>
+      {/* Mobile-first pass (2026-08-18): the shared clamp(2.3rem,4vw,3.5rem)
+          used 4vw as its scaling term, which stays tiny below md — so its
+          2.3rem *floor* was what actually rendered at every mobile width,
+          filling far more of the viewport than intended (~37px, reading as
+          oversized against the compact new header). Fixed mobile sizes
+          (2.6rem base / 2.75rem at sm, ~41.6-44px) replace it below md;
+          the exact desktop clamp is restored unchanged at md+. */}
       <h1
-        className="animate-rise font-display text-[clamp(2.3rem,4vw,3.5rem)] leading-[1.06] font-normal"
+        className="animate-rise font-display text-[2.6rem] leading-[1.06] font-normal sm:text-[2.75rem] md:text-[clamp(2.3rem,4vw,3.5rem)]"
         style={{ animationDelay: "80ms" }}
       >
         {t.rich("headline", {
@@ -58,18 +65,26 @@ function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
         })}
       </h1>
 
+      {/* mt-8 -> mt-5 on mobile (md:mt-8 restores desktop exactly); base
+          text size/line-height stepped down a touch for mobile too, sm+
+          unchanged. */}
       <p
-        className="animate-rise mt-8 max-w-md text-pretty sm:text-lg sm:leading-[1.7]"
+        className="animate-rise mt-5 max-w-md text-pretty text-[0.95rem] leading-[1.6] sm:text-lg sm:leading-[1.7] md:mt-8"
         style={{ animationDelay: "180ms" }}
       >
         {t("body")}
       </p>
 
-      <div className="animate-rise mt-10" style={{ animationDelay: "280ms" }}>
+      {/* mt-10 -> mt-6 on mobile (md:mt-10 restores desktop). Button:
+          h-12 (48px) was the same height at every breakpoint; mobile now
+          gets h-14 (56px, within the client's 52-60px suggestion) and
+          full width for a stronger tap target — sm+ reverts to the
+          original h-12 auto-width button untouched. */}
+      <div className="animate-rise mt-6 md:mt-10" style={{ animationDelay: "280ms" }}>
         <Button
           asChild
           size="lg"
-          className="group/button h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90"
+          className="group/button h-14 w-full bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90 sm:h-12 sm:w-auto"
         >
           <Link href="/programme">
             {t("cta")}
@@ -142,14 +157,31 @@ export function Hero() {
 
       {/* Mobile: stacked instead of overlaid — a full-width video/photo card
           above plain text on the ivory background, so nothing has to share
-          space with the headline. */}
-      <div className="section-pad flex flex-col gap-8 md:hidden">
+          space with the headline.
+
+          Was `section-pad` (clamp(4.5rem,9vw,8rem) top AND bottom — ~72px
+          of dead air directly under the header on every phone, which was
+          the main cause of the "empty gap below header" complaint). Header
+          -> hero now gets a small deliberate breathing gap (pt-6) instead,
+          headline -> body -> CTA -> video flow with its own tighter,
+          intentional rhythm (gap-6 between the copy block and the video),
+          and a normal section-end bottom padding (pb-14) before whatever
+          section follows. */}
+      <div className="flex flex-col gap-6 pt-6 pb-14 md:hidden">
         <div className="container-page text-foreground [&_p]:text-foreground/70">
           <HeroCopy t={t} />
         </div>
         {(video || photo) && (
           <div className="container-page">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_30px_60px_-30px_rgba(60,40,52,0.35)]">
+            {/* aspect-[4/5] -> aspect-[4/3] on mobile only: the source is a
+                16:9 landscape clip (workout-hero.mp4), so a 4:5 portrait
+                card was cropping in hard on both sides to fill the extra
+                height. 4:3 needs much less horizontal crop. Added an
+                explicit mobile object-position (50% 38%) so the subject
+                stays framed slightly above center rather than the default
+                dead-center crop, which cut off too much headroom. Desktop's
+                own object-center (md:flex branch above) is untouched. */}
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_30px_60px_-30px_rgba(60,40,52,0.35)]">
               {video ? (
                 <video
                   src={video.src}
@@ -158,7 +190,7 @@ export function Hero() {
                   loop
                   playsInline
                   aria-hidden
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
                 />
               ) : (
                 photo && (

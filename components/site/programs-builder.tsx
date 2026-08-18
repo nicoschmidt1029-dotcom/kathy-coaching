@@ -89,7 +89,12 @@ export function ProgramsBuilder() {
       {/* Toggles */}
       <div className="md:col-span-7">
         <p className="caption">{t("blocksTitle")}</p>
-        <ul className="mt-4 grid gap-3">
+        {/* grid-cols-1 explicit: a bare `grid` with no columns defined
+            sizes its single implicit column to the max-content width of
+            its widest child (here, the button's icon+gap+text row), which
+            let the button grow past the viewport at 320px instead of
+            filling it — found during the 2026-08-18 mobile pass. */}
+        <ul className="mt-4 grid grid-cols-1 gap-3">
           {BLOCKS.map((block) => {
             const selected = blocks.has(block.id);
             const Icon = BLOCK_ICON[block.id];
@@ -129,7 +134,13 @@ export function ProgramsBuilder() {
                       </span>
                     )}
                   </span>
-                  <span className="flex-1">
+                  {/* min-w-0: without it a flex child's default min-width:auto
+                      keeps it from shrinking below its text's intrinsic
+                      width, which pushed this button past the viewport at
+                      320px (found during the 2026-08-18 mobile pass — the
+                      icon + gap-4 + long German block names like
+                      "Ernährungscoaching" needed more than the card had). */}
+                  <span className="min-w-0 flex-1">
                     <span className="flex items-baseline justify-between gap-3">
                       <span className="card-title">
                         {p(`blocks.${block.id}.name`)}
@@ -149,7 +160,7 @@ export function ProgramsBuilder() {
         </ul>
 
         <p className="caption mt-10">{t("addonsTitle")}</p>
-        <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+        <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
           {ADDONS.map((addon) => {
             const selected = addons.has(addon.id);
             const Icon = ADDON_ICON[addon.id];

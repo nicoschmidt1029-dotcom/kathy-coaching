@@ -131,7 +131,7 @@ export function Contact({ prefill }: Props = {}) {
 
         {/* Portrait + form, as one row: image left (~35%), form right
             (~65%), both starting at the same top line. */}
-        <div className="mt-14 grid grid-cols-1 items-start gap-10 md:grid-cols-12 md:gap-12">
+        <div className="mt-10 grid grid-cols-1 items-start gap-8 md:mt-14 md:grid-cols-12 md:gap-12">
           {TEMP_PHOTOS.heroBlazer && (
             <div className="md:col-span-4">
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
