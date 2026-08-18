@@ -78,19 +78,12 @@ export function Contact({ prefill }: Props = {}) {
         }}
       />
 
-      <div className="container-page grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
-        <div className="md:col-span-5">
-          {TEMP_PHOTOS.heroBlazer && (
-            <div className="relative mb-8 aspect-[4/5] max-w-xs overflow-hidden rounded-2xl">
-              <Image
-                src={TEMP_PHOTOS.heroBlazer.url}
-                alt={TEMP_PHOTOS.heroBlazer.alt}
-                fill
-                sizes="(max-width: 768px) 60vw, 20vw"
-                className="object-cover grayscale"
-              />
-            </div>
-          )}
+      <div className="container-page">
+        {/* Heading sits above the image+form row now, not squeezed into
+            the left column beside the photo — Katarina's correction: the
+            title has to introduce the section before the form appears,
+            not sit underneath it. */}
+        <div className="max-w-2xl">
           <p className="eyebrow">{t("eyebrow")}</p>
           <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
           <p className="section-lede max-w-md">{t("intro")}</p>
@@ -136,7 +129,24 @@ export function Contact({ prefill }: Props = {}) {
           </ul>
         </div>
 
-        <div className="md:col-span-7">
+        {/* Portrait + form, as one row: image left (~35%), form right
+            (~65%), both starting at the same top line. */}
+        <div className="mt-14 grid grid-cols-1 items-start gap-10 md:grid-cols-12 md:gap-12">
+          {TEMP_PHOTOS.heroBlazer && (
+            <div className="md:col-span-4">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+                <Image
+                  src={TEMP_PHOTOS.heroBlazer.url}
+                  alt={TEMP_PHOTOS.heroBlazer.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 30vw"
+                  className="object-cover object-[50%_20%]"
+                />
+              </div>
+            </div>
+          )}
+
+          <div className="md:col-span-8">
           {state.status === "sent" ? (
             <div
               role="status"
@@ -250,6 +260,7 @@ export function Contact({ prefill }: Props = {}) {
               </div>
             </form>
           )}
+          </div>
         </div>
       </div>
     </section>

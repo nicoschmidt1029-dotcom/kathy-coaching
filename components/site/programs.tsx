@@ -29,15 +29,17 @@ export function Programs() {
   return (
     <section id="programme" className="section-pad">
       <div className="container-page">
-        {/* Intro + commitment */}
-        {/* Display type sets its own width; boxed in a six-column well it
-            broke into five cramped lines. */}
-        <p className="eyebrow">{t("eyebrow")}</p>
-        <DisplayTitle className="mt-6 max-w-[15ch]">{t("title")}</DisplayTitle>
-
-        <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
+        {/* Intro + commitment. Title now lives inside the grid's text
+            column (not above it) so it shares the same row-start as the
+            photo opposite it — the two columns begin at the same line
+            without a negative margin pulling the image up to compensate. */}
+        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-7">
-            <p className="section-lede mt-0 max-w-none">{t("intro")}</p>
+            {/* Display type sets its own width; boxed in a six-column well
+                it broke into five cramped lines. */}
+            <p className="eyebrow">{t("eyebrow")}</p>
+            <DisplayTitle className="mt-6 max-w-[15ch]">{t("title")}</DisplayTitle>
+            <p className="section-lede mt-8 max-w-none">{t("intro")}</p>
             {/* Ties the three blocks back to the named method — see
                 approach.systemName. */}
             <p className="mt-5 max-w-none text-[0.95rem] leading-relaxed text-foreground/78">
@@ -46,17 +48,16 @@ export function Programs() {
           </div>
 
           {/* Katey's own photo beside the intro — same 17 Aug shoot as the
-              Approach "Train" thread, same colour grade so the two pages
-              feel like one shared set of assets rather than two shoots. */}
+              Approach "Train" thread. */}
           {TEMP_PHOTOS.programsIntro && (
-            <div className="md:col-span-5 md:-mt-24">
+            <div className="md:col-span-5">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                 <Image
                   src={TEMP_PHOTOS.programsIntro.url}
                   alt={TEMP_PHOTOS.programsIntro.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 35vw"
-                  className="object-cover object-[50%_20%] grayscale contrast-[1.05]"
+                  className="object-cover object-[50%_20%]"
                 />
               </div>
             </div>

@@ -10,17 +10,19 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
 const PILLARS = [
   // icon: the same three glyphs (dumbbell, apple, heart) that ring the
   // figure on Katey's own logo — one per thread, in the same order.
-  { key: "train", image: TEMP_PHOTOS.approachTrain, icon: Dumbbell, zoom: false, photo: true },
-  { key: "nourish", image: TEMP_PHOTOS.approachNourish, icon: Apple, zoom: false, photo: true },
-  { key: "soul", image: TEMP_PHOTOS.approachSoul, icon: Heart, zoom: false, photo: true },
+  //
+  // photo: Train and Nourish are real Katey photos, left in their natural
+  // colour — Katarina's later, more specific direction was "don't force
+  // grayscale on personal photos of me", not a site-wide monochrome rule.
+  // Soul is NOT a Katey photo: she was explicit that thread shouldn't
+  // repeat her portrait a second/third time — it uses the original
+  // commissioned illustration instead (book, candle, leaves), which
+  // already matches the "soft, warm, editorial, sand-toned" direction she
+  // asked for without needing a new asset.
+  { key: "train", image: TEMP_PHOTOS.approachTrain, icon: Dumbbell, zoom: false },
+  { key: "nourish", image: TEMP_PHOTOS.approachNourish, icon: Apple, zoom: false },
+  { key: "soul", image: TEMP_PHOTOS.approachSoul, icon: Heart, zoom: false },
 ] as const;
-
-// Black and white, not the earlier warm-toned colour grade — Katarina's
-// later direction: the site should run on primarily monochrome editorial
-// photography rather than several full-colour photos competing on one
-// page. Applied uniformly across all three threads so they still read as
-// one consistent set, just in the site's other agreed style now.
-const PHOTO_GRADE = "grayscale contrast-[1.05]";
 
 /**
  * The three threads in full, as alternating bands.
@@ -57,7 +59,7 @@ export function Approach() {
         </div>
 
         <ul className="mt-20 space-y-20 md:mt-24 md:space-y-28">
-          {PILLARS.map(({ key, image, icon: Icon, zoom, photo }, i) => (
+          {PILLARS.map(({ key, image, icon: Icon, zoom }, i) => (
             <li
               key={key}
               className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-14"
@@ -76,8 +78,7 @@ export function Approach() {
                       sizes="(max-width: 768px) 100vw, 45vw"
                       className={cn(
                         "object-cover",
-                        zoom && "scale-[2.3] object-[48%_54%]",
-                        photo && PHOTO_GRADE
+                        zoom && "scale-[2.3] object-[48%_54%]"
                       )}
                     />
                   </div>

@@ -121,12 +121,15 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-04.jpg",
     alt: "Katey sitting on a running track, relaxed, looking into the distance",
   },
-  // Katey's own — running track, seated from behind, looking down the lane.
-  // Same reasoning as approachNourish above: a real photo instead of the
-  // commissioned illustration, per Katarina's request.
+  // Commissioned line illustration — book, candle, leaves — not a photo of
+  // Katey. She was explicit that this thread shouldn't show her a second/
+  // third time in a row; this illustration already matches the soft,
+  // warm, sand-toned editorial direction she asked for as its
+  // replacement, so no new asset was needed. kathy-02.jpg (the photo this
+  // slot briefly held) is still assigned to homeBand, unused elsewhere.
   approachSoul: {
-    url: "/images/kathy/kathy-02.jpg",
-    alt: "Katey sitting on a running track, seen from behind, looking down the lane",
+    url: "/images/illustrations/soul.png",
+    alt: "Line illustration: an open book beside a lit candle, a cup and a sprig of leaves",
   },
   // Katey's own — running track, seated from behind, looking down the lane.
   // Was the home page's standalone full-bleed pause section; that section
