@@ -37,8 +37,20 @@
  * the stock silhouette both stay out of the render path but easy to bring
  * back if needed — see hero.tsx and git history for the stock photo file.
  *
- * Slots still on stock (waiting on real content):
- *   - approachNourish, approachSoul (Unsplash atmospheric shots)
+ * Slots still needing real content (2026-08-18 review):
+ *   - approachNourish currently renders kathy-04.jpg (running track) for the
+ *     "Bewusst nähren" / nutrition thread — doesn't communicate nutrition at
+ *     all, and kathy-04 is already used a second time on programsBand
+ *     (duplicate use, separate issue). No unused local asset fits "conscious
+ *     nourishment" (elegant meal, whole foods, warm kitchen, hands preparing
+ *     food) in this repo's palette. Needs a real sourced/commissioned photo;
+ *     left as-is rather than forcing a bad match.
+ *   - approachSoul renders soul.png, a commissioned line illustration
+ *     (candle/book/cup) for "Seele & Identität in Jesus" — real photography
+ *     was requested to replace it (warm, reflective, faith-themed — e.g. an
+ *     open Bible in natural light, hands near it, quiet still life; NOT
+ *     cartoon/line-art, not a posed "praying model" stock shot). No local
+ *     asset fits; needs a real sourced/commissioned photo. Left as-is.
  *
  * The testimonial slots are gone entirely rather than sitting here as `null`:
  * the people quoted are invented, so there was never a photo coming. See
@@ -133,9 +145,12 @@ export const TEMP_PHOTOS: Record<
   },
   // Katey's own — running track, seated from behind, looking down the lane.
   // Was the home page's standalone full-bleed pause section; that section
-  // is retired and this same photo now lives in Approach's first thread
-  // instead (see approachTrain above). Kept assigned here, one edit away,
-  // in case the pause section comes back with a different photo later.
+  // is retired (HomeBand isn't imported/rendered anywhere) so this slot was
+  // effectively dead. Reassigned 2026-08-18 to the Mission page (see
+  // mission.tsx) — Mission previously reused the `hero` blazer portrait,
+  // which is the same photo (just AI-widened) as the Contact page's photo,
+  // a duplication bug. This is a different shoot/pose, still warm-toned and
+  // on-brand, and genuinely unused elsewhere on the live site.
   homeBand: {
     url: "/images/kathy/kathy-02.jpg",
     alt: "Katey sitting on a running track, seen from behind, looking down the lane",

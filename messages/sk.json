@@ -288,6 +288,41 @@
     "eyebrow": "Kontakt",
     "title": "Môžem ti pomôcť?",
     "intro": "Napíš mi, kde si. Odpoviem osobne.",
+    "guided": {
+      "intro": "Pár krátkych otázok, aby som vedela, kde začať.",
+      "focus": {
+        "question": "Kde by si najviac uvítala podporu?",
+        "options": {
+          "movement": "Pohyb a sila",
+          "nutrition": "Výživa",
+          "mindset": "Sebadôvera a myslenie",
+          "faith": "Viera a vnútorné zameranie",
+          "multiple": "Viac oblastí"
+        }
+      },
+      "goal": {
+        "question": "Čo by si chcela dosiahnuť v najbližších mesiacoch?",
+        "options": {
+          "energy": "Viac energie počas dňa",
+          "confidence": "Cítiť sa silnejšie a lepšie vo svojom tele",
+          "routine": "Vybudovať návyky, ktoré vydržia",
+          "peace": "Viac vnútorného pokoja a jasnosti",
+          "unsure": "Ešte neviem"
+        }
+      },
+      "support": {
+        "question": "Ako by si chcela byť sprevádzaná?",
+        "options": {
+          "close": "Blízko, s intenzívnym sprevádzaním",
+          "flexible": "Flexibilne, vlastným tempom",
+          "mix": "Kombinácia oboch",
+          "unsure": "Ešte neviem"
+        }
+      }
+    },
+    "guidedSummaryPrefix": "Chceš podporu pri: {selection}",
+    "guidedPrefillPrefix": "Záujem o podporu pri: {selection}",
+    "goodToKnowTitle": "Dobré vedieť",
     "formatLabel": "Formát",
     "formatValue": "Telefonát, správa alebo osobne",
     "languagesLabel": "Jazyky",

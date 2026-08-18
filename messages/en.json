@@ -280,6 +280,41 @@
     "eyebrow": "Contact",
     "title": "Can I help you?",
     "intro": "Tell me where you are. I answer personally.",
+    "guided": {
+      "intro": "A few quick questions, so I understand where to start.",
+      "focus": {
+        "question": "Where would you like the most support right now?",
+        "options": {
+          "movement": "Movement & strength",
+          "nutrition": "Nutrition",
+          "mindset": "Confidence & mindset",
+          "faith": "Faith & inner alignment",
+          "multiple": "Several areas"
+        }
+      },
+      "goal": {
+        "question": "What would you like to achieve in the coming months?",
+        "options": {
+          "energy": "More energy day to day",
+          "confidence": "Feel stronger, more at home in my body",
+          "routine": "Build habits that actually stick",
+          "peace": "More inner peace and clarity",
+          "unsure": "Not sure yet"
+        }
+      },
+      "support": {
+        "question": "How would you like to be accompanied?",
+        "options": {
+          "close": "Close, hands-on guidance",
+          "flexible": "Flexible, at my own pace",
+          "mix": "A mix of both",
+          "unsure": "Not sure yet"
+        }
+      }
+    },
+    "guidedSummaryPrefix": "You'd like support with: {selection}",
+    "guidedPrefillPrefix": "Looking for support with: {selection}",
+    "goodToKnowTitle": "Good to know",
     "formatLabel": "Format",
     "formatValue": "Call, message, or in person",
     "languagesLabel": "Languages",

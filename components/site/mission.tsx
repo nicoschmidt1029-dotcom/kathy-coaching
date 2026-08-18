@@ -13,10 +13,12 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  * language she'd already approved on the other pages.
  *
  * The image is new: with just the statement, the right half of the page
- * sat empty on wide screens. Uses the blazer portrait (confident,
- * professional) — the same asset the old full-bleed hero used, in its own
- * wide crop here so it doesn't read as a repeat of the Contact page's
- * photo, which uses the narrower original crop of the same shoot.
+ * sat empty on wide screens. Originally reused the blazer-wide portrait —
+ * but that is the same photo (just AI-widened) as the one the Contact page
+ * uses in its narrower crop, so it read as a duplicate. Swapped 2026-08-18
+ * to the `homeBand` track photo instead: a different shoot/pose, warm-toned,
+ * and not otherwise rendered anywhere live (HomeBand, the component that
+ * slot was built for, isn't imported by any page — see home-band.tsx).
  *
  * No button: this is its own page now, one thing to read, not a scroll
  * stop with a call to action pointing at the section already under your
@@ -27,7 +29,7 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  */
 export function Mission() {
   const t = useTranslations("mission");
-  const photo = TEMP_PHOTOS.hero;
+  const photo = TEMP_PHOTOS.homeBand;
 
   return (
     <section id="mission" className="section-pad relative overflow-hidden">
@@ -52,7 +54,7 @@ export function Mission() {
                 alt={photo.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 35vw"
-                className="object-cover object-[30%_25%]"
+                className="object-cover object-[45%_30%]"
               />
             </div>
           </div>
