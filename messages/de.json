@@ -282,41 +282,6 @@
     "eyebrow": "Kontakt",
     "title": "Kann ich dir helfen?",
     "intro": "Erzähl mir, wo du stehst. Ich antworte persönlich.",
-    "guided": {
-      "intro": "Ein paar kurze Fragen, damit ich weiss, wo wir ansetzen.",
-      "focus": {
-        "question": "Wobei möchtest du gerade am meisten Unterstützung?",
-        "options": {
-          "movement": "Bewegung & Kraft",
-          "nutrition": "Ernährung",
-          "mindset": "Selbstvertrauen & Mindset",
-          "faith": "Glaube & innere Ausrichtung",
-          "multiple": "Mehrere Bereiche"
-        }
-      },
-      "goal": {
-        "question": "Was möchtest du in den nächsten Monaten erreichen?",
-        "options": {
-          "energy": "Mehr Energie im Alltag",
-          "confidence": "Mich stärker und wohler in meinem Körper fühlen",
-          "routine": "Gewohnheiten aufbauen, die wirklich bleiben",
-          "peace": "Mehr innere Ruhe und Klarheit",
-          "unsure": "Noch nicht sicher"
-        }
-      },
-      "support": {
-        "question": "Wie möchtest du begleitet werden?",
-        "options": {
-          "close": "Eng und mit viel Begleitung",
-          "flexible": "Flexibel, in meinem eigenen Tempo",
-          "mix": "Eine Mischung aus beidem",
-          "unsure": "Noch nicht sicher"
-        }
-      }
-    },
-    "guidedSummaryPrefix": "Du möchtest Unterstützung bei: {selection}",
-    "guidedPrefillPrefix": "Unterstützung gewünscht bei: {selection}",
-    "goodToKnowTitle": "Gut zu wissen",
     "formatLabel": "Format",
     "formatValue": "Anruf, Nachricht oder persönlich",
     "languagesLabel": "Sprachen",

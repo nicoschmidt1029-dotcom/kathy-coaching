@@ -19,9 +19,10 @@ function pick<T extends string>(
 /**
  * Contact — its own page now, per Katarina's request (nav clicks navigate
  * to real pages, not anchors on the home scroll). Was the last section on
- * the one-pager, with Faq directly above it; kept together here since a
- * "still have a question" accordion belongs right next to the form, not
- * on a separate page a visitor has to navigate away from.
+ * the one-pager, with Faq directly above it; kept together here, Contact
+ * first and Faq below it, since a "still have a question" accordion
+ * belongs right next to the form, not on a separate page a visitor has
+ * to navigate away from.
  *
  * `prefill` still works the same way: a bundle chosen on /programme links
  * to `/kontakt?bundle=…` (was `/?bundle=…#kontakt`), and this page reads
@@ -70,8 +71,8 @@ export default async function KontaktPage({
 
   return (
     <>
-      <Faq />
       <Contact prefill={prefill} />
+      <Faq />
     </>
   );
 }
