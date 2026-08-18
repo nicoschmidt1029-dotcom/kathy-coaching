@@ -33,31 +33,47 @@ export function HowIWork() {
           <p className="section-lede">{t("intro")}</p>
         </div>
 
-        <ol className="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Mobile-only compact pass (2026-08-18): four full-width square
+            image + title + body blocks in a single column meant a very
+            long scroll with a lot of empty vertical air between blocks on
+            phones. Below sm this becomes a tight stacked-card row instead
+            — a small square thumbnail beside the number/title/body rather
+            than stacked above it, with a hairline divider doing the
+            separation work instead of a big gap-y. sm+ (unchanged) reverts
+            to the original full-width image-on-top grid layout exactly as
+            it was. No copy, count, or order changed — same STEPS/t keys. */}
+        <ol className="mt-10 flex flex-col divide-y divide-foreground/[0.08] sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 sm:divide-y-0 lg:grid-cols-4">
           {STEPS.map((step, i) => (
-            <li key={step.key} className="flex flex-col">
-              <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-[var(--sand)]/25">
+            <li
+              key={step.key}
+              className="flex items-start gap-4 py-5 first:pt-0 sm:flex-col sm:gap-0 sm:py-0"
+            >
+              <div className="relative size-16 shrink-0 overflow-hidden rounded-xl bg-[var(--sand)]/25 sm:aspect-square sm:size-auto sm:w-full sm:rounded-2xl">
                 <Image
                   src={step.img}
                   alt=""
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 64px, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover"
                 />
               </div>
 
-              <div className="mt-6 flex items-baseline gap-3">
-                <span
-                  aria-hidden
-                  className="font-mono text-[0.72rem] tracking-[0.18em] text-[var(--clay)]"
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="card-title">{t(`${step.key}.title`)}</h3>
+              <div className="min-w-0 sm:mt-6">
+                <div className="flex items-baseline gap-2 sm:gap-3">
+                  <span
+                    aria-hidden
+                    className="font-mono text-[0.68rem] tracking-[0.14em] text-[var(--clay)] sm:text-[0.72rem] sm:tracking-[0.18em]"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="card-title text-[1rem] sm:text-[1.15rem]">
+                    {t(`${step.key}.title`)}
+                  </h3>
+                </div>
+                <p className="mt-1.5 text-[0.85rem] leading-[1.55] text-foreground/68 sm:mt-3 sm:text-[0.92rem] sm:leading-[1.7]">
+                  {t(`${step.key}.body`)}
+                </p>
               </div>
-              <p className="mt-3 text-[0.92rem] leading-[1.7] text-foreground/68">
-                {t(`${step.key}.body`)}
-              </p>
             </li>
           ))}
         </ol>

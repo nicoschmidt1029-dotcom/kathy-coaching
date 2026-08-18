@@ -42,7 +42,20 @@ export function About() {
               ) : (
                 <PortraitPlaceholder label={t("portraitLabel")} />
               )}
-              <p className="caption mt-4">{t("portraitCaption")}</p>
+              {/* Mobile-only follow-up (2026-08-18): the role label
+                  ("Katey · Personal Trainerin · Ernährungsberaterin") was
+                  wrapping onto two/three lines under the portrait at phone
+                  widths — .caption's 0.18em tracking is wide enough that
+                  the full string doesn't fit as a single line at its
+                  default 0.72rem below md. Smaller size + tighter tracking
+                  keeps it on one row at realistic phone widths (~360px+);
+                  natural wrap is left as the fallback at the narrowest
+                  widths (down to 320px) rather than forcing nowrap and
+                  letting it overflow. md+ reverts to the untouched
+                  .caption defaults. */}
+              <p className="caption mt-4 text-[0.62rem] tracking-[0.08em] md:text-[0.72rem] md:tracking-[0.18em]">
+                {t("portraitCaption")}
+              </p>
             </div>
           </div>
 
@@ -64,13 +77,52 @@ export function About() {
               em: (chunks) => <span className="not-italic">{chunks}</span>,
             })}
           </p>
-          <p className="mt-6 max-w-md text-pretty text-foreground/72 sm:text-lg sm:leading-[1.7]">
-            {t.rich("story", {
-              em: (chunks) => (
-                <em className="not-italic font-display italic">{chunks}</em>
-              ),
-            })}
-          </p>
+          {/* Bio expanded 2026-08-18 with Katarina's new biography (movement
+              -> nourishment/inner health -> education -> mission) — split
+              into four short paragraphs with real vertical space between
+              them rather than one dense block, per her explicit brief that
+              a wall of text would read wrong on this page. Written for
+              English first, then translated into the same four blocks for
+              DE/SK. The original single `story` line is kept as a fallback
+              via `t.has` in case a locale is ever added without the split
+              content, so nothing breaks — every locale currently shipped
+              carries the new structure. Widened to max-w-xl (~576px) from
+              the previous max-w-md (~448px) — comfortably inside the
+              520-650px readable-width range for four paragraphs instead of
+              one short one. */}
+          {t.has("storyMovement") ? (
+            <div className="mt-6 max-w-xl space-y-5">
+              {(
+                [
+                  "storyMovement",
+                  "storyNourish",
+                  "storyEducation",
+                  "storyMission",
+                ] as const
+              ).map((key) => (
+                <p
+                  key={key}
+                  className="text-pretty text-foreground/72 sm:text-lg sm:leading-[1.7]"
+                >
+                  {t.rich(key, {
+                    em: (chunks) => (
+                      <em className="not-italic font-display italic">
+                        {chunks}
+                      </em>
+                    ),
+                  })}
+                </p>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-6 max-w-xl text-pretty text-foreground/72 sm:text-lg sm:leading-[1.7]">
+              {t.rich("story", {
+                em: (chunks) => (
+                  <em className="not-italic font-display italic">{chunks}</em>
+                ),
+              })}
+            </p>
+          )}
           </div>
         </div>
       </div>

@@ -50,18 +50,19 @@ export function Wordmark({ className, onDark = false }: Props) {
         src={onDark ? logoImageOnDark : logoImage}
         alt={t("ariaLabel")}
         // Mobile base bumped from 112px to 150px (mobile-first pass,
-        // 2026-08-18): at the 320-430px test widths only the base class
-        // applies (sm: doesn't kick in until 640px), and 112px read as too
-        // small relative to the header's other requirement (less vertical
-        // padding) — 150px keeps the full lockup (monogram + name + gold
-        // line + tagline) legible without the header needing extra height.
-        // sm/md unchanged (128px / 148px) — this is a mobile-only change.
-        // `className` (the size override, e.g. footer's wider 190px mobile
-        // logo) is merged here via cn/twMerge — not on the outer Link — so
-        // the passed width utility actually wins over these defaults
-        // instead of just resizing an empty wrapper around a fixed-size img.
+        // 2026-08-18), then trimmed to 136px in the same-day follow-up
+        // pass: 150px read as heavier than the small hamburger icon it
+        // sits opposite across the header row (justify-between already
+        // gives both ends equal padding, so the mismatch was visual
+        // weight, not spacing) — 136px keeps the full lockup legible
+        // while balancing better against the icon. sm/md unchanged
+        // (128px / 148px) — this is a mobile-only change.
+        // `className` (the size override, e.g. footer's mobile logo) is
+        // merged here via cn/twMerge — not on the outer Link — so the
+        // passed width utility actually wins over these defaults instead
+        // of just resizing an empty wrapper around a fixed-size img.
         className={cn(
-          "h-auto w-[150px] object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 md:w-[148px]",
+          "h-auto w-[136px] object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 md:w-[148px]",
           className
         )}
         priority

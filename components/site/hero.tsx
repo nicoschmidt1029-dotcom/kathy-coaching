@@ -38,7 +38,7 @@ function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
           (2.6rem base / 2.75rem at sm, ~41.6-44px) replace it below md;
           the exact desktop clamp is restored unchanged at md+. */}
       <h1
-        className="animate-rise font-display text-[2.6rem] leading-[1.06] font-normal sm:text-[2.75rem] md:text-[clamp(2.3rem,4vw,3.5rem)]"
+        className="animate-rise font-display text-[2.3rem] leading-[1.1] font-normal sm:text-[2.6rem] md:text-[clamp(2.3rem,4vw,3.5rem)]"
         style={{ animationDelay: "80ms" }}
       >
         {t.rich("headline", {
@@ -69,7 +69,7 @@ function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
           text size/line-height stepped down a touch for mobile too, sm+
           unchanged. */}
       <p
-        className="animate-rise mt-5 max-w-md text-pretty text-[0.95rem] leading-[1.6] sm:text-lg sm:leading-[1.7] md:mt-8"
+        className="animate-rise mt-4 max-w-md text-pretty text-[0.92rem] leading-[1.55] sm:text-lg sm:leading-[1.7] md:mt-8"
         style={{ animationDelay: "180ms" }}
       >
         {t("body")}
@@ -156,65 +156,74 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Mobile: stacked instead of overlaid — a full-width video/photo card
-          above plain text on the ivory background, so nothing has to share
-          space with the headline.
+      {/* Mobile (rebuilt 2026-08-18, second pass): now matches desktop's
+          concept instead of stacking a separate video card below the copy —
+          full-bleed video as an absolutely-positioned background, gradient
+          scrim over it, HeroCopy on top in the light/cream text variant.
+          The previous version put the video in normal flow *after* the
+          text as its own rounded card; that read as a photo caption under
+          an article rather than a hero, and pushed the CTA below the fold
+          on short phones.
 
-          Was `section-pad` (clamp(4.5rem,9vw,8rem) top AND bottom — ~72px
-          of dead air directly under the header on every phone, which was
-          the main cause of the "empty gap below header" complaint). Header
-          -> hero now gets a small deliberate breathing gap (pt-6) instead,
-          headline -> body -> CTA -> video flow with its own tighter,
-          intentional rhythm (gap-6 between the copy block and the video),
-          and a normal section-end bottom padding (pb-14) before whatever
-          section follows. */}
-      <div className="flex flex-col gap-6 pt-6 pb-14 md:hidden">
-        <div className="container-page text-foreground [&_p]:text-foreground/70">
-          <HeroCopy t={t} />
-        </div>
+          min-h accounts for the actual mobile header: logo is 136px wide
+          at a ~0.86 h/w ratio (~117px tall) inside a py-2.5 (20px) row
+          plus its 1px hairline border, so 8.75rem (140px) subtracted from
+          100svh clears the sticky header without leaving a dead gap
+          (svh/dvh, not vh, so mobile browser chrome resizing doesn't
+          leave a jump). */}
+      <div className="relative flex min-h-[calc(100svh-8.75rem)] flex-col justify-center overflow-hidden py-16 md:hidden">
         {(video || photo) && (
-          <div className="container-page">
-            {/* aspect-[4/5] -> aspect-[4/3] on mobile only: the source is a
-                16:9 landscape clip (workout-hero.mp4), so a 4:5 portrait
-                card was cropping in hard on both sides to fill the extra
-                height. 4:3 needs much less horizontal crop. Added an
-                explicit mobile object-position (50% 38%) so the subject
-                stays framed slightly above center rather than the default
-                dead-center crop, which cut off too much headroom. Desktop's
-                own object-center (md:flex branch above) is untouched. */}
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_30px_60px_-30px_rgba(60,40,52,0.35)]">
-              {video ? (
-                <video
-                  // Lighter mobile-specific re-encode (see lib/temp-photos.ts)
-                  // — the desktop file was stalling playback on mobile
-                  // networks; falls back to the same file desktop uses if
-                  // srcMobile isn't set.
-                  src={video.srcMobile ?? video.src}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  aria-hidden
-                  className="absolute inset-0 h-full w-full object-cover object-[50%_38%]"
+          <div className="absolute inset-0 -z-10">
+            {video ? (
+              <video
+                // Lighter mobile-specific re-encode (see lib/temp-photos.ts)
+                // — the desktop file was stalling playback on mobile
+                // networks; falls back to the same file desktop uses if
+                // srcMobile isn't set. object-[center_30%] keeps her
+                // in-frame through the pike-push-up-into-mobility-flow
+                // movement across this taller full-bleed ratio, rather
+                // than the dead-center crop cutting off her feet/hands
+                // at the extremes of the motion.
+                src={video.srcMobile ?? video.src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                aria-hidden
+                className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
+              />
+            ) : (
+              photo && (
+                <Image
+                  src={photo.url}
+                  alt={photo.alt}
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="object-cover object-[22%_28%]"
                 />
-              ) : (
-                photo && (
-                  <>
-                    <Image
-                      src={photo.url}
-                      alt={photo.alt}
-                      fill
-                      sizes="100vw"
-                      className="object-cover"
-                    />
-                    {photo.credit && <TempPill credit={photo.credit} slot="Hero" />}
-                  </>
-                )
-              )}
-            </div>
+              )
+            )}
+            {/* Same gradient approach as desktop (from-[var(--petrol-deep)]
+                via a mid stop to transparent, plus a top-down wash) but
+                tuned lighter for mobile per the client's "light/warm/
+                elegant, not too dark" note: opacities pulled down
+                (92/50 -> 70/32, 40 -> 28) and the horizontal wash swapped
+                for a bottom-up one, since the mobile card is a tall
+                portrait band (copy sits low-center) rather than desktop's
+                wide band (copy sits right). */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--petrol-deep)]/70 via-[var(--petrol-deep)]/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[var(--petrol-deep)]/28 via-transparent to-transparent" />
+            {!video && photo?.credit && <TempPill credit={photo.credit} slot="Hero" />}
           </div>
         )}
+
+        <div className="container-page text-[var(--primary-foreground)]">
+          <div className="max-w-md [&_p]:text-[var(--primary-foreground)]/80">
+            <HeroCopy t={t} />
+          </div>
+        </div>
       </div>
     </section>
   );

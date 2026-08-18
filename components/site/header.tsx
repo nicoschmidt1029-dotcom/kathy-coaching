@@ -125,13 +125,28 @@ export function Header() {
               treatment so it reads as a real "you are here" state, echoing
               the desktop active-link underline.
             */}
-            <SheetContent side="right" className="flex flex-col bg-background p-0">
-              <SheetHeader className="border-b border-foreground/[0.06] px-6 py-5">
+            {/* 2026-08-18 same-day follow-up: "too basic" / panel too big
+                and the items too small. Panel narrowed from the shadcn
+                default (w-3/4 sm:max-w-sm, ~300px+) to a compact
+                right-aligned drawer (w-[78vw] max-w-[300px], overridden
+                here rather than in sheet.tsx since every other Sheet use
+                on the site should keep the default width) and the nav
+                item type bumped up (2rem/2.15rem -> 2.35rem/2.5rem, plus
+                font-medium) so four words carry more visual weight in the
+                narrower column instead of reading thin against all the
+                white space the old wide panel had. Numbered index + gold
+                active-state language kept, index/gap tightened slightly
+                to match. */}
+            <SheetContent
+              side="right"
+              className="flex w-[78vw] max-w-[300px] flex-col bg-background p-0 sm:max-w-[320px]"
+            >
+              <SheetHeader className="border-b border-foreground/[0.06] px-5 py-4">
                 <SheetTitle className="eyebrow text-left font-mono text-xs font-medium">
                   {t("menu")}
                 </SheetTitle>
               </SheetHeader>
-              <nav className="flex flex-1 flex-col justify-center px-6">
+              <nav className="flex flex-1 flex-col justify-center px-5">
                 {NAV.map((item, i) => {
                   const active = pathname === item.href;
                   return (
@@ -140,14 +155,14 @@ export function Header() {
                         href={item.href}
                         aria-current={active ? "page" : undefined}
                         className={cn(
-                          "group relative flex items-baseline gap-4 border-t border-foreground/[0.08] py-5 first:border-t-0 transition-colors",
+                          "group relative flex items-baseline gap-3 border-t border-foreground/[0.08] py-4 first:border-t-0 transition-colors",
                           i === NAV.length - 1 && "border-b border-foreground/[0.08]"
                         )}
                       >
                         <span
                           aria-hidden
                           className={cn(
-                            "font-mono text-[0.72rem] tracking-[0.1em] transition-colors",
+                            "font-mono text-[0.68rem] tracking-[0.1em] transition-colors",
                             active ? "text-[var(--clay)]" : "text-foreground/40"
                           )}
                         >
@@ -155,7 +170,7 @@ export function Header() {
                         </span>
                         <span
                           className={cn(
-                            "font-display text-[2rem] leading-none tracking-tight transition-colors sm:text-[2.15rem]",
+                            "font-display text-[2.35rem] leading-none font-medium tracking-tight transition-colors sm:text-[2.5rem]",
                             active
                               ? "text-foreground"
                               : "text-foreground/70 group-hover:text-foreground"
