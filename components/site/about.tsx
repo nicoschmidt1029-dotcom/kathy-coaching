@@ -85,7 +85,15 @@ export function About() {
               carries the new structure. Widened to max-w-xl (~576px) from
               the previous max-w-md (~448px) — comfortably inside the
               520-650px readable-width range for four paragraphs instead of
-              one short one. */}
+              one short one.
+
+              2026-08-19: storyMovement and storyNourish reverted to
+              Katarina's own unedited sentences — those two were the only
+              two blocks the original brief showed in both a raw and a
+              "polished" form, and the polished rewrite read as too
+              changed from what she actually wrote. storyEducation and
+              storyMission were only ever given in one form (never shown
+              raw separately), so they're untouched here. */}
           {t.has("storyMovement") ? (
             <div className="mt-6 max-w-xl space-y-5">
               {(

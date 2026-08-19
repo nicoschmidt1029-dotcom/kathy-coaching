@@ -15,9 +15,16 @@
  *
  * Slots currently on real Katey content:
  *   - hero        →  /images/kathy/kathy-blazer-wide.png (blazer portrait, background AI-widened by Katarina herself)
- *   - heroBlazer  →  /images/kathy/kathy-blazer.jpg (the original, un-widened crop — not currently rendered)
+ *   - heroBlazer  →  /images/kathy/kathy-13-contact-closeup.jpg (Contact page — close-up portrait)
  *   - heroMovementDetail → /images/kathy/kathy-07.jpg (gym, purple top, mid-stretch)
- *   - about        → /images/kathy/kathy-01.jpg (running track, side profile)
+ *   - about        → /images/kathy/kathy-12-katey-seated.jpg (Katey page — seated, black outfit, light-blue track)
+ *
+ * 2026-08-19: heroBlazer, about, programsIntro and homeBand (Mission) all
+ * moved to a new set of photos following Katarina's stated future
+ * direction for her imagery — black outfit, light-blue floor/track,
+ * clean and calm, minimal color variation, red-floor shots no longer the
+ * main direction. Every photo they replaced stays in the repo, unused,
+ * rather than being deleted.
  *
  * approachTrain is a real Katey photo (kathy-08-stretch.jpg) — see its own
  * comment below.
@@ -106,12 +113,14 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-blazer-wide.png",
     alt: "Katey in a beige blazer, leaning against a sunlit wall, looking to the side, with open wall space to the right",
   },
-  // Katey's own — editorial portrait: beige blazer, leaning on a sunlit wall.
-  // Kept here, one edit away, for whenever the hero should go back to a real
-  // photo of her instead of the stock silhouette above.
+  // Katey's own — replaced 2026-08-19 (client sent a new set of black-outfit
+  // / light-blue-floor photos, her stated future direction for all Katey
+  // imagery). Close-up portrait, natural light, warm and personal — used
+  // beside the Contact form. The old blazer portrait (kathy-blazer.jpg)
+  // stays in the repo, unused.
   heroBlazer: {
-    url: "/images/kathy/kathy-blazer.jpg",
-    alt: "Katey in a beige blazer, leaning against a sunlit wall, looking to the side",
+    url: "/images/kathy/kathy-13-contact-closeup.jpg",
+    alt: "Close-up portrait of Katey smiling gently, resting her chin on her hand",
   },
   // Katey's own — gym, purple top, stretching forward on the mat. Not
   // currently rendered anywhere (no component reads this slot); kept
@@ -148,17 +157,14 @@ export const TEMP_PHOTOS: Record<
     url: "/images/soul/soul-bible-candle-styling.png",
     alt: "An open Bible, a lit candle, a mug and olive branches on a warm wooden table",
   },
-  // Katey's own — running track, seated from behind, looking down the lane.
-  // Was the home page's standalone full-bleed pause section; that section
-  // is retired (HomeBand isn't imported/rendered anywhere) so this slot was
-  // effectively dead. Reassigned 2026-08-18 to the Mission page (see
-  // mission.tsx) — Mission previously reused the `hero` blazer portrait,
-  // which is the same photo (just AI-widened) as the Contact page's photo,
-  // a duplication bug. This is a different shoot/pose, still warm-toned and
-  // on-brand, and genuinely unused elsewhere on the live site.
+  // Katey's own — replaced 2026-08-19: new standing portrait, black outfit,
+  // light-blue track, holding her water bottle, hand on hip — part of the
+  // consistent black-outfit/light-blue-floor direction she wants going
+  // forward. Previous photo here (kathy-02.jpg, seated from behind) stays
+  // in the repo, unused.
   homeBand: {
-    url: "/images/kathy/kathy-02.jpg",
-    alt: "Katey sitting on a running track, seen from behind, looking down the lane",
+    url: "/images/kathy/kathy-11-mission-bottle.jpg",
+    alt: "Katey standing on a light-blue running track in a black outfit, hand on hip, holding a water bottle",
   },
   // Katey's own — running track, seated, looking off. Was the full-bleed
   // band under the Programs pricing cards; Katarina asked for that band
@@ -169,20 +175,24 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-04.jpg",
     alt: "Katey sitting on a running track, looking into the distance",
   },
-  // Katey's own — replaced 2026-08-18 (she asked for the drinking shot swapped
-  // out): full-length shot on the sports court, shading her eyes with one
-  // hand, bottle in the other. Portrait 3:4 source is close to the 4:5
-  // container, so object-cover only trims a little off top/bottom.
+  // Katey's own — replaced 2026-08-19: the previous court-shade photo read
+  // as too blue/dark with too much contrast. New shot: dynamic wide-legged
+  // stretch on the light-blue track, black outfit, landscape orientation —
+  // same black-outfit/light-blue-floor direction, calmer and less busy.
+  // kathy-10-court-shade.jpg stays in the repo, unused.
   programsIntro: {
-    url: "/images/kathy/kathy-10-court-shade.jpg",
-    alt: "Katey standing on an outdoor sports court, shading her eyes with one hand and holding a water bottle in the other",
+    url: "/images/kathy/kathy-14-programs-stretch.jpg",
+    alt: "Katey in a wide-legged stretch on a light-blue running track, arms extended",
   },
-  // Katey's own — running track, seated side profile, looking off into the
-  // distance. Warm red track and greenery read gold rather than clashing,
-  // which the gym photo formerly here did not.
+  // Katey's own — replaced 2026-08-19: seated side profile on the track,
+  // black outfit, looking off into the distance — part of the new
+  // consistent black-outfit/light-blue-floor image direction. The old
+  // red-track photo (kathy-01.jpg) stays in the repo, unused; the client
+  // was explicit that red-floor imagery shouldn't be the main direction
+  // going forward.
   about: {
-    url: "/images/kathy/kathy-01.jpg",
-    alt: "Portrait of Katey sitting on a running track, side profile",
+    url: "/images/kathy/kathy-12-katey-seated.jpg",
+    alt: "Katey sitting on a light-blue running track in a black outfit, side profile, looking into the distance",
   },
 };
 

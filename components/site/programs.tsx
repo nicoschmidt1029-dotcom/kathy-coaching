@@ -50,16 +50,22 @@ export function Programs() {
           {/* Katey's own photo beside the intro. */}
           {TEMP_PHOTOS.programsIntro && (
             <div className="md:col-span-5">
-              {/* aspect-[4/3] on mobile (md:aspect-[4/5] restores desktop) —
-                  the full 4/5 portrait read as excessively tall stacked
-                  under the intro copy at phone widths. */}
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl md:aspect-[4/5]">
+              {/* Was aspect-[4/3] mobile / md:aspect-[4/5] desktop, tuned for
+                  the previous portrait court-shade photo. The 2026-08-19
+                  replacement (kathy-14-programs-stretch.jpg) is a landscape
+                  wide stretch, ~4:3 (1439x1093) — forcing it into a 4:5
+                  portrait container at desktop would crop hard into her
+                  outstretched arms, the whole point of the shot. Unified to
+                  aspect-[4/3] at every breakpoint instead, which is close
+                  enough to the source's own ratio that object-cover barely
+                  crops it either way. */}
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
                 <Image
                   src={TEMP_PHOTOS.programsIntro.url}
                   alt={TEMP_PHOTOS.programsIntro.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 35vw"
-                  className="object-cover object-[50%_35%]"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
