@@ -207,8 +207,17 @@ export const TEMP_PHOTOS: Record<
 // for how it's cropped into the full-bleed hero). Replaces the still blazer
 // portrait, per her request to show her actually training instead of a
 // posed shot. kathy-video-2.mp4 stays in the repo, unused, for later reuse.
+//
+// 2026-08-19: desktop clip swapped to katarina-hero-refined.mp4 (her own
+// "refined/shorter/HQ" re-edit of the background footage). Re-encoded from
+// her 1280x720/37s/38.7MB source — audio stripped (the <video> element is
+// always muted, so the AAC track was dead weight), libx264 CRF 20/faststart,
+// same treatment as the previous encode. 17.4MB, still 1280x720/30fps.
+// workout-hero.mp4 (the previous desktop clip) stays in the repo, unused.
+// Mobile clip (srcMobile) is untouched — she sent this refined version for
+// desktop only.
 export const TEMP_HERO_VIDEO: TempVideo = {
-  src: "/videos/workout-hero.mp4",
+  src: "/videos/katarina-hero-refined.mp4",
   // Swapped 2026-08-18 to a different clip Katarina sent specifically for
   // mobile: a genuine portrait-shot (9:16) workout video, not a crop of
   // the landscape desktop clip. Re-encoded from her 512x910/49.5MB original
