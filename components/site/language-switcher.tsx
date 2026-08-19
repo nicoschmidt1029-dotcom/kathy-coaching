@@ -61,10 +61,17 @@ export function LanguageSwitcher({ className, size = "sm" }: Props) {
                 "rounded font-mono uppercase transition-colors duration-200",
                 size === "lg"
                   ? "px-2 py-1 text-[0.8rem] tracking-[0.18em]"
-                  : "px-1.5 py-1 text-[0.68rem] tracking-[0.16em]",
+                  // 2026-08-19 header pass: slightly more compact/quiet than
+                  // before (px-1.5 -> px-1, tracking 0.16em -> 0.14em,
+                  // inactive opacity /45 -> /40) so it reads as a lighter
+                  // detail next to the now-larger nav labels instead of
+                  // competing with them. `lg` (mobile sheet) untouched.
+                  : "px-1 py-1 text-[0.68rem] tracking-[0.14em]",
                 isActive
                   ? "text-foreground"
-                  : "text-foreground/45 hover:text-foreground"
+                  : size === "lg"
+                    ? "text-foreground/45 hover:text-foreground"
+                    : "text-foreground/40 hover:text-foreground"
               )}
             >
               {LOCALE_LABELS[locale as Locale].short}

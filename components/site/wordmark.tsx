@@ -2,8 +2,8 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import logoImage from "@/public/images/logo/katey-coaching-full.png";
-import logoImageOnDark from "@/public/images/logo/katey-coaching-full-ondark.png";
+import logoImage from "@/public/images/logo/katey-coaching-full-balanced.png";
+import logoImageOnDark from "@/public/images/logo/katey-coaching-full-balanced-ondark.png";
 
 type Props = {
   className?: string;
@@ -47,6 +47,20 @@ type Props = {
   heart woven into the KC monogram's decorative line (part of the "KC
   monogram" proper, not this divider) is untouched — only the small one on
   the lower line is gone.
+
+  2026-08-19, second pass — "*-balanced" files: the flat lockup renders the
+  monogram and the "KATEY COACHING" + tagline text at whatever proportion
+  they happened to be drawn at, which made the K/C read oversized (860px
+  of the 1000x860 canvas, 74%) against a comparatively small, hard-to-read
+  wordmark row. No redraw: split the original file into its monogram block
+  (top 640px) and its text block (bottom 220px), scaled the monogram down
+  (0.82x) and the text up (1.15x) independently, then recomposited both on
+  a new transparent canvas with a deliberate 30px gap between them. Same
+  artwork, same colors, same relative left/right balance within each
+  block — only the monogram-to-text size ratio and the gap changed. Done
+  identically for both the light and on-dark variant so they stay in sync.
+  New canvas is 1150x808 (was 1000x860) — wider and shorter, since the
+  text block is now proportionally the wider element.
 */
 export function Wordmark({ className, onDark = false }: Props) {
   const t = useTranslations("wordmark");
@@ -66,14 +80,21 @@ export function Wordmark({ className, onDark = false }: Props) {
         // sits opposite across the header row (justify-between already
         // gives both ends equal padding, so the mismatch was visual
         // weight, not spacing) — 136px keeps the full lockup legible
-        // while balancing better against the icon. sm/md unchanged
-        // (128px / 148px) — this is a mobile-only change.
+        // while balancing better against the icon.
+        // 2026-08-19: switched to the "*-balanced" artwork (see file
+        // comment above), which is wider/shorter than the old 1000x860
+        // canvas. Width bumped 136px -> 148px (mobile) and 148px -> 168px
+        // (md) to compensate for the new shorter aspect ratio — net
+        // result is a slightly *shorter* rendered logo than before at
+        // both sizes (monogram reads smaller) while "KATEY COACHING" and
+        // the tagline render at a visibly larger, more legible pixel
+        // size, per Katarina's request.
         // `className` (the size override, e.g. footer's mobile logo) is
         // merged here via cn/twMerge — not on the outer Link — so the
         // passed width utility actually wins over these defaults instead
         // of just resizing an empty wrapper around a fixed-size img.
         className={cn(
-          "h-auto w-[136px] object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 md:w-[148px]",
+          "h-auto w-[148px] object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 md:w-[168px]",
           className
         )}
         priority

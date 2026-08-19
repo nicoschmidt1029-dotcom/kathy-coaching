@@ -59,10 +59,10 @@ export function Header() {
       {/* Mobile header compacted: py-2.5 (was py-3, matching the desktop
           py-4 ratio less closely so the row doesn't carry so much empty
           air above/below the taller full-lockup logo) — md+ untouched. */}
-      <div className="container-page flex items-center justify-between gap-6 py-2.5 md:py-4">
+      <div className="container-page flex items-center justify-between gap-6 py-2.5 md:py-3.5">
         <Wordmark />
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           {NAV.map((item) => {
             const active = pathname === item.href;
             return (
@@ -83,7 +83,14 @@ export function Header() {
                   // tracking nudged 0.01em -> 0.02em, inactive opacity
                   // /82 -> /90. Both still subtle per her explicit "do not
                   // overdo it" — font/size unchanged from the pass above.
-                  "group relative whitespace-nowrap text-[0.97rem] tracking-[0.02em] transition-colors duration-200",
+                  // 2026-08-19, header-balance pass: with the wordmark's
+                  // text row now rendering larger (see wordmark.tsx), the
+                  // 0.97rem nav read oversized next to it and the whole
+                  // header felt heavy. Trimmed to 0.85rem, gap-8 -> gap-7,
+                  // tracking eased back 0.02em -> 0.015em to match the
+                  // smaller size — still comfortably above 12px real
+                  // rendered size, still readable at a glance.
+                  "group relative whitespace-nowrap text-[0.85rem] tracking-[0.015em] transition-colors duration-200",
                   active
                     ? "text-foreground"
                     : "text-foreground/90 hover:text-foreground"
