@@ -159,15 +159,17 @@ export function Header() {
                 white space the old wide panel had. Numbered index + gold
                 active-state language kept, index/gap tightened slightly
                 to match. */}
-            {/* 2026-08-19, follow-up: first pass (72vw/272px) still read as
-                "very large" per client feedback — cut further to
-                62vw/240px (260px at sm), close to just fitting the widest
-                nav word ("Kontakt"/"Programy") plus the index+padding
-                rather than leaving a wide margin of empty background.
-                Same right-side placement, same content/typography. */}
+            {/* 2026-08-19, second follow-up: 62vw/240px still read as
+                "about half the page" — cut to 52vw/210px (230px at sm),
+                clearly under half-width even on the narrowest phones.
+                Nav item font size below was trimmed together with this
+                (2.35rem/2.5rem -> 2rem/2.15rem) since "Meine Mission"/
+                "My mission" would otherwise wrap at this width — kept the
+                same weight/index/hairline treatment, just sized to fit
+                the narrower column. */}
             <SheetContent
               side="right"
-              className="flex w-[62vw] max-w-[240px] flex-col bg-background p-0 sm:max-w-[260px]"
+              className="flex w-[52vw] max-w-[210px] flex-col bg-background p-0 sm:max-w-[230px]"
             >
               <SheetHeader className="border-b border-foreground/[0.06] px-5 py-4">
                 <SheetTitle className="eyebrow text-left font-mono text-xs font-medium">
@@ -198,7 +200,7 @@ export function Header() {
                         </span>
                         <span
                           className={cn(
-                            "font-display text-[2.35rem] leading-none font-medium tracking-tight transition-colors sm:text-[2.5rem]",
+                            "font-display text-[1.85rem] leading-none font-medium tracking-tight transition-colors sm:text-[2rem]",
                             active
                               ? "text-foreground"
                               : "text-foreground/70 group-hover:text-foreground"
