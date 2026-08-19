@@ -17,15 +17,18 @@ export function About() {
   const t = useTranslations("about");
 
   return (
-    <section id="about" className="section-pad">
+    <section id="about" className="section-pad section-pad-top-tight">
       <div className="container-page">
         <p className="eyebrow">{t("eyebrow")}</p>
 
         {/* Used to straddle the photograph — the hollow first word landing on
             the portrait, following a different design reference. Katarina
             asked for text to stay off photos, so the title now sits above
-            the grid like every other section on the site. */}
-        <DisplayTitle className="mt-6">{t("overlapTitle")}</DisplayTitle>
+            the grid like every other section on the site.
+            2026-08-19: mt-6 -> mt-4 (small, per request) so the eyebrow and
+            title read as one tighter unit — same nudge as the section's
+            top padding below, not a new pattern. */}
+        <DisplayTitle className="mt-4">{t("overlapTitle")}</DisplayTitle>
 
         <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
