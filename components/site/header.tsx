@@ -58,8 +58,13 @@ export function Header() {
     >
       {/* Mobile header compacted: py-2.5 (was py-3, matching the desktop
           py-4 ratio less closely so the row doesn't carry so much empty
-          air above/below the taller full-lockup logo) — md+ untouched. */}
-      <div className="container-page flex items-center justify-between gap-6 py-2.5 md:py-3.5">
+          air above/below the taller full-lockup logo) — md+ untouched.
+          2026-08-19 mobile-refinement pass: py-2.5 -> py-1.5 — client asked
+          for a shorter header without shrinking the logo itself, so this
+          only trims the empty padding above/below it (logo width in
+          wordmark.tsx is untouched, "HEALTH · FITNESS · FAITH" stays the
+          same legible size). md+ still untouched. */}
+      <div className="container-page flex items-center justify-between gap-6 py-1.5 md:py-3.5">
         <Wordmark />
 
         <nav className="hidden items-center gap-7 md:flex">
@@ -114,13 +119,19 @@ export function Header() {
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
+              {/* 2026-08-19 mobile-refinement pass: icon-lg's default svg
+                  (size-4, 16px) read small against the now-larger logo —
+                  tap box bumped size-9 (36px) -> size-10 (40px) and the
+                  icon itself to size-5 (20px), still comfortably inside
+                  "elegant, not oversized". Desktop untouched — this button
+                  only renders below md. */}
               <Button
                 variant="ghost"
                 size="icon-lg"
                 aria-label={t("openMenu")}
-                className="md:hidden"
+                className="size-10 md:hidden"
               >
-                <Menu />
+                <Menu className="size-5" />
               </Button>
             </SheetTrigger>
             {/*
@@ -148,9 +159,13 @@ export function Header() {
                 white space the old wide panel had. Numbered index + gold
                 active-state language kept, index/gap tightened slightly
                 to match. */}
+            {/* 2026-08-19 mobile-refinement pass: "just a little narrower" —
+                78vw/300px (320px at sm) -> 72vw/272px (292px at sm). Same
+                right-side placement, same content/typography, just less
+                empty panel around it. */}
             <SheetContent
               side="right"
-              className="flex w-[78vw] max-w-[300px] flex-col bg-background p-0 sm:max-w-[320px]"
+              className="flex w-[72vw] max-w-[272px] flex-col bg-background p-0 sm:max-w-[292px]"
             >
               <SheetHeader className="border-b border-foreground/[0.06] px-5 py-4">
                 <SheetTitle className="eyebrow text-left font-mono text-xs font-medium">

@@ -35,16 +35,22 @@ export function Mission() {
     <section id="mission" className="section-pad section-pad-top-tight relative overflow-hidden">
       {/* gap-12 -> gap-8 on mobile only (md:gap-16 unchanged): keeps
           Katarina's photo closer under the statement instead of a large
-          gap, per her mobile-pass note. */}
-      <div className="container-page grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-16">
+          gap, per her mobile-pass note.
+          2026-08-19 mobile-refinement pass: gap-8 -> gap-6 on mobile only
+          (md:gap-16 still untouched) — client felt the empty space before
+          the photo was still too large; title/lede margins below tightened
+          to match, same treatment. */}
+      <div className="container-page grid grid-cols-1 items-center gap-6 md:grid-cols-12 md:gap-16">
         <div className="md:col-span-7">
           <p className="eyebrow">{t("eyebrow")}</p>
 
-          <DisplayTitle className="mt-8 max-w-[16ch]">
+          {/* mt-8 -> mt-5 on mobile (md:mt-8 restores desktop). */}
+          <DisplayTitle className="mt-5 max-w-[16ch] md:mt-8">
             {t("title")}
           </DisplayTitle>
 
-          <p className="mt-10 max-w-md font-display text-[1.35rem] leading-snug italic text-foreground/80 sm:text-[1.6rem]">
+          {/* mt-10 -> mt-5 on mobile (md:mt-10 restores desktop). */}
+          <p className="mt-5 max-w-md font-display text-[1.35rem] leading-snug italic text-foreground/80 sm:text-[1.6rem] md:mt-10">
             {t("p3")}
           </p>
         </div>

@@ -33,16 +33,20 @@ export function Programs() {
             column (not above it) so it shares the same row-start as the
             photo opposite it — the two columns begin at the same line
             without a negative margin pulling the image up to compensate. */}
-        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-12 md:gap-16">
+        {/* 2026-08-19 mobile-refinement pass: gap-10 -> gap-6 on mobile
+            only (md:gap-16 untouched) — the photo sat too far down the
+            page on first load; text-block margins below tightened to
+            match so it arrives sooner without cramming anything. */}
+        <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-7">
             {/* Display type sets its own width; boxed in a six-column well
                 it broke into five cramped lines. */}
             <p className="eyebrow">{t("eyebrow")}</p>
-            <DisplayTitle className="mt-6 max-w-[15ch]">{t("title")}</DisplayTitle>
-            <p className="section-lede mt-8 max-w-none">{t("intro")}</p>
+            <DisplayTitle className="mt-4 max-w-[15ch] md:mt-6">{t("title")}</DisplayTitle>
+            <p className="section-lede mt-5 max-w-none md:mt-8">{t("intro")}</p>
             {/* Ties the three blocks back to the named method — see
                 approach.systemName. */}
-            <p className="mt-5 max-w-none text-[0.95rem] leading-relaxed text-foreground/78">
+            <p className="mt-3 max-w-none text-[0.95rem] leading-relaxed text-foreground/78 md:mt-5">
               {t("systemNote", { system: approach("systemName") })}
             </p>
           </div>

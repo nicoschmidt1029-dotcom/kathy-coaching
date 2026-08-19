@@ -30,7 +30,12 @@ export function About() {
             top padding below, not a new pattern. */}
         <DisplayTitle className="mt-4">{t("overlapTitle")}</DisplayTitle>
 
-        <div className="mt-10 grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-16">
+        {/* 2026-08-19 mobile-refinement pass: gap-12 -> gap-8 on mobile
+            only (md:gap-16 untouched) — part of the same "reduce excessive
+            mobile gaps" pass as Mission/Programs; the outer mt-10 is
+            unchanged since it's the photo/text column gap, not a large
+            empty band. */}
+        <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
             <div className="md:sticky md:top-28">
               {TEMP_PHOTOS.about ? (
@@ -97,8 +102,16 @@ export function About() {
               changed from what she actually wrote. storyEducation and
               storyMission were only ever given in one form (never shown
               raw separately), so they're untouched here. */}
+          {/* 2026-08-19 mobile-refinement pass: content/length unchanged
+              per client's explicit request — only reading rhythm tuned.
+              space-y-5 -> space-y-6 on mobile (sm:space-y-5 restores the
+              original desktop gap exactly) for a clearer break between
+              the four blocks, and an explicit leading-[1.65] on mobile
+              (was inheriting the browser default ~1.5; sm:leading-[1.7]
+              still wins at sm+ same as before) for a more comfortable
+              line-height at phone widths. */}
           {t.has("storyMovement") ? (
-            <div className="mt-6 max-w-xl space-y-5">
+            <div className="mt-6 max-w-xl space-y-6 sm:space-y-5">
               {(
                 [
                   "storyMovement",
@@ -109,7 +122,7 @@ export function About() {
               ).map((key) => (
                 <p
                   key={key}
-                  className="text-pretty text-foreground/72 sm:text-lg sm:leading-[1.7]"
+                  className="text-pretty leading-[1.65] text-foreground/72 sm:text-lg sm:leading-[1.7]"
                 >
                   {t.rich(key, {
                     em: (chunks) => (

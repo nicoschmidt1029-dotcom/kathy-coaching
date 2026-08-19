@@ -86,7 +86,11 @@ function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
           comment in globals.css for the sampling/contrast reasoning.
           Every other --plum button on the site (Contact, Programs,
           approach, 404) is untouched. */}
-      <div className="animate-rise mt-6 md:mt-10" style={{ animationDelay: "280ms" }}>
+      {/* 2026-08-19 mobile-refinement pass: mt-6 -> mt-8 on mobile only
+          (md:mt-10 untouched) — a little more breathing room between the
+          supporting text and the button, per client feedback. Color
+          unchanged (--shoe-accent). */}
+      <div className="animate-rise mt-8 md:mt-10" style={{ animationDelay: "280ms" }}>
         <Button
           asChild
           size="lg"
