@@ -177,13 +177,11 @@ export function Hero() {
             {video ? (
               <video
                 // Lighter mobile-specific re-encode (see lib/temp-photos.ts)
-                // — the desktop file was stalling playback on mobile
-                // networks; falls back to the same file desktop uses if
-                // srcMobile isn't set. object-[center_30%] keeps her
-                // in-frame through the pike-push-up-into-mobility-flow
-                // movement across this taller full-bleed ratio, rather
-                // than the dead-center crop cutting off her feet/hands
-                // at the extremes of the motion.
+                // — falls back to the same file desktop uses if srcMobile
+                // isn't set. Source is now a genuine portrait (9:16) clip,
+                // not a landscape crop, so it needs barely any cropping
+                // against a phone-shaped hero — plain object-center holds
+                // her in frame through the whole movement.
                 src={video.srcMobile ?? video.src}
                 autoPlay
                 muted
@@ -191,7 +189,7 @@ export function Hero() {
                 playsInline
                 preload="auto"
                 aria-hidden
-                className="absolute inset-0 h-full w-full object-cover object-[center_30%]"
+                className="absolute inset-0 h-full w-full object-cover object-center"
               />
             ) : (
               photo && (

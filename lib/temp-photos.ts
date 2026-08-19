@@ -193,9 +193,12 @@ export const TEMP_PHOTOS: Record<
 // posed shot. kathy-video-2.mp4 stays in the repo, unused, for later reuse.
 export const TEMP_HERO_VIDEO: TempVideo = {
   src: "/videos/workout-hero.mp4",
-  // 640x360, no audio track, faststart — 3.8MB vs the desktop file's 43MB
-  // (720p + an unused AAC track, since the video is always muted). That
-  // gap was stalling playback on mobile connections. Same footage, just a
-  // much lighter re-encode sized for the mobile hero's small 4:3 card.
+  // Swapped 2026-08-18 to a different clip Katarina sent specifically for
+  // mobile: a genuine portrait-shot (9:16) workout video, not a crop of
+  // the landscape desktop clip. Re-encoded from her 512x910/49.5MB original
+  // down to 480x854/5.7MB — no audio track, faststart, CRF 26 — same
+  // treatment as the previous mobile file, just built from better-fitting
+  // source footage (near-identical aspect to a phone screen, so the
+  // full-bleed mobile hero needs almost no cropping).
   srcMobile: "/videos/workout-hero-mobile.mp4",
 };
