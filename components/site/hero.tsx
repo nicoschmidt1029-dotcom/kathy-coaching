@@ -80,11 +80,17 @@ function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
           gets h-14 (56px, within the client's 52-60px suggestion) and
           full width for a stronger tap target — sm+ reverts to the
           original h-12 auto-width button untouched. */}
+      {/* CTA colour test (2026-08-19): --shoe-accent instead of --plum,
+          on this one button only — a muted version of the coral shoes
+          worn in the hero video/Programs photo. See the token's own
+          comment in globals.css for the sampling/contrast reasoning.
+          Every other --plum button on the site (Contact, Programs,
+          approach, 404) is untouched. */}
       <div className="animate-rise mt-6 md:mt-10" style={{ animationDelay: "280ms" }}>
         <Button
           asChild
           size="lg"
-          className="group/button h-14 w-full bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90 sm:h-12 sm:w-auto"
+          className="group/button h-14 w-full bg-[var(--shoe-accent)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--shoe-accent)]/90 sm:h-12 sm:w-auto"
         >
           <Link href="/programme">
             {t("cta")}

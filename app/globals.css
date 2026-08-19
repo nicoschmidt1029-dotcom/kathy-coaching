@@ -136,6 +136,18 @@
   --clay: oklch(0.62 0.035 75);    /* Muted warm gold #B08F55 — decorative only: the logo mark, hairline underlines. Desaturated from the old vivid mustard on purpose. */
   --plum: oklch(0.32 0.06 220);    /* Dark petrol blue — titles + buttons, kept in the `--plum` slot so every existing bg-[var(--plum)] button follows without a rename */
   --sand: oklch(0.91 0.006 75);    /* Warm dove-gray, same as --secondary */
+  /* Shoe-inspired CTA test (2026-08-19 client request): sampled the coral
+     shoes from the hero video/Programs photo (~oklch 0.52-0.68L / 0.05-0.11C
+     / hue 13-21, depending on lighting — the hue is consistent, only
+     lightness/chroma shift with the light in each shot). Darkened and
+     desaturated to oklch(0.42 0.09 16) — a muted brick/terracotta-rose —
+     to sit at roughly the same lightness/restraint level as --plum instead
+     of the shoe's actual bright coral, which would clash against the site's
+     warm-neutral palette. 8.26:1 contrast against --primary-foreground
+     (comfortably AA/AAA for button text). Applied ONLY to the homepage
+     hero's CTA as a single-button test, per instruction not to change
+     every --plum button sitewide until this reads as the right call. */
+  --shoe-accent: oklch(0.42 0.09 16);
 
   /*
    * "Petrol" keeps its variable names from the gold-era palette (renaming

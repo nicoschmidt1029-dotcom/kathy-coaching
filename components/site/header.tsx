@@ -79,10 +79,14 @@ export function Header() {
                   // dramatic" note — and inactive opacity raised from /72
                   // to /82 so it reads as confident dark-gray rather than
                   // washed-out light gray against the ivory header.
-                  "group relative whitespace-nowrap text-[0.97rem] tracking-[0.01em] transition-colors duration-200",
+                  // 2026-08-19 follow-up: still read a touch light/tight —
+                  // tracking nudged 0.01em -> 0.02em, inactive opacity
+                  // /82 -> /90. Both still subtle per her explicit "do not
+                  // overdo it" — font/size unchanged from the pass above.
+                  "group relative whitespace-nowrap text-[0.97rem] tracking-[0.02em] transition-colors duration-200",
                   active
                     ? "text-foreground"
-                    : "text-foreground/82 hover:text-foreground"
+                    : "text-foreground/90 hover:text-foreground"
                 )}
               >
                 {t(item.key)}

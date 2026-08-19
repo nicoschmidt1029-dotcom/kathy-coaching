@@ -60,19 +60,15 @@ export function About() {
           </div>
 
           <div className="md:col-span-7">
-          <h3 className="mt-0 max-w-[20ch] font-display text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.12] font-normal">
-            {t("title")}
-          </h3>
-
-          {/* The two paragraphs used to run at identical size and weight —
-              same font, same size, one em-phrase each — which is exactly
-              what read as flat/wrong here. Now they carry different jobs:
-              `calling` is a short pull-quote statement, set large and
-              italic; `story` is the actual biographical detail, set as
-              plain body copy. The emphasised fragment inside the quote
-              flips to upright serif, the same roman-in-italic move the
-              hero headline uses. */}
-          <p className="mt-8 max-w-lg font-display text-[1.4rem] italic leading-snug text-foreground/88 sm:text-[1.7rem]">
+          {/* The small subheading ("Strength, nourishment, and a quiet kind
+              of confidence.") sat here — removed 2026-08-19 at Katarina's
+              explicit request, not replaced with another decorative line.
+              `calling` is now the first thing in this column, so it carries
+              the opening beat on its own instead of following a second
+              headline that repeated the same job. mt-0 (was mt-8) since
+              it's no longer following the removed h3 — still lines up with
+              the photo column's top via the grid's items-start. */}
+          <p className="mt-0 max-w-lg font-display text-[1.4rem] italic leading-snug text-foreground/88 sm:text-[1.7rem]">
             {t.rich("calling", {
               em: (chunks) => <span className="not-italic">{chunks}</span>,
             })}
