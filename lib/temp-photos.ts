@@ -184,14 +184,16 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-14-programs-stretch.jpg",
     alt: "Katey in a wide-legged stretch on a light-blue running track, arms extended",
   },
-  // Katey's own — replaced 2026-08-19: seated side profile on the track,
-  // black outfit, looking off into the distance — part of the new
-  // consistent black-outfit/light-blue-floor image direction. The old
-  // red-track photo (kathy-01.jpg) stays in the repo, unused; the client
-  // was explicit that red-floor imagery shouldn't be the main direction
-  // going forward.
+  // Katey's own — replaced 2026-08-19 (second pass, same day): swapped
+  // from kathy-12-katey-seated.jpg to this newly re-edited version of the
+  // same shoot/pose she sent afterwards — calmer, more consistent color
+  // grading (PSNR ~18 against the previous file, so a real re-edit, not a
+  // duplicate). Same seated side-profile pose, black outfit, blue track.
+  // kathy-12-katey-seated.jpg stays in the repo, unused. Source PNG was
+  // 1086x1448, identical ratio to the portrait aspect-[3/4] container, so
+  // object-cover applies no crop at all.
   about: {
-    url: "/images/kathy/kathy-12-katey-seated.jpg",
+    url: "/images/kathy/kathy-15-about-blue-track.jpg",
     alt: "Katey sitting on a light-blue running track in a black outfit, side profile, looking into the distance",
   },
 };
