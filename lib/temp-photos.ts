@@ -129,13 +129,17 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-07.jpg",
     alt: "Katey stretching in the gym, looking toward the camera",
   },
-  // Katey's own — new stretch/lunge shot on the track (sent 17 Aug), replacing
-  // the block-training illustration. She asked for this thread specifically to
-  // go back to a real photo; Nourish and Soul are still illustrations pending
-  // real photos for those two themes (see note above the record).
+  // Katey's own — replaced 2026-08-19: shoulder-stand/leg-raise pose on an
+  // outdoor sports court, part of the black-outfit/blue-track-adjacent set
+  // she sent. Portrait 1086x1448 (3:4) — approach.tsx's "train" pillar
+  // gives this one pillar its own aspect-[3/4] container instead of the
+  // shared aspect-[5/4] the other two threads use (see approach.tsx),
+  // since a 5:4 landscape crop on this pose would have to cut either her
+  // raised feet or her face — neither acceptable. kathy-08-stretch.jpg
+  // (the previous photo here) stays in the repo, unused.
   approachTrain: {
-    url: "/images/kathy/kathy-08-stretch.jpg",
-    alt: "Katey mid-stretch on a running track, arms and legs extended",
+    url: "/images/kathy/kathy-16-approach-train-shoulderstand.jpg",
+    alt: "Katey in a shoulder-stand leg raise on an outdoor sports court, smiling",
   },
   // Katey's own — running track, seated, relaxed, looking off into the
   // distance. Replaces the commissioned line illustration: Katarina asked

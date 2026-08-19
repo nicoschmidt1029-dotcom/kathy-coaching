@@ -2,8 +2,8 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import logoImage from "@/public/images/logo/katey-coaching-full-balanced.png";
-import logoImageOnDark from "@/public/images/logo/katey-coaching-full-balanced-ondark.png";
+import logoImage from "@/public/images/logo/katey-coaching-full-subline.png";
+import logoImageOnDark from "@/public/images/logo/katey-coaching-full-subline-ondark.png";
 
 type Props = {
   className?: string;
@@ -61,6 +61,22 @@ type Props = {
   identically for both the light and on-dark variant so they stay in sync.
   New canvas is 1150x808 (was 1000x860) — wider and shorter, since the
   text block is now proportionally the wider element.
+
+  2026-08-19, third pass — "*-subline" files: Katarina asked specifically
+  for the "HEALTH · FITNESS · FAITH" tagline to be bigger (it's baked into
+  this flat artwork, not CSS text, so there's no font-size to tweak — this
+  is an image edit, not a style change). Isolated just the tagline-text
+  crop from the "*-balanced" file (the gold line and "KATEY COACHING"
+  above it are untouched) and scaled it 1.2x uniformly (both axes, so
+  letterforms and tracking aren't distorted) — a +20% size bump, in the
+  middle of the 15-25% asked for. The monogram+name+line block is copied
+  in at its exact "*-balanced" pixel size, unscaled. Because the enlarged
+  tagline is now wider than the block above it, the canvas widened from
+  1150 to 1380px (826px tall) to fit it without clipping or squeezing;
+  both are still centered on it. Wordmark's rendered width was bumped
+  accordingly (see below) so the monogram/name render at the *same*
+  on-screen pixel size as the previous pass — only the tagline actually
+  reads bigger.
 */
 export function Wordmark({ className, onDark = false }: Props) {
   const t = useTranslations("wordmark");
@@ -89,12 +105,19 @@ export function Wordmark({ className, onDark = false }: Props) {
         // both sizes (monogram reads smaller) while "KATEY COACHING" and
         // the tagline render at a visibly larger, more legible pixel
         // size, per Katarina's request.
+        // 2026-08-19, third pass: switched to "*-subline" artwork (see
+        // file comment above), whose canvas widened 1150->1380px without
+        // the monogram/name block itself changing size. Width bumped
+        // 148px -> 178px (mobile) and 168px -> 202px (md) — solved for
+        // the exact value that keeps the monogram+name block's on-screen
+        // pixel size identical to the previous pass; the tagline is the
+        // only part that actually renders larger (~20%).
         // `className` (the size override, e.g. footer's mobile logo) is
         // merged here via cn/twMerge — not on the outer Link — so the
         // passed width utility actually wins over these defaults instead
         // of just resizing an empty wrapper around a fixed-size img.
         className={cn(
-          "h-auto w-[148px] object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 md:w-[168px]",
+          "h-auto w-[178px] object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 md:w-[202px]",
           className
         )}
         priority

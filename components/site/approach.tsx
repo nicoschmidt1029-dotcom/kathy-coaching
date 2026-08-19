@@ -25,6 +25,13 @@ const PILLARS = [
     icon: Dumbbell,
     zoom: false,
     objectPosition: undefined,
+    // 2026-08-19: this pillar's photo is a portrait 3:4 shoulder-stand
+    // pose (feet near the top, face near the bottom) — the shared 5:4
+    // landscape container the other two threads use would need to crop
+    // ~44% of the image height, cutting either her feet or her face.
+    // aspect-[3/4] matches the source exactly, so object-cover applies no
+    // crop at all here.
+    aspect: "aspect-[3/4]",
   },
   {
     key: "nourish",
@@ -37,6 +44,7 @@ const PILLARS = [
     // both hands, the figs and the bread readable instead of centering on
     // the tablecloth.
     objectPosition: "62% 42%",
+    aspect: undefined,
   },
   {
     key: "soul",
@@ -48,6 +56,7 @@ const PILLARS = [
     // candle fully in frame while the Bible (center) and mug (right) stay
     // comfortably inside the crop too.
     objectPosition: "46% 50%",
+    aspect: undefined,
   },
 ] as const;
 
@@ -86,7 +95,7 @@ export function Approach() {
         </div>
 
         <ul className="mt-20 space-y-20 md:mt-24 md:space-y-28">
-          {PILLARS.map(({ key, image, icon: Icon, zoom, objectPosition }, i) => (
+          {PILLARS.map(({ key, image, icon: Icon, zoom, objectPosition, aspect }, i) => (
             <li
               key={key}
               className="grid grid-cols-1 items-center gap-8 md:grid-cols-12 md:gap-14"
@@ -97,7 +106,7 @@ export function Approach() {
                     i % 2 === 0 ? "md:order-2 md:col-span-6" : "md:col-span-6"
                   }
                 >
-                  <div className="relative aspect-[5/4] overflow-hidden rounded-2xl">
+                  <div className={cn("relative overflow-hidden rounded-2xl", aspect ?? "aspect-[5/4]")}>
                     <Image
                       src={image.url}
                       alt={image.alt}
