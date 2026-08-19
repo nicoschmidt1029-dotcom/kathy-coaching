@@ -39,7 +39,12 @@ export const LOCALE_LABELS: Record<Locale, { short: string; name: string }> = {
  * Remove a locale from this list the moment its translation has been
  * reviewed; nothing else needs changing.
  */
-export const DRAFT_LOCALES: readonly Locale[] = ["sk"];
+// 2026-08-19: Nico asked for the draft banner removed outright rather than
+// wait for Katarina's native-speaker review (see the risk note this leaves
+// unresolved in messages/sk.json's _status block) — his explicit call, not
+// a native-speaker sign-off. If she later flags SK phrasing as wrong, add
+// "sk" back here rather than patching individual strings under pressure.
+export const DRAFT_LOCALES: readonly Locale[] = [];
 
 export function isDraftLocale(locale: string): locale is Locale {
   return (DRAFT_LOCALES as readonly string[]).includes(locale);

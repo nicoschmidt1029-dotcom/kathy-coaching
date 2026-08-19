@@ -1,6 +1,6 @@
 {
   "_status": {
-    "WARNING": "DRAFT — NEEDS NATIVE SPEAKER REVIEW",
+    "WARNING": "2026-08-19: Nico ließ den öffentlichen Draft-Hinweis (translationNotice, sk aus DRAFT_LOCALES) auf eigenen Wunsch entfernen, ohne dass ein Muttersprachler geprüft hat — der darunterstehende Risiko-Hinweis gilt inhaltlich unverändert weiter, nur der sichtbare Banner ist weg.",
     "translated": "about.calling/story + mission.title/p1–p4 sú Katarínin vlastný text z KATEY COACHING.pdf, prevzatý doslovne. VŠETKO OSTATNÉ je koncept vygenerovaný AI (Claude), nie Katarínou, a neskontroloval ho žiadny rodený hovoriaci.",
     "risk": "Riziko chýb je tu vyššie než v de.json: nemecký text dodal Nico a vie si ho prečítať, slovenský nie. Očakávajte chyby v pádoch, rode a idiómoch. Kým to Katarína neskontroluje, návštevníkom sa na /sk zobrazuje poznámka (translationNotice.draft) — pozri DRAFT_LOCALES v i18n/routing.ts.",
     "afterReview": "Po kontrole: odstráňte 'sk' z DRAFT_LOCALES v i18n/routing.ts a upravte tento blok.",
@@ -28,6 +28,10 @@
     "about": {
       "title": "O mne",
       "description": "Spoznaj Katey Gröflin — certifikovanú osobnú trénerku a výživovú poradkyňu, ktorá ponúka celostný koučing pre telo, výživu a dušu."
+    },
+    "mission": {
+      "title": "Moje poslanie",
+      "description": "Kateyino poslanie — prečo koučuje a čomu verí o rokoch, ktoré máš ešte pred sebou."
     },
     "programs": {
       "title": "Programy",
@@ -108,11 +112,11 @@
   "about": {
     "eyebrow": "Spoznaj Katey",
     "title": "Sila, výživa a tichý druh sebavedomia.",
-    "calling": "Všetci máme calling v živote. <em>Môj povolanie je pomáhať ľuďom.</em>",
+    "calling": "Všetci máme v živote povolanie. <em>Moje povolanie je pomáhať ľuďom.</em>",
     "story": "Vyštudovala som na SNF Akademy, absolvovala Awakening School of Ministry. Pomáham ľuďom zmeniť jedálny lístok, nájsť pozitívny vzťah k športu a pochopiť, aký je každý človek jedinečný a dôležitý.",
     "storyMovement": "Športu som sa venovala už ako malé dievča. Zaujímali ma všetky druhy športu.",
     "storyNourish": "Postupom času som pochopila, že jedlo nie je len na to, aby sme sa najedli, ale predovšetkým na to, aby nás vyživovalo. A za posledné roky som naozaj pochopila, aký veľký vplyv má naše vnútorné zdravie na celú našu existenciu.",
-    "storyEducation": "Mala som možnosť študovať na <em>SNF Academy</em>, kde som študovala odbor osobný tréner a výživový poradca. A potom ma prijali na <em>Awakening School of Ministry</em>, kde som svoje štúdium úspešne dokončila.",
+    "storyEducation": "Mala som možnosť študovať na <em>SNF Academy</em>, kde som študovala odbor osobná trénerka a výživová poradkyňa. A potom ma prijali na <em>Awakening School of Ministry</em>, kde som svoje štúdium úspešne dokončila.",
     "storyMission": "Mojím snom je pomáhať ľuďom posúvať sa vpred v ich živote. Pohybom, správnou výživou a zdravým zmýšľaním môže mať každý lepšiu kvalitu života. Aj keď sme doteraz v týchto oblastiach nežili náš najlepší život, nič nie je stratené, pretože naše telo je stvorené na to, aby sa zotavilo. <em>Keď mu dáme to, čo potrebuje.</em>",
     "portraitLabel": "Portrét Katey",
     "portraitCaption": "Katey · osobná trénerka · výživová poradkyňa",
@@ -143,9 +147,9 @@
   "mission": {
     "eyebrow": "Moje poslanie",
     "title": "Tvoje najlepšie roky nie sú za tebou, sú to tie, ktoré si ešte len vytvoríš.",
-    "p1": "Nikdy nie je pozde na zmenu a zlepšenie. Všetko záleží na tebe. Každý deň je novou príležitosťou začať plnohodnotný život, kde sa cítiš najlepšie. Najdôležitejšie je rozhodnúť sa nevzdávať a začať niečo robiť.",
+    "p1": "Nikdy nie je neskoro na zmenu a zlepšenie. Všetko záleží na tebe. Každý deň je novou príležitosťou začať plnohodnotný život, kde sa cítiš najlepšie. Najdôležitejšie je rozhodnúť sa nevzdávať a začať niečo robiť.",
     "p2": "Chceš schudnúť? Alebo chceš viacej svalstva? Alebo chceš sa stravovať a žiť zdravšie, ale nie si si istý ako na to? Alebo ťa život duchovne a psychicky vyčerpal?",
-    "p3": "Let me tell you. Nikdy nie je pozde.",
+    "p3": "Dovoľ mi, aby som ti to povedala: Nikdy nie je neskoro.",
     "p4": "Urobím všetko pre to, aby som ti pomohol"
   },
   "sampleNotice": {
