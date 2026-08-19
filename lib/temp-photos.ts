@@ -214,8 +214,6 @@ export const TEMP_PHOTOS: Record<
 // always muted, so the AAC track was dead weight), libx264 CRF 20/faststart,
 // same treatment as the previous encode. 17.4MB, still 1280x720/30fps.
 // workout-hero.mp4 (the previous desktop clip) stays in the repo, unused.
-// Mobile clip (srcMobile) is untouched — she sent this refined version for
-// desktop only.
 export const TEMP_HERO_VIDEO: TempVideo = {
   src: "/videos/katarina-hero-refined.mp4",
   // Swapped 2026-08-18 to a different clip Katarina sent specifically for
@@ -225,5 +223,12 @@ export const TEMP_HERO_VIDEO: TempVideo = {
   // treatment as the previous mobile file, just built from better-fitting
   // source footage (near-identical aspect to a phone screen, so the
   // full-bleed mobile hero needs almost no cropping).
-  srcMobile: "/videos/workout-hero-mobile.mp4",
+  //
+  // 2026-08-19: swapped again to katarina-hero-mobile-refined.mp4, her
+  // "refined/HQ" re-edit — same 512x910 portrait framing as the previous
+  // mobile clip, so no crop/positioning changes needed. Re-encoded from
+  // her 512x910/37.9s/25MB source the same way (audio stripped, libx264
+  // CRF 24/faststart) to 6.8MB. workout-hero-mobile.mp4 (the previous
+  // mobile clip) stays in the repo, unused. Desktop `src` is untouched.
+  srcMobile: "/videos/katarina-hero-mobile-refined.mp4",
 };
