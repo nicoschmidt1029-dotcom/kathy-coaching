@@ -159,13 +159,15 @@ export function Header() {
                 white space the old wide panel had. Numbered index + gold
                 active-state language kept, index/gap tightened slightly
                 to match. */}
-            {/* 2026-08-19 mobile-refinement pass: "just a little narrower" —
-                78vw/300px (320px at sm) -> 72vw/272px (292px at sm). Same
-                right-side placement, same content/typography, just less
-                empty panel around it. */}
+            {/* 2026-08-19, follow-up: first pass (72vw/272px) still read as
+                "very large" per client feedback — cut further to
+                62vw/240px (260px at sm), close to just fitting the widest
+                nav word ("Kontakt"/"Programy") plus the index+padding
+                rather than leaving a wide margin of empty background.
+                Same right-side placement, same content/typography. */}
             <SheetContent
               side="right"
-              className="flex w-[72vw] max-w-[272px] flex-col bg-background p-0 sm:max-w-[292px]"
+              className="flex w-[62vw] max-w-[240px] flex-col bg-background p-0 sm:max-w-[260px]"
             >
               <SheetHeader className="border-b border-foreground/[0.06] px-5 py-4">
                 <SheetTitle className="eyebrow text-left font-mono text-xs font-medium">
