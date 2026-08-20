@@ -17,7 +17,7 @@
  *   - hero        →  /images/kathy/kathy-blazer-wide.png (blazer portrait, background AI-widened by Katarina herself)
  *   - heroBlazer  →  /images/kathy/kathy-13-contact-closeup.jpg (Contact page — close-up portrait)
  *   - heroMovementDetail → /images/kathy/kathy-07.jpg (gym, purple top, mid-stretch)
- *   - about        → /images/kathy/kathy-12-katey-seated.jpg (Katey page — seated, black outfit, light-blue track)
+ *   - about        → /images/kathy/athletische_pause_auf_der_blauen_laufbahn.png (Katey page — seated, black outfit, light-blue track)
  *
  * 2026-08-19: heroBlazer, about, programsIntro and homeBand (Mission) all
  * moved to a new set of photos following Katarina's stated future
@@ -167,7 +167,7 @@ export const TEMP_PHOTOS: Record<
   // forward. Previous photo here (kathy-02.jpg, seated from behind) stays
   // in the repo, unused.
   homeBand: {
-    url: "/images/kathy/athletische_pause_auf_der_blauen_laufbahn.png",
+    url: "/images/kathy/kathy-11-mission-bottle.jpg",
     alt: "Katey standing on a light-blue running track in a black outfit, hand on hip, holding a water bottle",
   },
   // Katey's own — running track, seated, looking off. Was the full-bleed
@@ -188,17 +188,12 @@ export const TEMP_PHOTOS: Record<
     url: "/images/kathy/kathy-14-programs-stretch.jpg",
     alt: "Katey in a wide-legged stretch on a light-blue running track, arms extended",
   },
-  // Katey's own — replaced 2026-08-19 (second pass, same day): swapped
-  // from kathy-12-katey-seated.jpg to this newly re-edited version of the
-  // same shoot/pose she sent afterwards — calmer, more consistent color
-  // grading (PSNR ~18 against the previous file, so a real re-edit, not a
-  // duplicate). Same seated side-profile pose, black outfit, blue track.
-  // kathy-12-katey-seated.jpg stays in the repo, unused. Source PNG was
-  // 1086x1448, identical ratio to the portrait aspect-[3/4] container, so
-  // object-cover applies no crop at all.
+  // Katey's own — the newer seated running-track portrait supplied for the
+  // top of the Katey/About page. The component keeps its established
+  // portrait container and object-cover crop unchanged.
   about: {
-    url: "/images/kathy/kathy-15-about-blue-track.jpg",
-    alt: "Katey sitting on a light-blue running track in a black outfit, side profile, looking into the distance",
+    url: "/images/kathy/athletische_pause_auf_der_blauen_laufbahn.png",
+    alt: "Katey taking an athletic break while seated on a light-blue running track",
   },
 };
 
