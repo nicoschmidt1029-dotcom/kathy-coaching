@@ -65,7 +65,10 @@ export async function requestMagicLink(formData: FormData) {
       emailRedirectTo: `${origin}/admin/auth/confirm`,
     },
   });
-  if (error) redirect("/admin/login?error=send");
+  if (error) {
+    console.error("Admin magic-link request failed", { code: error.code, status: error.status });
+    redirect(`/admin/login?error=${error.status === 429 ? "rate" : "send"}`);
+  }
   redirect("/admin/login?sent=1");
 }
 
@@ -90,7 +93,10 @@ export async function requestPasswordSetup(formData: FormData) {
   const origin = (await headers()).get("origin") ?? SITE_URL;
   const supabase = createSupabaseClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!, { auth: { persistSession: false, autoRefreshToken: false } });
   const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: `${origin}/admin/password/setup` });
-  if (error) redirect("/admin/login?error=setup");
+  if (error) {
+    console.error("Admin password setup request failed", { code: error.code, status: error.status });
+    redirect(`/admin/login?error=${error.status === 429 ? "rate" : "setup"}`);
+  }
   redirect("/admin/login?setup=sent");
 }
 
