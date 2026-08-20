@@ -160,7 +160,7 @@ site_url = "https://kateycoaching.com"
 # The public URL that Auth serves on. Defaults to the API external URL with `/auth/v1` appended.
 # external_url = ""
 # A list of *exact* URLs that auth providers are permitted to redirect to post authentication.
-additional_redirect_urls = ["http://localhost:3000/admin/auth/confirm", "http://localhost:3100/admin/auth/confirm", "https://kateycoaching.com/admin/auth/confirm"]
+additional_redirect_urls = ["http://localhost:3000/admin/auth/confirm", "http://localhost:3100/admin/auth/confirm", "https://kateycoaching.com/admin/auth/confirm", "http://localhost:3000/admin/password/setup", "http://localhost:3100/admin/password/setup", "https://kateycoaching.com/admin/password/setup"]
 # How long tokens are valid for, in seconds. Defaults to 3600 (1 hour), maximum 604,800 (1 week).
 jwt_expiry = 3600
 # JWT issuer URL. If not set, defaults to auth.external_url.
@@ -246,6 +246,10 @@ sender_name = "Katey Coaching"
 [auth.email.template.magic_link]
 subject = "Your secure Katey Coaching admin login"
 content_path = "./supabase/templates/magic-link.html"
+
+[auth.email.template.recovery]
+subject = "Create or reset your Katey Coaching admin password"
+content_path = "./supabase/templates/password-recovery.html"
 
 # Uncomment to customize email template
 # [auth.email.template.invite]

@@ -40,7 +40,7 @@ export function RecipeForm({ recipe, entry }: { recipe?: Recipe; entry?: CmsEntr
       <TextArea label="Instructions" name={`instructions_${locale}`} defaultValue={(data?.instructions?.[locale] ?? []).join("\n")} rows={10} hint="One step per line — numbering is added automatically" />
     </LocaleFields>)}
 
-    <div className="sticky bottom-3 flex flex-wrap items-center gap-3 rounded-2xl border border-black/10 bg-[#fbf8f2]/95 p-4 shadow-lg backdrop-blur">
+    <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-black/10 bg-[#fbf8f2]/95 p-4 shadow-lg backdrop-blur sm:sticky sm:bottom-3">
       <button name="status" value="draft" className="rounded-xl border border-black/10 bg-white px-5 py-2.5 text-sm">Save draft</button>
       <button name="status" value="published" className="rounded-xl bg-[var(--plum)] px-5 py-2.5 text-sm text-white">Save & publish</button>
     </div>

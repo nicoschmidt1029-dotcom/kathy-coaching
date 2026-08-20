@@ -11,7 +11,8 @@ export function ImageUpload({ initialValue = "", folder }: { initialValue?: stri
   const [uploading, setUploading] = useState(false);
 
   async function upload(file: File) {
-    if (!file.type.startsWith("image/") || file.size > 10 * 1024 * 1024) {
+    const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/avif"];
+    if (!allowedTypes.includes(file.type) || file.size > 10 * 1024 * 1024) {
       setMessage("Bitte JPG, PNG, WebP oder AVIF bis maximal 10 MB wählen.");
       return;
     }

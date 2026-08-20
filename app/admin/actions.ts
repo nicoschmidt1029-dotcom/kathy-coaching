@@ -24,6 +24,18 @@ const slugify = (input: string) =>
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
+const imageValue = (form: FormData) => {
+  const image = value(form, "image_path");
+  if (!image) return null;
+  const storagePrefix = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/site-media/`;
+  if (image.startsWith(storagePrefix) || image.startsWith("/images/")) return image;
+  throw new Error("Invalid image source.");
+};
+const safeDestination = (input: string) =>
+  input.startsWith("/") || input.startsWith("https://") || input.startsWith("mailto:") ? input : "/kontakt";
+const assertContentSize = (data: unknown) => {
+  if (JSON.stringify(data).length > 200_000) throw new Error("Content is too large.");
+};
 
 function revalidatePublicContent() {
   for (const locale of routing.locales) {
@@ -57,6 +69,58 @@ export async function requestMagicLink(formData: FormData) {
   redirect("/admin/login?sent=1");
 }
 
+export async function loginWithPassword(formData: FormData) {
+  const email = value(formData, "email").toLowerCase();
+  const password = value(formData, "password");
+  if (!isAllowedAdminEmail(email) || !password) redirect("/admin/login?error=credentials");
+  const supabase = await createClient();
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) redirect("/admin/login?error=credentials");
+  const { data: isAdmin, error: adminError } = await supabase.rpc("is_current_admin");
+  if (adminError || isAdmin !== true) {
+    await supabase.auth.signOut();
+    redirect("/admin/login?error=unauthorized");
+  }
+  redirect("/admin");
+}
+
+export async function requestPasswordSetup(formData: FormData) {
+  const email = value(formData, "email").toLowerCase();
+  if (!isAllowedAdminEmail(email)) redirect("/admin/login?error=unauthorized");
+  const origin = (await headers()).get("origin") ?? SITE_URL;
+  const supabase = createSupabaseClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!, { auth: { persistSession: false, autoRefreshToken: false } });
+  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: `${origin}/admin/password/setup` });
+  if (error) redirect("/admin/login?error=setup");
+  redirect("/admin/login?setup=sent");
+}
+
+export async function confirmPasswordSetup(formData: FormData) {
+  const tokenHash = value(formData, "token_hash");
+  if (!tokenHash) redirect("/admin/login?error=expired");
+  const supabase = await createClient();
+  const { error } = await supabase.auth.verifyOtp({ type: "recovery", token_hash: tokenHash });
+  if (error) redirect("/admin/login?error=expired");
+  const { data: isAdmin, error: adminError } = await supabase.rpc("is_current_admin");
+  if (adminError || isAdmin !== true) {
+    await supabase.auth.signOut();
+    redirect("/admin/login?error=unauthorized");
+  }
+  redirect("/admin/set-password");
+}
+
+export async function updateAdminPassword(formData: FormData) {
+  await requireAdmin();
+  const password = value(formData, "password");
+  const confirmation = value(formData, "password_confirmation");
+  if (password !== confirmation || password.length < 12 || !/[A-Za-z]/.test(password) || !/\d/.test(password)) {
+    redirect("/admin/set-password?error=requirements");
+  }
+  const supabase = await createClient();
+  const { error } = await supabase.auth.updateUser({ password });
+  if (error) redirect("/admin/set-password?error=update");
+  redirect("/admin?password=created");
+}
+
 export async function logout() {
   const supabase = await createClient();
   await supabase.auth.signOut();
@@ -68,7 +132,7 @@ export async function saveRecipe(formData: FormData) {
   const originalKey = value(formData, "original_key");
   const slug = originalKey || slugify(value(formData, "slug") || value(formData, "title_en"));
   const category = value(formData, "category");
-  if (!slug || !RECIPE_CATEGORIES.includes(category as (typeof RECIPE_CATEGORIES)[number])) {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) || !RECIPE_CATEGORIES.includes(category as (typeof RECIPE_CATEGORIES)[number])) {
     throw new Error("Recipe title, slug and category are required.");
   }
 
@@ -87,7 +151,7 @@ export async function saveRecipe(formData: FormData) {
     slug,
     title: localized("title"),
     category,
-    image: value(formData, "image_path"),
+    image: imageValue(formData) ?? "",
     imageAlt: localized("image_alt"),
     shortDescription: localized("short_description"),
     introduction: localized("introduction"),
@@ -100,6 +164,9 @@ export async function saveRecipe(formData: FormData) {
     instructions: localizedLines("instructions"),
     featured: formData.get("featured") === "on",
   };
+  if (Object.values(data.title).some((title) => !title)) throw new Error("A recipe title is required in every language.");
+  if (!data.image) throw new Error("A recipe image is required.");
+  assertContentSize(data);
 
   const supabase = await createClient();
   const { error } = await supabase.from("cms_entries").upsert(
@@ -108,7 +175,7 @@ export async function saveRecipe(formData: FormData) {
       content_key: slug,
       status: value(formData, "status") === "published" ? "published" : "draft",
       sort_order: Number(value(formData, "sort_order")) || 0,
-      image_path: value(formData, "image_path") || null,
+      image_path: imageValue(formData),
       data,
       deleted_at: null,
     },
@@ -122,7 +189,7 @@ export async function saveRecipe(formData: FormData) {
 export async function saveProgram(formData: FormData) {
   await requireAdmin();
   const key = value(formData, "content_key") || slugify(value(formData, "title_en"));
-  if (!key) throw new Error("Program key is required.");
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(key)) throw new Error("Program key is required.");
   const localized = (name: string) => ({
     en: value(formData, `${name}_en`),
     de: value(formData, `${name}_de`),
@@ -140,9 +207,11 @@ export async function saveProgram(formData: FormData) {
     duration: localized("duration"),
     features: localizedLines("features"),
     ctaLabel: localized("cta_label"),
-    ctaHref: value(formData, "cta_href") || "/kontakt",
+    ctaHref: safeDestination(value(formData, "cta_href") || "/kontakt"),
     price: Number(value(formData, "price")) || 0,
   };
+  if (Object.values(data.title).some((title) => !title)) throw new Error("A program title is required in every language.");
+  assertContentSize(data);
   const supabase = await createClient();
   const { error } = await supabase.from("cms_entries").upsert(
     {
@@ -150,7 +219,7 @@ export async function saveProgram(formData: FormData) {
       content_key: key,
       status: value(formData, "status") === "published" ? "published" : "draft",
       sort_order: Number(value(formData, "sort_order")) || 0,
-      image_path: value(formData, "image_path") || null,
+      image_path: imageValue(formData),
       data,
       deleted_at: null,
     },
@@ -164,19 +233,21 @@ export async function saveProgram(formData: FormData) {
 export async function saveWebsiteContent(formData: FormData) {
   await requireAdmin();
   const key = value(formData, "content_key");
+  if (!["about", "mission", "contact"].includes(key)) throw new Error("Invalid website content section.");
   const localized = (name: string) => ({
     en: value(formData, `${name}_en`),
     de: value(formData, `${name}_de`),
     sk: value(formData, `${name}_sk`),
   });
   const data = { headline: localized("headline"), body: localized("body") };
+  assertContentSize(data);
   const supabase = await createClient();
   const { error } = await supabase.from("cms_entries").upsert(
     {
       content_type: "website",
       content_key: key,
       status: value(formData, "status") === "published" ? "published" : "draft",
-      image_path: value(formData, "image_path") || null,
+      image_path: imageValue(formData),
       data,
       deleted_at: null,
     },
@@ -185,6 +256,45 @@ export async function saveWebsiteContent(formData: FormData) {
   if (error) throw new Error(error.message);
   revalidatePublicContent();
   redirect("/admin/website?saved=1");
+}
+
+export async function saveFaqContent(formData: FormData) {
+  await requireAdmin();
+  const localized = (name: string) => ({
+    en: value(formData, `${name}_en`),
+    de: value(formData, `${name}_de`),
+    sk: value(formData, `${name}_sk`),
+  });
+  const items = Object.fromEntries(routing.locales.map((locale) => [locale, Array.from({ length: 5 }, (_, index) => ({
+    question: value(formData, `question_${index}_${locale}`),
+    answer: value(formData, `answer_${index}_${locale}`),
+  })).filter((item) => item.question && item.answer)]));
+  const faqData = { headline: localized("headline"), body: localized("body"), items };
+  assertContentSize(faqData);
+  const supabase = await createClient();
+  const { error } = await supabase.from("cms_entries").upsert({
+    content_type: "website",
+    content_key: "faq",
+    status: value(formData, "status") === "published" ? "published" : "draft",
+    data: faqData,
+    deleted_at: null,
+  }, { onConflict: "content_type,content_key" });
+  if (error) throw new Error(error.message);
+  revalidatePublicContent();
+  redirect("/admin/website?saved=1");
+}
+
+export async function deleteMedia(formData: FormData) {
+  await requireAdmin();
+  const path = value(formData, "path");
+  if (!/^(recipes|programs|website)\/[a-zA-Z0-9._-]+\.(jpe?g|png|webp|avif)$/i.test(path)) {
+    throw new Error("Invalid media path.");
+  }
+  const supabase = await createClient();
+  const { error } = await supabase.storage.from("site-media").remove([path]);
+  if (error) throw new Error(error.message);
+  revalidatePath("/admin/media");
+  redirect("/admin/media?deleted=1");
 }
 
 export async function deleteEntry(formData: FormData) {

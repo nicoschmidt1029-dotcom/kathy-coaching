@@ -1,25 +1,19 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { Mail } from "lucide-react";
-import { requestMagicLink } from "@/app/admin/actions";
+import { KeyRound, LockKeyhole, Mail } from "lucide-react";
+import { loginWithPassword, requestMagicLink, requestPasswordSetup } from "@/app/admin/actions";
 import { getAdminUser } from "@/lib/admin-auth";
 
-export default async function AdminLogin({ searchParams }: { searchParams: Promise<{ sent?: string; error?: string }> }) {
+export default async function AdminLogin({ searchParams }: { searchParams: Promise<{ sent?: string; setup?: string; error?: string }> }) {
   if (await getAdminUser()) redirect("/admin");
   const query = await searchParams;
-  return <main className="flex min-h-screen items-center justify-center bg-[#f5f0e8] px-4 py-12">
-    <section className="w-full max-w-md rounded-3xl border border-black/10 bg-[#fbf8f2] p-7 shadow-sm sm:p-10">
-      <p className="eyebrow">Katey Coaching</p>
-      <h1 className="mt-3 font-display text-4xl text-[var(--plum)]">Admin login</h1>
-      <p className="mt-4 text-sm leading-relaxed text-foreground/65">Gib deine freigegebene E-Mail-Adresse ein. Du erhältst einen sicheren, einmalig verwendbaren Login-Link.</p>
-      {query.sent && <p className="mt-5 rounded-xl bg-emerald-900/8 p-3 text-sm text-emerald-900">Login-Link gesendet. Bitte prüfe dein Postfach.</p>}
-      {query.error === "expired" && <p className="mt-5 rounded-xl bg-red-900/8 p-3 text-sm text-red-900">Der Login-Link ist abgelaufen oder wurde bereits verwendet. Bitte fordere einen neuen Link an und öffne nur die neueste E-Mail.</p>}
-      {query.error && query.error !== "expired" && <p className="mt-5 rounded-xl bg-red-900/8 p-3 text-sm text-red-900">Anmeldung nicht möglich. Bitte prüfe die freigegebene E-Mail-Adresse.</p>}
-      <form action={requestMagicLink} className="mt-6 space-y-4">
-        <label className="block text-sm font-medium text-foreground/75">E-Mail<input name="email" type="email" required autoComplete="email" className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-3 outline-none focus:border-[var(--clay)] focus:ring-2 focus:ring-[var(--clay)]/15" /></label>
-        <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--plum)] px-4 py-3 text-sm font-medium text-white hover:bg-[var(--plum)]/90"><Mail className="size-4" />Secure login link</button>
-      </form>
-      <Link href="/en" className="mt-6 block text-center text-xs text-foreground/50 hover:text-foreground">Back to website</Link>
-    </section>
-  </main>;
+  return <main className="flex min-h-screen items-center justify-center bg-[#f5f0e8] px-4 py-8 sm:py-12"><section className="w-full max-w-md rounded-3xl border border-black/10 bg-[#fbf8f2] p-6 shadow-sm sm:p-10"><p className="eyebrow">Katey Coaching</p><h1 className="mt-3 font-display text-4xl text-[var(--plum)]">Admin login</h1><p className="mt-4 text-sm leading-relaxed text-foreground/65">Melde dich mit deiner freigegebenen E-Mail-Adresse und deinem Passwort an.</p>
+    {query.setup && <p className="mt-5 rounded-xl bg-emerald-900/8 p-3 text-sm text-emerald-900">E-Mail zum Erstellen oder Zurücksetzen des Passworts gesendet. Bitte öffne die neueste Nachricht.</p>}
+    {query.sent && <p className="mt-5 rounded-xl bg-emerald-900/8 p-3 text-sm text-emerald-900">Login-Link gesendet. Bitte prüfe dein Postfach.</p>}
+    {query.error === "expired" && <p className="mt-5 rounded-xl bg-red-900/8 p-3 text-sm text-red-900">Der Link ist abgelaufen oder wurde bereits verwendet. Bitte fordere einen neuen an.</p>}
+    {query.error === "credentials" && <p className="mt-5 rounded-xl bg-red-900/8 p-3 text-sm text-red-900">E-Mail-Adresse oder Passwort ist nicht korrekt.</p>}
+    {query.error && !["expired", "credentials"].includes(query.error) && <p className="mt-5 rounded-xl bg-red-900/8 p-3 text-sm text-red-900">Anmeldung nicht möglich. Bitte prüfe die freigegebene E-Mail-Adresse.</p>}
+    <form action={loginWithPassword} className="mt-6 space-y-4"><label className="block text-sm font-medium text-foreground/75">E-Mail<input name="email" type="email" required autoComplete="username" className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-3 outline-none focus:border-[var(--clay)] focus:ring-2 focus:ring-[var(--clay)]/15" /></label><label className="block text-sm font-medium text-foreground/75">Passwort<input name="password" type="password" required minLength={12} autoComplete="current-password" className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-3 outline-none focus:border-[var(--clay)] focus:ring-2 focus:ring-[var(--clay)]/15" /></label><button className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--plum)] px-4 py-3 text-sm font-medium text-white hover:bg-[var(--plum)]/90"><LockKeyhole className="size-4" />Anmelden</button><button formAction={requestPasswordSetup} formNoValidate className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-black/10 bg-white px-4 py-3 text-sm font-medium text-[var(--plum)] hover:border-[var(--clay)]"><KeyRound className="size-4" />Erstmals Passwort erstellen / vergessen</button></form>
+    <details className="mt-5 border-t border-black/10 pt-5"><summary className="cursor-pointer text-center text-sm text-foreground/55">Alternativ: einmaligen Login-Link verwenden</summary><form action={requestMagicLink} className="mt-4 space-y-3"><label className="block text-sm font-medium text-foreground/75">E-Mail<input name="email" type="email" required autoComplete="email" className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-3 outline-none focus:border-[var(--clay)]" /></label><button className="flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-black/10 bg-white px-4 py-3 text-sm text-[var(--plum)]"><Mail className="size-4" />Sicheren Login-Link senden</button></form></details>
+    <Link href="/en" className="mt-6 block text-center text-xs text-foreground/50 hover:text-foreground">Back to website</Link></section></main>;
 }

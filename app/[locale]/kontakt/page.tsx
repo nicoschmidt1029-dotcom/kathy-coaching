@@ -69,14 +69,16 @@ export default async function KontaktPage({
     ADDONS.map((a) => a.id) as readonly AddonId[]
   );
   const prefill = summarize(p, blockIds, addonIds, bundleId);
-  const entry = await getPublicWebsiteEntry("contact");
+  const [entry, faqEntry] = await Promise.all([getPublicWebsiteEntry("contact"), getPublicWebsiteEntry("faq")]);
   const data = entry?.data as { headline?: Record<string, string>; body?: Record<string, string> } | undefined;
   const content = entry ? { headline: data?.headline?.[locale], body: data?.body?.[locale], image: entry.image_path } : undefined;
+  const faqData = faqEntry?.data as { headline?: Record<string, string>; body?: Record<string, string>; items?: Record<string, { question: string; answer: string }[]> } | undefined;
+  const faqContent = faqEntry ? { headline: faqData?.headline?.[locale], body: faqData?.body?.[locale], items: faqData?.items?.[locale] } : undefined;
 
   return (
     <>
       <Contact prefill={prefill} content={content} />
-      <Faq />
+      <Faq content={faqContent} />
     </>
   );
 }

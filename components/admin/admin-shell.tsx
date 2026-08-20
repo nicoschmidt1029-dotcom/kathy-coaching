@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BookOpen, FileText, Images, LayoutDashboard, LogOut, Sparkles } from "lucide-react";
 import { logout } from "@/app/admin/actions";
 import { AdminSessionRefresh } from "@/components/admin/session-refresh";
+import { AdminTutorials } from "@/components/admin/tutorials";
 
 const links = [
   { href: "/admin", label: "Übersicht", icon: LayoutDashboard },
@@ -20,18 +21,21 @@ export function AdminShell({ children, email }: { children: React.ReactNode; ema
           <Link href="/admin" className="font-display text-xl text-[var(--plum)]">
             Katey Coaching <span className="text-sm italic text-foreground/55">Admin</span>
           </Link>
-          <form action={logout}>
-            <button className="inline-flex items-center gap-2 text-sm text-foreground/65 hover:text-foreground">
-              <LogOut className="size-4" /> Log out
-            </button>
-          </form>
+          <div className="flex shrink-0 items-center gap-1 sm:gap-3">
+            <AdminTutorials />
+            <form action={logout}>
+              <button className="inline-flex min-h-10 items-center gap-2 rounded-xl px-2 text-sm text-foreground/65 hover:bg-black/5 hover:text-foreground sm:px-3">
+                <LogOut className="size-4" /> <span className="hidden sm:inline">Log out</span>
+              </button>
+            </form>
+          </div>
         </div>
       </header>
       <div className="mx-auto grid max-w-7xl gap-6 px-4 py-6 sm:px-6 md:grid-cols-[210px_1fr] md:py-10">
-        <aside>
-          <nav className="flex gap-2 overflow-x-auto pb-2 md:flex-col md:overflow-visible">
+        <aside className="min-w-0 max-w-full">
+          <nav className="grid max-w-full grid-cols-2 gap-2 pb-2 md:flex md:flex-col">
             {links.map(({ href, label, icon: Icon }) => (
-              <Link key={href} href={href} className="flex shrink-0 items-center gap-2 rounded-xl px-3 py-2.5 text-sm text-foreground/70 transition-colors hover:bg-white hover:text-[var(--plum)]">
+              <Link key={href} href={href} className="flex min-w-0 items-center gap-2 rounded-xl bg-white/45 px-3 py-2.5 text-sm text-foreground/70 transition-colors hover:bg-white hover:text-[var(--plum)] md:bg-transparent">
                 <Icon className="size-4" /> {label}
               </Link>
             ))}
