@@ -4,13 +4,14 @@ import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { getRecipes, RECIPE_CATEGORIES } from "@/lib/recipes";
+import { RECIPE_CATEGORIES } from "@/lib/recipes";
+import { getPublicRecipes } from "@/lib/cms";
 import { DisplayTitle } from "./display-title";
 import { RecipesGrid } from "./recipes-grid";
 
 export async function RecipesIndex({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: "recipes" });
-  const recipes = getRecipes(locale);
+  const recipes = await getPublicRecipes(locale);
   const featured = recipes.find((recipe) => recipe.featured) ?? recipes[0];
   const categoryLabels = {
     all: t("categories.all"),

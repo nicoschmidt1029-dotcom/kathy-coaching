@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import NextLink from "next/link";
 import { Link } from "@/i18n/navigation";
 import { Wordmark } from "./wordmark";
 
@@ -60,6 +61,13 @@ export function Footer() {
             >
               {t("privacy")}
             </Link>
+            <NextLink
+              href="/admin"
+              rel="nofollow"
+              className="text-[var(--primary-foreground)]/50 transition-colors hover:text-[var(--primary-foreground)]"
+            >
+              Admin
+            </NextLink>
             <Link
               href="/kontakt"
               className="transition-colors hover:text-[var(--primary-foreground)]"

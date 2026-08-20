@@ -27,9 +27,13 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  * The full text stays in messages/*.json — this renders `title` and `p3`,
  * which is the sentence the rest was building towards.
  */
-export function Mission() {
+type EditableContent = { headline?: string; body?: string; image?: string | null };
+
+export function Mission({ content }: { content?: EditableContent }) {
   const t = useTranslations("mission");
-  const photo = TEMP_PHOTOS.homeBand;
+  const photo = content?.image
+    ? { url: content.image, alt: t("eyebrow") }
+    : TEMP_PHOTOS.homeBand;
 
   return (
     <section id="mission" className="section-pad section-pad-top-tight relative overflow-hidden">
@@ -46,12 +50,12 @@ export function Mission() {
 
           {/* mt-8 -> mt-5 on mobile (md:mt-8 restores desktop). */}
           <DisplayTitle className="mt-5 max-w-[16ch] md:mt-8">
-            {t("title")}
+            {content?.headline || t("title")}
           </DisplayTitle>
 
           {/* mt-10 -> mt-5 on mobile (md:mt-10 restores desktop). */}
           <p className="mt-5 max-w-md font-display text-[1.35rem] leading-snug italic text-foreground/80 sm:text-[1.6rem] md:mt-10">
-            {t("p3")}
+            {content?.body || t("p3")}
           </p>
         </div>
 

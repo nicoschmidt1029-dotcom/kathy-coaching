@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { alternatesFor } from "@/i18n/metadata";
 import { Mission } from "@/components/site/mission";
+import { getPublicWebsiteEntry } from "@/lib/cms";
 
 /**
  * Mission — its own page now, per Katarina's request (nav clicks navigate
@@ -29,6 +30,9 @@ export default async function MissionPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const entry = await getPublicWebsiteEntry("mission");
+  const data = entry?.data as { headline?: Record<string, string>; body?: Record<string, string> } | undefined;
+  const content = entry ? { headline: data?.headline?.[locale], body: data?.body?.[locale], image: entry.image_path } : undefined;
 
-  return <Mission />;
+  return <Mission content={content} />;
 }

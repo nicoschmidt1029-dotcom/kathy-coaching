@@ -4,10 +4,15 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
-  // No remotePatterns: every image on the site is now served from /public.
-  // The Unsplash allowance existed only for two stock shots in the approach
-  // section, which commissioned illustrations replaced.
-  images: {},
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "bnwiujsuefaumntllokr.supabase.co",
+        pathname: "/storage/v1/object/public/site-media/**",
+      },
+    ],
+  },
 
   /**
    * Keeps every link already shared alive after the site moved from a

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Apple, ArrowRight, Check, Dumbbell, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
@@ -8,6 +8,8 @@ import { BUNDLES, type BlockId } from "@/lib/pricing";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
 import { ProgramsBuilder } from "./programs-builder";
 import { DisplayTitle } from "./display-title";
+import type { Locale } from "@/i18n/routing";
+import { getPublicProgramContent } from "@/lib/cms";
 
 // Simple lucide glyphs, not the commissioned scene drawings (kettlebell+towel,
 // plate+cutlery+orange, book+candle): those read fine full-size on the
@@ -21,10 +23,31 @@ const BLOCK_ICON: Record<BlockId, typeof Dumbbell> = {
   spiritual: Heart,
 };
 
-export function Programs() {
-  const t = useTranslations("programs");
-  const p = useTranslations("pricing");
-  const approach = useTranslations("approach");
+type ProgramOverride = {
+  title?: Record<Locale, string>;
+  subtitle?: Record<Locale, string>;
+  description?: Record<Locale, string>;
+  duration?: Record<Locale, string>;
+  features?: Record<Locale, string[]>;
+  ctaLabel?: Record<Locale, string>;
+  ctaHref?: string;
+  price?: number;
+};
+
+export async function Programs({ locale }: { locale: Locale }) {
+  const [t, p, approach, content] = await Promise.all([
+    getTranslations({ locale, namespace: "programs" }),
+    getTranslations({ locale, namespace: "pricing" }),
+    getTranslations({ locale, namespace: "approach" }),
+    getPublicProgramContent(),
+  ]);
+  const { entries, states } = content;
+  const overrides = new Map(
+    entries.map((entry) => [entry.content_key, entry.data as ProgramOverride])
+  );
+  const stateMap = new Map(states.map((state) => [state.content_key, state]));
+  const defaultKeys = new Set<string>(BUNDLES.map((bundle) => bundle.id));
+  const customEntries = entries.filter((entry) => !defaultKeys.has(entry.content_key));
 
   return (
     <section id="programme" className="section-pad section-pad-top-tight">
@@ -89,8 +112,14 @@ export function Programs() {
           </div>
 
           <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
-            {BUNDLES.map((bundle) => {
-              const includes = [
+            {BUNDLES.filter((bundle) => {
+              const state = stateMap.get(bundle.id);
+              return !state?.deleted && state?.status !== "draft";
+            }).map((bundle) => {
+              const override = overrides.get(bundle.id);
+              const includes = override?.features?.[locale]?.length
+                ? override.features[locale]
+                : [
                 ...bundle.blocks.map((id) => p(`blocks.${id}.name`)),
                 ...bundle.addons.map((id) => `+ ${p(`addons.${id}.name`)}`),
               ];
@@ -121,7 +150,7 @@ export function Programs() {
                           : ""
                       )}
                     >
-                      {p(`bundles.${bundle.id}.scope`)}
+                      {override?.subtitle?.[locale] || p(`bundles.${bundle.id}.scope`)}
                     </span>
                     <h4
                       className={cn(
@@ -131,7 +160,7 @@ export function Programs() {
                           : ""
                       )}
                     >
-                      {p(`bundles.${bundle.id}.name`)}
+                      {override?.title?.[locale] || p(`bundles.${bundle.id}.name`)}
                     </h4>
                     <p
                       className={cn(
@@ -141,7 +170,7 @@ export function Programs() {
                           : "text-foreground/80"
                       )}
                     >
-                      {p(`bundles.${bundle.id}.blurb`)}
+                      {override?.description?.[locale] || p(`bundles.${bundle.id}.blurb`)}
                     </p>
 
                     <ul
@@ -257,7 +286,7 @@ export function Programs() {
                             : ""
                         )}
                       >
-                        €{bundle.price}
+                        €{override?.price ?? bundle.price}
                       </span>
                       <span
                         className={cn(
@@ -267,7 +296,7 @@ export function Programs() {
                             : ""
                         )}
                       >
-                        {p("duration")}
+                        {override?.duration?.[locale] || p("duration")}
                       </span>
                     </div>
 
@@ -281,14 +310,19 @@ export function Programs() {
                           : "bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
                       )}
                     >
-                      <Link href={`/kontakt?bundle=${bundle.id}`}>
-                        {t("chooseBundle")}
+                      <Link href={override?.ctaHref || `/kontakt?bundle=${bundle.id}`}>
+                        {override?.ctaLabel?.[locale] || t("chooseBundle")}
                         <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
                       </Link>
                     </Button>
                   </div>
                 </li>
               );
+            })}
+            {customEntries.map((entry) => {
+              const program = entry.data as ProgramOverride;
+              const features = program.features?.[locale] ?? [];
+              return <li key={entry.content_key} className="flex"><div className="card-pad flex w-full flex-col rounded-2xl bg-card ring-1 ring-foreground/10 transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-28px_rgba(60,40,52,0.35)]"><span className="caption">{program.subtitle?.[locale]}</span><h4 className="card-title mt-1.5 text-xl">{program.title?.[locale]}</h4><p className="mt-2 text-[0.92rem] leading-relaxed text-foreground/80">{program.description?.[locale]}</p><ul className="mt-5 space-y-2.5 text-[0.9rem] text-foreground/85">{features.map((line) => <li key={line} className="flex items-start gap-2.5"><span aria-hidden className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-[var(--clay)]"><Check className="size-2.5 text-[var(--primary-foreground)]" strokeWidth={3.5} /></span><span>{line}</span></li>)}</ul><div className="mt-auto flex items-baseline gap-3 border-t border-foreground/10 pt-5"><span className="font-display text-3xl font-normal">€{program.price ?? 0}</span><span className="caption">{program.duration?.[locale]}</span></div><Button asChild size="lg" className="group/button mt-6 h-12 w-full bg-[var(--plum)] text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel?.[locale] || t("chooseBundle")}<ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" /></Link></Button></div></li>;
             })}
           </ul>
         </div>

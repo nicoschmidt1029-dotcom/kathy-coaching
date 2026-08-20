@@ -3,7 +3,7 @@ import { SITE_URL as BASE_URL } from "@/lib/site-url";
 import { routing } from "@/i18n/routing";
 import { LEGAL_REVIEWED } from "@/components/legal";
 import { TESTIMONIALS_ARE_REAL } from "@/lib/content-status";
-import { RECIPES } from "@/lib/recipes";
+import { getPublicRecipes } from "@/lib/cms";
 
 /** Path → how often it changes / how important it is. */
 const ROUTES = [
@@ -17,7 +17,7 @@ const ROUTES = [
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3, legal: true },
 ] as const;
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
 
   // Listing a noindex page in the sitemap asks crawlers to fetch something we
@@ -44,7 +44,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  const recipePages = RECIPES.flatMap((recipe) =>
+  const recipes = await getPublicRecipes("en");
+  const recipePages = recipes.flatMap((recipe) =>
     routing.locales.map((locale) => {
       const path = `/recipes/${recipe.slug}`;
       return {

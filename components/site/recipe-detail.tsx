@@ -3,7 +3,8 @@ import { ArrowLeft } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { getRelatedRecipes, type LocalizedRecipe } from "@/lib/recipes";
+import { type LocalizedRecipe } from "@/lib/recipes";
+import { getPublicRecipes } from "@/lib/cms";
 import { RecipeCard } from "./recipe-card";
 
 export async function RecipeDetail({
@@ -14,7 +15,13 @@ export async function RecipeDetail({
   locale: Locale;
 }) {
   const t = await getTranslations({ locale, namespace: "recipes" });
-  const related = getRelatedRecipes(recipe, locale);
+  const candidates = (await getPublicRecipes(locale)).filter(
+    (item) => item.slug !== recipe.slug
+  );
+  const related = [
+    ...candidates.filter((item) => item.category === recipe.category),
+    ...candidates.filter((item) => item.category !== recipe.category),
+  ].slice(0, 3);
 
   const metadata = [
     { label: t("detail.prepTime"), value: recipe.prepTime },

@@ -21,9 +21,10 @@ type Props = {
   /** Prefilled program summary — carried from the Programs page (either a
    *  bundle click or a builder selection) and seeded into the message body. */
   prefill?: string;
+  content?: { headline?: string; body?: string; image?: string | null };
 };
 
-export function Contact({ prefill }: Props = {}) {
+export function Contact({ prefill, content }: Props = {}) {
   const t = useTranslations("contact");
   const [state, setState] = React.useState<FormState>({ status: "idle" });
 
@@ -85,8 +86,8 @@ export function Contact({ prefill }: Props = {}) {
             not sit underneath it. */}
         <div className="max-w-2xl">
           <p className="eyebrow">{t("eyebrow")}</p>
-          <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
-          <p className="section-lede max-w-md">{t("intro")}</p>
+          <DisplayTitle className="mt-6">{content?.headline || t("title")}</DisplayTitle>
+          <p className="section-lede max-w-md">{content?.body || t("intro")}</p>
 
           {/* Three short, icon-led lines instead of stacked label/sentence
               pairs — the same three facts, but scannable rather than read.
@@ -132,12 +133,12 @@ export function Contact({ prefill }: Props = {}) {
         {/* Portrait + form, as one row: image left (~35%), form right
             (~65%), both starting at the same top line. */}
         <div className="mt-10 grid grid-cols-1 items-start gap-8 md:mt-14 md:grid-cols-12 md:gap-12">
-          {TEMP_PHOTOS.heroBlazer && (
+          {(content?.image || TEMP_PHOTOS.heroBlazer) && (
             <div className="md:col-span-4">
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
                 <Image
-                  src={TEMP_PHOTOS.heroBlazer.url}
-                  alt={TEMP_PHOTOS.heroBlazer.alt}
+                  src={content?.image || TEMP_PHOTOS.heroBlazer!.url}
+                  alt={content?.image ? t("eyebrow") : TEMP_PHOTOS.heroBlazer!.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 30vw"
                   className="object-cover object-[50%_20%]"

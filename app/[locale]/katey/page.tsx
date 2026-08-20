@@ -4,6 +4,7 @@ import { alternatesFor } from "@/i18n/metadata";
 import { About } from "@/components/site/about";
 import { Approach } from "@/components/site/approach";
 import { HowIWork } from "@/components/site/how-i-work";
+import { getPublicWebsiteEntry } from "@/lib/cms";
 
 /**
  * Katey — her bio, the Three Threads approach, and how a program runs
@@ -36,10 +37,13 @@ export default async function KateyPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const entry = await getPublicWebsiteEntry("about");
+  const data = entry?.data as { headline?: Record<string, string>; body?: Record<string, string> } | undefined;
+  const content = entry ? { headline: data?.headline?.[locale], body: data?.body?.[locale], image: entry.image_path } : undefined;
 
   return (
     <>
-      <About />
+      <About content={content} />
       <Approach />
       <HowIWork />
     </>

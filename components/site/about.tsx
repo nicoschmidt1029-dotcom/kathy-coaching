@@ -13,8 +13,13 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  * is mentioned on the whole site. Exact certificate designations are still
  * pending from her; see lib/content-status.ts.
  */
-export function About() {
+type EditableContent = { headline?: string; body?: string; image?: string | null };
+
+export function About({ content }: { content?: EditableContent }) {
   const t = useTranslations("about");
+  const photo = content?.image
+    ? { url: content.image, alt: t("portraitLabel") }
+    : TEMP_PHOTOS.about;
 
   return (
     <section id="about" className="section-pad section-pad-top-tight">
@@ -28,7 +33,7 @@ export function About() {
             2026-08-19: mt-6 -> mt-4 (small, per request) so the eyebrow and
             title read as one tighter unit — same nudge as the section's
             top padding below, not a new pattern. */}
-        <DisplayTitle className="mt-4">{t("overlapTitle")}</DisplayTitle>
+        <DisplayTitle className="mt-4">{content?.headline || t("overlapTitle")}</DisplayTitle>
 
         {/* 2026-08-19 mobile-refinement pass: gap-12 -> gap-8 on mobile
             only (md:gap-16 untouched) — part of the same "reduce excessive
@@ -38,14 +43,14 @@ export function About() {
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
             <div className="md:sticky md:top-28">
-              {TEMP_PHOTOS.about ? (
+              {photo ? (
                 <Placeholder
                   label={t("portraitLabel")}
                   aspect="portrait"
                   tone="sand"
-                  src={TEMP_PHOTOS.about.url}
-                  alt={TEMP_PHOTOS.about.alt}
-                  credit={TEMP_PHOTOS.about.credit}
+                  src={photo.url}
+                  alt={photo.alt}
+                  credit={photo.credit}
                 />
               ) : (
                 <PortraitPlaceholder label={t("portraitLabel")} />
@@ -110,7 +115,13 @@ export function About() {
               (was inheriting the browser default ~1.5; sm:leading-[1.7]
               still wins at sm+ same as before) for a more comfortable
               line-height at phone widths. */}
-          {t.has("storyMovement") ? (
+          {content?.body ? (
+            <div className="mt-6 max-w-xl space-y-6 sm:space-y-5">
+              {content.body.split(/\n\s*\n/).filter(Boolean).map((paragraph) => (
+                <p key={paragraph} className="text-pretty leading-[1.65] text-foreground/72 sm:text-lg sm:leading-[1.7]">{paragraph}</p>
+              ))}
+            </div>
+          ) : t.has("storyMovement") ? (
             <div className="mt-6 max-w-xl space-y-6 sm:space-y-5">
               {(
                 [

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { alternatesFor } from "@/i18n/metadata";
 import { Programs } from "@/components/site/programs";
+import type { Locale } from "@/i18n/routing";
 
 /**
  * Programs — was the first section split out of the one-pager ("one page
@@ -38,5 +39,5 @@ export default async function ProgrammePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <Programs />;
+  return <Programs locale={locale as Locale} />;
 }

@@ -4,6 +4,7 @@ import { alternatesFor } from "@/i18n/metadata";
 import { Faq } from "@/components/site/faq";
 import { Contact } from "@/components/site/contact";
 import { ADDONS, BLOCKS, BUNDLES, summarize, type AddonId, type BlockId } from "@/lib/pricing";
+import { getPublicWebsiteEntry } from "@/lib/cms";
 
 function pick<T extends string>(
   value: string | string[] | undefined,
@@ -68,10 +69,13 @@ export default async function KontaktPage({
     ADDONS.map((a) => a.id) as readonly AddonId[]
   );
   const prefill = summarize(p, blockIds, addonIds, bundleId);
+  const entry = await getPublicWebsiteEntry("contact");
+  const data = entry?.data as { headline?: Record<string, string>; body?: Record<string, string> } | undefined;
+  const content = entry ? { headline: data?.headline?.[locale], body: data?.body?.[locale], image: entry.image_path } : undefined;
 
   return (
     <>
-      <Contact prefill={prefill} />
+      <Contact prefill={prefill} content={content} />
       <Faq />
     </>
   );

@@ -5,7 +5,8 @@ import { notFound } from "next/navigation";
 import { RecipeDetail } from "@/components/site/recipe-detail";
 import { alternatesFor } from "@/i18n/metadata";
 import { routing, type Locale } from "@/i18n/routing";
-import { getRecipe, RECIPES } from "@/lib/recipes";
+import { RECIPES } from "@/lib/recipes";
+import { getPublicRecipe } from "@/lib/cms";
 
 export function generateStaticParams() {
   return RECIPES.map((recipe) => ({ slug: recipe.slug }));
@@ -18,7 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
-  const recipe = getRecipe(slug, locale as Locale);
+  const recipe = await getPublicRecipe(slug, locale as Locale);
   if (!recipe) return {};
   const t = await getTranslations({ locale, namespace: "recipes" });
 
@@ -44,7 +45,7 @@ export default async function RecipePage({
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
-  const recipe = getRecipe(slug, locale as Locale);
+  const recipe = await getPublicRecipe(slug, locale as Locale);
   if (!recipe) notFound();
 
   return <RecipeDetail recipe={recipe} locale={locale as Locale} />;

@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
+import { refreshSupabaseSession } from "./lib/supabase/proxy";
 
 const handleI18nRouting = createMiddleware(routing);
 
@@ -12,10 +13,10 @@ const handleI18nRouting = createMiddleware(routing);
  * page to ask for the requested path. Passing it here is what lets an unknown
  * URL still come back in the right language.
  */
-export default function proxy(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   const response = handleI18nRouting(request);
   response.headers.set("x-pathname", request.nextUrl.pathname);
-  return response;
+  return refreshSupabaseSession(request, response);
 }
 
 export const config = {
@@ -24,5 +25,5 @@ export const config = {
    * extension (images, videos, favicon, …). Unknown paths still pass through
    * so they get a locale prefix and land on the localized 404.
    */
-  matcher: "/((?!api|_next|_vercel|.*\\..*).*)",
+  matcher: "/((?!api|admin|_next|_vercel|.*\\..*).*)",
 };
