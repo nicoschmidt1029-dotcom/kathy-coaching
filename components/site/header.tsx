@@ -24,6 +24,7 @@ const NAV = [
   { key: "about", href: "/katey" },
   { key: "mission", href: "/mission" },
   { key: "programs", href: "/programme" },
+  { key: "recipes", href: "/recipes" },
   { key: "contact", href: "/kontakt" },
 ] as const;
 
@@ -67,9 +68,10 @@ export function Header() {
       <div className="container-page flex items-center justify-between gap-6 py-1.5 md:py-3.5">
         <Wordmark />
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
           {NAV.map((item) => {
-            const active = pathname === item.href;
+            const active =
+              pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
               <Link
                 key={item.href}
@@ -115,7 +117,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2 md:gap-3">
-          <LanguageSwitcher className="hidden md:flex" />
+          <LanguageSwitcher className="hidden lg:flex" />
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
@@ -129,7 +131,7 @@ export function Header() {
                 variant="ghost"
                 size="icon-lg"
                 aria-label={t("openMenu")}
-                className="size-10 md:hidden"
+                className="size-10 lg:hidden"
               >
                 <Menu className="size-5" />
               </Button>

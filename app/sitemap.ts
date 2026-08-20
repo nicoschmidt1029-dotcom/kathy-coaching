@@ -3,6 +3,7 @@ import { SITE_URL as BASE_URL } from "@/lib/site-url";
 import { routing } from "@/i18n/routing";
 import { LEGAL_REVIEWED } from "@/components/legal";
 import { TESTIMONIALS_ARE_REAL } from "@/lib/content-status";
+import { RECIPES } from "@/lib/recipes";
 
 /** Path → how often it changes / how important it is. */
 const ROUTES = [
@@ -10,6 +11,7 @@ const ROUTES = [
   { path: "/katey", changeFrequency: "monthly", priority: 0.8 },
   { path: "/mission", changeFrequency: "monthly", priority: 0.6 },
   { path: "/programme", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/recipes", changeFrequency: "monthly", priority: 0.8 },
   { path: "/kontakt", changeFrequency: "monthly", priority: 0.7 },
   { path: "/imprint", changeFrequency: "yearly", priority: 0.3, legal: true },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3, legal: true },
@@ -27,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       (TESTIMONIALS_ARE_REAL || !("sample" in route))
   );
 
-  return routes.flatMap((route) =>
+  const staticPages = routes.flatMap((route) =>
     routing.locales.map((locale) => ({
       url: `${BASE_URL}/${locale}${route.path}`,
       lastModified,
@@ -41,4 +43,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     }))
   );
+
+  const recipePages = RECIPES.flatMap((recipe) =>
+    routing.locales.map((locale) => {
+      const path = `/recipes/${recipe.slug}`;
+      return {
+        url: `${BASE_URL}/${locale}${path}`,
+        lastModified,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+        alternates: {
+          languages: Object.fromEntries(
+            routing.locales.map((l) => [l, `${BASE_URL}/${l}${path}`])
+          ),
+        },
+      };
+    })
+  );
+
+  return [...staticPages, ...recipePages];
 }

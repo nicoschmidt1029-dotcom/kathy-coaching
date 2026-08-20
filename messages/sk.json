@@ -37,6 +37,10 @@
       "title": "Programy",
       "description": "Tri šesťtýždňové programy, jeden na jedného. Len tréning, tréning + výživa, alebo celá cesta s duchovným mentoringom. Poctivé ceny."
     },
+    "recipes": {
+      "title": "Recepty",
+      "description": "Jednoduché, výživné recepty od Katey Coaching, vďaka ktorým je vyvážené stravovanie príjemnou a prirodzenou súčasťou každodenného života."
+    },
     "testimonials": {
       "title": "Príbehy",
       "description": "Ukážkové príbehy, ktoré tu zostávajú ako zástupný obsah, kým sa neozvú skutoční klienti."
@@ -58,14 +62,63 @@
     "ariaLabel": "Katey Coaching — domovská stránka"
   },
   "nav": {
-    "about": "Katey",
+    "about": "O mne",
     "mission": "Moje poslanie",
     "programs": "Programy",
+    "recipes": "Recepty",
     "testimonials": "Príbehy",
     "contact": "Kontakt",
     "menu": "Menu",
     "openMenu": "Otvoriť menu",
     "skipToMain": "Preskočiť na hlavný obsah"
+  },
+  "recipes": {
+    "eyebrow": "Vyživ svoje telo",
+    "title": "Recepty",
+    "intro": "Jednoduché, výživné recepty na každý deň — vytvorené tak, aby podporili tvoje ciele bez zbytočne komplikovaného zdravého stravovania.",
+    "introSecondary": "Vyvážené jedlá, obľúbené recepty bohaté na bielkoviny a jednoduché nápady, vďaka ktorým je starostlivosť o telo prirodzená.",
+    "featured": "Vybraný recept",
+    "exploreEyebrow": "Receptový denník",
+    "exploreTitle": "Objav recepty",
+    "viewRecipe": "Pozrieť recept",
+    "backToRecipes": "Späť na recepty",
+    "serves": "Pre {servings}",
+    "searchLabel": "Hľadať recepty",
+    "searchPlaceholder": "Hľadať recepty...",
+    "clearSearch": "Vymazať hľadanie",
+    "count": "{count, plural, one {# recept} few {# recepty} other {# receptov}}",
+    "noResults": "Taký recept sme zatiaľ nenašli. Skús inú surovinu alebo kategóriu.",
+    "quote": "Výživa nie je o dokonalosti. Je o tom dávať telu to, čo potrebuje, pravidelne a vedome.",
+    "categories": {
+      "all": "Všetky",
+      "breakfast": "Raňajky",
+      "lunch": "Obed",
+      "dinner": "Večera",
+      "snacks": "Desiata",
+      "smoothies": "Smoothies",
+      "healthyTreats": "Zdravé maškrty"
+    },
+    "detail": {
+      "prepTime": "Príprava",
+      "cookTime": "Varenie",
+      "totalTime": "Spolu",
+      "servings": "Porcie",
+      "ingredientsEyebrow": "Čo potrebuješ",
+      "ingredients": "Ingrediencie",
+      "instructionsEyebrow": "Krok za krokom",
+      "instructions": "Postup",
+      "noteEyebrow": "Kateyina poznámka",
+      "noteTitle": "Prispôsob si ho",
+      "noteBody": "Porcie a suroviny si môžeš upraviť podľa chuti, preferencií a svojich individuálnych cieľov.",
+      "relatedEyebrow": "Objavuj ďalej",
+      "relatedTitle": "Mohlo by sa ti páčiť"
+    },
+    "wellness": {
+      "eyebrow": "Výživa na mieru",
+      "title": "Zdravé stravovanie má fungovať s tvojím životom.",
+      "body": "Recepty sú začiatok. Kateyino koučovanie spája výživu, pohyb a osobné vedenie okolo tvojich individuálnych cieľov a každodennej rutiny.",
+      "cta": "Objav programy"
+    }
   },
   "language": {
     "label": "Jazyk",

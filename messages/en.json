@@ -19,6 +19,10 @@
       "title": "Programs",
       "description": "Three six-week programs, one-on-one. Training only, training + nutrition, or the complete path with faith mentoring. Value-honest pricing."
     },
+    "recipes": {
+      "title": "Recipes",
+      "description": "Simple, nourishing recipes from Katey Coaching, designed to make balanced everyday eating feel enjoyable and approachable."
+    },
     "testimonials": {
       "title": "Testimonials",
       "description": "Sample stories, kept as placeholders until real clients share theirs."
@@ -40,14 +44,63 @@
     "ariaLabel": "Katey Coaching — home"
   },
   "nav": {
-    "about": "Katey",
+    "about": "About",
     "mission": "My mission",
     "programs": "Programs",
+    "recipes": "Recipes",
     "testimonials": "Testimonials",
     "contact": "Contact",
     "menu": "Menu",
     "openMenu": "Open menu",
     "skipToMain": "Skip to main content"
+  },
+  "recipes": {
+    "eyebrow": "Nourish your body",
+    "title": "Recipes",
+    "intro": "Simple, nourishing recipes for everyday life — made to support your goals without making healthy eating complicated.",
+    "introSecondary": "Balanced meals, protein-rich favorites and simple ideas designed to make nourishing your body feel natural.",
+    "featured": "Featured recipe",
+    "exploreEyebrow": "The recipe journal",
+    "exploreTitle": "Explore recipes",
+    "viewRecipe": "View recipe",
+    "backToRecipes": "Back to recipes",
+    "serves": "Serves {servings}",
+    "searchLabel": "Search recipes",
+    "searchPlaceholder": "Search recipes...",
+    "clearSearch": "Clear search",
+    "count": "{count, plural, one {# recipe} other {# recipes}}",
+    "noResults": "No recipes match that search yet. Try another ingredient or category.",
+    "quote": "Nourishment is not about perfection. It's about giving your body what it needs, consistently and with intention.",
+    "categories": {
+      "all": "All",
+      "breakfast": "Breakfast",
+      "lunch": "Lunch",
+      "dinner": "Dinner",
+      "snacks": "Snacks",
+      "smoothies": "Smoothies",
+      "healthyTreats": "Healthy Treats"
+    },
+    "detail": {
+      "prepTime": "Prep",
+      "cookTime": "Cook",
+      "totalTime": "Total",
+      "servings": "Serves",
+      "ingredientsEyebrow": "What you need",
+      "ingredients": "Ingredients",
+      "instructionsEyebrow": "Step by step",
+      "instructions": "Method",
+      "noteEyebrow": "Katey's note",
+      "noteTitle": "Make it your own",
+      "noteBody": "Portions and ingredients can be adjusted depending on your appetite, preferences and individual goals.",
+      "relatedEyebrow": "Keep exploring",
+      "relatedTitle": "You may also like"
+    },
+    "wellness": {
+      "eyebrow": "Nourishment, made personal",
+      "title": "Healthy eating should work with your life.",
+      "body": "Recipes are a starting point. Katey's coaching brings nutrition, movement and personal guidance together around your individual goals and everyday routine.",
+      "cta": "Explore programs"
+    }
   },
   "language": {
     "label": "Language",

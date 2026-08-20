@@ -27,6 +27,10 @@
       "title": "Programme",
       "description": "Drei Sechs-Wochen-Programme, eins zu eins. Nur Training, Training + Ernährung, oder der ganze Weg mit geistlichem Mentoring. Ehrliche Preise."
     },
+    "recipes": {
+      "title": "Rezepte",
+      "description": "Einfache, nährende Rezepte von Katey Coaching, die ausgewogenes Essen im Alltag genussvoll und unkompliziert machen."
+    },
     "testimonials": {
       "title": "Erfahrungen",
       "description": "Beispielgeschichten, die als Platzhalter stehen, bis echte Klientinnen und Klienten ihre eigenen teilen."
@@ -48,14 +52,63 @@
     "ariaLabel": "Katey Coaching — Startseite"
   },
   "nav": {
-    "about": "Katey",
+    "about": "Über mich",
     "mission": "Meine Mission",
     "programs": "Programme",
+    "recipes": "Rezepte",
     "testimonials": "Erfahrungen",
     "contact": "Kontakt",
     "menu": "Menü",
     "openMenu": "Menü öffnen",
     "skipToMain": "Zum Hauptinhalt springen"
+  },
+  "recipes": {
+    "eyebrow": "Nähre deinen Körper",
+    "title": "Rezepte",
+    "intro": "Einfache, nährende Rezepte für jeden Tag — damit du deine Ziele unterstützen kannst, ohne gesundes Essen kompliziert zu machen.",
+    "introSecondary": "Ausgewogene Mahlzeiten, proteinreiche Favoriten und einfache Ideen, mit denen sich gute Ernährung natürlich anfühlt.",
+    "featured": "Ausgewähltes Rezept",
+    "exploreEyebrow": "Das Rezeptjournal",
+    "exploreTitle": "Rezepte entdecken",
+    "viewRecipe": "Rezept ansehen",
+    "backToRecipes": "Zurück zu den Rezepten",
+    "serves": "Für {servings}",
+    "searchLabel": "Rezepte durchsuchen",
+    "searchPlaceholder": "Rezepte suchen...",
+    "clearSearch": "Suche löschen",
+    "count": "{count, plural, one {# Rezept} other {# Rezepte}}",
+    "noResults": "Dazu gibt es noch kein passendes Rezept. Versuch eine andere Zutat oder Kategorie.",
+    "quote": "Nahrung bedeutet nicht Perfektion. Es geht darum, deinem Körper beständig und bewusst zu geben, was er braucht.",
+    "categories": {
+      "all": "Alle",
+      "breakfast": "Frühstück",
+      "lunch": "Mittagessen",
+      "dinner": "Abendessen",
+      "snacks": "Snacks",
+      "smoothies": "Smoothies",
+      "healthyTreats": "Gesunde Naschereien"
+    },
+    "detail": {
+      "prepTime": "Vorbereitung",
+      "cookTime": "Garen",
+      "totalTime": "Gesamt",
+      "servings": "Portionen",
+      "ingredientsEyebrow": "Was du brauchst",
+      "ingredients": "Zutaten",
+      "instructionsEyebrow": "Schritt für Schritt",
+      "instructions": "Zubereitung",
+      "noteEyebrow": "Kateys Notiz",
+      "noteTitle": "Mach es zu deinem Rezept",
+      "noteBody": "Portionen und Zutaten kannst du an deinen Appetit, deine Vorlieben und deine persönlichen Ziele anpassen.",
+      "relatedEyebrow": "Weiter entdecken",
+      "relatedTitle": "Das könnte dir auch schmecken"
+    },
+    "wellness": {
+      "eyebrow": "Ernährung, persönlich gedacht",
+      "title": "Gesundes Essen sollte zu deinem Leben passen.",
+      "body": "Rezepte sind ein Anfang. Kateys Coaching verbindet Ernährung, Bewegung und persönliche Begleitung rund um deine individuellen Ziele und deinen Alltag.",
+      "cta": "Programme entdecken"
+    }
   },
   "language": {
     "label": "Sprache",

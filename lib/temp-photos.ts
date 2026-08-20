@@ -167,7 +167,7 @@ export const TEMP_PHOTOS: Record<
   // forward. Previous photo here (kathy-02.jpg, seated from behind) stays
   // in the repo, unused.
   homeBand: {
-    url: "/images/kathy/kathy-11-mission-bottle.jpg",
+    url: "/images/kathy/athletische_pause_auf_der_blauen_laufbahn.png",
     alt: "Katey standing on a light-blue running track in a black outfit, hand on hip, holding a water bottle",
   },
   // Katey's own — running track, seated, looking off. Was the full-bleed
