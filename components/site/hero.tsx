@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { TEMP_HERO_VIDEO, TEMP_PHOTOS } from "@/lib/temp-photos";
+import { BackgroundAutoplayVideo } from "./background-autoplay-video";
 import { TempPill } from "./placeholder";
 
 /**
@@ -131,14 +132,8 @@ export function Hero() {
         {(video || photo) && (
           <div className="absolute inset-0 -z-10">
             {video ? (
-              <video
+              <BackgroundAutoplayVideo
                 src={video.src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                aria-hidden
                 className="absolute inset-0 h-full w-full object-cover object-center"
               />
             ) : (
@@ -185,7 +180,7 @@ export function Hero() {
         {(video || photo) && (
           <div className="absolute inset-0 -z-10">
             {video ? (
-              <video
+              <BackgroundAutoplayVideo
                 // Lighter mobile-specific re-encode (see lib/temp-photos.ts)
                 // — falls back to the same file desktop uses if srcMobile
                 // isn't set. Source is now a genuine portrait (9:16) clip,
@@ -193,12 +188,6 @@ export function Hero() {
                 // against a phone-shaped hero — plain object-center holds
                 // her in frame through the whole movement.
                 src={video.srcMobile ?? video.src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                aria-hidden
                 className="absolute inset-0 h-full w-full object-cover object-center"
               />
             ) : (
