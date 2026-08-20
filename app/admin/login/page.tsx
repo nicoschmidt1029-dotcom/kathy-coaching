@@ -13,7 +13,8 @@ export default async function AdminLogin({ searchParams }: { searchParams: Promi
       <h1 className="mt-3 font-display text-4xl text-[var(--plum)]">Admin login</h1>
       <p className="mt-4 text-sm leading-relaxed text-foreground/65">Gib deine freigegebene E-Mail-Adresse ein. Du erhältst einen sicheren, einmalig verwendbaren Login-Link.</p>
       {query.sent && <p className="mt-5 rounded-xl bg-emerald-900/8 p-3 text-sm text-emerald-900">Login-Link gesendet. Bitte prüfe dein Postfach.</p>}
-      {query.error && <p className="mt-5 rounded-xl bg-red-900/8 p-3 text-sm text-red-900">Anmeldung nicht möglich. Bitte prüfe die freigegebene E-Mail-Adresse.</p>}
+      {query.error === "expired" && <p className="mt-5 rounded-xl bg-red-900/8 p-3 text-sm text-red-900">Der Login-Link ist abgelaufen oder wurde bereits verwendet. Bitte fordere einen neuen Link an und öffne nur die neueste E-Mail.</p>}
+      {query.error && query.error !== "expired" && <p className="mt-5 rounded-xl bg-red-900/8 p-3 text-sm text-red-900">Anmeldung nicht möglich. Bitte prüfe die freigegebene E-Mail-Adresse.</p>}
       <form action={requestMagicLink} className="mt-6 space-y-4">
         <label className="block text-sm font-medium text-foreground/75">E-Mail<input name="email" type="email" required autoComplete="email" className="mt-1.5 w-full rounded-xl border border-black/10 bg-white px-4 py-3 outline-none focus:border-[var(--clay)] focus:ring-2 focus:ring-[var(--clay)]/15" /></label>
         <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--plum)] px-4 py-3 text-sm font-medium text-white hover:bg-[var(--plum)]/90"><Mail className="size-4" />Secure login link</button>

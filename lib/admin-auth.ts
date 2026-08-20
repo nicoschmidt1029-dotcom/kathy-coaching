@@ -14,7 +14,9 @@ export function isAllowedAdminEmail(email: string | null | undefined) {
 export async function getAdminUser() {
   const supabase = await createClient();
   const { data, error } = await supabase.auth.getUser();
-  if (error || !data.user || !isAllowedAdminEmail(data.user.email)) return null;
+  if (error || !data.user) return null;
+  const { data: isAdmin, error: adminError } = await supabase.rpc("is_current_admin");
+  if (adminError || isAdmin !== true) return null;
   return data.user;
 }
 

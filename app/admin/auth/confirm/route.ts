@@ -1,6 +1,5 @@
 import type { EmailOtpType } from "@supabase/supabase-js";
 import { NextResponse, type NextRequest } from "next/server";
-import { isAllowedAdminEmail } from "@/lib/admin-auth";
 import { createClient } from "@/lib/supabase/server";
 
 export async function GET(request: NextRequest) {
@@ -12,7 +11,14 @@ export async function GET(request: NextRequest) {
 
   const supabase = await createClient();
   const { data, error } = await supabase.auth.verifyOtp({ type, token_hash: tokenHash });
-  if (error || !isAllowedAdminEmail(data.user?.email)) {
+  if (error || !data.user) {
+    console.error("Admin OTP verification failed", { code: error?.code, status: error?.status });
+    await supabase.auth.signOut();
+    return NextResponse.redirect(new URL("/admin/login?error=expired", request.url));
+  }
+  const { data: isAdmin, error: adminError } = await supabase.rpc("is_current_admin");
+  if (adminError || isAdmin !== true) {
+    console.error("Admin authorization failed", { code: adminError?.code });
     await supabase.auth.signOut();
     return NextResponse.redirect(new URL("/admin/login?error=unauthorized", request.url));
   }
