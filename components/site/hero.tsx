@@ -28,7 +28,9 @@ import { TempPill } from "./placeholder";
  * what the Katey/about section already says about her qualifications, and
  * she asked for that to live in exactly one place.
  */
-function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
+type HeroContent = { headline?: string; body?: string; ctaLabel?: string; ctaHref?: string };
+
+function HeroCopy({ t, content }: { t: ReturnType<typeof useTranslations<"hero">>; content?: HeroContent }) {
   return (
     <>
       {/* Mobile-first pass (2026-08-18): the shared clamp(2.3rem,4vw,3.5rem)
@@ -39,10 +41,10 @@ function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
           (2.6rem base / 2.75rem at sm, ~41.6-44px) replace it below md;
           the exact desktop clamp is restored unchanged at md+. */}
       <h1
-        className="animate-rise font-display text-[2.3rem] leading-[1.1] font-normal sm:text-[2.6rem] md:text-[clamp(2.65rem,4.5vw,4.15rem)]"
+        className="animate-rise font-display text-[2.4rem] leading-[1.08] font-normal sm:text-[2.7rem] md:text-[clamp(2.9rem,4.8vw,4.6rem)]"
         style={{ animationDelay: "80ms" }}
       >
-        {t.rich("headline", {
+        {content?.headline || t.rich("headline", {
           em: (chunks) => (
             <span className="relative inline-block whitespace-nowrap">
               <em className="not-italic font-display italic">{chunks}</em>
@@ -73,7 +75,7 @@ function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
         className="animate-rise mt-4 max-w-md text-pretty text-[0.92rem] leading-[1.55] sm:text-lg sm:leading-[1.7] md:mt-8"
         style={{ animationDelay: "180ms" }}
       >
-        {t("body")}
+        {content?.body || t("body")}
       </p>
 
       {/* mt-10 -> mt-6 on mobile (md:mt-10 restores desktop). Button:
@@ -97,8 +99,8 @@ function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
           size="lg"
           className="group/button h-14 w-full bg-[var(--shoe-accent)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--shoe-accent)]/90 sm:h-12 sm:w-auto"
         >
-          <Link href="/programme">
-            {t("cta")}
+          <Link href={content?.ctaHref || "/programme"}>
+            {content?.ctaLabel || t("cta")}
             <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
           </Link>
         </Button>
@@ -107,7 +109,7 @@ function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
   );
 }
 
-export function Hero() {
+export function Hero({ content }: { content?: HeroContent } = {}) {
   const t = useTranslations("hero");
   const photo = TEMP_PHOTOS.hero;
   const video = TEMP_HERO_VIDEO;
@@ -155,8 +157,8 @@ export function Hero() {
         )}
 
         <div className="container-page flex justify-end text-[var(--primary-foreground)]">
-          <div className="max-w-2xl lg:mr-[7vw] [&_p]:text-[var(--primary-foreground)]/80">
-            <HeroCopy t={t} />
+          <div className="w-full max-w-[46rem] lg:mr-[11vw] [&_p]:text-[var(--primary-foreground)]/80">
+            <HeroCopy t={t} content={content} />
           </div>
         </div>
       </div>
@@ -218,7 +220,7 @@ export function Hero() {
 
         <div className="container-page text-[var(--primary-foreground)]">
           <div className="max-w-md [&_p]:text-[var(--primary-foreground)]/80">
-            <HeroCopy t={t} />
+            <HeroCopy t={t} content={content} />
           </div>
         </div>
       </div>

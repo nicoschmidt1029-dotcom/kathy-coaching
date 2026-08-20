@@ -1,15 +1,17 @@
 import Link from "next/link";
-import { BookOpen, FileText, Images, LayoutDashboard, LogOut, Sparkles } from "lucide-react";
+import { BookOpen, FileText, Images, LayoutDashboard, LogOut, Sparkles, CircleHelp } from "lucide-react";
 import { logout } from "@/app/admin/actions";
 import { AdminSessionRefresh } from "@/components/admin/session-refresh";
 import { AdminTutorials } from "@/components/admin/tutorials";
+import { AdminFeedback } from "@/components/admin/admin-feedback";
 
 const links = [
-  { href: "/admin", label: "Übersicht", icon: LayoutDashboard },
+  { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/programs", label: "Programs", icon: Sparkles },
   { href: "/admin/recipes", label: "Recipes", icon: BookOpen },
   { href: "/admin/website", label: "Website Content", icon: FileText },
   { href: "/admin/media", label: "Media", icon: Images },
+  { href: "/admin/tutorials", label: "Tutorials", icon: CircleHelp },
 ];
 
 export function AdminShell({ children, email }: { children: React.ReactNode; email: string }) {
@@ -42,7 +44,7 @@ export function AdminShell({ children, email }: { children: React.ReactNode; ema
           </nav>
           <p className="mt-5 hidden break-all px-3 text-xs text-foreground/45 md:block">{email}</p>
         </aside>
-        <main className="min-w-0">{children}</main>
+        <main className="min-w-0"><AdminFeedback />{children}</main>
       </div>
     </div>
   );

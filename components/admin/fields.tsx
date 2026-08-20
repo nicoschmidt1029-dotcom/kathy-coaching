@@ -9,7 +9,7 @@ export function TextArea({ label, name, defaultValue = "", rows = 4, hint }: { l
 }
 
 export function LocaleFields({ locale, children }: { locale: "en" | "de" | "sk"; children: React.ReactNode }) {
-  const names = { en: "English", de: "Deutsch", sk: "Slovenčina" };
+  const names = { en: "English", de: "German", sk: "Slovak" };
   return <fieldset className="space-y-4 rounded-2xl border border-black/10 bg-white/45 p-4 sm:p-5"><legend className="px-2 font-display text-lg text-[var(--plum)]">{names[locale]}</legend>{children}</fieldset>;
 }
 

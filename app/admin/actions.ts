@@ -40,6 +40,7 @@ const assertContentSize = (data: unknown) => {
 
 function revalidatePublicContent() {
   for (const locale of routing.locales) {
+    revalidatePath(`/${locale}`);
     revalidatePath(`/${locale}/recipes`);
     revalidatePath(`/${locale}/programme`);
     revalidatePath(`/${locale}/katey`);
@@ -167,6 +168,7 @@ export async function saveRecipe(formData: FormData) {
   const data = {
     slug,
     title: localized("title"),
+    intro: localized("intro"),
     category,
     image: imageValue(formData) ?? "",
     imageAlt: localized("image_alt"),
@@ -217,6 +219,8 @@ export async function saveProgram(formData: FormData) {
     de: lines(formData, `${name}_de`),
     sk: lines(formData, `${name}_sk`),
   });
+  const programCtaHref = value(formData, "cta_href") || "/kontakt";
+  if (!programCtaHref.startsWith("/") && !programCtaHref.startsWith("https://") && !programCtaHref.startsWith("mailto:")) throw new Error("Please use a website path, secure web link or email link for the button destination.");
   const data = {
     title: localized("title"),
     targetHeading: localized("target_heading"),
@@ -225,8 +229,10 @@ export async function saveProgram(formData: FormData) {
     includesHeading: localized("includes_heading"),
     includes: localizedLines("includes"),
     duration: localized("duration"),
+    ctaLabel: localized("cta_label"),
+    ctaHref: programCtaHref,
     price: Number(value(formData, "price")) || 0,
-    currency: "CHF" as const,
+    currency: value(formData, "currency").toUpperCase() || "CHF",
   };
   if (!data.title.en) throw new Error("An English program title is required.");
   const programImage = imageValue(formData);
@@ -253,13 +259,15 @@ export async function saveProgram(formData: FormData) {
 export async function saveWebsiteContent(formData: FormData) {
   await requireAdmin();
   const key = value(formData, "content_key");
-  if (!["about", "mission", "contact"].includes(key)) throw new Error("Invalid website content section.");
+  if (!["homepage", "about", "mission", "contact"].includes(key)) throw new Error("Invalid website content section.");
   const localized = (name: string) => ({
     en: value(formData, `${name}_en`),
     de: value(formData, `${name}_de`),
     sk: value(formData, `${name}_sk`),
   });
-  const data = { headline: localized("headline"), body: localized("body") };
+  const ctaHref = value(formData, "cta_href");
+  if (ctaHref && !ctaHref.startsWith("/") && !ctaHref.startsWith("https://") && !ctaHref.startsWith("mailto:")) throw new Error("Please use a website path, secure web link or email link for the button destination.");
+  const data = { eyebrow: localized("eyebrow"), headline: localized("headline"), body: localized("body"), ctaLabel: localized("cta_label"), submitLabel: localized("submit_label"), ctaHref: ctaHref || undefined };
   assertContentSize(data);
   const supabase = await createClient();
   const { error } = await supabase.from("cms_entries").upsert(

@@ -27,7 +27,7 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  * The full text stays in messages/*.json — this renders `title` and `p3`,
  * which is the sentence the rest was building towards.
  */
-type EditableContent = { headline?: string; body?: string; image?: string | null };
+type EditableContent = { eyebrow?: string; headline?: string; body?: string; image?: string | null };
 
 export function Mission({ content }: { content?: EditableContent }) {
   const t = useTranslations("mission");
@@ -46,7 +46,7 @@ export function Mission({ content }: { content?: EditableContent }) {
           to match, same treatment. */}
       <div className="container-page grid grid-cols-1 items-center gap-6 md:grid-cols-12 md:gap-16">
         <div className="md:col-span-7">
-          <p className="eyebrow">{t("eyebrow")}</p>
+          <p className="eyebrow">{content?.eyebrow || t("eyebrow")}</p>
 
           {/* mt-8 -> mt-5 on mobile (md:mt-8 restores desktop). */}
           <DisplayTitle as="h1" className="mt-5 max-w-[16ch] md:mt-8">

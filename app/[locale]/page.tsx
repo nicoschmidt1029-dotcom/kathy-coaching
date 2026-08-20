@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/site/hero";
+import { getPublicWebsiteEntry } from "@/lib/cms";
 
 /**
  * Home — the full-screen video hero, nothing else.
@@ -19,5 +20,7 @@ export default async function Home({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <Hero />;
+  const entry = await getPublicWebsiteEntry("homepage");
+  const data = entry?.data as { headline?: Record<string, string>; body?: Record<string, string>; ctaLabel?: Record<string, string>; ctaHref?: string } | undefined;
+  return <Hero content={entry ? { headline: data?.headline?.[locale], body: data?.body?.[locale], ctaLabel: data?.ctaLabel?.[locale], ctaHref: data?.ctaHref } : undefined} />;
 }

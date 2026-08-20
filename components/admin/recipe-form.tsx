@@ -4,6 +4,8 @@ import { Field, LocaleFields, panelClass, TextArea } from "@/components/admin/fi
 import { ImageUpload } from "@/components/admin/image-upload";
 import type { CmsEntry } from "@/lib/cms";
 import { RECIPE_CATEGORIES, type Recipe } from "@/lib/recipes";
+import { RepeatableList } from "@/components/admin/repeatable-list";
+import { GuardedForm, SaveButton } from "@/components/admin/form-guard";
 
 const locales = ["en", "de", "sk"] as const;
 
@@ -12,7 +14,7 @@ export function RecipeForm({ recipe, entry }: { recipe?: Recipe; entry?: CmsEntr
   const key = entry?.content_key ?? recipe?.slug ?? "";
   const image = entry?.image_path ?? data?.image ?? "";
 
-  return <form action={saveRecipe} className="space-y-6">
+  return <GuardedForm action={saveRecipe} className="space-y-6">
     <input type="hidden" name="original_key" value={key} />
     <input type="hidden" name="sort_order" value={entry?.sort_order ?? 0} />
     <section className={`${panelClass} space-y-5`}>
@@ -36,15 +38,15 @@ export function RecipeForm({ recipe, entry }: { recipe?: Recipe; entry?: CmsEntr
         <Field label="Servings" name={`servings_${locale}`} defaultValue={data?.servings?.[locale] ?? ""} />
       </div>
       <TextArea label="Tags" name={`tags_${locale}`} defaultValue={(data?.tags?.[locale] ?? []).join("\n")} rows={3} hint="One tag per line" />
-      <TextArea label="Ingredients" name={`ingredients_${locale}`} defaultValue={(data?.ingredientGroups ?? []).flatMap((group) => group.items[locale] ?? []).join("\n")} rows={10} hint="One ingredient per line" />
-      <TextArea label="Instructions" name={`instructions_${locale}`} defaultValue={(data?.instructions?.[locale] ?? []).join("\n")} rows={10} hint="One step per line — numbering is added automatically" />
+      <RepeatableList label="Ingredients" name={`ingredients_${locale}`} initialItems={(data?.ingredientGroups ?? []).flatMap((group) => group.items[locale] ?? [])} addLabel="Add ingredient" />
+      <RepeatableList label="Instructions" name={`instructions_${locale}`} initialItems={data?.instructions?.[locale]} addLabel="Add step" multiline />
     </LocaleFields>)}
 
     <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-black/10 bg-[#fbf8f2]/95 p-4 shadow-lg backdrop-blur sm:sticky sm:bottom-3">
-      <button name="status" value="draft" className="rounded-xl border border-black/10 bg-white px-5 py-2.5 text-sm">Save draft</button>
-      <button name="status" value="published" className="rounded-xl bg-[var(--plum)] px-5 py-2.5 text-sm text-white">Save & publish</button>
+      <SaveButton value="draft" variant="secondary">Save draft</SaveButton>
+      <SaveButton value="published">Save & publish</SaveButton>
     </div>
-  </form>;
+  </GuardedForm>;
 }
 
 export function RecipeDeleteForm({ contentKey }: { contentKey: string }) {

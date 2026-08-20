@@ -2,12 +2,15 @@ import type { Locale } from "@/i18n/routing";
 
 export type ProgramLocaleContent = {
   title: string;
+  intro?: string;
   targetHeading: string;
   targetAudience: readonly string[];
   transition: string;
   includesHeading: string;
   includes: readonly string[];
   duration: string;
+  ctaLabel?: string;
+  ctaHref?: string;
 };
 
 export type Program = {
@@ -15,7 +18,7 @@ export type Program = {
   image: string;
   imageAlt: string;
   price: number;
-  currency: "CHF";
+  currency: string;
   content: Partial<Record<Locale, ProgramLocaleContent>> & {
     en: ProgramLocaleContent;
   };

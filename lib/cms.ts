@@ -122,15 +122,18 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
   try {
     const data = entry.data as unknown as {
       title?: Partial<Record<Locale, string>>;
+      intro?: Partial<Record<Locale, string>>;
       targetHeading?: Partial<Record<Locale, string>>;
       targetAudience?: Partial<Record<Locale, readonly string[]>>;
       transition?: Partial<Record<Locale, string>>;
       includesHeading?: Partial<Record<Locale, string>>;
       includes?: Partial<Record<Locale, readonly string[]>>;
       duration?: Partial<Record<Locale, string>>;
+      ctaLabel?: Partial<Record<Locale, string>>;
+      ctaHref?: string;
       imageAlt?: string;
       price?: number;
-      currency?: "CHF";
+      currency?: string;
     };
     const present = <T>(value: T | undefined) =>
       Array.isArray(value) ? value.length > 0 : typeof value === "string" ? value.length > 0 : value !== undefined;
@@ -153,12 +156,15 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       price: data.price ?? base?.price ?? 0,
       currency: data.currency ?? base?.currency ?? "CHF",
       title,
+      intro: pick(data.intro, base?.intro ?? ""),
       targetHeading: pick(data.targetHeading, base?.targetHeading ?? "This program is for:"),
       targetAudience: pick(data.targetAudience, base?.targetAudience ?? []),
       transition: pick(data.transition, base?.transition ?? ""),
       includesHeading: pick(data.includesHeading, base?.includesHeading ?? "This program includes:"),
       includes: pick(data.includes, base?.includes ?? []),
       duration: pick(data.duration, base?.duration ?? ""),
+      ctaLabel: pick(data.ctaLabel, base?.ctaLabel ?? ""),
+      ctaHref: data.ctaHref ?? base?.ctaHref ?? "/kontakt",
     };
   } catch {
     return null;

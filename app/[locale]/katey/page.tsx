@@ -35,8 +35,8 @@ export default async function KateyPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const entry = await getPublicWebsiteEntry("about");
-  const data = entry?.data as { headline?: Record<string, string>; body?: Record<string, string> } | undefined;
-  const content = entry ? { headline: data?.headline?.[locale], body: data?.body?.[locale], image: entry.image_path } : undefined;
+  const data = entry?.data as { eyebrow?: Record<string, string>; headline?: Record<string, string>; body?: Record<string, string> } | undefined;
+  const content = entry ? { eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: data?.body?.[locale], image: entry.image_path } : undefined;
 
   return <About content={content} />;
 }
