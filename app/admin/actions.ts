@@ -12,6 +12,8 @@ import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 
 const value = (form: FormData, name: string) =>
   String(form.get(name) ?? "").trim();
+const rawValue = (form: FormData, name: string) =>
+  String(form.get(name) ?? "");
 const lines = (form: FormData, name: string) =>
   value(form, name)
     .split(/\r?\n/)
@@ -97,12 +99,17 @@ export async function requestPasswordSetup(formData: FormData) {
     console.error("Admin password setup request failed", { code: error.code, status: error.status });
     redirect(`/admin/login?error=${error.status === 429 ? "rate" : "setup"}`);
   }
-  redirect("/admin/login?setup=sent");
+  redirect("/admin/forgot-password?sent=1");
 }
 
-export async function confirmPasswordSetup(formData: FormData) {
+export async function completePasswordReset(formData: FormData) {
   const tokenHash = value(formData, "token_hash");
   if (!tokenHash) redirect("/admin/login?error=expired");
+  const password = rawValue(formData, "password");
+  const confirmation = rawValue(formData, "password_confirmation");
+  if (password !== confirmation || password.length < 12 || !/[A-Za-z]/.test(password) || !/\d/.test(password)) {
+    redirect(`/admin/password/setup?token_hash=${encodeURIComponent(tokenHash)}&type=recovery&error=requirements`);
+  }
   const supabase = await createClient();
   const { error } = await supabase.auth.verifyOtp({ type: "recovery", token_hash: tokenHash });
   if (error) redirect("/admin/login?error=expired");
@@ -111,13 +118,18 @@ export async function confirmPasswordSetup(formData: FormData) {
     await supabase.auth.signOut();
     redirect("/admin/login?error=unauthorized");
   }
-  redirect("/admin/set-password");
+  const { error: updateError } = await supabase.auth.updateUser({ password });
+  if (updateError) {
+    console.error("Admin password update failed", { code: updateError.code, status: updateError.status });
+    redirect("/admin/set-password?error=update");
+  }
+  redirect("/admin?password=created");
 }
 
 export async function updateAdminPassword(formData: FormData) {
   await requireAdmin();
-  const password = value(formData, "password");
-  const confirmation = value(formData, "password_confirmation");
+  const password = rawValue(formData, "password");
+  const confirmation = rawValue(formData, "password_confirmation");
   if (password !== confirmation || password.length < 12 || !/[A-Za-z]/.test(password) || !/\d/.test(password)) {
     redirect("/admin/set-password?error=requirements");
   }
