@@ -5,11 +5,11 @@ import { notFound } from "next/navigation";
 import { RecipeDetail } from "@/components/site/recipe-detail";
 import { alternatesFor } from "@/i18n/metadata";
 import { routing, type Locale } from "@/i18n/routing";
-import { RECIPES } from "@/lib/recipes";
+import { PUBLIC_RECIPE_SLUGS } from "@/lib/recipes";
 import { getPublicRecipe } from "@/lib/cms";
 
 export function generateStaticParams() {
-  return RECIPES.map((recipe) => ({ slug: recipe.slug }));
+  return PUBLIC_RECIPE_SLUGS.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({

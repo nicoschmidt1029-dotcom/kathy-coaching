@@ -3,8 +3,8 @@
     "siteName": "Katey Coaching",
     "titleDefault": "Katey Coaching — Faith-rooted training, nutrition & mentoring",
     "titleTemplate": "%s · Katey Coaching",
-    "description": "Holistic coaching for women — and openly for men too. Personal training, nutrition guidance, and Christian mentoring with Katey Coaching, walked together over six weeks.",
-    "ogDescription": "See your body the way God created it. Training, nutrition, and identity in Jesus — one path, walked together."
+    "description": "Katey Coaching.",
+    "ogDescription": "Katey Coaching."
   },
   "pages": {
     "about": {
@@ -45,6 +45,7 @@
   },
   "nav": {
     "about": "About",
+    "explore": "Explore",
     "mission": "My mission",
     "programs": "Programs",
     "recipes": "Recipes",
@@ -224,6 +225,11 @@
     }
   },
   "programs": {
+    "realEyebrow": "Personalised coaching",
+    "realTitle": "Personalised Online Fitness Coaching – 90 Days",
+    "viewProgram": "View program",
+    "backToPrograms": "Back to programs",
+    "price": "Price",
     "eyebrow": "The programs",
     "title": "Three parts. One path. You choose how much.",
     "intro": "I take a small number of clients each month, so I can be fully present for each one.",
@@ -333,7 +339,7 @@
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Can I help you?",
+    "title": "How can I help you?",
     "intro": "Tell me where you are. I answer personally.",
     "formatLabel": "Format",
     "formatValue": "Call, message, or in person",
@@ -345,8 +351,8 @@
     "namePlaceholder": "Jane Doe",
     "emailLabel": "Email",
     "emailPlaceholder": "jane@example.com",
-    "messageLabel": "A little about where you are, where you'd like to go",
-    "messagePlaceholder": "Where you are now, where you'd like to go — no need to polish it.",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message",
     "prefillPrefix": "Interested in: {selection}",
     "privacyNote": "I'll only use your email to reply to you personally.",
     "submit": "Send message",
@@ -354,7 +360,7 @@
     "genericError": "Something went wrong. Please try again.",
     "networkError": "Network error. Please try again in a moment.",
     "sentTitle": "Thank you — I got it.",
-    "sentBody": "I read every message myself. Expect a reply within two working days, usually sooner. In the meantime — grace and peace to you.",
+    "sentBody": "Your message was sent.",
     "sendAnother": "Send another message",
     "legalPrefix": "Legal:"
   },

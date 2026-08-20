@@ -11,8 +11,8 @@
   "meta": {
     "titleDefault": "Katey Coaching — Training, Ernährung & Mentoring, im Glauben verwurzelt",
     "titleTemplate": "%s · Katey Coaching",
-    "description": "Ganzheitliches Coaching für Frauen — und ausdrücklich auch für Männer. Personal Training, Ernährungsbegleitung und christliches Mentoring mit Katey Coaching, sechs Wochen, die wir gemeinsam gehen.",
-    "ogDescription": "Sieh deinen Körper so, wie Gott ihn geschaffen hat. Training, Ernährung und Identität in Jesus — ein Weg, gemeinsam gegangen."
+    "description": "Katey Coaching.",
+    "ogDescription": "Katey Coaching."
   },
   "pages": {
     "about": {
@@ -53,6 +53,7 @@
   },
   "nav": {
     "about": "Über mich",
+    "explore": "Entdecken",
     "mission": "Meine Mission",
     "programs": "Programme",
     "recipes": "Rezepte",
@@ -226,6 +227,9 @@
     }
   },
   "programs": {
+    "viewProgram": "Programm ansehen",
+    "backToPrograms": "Zurück zu den Programmen",
+    "price": "Preis",
     "eyebrow": "Die Programme",
     "title": "Drei Teile. Ein Weg. Du entscheidest, wie viel.",
     "intro": "Ich nehme jeden Monat nur wenige Menschen an, um für jede und jeden ganz da zu sein.",
@@ -346,8 +350,8 @@
     "namePlaceholder": "Anna Muster",
     "emailLabel": "E-Mail",
     "emailPlaceholder": "anna@beispiel.ch",
-    "messageLabel": "Ein bisschen dazu, wo du stehst und wohin du willst",
-    "messagePlaceholder": "Wo du gerade stehst, wohin du möchtest — es muss nicht ausgefeilt sein.",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Deine Nachricht",
     "prefillPrefix": "Interesse an: {selection}",
     "privacyNote": "Deine E-Mail-Adresse nutze ich nur, um dir persönlich zu antworten.",
     "submit": "Nachricht senden",
@@ -355,7 +359,7 @@
     "genericError": "Da ist etwas schiefgelaufen. Bitte versuch es noch einmal.",
     "networkError": "Netzwerkfehler. Bitte versuch es gleich noch einmal.",
     "sentTitle": "Danke — ist angekommen.",
-    "sentBody": "Ich lese jede Nachricht selbst. Antwort innerhalb von zwei Werktagen, meistens schneller. Bis dahin: Gnade und Frieden.",
+    "sentBody": "Deine Nachricht wurde gesendet.",
     "sendAnother": "Noch eine Nachricht senden",
     "legalPrefix": "Rechtliches:"
   },

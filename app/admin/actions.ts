@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { RECIPE_CATEGORIES } from "@/lib/recipes";
+import { PROGRAMS } from "@/lib/programs";
 import { requireAdmin, isAllowedAdminEmail } from "@/lib/admin-auth";
 import { createClient } from "@/lib/supabase/server";
 import { SITE_URL } from "@/lib/site-url";
@@ -33,8 +34,6 @@ const imageValue = (form: FormData) => {
   if (image.startsWith(storagePrefix) || image.startsWith("/images/")) return image;
   throw new Error("Invalid image source.");
 };
-const safeDestination = (input: string) =>
-  input.startsWith("/") || input.startsWith("https://") || input.startsWith("mailto:") ? input : "/kontakt";
 const assertContentSize = (data: unknown) => {
   if (JSON.stringify(data).length > 200_000) throw new Error("Content is too large.");
 };
@@ -220,15 +219,18 @@ export async function saveProgram(formData: FormData) {
   });
   const data = {
     title: localized("title"),
-    subtitle: localized("subtitle"),
-    description: localized("description"),
+    targetHeading: localized("target_heading"),
+    targetAudience: localizedLines("target_audience"),
+    transition: localized("transition"),
+    includesHeading: localized("includes_heading"),
+    includes: localizedLines("includes"),
     duration: localized("duration"),
-    features: localizedLines("features"),
-    ctaLabel: localized("cta_label"),
-    ctaHref: safeDestination(value(formData, "cta_href") || "/kontakt"),
     price: Number(value(formData, "price")) || 0,
+    currency: "CHF" as const,
   };
-  if (Object.values(data.title).some((title) => !title)) throw new Error("A program title is required in every language.");
+  if (!data.title.en) throw new Error("An English program title is required.");
+  const programImage = imageValue(formData);
+  if (!programImage && !PROGRAMS.some((program) => program.slug === key)) throw new Error("A program image is required.");
   assertContentSize(data);
   const supabase = await createClient();
   const { error } = await supabase.from("cms_entries").upsert(
@@ -237,7 +239,7 @@ export async function saveProgram(formData: FormData) {
       content_key: key,
       status: value(formData, "status") === "published" ? "published" : "draft",
       sort_order: Number(value(formData, "sort_order")) || 0,
-      image_path: imageValue(formData),
+      image_path: programImage,
       data,
       deleted_at: null,
     },

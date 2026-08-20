@@ -1102,6 +1102,9 @@ export const RECIPES: readonly Recipe[] = [
   },
 ];
 
+/** Only recipes Katarina has explicitly reviewed are part of the public journal. */
+export const PUBLIC_RECIPE_SLUGS = ["mediterranean-lemon-chicken-bowl"] as const;
+
 function localizeRecipe(recipe: Recipe, locale: Locale): LocalizedRecipe {
   return {
     ...recipe,

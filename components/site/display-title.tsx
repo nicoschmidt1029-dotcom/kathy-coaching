@@ -10,6 +10,7 @@ type Props = {
    * outline, and an outline you cannot see is just a missing word.
    */
   onDark?: boolean;
+  as?: "h1" | "h2";
 };
 
 /**
@@ -24,13 +25,13 @@ type Props = {
  * Single-word titles are rendered solid; a lone hollow word is a logo, not
  * a heading.
  */
-export function DisplayTitle({ children, className, onDark = false }: Props) {
+export function DisplayTitle({ children, className, onDark = false, as: Heading = "h2" }: Props) {
   const words = children.trim().split(" ");
   const [first, ...rest] = words;
   const hollow = words.length > 1;
 
   return (
-    <h2 className={cn("display-title", className)}>
+    <Heading className={cn("display-title", className)}>
       <span
         className={
           hollow
@@ -43,6 +44,6 @@ export function DisplayTitle({ children, className, onDark = false }: Props) {
         {first}
       </span>
       {rest.length > 0 && ` ${rest.join(" ")}`}
-    </h2>
+    </Heading>
   );
 }

@@ -49,7 +49,7 @@ export function Mission({ content }: { content?: EditableContent }) {
           <p className="eyebrow">{t("eyebrow")}</p>
 
           {/* mt-8 -> mt-5 on mobile (md:mt-8 restores desktop). */}
-          <DisplayTitle className="mt-5 max-w-[16ch] md:mt-8">
+          <DisplayTitle as="h1" className="mt-5 max-w-[16ch] md:mt-8">
             {content?.headline || t("title")}
           </DisplayTitle>
 

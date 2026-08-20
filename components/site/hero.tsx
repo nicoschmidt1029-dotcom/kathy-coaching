@@ -39,7 +39,7 @@ function HeroCopy({ t }: { t: ReturnType<typeof useTranslations<"hero">> }) {
           (2.6rem base / 2.75rem at sm, ~41.6-44px) replace it below md;
           the exact desktop clamp is restored unchanged at md+. */}
       <h1
-        className="animate-rise font-display text-[2.3rem] leading-[1.1] font-normal sm:text-[2.6rem] md:text-[clamp(2.3rem,4vw,3.5rem)]"
+        className="animate-rise font-display text-[2.3rem] leading-[1.1] font-normal sm:text-[2.6rem] md:text-[clamp(2.65rem,4.5vw,4.15rem)]"
         style={{ animationDelay: "80ms" }}
       >
         {t.rich("headline", {
@@ -155,7 +155,7 @@ export function Hero() {
         )}
 
         <div className="container-page flex justify-end text-[var(--primary-foreground)]">
-          <div className="max-w-xl [&_p]:text-[var(--primary-foreground)]/80">
+          <div className="max-w-2xl lg:mr-[7vw] [&_p]:text-[var(--primary-foreground)]/80">
             <HeroCopy t={t} />
           </div>
         </div>

@@ -21,8 +21,8 @@
   "meta": {
     "titleDefault": "Katey Coaching — tréning, výživa a mentoring zakorenené vo viere",
     "titleTemplate": "%s · Katey Coaching",
-    "description": "Celostný koučing pre ženy — a otvorene aj pre mužov. Osobný tréning, výživové poradenstvo a kresťanský mentoring s Katey Coaching, šesť týždňov, ktoré prejdeme spolu.",
-    "ogDescription": "Pozri sa na svoje telo tak, ako ho stvoril Boh. Tréning, výživa a identita v Ježišovi — jedna cesta, prejdená spolu."
+    "description": "Katey Coaching.",
+    "ogDescription": "Katey Coaching."
   },
   "pages": {
     "about": {
@@ -63,6 +63,7 @@
   },
   "nav": {
     "about": "O mne",
+    "explore": "Objavovať",
     "mission": "Moje poslanie",
     "programs": "Programy",
     "recipes": "Recepty",
@@ -236,6 +237,10 @@
     }
   },
   "programs": {
+    "realTitle": "Personalizovaný online fitness koučing – 90 dní",
+    "viewProgram": "Pozrieť program",
+    "backToPrograms": "Späť na programy",
+    "price": "Cena",
     "eyebrow": "Programy",
     "title": "Tri časti. Jedna cesta. Ty rozhoduješ, koľko.",
     "intro": "Každý mesiac prijímam len málo ľudí, aby som tu mohla byť pre každého naplno.",
@@ -356,8 +361,8 @@
     "namePlaceholder": "Anna Nováková",
     "emailLabel": "E-mail",
     "emailPlaceholder": "anna@priklad.sk",
-    "messageLabel": "Niečo o tom, kde si a kam sa chceš dostať",
-    "messagePlaceholder": "Kde práve si, kam smeruješ — nemusí to byť vybrúsené.",
+    "messageLabel": "Správa",
+    "messagePlaceholder": "Tvoja správa",
     "prefillPrefix": "Záujem o: {selection}",
     "privacyNote": "Tvoju e-mailovú adresu použijem len na to, aby som ti osobne odpovedala.",
     "submit": "Odoslať správu",
@@ -365,7 +370,7 @@
     "genericError": "Niečo sa pokazilo. Skús to prosím znova.",
     "networkError": "Chyba siete. Skús to prosím o chvíľu znova.",
     "sentTitle": "Ďakujem — dorazilo to.",
-    "sentBody": "Každú správu čítam sama. Odpoveď do dvoch pracovných dní, väčšinou skôr. Zatiaľ — milosť a pokoj s tebou.",
+    "sentBody": "Tvoja správa bola odoslaná.",
     "sendAnother": "Poslať ďalšiu správu",
     "legalPrefix": "Právne:"
   },

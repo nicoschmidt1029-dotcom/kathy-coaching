@@ -137,7 +137,7 @@ export async function RecipeDetail({
         </div>
       </div>
 
-      <section className="mt-16 border-t border-foreground/10 pt-14 md:mt-24 md:pt-20">
+      {related.length > 0 && <section className="mt-16 border-t border-foreground/10 pt-14 md:mt-24 md:pt-20">
         <div className="container-page">
           <p className="eyebrow">{t("detail.relatedEyebrow")}</p>
           <h2 className="section-title mt-3">{t("detail.relatedTitle")}</h2>
@@ -153,7 +153,7 @@ export async function RecipeDetail({
             ))}
           </ul>
         </div>
-      </section>
+      </section>}
     </article>
   );
 }

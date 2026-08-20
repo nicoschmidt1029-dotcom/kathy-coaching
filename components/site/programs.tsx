@@ -1,348 +1,74 @@
 import Image from "next/image";
+import { ArrowRight, Check } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { Apple, ArrowRight, Check, Dumbbell, Heart } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
-import { cn } from "@/lib/utils";
-import { BUNDLES, type BlockId } from "@/lib/pricing";
-import { TEMP_PHOTOS } from "@/lib/temp-photos";
-import { ProgramsBuilder } from "./programs-builder";
-import { DisplayTitle } from "./display-title";
 import type { Locale } from "@/i18n/routing";
-import { getPublicProgramContent } from "@/lib/cms";
-
-// Simple lucide glyphs, not the commissioned scene drawings (kettlebell+towel,
-// plate+cutlery+orange, book+candle): those read fine full-size on the
-// Approach page, but cropped into a small square card here they clip
-// awkwardly and looked more like an unfinished AI sketch than a chosen
-// design. A single centred icon on a flat chip reads as intentional at any
-// size — same glyphs already used next to each thread label in Approach.
-const BLOCK_ICON: Record<BlockId, typeof Dumbbell> = {
-  training: Dumbbell,
-  nutrition: Apple,
-  spiritual: Heart,
-};
-
-type ProgramOverride = {
-  title?: Record<Locale, string>;
-  subtitle?: Record<Locale, string>;
-  description?: Record<Locale, string>;
-  duration?: Record<Locale, string>;
-  features?: Record<Locale, string[]>;
-  ctaLabel?: Record<Locale, string>;
-  ctaHref?: string;
-  price?: number;
-};
+import { getPublicPrograms } from "@/lib/cms";
 
 export async function Programs({ locale }: { locale: Locale }) {
-  const [t, p, approach, content] = await Promise.all([
+  const [programs, t] = await Promise.all([
+    getPublicPrograms(locale),
     getTranslations({ locale, namespace: "programs" }),
-    getTranslations({ locale, namespace: "pricing" }),
-    getTranslations({ locale, namespace: "approach" }),
-    getPublicProgramContent(),
   ]);
-  const { entries, states } = content;
-  const overrides = new Map(
-    entries.map((entry) => [entry.content_key, entry.data as ProgramOverride])
-  );
-  const programImages = new Map(entries.map((entry) => [entry.content_key, entry.image_path]));
-  const stateMap = new Map(states.map((state) => [state.content_key, state]));
-  const defaultKeys = new Set<string>(BUNDLES.map((bundle) => bundle.id));
-  const customEntries = entries.filter((entry) => !defaultKeys.has(entry.content_key));
 
   return (
     <section id="programme" className="section-pad section-pad-top-tight">
       <div className="container-page">
-        {/* Intro + commitment. Title now lives inside the grid's text
-            column (not above it) so it shares the same row-start as the
-            photo opposite it — the two columns begin at the same line
-            without a negative margin pulling the image up to compensate. */}
-        {/* 2026-08-19 mobile-refinement pass: gap-10 -> gap-6 on mobile
-            only (md:gap-16 untouched) — the photo sat too far down the
-            page on first load; text-block margins below tightened to
-            match so it arrives sooner without cramming anything. */}
-        <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-12 md:gap-16">
-          <div className="md:col-span-7">
-            {/* Display type sets its own width; boxed in a six-column well
-                it broke into five cramped lines. */}
-            <p className="eyebrow">{t("eyebrow")}</p>
-            <DisplayTitle className="mt-4 max-w-[15ch] md:mt-6">{t("title")}</DisplayTitle>
-            <p className="section-lede mt-5 max-w-none md:mt-8">{t("intro")}</p>
-            {/* Ties the three blocks back to the named method — see
-                approach.systemName. */}
-            <p className="mt-3 max-w-none text-[0.95rem] leading-relaxed text-foreground/78 md:mt-5">
-              {t("systemNote", { system: approach("systemName") })}
-            </p>
-          </div>
-
-          {/* Katey's own photo beside the intro. */}
-          {TEMP_PHOTOS.programsIntro && (
-            <div className="md:col-span-5">
-              {/* Was aspect-[4/3] mobile / md:aspect-[4/5] desktop, tuned for
-                  the previous portrait court-shade photo. The 2026-08-19
-                  replacement (kathy-14-programs-stretch.jpg) is a landscape
-                  wide stretch, ~4:3 (1439x1093) — forcing it into a 4:5
-                  portrait container at desktop would crop hard into her
-                  outstretched arms, the whole point of the shot. Unified to
-                  aspect-[4/3] at every breakpoint instead, which is close
-                  enough to the source's own ratio that object-cover barely
-                  crops it either way. */}
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+        <p className="eyebrow">{t("realEyebrow")}</p>
+        <div className="mt-8 space-y-16 md:mt-10">
+          {programs.map((program) => (
+            <article
+              key={program.slug}
+              className="grid items-start gap-8 border-t border-foreground/10 pt-8 md:grid-cols-12 md:gap-14 md:pt-10"
+            >
+              <Link
+                href={`/programme/${program.slug}`}
+                className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-[var(--sand)] md:col-span-5"
+              >
                 <Image
-                  src={TEMP_PHOTOS.programsIntro.url}
-                  alt={TEMP_PHOTOS.programsIntro.alt}
+                  src={program.image}
+                  alt={program.imageAlt}
                   fill
-                  sizes="(max-width: 768px) 100vw, 35vw"
-                  className="object-cover object-center"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
                 />
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Section A — ready-made bundles */}
-        <div className="mt-16 md:mt-20">
-          <div className="flex items-end justify-between gap-6 border-b border-foreground/[0.1] pb-5">
-            <div>
-              <p className="caption">{t("readyMade")}</p>
-              <h3 className="section-title-sm">{t("readyMadeTitle")}</h3>
-            </div>
-            <p className="hidden max-w-xs text-right text-[0.85rem] text-foreground/75 sm:block">
-              {t("readyMadeAside")}
-            </p>
-          </div>
-
-          <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
-            {BUNDLES.filter((bundle) => {
-              const state = stateMap.get(bundle.id);
-              return !state?.deleted && state?.status !== "draft";
-            }).map((bundle) => {
-              const override = overrides.get(bundle.id);
-              const includes = override?.features?.[locale]?.length
-                ? override.features[locale]
-                : [
-                ...bundle.blocks.map((id) => p(`blocks.${id}.name`)),
-                ...bundle.addons.map((id) => `+ ${p(`addons.${id}.name`)}`),
-              ];
-              return (
-                <li key={bundle.id} className="flex">
-                  <div
-                    className={cn(
-                      "card-pad flex w-full flex-col rounded-2xl transition-[transform,box-shadow] duration-300",
-                      bundle.recommended
-                        ? "bg-[var(--plum)] text-[var(--primary-foreground)] shadow-[0_30px_60px_-30px_rgba(60,40,52,0.5)]"
-                        : "bg-card ring-1 ring-foreground/10 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-28px_rgba(60,40,52,0.35)]"
-                    )}
+              </Link>
+              <div className="md:col-span-7">
+                <Link href={`/programme/${program.slug}`}>
+                  <h1 className="font-display text-[clamp(2rem,4vw,3.35rem)] leading-[1.05] text-[var(--plum)]">
+                    {program.title}
+                  </h1>
+                </Link>
+                <h2 className="mt-7 font-display text-xl text-foreground/90">
+                  {program.targetHeading}
+                </h2>
+                <ul className="mt-4 space-y-3">
+                  {program.targetAudience.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-foreground/72">
+                      <Check className="mt-1 size-4 shrink-0 text-[var(--clay)]" />
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5 font-display text-xl italic text-foreground/85">
+                  {program.transition}
+                </p>
+                <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-foreground/10 pt-6">
+                  <p className="font-display text-2xl text-[var(--plum)]">
+                    {program.price} {program.currency} / {program.duration}
+                  </p>
+                  <Link
+                    href={`/programme/${program.slug}`}
+                    className="group inline-flex items-center gap-2 text-sm font-medium text-[var(--plum)] underline-offset-4 hover:underline"
                   >
-                    {bundle.recommended && (
-                      <span className="mb-4 inline-flex w-fit items-center rounded-full bg-[var(--primary-foreground)]/15 px-2.5 py-0.5 font-mono text-[0.65rem] tracking-[0.16em] uppercase text-[var(--primary-foreground)]">
-                        {t("mostChosen")}
-                      </span>
-                    )}
-                    {/* Scope label above the name: tells you at a glance how
-                        much of the method a bundle covers, and ties the cards
-                        back to the three threads instead of reading as three
-                        unrelated products. */}
-                    <span
-                      className={cn(
-                        "caption",
-                        bundle.recommended
-                          ? "text-[var(--primary-foreground)]/60"
-                          : ""
-                      )}
-                    >
-                      {override?.subtitle?.[locale] || p(`bundles.${bundle.id}.scope`)}
-                    </span>
-                    <h4
-                      className={cn(
-                        "card-title mt-1.5 text-xl",
-                        bundle.recommended
-                          ? "text-[var(--primary-foreground)]"
-                          : ""
-                      )}
-                    >
-                      {override?.title?.[locale] || p(`bundles.${bundle.id}.name`)}
-                    </h4>
-                    <p
-                      className={cn(
-                        "mt-2 text-[0.92rem] leading-relaxed",
-                        bundle.recommended
-                          ? "text-[var(--primary-foreground)]/78"
-                          : "text-foreground/80"
-                      )}
-                    >
-                      {override?.description?.[locale] || p(`bundles.${bundle.id}.blurb`)}
-                    </p>
-
-                    {programImages.get(bundle.id) && <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-xl"><Image src={programImages.get(bundle.id)!} alt={override?.title?.[locale] || p(`bundles.${bundle.id}.name`)} fill sizes="(max-width: 768px) 100vw, 30vw" className="object-cover" /></div>}
-
-                    <ul
-                      className={cn(
-                        "mt-5 space-y-2.5 text-[0.9rem]",
-                        bundle.recommended
-                          ? "text-[var(--primary-foreground)]/85"
-                          : "text-foreground/85"
-                      )}
-                    >
-                      {includes.map((line) => (
-                        <li key={line} className="flex items-start gap-2.5">
-                          <span
-                            aria-hidden
-                            className={cn(
-                              "mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full",
-                              bundle.recommended
-                                ? "bg-[var(--primary-foreground)]"
-                                : "bg-[var(--clay)]"
-                            )}
-                          >
-                            <Check
-                              className={cn(
-                                "size-2.5",
-                                bundle.recommended
-                                  ? "text-[var(--plum)]"
-                                  : "text-[var(--primary-foreground)]"
-                              )}
-                              strokeWidth={3.5}
-                            />
-                          </span>
-                          <span>{line}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {bundle.hasMeta && (
-                      <div
-                        className={cn(
-                          "mt-6 space-y-1.5 text-[0.82rem] leading-relaxed",
-                          bundle.recommended
-                            ? "text-[var(--primary-foreground)]/65"
-                            : "text-foreground/72"
-                        )}
-                      >
-                        <p>
-                          <span
-                            className={cn(
-                              "font-medium",
-                              bundle.recommended
-                                ? "text-[var(--primary-foreground)]/85"
-                                : "text-foreground/88"
-                            )}
-                          >
-                            {t("bestFor")}
-                          </span>{" "}
-                          {p(`bundles.${bundle.id}.bestFor`)}
-                        </p>
-                        <p>{p(`bundles.${bundle.id}.format`)}</p>
-                      </div>
-                    )}
-
-                    {/* One glyph per block the bundle contains, so a card
-                        shows at a glance what is in it — same icon used next
-                        to each thread label on the Approach page, so the two
-                        pages read as one system. Covers the recommended card
-                        too, which is why it gets all three (training +
-                        nutrition + spiritual): "Der ganze Weg" is literally
-                        all three blocks. */}
-                    {bundle.blocks.length > 0 && (
-                      <div className="my-7 flex flex-1 items-center justify-center gap-4">
-                        {bundle.blocks.map((id) => {
-                          const Icon = BLOCK_ICON[id];
-                          return (
-                            <div
-                              key={id}
-                              className={cn(
-                                "flex aspect-square w-full max-w-[5rem] items-center justify-center rounded-xl",
-                                bundle.recommended
-                                  ? "bg-[var(--primary-foreground)]/12"
-                                  : "bg-[var(--sand)]"
-                              )}
-                            >
-                              <Icon
-                                aria-hidden
-                                className={cn(
-                                  "size-6",
-                                  bundle.recommended
-                                    ? "text-[var(--primary-foreground)]"
-                                    : "text-[var(--clay)]"
-                                )}
-                                strokeWidth={1.5}
-                              />
-                            </div>
-                          );
-                        })}
-                      </div>
-                    )}
-
-                    <div
-                      className={cn(
-                        "flex items-baseline gap-3 border-t pt-5",
-                        bundle.recommended
-                          ? "mt-auto border-[var(--primary-foreground)]/15"
-                          : "border-foreground/10"
-                      )}
-                    >
-                      <span
-                        className={cn(
-                          "font-display text-3xl font-normal",
-                          bundle.recommended
-                            ? "text-[var(--primary-foreground)]"
-                            : ""
-                        )}
-                      >
-                        €{override?.price ?? bundle.price}
-                      </span>
-                      <span
-                        className={cn(
-                          "caption",
-                          bundle.recommended
-                            ? "text-[var(--primary-foreground)]/55"
-                            : ""
-                        )}
-                      >
-                        {override?.duration?.[locale] || p("duration")}
-                      </span>
-                    </div>
-
-                    <Button
-                      asChild
-                      size="lg"
-                      className={cn(
-                        "group/button mt-6 h-12 w-full text-[0.95rem]",
-                        bundle.recommended
-                          ? "bg-[var(--primary-foreground)] text-[var(--plum)] hover:bg-[var(--primary-foreground)]/90"
-                          : "bg-[var(--plum)] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"
-                      )}
-                    >
-                      <Link href={override?.ctaHref || `/kontakt?bundle=${bundle.id}`}>
-                        {override?.ctaLabel?.[locale] || t("chooseBundle")}
-                        <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
-                      </Link>
-                    </Button>
-                  </div>
-                </li>
-              );
-            })}
-            {customEntries.map((entry) => {
-              const program = entry.data as ProgramOverride;
-              const features = program.features?.[locale] ?? [];
-              return <li key={entry.content_key} className="flex"><div className="card-pad flex w-full flex-col rounded-2xl bg-card ring-1 ring-foreground/10 transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-28px_rgba(60,40,52,0.35)]"><span className="caption">{program.subtitle?.[locale]}</span><h4 className="card-title mt-1.5 text-xl">{program.title?.[locale]}</h4><p className="mt-2 text-[0.92rem] leading-relaxed text-foreground/80">{program.description?.[locale]}</p>{entry.image_path && <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-xl"><Image src={entry.image_path} alt={program.title?.[locale] || entry.content_key} fill sizes="(max-width: 768px) 100vw, 30vw" className="object-cover" /></div>}<ul className="mt-5 space-y-2.5 text-[0.9rem] text-foreground/85">{features.map((line) => <li key={line} className="flex items-start gap-2.5"><span aria-hidden className="mt-0.5 flex size-4 shrink-0 items-center justify-center rounded-full bg-[var(--clay)]"><Check className="size-2.5 text-[var(--primary-foreground)]" strokeWidth={3.5} /></span><span>{line}</span></li>)}</ul><div className="mt-auto flex items-baseline gap-3 border-t border-foreground/10 pt-5"><span className="font-display text-3xl font-normal">€{program.price ?? 0}</span><span className="caption">{program.duration?.[locale]}</span></div><Button asChild size="lg" className="group/button mt-6 h-12 w-full bg-[var(--plum)] text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel?.[locale] || t("chooseBundle")}<ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" /></Link></Button></div></li>;
-            })}
-          </ul>
-        </div>
-
-        {/* Section B — build your own. Programs has its own page now (was a
-            one-pager section), so a calculator here is a destination, not a
-            wall mid-scroll. */}
-        <div className="mt-20 md:mt-28">
-          <div className="max-w-3xl">
-            <p className="caption">{t("buildOwn")}</p>
-            <h3 className="section-title-sm">{t("buildOwnTitle")}</h3>
-            <p className="section-lede max-w-none">{t("buildOwnIntro")}</p>
-          </div>
-
-          <div className="mt-10 md:mt-14">
-            <ProgramsBuilder />
-          </div>
+                    {t("viewProgram")}
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

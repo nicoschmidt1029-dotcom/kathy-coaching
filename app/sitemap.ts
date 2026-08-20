@@ -3,7 +3,7 @@ import { SITE_URL as BASE_URL } from "@/lib/site-url";
 import { routing } from "@/i18n/routing";
 import { LEGAL_REVIEWED } from "@/components/legal";
 import { TESTIMONIALS_ARE_REAL } from "@/lib/content-status";
-import { getPublicRecipes } from "@/lib/cms";
+import { getPublicPrograms, getPublicRecipes } from "@/lib/cms";
 
 /** Path → how often it changes / how important it is. */
 const ROUTES = [
@@ -44,7 +44,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
-  const recipes = await getPublicRecipes("en");
+  const [recipes, programs] = await Promise.all([
+    getPublicRecipes("en"),
+    getPublicPrograms("en"),
+  ]);
   const recipePages = recipes.flatMap((recipe) =>
     routing.locales.map((locale) => {
       const path = `/recipes/${recipe.slug}`;
@@ -62,5 +65,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
-  return [...staticPages, ...recipePages];
+  const programPages = programs.flatMap((program) =>
+    routing.locales.map((locale) => {
+      const path = `/programme/${program.slug}`;
+      return {
+        url: `${BASE_URL}/${locale}${path}`,
+        lastModified,
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+        alternates: {
+          languages: Object.fromEntries(
+            routing.locales.map((l) => [l, `${BASE_URL}/${l}${path}`])
+          ),
+        },
+      };
+    })
+  );
+
+  return [...staticPages, ...programPages, ...recipePages];
 }
