@@ -8,7 +8,17 @@ const locales = ["en", "de", "sk"] as const;
 type WebsiteData = { eyebrow?: Record<string, string>; headline?: Record<string, string>; body?: Record<string, string>; ctaLabel?: Record<string, string>; ctaHref?: string; submitLabel?: Record<string, string> };
 
 export function WebsiteContentForm({ contentKey, title, description, entry, defaults, imageHint, showCta = false, showSubmitLabel = false }: { contentKey: string; title: string; description: string; entry?: CmsEntry; defaults: WebsiteData; imageHint?: string; showCta?: boolean; showSubmitLabel?: boolean }) {
-  const data = { ...defaults, ...((entry?.data as WebsiteData | undefined) ?? {}) };
+  const stored = (entry?.data as WebsiteData | undefined) ?? {};
+  const mergeText = (fallback?: Record<string, string>, saved?: Record<string, string>) => Object.fromEntries(locales.map((locale) => [locale, saved?.[locale]?.trim() ? saved[locale] : fallback?.[locale] ?? ""]));
+  const data = {
+    ...defaults,
+    ...stored,
+    eyebrow: mergeText(defaults.eyebrow, stored.eyebrow),
+    headline: mergeText(defaults.headline, stored.headline),
+    body: mergeText(defaults.body, stored.body),
+    ctaLabel: mergeText(defaults.ctaLabel, stored.ctaLabel),
+    submitLabel: mergeText(defaults.submitLabel, stored.submitLabel),
+  };
   return (
     <details className={panelClass} open>
       <summary className="cursor-pointer font-display text-2xl text-[var(--plum)]">{title}</summary>
