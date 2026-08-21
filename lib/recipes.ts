@@ -231,7 +231,7 @@ export const RECIPES: readonly Recipe[] = [
       "Vanilkové overnight oats s bobuľovým ovocím"
     ),
     category: "breakfast",
-    image: "/images/recipes/berry-overnight-oats.webp",
+    image: "/images/recipes/berry-overnight-oats-natural.webp",
     imageAlt: text(
       "Creamy berry vanilla overnight oats with almonds",
       "Cremige Vanille Overnight Oats mit Beeren und Mandeln",
@@ -327,7 +327,7 @@ export const RECIPES: readonly Recipe[] = [
       "Krémový citrónový losos so zeleninou"
     ),
     category: "dinner",
-    image: "/images/recipes/lemon-salmon.webp",
+    image: "/images/recipes/lemon-salmon-natural.webp",
     imageAlt: text(
       "Lemon salmon with potatoes, green beans and spinach",
       "Zitronenlachs mit Kartoffeln, grünen Bohnen und Spinat",
@@ -1103,7 +1103,11 @@ export const RECIPES: readonly Recipe[] = [
 ];
 
 /** Only recipes Katarina has explicitly reviewed are part of the public journal. */
-export const PUBLIC_RECIPE_SLUGS = ["mediterranean-lemon-chicken-bowl"] as const;
+export const PUBLIC_RECIPE_SLUGS = [
+  "berry-vanilla-overnight-oats",
+  "mediterranean-lemon-chicken-bowl",
+  "creamy-lemon-salmon-greens",
+] as const;
 
 function localizeRecipe(recipe: Recipe, locale: Locale): LocalizedRecipe {
   return {

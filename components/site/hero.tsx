@@ -157,7 +157,7 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
         )}
 
         <div className="container-page flex justify-end text-[var(--primary-foreground)]">
-          <div className="w-full max-w-[46rem] lg:mr-[11vw] [&_p]:text-[var(--primary-foreground)]/80">
+          <div className="w-full max-w-[40rem] lg:mr-[3vw] [&_p]:text-[var(--primary-foreground)]/80">
             <HeroCopy t={t} content={content} />
           </div>
         </div>

@@ -163,7 +163,7 @@
     "storyEducation": "Ich hatte die Möglichkeit, an der <em>SNF Academy</em> zu studieren, wo ich Personal Trainerin und Ernährungsberaterin studiert habe. Und danach wurde ich an der <em>Awakening School of Ministry</em> aufgenommen, wo ich mein Studium erfolgreich abgeschlossen habe.",
     "storyMission": "Mein Traum ist es, Menschen zu helfen, in ihrem Leben voranzukommen. Mit Bewegung, richtiger Ernährung und gesundem Denken kann jeder eine bessere Lebensqualität haben. Auch wenn wir in diesen Lebensbereichen bisher nicht unser bestes Leben gelebt haben, ist nichts verloren, denn unser Körper ist dafür gemacht, sich zu erholen, <em>wenn wir ihm geben, was er braucht.</em>",
     "portraitLabel": "Porträt von Katey",
-    "portraitCaption": "Katey · Personal Trainerin · Ernährungsberaterin",
+    "portraitCaption": "Personal Trainerin · Ernährungsberaterin",
     "_storyOriginal": "Nach meinem Studium an der SNF Academy, wo ich Personal Trainer und Ernährungsberatung studiert habe, und meinem Abschluss an der Awakening School of Ministry, helfe ich Menschen, in ihrem Leben voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung und der richtigen Bewegung. <em>In jedem Alter.</em>",
     "overlapTitle": "Über Katey"
   },
@@ -194,6 +194,7 @@
     "p1": "Es ist nie zu spät für Veränderung und Verbesserung. Es liegt ganz bei dir. Jeder Tag ist eine neue Chance, ein erfülltes Leben zu beginnen, in dem du dich am besten fühlst. Das Wichtigste ist, sich zu entscheiden, nicht aufzugeben, und anzufangen.",
     "p2": "Willst du abnehmen? Oder mehr Muskeln aufbauen? Oder gesünder essen und leben, weißt aber nicht genau wie? Oder hat dich das Leben geistlich und mental erschöpft?",
     "p3": "Lass es dich wissen: Es ist nie zu spät.",
+    "body": "Es ist nie zu spät für Veränderung und Verbesserung. Es liegt ganz bei dir. Jeder Tag ist eine neue Chance, ein erfülltes Leben zu beginnen, in dem du dich am besten fühlst. Das Wichtigste ist, sich zu entscheiden, nicht aufzugeben, und anzufangen.\n\nWillst du abnehmen? Oder mehr Muskeln aufbauen? Oder gesünder essen und leben, weißt aber nicht genau wie? Oder hat dich das Leben geistlich und mental erschöpft?",
     "p4": "Und ich werde alles tun, um dir zu helfen."
   },
   "sampleNotice": {

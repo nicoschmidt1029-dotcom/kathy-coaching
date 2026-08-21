@@ -135,13 +135,7 @@ export function About({ content }: { content?: EditableContent }) {
                   key={key}
                   className="text-pretty leading-[1.65] text-foreground/72 sm:text-lg sm:leading-[1.7]"
                 >
-                  {t.rich(key, {
-                    em: (chunks) => (
-                      <em className="not-italic font-display italic">
-                        {chunks}
-                      </em>
-                    ),
-                  })}
+                  {t.rich(key, { em: (chunks) => <>{chunks}</> })}
                 </p>
               ))}
             </div>

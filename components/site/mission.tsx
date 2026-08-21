@@ -31,6 +31,9 @@ type EditableContent = { eyebrow?: string; headline?: string; body?: string; ima
 
 export function Mission({ content }: { content?: EditableContent }) {
   const t = useTranslations("mission");
+  const suppliedParagraphs = content?.body?.split(/\n\s*\n/).filter(Boolean) ?? [];
+  const statement = suppliedParagraphs[0] || t("p3");
+  const bodyParagraphs = suppliedParagraphs.length > 1 ? suppliedParagraphs.slice(1) : t("body").split(/\n\s*\n/).filter(Boolean);
   const photo = content?.image
     ? { url: content.image, alt: t("eyebrow") }
     : TEMP_PHOTOS.homeBand;
@@ -55,7 +58,7 @@ export function Mission({ content }: { content?: EditableContent }) {
 
           {/* mt-10 -> mt-5 on mobile (md:mt-10 restores desktop). */}
           <p className="mt-5 max-w-md font-display text-[1.35rem] leading-snug italic text-foreground/80 sm:text-[1.6rem] md:mt-10">
-            {content?.body || t("p3")}
+            {statement}
           </p>
         </div>
 
@@ -72,6 +75,15 @@ export function Mission({ content }: { content?: EditableContent }) {
             </div>
           </div>
         )}
+      </div>
+      <div className="container-page mt-12 md:mt-16">
+        <div className="max-w-2xl space-y-8 md:ml-[8.333%]">
+          {bodyParagraphs.map((paragraph) => (
+            <p key={paragraph} className="whitespace-pre-line text-pretty text-lg leading-[1.8] text-foreground/76 md:text-xl">
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </div>
     </section>
   );
