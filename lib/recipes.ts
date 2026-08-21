@@ -90,7 +90,7 @@ export const RECIPES: readonly Recipe[] = [
       "Stredomorská miska s citrónovým kuraťom"
     ),
     category: "lunch",
-    image: "/images/recipes/mediterranean-chicken-bowl.webp",
+    image: "/images/recipes/mediterranean-chicken-bowl-natural.webp",
     imageAlt: text(
       "Mediterranean lemon chicken bowl with quinoa and roasted vegetables",
       "Mediterrane Bowl mit Zitronenhähnchen, Quinoa und Ofengemüse",

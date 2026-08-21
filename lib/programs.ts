@@ -35,7 +35,7 @@ export const PROGRAMS: readonly Program[] = [
     currency: "CHF",
     content: {
       en: {
-        title: "Personalised Online Fitness Coaching – 90 Days",
+        title: "Personalised Online Fitness Coaching – 3 Months",
         targetHeading: "This program is for:",
         targetAudience: [
           "You don't have the time or interest to go to the gym.",
@@ -54,10 +54,10 @@ export const PROGRAMS: readonly Program[] = [
           "Weekly check-ins to track your progress, including adjustment or changes to your training (approx. 45 min.)",
           "Possibility of written communication via WhatsApp in case of questions during the duration of the program.",
         ],
-        duration: "90 days",
+        duration: "3 months",
       },
       sk: {
-        title: "Personalizovaný online fitness koučing – 90 dní",
+        title: "Personalizovaný online fitness koučing – 3 mesiace",
         targetHeading: "Tento program je pre:",
         targetAudience: [
           "Nemáš čas alebo záujem chodiť do fitka.",
@@ -76,7 +76,7 @@ export const PROGRAMS: readonly Program[] = [
           "Týždenné kontroly na sledovanie vášho pokroku – úprava alebo zmena tréningu (cca 45 min.)",
           "Možnosť písomnej komunikácie cez WhatsApp v prípade otázok počas trvania programu.",
         ],
-        duration: "90 dní",
+        duration: "3 mesiace",
       },
     },
   },

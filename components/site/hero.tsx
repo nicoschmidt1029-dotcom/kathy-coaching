@@ -97,7 +97,7 @@ function HeroCopy({ t, content }: { t: ReturnType<typeof useTranslations<"hero">
         <Button
           asChild
           size="lg"
-          className="group/button h-14 w-full bg-[var(--shoe-accent)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--shoe-accent)]/90 sm:h-12 sm:w-auto"
+          className="group/button h-14 w-full bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90 sm:h-12 sm:w-auto"
         >
           <Link href={content?.ctaHref || "/programme"}>
             {content?.ctaLabel || t("cta")}

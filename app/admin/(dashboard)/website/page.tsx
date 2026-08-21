@@ -18,19 +18,13 @@ export default async function WebsiteContentPage({ searchParams }: { searchParam
     <WebsiteContentForm contentKey="about" title="About Katey — main section" description="Update the page heading, biography and main portrait." entry={entry("about")} defaults={{ eyebrow: localized((m) => m.about.eyebrow), headline: localized((m) => m.about.overlapTitle), body: { en: "", de: "", sk: "" } }} imageHint="Recommended: portrait image, at least 1200 px high." />
     <EditorialSectionForm contentKey="about-details" title="About Katey — personal opening" description="Change the short personal statement beside the main About portrait." entry={entry("about-details")} preview="/en/katey" defaults={{ calling: localized((m) => m.about.calling.replace(/<\/?em>/g, "")) }} />
     <WebsiteContentForm contentKey="mission" title="My Mission" description="Update every visible Mission word and its photograph without changing the approved layout." entry={entry("mission")} defaults={{ eyebrow: localized((m) => m.mission.eyebrow), headline: localized((m) => m.mission.title), body: localized((m) => m.mission.p3) }} imageHint="Recommended: portrait image, at least 1200 px high." />
-    <EditorialSectionForm contentKey="recipes-page" title="Recipes page introduction" description="Edit the public Recipes headings, introductory paragraphs, featured label, quote and coaching section. Individual recipes are managed under Recipes." entry={entry("recipes-page")} preview="/en/recipes" defaults={{
+    <EditorialSectionForm contentKey="recipes-page" title="Recipes page introduction" description="Edit the public Recipes headings, introductory paragraphs and featured label. Individual recipes are managed under Recipes." entry={entry("recipes-page")} preview="/en/recipes" defaults={{
       eyebrow: localized((m) => m.recipes.eyebrow),
       title: localized((m) => m.recipes.title),
       intro: localized((m) => m.recipes.intro),
-      introSecondary: localized((m) => m.recipes.introSecondary),
       featured: localized((m) => m.recipes.featured),
       exploreEyebrow: localized((m) => m.recipes.exploreEyebrow),
       exploreTitle: localized((m) => m.recipes.exploreTitle),
-      quote: localized((m) => m.recipes.quote),
-      wellnessEyebrow: localized((m) => m.recipes.wellness.eyebrow),
-      wellnessTitle: localized((m) => m.recipes.wellness.title),
-      wellnessBody: localized((m) => m.recipes.wellness.body),
-      wellnessCta: localized((m) => m.recipes.wellness.cta),
     }} />
     <EditorialSectionForm contentKey="footer" title="Footer statement" description="Edit Katarina's short personal sentence shown beside the footer logo. Legal links and copyright information stay protected." entry={entry("footer")} preview="/en" defaults={{ claim: localized((m) => m.footer.claim) }} />
     <WebsiteContentForm contentKey="contact" title="Contact page" description="Change every optional Contact-page word and the main photograph. The secure Name, Email and Message form stays protected." entry={entry("contact")} defaults={{ eyebrow: localized((m) => m.contact.eyebrow), headline: localized((m) => m.contact.title), body: { en: "", de: "", sk: "" }, submitLabel: localized((m) => m.contact.submit) }} showSubmitLabel imageHint="Recommended: portrait image, at least 1200 px high." />

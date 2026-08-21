@@ -35,7 +35,8 @@ export function RecipesGrid({
   const t = useTranslations("recipes");
   const [selected, setSelected] = useState<Category>("all");
   const [query, setQuery] = useState("");
-  const categories: Category[] = ["all", ...RECIPE_CATEGORIES];
+  const available = new Set(recipes.map((recipe) => recipe.category));
+  const categories: Category[] = ["all", ...RECIPE_CATEGORIES.filter((category) => available.has(category))];
 
   const filtered = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase();
