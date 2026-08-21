@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/site/hero";
-import { getPublicWebsiteEntry } from "@/lib/cms";
+import { DraftPreviewBanner } from "@/components/admin/draft-preview-banner";
+import { getAdminPreviewEntry, getPublicWebsiteEntry } from "@/lib/cms";
 
 /**
  * Home — the full-screen video hero, nothing else.
@@ -14,13 +15,17 @@ import { getPublicWebsiteEntry } from "@/lib/cms";
  */
 export default async function Home({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ adminPreview?: string }>;
 }) {
   const { locale } = await params;
+  const { adminPreview } = await searchParams;
   setRequestLocale(locale);
 
-  const entry = await getPublicWebsiteEntry("homepage");
+  const isPreview = adminPreview === "homepage";
+  const entry = isPreview ? await getAdminPreviewEntry("website", "homepage") : await getPublicWebsiteEntry("homepage");
   const data = entry?.data as { headline?: Record<string, string>; body?: Record<string, string>; ctaLabel?: Record<string, string>; ctaHref?: string } | undefined;
-  return <Hero content={entry ? { headline: data?.headline?.[locale], body: data?.body?.[locale], ctaLabel: data?.ctaLabel?.[locale], ctaHref: data?.ctaHref } : undefined} />;
+  return <>{isPreview && <DraftPreviewBanner backHref="/admin/homepage" />}<Hero content={entry ? { headline: data?.headline?.[locale], body: data?.body?.[locale], ctaLabel: data?.ctaLabel?.[locale], ctaHref: data?.ctaHref } : undefined} /></>;
 }

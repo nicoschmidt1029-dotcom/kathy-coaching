@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, FileText, Images, LayoutDashboard, LogOut, Sparkles, CircleHelp } from "lucide-react";
+import { BookOpen, Contact, Flag, Home, Images, LayoutDashboard, LogOut, Sparkles, CircleHelp, UserRound, PanelBottom } from "lucide-react";
 import { logout } from "@/app/admin/actions";
 import { AdminSessionRefresh } from "@/components/admin/session-refresh";
 import { AdminTutorials } from "@/components/admin/tutorials";
@@ -7,9 +7,13 @@ import { AdminFeedback } from "@/components/admin/admin-feedback";
 
 const links = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/admin/homepage", label: "Homepage", icon: Home },
+  { href: "/admin/about", label: "About Katey", icon: UserRound },
+  { href: "/admin/mission", label: "Mission", icon: Flag },
   { href: "/admin/programs", label: "Programs", icon: Sparkles },
   { href: "/admin/recipes", label: "Recipes", icon: BookOpen },
-  { href: "/admin/website", label: "Website Content", icon: FileText },
+  { href: "/admin/contact", label: "Contact", icon: Contact },
+  { href: "/admin/footer", label: "Footer", icon: PanelBottom },
   { href: "/admin/media", label: "Media", icon: Images },
   { href: "/admin/tutorials", label: "Tutorials", icon: CircleHelp },
 ];

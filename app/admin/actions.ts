@@ -11,6 +11,7 @@ import { SITE_URL } from "@/lib/site-url";
 import { routing } from "@/i18n/routing";
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { EDITORIAL_SECTION_FIELDS, type EditorialSectionKey } from "@/lib/admin-section-fields";
+import { saveAdminPreview } from "@/lib/admin-preview";
 
 const value = (form: FormData, name: string) =>
   String(form.get(name) ?? "").trim();
@@ -166,6 +167,7 @@ export async function saveRecipe(formData: FormData) {
     sk: lines(formData, `${name}_sk`),
   });
 
+  const saveMode = value(formData, "status");
   const data = {
     slug,
     title: localized("title"),
@@ -188,12 +190,17 @@ export async function saveRecipe(formData: FormData) {
   if (!data.image) throw new Error("A recipe image is required.");
   assertContentSize(data);
 
+  if (saveMode === "preview") {
+    await saveAdminPreview({ content_type: "recipe", content_key: slug, status: "draft", sort_order: Number(value(formData, "sort_order")) || 0, image_path: imageValue(formData), data });
+    redirect(`/en/recipes/${slug}?adminPreview=recipe`);
+  }
+
   const supabase = await createClient();
   const { error } = await supabase.from("cms_entries").upsert(
     {
       content_type: "recipe",
       content_key: slug,
-      status: value(formData, "status") === "published" ? "published" : "draft",
+      status: saveMode === "published" ? "published" : "draft",
       sort_order: Number(value(formData, "sort_order")) || 0,
       image_path: imageValue(formData),
       data,
@@ -222,6 +229,7 @@ export async function saveProgram(formData: FormData) {
   });
   const programCtaHref = value(formData, "cta_href") || "/kontakt";
   if (!programCtaHref.startsWith("/") && !programCtaHref.startsWith("https://") && !programCtaHref.startsWith("mailto:")) throw new Error("Please use a website path, secure web link or email link for the button destination.");
+  const saveMode = value(formData, "status");
   const data = {
     title: localized("title"),
     targetHeading: localized("target_heading"),
@@ -239,12 +247,16 @@ export async function saveProgram(formData: FormData) {
   const programImage = imageValue(formData);
   if (!programImage && !PROGRAMS.some((program) => program.slug === key)) throw new Error("A program image is required.");
   assertContentSize(data);
+  if (saveMode === "preview") {
+    await saveAdminPreview({ content_type: "program", content_key: key, status: "draft", sort_order: Number(value(formData, "sort_order")) || 0, image_path: programImage, data });
+    redirect(`/en/programme/${key}?adminPreview=program`);
+  }
   const supabase = await createClient();
   const { error } = await supabase.from("cms_entries").upsert(
     {
       content_type: "program",
       content_key: key,
-      status: value(formData, "status") === "published" ? "published" : "draft",
+      status: saveMode === "published" ? "published" : "draft",
       sort_order: Number(value(formData, "sort_order")) || 0,
       image_path: programImage,
       data,
@@ -268,14 +280,20 @@ export async function saveWebsiteContent(formData: FormData) {
   });
   const ctaHref = value(formData, "cta_href");
   if (ctaHref && !ctaHref.startsWith("/") && !ctaHref.startsWith("https://") && !ctaHref.startsWith("mailto:")) throw new Error("Please use a website path, secure web link or email link for the button destination.");
+  const saveMode = value(formData, "status");
   const data = { eyebrow: localized("eyebrow"), headline: localized("headline"), body: localized("body"), ctaLabel: localized("cta_label"), submitLabel: localized("submit_label"), ctaHref: ctaHref || undefined };
   assertContentSize(data);
+  if (saveMode === "preview") {
+    await saveAdminPreview({ content_type: "website", content_key: key, status: "draft", sort_order: 0, image_path: imageValue(formData), data });
+    const path = key === "homepage" ? "/en" : key === "about" ? "/en/katey" : key === "mission" ? "/en/mission" : "/en/kontakt";
+    redirect(`${path}?adminPreview=${key}`);
+  }
   const supabase = await createClient();
   const { error } = await supabase.from("cms_entries").upsert(
     {
       content_type: "website",
       content_key: key,
-      status: value(formData, "status") === "published" ? "published" : "draft",
+      status: saveMode === "published" ? "published" : "draft",
       image_path: imageValue(formData),
       data,
       deleted_at: null,
@@ -284,7 +302,8 @@ export async function saveWebsiteContent(formData: FormData) {
   );
   if (error) throw new Error(error.message);
   revalidatePublicContent();
-  redirect("/admin/website?saved=1");
+  const adminPath = key === "homepage" ? "homepage" : key === "about" ? "about" : key;
+  redirect(`/admin/${adminPath}?saved=1`);
 }
 
 export async function saveEditorialSection(formData: FormData) {
@@ -292,19 +311,26 @@ export async function saveEditorialSection(formData: FormData) {
   const key = value(formData, "content_key") as EditorialSectionKey;
   const fields = EDITORIAL_SECTION_FIELDS[key];
   if (!fields) throw new Error("Invalid website content section.");
+  const saveMode = value(formData, "status");
   const data = Object.fromEntries(fields.map((field) => [field.key, Object.fromEntries(routing.locales.map((locale) => [locale, value(formData, `${field.key}_${locale}`)]))]));
   assertContentSize(data);
+  if (saveMode === "preview") {
+    await saveAdminPreview({ content_type: "website", content_key: key, status: "draft", sort_order: 0, image_path: null, data });
+    const path = key === "about-details" ? "/en/katey" : key === "recipes-page" ? "/en/recipes" : "/en";
+    redirect(`${path}?adminPreview=${key}`);
+  }
   const supabase = await createClient();
   const { error } = await supabase.from("cms_entries").upsert({
     content_type: "website",
     content_key: key,
-    status: value(formData, "status") === "published" ? "published" : "draft",
+    status: saveMode === "published" ? "published" : "draft",
     data,
     deleted_at: null,
   }, { onConflict: "content_type,content_key" });
   if (error) throw new Error(error.message);
   revalidatePublicContent();
-  redirect("/admin/website?saved=1");
+  const adminPath = key === "about-details" ? "about" : key === "recipes-page" ? "recipes/page-content" : "footer";
+  redirect(`/admin/${adminPath}?saved=1`);
 }
 
 export async function saveFaqContent(formData: FormData) {

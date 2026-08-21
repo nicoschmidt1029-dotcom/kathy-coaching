@@ -14,6 +14,8 @@ import {
   type LocalizedProgram,
 } from "@/lib/programs";
 import { createClient } from "@/lib/supabase/server";
+import { requireAdmin } from "@/lib/admin-auth";
+import { readAdminPreview } from "@/lib/admin-preview";
 
 export type CmsStatus = "draft" | "published";
 export type CmsContentType = "program" | "recipe" | "website";
@@ -243,6 +245,26 @@ export async function getPublicWebsiteEntry(contentKey: string) {
   } catch {
     return null;
   }
+}
+
+export async function getAdminPreviewEntry(contentType: CmsContentType, contentKey: string) {
+  await requireAdmin();
+  const preview = await readAdminPreview(contentType, contentKey);
+  if (preview) return { ...preview, id: "preview", deleted_at: null, created_at: new Date().toISOString(), updated_at: new Date().toISOString() } as CmsEntry;
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("cms_entries").select("*").eq("content_type", contentType).eq("content_key", contentKey).is("deleted_at", null).maybeSingle();
+  if (error) throw new Error("Unable to load preview content.");
+  return data as CmsEntry | null;
+}
+
+export async function getAdminPreviewProgram(contentKey: string, locale: Locale) {
+  const entry = await getAdminPreviewEntry("program", contentKey);
+  return entry ? localizeCmsProgram(entry, locale) : null;
+}
+
+export async function getAdminPreviewRecipe(contentKey: string, locale: Locale) {
+  const entry = await getAdminPreviewEntry("recipe", contentKey);
+  return entry ? localizeCmsRecipe(entry, locale) : null;
 }
 
 export function staticRecipeForAdmin(slug: string) {

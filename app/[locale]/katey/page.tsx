@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { alternatesFor } from "@/i18n/metadata";
 import { About } from "@/components/site/about";
-import { getPublicWebsiteEntry } from "@/lib/cms";
+import { DraftPreviewBanner } from "@/components/admin/draft-preview-banner";
+import { getAdminPreviewEntry, getPublicWebsiteEntry } from "@/lib/cms";
 
 /**
  * Katey — her bio, the Three Threads approach, and how a program runs
@@ -30,15 +31,23 @@ export async function generateMetadata({
 
 export default async function KateyPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ adminPreview?: string }>;
 }) {
   const { locale } = await params;
+  const { adminPreview } = await searchParams;
   setRequestLocale(locale);
-  const [entry, detailsEntry] = await Promise.all([getPublicWebsiteEntry("about"), getPublicWebsiteEntry("about-details")]);
+  const previewMain = adminPreview === "about";
+  const previewDetails = adminPreview === "about-details";
+  const [entry, detailsEntry] = await Promise.all([
+    previewMain ? getAdminPreviewEntry("website", "about") : getPublicWebsiteEntry("about"),
+    previewDetails ? getAdminPreviewEntry("website", "about-details") : getPublicWebsiteEntry("about-details"),
+  ]);
   const data = entry?.data as { eyebrow?: Record<string, string>; headline?: Record<string, string>; body?: Record<string, string> } | undefined;
   const details = detailsEntry?.data as { calling?: Record<string, string> } | undefined;
   const content = entry || detailsEntry ? { eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: data?.body?.[locale], calling: details?.calling?.[locale], image: entry?.image_path } : undefined;
 
-  return <About content={content} />;
+  return <>{(previewMain || previewDetails) && <DraftPreviewBanner backHref="/admin/about" />}<About content={content} /></>;
 }

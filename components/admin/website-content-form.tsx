@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { saveWebsiteContent } from "@/app/admin/actions";
 import { Field, LanguageEditingNote, LocaleFields, panelClass, TextArea } from "@/components/admin/fields";
 import { GuardedForm, SaveButton } from "@/components/admin/form-guard";
@@ -10,8 +9,6 @@ type WebsiteData = { eyebrow?: Record<string, string>; headline?: Record<string,
 
 export function WebsiteContentForm({ contentKey, title, description, entry, defaults, imageHint, showCta = false, showSubmitLabel = false }: { contentKey: string; title: string; description: string; entry?: CmsEntry; defaults: WebsiteData; imageHint?: string; showCta?: boolean; showSubmitLabel?: boolean }) {
   const data = { ...defaults, ...((entry?.data as WebsiteData | undefined) ?? {}) };
-  const preview = contentKey === "homepage" ? "/en" : contentKey === "about" ? "/en/katey" : contentKey === "mission" ? "/en/mission" : "/en/kontakt";
-
   return (
     <details className={panelClass} open>
       <summary className="cursor-pointer font-display text-2xl text-[var(--plum)]">{title}</summary>
@@ -32,8 +29,8 @@ export function WebsiteContentForm({ contentKey, title, description, entry, defa
         {showCta && <Field label="Button destination" name="cta_href" defaultValue={data.ctaHref ?? "/programme"} />}
         <div className="flex flex-wrap items-center gap-3">
           <SaveButton value="draft" variant="secondary">Save draft</SaveButton>
+          <SaveButton value="preview" variant="secondary">Preview changes</SaveButton>
           <SaveButton value="published">Save & publish</SaveButton>
-          <Link href={preview} target="_blank" className="inline-flex min-h-11 items-center rounded-xl px-4 text-sm text-[var(--plum)] underline underline-offset-4">Preview page</Link>
         </div>
       </GuardedForm>
     </details>
