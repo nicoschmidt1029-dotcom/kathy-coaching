@@ -1,8 +1,7 @@
 "use client";
 
-import { Search, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import {
   RECIPE_CATEGORIES,
   type LocalizedRecipe,
@@ -17,9 +16,6 @@ type Props = {
   recipes: LocalizedRecipe[];
   labels: Record<Category, string>;
   viewRecipe: string;
-  searchLabel: string;
-  searchPlaceholder: string;
-  clearSearch: string;
   empty: string;
 };
 
@@ -27,71 +23,18 @@ export function RecipesGrid({
   recipes,
   labels,
   viewRecipe,
-  searchLabel,
-  searchPlaceholder,
-  clearSearch,
   empty,
 }: Props) {
   const t = useTranslations("recipes");
   const [selected, setSelected] = useState<Category>("all");
-  const [query, setQuery] = useState("");
   const available = new Set(recipes.map((recipe) => recipe.category));
   const categories: Category[] = ["all", ...RECIPE_CATEGORIES.filter((category) => available.has(category))];
 
-  const filtered = useMemo(() => {
-    const normalizedQuery = query.trim().toLocaleLowerCase();
-
-    return recipes.filter((recipe) => {
-      const categoryMatches =
-        selected === "all" || recipe.category === selected;
-      if (!categoryMatches) return false;
-      if (!normalizedQuery) return true;
-
-      const searchable = [
-        recipe.title,
-        recipe.shortDescription,
-        labels[recipe.category],
-        ...recipe.tags,
-        ...recipe.ingredientGroups.flatMap((group) => group.items),
-      ]
-        .join(" ")
-        .toLocaleLowerCase();
-
-      return searchable.includes(normalizedQuery);
-    });
-  }, [labels, query, recipes, selected]);
+  const filtered = recipes.filter((recipe) => selected === "all" || recipe.category === selected);
 
   return (
     <div className="mt-7">
-      <div className="flex flex-col gap-5 border-b border-foreground/10 pb-1 lg:flex-row lg:items-end lg:justify-between">
-        <div className="relative w-full max-w-md">
-          <label htmlFor="recipe-search" className="sr-only">
-            {searchLabel}
-          </label>
-          <Search
-            aria-hidden
-            className="pointer-events-none absolute left-0 top-1/2 size-4 -translate-y-1/2 text-foreground/45"
-          />
-          <input
-            id="recipe-search"
-            type="search"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder={searchPlaceholder}
-            className="h-11 w-full border-b border-foreground/20 bg-transparent pl-7 pr-9 text-[0.95rem] outline-none transition-colors placeholder:text-foreground/42 focus:border-[var(--plum)]"
-          />
-          {query && (
-            <button
-              type="button"
-              onClick={() => setQuery("")}
-              aria-label={clearSearch}
-              className="absolute right-0 top-1/2 flex size-8 -translate-y-1/2 items-center justify-center rounded-full text-foreground/50 transition-colors hover:bg-foreground/5 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
-            >
-              <X className="size-4" />
-            </button>
-          )}
-        </div>
-
+      <div className="border-b border-foreground/10 pb-1">
         <div className="-mx-5 overflow-x-auto px-5 sm:mx-0 sm:px-0">
           <div className="flex min-w-max gap-x-6">
             {categories.map((category) => (

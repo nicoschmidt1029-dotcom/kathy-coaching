@@ -87,9 +87,6 @@ export async function RecipesIndex({ locale, content }: { locale: Locale; conten
             recipes={remaining}
             labels={categoryLabels}
             viewRecipe={t("viewRecipe")}
-            searchLabel={t("searchLabel")}
-            searchPlaceholder={t("searchPlaceholder")}
-            clearSearch={t("clearSearch")}
             empty={t("noResults")}
           />
         </div>

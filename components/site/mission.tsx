@@ -76,10 +76,15 @@ export function Mission({ content }: { content?: EditableContent }) {
           </div>
         )}
       </div>
-      <div className="container-page mt-12 md:mt-16">
-        <div className="max-w-2xl space-y-8 md:ml-[8.333%]">
-          {bodyParagraphs.map((paragraph) => (
-            <p key={paragraph} className="whitespace-pre-line text-pretty text-lg leading-[1.8] text-foreground/76 md:text-xl">
+      <div className="container-page mt-8 md:mt-10">
+        <div className="max-w-xl space-y-7 md:ml-[12.5%] md:space-y-9 lg:ml-[16.666%]">
+          {bodyParagraphs.map((paragraph, index) => (
+            <p
+              key={paragraph}
+              className={index === 0
+                ? "whitespace-pre-line text-pretty text-[1.16rem] leading-[1.85] text-foreground/82 sm:text-xl md:text-[1.34rem] md:leading-[1.85]"
+                : "whitespace-pre-line text-pretty text-[1.02rem] leading-[1.8] text-foreground/70 sm:text-lg md:text-[1.16rem] md:leading-[1.85]"}
+            >
               {paragraph}
             </p>
           ))}
