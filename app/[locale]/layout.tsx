@@ -10,6 +10,7 @@ import { routing } from "@/i18n/routing";
 import { alternatesFor } from "@/i18n/metadata";
 import { SITE_URL } from "@/lib/site-url";
 import { FONT_CLASSES } from "@/lib/fonts";
+import { getPublicWebsiteEntry } from "@/lib/cms";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -62,7 +63,8 @@ export default async function LocaleLayout({
   // Opt the whole subtree into static rendering for this locale.
   setRequestLocale(locale);
 
-  const t = await getTranslations("nav");
+  const [t, footerEntry] = await Promise.all([getTranslations("nav"), getPublicWebsiteEntry("footer")]);
+  const footerData = footerEntry?.data as { claim?: Record<string, string> } | undefined;
 
   return (
     <html lang={locale} className={`${FONT_CLASSES} h-full antialiased`}>
@@ -80,7 +82,7 @@ export default async function LocaleLayout({
           <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
             {children}
           </main>
-          <Footer />
+          <Footer claim={footerData?.claim?.[locale]} />
         </NextIntlClientProvider>
       </body>
     </html>

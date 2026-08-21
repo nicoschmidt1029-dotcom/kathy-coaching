@@ -9,8 +9,11 @@ import { getPublicRecipes } from "@/lib/cms";
 import { DisplayTitle } from "./display-title";
 import { RecipesGrid } from "./recipes-grid";
 
-export async function RecipesIndex({ locale }: { locale: Locale }) {
+type RecipesPageContent = Record<string, Partial<Record<Locale, string>>>;
+
+export async function RecipesIndex({ locale, content }: { locale: Locale; content?: RecipesPageContent }) {
   const t = await getTranslations({ locale, namespace: "recipes" });
+  const editable = (key: string, fallback: string) => content?.[key]?.[locale] || fallback;
   const recipes = await getPublicRecipes(locale);
   const featured = recipes.find((recipe) => recipe.featured) ?? recipes[0];
   const categoryLabels = {
@@ -25,13 +28,13 @@ export async function RecipesIndex({ locale }: { locale: Locale }) {
       <section className="section-pad-top-tight pb-12 md:pb-16">
         <div className="container-page">
           <div className="max-w-2xl">
-            <p className="eyebrow">{t("eyebrow")}</p>
-            <DisplayTitle className="mt-3">{t("title")}</DisplayTitle>
+            <p className="eyebrow">{editable("eyebrow", t("eyebrow"))}</p>
+            <DisplayTitle className="mt-3">{editable("title", t("title"))}</DisplayTitle>
             <p className="mt-4 max-w-xl text-[1.02rem] leading-relaxed text-foreground/72 sm:text-lg">
-              {t("intro")}
+              {editable("intro", t("intro"))}
             </p>
             <p className="mt-2 max-w-xl text-[0.92rem] leading-relaxed text-foreground/58 sm:text-[0.98rem]">
-              {t("introSecondary")}
+              {editable("introSecondary", t("introSecondary"))}
             </p>
           </div>
 
@@ -52,7 +55,7 @@ export async function RecipesIndex({ locale }: { locale: Locale }) {
               </Link>
 
               <div className="md:col-span-5">
-                <p className="eyebrow">{t("featured")}</p>
+                <p className="eyebrow">{editable("featured", t("featured"))}</p>
                 <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3.1rem)] leading-[1.06] text-[var(--plum)]">
                   {featured.title}
                 </h2>
@@ -81,8 +84,8 @@ export async function RecipesIndex({ locale }: { locale: Locale }) {
 
       <section className="pb-14 md:pb-20">
         <div className="container-page">
-          <p className="eyebrow">{t("exploreEyebrow")}</p>
-          <h2 className="section-title mt-3">{t("exploreTitle")}</h2>
+          <p className="eyebrow">{editable("exploreEyebrow", t("exploreEyebrow"))}</p>
+          <h2 className="section-title mt-3">{editable("exploreTitle", t("exploreTitle"))}</h2>
           <RecipesGrid
             recipes={recipes}
             labels={categoryLabels}
@@ -98,7 +101,7 @@ export async function RecipesIndex({ locale }: { locale: Locale }) {
       <section className="bg-[var(--sand)]">
         <div className="container-page py-12 md:py-16">
           <blockquote className="mx-auto max-w-3xl text-center font-display text-[1.45rem] leading-snug italic text-foreground/78 sm:text-[1.8rem]">
-            “{t("quote")}”
+            “{editable("quote", t("quote"))}”
           </blockquote>
         </div>
       </section>
@@ -108,13 +111,13 @@ export async function RecipesIndex({ locale }: { locale: Locale }) {
           <div className="grid items-end gap-8 md:grid-cols-12 md:gap-12">
             <div className="md:col-span-8">
               <p className="eyebrow text-[var(--primary-foreground)]/65">
-                {t("wellness.eyebrow")}
+                {editable("wellnessEyebrow", t("wellness.eyebrow"))}
               </p>
               <h2 className="section-title mt-4 text-[var(--primary-foreground)]">
-                {t("wellness.title")}
+                {editable("wellnessTitle", t("wellness.title"))}
               </h2>
               <p className="mt-5 max-w-2xl leading-relaxed text-[var(--primary-foreground)]/72 sm:text-lg">
-                {t("wellness.body")}
+                {editable("wellnessBody", t("wellness.body"))}
               </p>
             </div>
             <div className="md:col-span-4 md:text-right">
@@ -124,7 +127,7 @@ export async function RecipesIndex({ locale }: { locale: Locale }) {
                 className="h-11 bg-[var(--primary-foreground)] px-5 text-[var(--plum)] hover:bg-[var(--primary-foreground)]/90"
               >
                 <Link href="/programme">
-                  {t("wellness.cta")}
+                  {editable("wellnessCta", t("wellness.cta"))}
                   <ArrowRight className="ml-1 size-4" />
                 </Link>
               </Button>

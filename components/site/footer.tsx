@@ -10,7 +10,7 @@ import { Wordmark } from "./wordmark";
  * body has no bottom edge — the page just stops. Giving it the band colour
  * closes the scroll and pairs the two grounds instead of scattering colour.
  */
-export function Footer() {
+export function Footer({ claim }: { claim?: string }) {
   const t = useTranslations("footer");
   const year = new Date().getFullYear();
 
@@ -44,7 +44,7 @@ export function Footer() {
                 mt-4 -> mt-3 on mobile (md:mt-5 unchanged) as part of the
                 second tightening pass. */}
             <p className="mt-3 max-w-[22ch] font-display text-[1.15rem] leading-snug italic text-[var(--primary-foreground)]/80 md:mt-5">
-              {t("claim")}
+              {claim || t("claim")}
             </p>
           </div>
 

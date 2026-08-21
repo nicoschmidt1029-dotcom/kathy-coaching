@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { RecipesIndex } from "@/components/site/recipes-index";
 import { alternatesFor } from "@/i18n/metadata";
 import { routing, type Locale } from "@/i18n/routing";
+import { getPublicWebsiteEntry } from "@/lib/cms";
 
 export async function generateMetadata({
   params,
@@ -30,5 +31,6 @@ export default async function RecipesPage({
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
 
-  return <RecipesIndex locale={locale as Locale} />;
+  const entry = await getPublicWebsiteEntry("recipes-page");
+  return <RecipesIndex locale={locale as Locale} content={entry?.data as Record<string, Record<string, string>> | undefined} />;
 }

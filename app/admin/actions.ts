@@ -10,6 +10,7 @@ import { createClient } from "@/lib/supabase/server";
 import { SITE_URL } from "@/lib/site-url";
 import { routing } from "@/i18n/routing";
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
+import { EDITORIAL_SECTION_FIELDS, type EditorialSectionKey } from "@/lib/admin-section-fields";
 
 const value = (form: FormData, name: string) =>
   String(form.get(name) ?? "").trim();
@@ -281,6 +282,26 @@ export async function saveWebsiteContent(formData: FormData) {
     },
     { onConflict: "content_type,content_key" }
   );
+  if (error) throw new Error(error.message);
+  revalidatePublicContent();
+  redirect("/admin/website?saved=1");
+}
+
+export async function saveEditorialSection(formData: FormData) {
+  await requireAdmin();
+  const key = value(formData, "content_key") as EditorialSectionKey;
+  const fields = EDITORIAL_SECTION_FIELDS[key];
+  if (!fields) throw new Error("Invalid website content section.");
+  const data = Object.fromEntries(fields.map((field) => [field.key, Object.fromEntries(routing.locales.map((locale) => [locale, value(formData, `${field.key}_${locale}`)]))]));
+  assertContentSize(data);
+  const supabase = await createClient();
+  const { error } = await supabase.from("cms_entries").upsert({
+    content_type: "website",
+    content_key: key,
+    status: value(formData, "status") === "published" ? "published" : "draft",
+    data,
+    deleted_at: null,
+  }, { onConflict: "content_type,content_key" });
   if (error) throw new Error(error.message);
   revalidatePublicContent();
   redirect("/admin/website?saved=1");

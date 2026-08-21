@@ -13,7 +13,7 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  * is mentioned on the whole site. Exact certificate designations are still
  * pending from her; see lib/content-status.ts.
  */
-type EditableContent = { eyebrow?: string; headline?: string; body?: string; image?: string | null };
+type EditableContent = { eyebrow?: string; headline?: string; body?: string; calling?: string; image?: string | null };
 
 export function About({ content }: { content?: EditableContent }) {
   const t = useTranslations("about");
@@ -82,7 +82,7 @@ export function About({ content }: { content?: EditableContent }) {
               it's no longer following the removed h3 — still lines up with
               the photo column's top via the grid's items-start. */}
           <p className="mt-0 max-w-lg font-display text-[1.4rem] italic leading-snug text-foreground/88 sm:text-[1.7rem]">
-            {t.rich("calling", {
+            {content?.calling || t.rich("calling", {
               em: (chunks) => <span className="not-italic">{chunks}</span>,
             })}
           </p>
