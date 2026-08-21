@@ -147,7 +147,11 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
     const base = fallback
       ? getStaticPrograms(locale).find((program) => program.slug === entry.content_key)!
       : undefined;
-    const title = pick(data.title, base?.title ?? "");
+    const replaceOldDuration = (text: string) => text
+      .replace(/90 Days/g, "3 Months")
+      .replace(/90 days/g, "3 months")
+      .replace(/90 dní/g, "3 mesiace");
+    const title = replaceOldDuration(pick(data.title, base?.title ?? ""));
     if (!title) return null;
     return {
       slug: entry.content_key,
@@ -162,7 +166,7 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       transition: pick(data.transition, base?.transition ?? ""),
       includesHeading: pick(data.includesHeading, base?.includesHeading ?? "This program includes:"),
       includes: pick(data.includes, base?.includes ?? []),
-      duration: pick(data.duration, base?.duration ?? ""),
+      duration: replaceOldDuration(pick(data.duration, base?.duration ?? "")),
       ctaLabel: pick(data.ctaLabel, base?.ctaLabel ?? ""),
       ctaHref: data.ctaHref ?? base?.ctaHref ?? "/kontakt",
     };
