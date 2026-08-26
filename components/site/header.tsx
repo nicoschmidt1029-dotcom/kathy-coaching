@@ -44,9 +44,9 @@ export function Header() {
   const underline = "absolute inset-x-0 bottom-0 h-px origin-left bg-[var(--clay)] transition-transform duration-300";
 
   return (
-    <header className={cn("sticky top-0 z-40 w-full border-b border-foreground/[0.06] shadow-[0_1px_16px_-4px_rgba(30,26,20,0.06)] transition duration-300", scrolled ? "bg-background/85 backdrop-blur-md" : "bg-background/65 backdrop-blur-sm")}>
-      <div className="container-page flex items-center justify-between gap-6 py-1.5 md:py-3.5">
-        <Wordmark />
+    <header className={cn("sticky top-0 z-40 w-full border-b border-foreground/[0.06] shadow-[0_1px_16px_-4px_rgba(30,26,20,0.06)] transition duration-300", scrolled ? "bg-background/90 backdrop-blur-md" : "bg-background/65 backdrop-blur-sm")}>
+      <div className={cn("container-page flex items-center justify-between gap-6 transition-[padding] duration-300", scrolled ? "py-1" : "py-1.5 md:py-3.5")}>
+        <Wordmark className={cn("transition-[width,transform] duration-300 ease-out", scrolled ? "w-[116px] md:w-[132px]" : "w-[178px] md:w-[202px]")} />
         <nav className="hidden items-center gap-7 lg:flex" aria-label={t("menu")}>
           <Link href="/katey" className={linkClass}>{t("about")}<span aria-hidden className={cn(underline, pathname === "/katey" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100")} /></Link>
           <div ref={exploreRef} className="relative" onMouseEnter={() => setExploreOpen(true)} onMouseLeave={() => setExploreOpen(false)} onKeyDown={(event) => event.key === "Escape" && setExploreOpen(false)}>
