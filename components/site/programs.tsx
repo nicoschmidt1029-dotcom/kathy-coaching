@@ -1,6 +1,7 @@
 import { ProgramDetail } from "@/components/site/program-detail";
 import type { Locale } from "@/i18n/routing";
 import { getPublicPrograms } from "@/lib/cms";
+import { ConversationProgram } from "@/components/site/conversation-program";
 
 export async function Programs({ locale }: { locale: Locale }) {
   const programs = await getPublicPrograms(locale);
@@ -11,5 +12,5 @@ export async function Programs({ locale }: { locale: Locale }) {
   // With one real offer, the Programs route is the presentation itself—not
   // a catalogue containing a single product card. The data layer still
   // supports additional programs when Katarina is ready to publish them.
-  return <ProgramDetail program={program} locale={locale} showBackLink={false} />;
+  return <>{<ProgramDetail program={program} locale={locale} showBackLink={false} />}{programs.slice(1).map((item) => item.kind === "conversation" ? <ConversationProgram key={item.slug} program={item} /> : <ProgramDetail key={item.slug} program={item} locale={locale} showBackLink={false} />)}</>;
 }

@@ -47,7 +47,7 @@ export default async function KateyPage({
   ]);
   const data = entry?.data as { eyebrow?: Record<string, string>; headline?: Record<string, string>; body?: Record<string, string> } | undefined;
   const details = detailsEntry?.data as { calling?: Record<string, string> } | undefined;
-  const content = entry || detailsEntry ? { eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: data?.body?.[locale], calling: details?.calling?.[locale], image: entry?.image_path } : undefined;
+  const content = entry || detailsEntry ? { mainManaged: Boolean(entry), callingManaged: Boolean(detailsEntry), eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: data?.body?.[locale], calling: details?.calling?.[locale], image: entry?.image_path } : undefined;
 
   return <>{(previewMain || previewDetails) && <DraftPreviewBanner backHref="/admin/about" />}<About content={content} /></>;
 }

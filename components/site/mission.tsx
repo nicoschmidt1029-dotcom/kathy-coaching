@@ -31,9 +31,12 @@ type EditableContent = { eyebrow?: string; headline?: string; body?: string; ima
 
 export function Mission({ content }: { content?: EditableContent }) {
   const t = useTranslations("mission");
-  const suppliedParagraphs = content?.body?.split(/\n\s*\n/).filter(Boolean) ?? [];
-  const statement = suppliedParagraphs[0] || t("p3");
-  const bodyParagraphs = suppliedParagraphs.length > 1 ? suppliedParagraphs.slice(1) : t("body").split(/\n\s*\n/).filter(Boolean);
+  const managed = content !== undefined;
+  const suppliedParagraphs = managed ? content.body?.split(/\n\s*\n/).filter(Boolean) ?? [] : [t("p3"), ...t("body").split(/\n\s*\n/).filter(Boolean)];
+  const statement = suppliedParagraphs[0];
+  const bodyParagraphs = suppliedParagraphs.slice(1);
+  const eyebrow = managed ? content.eyebrow : t("eyebrow");
+  const headline = managed ? content.headline : t("title");
   const photo = content?.image
     ? { url: content.image, alt: t("eyebrow") }
     : TEMP_PHOTOS.homeBand;
@@ -49,17 +52,15 @@ export function Mission({ content }: { content?: EditableContent }) {
           to match, same treatment. */}
       <div className="container-page grid grid-cols-1 items-center gap-6 md:grid-cols-12 md:gap-16">
         <div className="md:col-span-7">
-          <p className="eyebrow">{content?.eyebrow || t("eyebrow")}</p>
+          {eyebrow && <p className="eyebrow">{eyebrow}</p>}
 
           {/* mt-8 -> mt-5 on mobile (md:mt-8 restores desktop). */}
-          <DisplayTitle as="h1" className="mt-5 max-w-[16ch] md:mt-8">
-            {content?.headline || t("title")}
-          </DisplayTitle>
+          {headline && <DisplayTitle as="h1" className={`${eyebrow ? "mt-5 md:mt-8" : ""} max-w-[16ch]`}>{headline}</DisplayTitle>}
 
           {/* mt-10 -> mt-5 on mobile (md:mt-10 restores desktop). */}
-          <p className="mt-5 max-w-md font-display text-[1.35rem] leading-snug italic text-foreground/80 sm:text-[1.6rem] md:mt-10">
+          {statement && <p className="mt-5 max-w-md font-display text-[1.35rem] leading-snug italic text-foreground/80 sm:text-[1.6rem] md:mt-10">
             {statement}
-          </p>
+          </p>}
         </div>
 
         {photo && (

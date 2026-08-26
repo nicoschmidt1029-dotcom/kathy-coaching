@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!hasLocale(routing.locales, locale)) return {};
   const program = await getPublicProgram(slug, locale as Locale);
   if (!program) return {};
-  return { title: program.title, description: `${program.price} ${program.currency} / ${program.duration}`, alternates: alternatesFor(locale, `/programme/${slug}`) };
+  return { title: program.title, description: program.kind === "conversation" ? program.intro : `${program.price} ${program.currency} / ${program.duration}`, alternates: alternatesFor(locale, `/programme/${slug}`) };
 }
 
 export default async function ProgramPage({ params, searchParams }: { params: Promise<{ locale: string; slug: string }>; searchParams: Promise<{ adminPreview?: string }> }) {

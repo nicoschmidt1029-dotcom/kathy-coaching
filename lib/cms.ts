@@ -136,6 +136,10 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       imageAlt?: string;
       price?: number;
       currency?: string;
+      kind?: "coaching" | "conversation";
+      paragraphs?: Partial<Record<Locale, readonly string[]>>;
+      secondaryCtaLabel?: Partial<Record<Locale, string>>;
+      secondaryCtaHref?: string;
     };
     const present = <T>(value: T | undefined) =>
       Array.isArray(value) ? value.length > 0 : typeof value === "string" ? value.length > 0 : value !== undefined;
@@ -161,6 +165,7 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       imageAlt: data.imageAlt ?? base?.imageAlt ?? title,
       price: data.price ?? base?.price ?? 0,
       currency: data.currency ?? base?.currency ?? "CHF",
+      kind: data.kind ?? base?.kind ?? "coaching",
       title,
       intro: pick(data.intro, base?.intro ?? ""),
       targetHeading: pick(data.targetHeading, base?.targetHeading ?? "This program is for:"),
@@ -171,6 +176,9 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       duration: replaceOldDuration(pick(data.duration, base?.duration ?? "")),
       ctaLabel: pick(data.ctaLabel, base?.ctaLabel ?? ""),
       ctaHref: data.ctaHref ?? base?.ctaHref ?? "/kontakt",
+      paragraphs: pick(data.paragraphs, base?.paragraphs ?? []),
+      secondaryCtaLabel: pick(data.secondaryCtaLabel, base?.secondaryCtaLabel ?? ""),
+      secondaryCtaHref: data.secondaryCtaHref ?? base?.secondaryCtaHref,
     };
   } catch {
     return null;

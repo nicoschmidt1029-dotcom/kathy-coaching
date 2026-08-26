@@ -11,6 +11,9 @@ export type ProgramLocaleContent = {
   duration: string;
   ctaLabel?: string;
   ctaHref?: string;
+  paragraphs?: readonly string[];
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
 };
 
 export type Program = {
@@ -19,6 +22,7 @@ export type Program = {
   imageAlt: string;
   price: number;
   currency: string;
+  kind?: "coaching" | "conversation";
   content: Partial<Record<Locale, ProgramLocaleContent>> & {
     en: ProgramLocaleContent;
   };
@@ -77,6 +81,60 @@ export const PROGRAMS: readonly Program[] = [
           "Možnosť písomnej komunikácie cez WhatsApp v prípade otázok počas trvania programu.",
         ],
         duration: "3 mesiace",
+      },
+    },
+  },
+  {
+    slug: "find-your-way-through",
+    image: "",
+    imageAlt: "",
+    price: 0,
+    currency: "",
+    kind: "conversation",
+    content: {
+      en: {
+        title: "Find Your Way Through",
+        intro: "Pain, shame, sin, your past, hatred, abuse, curses, mistakes, distrust, doubts, self-doubt",
+        targetHeading: "",
+        targetAudience: [],
+        transition: "",
+        includesHeading: "",
+        includes: [],
+        duration: "",
+        paragraphs: [
+          "Sometimes it's new but sometimes we live with it for so long that we've kind of accepted it even though we don't have to.",
+          "It happened - no one can change that.",
+          "But what we can do is separate it completely from our person. It doesn't have to have any impact on us in the future. Whether it happened yesterday or forty years ago. You don't need to live with this anymore. Only one thing is needed, you have to really want it.",
+          "In this one-on-one conversation, we sit down together and talk honestly about what you're facing.",
+          "We will look together at every struggle through a biblical lens, not my opinion, not the world's opinion, no doctor's opinion, but what God says about your situation.",
+          "There are wounds only God can reach, and there is pain only God can heal.",
+        ],
+        ctaLabel: "Reach Out to Me",
+        ctaHref: "/kontakt",
+        secondaryCtaLabel: "Learn more",
+        secondaryCtaHref: "/programme/find-your-way-through",
+      },
+      sk: {
+        title: "Find Your Way Through",
+        intro: "Bolesť, hanba, hriech, tvoja minulosť, nenávisť, zneužitie, prekliatia, chyby, nedôvera, pochybnosti, nesebavedomie",
+        targetHeading: "",
+        targetAudience: [],
+        transition: "",
+        includesHeading: "",
+        includes: [],
+        duration: "",
+        paragraphs: [
+          "Niekedy ide nové ale niekedy s tým žijeme tak dlho, že sme to akosi akceptovali napriek tomu, že nemusíme.",
+          "Stalo sa - to nikto už nezmení.",
+          "Ale čo môžeme je oddeliť to kompletne od našej osoby. Nemusí to mať na nás žiaden vplyv v budúcnosti. Či sa to stalo včera, alebo štyrydsať rokov do zadu. You don't need to live with this anymore. Len jedna vec je potrebná, mušíš veľmi chcieť.",
+          "In this one-on-one conversation, we sit down together and talk honestly about what you're facing.",
+          "We will look together at every struggle through a biblical lens, not my opinion, not the world's opinion, žiaden názor doktora, but čo hovorí God says about your situacion.",
+          "Sú rany, ku ktorým sa môže dostať iba Boh, a existuje bolesť, ktorú môže uzdraviť iba Boh.",
+        ],
+        ctaLabel: "Reach Out to Me",
+        ctaHref: "/kontakt",
+        secondaryCtaLabel: "Learn more",
+        secondaryCtaHref: "/programme/find-your-way-through",
       },
     },
   },

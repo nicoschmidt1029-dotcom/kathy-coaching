@@ -31,6 +31,10 @@ import { TempPill } from "./placeholder";
 type HeroContent = { headline?: string; body?: string; ctaLabel?: string; ctaHref?: string };
 
 function HeroCopy({ t, content }: { t: ReturnType<typeof useTranslations<"hero">>; content?: HeroContent }) {
+  const managed = content !== undefined;
+  const headline = managed ? content.headline : undefined;
+  const body = managed ? content.body : t("body");
+  const ctaLabel = managed ? content.ctaLabel : t("cta");
   return (
     <>
       {/* Mobile-first pass (2026-08-18): the shared clamp(2.3rem,4vw,3.5rem)
@@ -40,11 +44,11 @@ function HeroCopy({ t, content }: { t: ReturnType<typeof useTranslations<"hero">
           oversized against the compact new header). Fixed mobile sizes
           (2.6rem base / 2.75rem at sm, ~41.6-44px) replace it below md;
           the exact desktop clamp is restored unchanged at md+. */}
-      <h1
+      {(managed ? headline : true) && <h1
         className="animate-rise font-display text-[2.4rem] leading-[1.08] font-normal sm:text-[2.7rem] md:text-[clamp(2.9rem,4.8vw,4.6rem)]"
         style={{ animationDelay: "80ms" }}
       >
-        {content?.headline || t.rich("headline", {
+        {managed ? headline : t.rich("headline", {
           em: (chunks) => (
             <span className="relative inline-block whitespace-nowrap">
               <em className="not-italic font-display italic">{chunks}</em>
@@ -66,17 +70,17 @@ function HeroCopy({ t, content }: { t: ReturnType<typeof useTranslations<"hero">
             </span>
           ),
         })}
-      </h1>
+      </h1>}
 
       {/* mt-8 -> mt-5 on mobile (md:mt-8 restores desktop exactly); base
           text size/line-height stepped down a touch for mobile too, sm+
           unchanged. */}
-      <p
+      {body && <p
         className="animate-rise mt-4 max-w-md text-pretty text-[0.92rem] leading-[1.55] sm:text-lg sm:leading-[1.7] md:mt-8"
         style={{ animationDelay: "180ms" }}
       >
-        {content?.body || t("body")}
-      </p>
+        {body}
+      </p>}
 
       {/* mt-10 -> mt-6 on mobile (md:mt-10 restores desktop). Button:
           h-12 (48px) was the same height at every breakpoint; mobile now
@@ -93,18 +97,18 @@ function HeroCopy({ t, content }: { t: ReturnType<typeof useTranslations<"hero">
           (md:mt-10 untouched) — a little more breathing room between the
           supporting text and the button, per client feedback. Color
           unchanged (--shoe-accent). */}
-      <div className="animate-rise mt-8 md:mt-10" style={{ animationDelay: "280ms" }}>
+      {ctaLabel && <div className="animate-rise mt-8 md:mt-10" style={{ animationDelay: "280ms" }}>
         <Button
           asChild
           size="lg"
           className="group/button h-14 w-full bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90 sm:h-12 sm:w-auto"
         >
           <Link href={content?.ctaHref || "/programme"}>
-            {content?.ctaLabel || t("cta")}
+            {ctaLabel}
             <ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" />
           </Link>
         </Button>
-      </div>
+      </div>}
     </>
   );
 }

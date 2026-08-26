@@ -44,7 +44,9 @@ function revalidatePublicContent() {
   for (const locale of routing.locales) {
     revalidatePath(`/${locale}`);
     revalidatePath(`/${locale}/recipes`);
+    revalidatePath(`/${locale}/recipes/[slug]`, "page");
     revalidatePath(`/${locale}/programme`);
+    revalidatePath(`/${locale}/programme/[slug]`, "page");
     revalidatePath(`/${locale}/katey`);
     revalidatePath(`/${locale}/mission`);
     revalidatePath(`/${locale}/kontakt`);
@@ -228,18 +230,25 @@ export async function saveProgram(formData: FormData) {
     sk: lines(formData, `${name}_sk`),
   });
   const programCtaHref = value(formData, "cta_href") || "/kontakt";
+  const secondaryCtaHref = value(formData, "secondary_cta_href");
   if (!programCtaHref.startsWith("/") && !programCtaHref.startsWith("https://") && !programCtaHref.startsWith("mailto:")) throw new Error("Please use a website path, secure web link or email link for the button destination.");
+  if (secondaryCtaHref && !secondaryCtaHref.startsWith("/") && !secondaryCtaHref.startsWith("https://")) throw new Error("Please use a website path or secure web link for the secondary button destination.");
   const saveMode = value(formData, "status");
   const data = {
+    kind: value(formData, "program_kind") === "conversation" ? "conversation" : "coaching",
     title: localized("title"),
+    intro: localized("intro"),
     targetHeading: localized("target_heading"),
     targetAudience: localizedLines("target_audience"),
     transition: localized("transition"),
     includesHeading: localized("includes_heading"),
     includes: localizedLines("includes"),
+    paragraphs: localizedLines("paragraphs"),
     duration: localized("duration"),
     ctaLabel: localized("cta_label"),
+    secondaryCtaLabel: localized("secondary_cta_label"),
     ctaHref: programCtaHref,
+    secondaryCtaHref: secondaryCtaHref || undefined,
     price: Number(value(formData, "price")) || 0,
     currency: value(formData, "currency").toUpperCase() || "CHF",
   };

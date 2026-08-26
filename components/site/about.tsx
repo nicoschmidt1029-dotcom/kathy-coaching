@@ -13,10 +13,15 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  * is mentioned on the whole site. Exact certificate designations are still
  * pending from her; see lib/content-status.ts.
  */
-type EditableContent = { eyebrow?: string; headline?: string; body?: string; calling?: string; image?: string | null };
+type EditableContent = { mainManaged?: boolean; callingManaged?: boolean; eyebrow?: string; headline?: string; body?: string; calling?: string; image?: string | null };
 
 export function About({ content }: { content?: EditableContent }) {
   const t = useTranslations("about");
+  const managed = content?.mainManaged === true;
+  const eyebrow = managed ? content.eyebrow : t("eyebrow");
+  const headline = managed ? content.headline : t("overlapTitle");
+  const biography = managed ? content.body : undefined;
+  const calling = content?.callingManaged ? content.calling : undefined;
   const photo = content?.image
     ? { url: content.image, alt: t("portraitLabel") }
     : TEMP_PHOTOS.about;
@@ -24,7 +29,7 @@ export function About({ content }: { content?: EditableContent }) {
   return (
     <section id="about" className="section-pad section-pad-top-tight">
       <div className="container-page">
-        <p className="eyebrow">{content?.eyebrow || t("eyebrow")}</p>
+        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
 
         {/* Used to straddle the photograph — the hollow first word landing on
             the portrait, following a different design reference. Katarina
@@ -33,7 +38,7 @@ export function About({ content }: { content?: EditableContent }) {
             2026-08-19: mt-6 -> mt-4 (small, per request) so the eyebrow and
             title read as one tighter unit — same nudge as the section's
             top padding below, not a new pattern. */}
-        <DisplayTitle className="mt-4">{content?.headline || t("overlapTitle")}</DisplayTitle>
+        {headline && <DisplayTitle className={eyebrow ? "mt-4" : ""}>{headline}</DisplayTitle>}
 
         {/* 2026-08-19 mobile-refinement pass: gap-12 -> gap-8 on mobile
             only (md:gap-16 untouched) — part of the same "reduce excessive
@@ -81,11 +86,11 @@ export function About({ content }: { content?: EditableContent }) {
               headline that repeated the same job. mt-0 (was mt-8) since
               it's no longer following the removed h3 — still lines up with
               the photo column's top via the grid's items-start. */}
-          <p className="mt-0 max-w-lg font-display text-[1.4rem] italic leading-snug text-foreground/88 sm:text-[1.7rem]">
-            {content?.calling || t.rich("calling", {
+          {(content?.callingManaged ? calling : true) && <p className="mt-0 max-w-lg font-display text-[1.4rem] italic leading-snug text-foreground/88 sm:text-[1.7rem]">
+            {content?.callingManaged ? calling : t.rich("calling", {
               em: (chunks) => <span className="not-italic">{chunks}</span>,
             })}
-          </p>
+          </p>}
           {/* Bio expanded 2026-08-18 with Katarina's new biography (movement
               -> nourishment/inner health -> education -> mission) — split
               into four short paragraphs with real vertical space between
@@ -115,13 +120,13 @@ export function About({ content }: { content?: EditableContent }) {
               (was inheriting the browser default ~1.5; sm:leading-[1.7]
               still wins at sm+ same as before) for a more comfortable
               line-height at phone widths. */}
-          {content?.body ? (
+          {managed ? biography ? (
             <div className="mt-6 max-w-xl space-y-6 sm:space-y-5">
-              {content.body.split(/\n\s*\n/).filter(Boolean).map((paragraph) => (
+              {biography.split(/\n\s*\n/).filter(Boolean).map((paragraph) => (
                 <p key={paragraph} className="text-pretty leading-[1.65] text-foreground/72 sm:text-lg sm:leading-[1.7]">{paragraph}</p>
               ))}
             </div>
-          ) : t.has("storyMovement") ? (
+          ) : null : t.has("storyMovement") ? (
             <div className="mt-6 max-w-xl space-y-6 sm:space-y-5">
               {(
                 [

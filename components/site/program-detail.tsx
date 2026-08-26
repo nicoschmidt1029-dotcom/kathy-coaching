@@ -5,8 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import type { LocalizedProgram } from "@/lib/programs";
+import { ConversationProgram } from "@/components/site/conversation-program";
 
 export async function ProgramDetail({ program, locale, showBackLink = true }: { program: LocalizedProgram; locale: Locale; showBackLink?: boolean }) {
+  if (program.kind === "conversation") return <ConversationProgram program={program} showBackLink={showBackLink} />;
   const [t, nav] = await Promise.all([getTranslations({ locale, namespace: "programs" }), getTranslations({ locale, namespace: "nav" })]);
 
   return (

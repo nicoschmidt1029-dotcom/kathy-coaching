@@ -9,7 +9,10 @@ type WebsiteData = { eyebrow?: Record<string, string>; headline?: Record<string,
 
 export function WebsiteContentForm({ contentKey, title, description, entry, defaults, imageHint, showCta = false, showSubmitLabel = false }: { contentKey: string; title: string; description: string; entry?: CmsEntry; defaults: WebsiteData; imageHint?: string; showCta?: boolean; showSubmitLabel?: boolean }) {
   const stored = (entry?.data as WebsiteData | undefined) ?? {};
-  const mergeText = (fallback?: Record<string, string>, saved?: Record<string, string>) => Object.fromEntries(locales.map((locale) => [locale, saved?.[locale]?.trim() ? saved[locale] : fallback?.[locale] ?? ""]));
+  const mergeText = (fallback?: Record<string, string>, saved?: Record<string, string>) => Object.fromEntries(locales.map((locale) => [
+    locale,
+    saved && Object.prototype.hasOwnProperty.call(saved, locale) ? saved[locale] ?? "" : fallback?.[locale] ?? "",
+  ]));
   const data = {
     ...defaults,
     ...stored,
