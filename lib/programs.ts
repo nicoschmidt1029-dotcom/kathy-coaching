@@ -14,6 +14,7 @@ export type ProgramLocaleContent = {
   duration: string;
   ctaLabel?: string;
   ctaHref?: string;
+  paymentOptions?: readonly string[];
   paragraphs?: readonly string[];
   secondaryCtaLabel?: string;
   secondaryCtaHref?: string;
@@ -75,6 +76,11 @@ export const PROGRAMS: readonly Program[] = [
         ],
         howClosing: "And then we are ready to start.",
         duration: "90 days",
+        paymentOptions: [
+          "Pay in Full, 1,290.",
+          "2 Payments, 700 per month, 1,400 total.",
+          "3 Payments, 480 per month, 1,440 total.",
+        ],
       },
       sk: {
         title: "Kompletná premena",
@@ -108,6 +114,11 @@ export const PROGRAMS: readonly Program[] = [
         ],
         howClosing: "A potom sme pripravení začať.",
         duration: "90 dní",
+        paymentOptions: [
+          "Pay in Full, 1,290.",
+          "2 Payments, 700 per month, 1,400 total.",
+          "3 Payments, 480 per month, 1,440 total.",
+        ],
       },
     },
   },

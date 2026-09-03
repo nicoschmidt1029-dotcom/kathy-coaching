@@ -249,6 +249,7 @@ export async function saveProgram(formData: FormData) {
     paragraphs: localizedLines("paragraphs"),
     duration: localized("duration"),
     ctaLabel: localized("cta_label"),
+    paymentOptions: localizedLines("payment_options"),
     secondaryCtaLabel: localized("secondary_cta_label"),
     ctaHref: programCtaHref,
     secondaryCtaHref: secondaryCtaHref || undefined,

@@ -24,6 +24,7 @@ export default async function EditProgram({ params }: { params: Promise<{ key: s
     paragraphs: Object.fromEntries(Object.entries(program.content).map(([locale, content]) => [locale, content.paragraphs ?? []])),
     duration: Object.fromEntries(Object.entries(program.content).map(([locale, content]) => [locale, content.duration])),
     ctaLabel: Object.fromEntries(Object.entries(program.content).map(([locale, content]) => [locale, content.ctaLabel ?? ""])),
+    paymentOptions: Object.fromEntries(Object.entries(program.content).map(([locale, content]) => [locale, content.paymentOptions ?? []])),
     secondaryCtaLabel: Object.fromEntries(Object.entries(program.content).map(([locale, content]) => [locale, content.secondaryCtaLabel ?? ""])),
     ctaHref: program.content.en.ctaHref,
     secondaryCtaHref: program.content.en.secondaryCtaHref,

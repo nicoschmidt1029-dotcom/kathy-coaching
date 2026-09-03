@@ -64,7 +64,9 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
       <section className="container-page mt-16 md:mt-[5.5rem]">
         <div className="rounded-[1.75rem] bg-[var(--plum)] px-6 py-9 text-white sm:px-10 md:flex md:items-end md:justify-between md:gap-10 md:px-12 md:py-11">
           <div><p className="text-xs font-medium uppercase tracking-[0.22em] text-white/62">{t("price")}</p><p className="mt-3 font-display text-[clamp(2.4rem,5vw,4.5rem)] leading-none">{program.price} {program.currency}</p><p className="mt-3 text-base text-white/68">{program.duration}</p></div>
-          <Button asChild size="lg" className="mt-8 h-12 bg-white px-7 text-[var(--plum)] hover:bg-white/90 md:mt-0"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel || nav("contact")}<ArrowRight className="ml-1 size-4" /></Link></Button>
+          {program.paymentOptions && program.paymentOptions.length > 0 ? <div className="mt-8 grid w-full gap-3 md:mt-0 md:max-w-md">
+            {program.paymentOptions.map((option) => <Button key={option} asChild size="lg" className="min-h-12 h-auto justify-between whitespace-normal bg-white px-5 py-3 text-left leading-snug text-[var(--plum)] hover:bg-white/90"><Link href={program.ctaHref || "/kontakt"}><span>{option}</span><ArrowRight className="ml-3 size-4 shrink-0" /></Link></Button>)}
+          </div> : <Button asChild size="lg" className="mt-8 h-12 bg-white px-7 text-[var(--plum)] hover:bg-white/90 md:mt-0"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel || nav("contact")}<ArrowRight className="ml-1 size-4" /></Link></Button>}
         </div>
       </section>
     </article>

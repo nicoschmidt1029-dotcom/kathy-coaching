@@ -135,6 +135,7 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       howClosing?: Partial<Record<Locale, string>>;
       duration?: Partial<Record<Locale, string>>;
       ctaLabel?: Partial<Record<Locale, string>>;
+      paymentOptions?: Partial<Record<Locale, readonly string[]>>;
       ctaHref?: string;
       imageAlt?: string;
       price?: number;
@@ -178,6 +179,7 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       howClosing: pick(data.howClosing, base?.howClosing ?? ""),
       duration: pick(data.duration, base?.duration ?? ""),
       ctaLabel: pick(data.ctaLabel, base?.ctaLabel ?? ""),
+      paymentOptions: pick(data.paymentOptions, base?.paymentOptions ?? []),
       ctaHref: data.ctaHref ?? base?.ctaHref ?? "/kontakt",
       paragraphs: pick(data.paragraphs, base?.paragraphs ?? []),
       secondaryCtaLabel: pick(data.secondaryCtaLabel, base?.secondaryCtaLabel ?? ""),

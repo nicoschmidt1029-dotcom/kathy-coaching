@@ -28,6 +28,7 @@ export type ProgramData = {
   paragraphs?: Record<string, readonly string[]>;
   duration?: Record<string, string>;
   ctaLabel?: Record<string, string>;
+  paymentOptions?: Record<string, readonly string[]>;
   secondaryCtaLabel?: Record<string, string>;
   ctaHref?: string;
   secondaryCtaHref?: string;
@@ -166,6 +167,14 @@ export function ProgramForm({
             name={`cta_label_${locale}`}
             defaultValue={data.ctaLabel?.[locale] ?? ""}
           />
+          {data.kind !== "conversation" && (
+            <RepeatableList
+              label="Payment choice buttons"
+              name={`payment_options_${locale}`}
+              initialItems={data.paymentOptions?.[locale]}
+              addLabel="Add payment choice"
+            />
+          )}
           {data.kind === "conversation" && (
             <Field
               label="Secondary button label"
