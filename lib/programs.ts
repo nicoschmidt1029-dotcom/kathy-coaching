@@ -128,7 +128,7 @@ export const PROGRAMS: readonly Program[] = [
     image: "",
     imageAlt: "",
     price: 200,
-    currency: "CH",
+    currency: "CHF",
     content: {
       en: {
         title: "Move and Grow",
@@ -147,6 +147,7 @@ export const PROGRAMS: readonly Program[] = [
           "We'll look at your progress together. You and I will slowly challenge you to keep moving forward.",
         ],
         duration: "month",
+        paymentOptions: ["200 CHF per month"],
       },
       sk: {
         title: "Move and Grow",
@@ -165,6 +166,7 @@ export const PROGRAMS: readonly Program[] = [
           "Spolu sa pozrieme na tvoje napredovanie. Ty a ja ťa budeme pomali vyzývať k neustálemu napredovaniu.",
         ],
         duration: "mesiac",
+        paymentOptions: ["200 CHF mesačne"],
       },
     },
   },
@@ -173,8 +175,8 @@ export const PROGRAMS: readonly Program[] = [
     label: "Program C",
     image: "",
     imageAlt: "",
-    price: 0,
-    currency: "",
+    price: 80,
+    currency: "CHF",
     kind: "conversation",
     content: {
       en: {
@@ -185,7 +187,7 @@ export const PROGRAMS: readonly Program[] = [
         transition: "",
         includesHeading: "",
         includes: [],
-        duration: "",
+        duration: "per hour",
         paragraphs: [
           "Sometimes it's new but sometimes we live with it for so long that we've kind of accepted it even though we don't have to.",
           "It happened - no one can change that.",
@@ -207,7 +209,7 @@ export const PROGRAMS: readonly Program[] = [
         transition: "",
         includesHeading: "",
         includes: [],
-        duration: "",
+        duration: "za hodinu",
         paragraphs: [
           "Niekedy ide nové ale niekedy s tým žijeme tak dlho, že sme to akosi akceptovali napriek tomu, že nemusíme.",
           "Stalo sa - to nikto už nezmení.",

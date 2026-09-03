@@ -17,8 +17,9 @@ export function ConversationProgram({ program, showBackLink = false }: { program
             <div className="mt-9 max-w-2xl space-y-6 md:mt-11 md:space-y-7">
               {(program.paragraphs ?? []).map((paragraph, index) => <p key={`${index}-${paragraph}`} className={index === (program.paragraphs?.length ?? 0) - 1 ? "font-display text-xl italic leading-[1.55] text-foreground/86 sm:text-2xl" : "text-[1.02rem] leading-[1.8] text-foreground/72 sm:text-lg"}>{paragraph}</p>)}
             </div>
+            {program.price > 0 && <div className="mt-9 inline-flex items-baseline gap-2 rounded-2xl bg-[var(--sand)] px-5 py-4 text-[var(--plum)]"><span className="font-display text-3xl">{program.price} {program.currency}</span>{program.duration && <span className="text-sm text-foreground/60">{program.duration}</span>}</div>}
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button asChild size="lg" className="h-12 bg-[var(--plum)] px-7 text-white hover:bg-[var(--plum)]/90"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel || "Reach Out to Me"}<ArrowRight className="ml-1 size-4" /></Link></Button>
+              <Button asChild size="lg" className="h-12 bg-[var(--plum)] px-7 text-white hover:bg-[var(--plum)]/90"><Link href={program.price > 0 ? "/kontakt?payment=c-hour" : program.ctaHref || "/kontakt"}>{program.ctaLabel || "Reach Out to Me"}<ArrowRight className="ml-1 size-4" /></Link></Button>
               {program.secondaryCtaLabel && program.secondaryCtaHref && <Button asChild size="lg" variant="outline" className="h-12 border-[var(--plum)]/25 bg-transparent px-7 text-[var(--plum)] hover:bg-[var(--sand)]"><Link href={program.secondaryCtaHref}>{program.secondaryCtaLabel}<ArrowRight className="ml-1 size-4" /></Link></Button>}
             </div>
           </div>

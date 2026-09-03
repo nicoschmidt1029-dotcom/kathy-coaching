@@ -353,7 +353,7 @@
     "emailPlaceholder": "anna@beispiel.ch",
     "messageLabel": "Nachricht",
     "selectedPayment": "Ausgewählte Zahlungsoption",
-    "programInterest": "Ich interessiere mich für The Full Transformation — {plan}",
+    "programInterest": "Ich interessiere mich für {plan}",
     "messagePlaceholder": "Deine Nachricht",
     "prefillPrefix": "Interesse an: {selection}",
     "privacyNote": "Deine E-Mail-Adresse nutze ich nur, um dir persönlich zu antworten.",
