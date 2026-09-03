@@ -363,6 +363,8 @@
     "emailLabel": "E-mail",
     "emailPlaceholder": "anna@priklad.sk",
     "messageLabel": "Správa",
+    "selectedPayment": "Vybraná možnosť platby",
+    "programInterest": "Mám záujem o program Kompletná premena — {plan}",
     "messagePlaceholder": "Tvoja správa",
     "prefillPrefix": "Záujem o: {selection}",
     "privacyNote": "Tvoju e-mailovú adresu použijem len na to, aby som ti osobne odpovedala.",

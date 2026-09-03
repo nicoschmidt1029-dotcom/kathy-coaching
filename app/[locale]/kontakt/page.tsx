@@ -11,13 +11,18 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return { title: t("title"), alternates: alternatesFor(locale, "/kontakt") };
 }
 
-export default async function KontaktPage({ params, searchParams }: { params: Promise<{ locale: string }>; searchParams: Promise<{ adminPreview?: string }> }) {
+export default async function KontaktPage({ params, searchParams }: { params: Promise<{ locale: string }>; searchParams: Promise<{ adminPreview?: string; payment?: string }> }) {
   const { locale } = await params;
-  const { adminPreview } = await searchParams;
+  const { adminPreview, payment } = await searchParams;
   setRequestLocale(locale);
   const isPreview = adminPreview === "contact";
   const entry = isPreview ? await getAdminPreviewEntry("website", "contact") : await getPublicWebsiteEntry("contact");
   const data = entry?.data as { eyebrow?: Record<string, string>; headline?: Record<string, string>; body?: Record<string, string>; submitLabel?: Record<string, string> } | undefined;
   const content = entry ? { eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: data?.body?.[locale], submitLabel: data?.submitLabel?.[locale], image: entry.image_path } : undefined;
-  return <>{isPreview && <DraftPreviewBanner backHref="/admin/contact" />}<Contact content={content} /></>;
+  const paymentOptions: Record<string, string> = {
+    "1": "Pay in Full, 1,290.",
+    "2": "2 Payments, 700 per month, 1,400 total.",
+    "3": "3 Payments, 480 per month, 1,440 total.",
+  };
+  return <>{isPreview && <DraftPreviewBanner backHref="/admin/contact" />}<Contact content={content} selectedPlan={payment ? paymentOptions[payment] : undefined} /></>;
 }

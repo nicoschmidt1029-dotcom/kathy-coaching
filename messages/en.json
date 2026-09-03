@@ -353,6 +353,8 @@
     "emailLabel": "Email",
     "emailPlaceholder": "jane@example.com",
     "messageLabel": "Message",
+    "selectedPayment": "Selected payment option",
+    "programInterest": "I'm interested in The Full Transformation — {plan}",
     "messagePlaceholder": "Your message",
     "prefillPrefix": "Interested in: {selection}",
     "privacyNote": "I'll only use your email to reply to you personally.",
