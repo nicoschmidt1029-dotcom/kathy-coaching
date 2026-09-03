@@ -41,9 +41,9 @@ export function WebsiteContentForm({ contentKey, title, description, entry, defa
         ))}
         {showCta && <Field label="Button destination" name="cta_href" defaultValue={data.ctaHref ?? "/programme"} />}
         <div className="flex flex-wrap items-center gap-3">
-          <SaveButton value="draft" variant="secondary">Save draft</SaveButton>
-          <SaveButton value="preview" variant="secondary">Preview changes</SaveButton>
-          <SaveButton value="published">Save & publish</SaveButton>
+          <SaveButton value="published">Save & update website</SaveButton>
+          <SaveButton value="draft" variant="secondary">Save draft (not live)</SaveButton>
+          <SaveButton value="preview" variant="secondary">Preview without saving</SaveButton>
         </div>
       </GuardedForm>
     </details>

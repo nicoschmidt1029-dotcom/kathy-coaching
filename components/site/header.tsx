@@ -15,26 +15,42 @@ const EXPLORE = [
   { key: "recipes", href: "/recipes" },
 ] as const;
 
-export function Header() {
+export type HeaderProgram = { slug: string; title: string };
+
+export function Header({ programs }: { programs: HeaderProgram[] }) {
   const [scrolled, setScrolled] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [exploreOpen, setExploreOpen] = React.useState(false);
+  const [programsOpen, setProgramsOpen] = React.useState(false);
+  const [mobileProgramsOpen, setMobileProgramsOpen] = React.useState(false);
   const exploreRef = React.useRef<HTMLDivElement>(null);
+  const programsRef = React.useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const t = useTranslations("nav");
   const exploreActive = EXPLORE.some((item) => pathname === item.href || pathname.startsWith(`${item.href}/`));
   const programsActive = pathname === "/programme" || pathname.startsWith("/programme/");
 
   React.useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        setScrolled((current) => current ? window.scrollY > 4 : window.scrollY > 120);
+      });
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   React.useEffect(() => {
     const close = (event: MouseEvent) => {
       if (!exploreRef.current?.contains(event.target as Node)) setExploreOpen(false);
+      if (!programsRef.current?.contains(event.target as Node)) setProgramsOpen(false);
     };
     document.addEventListener("mousedown", close);
     return () => document.removeEventListener("mousedown", close);
@@ -49,8 +65,8 @@ export function Header() {
         <Wordmark className={cn("transition-[width,transform] duration-300 ease-out", scrolled ? "w-[116px] md:w-[132px]" : "w-[178px] md:w-[202px]")} />
         <nav className="hidden items-center gap-7 lg:flex" aria-label={t("menu")}>
           <Link href="/katey" className={linkClass}>{t("about")}<span aria-hidden className={cn(underline, pathname === "/katey" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100")} /></Link>
-          <div ref={exploreRef} className="relative" onMouseEnter={() => setExploreOpen(true)} onMouseLeave={() => setExploreOpen(false)} onKeyDown={(event) => event.key === "Escape" && setExploreOpen(false)}>
-            <button type="button" aria-haspopup="menu" aria-expanded={exploreOpen} onClick={() => setExploreOpen((open) => !open)} className={cn(linkClass, "flex items-center gap-1.5", exploreActive && "text-foreground")}>{t("explore")}<ChevronDown className={cn("size-3.5 transition-transform duration-200", exploreOpen && "rotate-180")} /><span aria-hidden className={cn(underline, exploreActive || exploreOpen ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100")} /></button>
+          <div ref={exploreRef} className="relative" onMouseEnter={() => { setExploreOpen(true); setProgramsOpen(false); }} onMouseLeave={() => setExploreOpen(false)} onKeyDown={(event) => { if (event.key === "Escape") setExploreOpen(false); }}>
+            <button type="button" aria-haspopup="menu" aria-expanded={exploreOpen} onClick={() => { setExploreOpen((open) => !open); setProgramsOpen(false); }} className={cn(linkClass, "flex items-center gap-1.5", exploreActive && "text-foreground")}>{t("explore")}<ChevronDown className={cn("size-3.5 transition-transform duration-200", exploreOpen && "rotate-180")} /><span aria-hidden className={cn(underline, exploreActive || exploreOpen ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100")} /></button>
             <div role="menu" className={cn("absolute left-1/2 top-full z-50 w-44 -translate-x-1/2 pt-2 transition duration-150", exploreOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0")}>
               <div className="rounded-xl border border-foreground/10 bg-[#fbf8f2] p-1.5 shadow-[0_16px_38px_-24px_rgba(30,26,20,0.45)]">
                 {EXPLORE.map((item) => {
@@ -60,19 +76,30 @@ export function Header() {
               </div>
             </div>
           </div>
-          <Link href="/programme" className={cn(linkClass, programsActive && "text-foreground")}>{t("programs")}<span aria-hidden className={cn(underline, programsActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100")} /></Link>
+          <div ref={programsRef} className="relative" onKeyDown={(event) => { if (event.key === "Escape") setProgramsOpen(false); }}>
+            <button type="button" aria-haspopup="menu" aria-expanded={programsOpen} onClick={() => { setProgramsOpen((open) => !open); setExploreOpen(false); }} className={cn(linkClass, "flex items-center gap-1.5", programsActive && "text-foreground")}>{t("programs")}<ChevronDown className={cn("size-3.5 transition-transform duration-200", programsOpen && "rotate-180")} /><span aria-hidden className={cn(underline, programsActive || programsOpen ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100")} /></button>
+            <div role="menu" className={cn("absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-2 transition duration-150", programsOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0")}>
+              <div className="rounded-xl border border-foreground/10 bg-[#fbf8f2] p-1.5 shadow-[0_16px_38px_-24px_rgba(30,26,20,0.45)]">
+                {programs.map((program) => {
+                  const href = `/programme/${program.slug}` as const;
+                  const active = pathname === href;
+                  return <Link role="menuitem" key={program.slug} href={href} onClick={() => setProgramsOpen(false)} className={cn("block min-h-11 rounded-lg px-3 py-3 text-sm leading-snug transition-colors hover:bg-[var(--sand)] focus-visible:bg-[var(--sand)] focus-visible:outline-none", active ? "font-medium text-[var(--plum)]" : "text-foreground/72")}>{program.title}</Link>;
+                })}
+              </div>
+            </div>
+          </div>
           <Link href="/kontakt" className={linkClass}>{t("contact")}<span aria-hidden className={cn(underline, pathname === "/kontakt" ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100")} /></Link>
         </nav>
         <div className="flex items-center gap-2 md:gap-3">
           <LanguageSwitcher className="hidden lg:flex" />
-          <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
+          <Sheet open={menuOpen} onOpenChange={(open) => { setMenuOpen(open); if (!open) setMobileProgramsOpen(false); }}>
             <SheetTrigger asChild><Button variant="ghost" size="icon-lg" aria-label={t("openMenu")} className="size-10 lg:hidden"><Menu className="size-5" /></Button></SheetTrigger>
             <SheetContent side="right" className="flex w-[78vw] max-w-[310px] flex-col bg-background p-0">
               <SheetHeader className="border-b border-foreground/[0.06] px-6 py-4"><SheetTitle className="eyebrow text-left font-mono text-xs">{t("menu")}</SheetTitle></SheetHeader>
               <nav className="flex flex-1 flex-col justify-center px-6">
                 <SheetClose asChild><Link href="/katey" className="border-b border-foreground/[0.08] py-4 font-display text-[2rem]">{t("about")}</Link></SheetClose>
                 <div className="border-b border-foreground/[0.08] py-4"><p className="font-display text-[2rem]">{t("explore")}</p><div className="mt-3 space-y-1 border-l border-[var(--clay)]/40 pl-4">{EXPLORE.map((item) => <SheetClose key={item.href} asChild><Link href={item.href} className="block min-h-11 py-3 text-[0.95rem] text-foreground/65">{t(item.key)}</Link></SheetClose>)}</div></div>
-                <SheetClose asChild><Link href="/programme" className="border-b border-foreground/[0.08] py-4 font-display text-[2rem]">{t("programs")}</Link></SheetClose>
+                <div className="border-b border-foreground/[0.08] py-4"><button type="button" aria-expanded={mobileProgramsOpen} aria-controls="mobile-programs-menu" onClick={() => setMobileProgramsOpen((open) => !open)} className="flex w-full items-center justify-between gap-3 font-display text-[2rem]"><span>{t("programs")}</span><ChevronDown className={cn("size-5 transition-transform duration-200", mobileProgramsOpen && "rotate-180")} /></button>{mobileProgramsOpen && <div id="mobile-programs-menu" className="mt-3 space-y-1 border-l border-[var(--clay)]/40 pl-4">{programs.map((program) => <SheetClose key={program.slug} asChild><Link href={`/programme/${program.slug}`} className="block min-h-11 py-3 text-[0.95rem] leading-snug text-foreground/65">{program.title}</Link></SheetClose>)}</div>}</div>
                 <SheetClose asChild><Link href="/kontakt" className="border-b border-foreground/[0.08] py-4 font-display text-[2rem]">{t("contact")}</Link></SheetClose>
               </nav>
               <div className="border-t border-foreground/[0.06] p-5"><LanguageSwitcher size="lg" className="justify-center" /></div>

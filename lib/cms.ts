@@ -130,6 +130,9 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       transition?: Partial<Record<Locale, string>>;
       includesHeading?: Partial<Record<Locale, string>>;
       includes?: Partial<Record<Locale, readonly string[]>>;
+      howHeading?: Partial<Record<Locale, string>>;
+      howSteps?: Partial<Record<Locale, readonly string[]>>;
+      howClosing?: Partial<Record<Locale, string>>;
       duration?: Partial<Record<Locale, string>>;
       ctaLabel?: Partial<Record<Locale, string>>;
       ctaHref?: string;
@@ -153,14 +156,11 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
     const base = fallback
       ? getStaticPrograms(locale).find((program) => program.slug === entry.content_key)!
       : undefined;
-    const replaceOldDuration = (text: string) => text
-      .replace(/90 Days/g, "3 Months")
-      .replace(/90 days/g, "3 months")
-      .replace(/90 dní/g, "3 mesiace");
-    const title = replaceOldDuration(pick(data.title, base?.title ?? ""));
+    const title = pick(data.title, base?.title ?? "");
     if (!title) return null;
     return {
       slug: entry.content_key,
+      label: base?.label ?? "Program",
       image: entry.image_path ?? base?.image ?? "",
       imageAlt: data.imageAlt ?? base?.imageAlt ?? title,
       price: data.price ?? base?.price ?? 0,
@@ -173,7 +173,10 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       transition: pick(data.transition, base?.transition ?? ""),
       includesHeading: pick(data.includesHeading, base?.includesHeading ?? "This program includes:"),
       includes: pick(data.includes, base?.includes ?? []),
-      duration: replaceOldDuration(pick(data.duration, base?.duration ?? "")),
+      howHeading: pick(data.howHeading, base?.howHeading ?? ""),
+      howSteps: pick(data.howSteps, base?.howSteps ?? []),
+      howClosing: pick(data.howClosing, base?.howClosing ?? ""),
+      duration: pick(data.duration, base?.duration ?? ""),
       ctaLabel: pick(data.ctaLabel, base?.ctaLabel ?? ""),
       ctaHref: data.ctaHref ?? base?.ctaHref ?? "/kontakt",
       paragraphs: pick(data.paragraphs, base?.paragraphs ?? []),

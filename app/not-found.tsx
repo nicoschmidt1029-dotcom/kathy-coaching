@@ -8,6 +8,7 @@ import { NotFoundContent } from "@/components/site/not-found-content";
 import { TranslationNotice } from "@/components/site/translation-notice";
 import { routing } from "@/i18n/routing";
 import { FONT_CLASSES } from "@/lib/fonts";
+import { getPublicPrograms } from "@/lib/cms";
 
 /**
  * The 404 page for URLs that match no route at all.
@@ -29,8 +30,11 @@ export default async function GlobalNotFound() {
     ? candidate
     : routing.defaultLocale;
 
-  const messages = await getMessages({ locale });
-  const t = await getTranslations({ locale, namespace: "nav" });
+  const [messages, t, programs] = await Promise.all([
+    getMessages({ locale }),
+    getTranslations({ locale, namespace: "nav" }),
+    getPublicPrograms(locale),
+  ]);
 
   return (
     <html lang={locale} className={`${FONT_CLASSES} h-full antialiased`}>
@@ -42,7 +46,7 @@ export default async function GlobalNotFound() {
           >
             {t("skipToMain")}
           </a>
-          <Header />
+          <Header programs={programs.map(({ slug, title }) => ({ slug, title }))} />
           {/* Same draft banner as every other page in this locale. */}
           <TranslationNotice locale={locale} />
           <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
