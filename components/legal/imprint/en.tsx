@@ -9,7 +9,6 @@
  * been checked by anyone qualified in Swiss law.
  * ========================================================================== */
 
-import { Todo } from "@/components/site/todo";
 
 /**
  * Imprint — English (source version).
@@ -31,9 +30,9 @@ export function ImprintBodyEn() {
       <p>
         Katarina Gröflin
         <br />
-        <Todo>street and house number</Todo>
+        Kammermattweg 18
         <br />
-        <Todo>postcode</Todo> Ettingen BL
+        CH-4107 Ettingen
         <br />
         Switzerland
       </p>
@@ -42,47 +41,28 @@ export function ImprintBodyEn() {
       <p>
         Email: katey.coaching.newlife@gmail.com
         <br />
-        Phone: <Todo>a number, or confirmation that none is published</Todo>
+        Contact by email only; no telephone number is published.
       </p>
 
       <h2>Business identification</h2>
       <p>
-        UID (Unternehmens-Identifikationsnummer):{" "}
-        <Todo>the UID, or confirmation that the business is not registered</Todo>
+        UID (Unternehmens-Identifikationsnummer): not currently registered
         <br />
-        MWST-Nr. (VAT):{" "}
-        <Todo>
-          the VAT number, or confirmation that the business is not
-          VAT-registered
-        </Todo>
+        MWST-Nr. (VAT): not VAT-registered
         <br />
-        Commercial register (Handelsregister):{" "}
-        <Todo>the register entry, or confirmation that no entry is required</Todo>
+        Commercial register (Handelsregister): not currently registered
       </p>
 
       <h2>Professional titles</h2>
       <p>
-        Personal Trainer &amp; Nutrition Coach —{" "}
-        <Todo>the body that issued each certificate</Todo>. These are not
-        state-regulated professions in Switzerland; no cantonal licence or
-        chamber membership is required. Voluntary recognition (e.g. EMR / ASCA
-        / RME for complementary nutrition services) —{" "}
-        <Todo>
-          the registration number if one exists, otherwise this sentence is
-          deleted
-        </Todo>
-        .
+        Personal Trainer &amp; Nutrition Coach. Coaching is not presented as a
+        licensed medical or psychotherapeutic service.
       </p>
 
       <h2>Professional liability insurance</h2>
       <p>
-        Insurer: <Todo>name of the insurer</Todo>,{" "}
-        <Todo>address of the insurer</Todo>. Coverage:{" "}
-        <Todo>
-          the territory the policy actually covers — do not assume Switzerland
-          only
-        </Todo>
-        .
+        Professional liability insurance is not currently in place. The
+        operator plans to obtain appropriate cover.
       </p>
 
       <h2>Editorial responsibility</h2>
@@ -92,16 +72,7 @@ export function ImprintBodyEn() {
       </p>
 
       <h2>Dispute resolution</h2>
-      <p>
-        There is no obligation under Swiss law to participate in a consumer
-        arbitration procedure. Katey is not, at this time, willing to
-        participate in one either. EU-resident visitors may use the European
-        Commission&rsquo;s online dispute resolution platform at{" "}
-        <a href="https://ec.europa.eu/consumers/odr" rel="noopener noreferrer">
-          ec.europa.eu/consumers/odr
-        </a>
-        .
-      </p>
+      <p>Questions or complaints should first be sent to the email address above. Mandatory consumer rights and mandatory dispute-resolution rules remain unaffected.</p>
 
       <h2>Liability for content</h2>
       <p>

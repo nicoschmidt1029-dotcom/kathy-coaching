@@ -38,6 +38,10 @@
     "privacy": {
       "title": "Privacy",
       "description": "Privacy notice for Katey Coaching — how your data is handled under Swiss nDSG and the EU GDPR."
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "Terms and Conditions for Katey Coaching programs and services."
     }
   },
   "wordmark": {
@@ -377,6 +381,7 @@
     "blurb": "Holistic coaching for body, nutrition, and soul — rooted in faith, open to everyone.",
     "imprint": "Imprint",
     "privacy": "Privacy",
+    "terms": "Terms & Conditions",
     "contact": "Contact",
     "copyright": "© {year} Katey Coaching. All rights reserved.",
     "madeWithCare": "Made with care",
@@ -390,11 +395,13 @@
     "draftLabel": "Draft · not yet in force",
     "updatedLabel": "Last updated · {date}",
     "noticeLabel": "Incomplete document",
-    "noticeBody": "This notice is not finished. Every field marked <mark>TO BE SUPPLIED</mark> is still waiting on information from Katarina Gröflin — nothing in those places has been filled in with example or placeholder data. Until they are completed, this page does not satisfy the legal disclosure duties it is meant to cover.",
+    "noticeBody": "This is a working legal draft and is not yet in force. Any field marked <mark>TO BE SUPPLIED</mark> still needs confirmed information. The final text and translations must be approved before checkout is enabled.",
     "imprintEyebrow": "Legal notice · Impressum",
     "imprintTitle": "Imprint.",
     "privacyEyebrow": "Privacy notice · Datenschutz",
     "privacyTitle": "How I handle your data."
+    ,"termsEyebrow": "Terms & Conditions",
+    "termsTitle": "Terms for coaching services."
   },
   "notFound": {
     "eyebrow": "404 · this page moved or never existed",

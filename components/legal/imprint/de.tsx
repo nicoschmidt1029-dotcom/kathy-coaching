@@ -10,7 +10,6 @@
  * Übersetzung juristischer Begriffe gehört gegengelesen.
  * ========================================================================== */
 
-import { Todo } from "@/components/site/todo";
 
 /**
  * Impressum — German.
@@ -32,9 +31,9 @@ export function ImprintBodyDe() {
       <p>
         Katarina Gröflin
         <br />
-        <Todo>Strasse und Hausnummer</Todo>
+        Kammermattweg 18
         <br />
-        <Todo>Postleitzahl</Todo> Ettingen BL
+        CH-4107 Ettingen
         <br />
         Schweiz
       </p>
@@ -43,53 +42,28 @@ export function ImprintBodyDe() {
       <p>
         E-Mail: katey.coaching.newlife@gmail.com
         <br />
-        Telefon:{" "}
-        <Todo>eine Nummer, oder die Bestätigung, dass keine veröffentlicht wird</Todo>
+        Kontakt ausschliesslich per E-Mail; es wird keine Telefonnummer veröffentlicht.
       </p>
 
       <h2>Unternehmensidentifikation</h2>
       <p>
-        UID (Unternehmens-Identifikationsnummer):{" "}
-        <Todo>
-          die UID, oder die Bestätigung, dass das Unternehmen nicht eingetragen
-          ist
-        </Todo>
+        UID (Unternehmens-Identifikationsnummer): derzeit nicht registriert
         <br />
-        MWST-Nr.:{" "}
-        <Todo>
-          die Mehrwertsteuernummer, oder die Bestätigung, dass keine
-          MWST-Pflicht besteht
-        </Todo>
+        MWST-Nr.: nicht mehrwertsteuerregistriert
         <br />
-        Handelsregister:{" "}
-        <Todo>
-          der Registereintrag, oder die Bestätigung, dass kein Eintrag nötig ist
-        </Todo>
+        Handelsregister: derzeit nicht eingetragen
       </p>
 
       <h2>Berufsbezeichnungen</h2>
       <p>
-        Personal Trainerin &amp; Ernährungsberaterin —{" "}
-        <Todo>die Stelle, die das jeweilige Zertifikat ausgestellt hat</Todo>.
-        Das sind in der Schweiz keine staatlich reglementierten Berufe; eine
-        kantonale Bewilligung oder Kammermitgliedschaft ist nicht erforderlich.
-        Freiwillige Anerkennung (z.&nbsp;B. EMR / ASCA / RME für komplementäre
-        Ernährungsleistungen) —{" "}
-        <Todo>
-          die Registriernummer, falls vorhanden, sonst entfällt dieser Satz
-        </Todo>
-        .
+        Personal Trainerin &amp; Ernährungsberaterin. Das Coaching wird nicht als
+        bewilligungspflichtige medizinische oder psychotherapeutische Leistung angeboten.
       </p>
 
       <h2>Berufshaftpflichtversicherung</h2>
       <p>
-        Versicherer: <Todo>Name des Versicherers</Todo>,{" "}
-        <Todo>Adresse des Versicherers</Todo>. Geltungsbereich:{" "}
-        <Todo>
-          das tatsächlich versicherte Gebiet — nicht einfach die Schweiz
-          annehmen
-        </Todo>
-        .
+        Eine Berufshaftpflichtversicherung besteht derzeit noch nicht. Der
+        Abschluss einer geeigneten Versicherung ist geplant.
       </p>
 
       <h2>Inhaltliche Verantwortung</h2>
@@ -100,15 +74,9 @@ export function ImprintBodyDe() {
 
       <h2>Streitbeilegung</h2>
       <p>
-        Nach Schweizer Recht besteht keine Pflicht, an einem
-        Streitbeilegungsverfahren für Konsumentinnen und Konsumenten
-        teilzunehmen. Katey ist derzeit auch nicht bereit, an einem solchen
-        teilzunehmen. Besucherinnen und Besucher mit Wohnsitz in der EU können
-        die Online-Streitbeilegungsplattform der Europäischen Kommission nutzen:{" "}
-        <a href="https://ec.europa.eu/consumers/odr" rel="noopener noreferrer">
-          ec.europa.eu/consumers/odr
-        </a>
-        .
+        Fragen oder Beschwerden sind zunächst an die oben genannte E-Mail-Adresse
+        zu richten. Zwingende Verbraucherrechte und zwingende Regeln zur
+        Streitbeilegung bleiben unberührt.
       </p>
 
       <h2>Haftung für Inhalte</h2>

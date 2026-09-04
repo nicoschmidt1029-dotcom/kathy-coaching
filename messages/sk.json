@@ -56,6 +56,10 @@
     "privacy": {
       "title": "Ochrana údajov",
       "description": "Zásady ochrany osobných údajov Katey Coaching — ako sa narába s tvojimi údajmi podľa švajčiarskeho revDSG a európskeho GDPR."
+    },
+    "terms": {
+      "title": "Obchodné podmienky",
+      "description": "Obchodné podmienky programov a služieb Katey Coaching."
     }
   },
   "wordmark": {
@@ -387,6 +391,7 @@
     "blurb": "Celostný koučing pre telo, výživu a dušu — zakorenený vo viere, otvorený pre každého.",
     "imprint": "Právne informácie",
     "privacy": "Ochrana údajov",
+    "terms": "Obchodné podmienky",
     "contact": "Kontakt",
     "copyright": "© {year} Katey Coaching. Všetky práva vyhradené.",
     "madeWithCare": "Vytvorené s citom",
@@ -399,11 +404,13 @@
     "draftLabel": "Návrh · zatiaľ neplatné",
     "updatedLabel": "Naposledy upravené · {date}",
     "noticeLabel": "Nedokončený dokument",
-    "noticeBody": "Tento text nie je dokončený. Každé pole označené <mark>ZATIAĽ NEDOPLNENÉ</mark> čaká na údaje od Kataríny Gröflin — na žiadnom z týchto miest nie sú vzorové ani zástupné údaje. Kým sa nedoplnia, táto stránka nespĺňa informačné povinnosti, na ktoré je určená.",
+    "noticeBody": "Toto je pracovný návrh právneho textu a zatiaľ nie je účinný. Miesta označené <mark>ZATIAĽ NEDOPLNENÉ</mark> ešte vyžadujú potvrdené údaje. Konečný text a preklady musia byť schválené pred aktiváciou platby.",
     "imprintEyebrow": "Právne informácie",
     "imprintTitle": "Právne informácie.",
     "privacyEyebrow": "Ochrana osobných údajov",
     "privacyTitle": "Ako narábam s tvojimi údajmi."
+    ,"termsEyebrow": "Obchodné podmienky",
+    "termsTitle": "Podmienky koučovacích služieb."
   },
   "notFound": {
     "eyebrow": "404 · táto stránka sa presunula alebo nikdy neexistovala",

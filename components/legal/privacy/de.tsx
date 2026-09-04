@@ -10,7 +10,6 @@
  * Diese Fassung ist zudem aus dem Englischen übersetzt.
  * ========================================================================== */
 
-import { Todo } from "@/components/site/todo";
 import { SITE_HOST } from "@/lib/site-url";
 
 /**
@@ -46,11 +45,11 @@ export function PrivacyBodyDe() {
       <p>
         Katarina Gröflin
         <br />
-        <Todo>Strasse und Hausnummer</Todo>
+        Kammermattweg 18
         <br />
-        <Todo>Postleitzahl</Todo> Ettingen BL, Schweiz
+        CH-4107 Ettingen, Schweiz
         <br />
-        E-Mail: <Todo>die Adresse, die Katarina hier veröffentlichen möchte</Todo>
+        E-Mail: katey.coaching.newlife@gmail.com
       </p>
 
       <h2>2. Welche Daten erhoben werden, und wozu</h2>
@@ -77,9 +76,9 @@ export function PrivacyBodyDe() {
 
       <h3>2.2 Bei Nutzung des Kontaktformulars</h3>
       <p>
-        Das Kontaktformular erhebt deinen Namen, deine E-Mail-Adresse, die
-        Sprache, in der du eine Antwort bevorzugst (optional), woher du
-        schreibst (optional) und deine Nachricht. Diese Daten werden
+        Das Kontaktformular erhebt deinen Namen, deine E-Mail-Adresse und deine
+        Nachricht, gegebenenfalls einschliesslich der ausgewählten Programm-
+        oder Zahlungsoption. Diese Daten werden
         ausschliesslich verwendet, um deine Anfrage zu beantworten und — falls
         eine Zusammenarbeit entsteht — um die weitere Arbeit zu organisieren.
       </p>
@@ -101,15 +100,22 @@ export function PrivacyBodyDe() {
         <li>
           Aufbewahrung: so lange, wie es zum Abschluss des Gesprächs nötig ist,
           und — falls eine Zusammenarbeit entsteht — für die Dauer der
-          Coaching-Beziehung zuzüglich gesetzlicher Aufbewahrungsfristen
-          (10 Jahre für buchhaltungsrelevante Korrespondenz nach Art. 958f OR,{" "}
-          <Todo>Umfang mit Kateys Steuerberatung klären</Todo>). Führt die
+          Coaching-Beziehung zuzüglich anwendbarer gesetzlicher Aufbewahrungsfristen. Führt die
           Anfrage zu nichts, wird die Nachricht innerhalb von 12 Monaten
           gelöscht.
         </li>
       </ul>
 
-      <h3>2.3 Ein Honeypot-Feld</h3>
+      <h3>2.3 Zahlungen über Stripe</h3>
+      <p>
+        Sobald der Checkout aktiviert ist, verarbeitet Stripe Zahlungs-,
+        Rechnungs- und Transaktionsdaten nach den eigenen Datenschutzbestimmungen.
+        Katey erhält Zahlungsstatus und Transaktionsangaben, jedoch nicht die
+        vollständige Kartennummer. Die Verarbeitung dient der Vertragserfüllung,
+        Betrugsprävention, Abonnementverwaltung und Buchhaltung.
+      </p>
+
+      <h3>2.4 Ein Honeypot-Feld</h3>
       <p>
         Das Formular enthält ein verstecktes Feld, das für Menschen unsichtbar
         ist, von Spam-Bots aber meist ausgefüllt wird. Ist es ausgefüllt, wird
@@ -173,7 +179,7 @@ export function PrivacyBodyDe() {
       </ul>
       <p>
         Um eines dieser Rechte auszuüben, schreib an{" "}
-        <Todo>die Adresse, die Katarina hier veröffentlichen möchte</Todo>. Eine
+        katey.coaching.newlife@gmail.com. Eine
         Antwort folgt innerhalb von 30 Tagen.
       </p>
 

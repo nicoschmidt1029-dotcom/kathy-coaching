@@ -46,6 +46,10 @@
     "privacy": {
       "title": "Datenschutz",
       "description": "Datenschutzerklärung von Katey Coaching — wie deine Daten nach Schweizer revDSG und EU-DSGVO behandelt werden."
+    },
+    "terms": {
+      "title": "Allgemeine Geschäftsbedingungen",
+      "description": "Allgemeine Geschäftsbedingungen für Programme und Leistungen von Katey Coaching."
     }
   },
   "wordmark": {
@@ -376,6 +380,7 @@
     "blurb": "Ganzheitliches Coaching für Körper, Ernährung und Seele — im Glauben verwurzelt, offen für alle.",
     "imprint": "Impressum",
     "privacy": "Datenschutz",
+    "terms": "AGB",
     "contact": "Kontakt",
     "copyright": "© {year} Katey Coaching. Alle Rechte vorbehalten.",
     "madeWithCare": "Mit Sorgfalt gemacht",
@@ -388,11 +393,13 @@
     "draftLabel": "Entwurf · noch nicht in Kraft",
     "updatedLabel": "Zuletzt aktualisiert · {date}",
     "noticeLabel": "Unvollständiges Dokument",
-    "noticeBody": "Dieser Text ist nicht fertig. Jedes mit <mark>NOCH AUSZUFÜLLEN</mark> markierte Feld wartet auf Angaben von Katarina Gröflin — an keiner dieser Stellen stehen Beispiel- oder Platzhalterdaten. Solange sie fehlen, erfüllt diese Seite die Informationspflichten nicht, für die sie gedacht ist.",
+    "noticeBody": "Dies ist ein rechtlicher Arbeitsentwurf und noch nicht in Kraft. Mit <mark>NOCH AUSZUFÜLLEN</mark> markierte Stellen benötigen bestätigte Angaben. Der endgültige Text und die Übersetzungen müssen vor Aktivierung des Checkouts freigegeben werden.",
     "imprintEyebrow": "Rechtliche Angaben",
     "imprintTitle": "Impressum.",
     "privacyEyebrow": "Datenschutzerklärung",
     "privacyTitle": "Wie ich mit deinen Daten umgehe."
+    ,"termsEyebrow": "Allgemeine Geschäftsbedingungen",
+    "termsTitle": "Bedingungen für Coaching-Leistungen."
   },
   "notFound": {
     "eyebrow": "404 · diese Seite ist umgezogen oder gab es nie",

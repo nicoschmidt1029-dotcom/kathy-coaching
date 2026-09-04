@@ -13,7 +13,6 @@
  * separate sign-offs — neither has happened.
  * ========================================================================== */
 
-import { Todo } from "@/components/site/todo";
 import { SITE_HOST } from "@/lib/site-url";
 
 /**
@@ -54,11 +53,11 @@ export function PrivacyBodySk() {
       <p>
         Katarína Gröflin
         <br />
-        <Todo>ulica a číslo</Todo>
+        Kammermattweg 18
         <br />
-        <Todo>PSČ</Todo> Ettingen BL, Švajčiarsko
+        CH-4107 Ettingen, Švajčiarsko
         <br />
-        E-mail: <Todo>adresa, ktorú tu chce Katarína zverejniť</Todo>
+        E-mail: katey.coaching.newlife@gmail.com
       </p>
 
       <h2>2. Aké údaje sa spracúvajú a prečo</h2>
@@ -83,8 +82,8 @@ export function PrivacyBodySk() {
 
       <h3>2.2 Pri použití kontaktného formulára</h3>
       <p>
-        Kontaktný formulár zbiera tvoje meno, e-mailovú adresu, jazyk, v ktorom
-        chceš odpoveď (nepovinné), odkiaľ píšeš (nepovinné) a tvoju správu.
+        Kontaktný formulár zbiera tvoje meno, e-mailovú adresu a správu,
+        prípadne aj zvolený program alebo možnosť platby.
         Tieto údaje sa používajú výhradne na odpoveď na tvoju otázku a — ak
         vznikne spolupráca — na zorganizovanie ďalšej práce.
       </p>
@@ -105,14 +104,21 @@ export function PrivacyBodySk() {
         <li>
           Uchovávanie: tak dlho, ako je potrebné na dokončenie rozhovoru, a — ak
           vznikne spolupráca — po dobu trvania koučingového vzťahu plus zákonné
-          lehoty uchovávania (10 rokov pre korešpondenciu relevantnú pre
-          účtovníctvo podľa čl. 958f OR,{" "}
-          <Todo>rozsah overiť s daňovou poradkyňou Katey</Todo>). Ak z otázky
+          uplatniteľné zákonné lehoty uchovávania. Ak z otázky
           nič nevznikne, správa sa vymaže do 12 mesiacov.
         </li>
       </ul>
 
-      <h3>2.3 Honeypot pole</h3>
+      <h3>2.3 Platby cez Stripe</h3>
+      <p>
+        Po aktivácii platby bude Stripe spracúvať platobné, fakturačné a
+        transakčné údaje podľa vlastných zásad ochrany osobných údajov. Katey
+        dostane stav platby a údaje o transakcii, nie však celé číslo karty.
+        Údaje sa používajú na plnenie zmluvy, prevenciu podvodov, správu
+        predplatného a účtovníctvo.
+      </p>
+
+      <h3>2.4 Honeypot pole</h3>
       <p>
         Formulár obsahuje skryté pole, ktoré je pre ľudí neviditeľné, ale
         spamovacie roboty ho zvyčajne vyplnia. Ak je vyplnené, správa sa ticho
@@ -170,7 +176,7 @@ export function PrivacyBodySk() {
       </ul>
       <p>
         Ak chceš niektoré z týchto práv uplatniť, napíš na{" "}
-        <Todo>adresa, ktorú tu chce Katarína zverejniť</Todo>. Odpoveď príde do
+        katey.coaching.newlife@gmail.com. Odpoveď príde do
         30 dní.
       </p>
 

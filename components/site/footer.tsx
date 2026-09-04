@@ -61,6 +61,12 @@ export function Footer({ claim }: { claim?: string }) {
             >
               {t("privacy")}
             </Link>
+            <Link
+              href="/terms"
+              className="transition-colors hover:text-[var(--primary-foreground)]"
+            >
+              {t("terms")}
+            </Link>
             <NextLink
               href="/admin"
               rel="nofollow"

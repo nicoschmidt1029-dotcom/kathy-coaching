@@ -12,7 +12,6 @@
  * separate sign-offs — neither has happened.
  * ========================================================================== */
 
-import { Todo } from "@/components/site/todo";
 
 /**
  * Právne informácie (Impressum) — Slovak.
@@ -40,9 +39,9 @@ export function ImprintBodySk() {
       <p>
         Katarína Gröflin
         <br />
-        <Todo>ulica a číslo domu</Todo>
+        Kammermattweg 18
         <br />
-        <Todo>PSČ</Todo> Ettingen BL
+        CH-4107 Ettingen
         <br />
         Švajčiarsko
       </p>
@@ -51,46 +50,28 @@ export function ImprintBodySk() {
       <p>
         E-mail: katey.coaching.newlife@gmail.com
         <br />
-        Telefón:{" "}
-        <Todo>číslo, alebo potvrdenie, že sa žiadne nezverejňuje</Todo>
+        Kontakt je možný len e-mailom; telefónne číslo sa nezverejňuje.
       </p>
 
       <h2>Identifikácia podnikateľky</h2>
       <p>
-        UID (Unternehmens-Identifikationsnummer):{" "}
-        <Todo>UID, alebo potvrdenie, že podnikanie nie je registrované</Todo>
+        UID (Unternehmens-Identifikationsnummer): momentálne neregistrované
         <br />
-        MWST-Nr. (DPH):{" "}
-        <Todo>
-          číslo DPH, alebo potvrdenie, že registrácia na DPH neexistuje
-        </Todo>
+        MWST-Nr. (DPH): nie je registrovaná na DPH
         <br />
-        Obchodný register (Handelsregister):{" "}
-        <Todo>zápis v registri, alebo potvrdenie, že zápis nie je potrebný</Todo>
+        Obchodný register (Handelsregister): momentálne nezapísaná
       </p>
 
       <h2>Odborné označenia</h2>
       <p>
-        Osobná trénerka a výživová poradkyňa —{" "}
-        <Todo>inštitúcia, ktorá jednotlivé certifikáty vydala</Todo>. Vo
-        Švajčiarsku nejde o štátom regulované povolania; kantonálne povolenie
-        ani členstvo v komore sa nevyžaduje. Dobrovoľné uznanie (napr. EMR /
-        ASCA / RME pre doplnkové výživové služby) —{" "}
-        <Todo>
-          registračné číslo, ak existuje, inak sa táto veta vypúšťa
-        </Todo>
-        .
+        Osobná trénerka a výživová poradkyňa. Koučing sa neponúka ako
+        licencovaná zdravotná alebo psychoterapeutická služba.
       </p>
 
       <h2>Poistenie profesijnej zodpovednosti</h2>
       <p>
-        Poisťovateľ: <Todo>názov poisťovateľa</Todo>,{" "}
-        <Todo>adresa poisťovateľa</Todo>. Územná platnosť:{" "}
-        <Todo>
-          územie, ktoré poistka skutočne pokrýva — nepredpokladať len
-          Švajčiarsko
-        </Todo>
-        .
+        Poistenie profesijnej zodpovednosti momentálne ešte nie je uzatvorené.
+        Uzatvorenie vhodného poistenia sa plánuje.
       </p>
 
       <h2>Zodpovednosť za obsah</h2>
@@ -100,14 +81,9 @@ export function ImprintBodySk() {
 
       <h2>Riešenie sporov</h2>
       <p>
-        Podľa švajčiarskeho práva neexistuje povinnosť zúčastniť sa
-        spotrebiteľského rozhodcovského konania. Katey sa na ňom v súčasnosti
-        ani zúčastniť nechce. Návštevníci s bydliskom v EÚ môžu využiť
-        platformu Európskej komisie na riešenie sporov online:{" "}
-        <a href="https://ec.europa.eu/consumers/odr" rel="noopener noreferrer">
-          ec.europa.eu/consumers/odr
-        </a>
-        .
+        Otázky alebo sťažnosti treba najprv poslať na vyššie uvedenú e-mailovú
+        adresu. Povinné práva spotrebiteľov a povinné pravidlá riešenia sporov
+        zostávajú nedotknuté.
       </p>
 
       <h2>Zodpovednosť za obsah stránky</h2>

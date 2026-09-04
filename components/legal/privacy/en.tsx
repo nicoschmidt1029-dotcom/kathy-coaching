@@ -10,7 +10,6 @@
  * adequacy-decision and framework claims in particular can go stale.
  * ========================================================================== */
 
-import { Todo } from "@/components/site/todo";
 import { SITE_HOST } from "@/lib/site-url";
 
 /**
@@ -45,11 +44,11 @@ export function PrivacyBodyEn() {
       <p>
         Katarina Gröflin
         <br />
-        <Todo>street and number</Todo>
+        Kammermattweg 18
         <br />
-        <Todo>postcode</Todo> Ettingen BL, Switzerland
+        CH-4107 Ettingen, Switzerland
         <br />
-        Email: <Todo>the address Katarina wants published here</Todo>
+        Email: katey.coaching.newlife@gmail.com
       </p>
 
       <h2>2. What data is collected, and why</h2>
@@ -74,9 +73,8 @@ export function PrivacyBodyEn() {
 
       <h3>2.2 When you use the contact form</h3>
       <p>
-        The contact form collects your name, email address, the language you
-        prefer to be answered in (optional), where you are writing from
-        (optional), and your message. This data is used only to reply to your
+        The contact form collects your name, email address and message,
+        including a selected program or payment option where applicable. This data is used only to reply to your
         enquiry and, if you become a client, to arrange the work that follows.
       </p>
       <ul>
@@ -96,15 +94,23 @@ export function PrivacyBodyEn() {
         <li>
           Retention: kept as long as needed to complete the conversation, and —
           if you become a client — for the duration of the coaching
-          relationship plus any statutory retention periods (10 years for
-          accounting-related correspondence under Art. 958f OR,{" "}
-          <Todo>confirm scope with Katey&rsquo;s tax advisor</Todo>). If
+          relationship plus any applicable statutory retention periods. If
           nothing comes of the enquiry, the message is deleted within 12
           months.
         </li>
       </ul>
 
-      <h3>2.3 A honeypot field</h3>
+      <h3>2.3 Payments through Stripe</h3>
+      <p>
+        When checkout is enabled, Stripe will process payment, billing and
+        transaction data as an independent service provider under its own
+        privacy terms. Katey receives payment status and transaction details,
+        but not the client&rsquo;s full card number. The data is used to perform
+        the contract, prevent fraud, manage subscriptions and meet accounting
+        obligations.
+      </p>
+
+      <h3>2.4 A honeypot field</h3>
       <p>
         The form has a hidden field that&rsquo;s invisible to humans but
         usually filled in by spam bots. If it&rsquo;s filled, the message is
@@ -161,7 +167,7 @@ export function PrivacyBodyEn() {
       </ul>
       <p>
         To exercise any of these rights, email{" "}
-        <Todo>the address Katarina wants published here</Todo>. A reply follows
+        katey.coaching.newlife@gmail.com. A reply follows
         within 30 days.
       </p>
 
