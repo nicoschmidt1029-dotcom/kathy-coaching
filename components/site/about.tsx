@@ -13,7 +13,7 @@ import { TEMP_PHOTOS } from "@/lib/temp-photos";
  * is mentioned on the whole site. Exact certificate designations are still
  * pending from her; see lib/content-status.ts.
  */
-type EditableContent = { mainManaged?: boolean; callingManaged?: boolean; eyebrow?: string; headline?: string; body?: string; calling?: string; image?: string | null };
+type EditableContent = { mainManaged?: boolean; biographyManaged?: boolean; callingManaged?: boolean; eyebrow?: string; headline?: string; body?: string; calling?: string; image?: string | null };
 
 export function About({ content }: { content?: EditableContent }) {
   const t = useTranslations("about");
@@ -38,7 +38,7 @@ export function About({ content }: { content?: EditableContent }) {
             2026-08-19: mt-6 -> mt-4 (small, per request) so the eyebrow and
             title read as one tighter unit — same nudge as the section's
             top padding below, not a new pattern. */}
-        {headline && <DisplayTitle className={eyebrow ? "mt-4" : ""}>{headline}</DisplayTitle>}
+        {headline && <DisplayTitle as="h1" className={eyebrow ? "mt-4" : ""}>{headline}</DisplayTitle>}
 
         {/* 2026-08-19 mobile-refinement pass: gap-12 -> gap-8 on mobile
             only (md:gap-16 untouched) — part of the same "reduce excessive
@@ -91,9 +91,10 @@ export function About({ content }: { content?: EditableContent }) {
               em: (chunks) => <span className="not-italic">{chunks}</span>,
             })}
           </p>}
-          {/* Bio expanded 2026-08-18 with Katarina's new biography (movement
-              -> nourishment/inner health -> education -> mission) — split
-              into four short paragraphs with real vertical space between
+          {/* Bio expanded 2026-08-18 with Katarina's biography and replaced
+              2026-09-09 with the version she supplied by email (sport ->
+              nourishment -> inner health -> education -> dream -> mission).
+              It is split into six short paragraphs with real vertical space between
               them rather than one dense block, per her explicit brief that
               a wall of text would read wrong on this page. Written for
               English first, then translated into the same four blocks for
@@ -102,25 +103,21 @@ export function About({ content }: { content?: EditableContent }) {
               content, so nothing breaks — every locale currently shipped
               carries the new structure. Widened to max-w-xl (~576px) from
               the previous max-w-md (~448px) — comfortably inside the
-              520-650px readable-width range for four paragraphs instead of
+              520-650px readable-width range for the biography instead of
               one short one.
 
-              2026-08-19: storyMovement and storyNourish reverted to
-              Katarina's own unedited sentences — those two were the only
-              two blocks the original brief showed in both a raw and a
-              "polished" form, and the polished rewrite read as too
-              changed from what she actually wrote. storyEducation and
-              storyMission were only ever given in one form (never shown
-              raw separately), so they're untouched here. */}
+              The supplied wording is retained, with only obvious punctuation
+              and pronoun slips normalized. German and Slovak carry faithful
+              translations without English fallback. */}
           {/* 2026-08-19 mobile-refinement pass: content/length unchanged
               per client's explicit request — only reading rhythm tuned.
               space-y-5 -> space-y-6 on mobile (sm:space-y-5 restores the
               original desktop gap exactly) for a clearer break between
-              the four blocks, and an explicit leading-[1.65] on mobile
+              the biography blocks, and an explicit leading-[1.65] on mobile
               (was inheriting the browser default ~1.5; sm:leading-[1.7]
               still wins at sm+ same as before) for a more comfortable
               line-height at phone widths. */}
-          {managed ? biography ? (
+          {content?.biographyManaged ? biography ? (
             <div className="mt-6 max-w-xl space-y-6 sm:space-y-5">
               {biography.split(/\n\s*\n/).filter(Boolean).map((paragraph) => (
                 <p key={paragraph} className="text-pretty leading-[1.65] text-foreground/72 sm:text-lg sm:leading-[1.7]">{paragraph}</p>
@@ -131,8 +128,10 @@ export function About({ content }: { content?: EditableContent }) {
               {(
                 [
                   "storyMovement",
-                  "storyNourish",
+                  "storyFood",
+                  "storyInnerHealth",
                   "storyEducation",
+                  "storyDream",
                   "storyMission",
                 ] as const
               ).map((key) => (

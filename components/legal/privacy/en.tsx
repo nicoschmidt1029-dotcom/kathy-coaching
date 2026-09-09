@@ -126,7 +126,7 @@ export function PrivacyBodyEn() {
         </li>
         <li>No advertising trackers.</li>
         <li>
-          Fonts (Fraunces, Inter) are self-hosted via <code>next/font</code> —
+          Fonts (Instrument Serif, Pinyon Script and Inter) are self-hosted via <code>next/font</code> —
           no requests go to Google when you load a page.
         </li>
         <li>

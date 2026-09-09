@@ -76,7 +76,7 @@ export function Header({ programs }: { programs: HeaderProgram[] }) {
               </div>
             </div>
           </div>
-          <div ref={programsRef} className="relative" onKeyDown={(event) => { if (event.key === "Escape") setProgramsOpen(false); }}>
+          <div ref={programsRef} className="relative" onMouseEnter={() => { setProgramsOpen(true); setExploreOpen(false); }} onMouseLeave={() => setProgramsOpen(false)} onKeyDown={(event) => { if (event.key === "Escape") setProgramsOpen(false); }}>
             <button type="button" aria-haspopup="menu" aria-expanded={programsOpen} onClick={() => { setProgramsOpen((open) => !open); setExploreOpen(false); }} className={cn(linkClass, "flex items-center gap-1.5", programsActive && "text-foreground")}>{t("programs")}<ChevronDown className={cn("size-3.5 transition-transform duration-200", programsOpen && "rotate-180")} /><span aria-hidden className={cn(underline, programsActive || programsOpen ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100")} /></button>
             <div role="menu" className={cn("absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-2 transition duration-150", programsOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0")}>
               <div className="rounded-xl border border-foreground/10 bg-[#fbf8f2] p-1.5 shadow-[0_16px_38px_-24px_rgba(30,26,20,0.45)]">
@@ -94,7 +94,7 @@ export function Header({ programs }: { programs: HeaderProgram[] }) {
           <LanguageSwitcher className="hidden lg:flex" />
           <Sheet open={menuOpen} onOpenChange={(open) => { setMenuOpen(open); if (!open) setMobileProgramsOpen(false); }}>
             <SheetTrigger asChild><Button variant="ghost" size="icon-lg" aria-label={t("openMenu")} className="size-10 lg:hidden"><Menu className="size-5" /></Button></SheetTrigger>
-            <SheetContent side="right" className="flex w-[78vw] max-w-[310px] flex-col bg-background p-0">
+            <SheetContent side="right" className="flex w-[78vw] max-w-[calc(100vw-1rem)] box-border flex-col bg-background p-0 sm:max-w-[310px]">
               <SheetHeader className="border-b border-foreground/[0.06] px-6 py-4"><SheetTitle className="eyebrow text-left font-mono text-xs">{t("menu")}</SheetTitle></SheetHeader>
               <nav className="flex flex-1 flex-col justify-center px-6">
                 <SheetClose asChild><Link href="/katey" className="border-b border-foreground/[0.08] py-4 font-display text-[2rem]">{t("about")}</Link></SheetClose>

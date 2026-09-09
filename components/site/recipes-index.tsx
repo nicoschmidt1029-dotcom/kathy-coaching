@@ -29,7 +29,7 @@ export async function RecipesIndex({ locale, content }: { locale: Locale; conten
         <div className="container-page">
           <div className="max-w-2xl">
             <p className="eyebrow">{editable("eyebrow", t("eyebrow"))}</p>
-            <DisplayTitle className="mt-3">{editable("title", t("title"))}</DisplayTitle>
+            <DisplayTitle as="h1" className="mt-3">{editable("title", t("title"))}</DisplayTitle>
             <p className="mt-4 max-w-xl text-[1.02rem] leading-relaxed text-foreground/72 sm:text-lg">
               {editable("intro", t("intro"))}
             </p>
@@ -45,7 +45,7 @@ export async function RecipesIndex({ locale, content }: { locale: Locale; conten
                   src={featured.image}
                   alt={featured.imageAlt}
                   fill
-                  priority
+                  loading="eager"
                   sizes="(max-width: 768px) 100vw, 40vw"
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />

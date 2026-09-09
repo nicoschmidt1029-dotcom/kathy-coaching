@@ -150,8 +150,7 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
     const pick = <T>(field: Partial<Record<Locale, T>> | undefined, fallback: T) => {
       const localized = field?.[locale];
       if (present(localized)) return localized as T;
-      const english = field?.en;
-      return present(english) ? english as T : fallback;
+      return fallback;
     };
     const fallback = PROGRAMS.find((program) => program.slug === entry.content_key);
     const base = fallback
@@ -169,10 +168,10 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       kind: data.kind ?? base?.kind ?? "coaching",
       title,
       intro: pick(data.intro, base?.intro ?? ""),
-      targetHeading: pick(data.targetHeading, base?.targetHeading ?? "This program is for:"),
+      targetHeading: pick(data.targetHeading, base?.targetHeading ?? ""),
       targetAudience: pick(data.targetAudience, base?.targetAudience ?? []),
       transition: pick(data.transition, base?.transition ?? ""),
-      includesHeading: pick(data.includesHeading, base?.includesHeading ?? "This program includes:"),
+      includesHeading: pick(data.includesHeading, base?.includesHeading ?? ""),
       includes: pick(data.includes, base?.includes ?? []),
       howHeading: pick(data.howHeading, base?.howHeading ?? ""),
       howSteps: pick(data.howSteps, base?.howSteps ?? []),

@@ -6,9 +6,10 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import type { LocalizedProgram } from "@/lib/programs";
 import { ConversationProgram } from "@/components/site/conversation-program";
+import { CheckoutButton } from "@/components/site/checkout-button";
 
 export async function ProgramDetail({ program, locale, showBackLink = true }: { program: LocalizedProgram; locale: Locale; showBackLink?: boolean }) {
-  if (program.kind === "conversation") return <ConversationProgram program={program} showBackLink={showBackLink} />;
+  if (program.kind === "conversation") return <ConversationProgram program={program} locale={locale} showBackLink={showBackLink} />;
   const [t, nav] = await Promise.all([getTranslations({ locale, namespace: "programs" }), getTranslations({ locale, namespace: "nav" })]);
 
   return (
@@ -28,7 +29,7 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
 
         <div className="mt-10 grid items-start gap-9 md:mt-12 md:grid-cols-12 md:gap-12 lg:gap-16">
           {program.image && <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[var(--sand)] md:col-span-5">
-            <Image src={program.image} alt={program.imageAlt} fill priority sizes="(max-width: 768px) 100vw, 42vw" className="object-cover" />
+            <Image src={program.image} alt={program.imageAlt} fill loading="eager" sizes="(max-width: 768px) 100vw, 42vw" className="object-cover" />
           </div>}
           <section className={program.image ? "md:col-span-7 md:pt-5 lg:pt-9" : "md:col-span-10 md:col-start-2 md:pt-5 lg:col-span-8 lg:col-start-3 lg:pt-9"}>
             <h2 className="max-w-lg font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] text-[var(--plum)]">{program.targetHeading}</h2>
@@ -65,7 +66,10 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
         <div className="rounded-[1.75rem] bg-[var(--plum)] px-6 py-9 text-white sm:px-10 md:flex md:items-end md:justify-between md:gap-10 md:px-12 md:py-11">
           <div><p className="text-xs font-medium uppercase tracking-[0.22em] text-white/62">{t("price")}</p><p className="mt-3 font-display text-[clamp(2.4rem,5vw,4.5rem)] leading-none">{program.price} {program.currency}</p><p className="mt-3 text-base text-white/68">{program.duration}</p></div>
           {program.paymentOptions && program.paymentOptions.length > 0 ? <div className="mt-8 grid w-full gap-3 md:mt-0 md:max-w-md">
-            {program.paymentOptions.map((option, index) => <Button key={option} asChild size="lg" className="min-h-12 h-auto justify-between whitespace-normal bg-white px-5 py-3 text-left leading-snug text-[var(--plum)] hover:bg-white/90"><Link href={`/kontakt?payment=${program.slug === "move-and-grow" ? "b-month" : `a-${index + 1}`}`}><span>{option}</span><ArrowRight className="ml-3 size-4 shrink-0" /></Link></Button>)}
+            {program.paymentOptions.map((option, index) => {
+              const plan = program.slug === "move-and-grow" ? "b-month" : `a-${index + 1}`;
+              return <CheckoutButton key={option} plan={plan as "a-1" | "a-2" | "a-3" | "b-month"} locale={locale} label={option} loadingLabel={t("checkoutLoading")} errorLabel={t("checkoutError")} className="min-h-12 h-auto w-full justify-between whitespace-normal bg-white px-5 py-3 text-left leading-snug text-[var(--plum)] hover:bg-white/90" />;
+            })}
           </div> : <Button asChild size="lg" className="mt-8 h-12 bg-white px-7 text-[var(--plum)] hover:bg-white/90 md:mt-0"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel || nav("contact")}<ArrowRight className="ml-1 size-4" /></Link></Button>}
         </div>
       </section>

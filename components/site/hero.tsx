@@ -148,7 +148,7 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
                   src={photo.url}
                   alt={photo.alt}
                   fill
-                  priority
+                  loading="eager"
                   sizes="100vw"
                   className="object-cover object-[22%_28%]"
                 />
@@ -202,7 +202,7 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
                   src={photo.url}
                   alt={photo.alt}
                   fill
-                  priority
+                  loading="eager"
                   sizes="100vw"
                   className="object-cover object-[22%_28%]"
                 />

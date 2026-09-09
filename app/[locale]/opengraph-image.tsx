@@ -1,14 +1,7 @@
 import { ImageResponse } from "next/og";
 import { SITE_HOST } from "@/lib/site-url";
 
-/**
- * TRANSLATION TODO: the same English card is generated for /en, /de and /sk.
- * The headline is hand-split across two lines (roman + italic accent), which
- * does not survive a naive translation — localizing this needs a per-locale
- * line break, not just a swapped string.
- */
-export const alt =
-  "Katey Coaching — Faith-rooted training, nutrition & Christian mentoring";
+export const alt = "Katey Coaching";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -27,7 +20,15 @@ async function fetchGoogleFont(family: string, params: string) {
   return fetch(url).then((r) => r.arrayBuffer());
 }
 
-export default async function Image() {
+const copy = {
+  en: { line1: "Sometimes you just need", line2: "the right direction.", body: "Personal training · nutrition guidance · faith-rooted mentoring.", meta: "Three programs · personal guidance" },
+  de: { line1: "Manchmal brauchst du nur", line2: "die richtige Richtung.", body: "Persönliches Training · Ernährungsbegleitung · glaubensbasiertes Mentoring.", meta: "Drei Programme · persönliche Begleitung" },
+  sk: { line1: "Niekedy potrebuješ len", line2: "správny smer.", body: "Osobný tréning · poradenstvo vo výžive · mentoring zakorenený vo viere.", meta: "Tri programy · osobné vedenie" },
+} as const;
+
+export default async function Image({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const text = copy[locale as keyof typeof copy] ?? copy.en;
   const [regular, italic] = await Promise.all([
     fetchGoogleFont("Instrument+Serif", "wght@400"),
     fetchGoogleFont("Instrument+Serif", "ital,wght@1,400"),
@@ -115,7 +116,7 @@ export default async function Image() {
               color: CHARCOAL,
             }}
           >
-            Sometimes you just need
+            {text.line1}
           </span>
           <span
             style={{
@@ -127,7 +128,7 @@ export default async function Image() {
               color: CHARCOAL,
             }}
           >
-            the right direction.
+            {text.line2}
           </span>
           <span
             style={{
@@ -141,8 +142,7 @@ export default async function Image() {
               maxWidth: 820,
             }}
           >
-            One-on-one training · meal plan based on your goals · spiritual
-            health.
+            {text.body}
           </span>
         </div>
 
@@ -164,7 +164,7 @@ export default async function Image() {
               fontStyle: "normal",
             }}
           >
-            Six-week program · 1:1
+            {text.meta}
           </span>
           <span
             style={{

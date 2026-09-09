@@ -149,7 +149,7 @@ function PlaceholderState({
             src={poster}
             alt=""
             fill
-            priority
+            loading="eager"
             sizes="(max-width: 768px) 100vw, 42vw"
             className="object-cover"
           />

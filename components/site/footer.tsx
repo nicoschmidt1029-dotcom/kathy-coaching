@@ -13,6 +13,7 @@ import { Wordmark } from "./wordmark";
 export function Footer({ claim }: { claim?: string }) {
   const t = useTranslations("footer");
   const year = new Date().getFullYear();
+  const customerPortalUrl = process.env.NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL;
 
   return (
     <footer className="bg-[var(--petrol-deep)] text-[var(--primary-foreground)]">
@@ -67,6 +68,14 @@ export function Footer({ claim }: { claim?: string }) {
             >
               {t("terms")}
             </Link>
+            {customerPortalUrl && (
+              <NextLink
+                href={customerPortalUrl}
+                className="transition-colors hover:text-[var(--primary-foreground)]"
+              >
+                {t("billing")}
+              </NextLink>
+            )}
             <NextLink
               href="/admin"
               rel="nofollow"

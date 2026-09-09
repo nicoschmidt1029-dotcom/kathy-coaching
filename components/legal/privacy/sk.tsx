@@ -134,7 +134,7 @@ export function PrivacyBodySk() {
         </li>
         <li>Žiadne reklamné sledovače.</li>
         <li>
-          Písma (Fraunces, Inter) sú hostované priamo cez <code>next/font</code>{" "}
+          Písma (Instrument Serif, Pinyon Script a Inter) sú hostované priamo cez <code>next/font</code>{" "}
           — pri načítaní stránky nejdú na Google žiadne požiadavky.
         </li>
         <li>

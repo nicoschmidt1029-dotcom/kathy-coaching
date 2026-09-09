@@ -56,7 +56,7 @@ export function HeroBackgroundVideo({
           src={poster}
           alt=""
           fill
-          priority
+          loading="eager"
           sizes="100vw"
           className="object-cover"
           style={objectPosition ? { objectPosition } : undefined}

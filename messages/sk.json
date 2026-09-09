@@ -19,6 +19,7 @@
     "draft": "Slovenský preklad sa ešte kontroluje. Anglická verzia je pôvodná."
   },
   "meta": {
+    "siteName": "Katey Coaching",
     "titleDefault": "Katey Coaching — tréning, výživa a mentoring zakorenené vo viere",
     "titleTemplate": "%s · Katey Coaching",
     "description": "Katey Coaching.",
@@ -173,9 +174,11 @@
     "calling": "Všetci máme v živote povolanie. <em>Moje povolanie je pomáhať ľuďom.</em>",
     "story": "Vyštudovala som na SNF Akademy, absolvovala Awakening School of Ministry. Pomáham ľuďom zmeniť jedálny lístok, nájsť pozitívny vzťah k športu a pochopiť, aký je každý človek jedinečný a dôležitý.",
     "storyMovement": "Športu som sa venovala už ako malé dievča. Zaujímali ma všetky druhy športu.",
-    "storyNourish": "Postupom času som pochopila, že jedlo nie je len na to, aby sme sa najedli, ale predovšetkým na to, aby nás vyživovalo. A za posledné roky som naozaj pochopila, aký veľký vplyv má naše vnútorné zdravie na celú našu existenciu.",
+    "storyFood": "Postupom času som pochopila, že jedlo nie je len na to, aby sme sa najedli, ale predovšetkým na to, aby nás vyživovalo.",
+    "storyInnerHealth": "A za posledné roky som naozaj pochopila, aký veľký vplyv má naše vnútorné zdravie na celú našu existenciu.",
     "storyEducation": "Mala som možnosť študovať na <em>SNF Academy</em>, kde som študovala odbor osobná trénerka a výživová poradkyňa. A potom ma prijali na <em>Awakening School of Ministry</em>, kde som svoje štúdium úspešne dokončila.",
-    "storyMission": "Mojím snom je pomáhať ľuďom posúvať sa vpred v ich živote. Pohybom, správnou výživou a zdravým zmýšľaním môže mať každý lepšiu kvalitu života. Aj keď sme doteraz v týchto oblastiach nežili náš najlepší život, nič nie je stratené, pretože naše telo je stvorené na to, aby sa zotavilo, <em>keď mu dáme to, čo potrebuje.</em>",
+    "storyDream": "Mojím snom je pomáhať ľuďom posúvať sa vpred v ich živote.",
+    "storyMission": "Pohybom, správnou výživou a zdravým zmýšľaním môže mať každý lepšiu kvalitu života. Aj keď sme doteraz v týchto oblastiach nežili náš najlepší život, nič nie je stratené, pretože naše telo je stvorené na to, aby sa zotavilo, <em>keď mu dáme to, čo potrebuje.</em>",
     "portraitLabel": "Portrét Katey",
     "portraitCaption": "Osobná trénerka · výživová poradkyňa",
     "_storyOriginal": "Po absolvovaní štúdia na SNF Akademy, kde som študovala Osobný tréner and výživový poradca, a graduation from Awakening School of Ministry pomáham ľuďom zmeniť jedálny lístok, nájsť pozitívny vzťah k športu a pochopiť aký je každý človek jedinečny a dôležitý.",
@@ -242,7 +245,10 @@
     }
   },
   "programs": {
-    "realTitle": "Kompletná premena",
+    "checkoutLoading": "Otvára sa bezpečná platba…",
+    "checkoutError": "Platbu sa nepodarilo otvoriť. Skús to prosím znova.",
+    "realEyebrow": "Individuálny koučing",
+    "realTitle": "Kompletná premena / 90 dní",
     "viewProgram": "Pozrieť program",
     "backToPrograms": "Späť na programy",
     "price": "Cena",
@@ -353,6 +359,12 @@
       "a": "To platí pre väčšinu tých, s ktorými pracujem. Žiadne podmienky, žiadne hodnotenie."
     }
   },
+  "checkoutSuccess": {
+    "eyebrow": "Platba bola úspešná",
+    "title": "Si v tom.",
+    "body": "Ďakujeme za nákup. Tvoja platba bola potvrdená a ďalší krok bude nasledovať samostatne.",
+    "home": "Späť na domovskú stránku"
+  },
   "contact": {
     "eyebrow": "Kontakt",
     "title": "Môžem ti pomôcť?",
@@ -360,6 +372,7 @@
     "formatLabel": "Formát",
     "formatValue": "Telefonát, správa alebo osobne",
     "languagesLabel": "Jazyky",
+    "languagesValue": "English · Deutsch · Slovenčina",
     "replyLabel": "Odpoveď do",
     "replyValue": "Dvoch pracovných dní, väčšinou skôr.",
     "nameLabel": "Tvoje meno",
@@ -392,6 +405,7 @@
     "imprint": "Právne informácie",
     "privacy": "Ochrana údajov",
     "terms": "Obchodné podmienky",
+    "billing": "Spravovať predplatné",
     "contact": "Kontakt",
     "copyright": "© {year} Katey Coaching. Všetky práva vyhradené.",
     "madeWithCare": "Vytvorené s citom",

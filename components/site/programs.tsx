@@ -12,5 +12,5 @@ export async function Programs({ locale }: { locale: Locale }) {
   // With one real offer, the Programs route is the presentation itself—not
   // a catalogue containing a single product card. The data layer still
   // supports additional programs when Katarina is ready to publish them.
-  return <>{<ProgramDetail program={program} locale={locale} showBackLink={false} />}{programs.slice(1).map((item) => item.kind === "conversation" ? <ConversationProgram key={item.slug} program={item} /> : <ProgramDetail key={item.slug} program={item} locale={locale} showBackLink={false} />)}</>;
+  return <>{<ProgramDetail program={program} locale={locale} showBackLink={false} />}{programs.slice(1).map((item) => item.kind === "conversation" ? <ConversationProgram key={item.slug} program={item} locale={locale} /> : <ProgramDetail key={item.slug} program={item} locale={locale} showBackLink={false} />)}</>;
 }

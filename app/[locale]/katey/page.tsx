@@ -5,6 +5,8 @@ import { About } from "@/components/site/about";
 import { DraftPreviewBanner } from "@/components/admin/draft-preview-banner";
 import { getAdminPreviewEntry, getPublicWebsiteEntry } from "@/lib/cms";
 
+const APPROVED_BIOGRAPHY_AT = Date.parse("2026-09-09T19:25:22Z");
+
 /**
  * Katey — her bio, the Three Threads approach, and how a program runs
  * week to week. Split out of the one-pager (Katarina's request: nav
@@ -47,7 +49,12 @@ export default async function KateyPage({
   ]);
   const data = entry?.data as { eyebrow?: Record<string, string>; headline?: Record<string, string>; body?: Record<string, string> } | undefined;
   const details = detailsEntry?.data as { calling?: Record<string, string> } | undefined;
-  const content = entry || detailsEntry ? { mainManaged: Boolean(entry), callingManaged: Boolean(detailsEntry), eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: data?.body?.[locale], calling: details?.calling?.[locale], image: entry?.image_path } : undefined;
+  // The published CMS row predates the biography approved on 2026-09-09
+  // (and currently contains a blank English body). Use the shipped baseline
+  // until Katey publishes a newer admin edit; headings and portrait remain
+  // independently CMS-managed throughout.
+  const biographyManaged = Boolean(entry && Date.parse(entry.updated_at) >= APPROVED_BIOGRAPHY_AT);
+  const content = entry || detailsEntry ? { mainManaged: Boolean(entry), biographyManaged, callingManaged: Boolean(detailsEntry), eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: data?.body?.[locale], calling: details?.calling?.[locale], image: entry?.image_path } : undefined;
 
   return <>{(previewMain || previewDetails) && <DraftPreviewBanner backHref="/admin/about" />}<About content={content} /></>;
 }

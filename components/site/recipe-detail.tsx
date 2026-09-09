@@ -77,7 +77,7 @@ export async function RecipeDetail({
             src={recipe.image}
             alt={recipe.imageAlt}
             fill
-            priority
+            loading="eager"
             sizes="(max-width: 1216px) 100vw, 1216px"
             className="object-cover"
           />

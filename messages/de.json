@@ -9,6 +9,7 @@
     ]
   },
   "meta": {
+    "siteName": "Katey Coaching",
     "titleDefault": "Katey Coaching — Training, Ernährung & Mentoring, im Glauben verwurzelt",
     "titleTemplate": "%s · Katey Coaching",
     "description": "Katey Coaching.",
@@ -163,9 +164,11 @@
     "calling": "Wir alle haben eine Berufung im Leben. <em>Meine Berufung ist es, Menschen zu helfen.</em>",
     "story": "Ausgebildet an der SNF Academy, Abschluss an der Awakening School of Ministry. Ich helfe Menschen voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung, der richtigen Bewegung. <em>In jedem Alter.</em>",
     "storyMovement": "Ich war schon als kleines Mädchen sportlich aktiv. Ich habe mich für alle Arten von Sport interessiert.",
-    "storyNourish": "Mit der Zeit habe ich gelernt, dass Essen nicht nur dazu da ist, satt zu werden, sondern vor allem, um uns zu nähren. Und in den letzten Jahren habe ich wirklich verstanden, wie stark unsere innere Gesundheit unsere gesamte Existenz beeinflusst.",
+    "storyFood": "Mit der Zeit habe ich gelernt, dass Essen nicht nur dazu da ist, satt zu werden, sondern vor allem, um uns zu nähren.",
+    "storyInnerHealth": "Und in den letzten Jahren habe ich wirklich verstanden, wie stark unsere innere Gesundheit unsere gesamte Existenz beeinflusst.",
     "storyEducation": "Ich hatte die Möglichkeit, an der <em>SNF Academy</em> zu studieren, wo ich Personal Trainerin und Ernährungsberaterin studiert habe. Und danach wurde ich an der <em>Awakening School of Ministry</em> aufgenommen, wo ich mein Studium erfolgreich abgeschlossen habe.",
-    "storyMission": "Mein Traum ist es, Menschen zu helfen, in ihrem Leben voranzukommen. Mit Bewegung, richtiger Ernährung und gesundem Denken kann jeder eine bessere Lebensqualität haben. Auch wenn wir in diesen Lebensbereichen bisher nicht unser bestes Leben gelebt haben, ist nichts verloren, denn unser Körper ist dafür gemacht, sich zu erholen, <em>wenn wir ihm geben, was er braucht.</em>",
+    "storyDream": "Mein Traum ist es, Menschen zu helfen, in ihrem Leben voranzukommen.",
+    "storyMission": "Mit Bewegung, richtiger Ernährung und gesundem Denken kann jeder eine bessere Lebensqualität haben. Auch wenn wir in diesen Lebensbereichen bisher nicht unser bestes Leben gelebt haben, ist nichts verloren, denn unser Körper ist dafür gemacht, sich zu erholen, <em>wenn wir ihm geben, was er braucht.</em>",
     "portraitLabel": "Porträt von Katey",
     "portraitCaption": "Personal Trainerin · Ernährungsberaterin",
     "_storyOriginal": "Nach meinem Studium an der SNF Academy, wo ich Personal Trainer und Ernährungsberatung studiert habe, und meinem Abschluss an der Awakening School of Ministry, helfe ich Menschen, in ihrem Leben voranzukommen — mit der richtigen Ernährung, der richtigen Einstellung und der richtigen Bewegung. <em>In jedem Alter.</em>",
@@ -232,6 +235,10 @@
     }
   },
   "programs": {
+    "checkoutLoading": "Sichere Zahlung wird geöffnet…",
+    "checkoutError": "Die Zahlung konnte nicht geöffnet werden. Bitte versuch es erneut.",
+    "realEyebrow": "Persönliches Coaching",
+    "realTitle": "The Full Transformation / 90 Tage",
     "viewProgram": "Programm ansehen",
     "backToPrograms": "Zurück zu den Programmen",
     "price": "Preis",
@@ -342,6 +349,12 @@
       "a": "Das trifft auf die meisten zu, mit denen ich arbeite. Keine Voraussetzungen, keine Bewertung."
     }
   },
+  "checkoutSuccess": {
+    "eyebrow": "Zahlung erfolgreich",
+    "title": "Du bist dabei.",
+    "body": "Vielen Dank für deinen Kauf. Deine Zahlung wurde bestätigt und der nächste Schritt folgt separat.",
+    "home": "Zurück zur Startseite"
+  },
   "contact": {
     "eyebrow": "Kontakt",
     "title": "Kann ich dir helfen?",
@@ -349,6 +362,7 @@
     "formatLabel": "Format",
     "formatValue": "Anruf, Nachricht oder persönlich",
     "languagesLabel": "Sprachen",
+    "languagesValue": "English · Deutsch · Slovenčina",
     "replyLabel": "Antwort innerhalb von",
     "replyValue": "Zwei Werktagen, meistens schneller.",
     "nameLabel": "Dein Name",
@@ -381,6 +395,7 @@
     "imprint": "Impressum",
     "privacy": "Datenschutz",
     "terms": "AGB",
+    "billing": "Abo verwalten",
     "contact": "Kontakt",
     "copyright": "© {year} Katey Coaching. Alle Rechte vorbehalten.",
     "madeWithCare": "Mit Sorgfalt gemacht",

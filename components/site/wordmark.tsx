@@ -120,7 +120,7 @@ export function Wordmark({ className, onDark = false }: Props) {
           "h-auto w-[178px] object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 md:w-[202px]",
           className
         )}
-        priority
+        loading="eager"
       />
     </Link>
   );

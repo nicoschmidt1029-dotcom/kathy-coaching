@@ -132,7 +132,7 @@ export function PrivacyBodyDe() {
         </li>
         <li>Keine Werbe-Tracker.</li>
         <li>
-          Die Schriften (Fraunces, Inter) werden über <code>next/font</code>{" "}
+          Die Schriften (Instrument Serif, Pinyon Script und Inter) werden über <code>next/font</code>{" "}
           selbst ausgeliefert — beim Laden einer Seite gehen keine Anfragen an
           Google.
         </li>
