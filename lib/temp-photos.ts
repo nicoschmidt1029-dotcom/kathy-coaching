@@ -225,5 +225,6 @@ export const TEMP_HERO_VIDEO: TempVideo = {
   // her 512x910/37.9s/25MB source the same way (audio stripped, libx264
   // CRF 24/faststart) to 6.8MB. workout-hero-mobile.mp4 (the previous
   // mobile clip) stays in the repo, unused. Desktop `src` is untouched.
-  srcMobile: "/videos/katarina-hero-mobile-refined.mp4",
+  // Versioned so phones do not reuse the pre-cut clip from browser/CDN cache.
+  srcMobile: "/videos/katarina-hero-mobile-refined.mp4?v=20260910-pushup-cut",
 };
