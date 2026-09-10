@@ -52,6 +52,7 @@
     "explore": "Explore",
     "mission": "My mission",
     "programs": "Programs",
+    "programOption": "Program {letter}",
     "recipes": "Recipes",
     "testimonials": "Testimonials",
     "contact": "Contact",
@@ -351,6 +352,13 @@
     "title": "You're in.",
     "body": "Thank you for your purchase. Your payment has been confirmed and the next step will follow separately.",
     "home": "Back to home"
+  },
+  "homeIntro": {
+    "p1": "You're here, and that already means something. Not everyone who wants change is ready to act on it, but you are.",
+    "p2": "You desire more, you're ready for it, and you're willing to do the work to get there, that's exactly who this is for.",
+    "p3": "And investing in yourself, your health, your mind, and faith, is never wasted, it's the best decision you'll ever make.",
+    "p4": "Health first, beauty follows, because when you're healthy, you feel good, you feel strong, you feel beautiful, and you carry that into everything else in life. When you have your health, a thousand things matter. When you don't, only one thing does.",
+    "p5": "Health isn't something you arrive at, it's something you build, day by day, for the rest of your life. You're not just changing today, you're building your tomorrow."
   },
   "contact": {
     "eyebrow": "Contact",

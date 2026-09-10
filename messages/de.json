@@ -61,6 +61,7 @@
     "explore": "Entdecken",
     "mission": "Meine Mission",
     "programs": "Programme",
+    "programOption": "Programm {letter}",
     "recipes": "Rezepte",
     "testimonials": "Erfahrungen",
     "contact": "Kontakt",
@@ -354,6 +355,13 @@
     "title": "Du bist dabei.",
     "body": "Vielen Dank für deinen Kauf. Deine Zahlung wurde bestätigt und der nächste Schritt folgt separat.",
     "home": "Zurück zur Startseite"
+  },
+  "homeIntro": {
+    "p1": "Du bist hier, und das allein bedeutet schon etwas. Nicht jeder, der sich Veränderung wünscht, ist bereit, dafür zu handeln – aber du bist es.",
+    "p2": "Du wünschst dir mehr, du bist bereit dafür und du bist gewillt, die nötige Arbeit zu leisten, um dorthin zu gelangen – genau für dich ist das hier.",
+    "p3": "Und in dich selbst, deine Gesundheit, deinen Geist und deinen Glauben zu investieren, ist niemals vergeblich – es ist die beste Entscheidung, die du je treffen wirst.",
+    "p4": "Die Gesundheit kommt zuerst, die Schönheit folgt. Denn wenn du gesund bist, fühlst du dich gut, stark und schön – und das trägst du in alle anderen Bereiche deines Lebens. Wenn du gesund bist, sind tausend Dinge wichtig. Wenn du es nicht bist, zählt nur eines.",
+    "p5": "Gesundheit ist kein Ziel, an dem du irgendwann ankommst. Du baust sie Tag für Tag auf – für den Rest deines Lebens. Du veränderst nicht nur dein Heute, du gestaltest dein Morgen."
   },
   "contact": {
     "eyebrow": "Kontakt",

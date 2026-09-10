@@ -54,7 +54,8 @@ export default async function KateyPage({
   // until Katey publishes a newer admin edit; headings and portrait remain
   // independently CMS-managed throughout.
   const biographyManaged = Boolean(entry && Date.parse(entry.updated_at) >= APPROVED_BIOGRAPHY_AT);
-  const content = entry || detailsEntry ? { mainManaged: Boolean(entry), biographyManaged, callingManaged: Boolean(detailsEntry), eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: data?.body?.[locale], calling: details?.calling?.[locale], image: entry?.image_path } : undefined;
+  const localizedCalling = details?.calling?.[locale];
+  const content = entry || detailsEntry ? { mainManaged: Boolean(entry), biographyManaged, callingManaged: Boolean(localizedCalling?.trim()), eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: data?.body?.[locale], calling: localizedCalling, image: entry?.image_path } : undefined;
 
   return <>{(previewMain || previewDetails) && <DraftPreviewBanner backHref="/admin/about" />}<About content={content} /></>;
 }
