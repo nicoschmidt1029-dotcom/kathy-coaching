@@ -1,4 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/site/hero";
 import { HomeIntro } from "@/components/site/home-intro";
 import { DraftPreviewBanner } from "@/components/admin/draft-preview-banner";
@@ -28,9 +28,10 @@ export default async function Home({
   const isPreview = adminPreview === "homepage";
   const entry = isPreview ? await getAdminPreviewEntry("website", "homepage") : await getPublicWebsiteEntry("homepage");
   const data = entry?.data as { headline?: Record<string, string>; body?: Record<string, string>; ctaLabel?: Record<string, string>; ctaHref?: string } | undefined;
+  const t = await getTranslations({ locale, namespace: "hero" });
   const previewContent = isPreview && entry
     ? { headline: data?.headline?.[locale], body: data?.body?.[locale], ctaLabel: data?.ctaLabel?.[locale], ctaHref: data?.ctaHref }
-    : {};
+    : { headline: t("shortHeadline"), ctaLabel: t("shortCta"), ctaHref: "/programme" };
 
   return <>{isPreview && <DraftPreviewBanner backHref="/admin/homepage" />}<Hero content={previewContent} /><HomeIntro /></>;
 }
