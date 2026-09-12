@@ -248,6 +248,8 @@
   "programs": {
     "checkoutLoading": "Otvára sa bezpečná platba…",
     "checkoutError": "Platbu sa nepodarilo otvoriť. Skús to prosím znova.",
+    "contactFirst": "Najprv kontaktovať Katey",
+    "contactFirstNote": "Začneme bezplatnou osobnou konzultáciou. Platba nasleduje až potom, keď sa s Katey porozprávate a dohodnete sa na vhodnom ďalšom kroku.",
     "realEyebrow": "Individuálny koučing",
     "realTitle": "Kompletná premena / 90 dní",
     "viewProgram": "Pozrieť program",
@@ -388,7 +390,7 @@
     "emailLabel": "E-mail",
     "emailPlaceholder": "anna@priklad.sk",
     "messageLabel": "Správa",
-    "selectedPayment": "Vybraná možnosť platby",
+    "selectedProgram": "Program, o ktorý máte záujem",
     "programInterest": "Mám záujem o {plan}",
     "messagePlaceholder": "Tvoja správa",
     "prefillPrefix": "Záujem o: {selection}",

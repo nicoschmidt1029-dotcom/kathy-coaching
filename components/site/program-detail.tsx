@@ -6,11 +6,10 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import type { LocalizedProgram } from "@/lib/programs";
 import { ConversationProgram } from "@/components/site/conversation-program";
-import { CheckoutButton } from "@/components/site/checkout-button";
 
 export async function ProgramDetail({ program, locale, showBackLink = true }: { program: LocalizedProgram; locale: Locale; showBackLink?: boolean }) {
   if (program.kind === "conversation") return <ConversationProgram program={program} locale={locale} showBackLink={showBackLink} />;
-  const [t, nav] = await Promise.all([getTranslations({ locale, namespace: "programs" }), getTranslations({ locale, namespace: "nav" })]);
+  const t = await getTranslations({ locale, namespace: "programs" });
 
   return (
     <article className="overflow-hidden pb-14 md:pb-20">
@@ -65,12 +64,12 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
       <section className="container-page mt-16 md:mt-[5.5rem]">
         <div className="rounded-[1.75rem] bg-[var(--plum)] px-6 py-9 text-white sm:px-10 md:flex md:items-end md:justify-between md:gap-10 md:px-12 md:py-11">
           <div><p className="text-xs font-medium uppercase tracking-[0.22em] text-white/62">{t("price")}</p><p className="mt-3 font-display text-[clamp(2.4rem,5vw,4.5rem)] leading-none">{program.price} {program.currency}</p><p className="mt-3 text-base text-white/68">{program.duration}</p></div>
-          {program.paymentOptions && program.paymentOptions.length > 0 ? <div className="mt-8 grid w-full gap-3 md:mt-0 md:max-w-md">
-            {program.paymentOptions.map((option, index) => {
-              const plan = program.slug === "move-and-grow" ? "b-month" : `a-${index + 1}`;
-              return <CheckoutButton key={option} plan={plan as "a-1" | "a-2" | "a-3" | "b-month"} locale={locale} label={option} loadingLabel={t("checkoutLoading")} errorLabel={t("checkoutError")} className="min-h-12 h-auto w-full justify-between whitespace-normal bg-white px-5 py-3 text-left leading-snug text-[var(--plum)] hover:bg-white/90" />;
-            })}
-          </div> : <Button asChild size="lg" className="mt-8 h-12 bg-white px-7 text-[var(--plum)] hover:bg-white/90 md:mt-0"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel || nav("contact")}<ArrowRight className="ml-1 size-4" /></Link></Button>}
+          <div className="mt-8 w-full md:mt-0 md:max-w-md">
+            <p className="mb-4 text-sm leading-relaxed text-white/72">{t("contactFirstNote")}</p>
+            <Button asChild size="lg" className="min-h-12 h-auto w-full justify-between whitespace-normal bg-white px-5 py-3 text-left leading-snug text-[var(--plum)] hover:bg-white/90">
+              <Link href={`/kontakt?program=${encodeURIComponent(program.slug)}`}>{t("contactFirst")}<ArrowRight className="ml-3 size-4 shrink-0" /></Link>
+            </Button>
+          </div>
         </div>
       </section>
     </article>

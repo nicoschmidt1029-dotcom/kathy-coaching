@@ -238,6 +238,8 @@
   "programs": {
     "checkoutLoading": "Sichere Zahlung wird geöffnet…",
     "checkoutError": "Die Zahlung konnte nicht geöffnet werden. Bitte versuch es erneut.",
+    "contactFirst": "Zuerst Katey kontaktieren",
+    "contactFirstNote": "Am Anfang steht ein kostenloses persönliches Beratungsgespräch. Die Zahlung folgt erst, nachdem du mit Katey gesprochen hast und ihr euch auf den passenden nächsten Schritt geeinigt habt.",
     "realEyebrow": "Persönliches Coaching",
     "realTitle": "The Full Transformation / 90 Tage",
     "viewProgram": "Programm ansehen",
@@ -378,7 +380,7 @@
     "emailLabel": "E-Mail",
     "emailPlaceholder": "anna@beispiel.ch",
     "messageLabel": "Nachricht",
-    "selectedPayment": "Ausgewählte Zahlungsoption",
+    "selectedProgram": "Programm, für das du dich interessierst",
     "programInterest": "Ich interessiere mich für {plan}",
     "messagePlaceholder": "Deine Nachricht",
     "prefillPrefix": "Interesse an: {selection}",

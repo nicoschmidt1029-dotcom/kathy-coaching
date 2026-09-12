@@ -235,6 +235,8 @@
   "programs": {
     "checkoutLoading": "Opening secure checkout…",
     "checkoutError": "Checkout could not be opened. Please try again.",
+    "contactFirst": "Contact Katey first",
+    "contactFirstNote": "Start with a free personal consultation. Payment only follows after you and Katey have spoken and agreed on the right next step.",
     "realEyebrow": "Personalised coaching",
     "realTitle": "The Full Transformation / 90 days",
     "viewProgram": "View program",
@@ -375,7 +377,7 @@
     "emailLabel": "Email",
     "emailPlaceholder": "jane@example.com",
     "messageLabel": "Message",
-    "selectedPayment": "Selected payment option",
+    "selectedProgram": "Program you're interested in",
     "programInterest": "I'm interested in {plan}",
     "messagePlaceholder": "Your message",
     "prefillPrefix": "Interested in: {selection}",

@@ -28,5 +28,9 @@ export default async function Home({
   const isPreview = adminPreview === "homepage";
   const entry = isPreview ? await getAdminPreviewEntry("website", "homepage") : await getPublicWebsiteEntry("homepage");
   const data = entry?.data as { headline?: Record<string, string>; body?: Record<string, string>; ctaLabel?: Record<string, string>; ctaHref?: string } | undefined;
-  return <>{isPreview && <DraftPreviewBanner backHref="/admin/homepage" />}<Hero content={entry ? { headline: data?.headline?.[locale], body: data?.body?.[locale], ctaLabel: data?.ctaLabel?.[locale], ctaHref: data?.ctaHref } : undefined} /><HomeIntro /></>;
+  const previewContent = isPreview && entry
+    ? { headline: data?.headline?.[locale], body: data?.body?.[locale], ctaLabel: data?.ctaLabel?.[locale], ctaHref: data?.ctaHref }
+    : {};
+
+  return <>{isPreview && <DraftPreviewBanner backHref="/admin/homepage" />}<Hero content={previewContent} /><HomeIntro /></>;
 }
