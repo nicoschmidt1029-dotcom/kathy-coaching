@@ -134,7 +134,7 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
           h-24 — it grew to fit the complete logo (was ~6rem, now ~10rem at
           md+ with the full KC + name + tagline lockup), so the offset here
           moved with it. */}
-      <div className="relative hidden min-h-[calc(100svh-10rem)] items-center py-20 md:flex">
+      <div className="relative hidden min-h-[calc(100svh-17rem)] items-center py-20 md:flex">
         {(video || photo) && (
           <div className="absolute inset-0 -z-10">
             {video ? (
@@ -182,7 +182,7 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
           100svh clears the sticky header without leaving a dead gap
           (svh/dvh, not vh, so mobile browser chrome resizing doesn't
           leave a jump). */}
-      <div className="relative flex min-h-[calc(100svh-8.75rem)] flex-col justify-center overflow-hidden py-16 md:hidden">
+      <div className="relative flex min-h-[calc(100svh-16.75rem)] flex-col justify-center overflow-hidden py-16 md:hidden">
         {(video || photo) && (
           <div className="absolute inset-0 -z-10">
             {video ? (

@@ -18,13 +18,13 @@ export function HomeIntro() {
         setVisible(true);
         observer.disconnect();
       }
-    }, { rootMargin: "0px 0px -12%", threshold: 0.12 });
+    }, { threshold: 0.02 });
     observer.observe(section);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-pad overflow-hidden bg-[var(--sand)]/35">
+    <section ref={sectionRef} className="section-pad overflow-hidden bg-[var(--sand)]/35 pt-8 sm:pt-10">
       <div className="container-page">
         <div className="mx-auto max-w-3xl space-y-7 text-pretty text-center sm:space-y-8">
           {PARAGRAPHS.map((key, index) => (
