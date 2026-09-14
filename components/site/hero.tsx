@@ -154,6 +154,7 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
                 />
               )
             )}
+            <div className="absolute inset-0 bg-[var(--petrol-deep)]/30" />
             <div className="absolute inset-0 bg-gradient-to-l from-[var(--petrol-deep)]/92 via-[var(--petrol-deep)]/50 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--petrol-deep)]/40 via-transparent to-transparent" />
             {!video && photo?.credit && <TempPill credit={photo.credit} slot="Hero" />}
@@ -161,7 +162,7 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
         )}
 
         <div className="container-page flex justify-end text-[var(--primary-foreground)]">
-          <div className="w-full max-w-[40rem] lg:mr-[3vw] [&_p]:text-[var(--primary-foreground)]/80">
+          <div className="mr-[6vw] w-full max-w-[40rem] lg:mr-[10vw] [&_p]:text-[var(--primary-foreground)]/80">
             <HeroCopy t={t} content={content} />
           </div>
         </div>
@@ -216,6 +217,7 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
                 for a bottom-up one, since the mobile card is a tall
                 portrait band (copy sits low-center) rather than desktop's
                 wide band (copy sits right). */}
+            <div className="absolute inset-0 bg-[var(--petrol-deep)]/20" />
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--petrol-deep)]/70 via-[var(--petrol-deep)]/30 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-b from-[var(--petrol-deep)]/28 via-transparent to-transparent" />
             {!video && photo?.credit && <TempPill credit={photo.credit} slot="Hero" />}
