@@ -123,7 +123,7 @@
   },
   "hero": {
     "headline": "Ich glaube, dass in jedem Menschen ein Potenzial steckt, das er noch nicht entdeckt hat. Manchmal braucht es nur <em>die richtige Richtung.</em>",
-    "shortHeadline": "Dein nächstes Kapitel beginnt hier.",
+    "shortHeadline": "Du bist hier, und das bedeutet bereits etwas. Es bedeutet, dass du dein Leben auf die nächste Stufe bringen möchtest.",
     "shortCta": "Mach den ersten Schritt",
     "body": "1:1-Training · Ernährungsplan nach deinen Zielen · Geistliche Begleitung",
     "cta": "Wähle ein Programm",
@@ -363,10 +363,12 @@
     "home": "Zurück zur Startseite"
   },
   "homeIntro": {
-    "p1": "Du bist hier, und das bedeutet bereits etwas. Es bedeutet, dass du dein Leben auf die nächste Stufe bringen möchtest. Das Leben ist ein Geschenk, und es liegt an uns, darauf zu achten, statt es zu zerstören. Diese Fürsorge beginnt bei deiner Gesundheit – innen und außen. Gesundheit zuerst, Schönheit folgt. Denn wenn du gesund bist, bist du stark, du bist ganz, du bist gesund, und das trägst du in alle anderen Bereiche deines Lebens.",
-    "p2": "Wenn du gesund bist, sind tausend Dinge wichtig. Wenn du es nicht bist, zählt nur eines. Wir investieren in so viele Dinge – Dinge, die sich nur für einen Moment gut anfühlen, sogar in Essen, das langsam gegen uns arbeitet – ohne einen zweiten Gedanken daran zu verschwenden. Aber in dich selbst zu investieren, ist die eine Entscheidung, die dir jeden einzelnen Tag etwas zurückgibt. Denn das Leben ist kurz. Gestern kannst du nicht zurückholen, und morgen ist nicht versprochen.",
-    "p3": "Wenn du bereit bist, dich zu verändern, wenn du lernen möchtest, einen gesunden Lebensstil zu führen, stark zu sein, dein Bestes zu geben, selbstbewusst zu sein und dich selbst wieder zu mögen, bin ich für dich da. Ich werde mein Bestes tun, um dir so gut ich kann dabei zu helfen, deine Ziele zu erreichen.",
-    "p4": "Wo ein Wille ist, ist alles möglich."
+    "p1": "Das Leben ist ein Geschenk, und wir entscheiden selbst, ob wir uns darum kümmern oder es zerstören. Diese Fürsorge beginnt bei deiner Gesundheit – innen und außen. Gesundheit zuerst, Schönheit folgt. Denn wenn du gesund bist, bist du stark, du bist ganz, du fühlst dich schön, und das trägst du in alle anderen Bereiche deines Lebens.",
+    "p2": "Wenn du gesund bist, sind tausend Dinge wichtig. Wenn du es nicht bist, zählt nur eines.",
+    "p3": "Wir investieren in so viele Dinge – Dinge, die sich nur für einen Moment gut anfühlen, sogar in Essen, das langsam gegen uns arbeitet – ohne einen zweiten Gedanken daran zu verschwenden.",
+    "p4": "Aber in dich selbst zu investieren, ist die eine Entscheidung, die dir jeden einzelnen Tag etwas zurückgibt. Das Leben ist kurz; gestern kannst du nicht zurückholen, und morgen ist nicht versprochen.",
+    "p5": "Wenn du bereit bist, dich zu verändern, wenn du lernen möchtest, einen gesunden Lebensstil zu führen, stark und selbstbewusst zu sein, dich selbst zu lieben und dein Bestes zu geben, bin ich für dich da. Ich werde mein Bestes tun, um dir dabei zu helfen, deine Ziele zu erreichen, und ich werde dir zeigen, wie du diesen Lebensstil langfristig beibehältst.",
+    "p6": "Wo ein Wille ist, ist alles möglich."
   },
   "contact": {
     "eyebrow": "Kontakt",

@@ -133,7 +133,7 @@
   },
   "hero": {
     "headline": "Verím, že v každom človeku je potenciál, ktorý ešte neobjavil. Niekedy stačí <em>správny smer.</em>",
-    "shortHeadline": "Tvoja ďalšia kapitola sa začína tu.",
+    "shortHeadline": "Si tu, a už to niečo znamená. Znamená to, že chceš posunúť svoj život na vyššiu úroveň.",
     "shortCta": "Urob prvý krok",
     "body": "Individuálny tréning · Jedálniček podľa tvojich cieľov · Duchovné sprevádzanie",
     "cta": "Vyber si program",
@@ -373,10 +373,12 @@
     "home": "Späť na domovskú stránku"
   },
   "homeIntro": {
-    "p1": "Si tu, a už to niečo znamená. Znamená to, že chceš posunúť svoj život na vyššiu úroveň. Život je dar a je na nás, aby sme sa oň starali, nie ho ničili. Táto starostlivosť sa začína pri tvojom zdraví – zvnútra aj navonok. Zdravie je na prvom mieste a krása ho nasleduje, pretože keď si zdravá, si silná, si celistvá, si zdravá a prenášaš to do všetkých ostatných oblastí svojho života.",
-    "p2": "Keď máš zdravie, záleží na tisícoch vecí. Keď ho nemáš, záleží iba na jednej. Investujeme do mnohých vecí – do vecí, ktoré nám prinášajú dobrý pocit iba na chvíľu, dokonca aj do jedla, ktoré pomaly pôsobí proti nám – bez toho, aby sme sa nad tým zamysleli. Ale investícia do seba je rozhodnutie, ktoré sa ti vracia každý jeden deň. Pretože život je krátky. Včerajšok už nevrátiš a zajtrajšok nemáš sľúbený.",
-    "p3": "Ak si pripravená na zmenu, ak sa chceš naučiť žiť zdravým životným štýlom, byť silná, byť tou najlepšou verziou seba, sebavedomá a znovu sa mať rada, som tu pre teba. Urobím všetko, čo je v mojich silách, aby som ti čo najlepšie pomohla dosiahnuť tvoje ciele.",
-    "p4": "Kde je vôľa, tam je všetko možné."
+    "p1": "Život je dar a je na nás, či sa oň budeme starať, alebo ho zničíme. Táto starostlivosť sa začína pri tvojom zdraví – zvnútra aj navonok. Zdravie je na prvom mieste a krása ho nasleduje, pretože keď si zdravá, si silná, si celistvá, cítiš sa krásna a prenášaš to do všetkých ostatných oblastí svojho života.",
+    "p2": "Keď máš zdravie, záleží na tisícoch vecí. Keď ho nemáš, záleží iba na jednej.",
+    "p3": "Investujeme do mnohých vecí – do vecí, ktoré nám prinášajú dobrý pocit iba na chvíľu, dokonca aj do jedla, ktoré pomaly pôsobí proti nám – bez toho, aby sme sa nad tým zamysleli.",
+    "p4": "Ale investícia do seba je rozhodnutie, ktoré sa ti vracia každý jeden deň. Život je krátky; včerajšok už nevrátiš a zajtrajšok nemáš sľúbený.",
+    "p5": "Ak si pripravená na zmenu, ak sa chceš naučiť žiť zdravým životným štýlom, byť silná a sebavedomá, mať sa rada a byť tou najlepšou verziou seba, som tu pre teba. Urobím všetko, čo je v mojich silách, aby som ti pomohla dosiahnuť tvoje ciele, a naučím ťa, ako si tento životný štýl dlhodobo udržať.",
+    "p6": "Kde je vôľa, tam je všetko možné."
   },
   "contact": {
     "eyebrow": "Kontakt",

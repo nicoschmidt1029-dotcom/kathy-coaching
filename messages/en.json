@@ -118,7 +118,7 @@
   },
   "hero": {
     "headline": "I believe every person carries potential inside them they haven't discovered yet. Sometimes you just need <em>the right direction.</em>",
-    "shortHeadline": "Your next chapter starts here.",
+    "shortHeadline": "You are here, and this already means something. This means you want to level up your life.",
     "shortCta": "Take the first step",
     "body": "One-on-one training · Meal plan based on your goals · Spiritual health",
     "cta": "Choose a program",
@@ -360,10 +360,12 @@
     "home": "Back to home"
   },
   "homeIntro": {
-    "p1": "You are here, and this already means something. This means you want to level up your life. Life is a gift, and it's up to us to take care of it, not destroy it. That care starts with your health, inside and out. Health first, beauty follows, because when you're healthy, you are strong, you are whole, you are healthy, and you carry that into everything else in life.",
-    "p2": "When you have your health, a thousand things matter. When you don't, only one thing does. We invest in so many things, things that just feel good in the moment, even food that's slowly working against us, without a second thought. But investing in yourself is the one decision that pays you back every single day. Because life is short. Yesterday you can't bring back, and tomorrow isn't promised.",
-    "p3": "If you are ready to change, if you want to learn how to live a healthy lifestyle, be strong, and be your best, confident and like yourself again, I am here for you. I will do my best to help you achieve your goals, the best I can.",
-    "p4": "Where there's a will, everything is possible."
+    "p1": "Life is a gift, and it's our decision whether we take care of it or destroy it. That care starts with your health, inside and out. Health first, beauty follows, because when you're healthy, you are strong, you are whole, you feel beautiful, and you carry that into everything else in life.",
+    "p2": "When you have your health, a thousand things matter. When you don't, only one thing does.",
+    "p3": "We invest in so many things, things that just feel good in the moment, even food that's slowly working against us, without a second thought.",
+    "p4": "But investing in yourself is the one decision that pays you back every single day. Life is short, and yesterday you can't bring back, and tomorrow isn't promised.",
+    "p5": "If you are ready to change, if you want to learn how to live a healthy lifestyle, be strong, confident, love yourself and be your best, I am here for you. I will do my best to help you achieve your goals and I will teach you how to maintain this lifestyle.",
+    "p6": "Where there's a will, everything is possible."
   },
   "contact": {
     "eyebrow": "Contact",

@@ -45,7 +45,7 @@ function HeroCopy({ t, content }: { t: ReturnType<typeof useTranslations<"hero">
           (2.6rem base / 2.75rem at sm, ~41.6-44px) replace it below md;
           the exact desktop clamp is restored unchanged at md+. */}
       {(managed ? headline : true) && <h1
-        className="animate-rise font-display text-[2.8rem] leading-[1.03] font-normal sm:text-[3.1rem] md:text-[clamp(3.4rem,5.6vw,5.6rem)]"
+        className={`animate-rise font-display leading-[1.08] font-normal ${managed && headline && headline.length > 70 ? "text-[2.35rem] sm:text-[2.7rem] md:text-[clamp(2.8rem,3.6vw,4.4rem)]" : "text-[2.8rem] sm:text-[3.1rem] md:text-[clamp(3.4rem,5.6vw,5.6rem)]"}`}
         style={{ animationDelay: "80ms" }}
       >
         {managed ? headline : t.rich("headline", {
