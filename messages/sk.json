@@ -251,7 +251,7 @@
     "checkoutLoading": "Otvára sa bezpečná platba…",
     "checkoutError": "Platbu sa nepodarilo otvoriť. Skús to prosím znova.",
     "contactFirst": "Najprv kontaktovať Katey",
-    "contactFirstNote": "Začneme bezplatnou osobnou konzultáciou. Platba nasleduje až potom, keď sa s Katey porozprávate a dohodnete sa na vhodnom ďalšom kroku.",
+    "contactFirstNote": "Najprv kontaktuj Katey. Spoločne sa môžete dohodnúť na ďalšom kroku skôr, ako si vyberieš spôsob platby.",
     "paymentChoiceNote": "Vyberte si vhodnú možnosť. Na ďalšej stránke môžete najprv kontaktovať Katey alebo po predchádzajúcom rozhovore pokračovať k bezpečnej platbe.",
     "chooseNext": "Vyberte si, ako pokračovať",
     "realEyebrow": "Individuálny koučing",
@@ -377,7 +377,7 @@
     "p2": "Keď máš zdravie, záleží na tisícoch vecí. Keď ho nemáš, záleží iba na jednej.",
     "p3": "Investujeme do mnohých vecí – do vecí, ktoré nám prinášajú dobrý pocit iba na chvíľu, dokonca aj do jedla, ktoré pomaly pôsobí proti nám – bez toho, aby sme sa nad tým zamysleli.",
     "p4": "Ale investícia do seba je rozhodnutie, ktoré sa ti vracia každý jeden deň. Život je krátky; včerajšok už nevrátiš a zajtrajšok nemáš sľúbený.",
-    "p5": "Ak si pripravená na zmenu, ak sa chceš naučiť žiť zdravým životným štýlom, byť silná a sebavedomá, mať sa rada a byť tou najlepšou verziou seba, som tu pre teba. Urobím všetko, čo je v mojich silách, aby som ti pomohla dosiahnuť tvoje ciele, a naučím ťa, ako si tento životný štýl dlhodobo udržať.",
+    "p5": "Ak si pripravená/ý na zmenu, ak sa chceš naučiť žiť zdravým životným štýlom, byť silný a sebavedomý človek, mať sa rád a byť tou najlepšou verziou seba, som tu pre teba. Urobím všetko, čo je v mojich silách, aby som ti pomohla dosiahnuť tvoje ciele, a naučím ťa, ako si tento životný štýl dlhodobo udržať.",
     "p6": "Kde je vôľa, tam je všetko možné."
   },
   "contact": {
@@ -400,7 +400,7 @@
     "nextStepTitle": "Ako chcete pokračovať?",
     "nextStepBody": "Najlepšie je začať osobným rozhovorom. Ak ste už s Katey hovorili a dohodli ste sa na programe, môžete pokračovať priamo k bezpečnej platbe.",
     "contactFirstTitle": "Najprv sa porozprávajte s Katey",
-    "contactFirstBody": "Pošlite správu a nezáväzne si dohodnite bezplatnú osobnú konzultáciu.",
+    "contactFirstBody": "Pošli správu a nezáväzne si dohodni konzultáciu s Katey.",
     "contactFirstCta": "Poslať správu",
     "payNowTitle": "Už ste hovorili s Katey?",
     "payNowBody": "Za vybranú možnosť zaplaťte bezpečne prostredníctvom Stripe.",

@@ -156,6 +156,12 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
     const base = fallback
       ? getStaticPrograms(locale).find((program) => program.slug === entry.content_key)!
       : undefined;
+    // A previously published Program A entry still contains the old five-item
+    // description and in-person consultation. Use the revised source copy for
+    // that legacy version, while leaving later CMS edits in control.
+    const legacyFullTransformation = entry.content_key === "personalised-online-fitness-coaching-90-days"
+      && data.includes?.[locale]?.length === 5
+      && data.includes[locale].some((item) => item.includes("Possibility of written communication") || item.includes("Možnosť písomnej komunikácie"));
     const title = pick(data.title, base?.title ?? "");
     if (!title) return null;
     return {
@@ -172,9 +178,10 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       targetAudience: pick(data.targetAudience, base?.targetAudience ?? []),
       transition: pick(data.transition, base?.transition ?? ""),
       includesHeading: pick(data.includesHeading, base?.includesHeading ?? ""),
-      includes: pick(data.includes, base?.includes ?? []),
+      includes: legacyFullTransformation ? base?.includes ?? [] : pick(data.includes, base?.includes ?? []),
+      includesDetails: legacyFullTransformation || !present(data.includes?.[locale]) ? base?.includesDetails : undefined,
       howHeading: pick(data.howHeading, base?.howHeading ?? ""),
-      howSteps: pick(data.howSteps, base?.howSteps ?? []),
+      howSteps: legacyFullTransformation ? base?.howSteps ?? [] : pick(data.howSteps, base?.howSteps ?? []),
       howClosing: pick(data.howClosing, base?.howClosing ?? ""),
       duration: pick(data.duration, base?.duration ?? ""),
       ctaLabel: pick(data.ctaLabel, base?.ctaLabel ?? ""),

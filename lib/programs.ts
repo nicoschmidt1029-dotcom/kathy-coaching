@@ -9,6 +9,7 @@ export type ProgramLocaleContent = {
   transition: string;
   includesHeading: string;
   includes: readonly string[];
+  includesDetails?: readonly string[];
   howHeading?: string;
   howSteps?: readonly string[];
   howClosing?: string;
@@ -60,15 +61,24 @@ export const PROGRAMS: readonly Program[] = [
         includesHeading: "This program includes:",
         includes: [
           "First consultation (approx. 60 min.)",
+          "Weekly check-ins (15 to 45 min.)",
           "Personalised training program + video demonstrations",
-          "Creating a diet designed to achieve your goals",
-          "Weekly check-ins to track your progress, including adjustment or changes to your training (approx. 45 min.)",
-          "Possibility of written communication via WhatsApp in case of questions during the duration of the program.",
+          "Diet plan",
+          "WhatsApp support",
+          "Healthy eating support",
+        ],
+        includesDetails: [
+          "Online via video call, using whichever platform works best for you, we'll talk through your goals, your current lifestyle, and what's been holding you back.",
+          "To track your progress and make any adjustments to your training if needed.",
+          "Your personalised training program, delivered through video demonstrations, updated weekly whenever adjustments are needed.",
+          "A diet plan created specifically for you, tailored to your body, your goals, your lifestyle, your food preferences, and any dietary restrictions or health considerations you'd like to factor in. What works for you in week one may need to change by week six, so I will adjust it with you as your body and your progress evolve.",
+          "Ongoing support via WhatsApp, so you can reach out with any questions throughout the program.",
+          "Along the way, I will share healthy eating ideas, tips, and recipes, sometimes with videos where I demonstrate things myself, to help make your new habits easier and more enjoyable.",
         ],
         howHeading: "How it works:",
         howSteps: [
-          "You reach out through the contact form or we meet in person, and we schedule a free consultation to see if we're a good fit.",
-          "The first consultation, whenever possible, takes place in person, though a video call is also an option if distance makes it easier.",
+          "You reach out through the contact form, and we schedule the first consultation to see if we're a good fit.",
+          "The first consultation takes place online via video call, using whichever platform works best for you.",
           "During the consultation, I will share a bit more detail on how the program works, then I gather information about your goals, your current lifestyle, health, activity level, eating habits, food preferences, daily schedule and more.",
           "After the consultation, you have three days to decide whether the program feels right and whether you are ready to take your life and health to the next level. After those three days, I will reach out to ask about your decision.",
           "Once you've made your decision, you'll have another three days to pay. You can pay in full for the best price, or split into 2–3 parts, with a small increase to the total for the flexibility.",
@@ -99,15 +109,24 @@ export const PROGRAMS: readonly Program[] = [
         includesHeading: "Das Programm beinhaltet:",
         includes: [
           "Erstberatung (ca. 60 Min.)",
+          "Wöchentliche Check-ins (15 bis 45 Min.)",
           "Persönlicher Trainingsplan mit Video-Demonstrationen",
-          "Ein auf deine Ziele abgestimmter Ernährungsplan",
-          "Wöchentliche Check-ins zur Fortschrittskontrolle und bedarfsgerechten Anpassung des Trainings (ca. 45 Min.)",
-          "Schriftliche Begleitung per WhatsApp bei Fragen während der Programmlaufzeit",
+          "Ernährungsplan",
+          "WhatsApp-Begleitung",
+          "Unterstützung bei gesunder Ernährung",
+        ],
+        includesDetails: [
+          "Online per Videoanruf über die Plattform, die für dich am besten funktioniert. Wir sprechen über deine Ziele, deinen aktuellen Lebensstil und darüber, was dich bisher zurückgehalten hat.",
+          "Wir verfolgen deine Fortschritte und passen dein Training bei Bedarf an.",
+          "Dein persönlicher Trainingsplan wird mit Video-Demonstrationen vermittelt und bei Bedarf wöchentlich angepasst.",
+          "Ein Ernährungsplan, der speziell auf deinen Körper, deine Ziele, deinen Alltag, deine Vorlieben beim Essen und mögliche Einschränkungen oder gesundheitliche Aspekte abgestimmt ist, die du berücksichtigen möchtest. Was in der ersten Woche funktioniert, muss vielleicht in der sechsten Woche angepasst werden. Deshalb passe ich den Plan gemeinsam mit dir an, wenn sich dein Körper und deine Fortschritte verändern.",
+          "Während des gesamten Programms kannst du dich bei Fragen über WhatsApp an mich wenden.",
+          "Unterwegs teile ich Ideen, Tipps und Rezepte für gesunde Ernährung mit dir – manchmal auch in Videos, in denen ich selbst etwas zeige. So werden neue Gewohnheiten leichter und angenehmer.",
         ],
         howHeading: "So funktioniert es:",
         howSteps: [
-          "Du meldest dich über das Kontaktformular oder wir lernen uns persönlich kennen. Danach vereinbaren wir eine kostenlose Beratung, um herauszufinden, ob wir zusammenpassen.",
-          "Die Erstberatung findet nach Möglichkeit persönlich statt. Wenn die Entfernung es einfacher macht, ist auch ein Videoanruf möglich.",
+          "Du meldest dich über das Kontaktformular. Danach vereinbaren wir die Erstberatung, um herauszufinden, ob wir zusammenpassen.",
+          "Die Erstberatung findet online per Videoanruf über die Plattform statt, die für dich am besten funktioniert.",
           "Ich erkläre dir den Ablauf und erfasse deine Ziele, deinen Alltag, deine Gesundheit, dein Aktivitätsniveau, deine Essgewohnheiten, Vorlieben und deinen Tagesrhythmus.",
           "Nach der Beratung hast du drei Tage Zeit, um zu entscheiden, ob das Programm zu dir passt. Danach frage ich bei dir nach.",
           "Nach deiner Zusage hast du weitere drei Tage für die Zahlung. Du kannst den günstigsten Gesamtpreis vollständig bezahlen oder den Betrag gegen einen kleinen Aufpreis auf zwei oder drei Monatsraten verteilen.",
@@ -138,15 +157,24 @@ export const PROGRAMS: readonly Program[] = [
         includesHeading: "Tento program zahŕňa:",
         includes: [
           "Prvá konzultácia (cca 60 min.)",
+          "Týždenné konzultácie (15 až 45 min.)",
           "Personalizovaný tréningový program + video ukážky",
-          "Vytvorenie jedálnička navrhnutého na dosiahnutie vašich cieľov",
-          "Týždenné kontroly na sledovanie vášho pokroku – úprava alebo zmena tréningu (cca 45 min.)",
-          "Možnosť písomnej komunikácie cez WhatsApp v prípade otázok počas trvania programu.",
+          "Stravovací plán",
+          "Podpora cez WhatsApp",
+          "Podpora zdravého stravovania",
+        ],
+        includesDetails: [
+          "Online prostredníctvom videohovoru na platforme, ktorá ti najviac vyhovuje. Porozprávame sa o tvojich cieľoch, súčasnom životnom štýle a o tom, čo ťa doteraz brzdilo.",
+          "Budeme sledovať tvoj pokrok a podľa potreby upravovať tréning.",
+          "Tvoj personalizovaný tréningový program dostaneš spolu s video ukážkami. Ak budú potrebné úpravy, program budem každý týždeň aktualizovať.",
+          "Stravovací plán vytvorený špeciálne pre teba, prispôsobený tvojmu telu, cieľom, životnému štýlu, obľúbeným jedlám a akýmkoľvek stravovacím obmedzeniam či zdravotným okolnostiam, ktoré chceš zohľadniť. To, čo funguje v prvom týždni, sa možno bude musieť do šiesteho týždňa zmeniť. Preto ho spolu upravíme podľa toho, ako sa bude vyvíjať tvoje telo a pokrok.",
+          "Počas celého programu sa na mňa môžeš obrátiť cez WhatsApp s akýmikoľvek otázkami.",
+          "Postupne sa s tebou podelím o nápady, tipy a recepty na zdravé stravovanie, niekedy aj vo videách, kde veci sama ukážem. Pomôže ti to vytvárať nové návyky ľahšie a príjemnejšie.",
         ],
         howHeading: "Takto to funguje:",
         howSteps: [
-          "Kontaktuješ ma prostredníctvom kontaktného formulára alebo sme sa stretli osobne a dohodli si bezplatnú konzultáciu, po ktorej sa sám rozhodneš, či chceš pokračovať.",
-          "Prvá konzultácia, keď je to možné, prebieha osobne, alebo prostredníctvom videohovoru - záleží na okolnostiach.",
+          "Kontaktuješ ma prostredníctvom kontaktného formulára a dohodneme si prvú konzultáciu, aby sme zistili, či nám spolupráca vyhovuje.",
+          "Prvá konzultácia prebieha online prostredníctvom videohovoru na platforme, ktorá ti najviac vyhovuje.",
           "Počas konzultácie sa s vami podelím o trochu viac podrobností o tom, ako program funguje, a potom zhromaždím informácie o vašich cieľoch, vašom súčasnom životnom štýle, zdraví, úrovni aktivity, stravovacích návykoch, preferenciách v jedle, dennom rozvrhu a ďalších informáciách.",
           "Po konzultácii máte tri dni na to, aby ste sa rozhodli, či vám program vyhovuje. A či ste pripravení posunúť svoj život a zdravie na vyššiu úroveň. Po týchto troch dňoch ťa budem kontaktovať, aby som sa informovala o vašom rozhodnutí.",
           "Keď sa rozhodnete pokračovať, budete mať ďalšie tri dni na zaplatenie. Môžete zaplatiť celú sumu za najlepšiu cenu alebo ju rozdeliť na dve až tri časti s malým navýšením, v prípade že máš záujem o väčšiu flexibilitu.",

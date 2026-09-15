@@ -44,7 +44,7 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
         <div className="grid gap-7 border-t border-foreground/12 pt-8 md:grid-cols-12 md:gap-12 md:pt-10">
           <div className="md:col-span-4"><p className="eyebrow">{t("realEyebrow")}</p><h2 className="mt-4 font-display text-[clamp(2.25rem,4vw,3.75rem)] leading-[1.05] text-[var(--plum)]">{program.includesHeading}</h2></div>
           <ol className="md:col-span-8">
-            {program.includes.map((item, index) => <li key={item} className="grid grid-cols-[2.75rem_1fr] gap-4 border-b border-foreground/12 py-4 first:border-t sm:grid-cols-[3.5rem_1fr] sm:py-5"><span className="pt-0.5 font-display text-lg text-[var(--clay)]">{String(index + 1).padStart(2, "0")}</span><span className="text-base font-medium leading-relaxed text-foreground/76 sm:text-[1.05rem]">{item}</span></li>)}
+            {program.includes.map((item, index) => <li key={item} className="grid grid-cols-[2.75rem_1fr] gap-4 border-b border-foreground/12 py-4 first:border-t sm:grid-cols-[3.5rem_1fr] sm:py-5"><span aria-hidden="true" className="pt-0.5 font-display text-lg text-[var(--clay)]">{String(index + 1).padStart(2, "0")}</span><div><h3 className="text-base font-medium leading-relaxed text-foreground/86 sm:text-[1.05rem]">{item}</h3>{program.includesDetails?.[index] && <p className="mt-2 max-w-2xl text-sm leading-relaxed text-foreground/70 sm:text-base">{program.includesDetails[index]}</p>}</div></li>)}
           </ol>
         </div>
       </section>
