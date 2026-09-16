@@ -76,13 +76,6 @@ export function Footer({ claim }: { claim?: string }) {
                 {t("billing")}
               </NextLink>
             )}
-            <NextLink
-              href="/admin"
-              rel="nofollow"
-              className="text-[var(--primary-foreground)]/50 transition-colors hover:text-[var(--primary-foreground)]"
-            >
-              Admin
-            </NextLink>
             <Link
               href="/kontakt"
               className="transition-colors hover:text-[var(--primary-foreground)]"
