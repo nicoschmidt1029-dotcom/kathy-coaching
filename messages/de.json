@@ -245,6 +245,9 @@
     "paymentChoiceNote": "Wähle die passende Option. Auf der nächsten Seite kannst du zuerst Katey kontaktieren oder nach einem bereits geführten Gespräch sicher bezahlen.",
     "bookingChoiceNote": "Wähle die passende Option. Auf der nächsten Seite kannst du deine Erstberatung buchen oder nach einem bereits geführten Gespräch sicher bezahlen.",
     "bookConsultation": "Kostenlose Beratung buchen",
+    "fullTransformationConsultation": "Erstberatung für Full Transformation",
+    "moveAndGrowConsultation": "Erstberatung für Move and Grow",
+    "pricingOptions": "Preisoptionen",
     "quickQuestion": "Hast du eine kurze Frage? Schreib mir stattdessen.",
     "learnMore": "Mehr erfahren",
     "tellMeHelp": "Erzähl mir, wobei du Hilfe brauchst",
@@ -432,9 +435,22 @@
     "terms": "AGB",
     "billing": "Abo verwalten",
     "contact": "Kontakt",
+    "contactMe": "Kontaktiere mich",
+    "supportMyWork": "Unterstütze meine Arbeit",
     "copyright": "© {year} Katey Coaching. Alle Rechte vorbehalten.",
     "madeWithCare": "Mit Sorgfalt gemacht",
     "claim": "Gesund zu leben war schon immer meine Leidenschaft."
+  },
+  "supportMyWork": {
+    "eyebrow": "Unterstützung",
+    "heading": "Unterstütze meine Arbeit",
+    "body": "Katey Coaching ist ebenso eine Berufung wie ein Unternehmen. Wenn dich das, was du hier gefunden hast, bereichert hat und du diese Arbeit unterstützen möchtest, ist dein Geschenk herzlich willkommen und wird sehr geschätzt. Danke, dass du Teil dieser Reise bist.",
+    "giveGift": "Etwas schenken",
+    "amountLabel": "Geschenkbetrag",
+    "amountHint": "Wähle einen Betrag ab CHF 5.",
+    "loading": "Sichere Zahlung wird geöffnet…",
+    "error": "Die Zahlungsseite konnte nicht geöffnet werden. Bitte versuch es erneut.",
+    "thankYou": "Vielen Dank. Dein Geschenk wird von Herzen geschätzt."
   },
   "legal": {
     "toBeSupplied": "NOCH AUSZUFÜLLEN",

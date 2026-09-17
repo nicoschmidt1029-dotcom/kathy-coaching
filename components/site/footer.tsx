@@ -76,12 +76,15 @@ export function Footer({ claim }: { claim?: string }) {
                 {t("billing")}
               </NextLink>
             )}
-            <Link
-              href="/kontakt"
-              className="transition-colors hover:text-[var(--primary-foreground)]"
-            >
-              {t("contact")}
-            </Link>
+            <details className="group relative">
+              <summary className="cursor-pointer list-none transition-colors marker:hidden hover:text-[var(--primary-foreground)]">
+                {t("contact")}
+              </summary>
+              <div className="mt-2 flex min-w-40 flex-col gap-2 border-l border-[var(--primary-foreground)]/20 pl-3 sm:absolute sm:bottom-full sm:right-0 sm:mb-2 sm:rounded-xl sm:border sm:bg-[var(--petrol-deep)] sm:p-3 sm:shadow-lg">
+                <Link href="/kontakt" className="whitespace-nowrap transition-colors hover:text-[var(--primary-foreground)]">{t("contactMe")}</Link>
+                <Link href="/support-my-work" className="whitespace-nowrap transition-colors hover:text-[var(--primary-foreground)]">{t("supportMyWork")}</Link>
+              </div>
+            </details>
           </nav>
         </div>
 

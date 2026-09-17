@@ -6,12 +6,17 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import type { LocalizedProgram } from "@/lib/programs";
 import { ConversationProgram } from "@/components/site/conversation-program";
-import { CheckoutButton } from "@/components/site/checkout-button";
 
 export async function ProgramDetail({ program, locale, showBackLink = true }: { program: LocalizedProgram; locale: Locale; showBackLink?: boolean }) {
   if (program.kind === "conversation") return <ConversationProgram program={program} locale={locale} showBackLink={showBackLink} />;
   const t = await getTranslations({ locale, namespace: "programs" });
   const isFullTransformation = program.slug === "personalised-online-fitness-coaching-90-days";
+  const isMoveAndGrow = program.slug === "move-and-grow";
+  const consultation = isFullTransformation
+    ? { href: "https://calendly.com/katey-coaching-newlife/30min", label: t("fullTransformationConsultation") }
+    : isMoveAndGrow
+      ? { href: "https://calendly.com/katey-coaching-newlife/first-consultation-for-move-and-grow", label: t("moveAndGrowConsultation") }
+      : null;
 
   return (
     <article className="overflow-hidden pb-14 md:pb-20">
@@ -68,14 +73,11 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
           <div className="md:flex md:items-end md:justify-between md:gap-10">
             <div>
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-white/62">{t("price")}</p><p className="mt-3 font-display text-[clamp(2.4rem,5vw,4.5rem)] leading-none">{program.price} {program.currency}</p><p className="mt-3 text-base text-white/68">{program.duration}</p>
-              {isFullTransformation ? <Button asChild size="lg" className="mt-6 min-h-12 h-auto w-full justify-between whitespace-normal bg-[var(--clay)] px-5 py-3 text-left leading-snug text-white hover:bg-[var(--clay)]/90 md:w-auto md:min-w-64"><a href="https://calendly.com/katey-coaching-newlife/30min" target="_blank" rel="noopener noreferrer"><span>{t("bookConsultation")}</span><ArrowRight className="ml-3 size-4 shrink-0" /></a></Button> : null}
+              {consultation ? <Button asChild size="lg" className="mt-6 min-h-12 h-auto w-full justify-between whitespace-normal bg-[var(--clay)] px-5 py-3 text-left leading-snug text-white hover:bg-[var(--clay)]/90 md:w-auto md:min-w-64"><a href={consultation.href} target="_blank" rel="noopener noreferrer"><span>{consultation.label}</span><ArrowRight className="ml-3 size-4 shrink-0" /></a></Button> : null}
             </div>
             {program.paymentOptions && program.paymentOptions.length > 0 ? <div className="mt-8 grid w-full gap-3 md:mt-0 md:max-w-md">
-              {!isFullTransformation ? <p className="mb-1 text-sm leading-relaxed text-white/72">{t("paymentChoiceNote")}</p> : null}
-              {program.paymentOptions.map((option, index) => {
-                const plan = program.slug === "move-and-grow" ? "b-month" : `a-${index + 1}`;
-                return isFullTransformation ? <CheckoutButton key={option} plan={plan as "a-1" | "a-2" | "a-3"} locale={locale} label={option} loadingLabel={t("checkoutLoading")} errorLabel={t("checkoutError")} className="min-h-12 h-auto w-full justify-between whitespace-normal bg-white px-5 py-3 text-left leading-snug text-[var(--plum)] hover:bg-white/90" /> : <Button key={option} asChild size="lg" className="min-h-12 h-auto w-full justify-between whitespace-normal bg-white px-5 py-3 text-left leading-snug text-[var(--plum)] hover:bg-white/90"><Link href={`/kontakt?payment=${plan}`}><span>{option}</span><ArrowRight className="ml-3 size-4 shrink-0" /></Link></Button>;
-              })}
+              <p className="mb-1 text-xs font-medium uppercase tracking-[0.18em] text-white/62">{t("pricingOptions")}</p>
+              {program.paymentOptions.map((option) => <div key={option} className="rounded-xl border border-white/12 bg-white/8 px-5 py-3.5 text-sm leading-snug text-white/88">{option}</div>)}
             </div> : <Button asChild size="lg" className="mt-8 h-12 bg-white px-7 text-[var(--plum)] hover:bg-white/90 md:mt-0"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel || t("contactFirst")}<ArrowRight className="ml-1 size-4" /></Link></Button>}
           </div>
           {isFullTransformation ? <p className="mt-6 text-center text-sm text-white/72 md:text-right"><Link href="/kontakt" className="underline decoration-white/35 underline-offset-4 transition-colors hover:text-white">{t("quickQuestion")}</Link></p> : null}

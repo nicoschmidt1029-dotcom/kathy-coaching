@@ -242,6 +242,9 @@
     "paymentChoiceNote": "Choose the option that suits you. On the next page, you can contact Katey first or continue to secure payment if you have already spoken.",
     "bookingChoiceNote": "Choose the option that suits you. On the next page, you can book your first consultation or continue to secure payment if you have already spoken with Katey.",
     "bookConsultation": "Book a Free Consultation",
+    "fullTransformationConsultation": "First Consultation for Full Transformation",
+    "moveAndGrowConsultation": "First Consultation for Move and Grow",
+    "pricingOptions": "Pricing options",
     "quickQuestion": "Have a quick question? Write to me instead.",
     "learnMore": "Learn More",
     "tellMeHelp": "Tell me what you need help with",
@@ -429,9 +432,22 @@
     "terms": "Terms & Conditions",
     "billing": "Manage subscription",
     "contact": "Contact",
+    "contactMe": "Contact Me",
+    "supportMyWork": "Support My Work",
     "copyright": "© {year} Katey Coaching. All rights reserved.",
     "madeWithCare": "Made with care",
     "claim": "Living healthy has always been my passion."
+  },
+  "supportMyWork": {
+    "eyebrow": "Support",
+    "heading": "Support My Work",
+    "body": "Katey Coaching is a calling as much as it is a business. If you've been blessed by what you've found here and would like to support this work, your gift is warmly welcome and deeply appreciated. Thank you for being part of this journey.",
+    "giveGift": "Give a Gift",
+    "amountLabel": "Gift amount",
+    "amountHint": "Choose an amount of CHF 5 or more.",
+    "loading": "Opening secure payment…",
+    "error": "The payment page could not be opened. Please try again.",
+    "thankYou": "Thank you. Your gift is warmly appreciated."
   },
   "legal": {
     "_comment": "Labels around the legal documents. The documents themselves are JSX per locale in components/legal/ — legal prose is a document, not a set of UI strings.",

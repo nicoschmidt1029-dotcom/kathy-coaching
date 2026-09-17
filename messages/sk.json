@@ -255,6 +255,9 @@
     "paymentChoiceNote": "Vyberte si vhodnú možnosť. Na ďalšej stránke môžete najprv kontaktovať Katey alebo po predchádzajúcom rozhovore pokračovať k bezpečnej platbe.",
     "bookingChoiceNote": "Vyber si vhodnú možnosť. Na ďalšej stránke si môžeš rezervovať prvú konzultáciu alebo po predchádzajúcom rozhovore s Katey pokračovať k bezpečnej platbe.",
     "bookConsultation": "Rezervovať bezplatnú konzultáciu",
+    "fullTransformationConsultation": "Prvá konzultácia pre Full Transformation",
+    "moveAndGrowConsultation": "Prvá konzultácia pre Move and Grow",
+    "pricingOptions": "Cenové možnosti",
     "quickQuestion": "Máš krátku otázku? Namiesto toho mi napíš.",
     "learnMore": "Zistiť viac",
     "tellMeHelp": "Povedz mi, s čím potrebuješ pomôcť",
@@ -442,9 +445,22 @@
     "terms": "Obchodné podmienky",
     "billing": "Spravovať predplatné",
     "contact": "Kontakt",
+    "contactMe": "Kontaktuj ma",
+    "supportMyWork": "Podporte moju prácu",
     "copyright": "© {year} Katey Coaching. Všetky práva vyhradené.",
     "madeWithCare": "Vytvorené s citom",
     "claim": "Zdravý život bol vždy mojou vášňou."
+  },
+  "supportMyWork": {
+    "eyebrow": "Podpora",
+    "heading": "Podporte moju prácu",
+    "body": "Katey Coaching je poslaním rovnako ako podnikaním. Ak vám to, čo ste tu našli, prinieslo požehnanie a chcete túto prácu podporiť, váš dar je srdečne vítaný a veľmi si ho vážim. Ďakujem, že ste súčasťou tejto cesty.",
+    "giveGift": "Darovať",
+    "amountLabel": "Výška daru",
+    "amountHint": "Vyberte sumu od 5 CHF.",
+    "loading": "Otvára sa bezpečná platba…",
+    "error": "Platobnú stránku sa nepodarilo otvoriť. Skúste to prosím znova.",
+    "thankYou": "Ďakujem. Váš dar si zo srdca vážim."
   },
   "legal": {
     "toBeSupplied": "ZATIAĽ NEDOPLNENÉ",
