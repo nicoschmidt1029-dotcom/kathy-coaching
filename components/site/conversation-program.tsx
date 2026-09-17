@@ -24,9 +24,12 @@ export function ConversationProgram({ program, showBackLink = false }: { program
             </div>
             {program.price > 0 ? <div className="mt-10 rounded-[1.75rem] bg-[var(--plum)] px-6 py-7 text-white sm:flex sm:items-end sm:justify-between sm:gap-8 sm:px-8">
               <div><p className="text-xs font-medium uppercase tracking-[0.22em] text-white/62">{programs("price")}</p><p className="mt-3 font-display text-[clamp(2.25rem,5vw,3.75rem)] leading-none">{program.price} {program.currency}</p>{program.duration && <p className="mt-3 text-sm text-white/68">{program.duration}</p>}</div>
-              <div className="mt-7 sm:mt-0 sm:max-w-xs"><p className="mb-3 text-sm leading-relaxed text-white/72">{programs("paymentChoiceNote")}</p><Button asChild size="lg" className="h-auto min-h-12 w-full bg-white px-7 py-3 text-[var(--plum)] hover:bg-white/90"><Link href="/kontakt?payment=c-hour">{program.ctaLabel || programs("chooseNext")}<ArrowRight className="ml-1 size-4" /></Link></Button></div>
+              <div className="mt-7 grid w-full gap-3 sm:mt-0 sm:max-w-xs">
+                {!showBackLink && <Button asChild size="lg" className="h-auto min-h-12 w-full bg-white px-7 py-3 text-[var(--plum)] hover:bg-white/90"><Link href="/programme/find-your-way-through">{programs("learnMore")}<ArrowRight className="ml-1 size-4" /></Link></Button>}
+                <p className="mt-1 text-sm leading-relaxed text-white/72">{programs("tellMeHelp")}</p>
+                <Button asChild size="lg" className="h-auto min-h-12 w-full bg-[var(--clay)] px-7 py-3 text-white hover:bg-[var(--clay)]/90"><Link href="/kontakt">{programs("talkToMe")}<ArrowRight className="ml-1 size-4" /></Link></Button>
+              </div>
             </div> : <div className="mt-10"><Button asChild size="lg" className="h-12 bg-[var(--plum)] px-7 text-white hover:bg-[var(--plum)]/90"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel || nav("contact")}<ArrowRight className="ml-1 size-4" /></Link></Button></div>}
-            {!showBackLink && program.secondaryCtaLabel && program.secondaryCtaHref && <div className="mt-3"><Button asChild size="lg" variant="outline" className="h-12 border-[var(--plum)]/25 bg-transparent px-7 text-[var(--plum)] hover:bg-[var(--sand)]"><Link href={program.secondaryCtaHref}>{program.secondaryCtaLabel}<ArrowRight className="ml-1 size-4" /></Link></Button></div>}
           </div>
           {program.image && <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[var(--sand)] md:col-span-5"><Image src={program.image} alt={program.imageAlt || program.title} fill sizes="(max-width: 768px) 100vw, 38vw" className="object-cover" /></div>}
         </div>

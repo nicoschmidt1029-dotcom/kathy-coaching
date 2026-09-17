@@ -30,7 +30,8 @@ export default async function KontaktPage({ params, searchParams }: { params: Pr
     "b-month": `${move.title} — ${move.paymentOptions?.[0]}`,
     "c-hour": `${conversation.title} — ${conversation.price} ${conversation.currency} ${conversation.duration}`,
   };
-  const selectedPayment = payment ? paymentOptions[payment] : undefined;
+  const isLegacyFullTransformationPayment = payment?.startsWith("a-") ?? false;
+  const selectedPayment = payment && !isLegacyFullTransformationPayment ? paymentOptions[payment] : undefined;
   const checkoutPlan = selectedPayment ? payment as "a-1" | "a-2" | "a-3" | "b-month" | "c-hour" : undefined;
   return <>{isPreview && <DraftPreviewBanner backHref="/admin/contact" />}<h1 className="sr-only">{content?.headline || t("title")}</h1><Contact content={content} selectedPayment={selectedPayment} checkoutPlan={checkoutPlan} locale={locale as Locale} /></>;
 }
