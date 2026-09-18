@@ -65,6 +65,8 @@
     "recipes": "Rezepte",
     "testimonials": "Erfahrungen",
     "contact": "Kontakt",
+    "contactMe": "Kontaktiere mich",
+    "supportMyWork": "Unterstütze meine Arbeit",
     "menu": "Menü",
     "openMenu": "Menü öffnen",
     "skipToMain": "Zum Hauptinhalt springen"
@@ -450,7 +452,8 @@
     "amountHint": "Wähle einen Betrag ab CHF 5.",
     "loading": "Sichere Zahlung wird geöffnet…",
     "error": "Die Zahlungsseite konnte nicht geöffnet werden. Bitte versuch es erneut.",
-    "thankYou": "Vielen Dank. Dein Geschenk wird von Herzen geschätzt."
+    "thankYou": "Vielen Dank. Dein Geschenk wird von Herzen geschätzt.",
+    "cancelled": "Es wurde keine Zahlung durchgeführt. Du kannst einen anderen Betrag wählen oder jederzeit zurückkehren."
   },
   "legal": {
     "toBeSupplied": "NOCH AUSZUFÜLLEN",

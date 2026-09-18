@@ -1102,11 +1102,18 @@ export const RECIPES: readonly Recipe[] = [
   },
 ];
 
-/** Only recipes Katarina has explicitly reviewed are part of the public journal. */
+/** Recipes Katarina approved for the public journal in her 2026-09-18 feedback. */
 export const PUBLIC_RECIPE_SLUGS = [
-  "berry-vanilla-overnight-oats",
   "mediterranean-lemon-chicken-bowl",
+  "berry-vanilla-overnight-oats",
   "creamy-lemon-salmon-greens",
+  "green-mango-protein-smoothie",
+  "sweet-potato-chickpea-nourish-bowl",
+  "apple-cinnamon-protein-pancakes",
+  "crispy-hummus-veggie-wrap",
+  "greek-yogurt-berry-crunch",
+  "date-almond-energy-bites",
+  "dark-chocolate-berry-yogurt-bark",
 ] as const;
 
 function localizeRecipe(recipe: Recipe, locale: Locale): LocalizedRecipe {

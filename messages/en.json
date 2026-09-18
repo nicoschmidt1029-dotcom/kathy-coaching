@@ -56,6 +56,8 @@
     "recipes": "Recipes",
     "testimonials": "Testimonials",
     "contact": "Contact",
+    "contactMe": "Contact Me",
+    "supportMyWork": "Support My Work",
     "menu": "Menu",
     "openMenu": "Open menu",
     "skipToMain": "Skip to main content"
@@ -447,7 +449,8 @@
     "amountHint": "Choose an amount of CHF 5 or more.",
     "loading": "Opening secure payment…",
     "error": "The payment page could not be opened. Please try again.",
-    "thankYou": "Thank you. Your gift is warmly appreciated."
+    "thankYou": "Thank you. Your gift is warmly appreciated.",
+    "cancelled": "No payment was made. You can choose a different amount or return at any time."
   },
   "legal": {
     "_comment": "Labels around the legal documents. The documents themselves are JSX per locale in components/legal/ — legal prose is a document, not a set of UI strings.",

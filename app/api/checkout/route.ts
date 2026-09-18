@@ -69,6 +69,7 @@ export async function POST(request: Request) {
     const stripe = new Stripe(apiKey);
     const session = await stripe.checkout.sessions.create({
       mode: plan.mode,
+      integration_identifier: "katey_programs_xqmtvlre",
       line_items: [{ price: priceId, quantity: 1 }],
       // Keep the advertised CHF amounts exact instead of converting them to
       // a visitor's local currency through Stripe Adaptive Pricing.

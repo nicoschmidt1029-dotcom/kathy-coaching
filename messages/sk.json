@@ -75,6 +75,8 @@
     "recipes": "Recepty",
     "testimonials": "Príbehy",
     "contact": "Kontakt",
+    "contactMe": "Kontaktuj ma",
+    "supportMyWork": "Podporte moju prácu",
     "menu": "Menu",
     "openMenu": "Otvoriť menu",
     "skipToMain": "Preskočiť na hlavný obsah"
@@ -460,7 +462,8 @@
     "amountHint": "Vyberte sumu od 5 CHF.",
     "loading": "Otvára sa bezpečná platba…",
     "error": "Platobnú stránku sa nepodarilo otvoriť. Skúste to prosím znova.",
-    "thankYou": "Ďakujem. Váš dar si zo srdca vážim."
+    "thankYou": "Ďakujem. Váš dar si zo srdca vážim.",
+    "cancelled": "Platba nebola vykonaná. Môžete si vybrať inú sumu alebo sa kedykoľvek vrátiť."
   },
   "legal": {
     "toBeSupplied": "ZATIAĽ NEDOPLNENÉ",

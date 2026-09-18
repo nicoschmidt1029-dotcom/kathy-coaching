@@ -24,6 +24,7 @@ export default async function SupportMyWorkPage({ params, searchParams }: { para
         <DisplayTitle className="mt-4">{t("heading")}</DisplayTitle>
         <p className="mt-7 max-w-2xl text-lg leading-[1.8] text-foreground/72">{t("body")}</p>
         {gift === "thank-you" && <p role="status" className="mt-6 rounded-xl bg-white/70 px-4 py-3 text-[var(--plum)]">{t("thankYou")}</p>}
+        {gift === "cancelled" && <p role="status" className="mt-6 rounded-xl bg-white/70 px-4 py-3 text-foreground/72">{t("cancelled")}</p>}
         <div className="mt-8"><GiftCheckoutButton locale={locale as Locale} label={t("giveGift")} amountLabel={t("amountLabel")} amountHint={t("amountHint")} loadingLabel={t("loading")} errorLabel={t("error")} /></div>
       </div>
     </div>

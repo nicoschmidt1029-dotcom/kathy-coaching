@@ -57,6 +57,12 @@ const confirmationCopy = {
   },
 } as const;
 
+const supportConfirmationCopy = {
+  en: { subject: "Thank you for supporting Katey Coaching", greeting: "Thank you. Your gift has been received and is deeply appreciated." },
+  de: { subject: "Danke für deine Unterstützung von Katey Coaching", greeting: "Vielen Dank. Deine Zuwendung ist eingegangen und wird von Herzen geschätzt." },
+  sk: { subject: "Ďakujem za podporu Katey Coaching", greeting: "Ďakujem. Tvoj dar bol prijatý a zo srdca si ho vážim." },
+} as const;
+
 async function sendConfirmation(session: Stripe.Checkout.Session) {
   if (session.payment_status !== "paid") return;
 
@@ -74,6 +80,16 @@ async function sendConfirmation(session: Stripe.Checkout.Session) {
 
   const locale = session.metadata?.locale;
   const language = locale === "de" || locale === "sk" ? locale : "en";
+  if (session.metadata?.purpose === "support_my_work") {
+    const copy = supportConfirmationCopy[language];
+    const { error } = await new Resend(apiKey).emails.send(
+      { from, to: email, subject: copy.subject, text: copy.greeting },
+      { idempotencyKey: `support-confirm-${session.id}` },
+    );
+    if (error) throw new Error(`Resend support confirmation failed: ${error.message}`);
+    return;
+  }
+
   const copy = confirmationCopy[language];
   const plan = session.metadata?.plan as keyof typeof copy.plans | undefined;
   const portalUrl = process.env.NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_URL;

@@ -77,7 +77,9 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
             </div>
             {program.paymentOptions && program.paymentOptions.length > 0 ? <div className="mt-8 grid w-full gap-3 md:mt-0 md:max-w-md">
               <p className="mb-1 text-xs font-medium uppercase tracking-[0.18em] text-white/62">{t("pricingOptions")}</p>
-              {program.paymentOptions.map((option) => <div key={option} className="rounded-xl border border-white/12 bg-white/8 px-5 py-3.5 text-sm leading-snug text-white/88">{option}</div>)}
+              <ul className="border-t border-white/20">
+                {program.paymentOptions.map((option) => <li key={option} className="grid grid-cols-[0.5rem_1fr] gap-3 border-b border-white/20 py-3 text-sm leading-snug text-white/88"><span aria-hidden className="mt-[0.45rem] size-1.5 rounded-full bg-[var(--clay)]" /><span>{option}</span></li>)}
+              </ul>
             </div> : <Button asChild size="lg" className="mt-8 h-12 bg-white px-7 text-[var(--plum)] hover:bg-white/90 md:mt-0"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel || t("contactFirst")}<ArrowRight className="ml-1 size-4" /></Link></Button>}
           </div>
           {isFullTransformation ? <p className="mt-6 text-center text-sm text-white/72 md:text-right"><Link href="/kontakt" className="underline decoration-white/35 underline-offset-4 transition-colors hover:text-white">{t("quickQuestion")}</Link></p> : null}
