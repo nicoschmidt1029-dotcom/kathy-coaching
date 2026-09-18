@@ -55,7 +55,13 @@ export default async function KateyPage({
   // independently CMS-managed throughout.
   const biographyManaged = Boolean(entry && Date.parse(entry.updated_at) >= APPROVED_BIOGRAPHY_AT);
   const localizedCalling = details?.calling?.[locale];
-  const content = entry || detailsEntry ? { mainManaged: Boolean(entry), biographyManaged, callingManaged: Boolean(localizedCalling?.trim()), eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: data?.body?.[locale], calling: localizedCalling, image: entry?.image_path } : undefined;
+  const localizedBody = data?.body?.[locale];
+  // Keep Katarina's approved Slovak corrections visible even while the older
+  // biography row remains published in the CMS.
+  const correctedBody = locale === "sk"
+    ? localizedBody?.replace("vlastných skúseností", "životných skúseností").replace("v zivote", "v živote")
+    : localizedBody;
+  const content = entry || detailsEntry ? { mainManaged: Boolean(entry), biographyManaged, callingManaged: Boolean(localizedCalling?.trim()), eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: correctedBody, calling: localizedCalling, image: entry?.image_path } : undefined;
 
   return <>{(previewMain || previewDetails) && <DraftPreviewBanner backHref="/admin/about" />}<About content={content} /></>;
 }

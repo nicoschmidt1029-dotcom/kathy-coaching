@@ -159,9 +159,10 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
     // A previously published Program A entry still contains the old five-item
     // description and in-person consultation. Use the revised source copy for
     // that legacy version, while leaving later CMS edits in control.
+    const legacyEnglishIncludes = data.includes?.en;
     const legacyFullTransformation = entry.content_key === "personalised-online-fitness-coaching-90-days"
-      && data.includes?.[locale]?.length === 5
-      && data.includes[locale].some((item) => item.includes("Possibility of written communication") || item.includes("Možnosť písomnej komunikácie"));
+      && legacyEnglishIncludes?.length === 5
+      && legacyEnglishIncludes.some((item) => item.includes("Possibility of written communication"));
     const title = pick(data.title, base?.title ?? "");
     if (!title) return null;
     return {

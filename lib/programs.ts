@@ -67,6 +67,7 @@ export const PROGRAMS: readonly Program[] = [
           "WhatsApp Support",
           "Healthy Eating Support",
           "Train From Home - No Gym Needed.",
+          "Bonus: Grocery Shopping",
         ],
         includesDetails: [
           "Online via video call, using whichever platform works best for you, we'll talk through your goals, your current lifestyle, and what's been holding you back.",
@@ -76,6 +77,7 @@ export const PROGRAMS: readonly Program[] = [
           "Ongoing support via WhatsApp, so you can reach out with any questions throughout the program.",
           "Along the way, I'll share healthy eating ideas, tips, and recipes, sometimes with videos where I demonstrate things myself, to help make your new habits easier and more enjoyable.",
           "I'll show you exactly how to lose weight and which simple equipment is enough to get strong and build and maintain muscle. You'll get real results right from your living room, without needing to go to the gym.",
+          "As a bonus, I offer the option to go grocery shopping with you in person for about one hour, so I can show you exactly what to look for and how to shop for your new healthy lifestyle.",
         ],
         howHeading: "How it works:",
         howSteps: [
@@ -117,6 +119,7 @@ export const PROGRAMS: readonly Program[] = [
           "WhatsApp-Begleitung",
           "Unterstützung bei gesunder Ernährung",
           "Training von zu Hause – kein Fitnessstudio nötig",
+          "Bonus: Gemeinsamer Lebensmitteleinkauf",
         ],
         includesDetails: [
           "Online per Videoanruf über die Plattform, die für dich am besten funktioniert. Wir sprechen über deine Ziele, deinen aktuellen Lebensstil und darüber, was dich bisher zurückgehalten hat.",
@@ -126,6 +129,7 @@ export const PROGRAMS: readonly Program[] = [
           "Während des gesamten Programms kannst du dich bei Fragen über WhatsApp an mich wenden.",
           "Unterwegs teile ich Ideen, Tipps und Rezepte für gesunde Ernährung mit dir – manchmal auch in Videos, in denen ich selbst etwas zeige. So werden neue Gewohnheiten leichter und angenehmer.",
           "Ich zeige dir genau, wie du Gewicht verlierst und welche einfache Ausrüstung ausreicht, um stärker zu werden sowie Muskeln aufzubauen und zu erhalten. Du kannst direkt in deinem Wohnzimmer echte Ergebnisse erzielen, ohne ins Fitnessstudio gehen zu müssen.",
+          "Als Bonus biete ich dir an, etwa eine Stunde lang persönlich mit dir Lebensmittel einzukaufen. Dabei zeige ich dir genau, worauf du achten kannst und wie du für deinen neuen gesunden Lebensstil einkaufst.",
         ],
         howHeading: "So funktioniert es:",
         howSteps: [
@@ -167,6 +171,7 @@ export const PROGRAMS: readonly Program[] = [
           "Podpora cez WhatsApp",
           "Podpora zdravého stravovania",
           "Cvičenie z domu – bez posilňovne",
+          "Bonus: Spoločný nákup potravín",
         ],
         includesDetails: [
           "Online prostredníctvom videohovoru na platforme, ktorá ti najviac vyhovuje. Porozprávame sa o tvojich cieľoch, súčasnom životnom štýle a o tom, čo ťa doteraz brzdilo.",
@@ -176,6 +181,7 @@ export const PROGRAMS: readonly Program[] = [
           "Počas celého programu sa na mňa môžeš obrátiť cez WhatsApp s akýmikoľvek otázkami.",
           "Postupne sa s tebou podelím o nápady, tipy a recepty na zdravé stravovanie, niekedy aj vo videách, kde veci sama ukážem. Pomôže ti to vytvárať nové návyky ľahšie a príjemnejšie.",
           "Ukážem ti presne, ako schudnúť a aké jednoduché vybavenie stačí na to, aby si zosilnel/a a vybudoval/a si a udržal/a svaly. Skutočné výsledky dosiahneš priamo vo svojej obývačke bez toho, aby si musel/a chodiť do posilňovne.",
+          "Ako bonus ponúkam možnosť ísť s tebou osobne asi na hodinu nakupovať potraviny, aby som ti presne ukázala, na čo sa zamerať a ako nakupovať pre svoj nový zdravý životný štýl.",
         ],
         howHeading: "Takto to funguje:",
         howSteps: [
