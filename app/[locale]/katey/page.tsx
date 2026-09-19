@@ -59,10 +59,10 @@ export default async function KateyPage({
   // Keep Katarina's approved Slovak corrections visible even while the older
   // biography row remains published in the CMS.
   const correctedBody = locale === "en"
-    ? localizedBody?.replace("gain real experience", "gain life experience")
+    ? localizedBody?.replace("gain real experience", "gain life experience").replace("my own experience", "life experience")
     : locale === "sk"
       ? localizedBody?.replace("vlastných skúseností", "životných skúseností").replace("v zivote", "v živote")
-      : localizedBody;
+      : localizedBody?.replace("meinen eigenen Erfahrungen", "Lebenserfahrungen");
   const content = entry || detailsEntry ? { mainManaged: Boolean(entry), biographyManaged, callingManaged: Boolean(localizedCalling?.trim()), eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: correctedBody, calling: localizedCalling, image: entry?.image_path } : undefined;
 
   return <>{(previewMain || previewDetails) && <DraftPreviewBanner backHref="/admin/about" />}<About content={content} /></>;
