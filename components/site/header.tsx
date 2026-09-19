@@ -65,7 +65,7 @@ export function Header({ programs }: { programs: HeaderProgram[] }) {
     return () => document.removeEventListener("mousedown", close);
   }, []);
 
-  const linkClass = "group relative whitespace-nowrap py-2 text-[0.95rem] font-semibold tracking-[0.01em] text-foreground/82 transition-colors hover:text-foreground";
+  const linkClass = "group relative whitespace-nowrap py-2 text-base font-bold tracking-[0.01em] text-foreground/82 transition-colors hover:text-foreground";
   const underline = "absolute inset-x-0 bottom-0 h-px origin-left bg-[var(--clay)] transition-transform duration-300";
 
   return (
