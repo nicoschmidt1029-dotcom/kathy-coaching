@@ -59,7 +59,7 @@ export default async function KateyPage({
   // Keep Katarina's approved Slovak corrections visible even while the older
   // biography row remains published in the CMS.
   const correctedBody = locale === "en"
-    ? localizedBody?.replace("gain real experience", "gain life experience").replace("my own experience", "life experience")
+    ? localizedBody?.replace("gain real experience", "gain life experience").replace("my own experience", "life experience").replace("where I studied Personal Trainer and Nutrition coach", "where I trained as a personal trainer and nutrition coach").replace("And after that I was accepted", "After that, I was accepted")
     : locale === "sk"
       ? localizedBody?.replace("vlastných skúseností", "životných skúseností").replace("v zivote", "v živote")
       : localizedBody?.replace("meinen eigenen Erfahrungen", "Lebenserfahrungen");
