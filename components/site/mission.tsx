@@ -42,7 +42,7 @@ export function Mission({ content }: { content?: EditableContent }) {
     : TEMP_PHOTOS.homeBand;
 
   return (
-    <section id="mission" className="section-pad section-pad-top-tight relative overflow-hidden">
+    <section id="mission" className="section-pad section-pad-top-tight relative overflow-hidden !pb-10 sm:!pb-12 md:!pb-16">
       {/* gap-12 -> gap-8 on mobile only (md:gap-16 unchanged): keeps
           Katarina's photo closer under the statement instead of a large
           gap, per her mobile-pass note.
@@ -83,7 +83,7 @@ export function Mission({ content }: { content?: EditableContent }) {
             <p
               key={paragraph}
               className={index === 0
-                ? "whitespace-pre-line text-pretty text-[1.25rem] leading-[1.65] text-foreground/82 sm:text-[1.35rem] md:text-[1.625rem] md:leading-[1.65]"
+                ? "whitespace-pre-line text-pretty text-[1.125rem] leading-[1.65] text-foreground/82 sm:text-[1.25rem] md:text-2xl md:leading-[1.65]"
                 : paragraph.trim() === "And that changes everything."
                   ? "whitespace-pre-line text-pretty text-[1.3rem] font-medium leading-[1.65] text-foreground/82 sm:text-[1.4rem] md:text-[1.5rem] md:leading-[1.65]"
                   : "whitespace-pre-line text-pretty text-base leading-[1.65] text-foreground/70 sm:text-[1.0625rem] md:text-[1.1875rem] md:leading-[1.65]"}
