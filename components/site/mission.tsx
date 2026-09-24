@@ -78,13 +78,15 @@ export function Mission({ content }: { content?: EditableContent }) {
         )}
       </div>
       <div className="container-page mt-8 md:mt-10">
-        <div className="max-w-xl space-y-7 md:ml-[12.5%] md:space-y-9 lg:ml-[16.666%]">
+        <div className="max-w-xl space-y-8 md:ml-[12.5%] md:space-y-9 lg:ml-[16.666%]">
           {bodyParagraphs.map((paragraph, index) => (
             <p
               key={paragraph}
               className={index === 0
-                ? "whitespace-pre-line text-pretty text-[1.16rem] leading-[1.85] text-foreground/82 sm:text-xl md:text-[1.34rem] md:leading-[1.85]"
-                : "whitespace-pre-line text-pretty text-[1.02rem] leading-[1.8] text-foreground/70 sm:text-lg md:text-[1.16rem] md:leading-[1.85]"}
+                ? "whitespace-pre-line text-pretty text-[1.25rem] leading-[1.65] text-foreground/82 sm:text-[1.35rem] md:text-[1.625rem] md:leading-[1.65]"
+                : paragraph.trim() === "And that changes everything."
+                  ? "whitespace-pre-line text-pretty text-[1.3rem] font-medium leading-[1.65] text-foreground/82 sm:text-[1.4rem] md:text-[1.5rem] md:leading-[1.65]"
+                  : "whitespace-pre-line text-pretty text-base leading-[1.65] text-foreground/70 sm:text-[1.0625rem] md:text-[1.1875rem] md:leading-[1.65]"}
             >
               {paragraph}
             </p>
