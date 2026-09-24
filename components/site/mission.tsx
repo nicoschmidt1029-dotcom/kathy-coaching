@@ -58,7 +58,7 @@ export function Mission({ content }: { content?: EditableContent }) {
           {headline && <DisplayTitle as="h1" className={`${eyebrow ? "mt-5 md:mt-8" : ""} max-w-[16ch]`}>{headline}</DisplayTitle>}
 
           {/* mt-10 -> mt-5 on mobile (md:mt-10 restores desktop). */}
-          {statement && <p className="mt-5 max-w-md font-display text-[1.35rem] leading-snug italic text-foreground/80 sm:text-[1.6rem] md:mt-10">
+          {statement && <p className="mt-5 max-w-md font-display text-[1.35rem] font-[450] leading-snug italic text-foreground/80 sm:text-[1.6rem] md:mt-10">
             {statement}
           </p>}
         </div>
@@ -83,10 +83,10 @@ export function Mission({ content }: { content?: EditableContent }) {
             <p
               key={paragraph}
               className={index === 0
-                ? "whitespace-pre-line text-pretty text-[1.125rem] leading-[1.65] text-foreground/82 sm:text-[1.25rem] md:text-2xl md:leading-[1.65]"
+                ? "whitespace-pre-line text-pretty text-[1.125rem] font-[450] leading-[1.65] text-foreground/82 sm:text-[1.25rem] md:text-2xl md:leading-[1.65]"
                 : paragraph.trim() === "And that changes everything."
-                  ? "whitespace-pre-line text-pretty text-[1.3rem] font-medium leading-[1.65] text-foreground/82 sm:text-[1.4rem] md:text-[1.5rem] md:leading-[1.65]"
-                  : "whitespace-pre-line text-pretty text-base leading-[1.65] text-foreground/70 sm:text-[1.0625rem] md:text-[1.1875rem] md:leading-[1.65]"}
+                  ? "whitespace-pre-line text-pretty text-[1.3rem] font-[450] leading-[1.65] text-foreground/82 sm:text-[1.4rem] md:text-[1.5rem] md:leading-[1.65]"
+                  : "whitespace-pre-line text-pretty text-base font-[450] leading-[1.65] text-foreground/75 sm:text-[1.0625rem] md:text-[1.1875rem] md:leading-[1.65]"}
             >
               {paragraph}
             </p>
