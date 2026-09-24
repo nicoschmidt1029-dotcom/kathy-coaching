@@ -52,10 +52,20 @@ export default async function MissionPage({
   const { locale } = await params;
   const { adminPreview } = await searchParams;
   setRequestLocale(locale);
+  const missionTranslations = await getTranslations({ locale, namespace: "mission" });
   const isPreview = adminPreview === "mission";
   const entry = isPreview ? await getAdminPreviewEntry("website", "mission") : await getPublicWebsiteEntry("mission");
   const data = entry?.data as { eyebrow?: Record<string, string>; headline?: Record<string, string>; body?: Record<string, string> } | undefined;
-  const content = entry ? { eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: locale === "en" ? MISSION_EN_BODY : data?.body?.[locale], image: entry.image_path } : undefined;
+  const content = locale === "en"
+    ? {
+        eyebrow: data?.eyebrow?.[locale] ?? missionTranslations("eyebrow"),
+        headline: data?.headline?.[locale] ?? missionTranslations("title"),
+        body: MISSION_EN_BODY,
+        image: entry?.image_path,
+      }
+    : entry
+      ? { eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: data?.body?.[locale], image: entry.image_path }
+      : undefined;
 
   return <>{isPreview && <DraftPreviewBanner backHref="/admin/mission" />}<Mission content={content} /></>;
 }
