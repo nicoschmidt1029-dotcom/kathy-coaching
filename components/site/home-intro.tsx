@@ -40,7 +40,13 @@ export function HomeIntro() {
               {t(key)}
             </p>
           ))}
-          <div className={`pt-2 transition-[opacity,transform] duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`} style={{ transitionDelay: visible ? `${PARAGRAPHS.length * 110}ms` : "0ms" }}>
+          <div className={`pt-8 transition-[opacity,transform] duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`} style={{ transitionDelay: visible ? `${(PARAGRAPHS.length + 1) * 110}ms` : "0ms" }}>
+            <p className="text-lg font-medium leading-[1.7] text-foreground/80 sm:text-xl">{t("meetKateyLine")}</p>
+            <Button asChild size="lg" className="mt-4 h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90">
+              <Link href="/katey">{t("meetKatey")}</Link>
+            </Button>
+          </div>
+          <div className={`pt-2 transition-[opacity,transform] duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`} style={{ transitionDelay: visible ? `${(PARAGRAPHS.length + 2) * 110}ms` : "0ms" }}>
             <Button asChild size="lg" className="group/button h-14 w-full bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90 sm:h-12 sm:w-auto">
               <Link href="/programme">{hero("shortCta")}<ArrowRight className="ml-1 size-4 transition-transform duration-200 group-hover/button:translate-x-0.5" /></Link>
             </Button>
