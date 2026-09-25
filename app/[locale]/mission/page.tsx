@@ -19,7 +19,7 @@ And that changes everything.
 
 This isn't just something I have read about. I experienced this in my own life, when I went through real health challenges. What really helped me was when I started looking for the root cause of my problems, instead of only treating the symptoms.
 
-Sometimes what we need is not another prescription, but to find out what caused it in the first place. And this is why I'm fascinated by medicine.
+Sometimes what we need is not another prescription, but to find out what caused it in the first place. And this is why I'm fascinated by functional medicine.
 
 I believe the more we understand this, the more we can support life rather than work against it. And it's never too late to start, though the earlier we learn how to care for what we've been given — physically, mentally and spiritually — the more we lay the foundation for the life ahead of us.`;
 
