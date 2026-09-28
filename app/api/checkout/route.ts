@@ -36,6 +36,12 @@ const earlyStartFields = {
   },
 } as const;
 
+const termsAcceptanceFields = {
+  en: "I accept the [terms and conditions]({termsUrl}).",
+  de: "Ich akzeptiere die [Allgemeinen Geschäftsbedingungen]({termsUrl}).",
+  sk: "Súhlasím s [obchodnými podmienkami]({termsUrl}).",
+} as const;
+
 export async function POST(request: Request) {
   let body: { plan?: keyof typeof plans; locale?: string };
   try {
@@ -61,6 +67,7 @@ export async function POST(request: Request) {
   if (country) metadata.checkout_country = country;
   if ("installments" in plan) metadata.installments = String(plan.installments);
   const earlyStart = earlyStartFields[locale as keyof typeof earlyStartFields];
+  const termsAcceptance = termsAcceptanceFields[locale as keyof typeof termsAcceptanceFields];
   // Vercel supplies the visitor country in production. In local/unknown
   // environments, keep the choice visible as the legally safer fallback.
   const collectWithdrawalChoice = !country || withdrawalCountries.has(country);
@@ -77,6 +84,11 @@ export async function POST(request: Request) {
       billing_address_collection: "required",
       locale: locale as Stripe.Checkout.SessionCreateParams.Locale,
       consent_collection: { terms_of_service: "required" },
+      custom_text: {
+        terms_of_service_acceptance: {
+          message: termsAcceptance.replace("{termsUrl}", `${origin}/${locale}/terms`),
+        },
+      },
       custom_fields: collectWithdrawalChoice ? [
         {
           key: "early_start",
