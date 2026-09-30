@@ -39,6 +39,7 @@ export function ImprintBodySk() {
       <p>
         Katarína Gröflin
         <br />
+        [VYŽADUJE SA ÚPLNÁ FIREMNÁ ADRESA]
       </p>
 
       <h2>Kontakt</h2>

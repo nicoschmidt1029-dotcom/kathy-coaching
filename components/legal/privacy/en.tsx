@@ -44,6 +44,7 @@ export function PrivacyBodyEn() {
       <p>
         Katarina Gröflin
         <br />
+        [FULL BUSINESS ADDRESS REQUIRED]
         <br />
         Email: katey.coaching.newlife@gmail.com
       </p>
@@ -107,7 +108,37 @@ export function PrivacyBodyEn() {
         obligations.
       </p>
 
-      <h3>2.4 A honeypot field</h3>
+      <h3>2.4 Coaching and client records</h3>
+      <p>
+        If you become a client, Katey may process your name, contact details,
+        customer/account information, appointment history, coaching notes,
+        progress information, training and fitness information, goals, dietary
+        information and communications needed to plan and deliver the agreed
+        service. You may voluntarily disclose information about injuries,
+        pregnancy, medication or other health matters so training can be made
+        safer. Faith-based coaching may also involve religious or belief-related
+        information that you choose to discuss. Health and religious information
+        are special-category/sensitive data. They are used only where necessary
+        for the requested coaching, safety, or with your explicit consent where
+        required; they are not collected as a condition of browsing the site.
+      </p>
+      <ul>
+        <li>Purpose and basis: perform or prepare the coaching contract, protect health and safety, meet legal obligations, and where required obtain explicit consent for sensitive data.</li>
+        <li>Recipients: Katey and the processors needed to provide the service, such as Stripe for payments, Resend for email, Vercel for hosting, and WhatsApp or another messaging provider if you choose that channel.</li>
+        <li>Retention: coaching records are kept for the relationship and then deleted or securely archived only for as long as necessary for legal, accounting, insurance or dispute purposes. Health and faith notes are deleted when no longer needed for safety or the service.</li>
+      </ul>
+
+      <h3>2.5 Email, WhatsApp and other coaching communication</h3>
+      <p>
+        Email, WhatsApp and agreed messaging channels may contain ordinary
+        contact data and, if you choose to share them, coaching, health,
+        dietary or faith-related details. These services may process data under
+        their own terms and may transfer it internationally. Do not send
+        emergency information through them. You may ask Katey to use a different
+        channel where reasonably possible.
+      </p>
+
+      <h3>2.6 A honeypot field</h3>
       <p>
         The form has a hidden field that&rsquo;s invisible to humans but
         usually filled in by spam bots. If it&rsquo;s filled, the message is

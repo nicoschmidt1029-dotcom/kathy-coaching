@@ -31,6 +31,7 @@ export function ImprintBodyDe() {
       <p>
         Katarina Gröflin
         <br />
+        [VOLLSTÄNDIGE GESCHÄFTSADRESSE ERFORDERLICH]
       </p>
 
       <h2>Kontakt</h2>

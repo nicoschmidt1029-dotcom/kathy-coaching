@@ -18,6 +18,8 @@ const withdrawalCountries = new Set([
   "NO", "PL", "PT", "RO", "SE", "SI", "SK", "GB",
 ]);
 
+// Kept as a reference for the translated checkout copy while Stripe handles
+// the enforceable consent through the separate pre-checkout checkbox.
 const earlyStartFields = {
   en: {
     label: "Start during the 14-day withdrawal period?",
@@ -36,14 +38,17 @@ const earlyStartFields = {
   },
 } as const;
 
+void earlyStartFields;
+
 const termsAcceptanceFields = {
-  en: "I accept the [terms and conditions]({termsUrl}).",
+  en: "I have read and agree to the [Terms & Conditions]({termsUrl}) and acknowledge the [Privacy Policy]({privacyUrl}).",
   de: "Ich akzeptiere die [Allgemeinen Geschäftsbedingungen]({termsUrl}).",
   sk: "Súhlasím s [obchodnými podmienkami]({termsUrl}).",
 } as const;
+const privacyLinkLabels = { en: "Privacy Policy", de: "Datenschutzerklärung", sk: "Zásady ochrany osobných údajov" } as const;
 
 export async function POST(request: Request) {
-  let body: { plan?: keyof typeof plans; locale?: string };
+  let body: { plan?: keyof typeof plans; locale?: string; earlyStartConsent?: boolean };
   try {
     body = await request.json();
   } catch {
@@ -66,11 +71,14 @@ export async function POST(request: Request) {
   const metadata: Record<string, string> = { plan: body.plan!, locale };
   if (country) metadata.checkout_country = country;
   if ("installments" in plan) metadata.installments = String(plan.installments);
-  const earlyStart = earlyStartFields[locale as keyof typeof earlyStartFields];
   const termsAcceptance = termsAcceptanceFields[locale as keyof typeof termsAcceptanceFields];
   // Vercel supplies the visitor country in production. In local/unknown
   // environments, keep the choice visible as the legally safer fallback.
   const collectWithdrawalChoice = !country || withdrawalCountries.has(country);
+  if (collectWithdrawalChoice && body.earlyStartConsent !== true) {
+    return NextResponse.json({ error: "early_start_consent_required" }, { status: 400 });
+  }
+  const checkoutMetadata = { ...metadata, early_start_consent: String(Boolean(body.earlyStartConsent)) };
 
   try {
     const stripe = new Stripe(apiKey);
@@ -81,33 +89,20 @@ export async function POST(request: Request) {
       // Keep the advertised CHF amounts exact instead of converting them to
       // a visitor's local currency through Stripe Adaptive Pricing.
       adaptive_pricing: { enabled: false },
+      ...(plan.mode === "payment" ? { submit_type: "pay" as const } : {}),
       billing_address_collection: "required",
       locale: locale as Stripe.Checkout.SessionCreateParams.Locale,
       consent_collection: { terms_of_service: "required" },
       custom_text: {
         terms_of_service_acceptance: {
-          message: termsAcceptance.replace("{termsUrl}", `${origin}/${locale}/terms`),
+          message: `${termsAcceptance.replace("{termsUrl}", `${origin}/${locale}/terms`).replace("{privacyUrl}", `${origin}/${locale}/privacy`)} [${privacyLinkLabels[locale as keyof typeof privacyLinkLabels]}](${origin}/${locale}/privacy)`,
         },
       },
-      custom_fields: collectWithdrawalChoice ? [
-        {
-          key: "early_start",
-          label: { type: "custom", custom: earlyStart.label },
-          type: "dropdown",
-          optional: false,
-          dropdown: {
-            options: [
-              { label: earlyStart.no, value: "no" },
-              { label: earlyStart.yes, value: "yes" },
-            ],
-          },
-        },
-      ] : [],
-      metadata,
+      metadata: checkoutMetadata,
       success_url: `${origin}/${locale}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/${locale}${plan.cancelPath}?checkout=cancelled`,
       ...(plan.mode === "subscription"
-        ? { subscription_data: { metadata } }
+        ? { subscription_data: { metadata: checkoutMetadata } }
         : { customer_creation: "always" as const }),
     });
 

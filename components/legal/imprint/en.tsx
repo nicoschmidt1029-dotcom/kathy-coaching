@@ -30,6 +30,7 @@ export function ImprintBodyEn() {
       <p>
         Katarina Gröflin
         <br />
+        [FULL BUSINESS ADDRESS REQUIRED]
       </p>
 
       <h2>Contact</h2>

@@ -101,6 +101,10 @@ async function sendConfirmation(session: Stripe.Checkout.Session) {
     copy.next,
     "",
     `${copy.terms}: https://kateycoaching.com/${language}/terms`,
+    `Privacy: https://kateycoaching.com/${language}/privacy`,
+    `Imprint: https://kateycoaching.com/${language}/imprint`,
+    "Terms version: 30 September 2026",
+    `Withdrawal information and model form: https://kateycoaching.com/${language}/terms#withdrawal`,
   ];
   if (session.mode === "subscription" && portalUrl) {
     lines.push(`${copy.portal}: ${portalUrl}`);

@@ -38,8 +38,7 @@ export default async function PrivacyPage({
     <LegalShell
       eyebrow={t("privacyEyebrow")}
       title={t("privacyTitle")}
-      updated="28 July 2026"
-      draft
+      updated={locale === "de" ? "30. September 2026" : locale === "sk" ? "30. septembra 2026" : "30 September 2026"}
     >
       <Body />
     </LegalShell>

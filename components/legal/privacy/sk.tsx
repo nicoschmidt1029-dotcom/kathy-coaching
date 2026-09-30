@@ -53,6 +53,7 @@ export function PrivacyBodySk() {
       <p>
         Katarína Gröflin
         <br />
+        [VYŽADUJE SA ÚPLNÁ FIREMNÁ ADRESA]
         <br />
         E-mail: katey.coaching.newlife@gmail.com
       </p>
@@ -115,7 +116,31 @@ export function PrivacyBodySk() {
         predplatného a účtovníctvo.
       </p>
 
-      <h3>2.4 Honeypot pole</h3>
+      <h3>2.4 Koučovacie a klientske údaje</h3>
+      <p>
+        Ak sa staneš klientom, Katey môže spracúvať tvoje meno, kontaktné údaje,
+        údaje zákazníka, termíny, koučovacie poznámky, pokrok, tréningové a
+        fitness údaje, ciele, stravovacie údaje a komunikáciu potrebnú na
+        dohodnutú službu. Dobrovoľne môžeš uviesť zranenia, tehotenstvo, lieky
+        alebo iné zdravotné údaje, aby sa tréning upravil bezpečne. Pri koučingu
+        založenom na viere sa môžu objaviť aj dobrovoľne zdieľané náboženské
+        alebo svetonázorové údaje. Zdravotné a náboženské údaje sú osobitne
+        citlivé a používajú sa len na požadovaný koučing, bezpečnosť alebo na
+        základe výslovného súhlasu, ak je potrebný.
+      </p>
+      <ul>
+        <li>Účel a základ: plnenie alebo príprava zmluvy, bezpečnosť, zákonné povinnosti a podľa potreby výslovný súhlas pri citlivých údajoch.</li>
+        <li>Príjemcovia: Katey a potrební sprostredkovatelia, napríklad Stripe, Resend, Vercel a – ak si ho zvolíš – WhatsApp alebo iná komunikačná služba.</li>
+        <li>Uchovávanie: údaje sa uchovávajú počas spolupráce a potom len tak dlho, ako je potrebné na zákonné, účtovné, poistné alebo sporové účely. Zdravotné a náboženské poznámky sa vymažú, keď už nie sú potrebné.</li>
+      </ul>
+      <h3>2.5 E-mail, WhatsApp a koučovacia komunikácia</h3>
+      <p>
+        E-mail, WhatsApp a dohodnuté komunikačné kanály môžu obsahovať kontaktné
+        údaje a údaje o koučingu, zdraví, strave alebo viere, ktoré dobrovoľne
+        poskytneš. Tieto služby môžu údaje spracúvať medzinárodne podľa vlastných
+        podmienok. Núdzové informácie neposielaj týmito kanálmi.
+      </p>
+      <h3>2.6 Honeypot pole</h3>
       <p>
         Formulár obsahuje skryté pole, ktoré je pre ľudí neviditeľné, ale
         spamovacie roboty ho zvyčajne vyplnia. Ak je vyplnené, správa sa ticho

@@ -15,6 +15,6 @@ export default async function TermsPage({ params }: { params: Promise<{ locale: 
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "legal" });
-  const updated = locale === "de" ? "9. September 2026" : locale === "sk" ? "9. septembra 2026" : "9 September 2026";
+  const updated = locale === "de" ? "30. September 2026" : locale === "sk" ? "30. septembra 2026" : "30 September 2026";
   return <LegalShell eyebrow={t("termsEyebrow")} title={t("termsTitle")} updated={updated}><TermsBody locale={locale as Locale} /></LegalShell>;
 }

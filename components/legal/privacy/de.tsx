@@ -45,6 +45,7 @@ export function PrivacyBodyDe() {
       <p>
         Katarina Gröflin
         <br />
+        [VOLLSTÄNDIGE GESCHÄFTSADRESSE ERFORDERLICH]
         <br />
         E-Mail: katey.coaching.newlife@gmail.com
       </p>
@@ -112,7 +113,33 @@ export function PrivacyBodyDe() {
         Betrugsprävention, Abonnementverwaltung und Buchhaltung.
       </p>
 
-      <h3>2.4 Ein Honeypot-Feld</h3>
+      <h3>2.4 Coaching- und Kundendaten</h3>
+      <p>
+        Wenn du Kundin oder Kunde wirst, kann Katey Name, Kontaktdaten,
+        Kundeninformationen, Termine, Coaching-Notizen, Fortschritt, Trainings-
+        und Fitnessangaben, Ziele, Ernährungsangaben und notwendige Kommunikation
+        verarbeiten. Du kannst freiwillig Verletzungen, Schwangerschaft,
+        Medikamente oder andere Gesundheitsangaben mitteilen, damit das Training
+        sicher angepasst werden kann. Im glaubensbasierten Coaching können auch
+        freiwillig besprochene religiöse oder weltanschauliche Angaben anfallen.
+        Gesundheits- und Religionsangaben sind besonders geschützte Daten und
+        werden nur für die angefragte Leistung, die Sicherheit oder mit der nötigen
+        ausdrücklichen Einwilligung verarbeitet.
+      </p>
+      <ul>
+        <li>Zweck und Grundlage: Vertragserfüllung, Vorbereitung des Coachings, Sicherheit, gesetzliche Pflichten und – soweit erforderlich – ausdrückliche Einwilligung für besonders geschützte Daten.</li>
+        <li>Empfänger: Katey sowie notwendige Auftragsverarbeiter wie Stripe, Resend, Vercel und – falls du es wählst – WhatsApp oder ein anderer Messaging-Dienst.</li>
+        <li>Aufbewahrung: Coachingdaten werden für die Zusammenarbeit und danach nur so lange wie für gesetzliche, buchhalterische, versicherungs- oder streitbezogene Pflichten nötig aufbewahrt. Gesundheits- und Glaubensnotizen werden gelöscht, sobald sie nicht mehr benötigt werden.</li>
+      </ul>
+      <h3>2.5 E-Mail, WhatsApp und Coaching-Kommunikation</h3>
+      <p>
+        E-Mail, WhatsApp und vereinbarte Messaging-Kanäle können Kontaktdaten
+        sowie freiwillig mitgeteilte Coaching-, Gesundheits-, Ernährungs- oder
+        Glaubensangaben enthalten. Diese Dienste können Daten nach eigenen
+        Bedingungen international verarbeiten. Bitte sende keine Notfälle über
+        diese Kanäle.
+      </p>
+      <h3>2.6 Ein Honeypot-Feld</h3>
       <p>
         Das Formular enthält ein verstecktes Feld, das für Menschen unsichtbar
         ist, von Spam-Bots aber meist ausgefüllt wird. Ist es ausgefüllt, wird

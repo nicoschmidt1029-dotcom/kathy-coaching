@@ -68,6 +68,9 @@ export function Footer({ claim }: { claim?: string }) {
             >
               {t("terms")}
             </Link>
+            {/* TODO(legal): confirm whether German consumer cancellation rules
+                require a dedicated Kündigungsbutton beyond Stripe's portal
+                for the current Move and Grow contract flow. */}
             {customerPortalUrl && (
               <NextLink
                 href={customerPortalUrl}
