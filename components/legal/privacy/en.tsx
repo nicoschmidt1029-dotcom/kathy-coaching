@@ -145,7 +145,19 @@ export function PrivacyBodyEn() {
         silently discarded. No data is stored in that case.
       </p>
 
-      <h2>3. What is not done here</h2>
+      <h2>3. Retention</h2>
+      <p>
+        Contact enquiries are kept only as long as needed to respond and, if no
+        relationship follows, normally no longer than 12 months. Customer and
+        account data is kept for the coaching relationship and then only as
+        necessary for accounting, legal, insurance or dispute purposes.
+        Transaction and accounting records follow applicable legal obligations.
+        Coaching notes, email/messages and health or faith-related notes are
+        deleted or anonymised when no longer necessary, subject to those same
+        obligations. Retention is reviewed by necessity rather than an invented
+        fixed period.
+      </p>
+      <h2>4. What is not done here</h2>
       <ul>
         <li>No cookies are set. No consent banner is needed.</li>
         <li>
@@ -163,7 +175,7 @@ export function PrivacyBodyEn() {
         </li>
       </ul>
 
-      <h2>4. Your rights</h2>
+      <h2>5. Your rights</h2>
       <p>
         Under the Swiss nDSG (and the GDPR, if you visit from the EU/EEA) you
         have the right to:
@@ -194,18 +206,24 @@ export function PrivacyBodyEn() {
         </li>
       </ul>
       <p>
+        Where legally available, you may also request restriction of processing
+        and withdraw consent for processing based on consent. Withdrawing consent
+        does not affect processing that was lawful before withdrawal, and rights
+        can differ depending on the applicable jurisdiction.
+      </p>
+      <p>
         To exercise any of these rights, email{" "}
         katey.coaching.newlife@gmail.com. A reply follows
         within 30 days.
       </p>
 
-      <h2>5. Automated decisions</h2>
+      <h2>6. Automated decisions</h2>
       <p>
         There is no automated decision-making, no profiling, and no AI
         evaluation of your enquiry. Katey reads every message herself.
       </p>
 
-      <h2>6. Changes to this notice</h2>
+      <h2>7. Changes to this notice</h2>
       <p>
         If the site or its data-handling practices change, this notice is
         updated and re-dated at the top. Meaningful changes will be

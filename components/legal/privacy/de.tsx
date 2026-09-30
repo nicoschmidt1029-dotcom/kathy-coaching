@@ -147,7 +147,18 @@ export function PrivacyBodyDe() {
         Daten gespeichert.
       </p>
 
-      <h2>3. Was hier nicht passiert</h2>
+      <h2>3. Aufbewahrung</h2>
+      <p>
+        Anfragen werden nur so lange wie für die Antwort nötig und ohne
+        anschliessende Zusammenarbeit normalerweise höchstens 12 Monate
+        aufbewahrt. Kunden- und Kontodaten bleiben für die Zusammenarbeit und
+        danach nur so lange gespeichert, wie es für Buchhaltung, Recht,
+        Versicherung oder Streitfälle erforderlich ist. Transaktionsdaten
+        folgen den gesetzlichen Pflichten. Coaching-, Nachrichten-, Gesundheits-
+        und Glaubensnotizen werden gelöscht oder anonymisiert, sobald sie nicht
+        mehr nötig sind, vorbehaltlich zwingender Aufbewahrungspflichten.
+      </p>
+      <h2>4. Was hier nicht passiert</h2>
       <ul>
         <li>Es werden keine Cookies gesetzt. Ein Consent-Banner ist nicht nötig.</li>
         <li>
@@ -166,7 +177,7 @@ export function PrivacyBodyDe() {
         </li>
       </ul>
 
-      <h2>4. Deine Rechte</h2>
+      <h2>5. Deine Rechte</h2>
       <p>
         Nach dem Schweizer nDSG (und nach der DSGVO, wenn du aus der EU/dem EWR
         zugreifst) hast du das Recht:
@@ -207,14 +218,14 @@ export function PrivacyBodyDe() {
         Antwort folgt innerhalb von 30 Tagen.
       </p>
 
-      <h2>5. Automatisierte Entscheidungen</h2>
+      <h2>6. Automatisierte Entscheidungen</h2>
       <p>
         Es findet keine automatisierte Entscheidungsfindung statt, kein
         Profiling und keine KI-Auswertung deiner Anfrage. Katey liest jede
         Nachricht selbst.
       </p>
 
-      <h2>6. Änderungen dieser Erklärung</h2>
+      <h2>7. Änderungen dieser Erklärung</h2>
       <p>
         Ändern sich die Website oder der Umgang mit Daten, wird diese Erklärung
         aktualisiert und oben neu datiert. Wesentliche Änderungen werden

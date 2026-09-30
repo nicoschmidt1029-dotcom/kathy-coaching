@@ -147,7 +147,17 @@ export function PrivacyBodySk() {
         zahodí. V takom prípade sa neukladajú žiadne údaje.
       </p>
 
-      <h2>3. Čo sa tu nerobí</h2>
+      <h2>3. Uchovávanie</h2>
+      <p>
+        Otázky sa uchovávajú len tak dlho, ako je potrebné na odpoveď, a ak
+        spolupráca nevznikne, spravidla najviac 12 mesiacov. Klientske a
+        zákaznícke údaje zostávajú počas spolupráce a potom len na účely
+        účtovníctva, práva, poistenia alebo sporov. Transakčné údaje podliehajú
+        zákonným povinnostiam. Koučovacie poznámky, správy a zdravotné či
+        náboženské poznámky sa vymažú alebo anonymizujú, keď už nie sú potrebné,
+        s výhradou povinného uchovávania.
+      </p>
+      <h2>4. Čo sa tu nerobí</h2>
       <ul>
         <li>Nenastavujú sa žiadne cookies. Súhlasný banner nie je potrebný.</li>
         <li>
@@ -165,7 +175,7 @@ export function PrivacyBodySk() {
         </li>
       </ul>
 
-      <h2>4. Tvoje práva</h2>
+      <h2>5. Tvoje práva</h2>
       <p>
         Podľa švajčiarskeho nDSG (a podľa GDPR, ak pristupuješ z EÚ/EHP) máš
         právo:
@@ -202,7 +212,7 @@ export function PrivacyBodySk() {
         30 dní.
       </p>
 
-      <h2>5. Automatizované rozhodovanie</h2>
+      <h2>6. Automatizované rozhodovanie</h2>
       <p>
         Neprebieha žiadne automatizované rozhodovanie, žiadne profilovanie a
         žiadne vyhodnocovanie tvojej otázky umelou inteligenciou. Katey číta
