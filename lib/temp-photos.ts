@@ -166,9 +166,9 @@ export const TEMP_PHOTOS: Record<
   // consistent black-outfit/light-blue-floor direction she wants going
   // forward. Previous photo here (kathy-02.jpg, seated from behind) stays
   // in the repo, unused.
-  homeBand: {
-    url: "/images/kathy/kathy-11-mission-bottle.jpg",
-    alt: "Katey standing on a light-blue running track in a black outfit, hand on hip, holding a water bottle",
+    homeBand: {
+      url: "/images/kathy/kathy-11-mission-bottle-original.jpg",
+      alt: "Katey drinking from a water bottle on an outdoor sports court",
   },
   // Katey's own — running track, seated, looking off. Was the full-bleed
   // band under the Programs pricing cards; Katarina asked for that band
