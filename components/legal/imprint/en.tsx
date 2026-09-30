@@ -30,11 +30,6 @@ export function ImprintBodyEn() {
       <p>
         Katarina Gröflin
         <br />
-        Kammermattweg 18
-        <br />
-        CH-4107 Ettingen
-        <br />
-        Switzerland
       </p>
 
       <h2>Contact</h2>
@@ -67,8 +62,7 @@ export function ImprintBodyEn() {
 
       <h2>Editorial responsibility</h2>
       <p>
-        Katarina Gröflin, address as above, is responsible for the content of
-        this site.
+        Katarina Gröflin is responsible for the content of this site.
       </p>
 
       <h2>Dispute resolution</h2>

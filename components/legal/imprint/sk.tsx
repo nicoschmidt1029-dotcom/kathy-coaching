@@ -39,11 +39,6 @@ export function ImprintBodySk() {
       <p>
         Katarína Gröflin
         <br />
-        Kammermattweg 18
-        <br />
-        CH-4107 Ettingen
-        <br />
-        Švajčiarsko
       </p>
 
       <h2>Kontakt</h2>
@@ -76,7 +71,7 @@ export function ImprintBodySk() {
 
       <h2>Zodpovednosť za obsah</h2>
       <p>
-        Za obsah tejto stránky zodpovedá Katarína Gröflin, adresa ako vyššie.
+        Za obsah tejto stránky zodpovedá Katarína Gröflin.
       </p>
 
       <h2>Riešenie sporov</h2>

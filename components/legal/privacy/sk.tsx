@@ -53,9 +53,6 @@ export function PrivacyBodySk() {
       <p>
         Katarína Gröflin
         <br />
-        Kammermattweg 18
-        <br />
-        CH-4107 Ettingen, Švajčiarsko
         <br />
         E-mail: katey.coaching.newlife@gmail.com
       </p>

@@ -31,11 +31,6 @@ export function ImprintBodyDe() {
       <p>
         Katarina Gröflin
         <br />
-        Kammermattweg 18
-        <br />
-        CH-4107 Ettingen
-        <br />
-        Schweiz
       </p>
 
       <h2>Kontakt</h2>
@@ -68,8 +63,7 @@ export function ImprintBodyDe() {
 
       <h2>Inhaltliche Verantwortung</h2>
       <p>
-        Für den Inhalt dieser Website verantwortlich ist Katarina Gröflin,
-        Adresse wie oben.
+        Für den Inhalt dieser Website verantwortlich ist Katarina Gröflin.
       </p>
 
       <h2>Streitbeilegung</h2>
