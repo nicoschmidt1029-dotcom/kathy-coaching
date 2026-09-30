@@ -91,7 +91,7 @@ export function PrivacyBodySk() {
           (čl. 6 písm. a nDSG, teda zákonné spracúvanie viazané na legitímny
           účel; čl. 6 ods. 1 písm. b GDPR pre návštevníkov z EÚ).
         </li>
-        <li>Príjemca: výhradne Katarína Gröflin.</li>
+        <li>Obchodná príjemkyňa: Katarína Gröflin. Resend je technický sprostredkovateľ/služba odosielajúca správu v jej mene, nie ďalšia obchodná príjemkyňa.</li>
         <li>
           Technický sprostredkovateľ: Resend Inc., 2261 Market Street #5039,
           San Francisco, CA 94114, USA — odosiela e-mail zo stránky do schránky

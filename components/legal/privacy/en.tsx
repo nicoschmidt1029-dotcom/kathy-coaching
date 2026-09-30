@@ -81,7 +81,7 @@ export function PrivacyBodyEn() {
           request (Art. 6 lit. a nDSG, i.e. lawful processing tied to a
           legitimate purpose; Art. 6(1)(b) GDPR for EU visitors).
         </li>
-        <li>Recipients: Katarina Gröflin only.</li>
+        <li>Business recipient: Katarina Gröflin. Resend is a technical processor/service provider sending the message on the business&apos;s behalf, not an additional business recipient.</li>
         <li>
           Technical processor: Resend Inc., 2261 Market Street #5039, San
           Francisco, CA 94114, USA — sends the email from the site to

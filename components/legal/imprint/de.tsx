@@ -56,12 +56,6 @@ export function ImprintBodyDe() {
         bewilligungspflichtige medizinische oder psychotherapeutische Leistung angeboten.
       </p>
 
-      <h2>Berufshaftpflichtversicherung</h2>
-      <p>
-        Eine Berufshaftpflichtversicherung besteht derzeit noch nicht. Der
-        Abschluss einer geeigneten Versicherung ist geplant.
-      </p>
-
       <h2>Inhaltliche Verantwortung</h2>
       <p>
         Für den Inhalt dieser Website verantwortlich ist Katarina Gröflin.

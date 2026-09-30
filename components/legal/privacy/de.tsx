@@ -87,7 +87,7 @@ export function PrivacyBodyDe() {
           einem legitimen Zweck; Art. 6 Abs. 1 lit. b DSGVO für Besuchende aus
           der EU).
         </li>
-        <li>Empfängerin: ausschliesslich Katarina Gröflin.</li>
+        <li>Geschäftliche Empfängerin: Katarina Gröflin. Resend ist ein technischer Auftragsverarbeiter/Dienstleister und kein weiterer geschäftlicher Empfänger.</li>
         <li>
           Technische Auftragsbearbeiterin: Resend Inc., 2261 Market Street
           #5039, San Francisco, CA 94114, USA — versendet die E-Mail von der

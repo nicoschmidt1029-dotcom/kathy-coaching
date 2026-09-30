@@ -64,12 +64,6 @@ export function ImprintBodySk() {
         licencovaná zdravotná alebo psychoterapeutická služba.
       </p>
 
-      <h2>Poistenie profesijnej zodpovednosti</h2>
-      <p>
-        Poistenie profesijnej zodpovednosti momentálne ešte nie je uzatvorené.
-        Uzatvorenie vhodného poistenia sa plánuje.
-      </p>
-
       <h2>Zodpovednosť za obsah</h2>
       <p>
         Za obsah tejto stránky zodpovedá Katarína Gröflin.

@@ -55,12 +55,6 @@ export function ImprintBodyEn() {
         licensed medical or psychotherapeutic service.
       </p>
 
-      <h2>Professional liability insurance</h2>
-      <p>
-        Professional liability insurance is not currently in place. The
-        operator plans to obtain appropriate cover.
-      </p>
-
       <h2>Editorial responsibility</h2>
       <p>
         Katarina Gröflin is responsible for the content of this site.
