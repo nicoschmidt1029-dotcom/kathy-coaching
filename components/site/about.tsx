@@ -49,7 +49,7 @@ export function About({ content }: { content?: EditableContent }) {
             empty band. */}
         <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-5">
-            <div className="md:sticky md:top-28">
+            <div>
               {photo ? (
                 <Placeholder
                   label={t("portraitLabel")}
