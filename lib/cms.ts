@@ -168,7 +168,11 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
     return {
       slug: entry.content_key,
       label: base?.label ?? "Program",
-      image: entry.image_path ?? base?.image ?? "",
+      // Full Transformation uses the latest approved original photo from the
+      // static program definition; an older CMS image must not override it.
+      image: entry.content_key === "personalised-online-fitness-coaching-90-days"
+        ? base?.image ?? entry.image_path ?? ""
+        : entry.image_path ?? base?.image ?? "",
       imageAlt: data.imageAlt ?? base?.imageAlt ?? title,
       price: data.price ?? base?.price ?? 0,
       currency: data.currency ?? base?.currency ?? "CHF",
