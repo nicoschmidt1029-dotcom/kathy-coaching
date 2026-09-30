@@ -41,7 +41,7 @@ export const PROGRAMS: readonly Program[] = [
   {
     slug: "personalised-online-fitness-coaching-90-days",
     label: "Program A",
-    image: "/images/kathy/kathy-14-programs-stretch-original.jpg",
+    image: "/images/kathy/kathy-14-programs-stretch-20260930.jpg",
     imageAlt: "Katarina doing a wide-legged stretch on an outdoor sports court",
     price: 1290,
     currency: "CHF",
