@@ -34,7 +34,7 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
         </header>
 
         <div className="mt-10 grid items-start gap-9 md:mt-12 md:grid-cols-12 md:gap-12 lg:gap-16">
-          {program.image && <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[var(--sand)] md:col-span-5">
+          {program.image && <div className={`relative overflow-hidden rounded-[1.5rem] bg-[var(--sand)] md:col-span-5 ${isFullTransformation ? "aspect-[3/4]" : "aspect-[4/5]"}`}>
             <Image src={program.image} alt={program.imageAlt} fill loading="eager" sizes="(max-width: 768px) 100vw, 42vw" className="object-cover" />
           </div>}
           <section className={program.image ? "md:col-span-7 md:pt-5 lg:pt-9" : "md:col-span-10 md:col-start-2 md:pt-5 lg:col-span-8 lg:col-start-3 lg:pt-9"}>
