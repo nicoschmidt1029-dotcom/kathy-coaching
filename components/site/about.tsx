@@ -3,6 +3,8 @@ import { DisplayTitle } from "./display-title";
 import { Placeholder } from "./placeholder";
 import { PortraitPlaceholder } from "./portrait-placeholder";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 
 /**
  * Katarina's rule for this section: "What I studied is written in Katey —
@@ -153,6 +155,12 @@ export function About({ content }: { content?: EditableContent }) {
             </p>
           )}
           </div>
+        </div>
+        <div className="mt-12 max-w-2xl border-t border-[var(--plum)]/10 pt-10 sm:mt-16 sm:pt-12">
+          <p className="max-w-xl font-display text-[1.35rem] italic leading-snug text-foreground/88 sm:text-[1.65rem]">{t("missionClosing")}</p>
+          <Button asChild size="lg" className="mt-6 h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-white ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90">
+            <Link href="/mission">{t("missionCta")}</Link>
+          </Button>
         </div>
       </div>
     </section>
