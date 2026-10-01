@@ -41,6 +41,7 @@ export function Mission({ content }: { content?: EditableContent }) {
     ? { url: content.image, alt: t("eyebrow") }
     : TEMP_PHOTOS.homeBand;
   const missionTextClass = "whitespace-pre-line text-pretty text-[18px] font-[450] leading-[1.65] text-foreground/82";
+  const missionBodyClass = "whitespace-pre-line text-pretty text-[17px] font-[450] leading-[1.65] text-foreground/82";
 
   return (
     <section id="mission" className="section-pad section-pad-top-tight relative overflow-hidden !pb-10 sm:!pb-12 md:!pb-16">
@@ -83,7 +84,7 @@ export function Mission({ content }: { content?: EditableContent }) {
           {bodyParagraphs.map((paragraph) => (
             <p
               key={paragraph}
-              className={`${missionTextClass}${/^(And that is when things finally began to change\.|We were created for freedom\.|Und genau da begannen sich die Dinge endlich zu verändern\.|Wir wurden für Freiheit geschaffen\.|A práve vtedy sa veci konečne začali meniť\.|Boli sme stvorení pre slobodu\.)$/.test(paragraph.trim()) ? " font-medium" : ""}`}
+              className={`${missionBodyClass}${/^(And that is when things finally began to change\.|We were created for freedom\.|Und genau da begannen sich die Dinge endlich zu verändern\.|Wir wurden für Freiheit geschaffen\.|A práve vtedy sa veci konečne začali meniť\.|Boli sme stvorení pre slobodu\.)$/.test(paragraph.trim()) ? " font-medium" : ""}`}
             >
               {paragraph}
             </p>
