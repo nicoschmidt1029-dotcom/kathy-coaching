@@ -84,7 +84,7 @@ export function Mission({ content }: { content?: EditableContent }) {
               key={paragraph}
               className={index === 0
                 ? "whitespace-pre-line text-pretty text-[clamp(1.0625rem,1.1vw+0.75rem,1.375rem)] font-[450] leading-[1.65] text-foreground/82"
-                : paragraph.trim() === "And that changes everything."
+                : /^(And that is when things finally began to change\.|We were created for freedom\.|Und genau da begannen sich die Dinge endlich zu verändern\.|Wir wurden für Freiheit geschaffen\.|A práve vtedy sa veci konečne začali meniť\.|Boli sme stvorení pre slobodu\.)$/.test(paragraph.trim())
                   ? "whitespace-pre-line text-pretty text-[clamp(1.15rem,0.8vw+0.95rem,1.375rem)] font-[450] leading-[1.65] text-foreground/82"
                   : "whitespace-pre-line text-pretty text-[clamp(0.95rem,0.4vw+0.85rem,1.125rem)] font-[450] leading-[1.65] text-foreground/75"}
             >
