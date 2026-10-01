@@ -40,7 +40,7 @@ export function Mission({ content }: { content?: EditableContent }) {
   const photo = content?.image
     ? { url: content.image, alt: t("eyebrow") }
     : TEMP_PHOTOS.homeBand;
-  const missionTextClass = "whitespace-pre-line text-pretty text-[clamp(1.0625rem,1.1vw+0.75rem,1.375rem)] font-[450] leading-[1.65] text-foreground/82";
+  const missionTextClass = "whitespace-pre-line text-pretty text-[18px] font-[450] leading-[1.65] text-foreground/82";
 
   return (
     <section id="mission" className="section-pad section-pad-top-tight relative overflow-hidden !pb-10 sm:!pb-12 md:!pb-16">
