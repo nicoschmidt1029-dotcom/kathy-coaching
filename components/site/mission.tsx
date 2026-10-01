@@ -40,6 +40,7 @@ export function Mission({ content }: { content?: EditableContent }) {
   const photo = content?.image
     ? { url: content.image, alt: t("eyebrow") }
     : TEMP_PHOTOS.homeBand;
+  const missionTextClass = "whitespace-pre-line text-pretty text-[clamp(1.0625rem,1.1vw+0.75rem,1.375rem)] font-[450] leading-[1.65] text-foreground/82";
 
   return (
     <section id="mission" className="section-pad section-pad-top-tight relative overflow-hidden !pb-10 sm:!pb-12 md:!pb-16">
@@ -58,7 +59,7 @@ export function Mission({ content }: { content?: EditableContent }) {
           {headline && <DisplayTitle as="h1" className={`${eyebrow ? "mt-5 md:mt-8" : ""} max-w-[16ch]`}>{headline}</DisplayTitle>}
 
           {/* mt-10 -> mt-5 on mobile (md:mt-10 restores desktop). */}
-          {statement && <p className="mt-5 max-w-md font-sans text-[clamp(1.0625rem,1.1vw+0.75rem,1.375rem)] font-[450] leading-[1.65] text-foreground/82 md:mt-10">
+          {statement && <p className={`${missionTextClass} mt-5 max-w-md font-sans md:mt-10`}>
             {statement}
           </p>}
         </div>
@@ -79,14 +80,10 @@ export function Mission({ content }: { content?: EditableContent }) {
       </div>
       <div className="container-page mt-8 md:mt-10">
         <div className="max-w-xl space-y-8 md:ml-[12.5%] md:space-y-9 lg:ml-[16.666%]">
-          {bodyParagraphs.map((paragraph, index) => (
+          {bodyParagraphs.map((paragraph) => (
             <p
               key={paragraph}
-              className={index === 0
-                ? "whitespace-pre-line text-pretty text-[clamp(1.0625rem,1.1vw+0.75rem,1.375rem)] font-[450] leading-[1.65] text-foreground/82"
-                : /^(And that is when things finally began to change\.|We were created for freedom\.|Und genau da begannen sich die Dinge endlich zu verändern\.|Wir wurden für Freiheit geschaffen\.|A práve vtedy sa veci konečne začali meniť\.|Boli sme stvorení pre slobodu\.)$/.test(paragraph.trim())
-                  ? "whitespace-pre-line text-pretty text-[clamp(1.15rem,0.8vw+0.95rem,1.375rem)] font-[450] leading-[1.65] text-foreground/82"
-                  : "whitespace-pre-line text-pretty text-[clamp(0.95rem,0.4vw+0.85rem,1.125rem)] font-[450] leading-[1.65] text-foreground/75"}
+              className={`${missionTextClass}${/^(And that is when things finally began to change\.|We were created for freedom\.|Und genau da begannen sich die Dinge endlich zu verändern\.|Wir wurden für Freiheit geschaffen\.|A práve vtedy sa veci konečne začali meniť\.|Boli sme stvorení pre slobodu\.)$/.test(paragraph.trim()) ? " font-medium" : ""}`}
             >
               {paragraph}
             </p>
