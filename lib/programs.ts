@@ -82,7 +82,7 @@ export const PROGRAMS: readonly Program[] = [
         howHeading: "How it works:",
         howSteps: [
           "You reach out through the contact form, and we schedule the first consultation to see if we're a good fit.",
-          "The first consultation takes place online via video call, using whichever platform works best for you.",
+          "The first consultation can take place in person; if that is not possible, it takes place online via video call, using whichever platform works best for you.",
           "During the consultation, I'll share a bit more detail on how the program works, then I'll gather information about your goals, your current lifestyle, health, activity level, eating habits, food preferences, daily schedule and more.",
           "After the consultation, you have three days to decide whether the program feels right and whether you're ready to take your life and health to the next level. After those three days, I'll reach out to ask about your decision.",
           "Once you've made your decision, you'll have another three days to pay. You can pay in full for the best price, or split into 2–3 parts, with a small increase to the total for the flexibility.",
@@ -134,7 +134,7 @@ export const PROGRAMS: readonly Program[] = [
         howHeading: "So funktioniert es:",
         howSteps: [
           "Du meldest dich über das Kontaktformular. Danach vereinbaren wir die Erstberatung, um herauszufinden, ob wir zusammenpassen.",
-          "Die Erstberatung findet online per Videoanruf über die Plattform statt, die für dich am besten funktioniert.",
+          "Die Erstberatung kann persönlich stattfinden. Wenn das nicht möglich ist, findet sie online per Videoanruf über die Plattform statt, die für dich am besten funktioniert.",
           "Ich erkläre dir den Ablauf und erfasse deine Ziele, deinen Alltag, deine Gesundheit, dein Aktivitätsniveau, deine Essgewohnheiten, Vorlieben und deinen Tagesrhythmus.",
           "Nach der Beratung hast du drei Tage Zeit, um zu entscheiden, ob das Programm zu dir passt. Danach frage ich bei dir nach.",
           "Nach deiner Zusage hast du weitere drei Tage für die Zahlung. Du kannst den günstigsten Gesamtpreis vollständig bezahlen oder den Betrag gegen einen kleinen Aufpreis auf zwei oder drei Monatsraten verteilen.",
@@ -186,7 +186,7 @@ export const PROGRAMS: readonly Program[] = [
         howHeading: "Takto to funguje:",
         howSteps: [
           "Kontaktuješ ma prostredníctvom kontaktného formulára a dohodneme si prvú konzultáciu, aby sme zistili, či nám spolupráca vyhovuje.",
-          "Prvá konzultácia prebieha online prostredníctvom videohovoru na platforme, ktorá ti najviac vyhovuje.",
+          "Prvá konzultácia môže prebehnúť osobne. Ak to nie je možné, uskutoční sa online prostredníctvom videohovoru na platforme, ktorá ti najviac vyhovuje.",
           "Počas konzultácie sa s vami podelím o trochu viac podrobností o tom, ako program funguje, a potom zhromaždím informácie o vašich cieľoch, vašom súčasnom životnom štýle, zdraví, úrovni aktivity, stravovacích návykoch, preferenciách v jedle, dennom rozvrhu a ďalších informáciách.",
           "Po konzultácii máte tri dni na to, aby ste sa rozhodli, či vám program vyhovuje. A či ste pripravení posunúť svoj život a zdravie na vyššiu úroveň. Po týchto troch dňoch ťa budem kontaktovať, aby som sa informovala o vašom rozhodnutí.",
           "Keď sa rozhodnete pokračovať, budete mať ďalšie tri dni na zaplatenie. Môžete zaplatiť celú sumu za najlepšiu cenu alebo ju rozdeliť na dve až tri časti s malým navýšením, v prípade že máš záujem o väčšiu flexibilitu.",
