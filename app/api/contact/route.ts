@@ -4,6 +4,7 @@ import { Resend } from "resend";
 type Body = {
   name?: string;
   email?: string;
+  program?: string;
   message?: string;
   website?: string; // honeypot — must remain empty
 };
@@ -99,6 +100,7 @@ export async function POST(req: Request) {
 
   const name = body.name?.trim();
   const email = body.email?.trim();
+  const program = body.program?.trim();
   const message = body.message?.trim();
 
   if (!name || !email || !message) {
@@ -147,6 +149,7 @@ export async function POST(req: Request) {
       text: [
         `Name: ${name}`,
         `Email: ${email}`,
+        `Program: ${program || "Not selected"}`,
         "",
         "Message:",
         message,
