@@ -138,7 +138,7 @@ export const TEMP_PHOTOS: Record<
   // raised feet or her face — neither acceptable. kathy-08-stretch.jpg
   // (the previous photo here) stays in the repo, unused.
   approachTrain: {
-    url: "/images/kathy/kathy-16-approach-train-shoulderstand.jpg",
+    url: "/images/kathy/kathy-16-approach-train-no-fence.png",
     alt: "Katey in a shoulder-stand leg raise on an outdoor sports court, smiling",
   },
   // Katey's own — running track, seated, relaxed, looking off into the
@@ -167,7 +167,7 @@ export const TEMP_PHOTOS: Record<
   // forward. Previous photo here (kathy-02.jpg, seated from behind) stays
   // in the repo, unused.
     homeBand: {
-      url: "/images/kathy/kathy-11-mission-bottle-original.jpg",
+      url: "/images/kathy/kathy-11-mission-bottle-no-fence.png",
       alt: "Katey drinking from a water bottle on an outdoor sports court",
   },
   // Katey's own — running track, seated, looking off. Was the full-bleed
