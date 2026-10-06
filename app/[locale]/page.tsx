@@ -31,7 +31,7 @@ export default async function Home({
   const t = await getTranslations({ locale, namespace: "hero" });
   const previewContent = isPreview && entry
     ? { headline: data?.headline?.[locale], body: data?.body?.[locale], ctaLabel: data?.ctaLabel?.[locale], ctaHref: data?.ctaHref }
-    : { headline: t("shortHeadline"), ctaLabel: t("meetKatey"), ctaHref: "/katey" };
+    : { headline: t("shortHeadline") };
 
   return <>{isPreview && <DraftPreviewBanner backHref="/admin/homepage" />}<Hero content={previewContent} /><HomeIntro /></>;
 }
