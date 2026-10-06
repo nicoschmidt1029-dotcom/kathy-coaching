@@ -209,8 +209,8 @@ export const PROGRAMS: readonly Program[] = [
   {
     slug: "move-and-grow",
     label: "Program B",
-    image: "",
-    imageAlt: "",
+    image: "/images/kathy/move-and-grow-flower.jpeg",
+    imageAlt: "Katey smiling warmly outdoors",
     price: 200,
     currency: "CHF",
     content: {
@@ -276,8 +276,8 @@ export const PROGRAMS: readonly Program[] = [
   {
     slug: "find-your-way-through",
     label: "Program C",
-    image: "",
-    imageAlt: "",
+    image: "/images/kathy/find-your-way-white-heart.jpeg",
+    imageAlt: "Katey smiling warmly",
     price: 80,
     currency: "CHF",
     kind: "conversation",
