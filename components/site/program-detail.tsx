@@ -27,7 +27,7 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
           <div className="mt-4 grid items-end gap-6 md:grid-cols-12 md:gap-10">
             <div className="md:col-span-9 lg:col-span-8">
               <h1 className="max-w-5xl font-display text-[clamp(2.65rem,6.2vw,5.6rem)] leading-[0.98] tracking-[-0.025em] text-[var(--plum)]">{program.title}</h1>
-              {program.intro && <p className="mt-5 max-w-2xl text-lg leading-relaxed text-foreground/68">{program.intro}</p>}
+              {program.intro && <p className="mt-5 max-w-2xl whitespace-pre-line text-lg leading-relaxed text-foreground/68">{program.intro}</p>}
             </div>
             <p className="font-display text-2xl italic text-foreground/72 md:col-span-3 md:pb-2 lg:col-span-4 lg:text-3xl">{program.duration}</p>
           </div>
@@ -35,7 +35,7 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
 
         <div className="mt-10 grid items-start gap-9 md:mt-12 md:grid-cols-12 md:gap-12 lg:gap-16">
           {program.image && <div className={`relative overflow-hidden rounded-[1.5rem] bg-[var(--sand)] md:col-span-5 ${isFullTransformation ? "aspect-[3/4]" : "aspect-[4/5]"}`}>
-            <Image src={program.image} alt={program.imageAlt} fill loading="eager" sizes="(max-width: 768px) 100vw, 42vw" className="object-cover" />
+            <Image src={program.image} alt={program.imageAlt} fill loading="eager" sizes="(max-width: 768px) 100vw, 42vw" className={isFullTransformation ? "object-contain" : "object-cover"} />
           </div>}
           <section className={program.image ? "md:col-span-7 md:pt-5 lg:pt-9" : "md:col-span-10 md:col-start-2 md:pt-5 lg:col-span-8 lg:col-start-3 lg:pt-9"}>
             <h2 className="max-w-lg font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] text-[var(--plum)]">{program.targetHeading}</h2>

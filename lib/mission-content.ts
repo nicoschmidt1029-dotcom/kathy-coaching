@@ -8,7 +8,7 @@ Some of us are given the chance to learn this early in life, others discover it 
 
 I'm deeply drawn to a holistic approach to life, looking at the whole person, body, mind and spirit, together. And that is exactly what functional medicine does. It is an approach that inspires the way I work.
 
-I experienced this in my own life, when I went through real health challenges. What really helped me was when I started looking for the root cause of my problems, instead of only treating the symptoms. And that is when things finally began to change.
+I experienced this in my own life, when I went through real health challenges. What really helped me was when I started looking for the root cause of my problems, instead of only treating the symptoms. And that is when things finally began to change for good.
 
 Sometimes what we need is not another prescription, but to find out what caused it in the first place.
 
@@ -24,7 +24,7 @@ Manche von uns bekommen schon früh im Leben die Chance, das zu lernen; andere e
 
 Mich spricht ein ganzheitlicher Lebensansatz tief an, der den ganzen Menschen betrachtet – Körper, Geist und Seele gemeinsam. Und genau das tut die funktionelle Medizin. Dieser Ansatz inspiriert die Art, wie ich arbeite.
 
-Ich habe das selbst in meinem Leben erfahren, als ich mit echten gesundheitlichen Herausforderungen konfrontiert war. Wirklich geholfen hat mir, nach der Ursache meiner Probleme zu suchen, statt nur die Symptome zu behandeln. Und genau da begannen sich die Dinge endlich zu verändern.
+Ich habe das selbst in meinem Leben erfahren, als ich mit echten gesundheitlichen Herausforderungen konfrontiert war. Wirklich geholfen hat mir, nach der Ursache meiner Probleme zu suchen, statt nur die Symptome zu behandeln. Und genau da begannen sich die Dinge endlich zum Guten zu verändern.
 
 Manchmal brauchen wir kein weiteres Rezept, sondern müssen herausfinden, was das Problem überhaupt verursacht hat.
 
@@ -40,7 +40,7 @@ Niektorí z nás dostanú šancu naučiť sa to už v mladosti, iní na to príd
 
 Hlboko ma oslovuje holistický prístup k životu, ktorý vníma človeka ako celok – telo, myseľ a ducha spoločne. A presne to robí funkčná medicína. Je to prístup, ktorý inšpiruje spôsob, akým pracujem.
 
-Zažila som to vo vlastnom živote, keď som prechádzala skutočnými zdravotnými problémami. Skutočne mi pomohlo, keď som začala hľadať prvotnú príčinu svojich problémov namiesto toho, aby som liečila iba príznaky. A práve vtedy sa veci konečne začali meniť.
+Zažila som to vo vlastnom živote, keď som prechádzala skutočnými zdravotnými problémami. Skutočne mi pomohlo, keď som začala hľadať prvotnú príčinu svojich problémov namiesto toho, aby som liečila iba príznaky. A práve vtedy sa veci konečne začali meniť k lepšiemu.
 
 Niekedy nepotrebujeme ďalší lekársky predpis, ale musíme zistiť, čo daný problém vôbec spôsobilo.
 

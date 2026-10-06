@@ -84,7 +84,7 @@ export function Mission({ content }: { content?: EditableContent }) {
           {bodyParagraphs.map((paragraph) => (
             <p
               key={paragraph}
-              className={`${missionBodyClass}${/^(And that is when things finally began to change\.|We were created for freedom\.|Und genau da begannen sich die Dinge endlich zu verändern\.|Wir wurden für Freiheit geschaffen\.|A práve vtedy sa veci konečne začali meniť\.|Boli sme stvorení pre slobodu\.)$/.test(paragraph.trim()) ? " font-medium" : ""}`}
+              className={`${missionBodyClass}${/^(And that is when things finally began to change for good\.|We were created for freedom\.|Und genau da begannen sich die Dinge endlich zum Guten zu verändern\.|Wir wurden für Freiheit geschaffen\.|A práve vtedy sa veci konečne začali meniť k lepšiemu\.|Boli sme stvorení pre slobodu\.)$/.test(paragraph.trim()) ? " font-medium" : ""}`}
             >
               {paragraph}
             </p>
