@@ -163,6 +163,11 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
     const legacyFullTransformation = entry.content_key === "personalised-online-fitness-coaching-90-days"
       && legacyEnglishIncludes?.length === 5
       && legacyEnglishIncludes.some((item) => item.includes("Possibility of written communication"));
+    // The published legacy entry still contains the pre-approval copy (including
+    // question-mark bullets and the old consultation flow). Keep the static,
+    // approved programme copy authoritative until that CMS entry is explicitly
+    // replaced through the admin editor.
+    const useApprovedFullTransformation = entry.content_key === "personalised-online-fitness-coaching-90-days";
     const title = pick(data.title, base?.title ?? "");
     if (!title) return null;
     return {
@@ -178,16 +183,16 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       currency: data.currency ?? base?.currency ?? "CHF",
       kind: data.kind ?? base?.kind ?? "coaching",
       title,
-      intro: pick(data.intro, base?.intro ?? ""),
-      targetHeading: pick(data.targetHeading, base?.targetHeading ?? ""),
-      targetAudience: pick(data.targetAudience, base?.targetAudience ?? []),
-      transition: pick(data.transition, base?.transition ?? ""),
-      includesHeading: pick(data.includesHeading, base?.includesHeading ?? ""),
-      includes: legacyFullTransformation ? base?.includes ?? [] : pick(data.includes, base?.includes ?? []),
-      includesDetails: legacyFullTransformation || !present(data.includes?.[locale]) ? base?.includesDetails : undefined,
-      howHeading: pick(data.howHeading, base?.howHeading ?? ""),
-      howSteps: legacyFullTransformation ? base?.howSteps ?? [] : pick(data.howSteps, base?.howSteps ?? []),
-      howClosing: pick(data.howClosing, base?.howClosing ?? ""),
+      intro: useApprovedFullTransformation ? base?.intro ?? "" : pick(data.intro, base?.intro ?? ""),
+      targetHeading: useApprovedFullTransformation ? base?.targetHeading ?? "" : pick(data.targetHeading, base?.targetHeading ?? ""),
+      targetAudience: useApprovedFullTransformation ? base?.targetAudience ?? [] : pick(data.targetAudience, base?.targetAudience ?? []),
+      transition: useApprovedFullTransformation ? base?.transition ?? "" : pick(data.transition, base?.transition ?? ""),
+      includesHeading: useApprovedFullTransformation ? base?.includesHeading ?? "" : pick(data.includesHeading, base?.includesHeading ?? ""),
+      includes: useApprovedFullTransformation ? base?.includes ?? [] : legacyFullTransformation ? base?.includes ?? [] : pick(data.includes, base?.includes ?? []),
+      includesDetails: useApprovedFullTransformation || legacyFullTransformation || !present(data.includes?.[locale]) ? base?.includesDetails : undefined,
+      howHeading: useApprovedFullTransformation ? base?.howHeading ?? "" : pick(data.howHeading, base?.howHeading ?? ""),
+      howSteps: useApprovedFullTransformation ? base?.howSteps ?? [] : legacyFullTransformation ? base?.howSteps ?? [] : pick(data.howSteps, base?.howSteps ?? []),
+      howClosing: useApprovedFullTransformation ? base?.howClosing ?? "" : pick(data.howClosing, base?.howClosing ?? ""),
       duration: pick(data.duration, base?.duration ?? ""),
       ctaLabel: pick(data.ctaLabel, base?.ctaLabel ?? ""),
       paymentOptions: pick(data.paymentOptions, base?.paymentOptions ?? []),
