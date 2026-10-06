@@ -57,7 +57,7 @@ export function Mission({ content }: { content?: EditableContent }) {
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
 
           {/* mt-8 -> mt-5 on mobile (md:mt-8 restores desktop). */}
-          {headline && <DisplayTitle as="h1" className={`${eyebrow ? "mt-5 md:mt-8" : ""} max-w-[16ch]`}>{headline}</DisplayTitle>}
+          {headline && <DisplayTitle as="h1" plain className={`${eyebrow ? "mt-5 md:mt-8" : ""} max-w-[16ch]`}>{headline}</DisplayTitle>}
 
           {/* mt-10 -> mt-5 on mobile (md:mt-10 restores desktop). */}
           {statement && <p className={`${missionTextClass} mt-5 max-w-md font-sans md:mt-10`}>

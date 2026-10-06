@@ -40,7 +40,7 @@ export function About({ content }: { content?: EditableContent }) {
             2026-08-19: mt-6 -> mt-4 (small, per request) so the eyebrow and
             title read as one tighter unit — same nudge as the section's
             top padding below, not a new pattern. */}
-        {headline && <DisplayTitle as="h1" className={eyebrow ? "mt-4" : ""}>{headline}</DisplayTitle>}
+        {headline && <DisplayTitle as="h1" plain className={eyebrow ? "mt-4" : ""}>{headline}</DisplayTitle>}
 
         {/* 2026-08-19 mobile-refinement pass: gap-12 -> gap-8 on mobile
             only (md:gap-16 untouched) — part of the same "reduce excessive
