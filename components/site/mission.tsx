@@ -40,7 +40,6 @@ export function Mission({ content }: { content?: EditableContent }) {
   const photo = content?.image
     ? { url: content.image, alt: t("eyebrow") }
     : TEMP_PHOTOS.homeBand;
-  const missionTextClass = "whitespace-pre-line text-pretty text-[clamp(1.0625rem,1.1vw+0.75rem,1.375rem)] font-[450] leading-[1.65] text-foreground/82";
   const missionBodyClass = "whitespace-pre-line text-pretty text-[17px] font-[450] leading-[1.65] text-foreground/82";
 
   return (
@@ -60,7 +59,7 @@ export function Mission({ content }: { content?: EditableContent }) {
           {headline && <DisplayTitle as="h1" plain className={`${eyebrow ? "mt-5 md:mt-8" : ""} max-w-[16ch]`}>{headline}</DisplayTitle>}
 
           {/* mt-10 -> mt-5 on mobile (md:mt-10 restores desktop). */}
-          {statement && <p className={`${missionTextClass} mt-5 max-w-md font-sans md:mt-10`}>
+          {statement && <p className={`${missionBodyClass} mt-5 max-w-md font-sans md:mt-10`}>
             {statement}
           </p>}
         </div>
