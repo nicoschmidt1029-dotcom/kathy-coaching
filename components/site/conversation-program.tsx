@@ -8,6 +8,7 @@ import type { LocalizedProgram } from "@/lib/programs";
 
 export function ConversationProgram({ program, showBackLink = false }: { program: LocalizedProgram; locale: Locale; showBackLink?: boolean }) {
   const programs = useTranslations("programs");
+  const about = useTranslations("about");
   const nav = useTranslations("nav");
 
   return (
@@ -31,7 +32,7 @@ export function ConversationProgram({ program, showBackLink = false }: { program
               </div>
             </div> : <div className="mt-10"><Button asChild size="lg" className="h-12 bg-[var(--plum)] px-7 text-white hover:bg-[var(--plum)]/90"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel || nav("contact")}<ArrowRight className="ml-1 size-4" /></Link></Button></div>}
           </div>
-          {program.image && <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[var(--sand)] md:col-span-5"><Image src={program.image} alt={program.imageAlt || program.title} fill sizes="(max-width: 768px) 100vw, 38vw" className="object-cover" /></div>}
+          {program.image && <div className="md:col-span-5"><div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[var(--sand)]"><Image src={program.image} alt={program.imageAlt || program.title} fill sizes="(max-width: 768px) 100vw, 38vw" className="object-cover" /></div><p className="mt-3 caption">{about("portraitCaption")}</p></div>}
         </div>
       </div>
     </article>

@@ -31,6 +31,7 @@ type EditableContent = { eyebrow?: string; headline?: string; body?: string; ima
 
 export function Mission({ content }: { content?: EditableContent }) {
   const t = useTranslations("mission");
+  const tAbout = useTranslations("about");
   const managed = content !== undefined;
   const suppliedParagraphs = managed ? content.body?.split(/\n\s*\n/).filter(Boolean) ?? [] : [t("p3"), ...t("body").split(/\n\s*\n/).filter(Boolean)];
   const statement = suppliedParagraphs[0];
@@ -75,6 +76,7 @@ export function Mission({ content }: { content?: EditableContent }) {
                 className="object-cover object-[45%_30%]"
               />
             </div>
+            <p className="mt-3 caption">{tAbout("portraitCaption")}</p>
           </div>
         )}
       </div>

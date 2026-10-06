@@ -81,6 +81,7 @@ const PILLARS = [
  */
 export function Approach() {
   const t = useTranslations("approach");
+  const tAbout = useTranslations("about");
 
   return (
     <section id="approach" className="section-pad relative overflow-hidden">
@@ -123,6 +124,7 @@ export function Approach() {
                       }
                     />
                   </div>
+                  {key === "train" && <p className="mt-3 caption">{tAbout("portraitCaption")}</p>}
                 </div>
               )}
 

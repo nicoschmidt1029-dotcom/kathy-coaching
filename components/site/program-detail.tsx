@@ -10,6 +10,7 @@ import { ConversationProgram } from "@/components/site/conversation-program";
 export async function ProgramDetail({ program, locale, showBackLink = true }: { program: LocalizedProgram; locale: Locale; showBackLink?: boolean }) {
   if (program.kind === "conversation") return <ConversationProgram program={program} locale={locale} showBackLink={showBackLink} />;
   const t = await getTranslations({ locale, namespace: "programs" });
+  const tAbout = await getTranslations({ locale, namespace: "about" });
   const isFullTransformation = program.slug === "personalised-online-fitness-coaching-90-days";
   const isMoveAndGrow = program.slug === "move-and-grow";
   const consultation = isFullTransformation
@@ -34,8 +35,11 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
         </header>
 
         <div className="mt-10 grid items-start gap-9 md:mt-12 md:grid-cols-12 md:gap-12 lg:gap-16">
-          {program.image && <div className={`relative overflow-hidden rounded-[1.5rem] bg-[var(--sand)] md:col-span-5 ${isFullTransformation ? "aspect-[3/4]" : "aspect-[4/5]"}`}>
-            <Image src={program.image} alt={program.imageAlt} fill loading="eager" sizes="(max-width: 768px) 100vw, 42vw" className={isFullTransformation ? "object-contain" : "object-cover"} />
+          {program.image && <div className="md:col-span-5">
+            <div className={`relative overflow-hidden rounded-[1.5rem] bg-[var(--sand)] ${isFullTransformation ? "aspect-[3/4]" : "aspect-[4/5]"}`}>
+              <Image src={program.image} alt={program.imageAlt} fill loading="eager" sizes="(max-width: 768px) 100vw, 42vw" className={isFullTransformation ? "object-contain" : "object-cover"} />
+            </div>
+            <p className="mt-3 caption">{tAbout("portraitCaption")}</p>
           </div>}
           <section className={program.image ? "md:col-span-7 md:pt-5 lg:pt-9" : "md:col-span-10 md:col-start-2 md:pt-5 lg:col-span-8 lg:col-start-3 lg:pt-9"}>
             <h2 className="max-w-lg font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] text-[var(--plum)]">{program.targetHeading}</h2>
