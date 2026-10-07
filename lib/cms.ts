@@ -168,6 +168,7 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
     // approved programme copy authoritative until that CMS entry is explicitly
     // replaced through the admin editor.
     const useApprovedFullTransformation = entry.content_key === "personalised-online-fitness-coaching-90-days";
+    const useApprovedMoveAndGrow = entry.content_key === "move-and-grow";
     const title = pick(data.title, base?.title ?? "");
     if (!title) return null;
     return {
@@ -183,13 +184,13 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       currency: data.currency ?? base?.currency ?? "CHF",
       kind: data.kind ?? base?.kind ?? "coaching",
       title,
-      intro: useApprovedFullTransformation ? base?.intro ?? "" : pick(data.intro, base?.intro ?? ""),
-      targetHeading: useApprovedFullTransformation ? base?.targetHeading ?? "" : pick(data.targetHeading, base?.targetHeading ?? ""),
-      targetAudience: useApprovedFullTransformation ? base?.targetAudience ?? [] : pick(data.targetAudience, base?.targetAudience ?? []),
-      transition: useApprovedFullTransformation ? base?.transition ?? "" : pick(data.transition, base?.transition ?? ""),
-      includesHeading: useApprovedFullTransformation ? base?.includesHeading ?? "" : pick(data.includesHeading, base?.includesHeading ?? ""),
-      includes: useApprovedFullTransformation ? base?.includes ?? [] : legacyFullTransformation ? base?.includes ?? [] : pick(data.includes, base?.includes ?? []),
-      includesDetails: useApprovedFullTransformation || legacyFullTransformation || !present(data.includes?.[locale]) ? base?.includesDetails : undefined,
+      intro: useApprovedFullTransformation || useApprovedMoveAndGrow ? base?.intro ?? "" : pick(data.intro, base?.intro ?? ""),
+      targetHeading: useApprovedFullTransformation || useApprovedMoveAndGrow ? base?.targetHeading ?? "" : pick(data.targetHeading, base?.targetHeading ?? ""),
+      targetAudience: useApprovedFullTransformation || useApprovedMoveAndGrow ? base?.targetAudience ?? [] : pick(data.targetAudience, base?.targetAudience ?? []),
+      transition: useApprovedFullTransformation || useApprovedMoveAndGrow ? base?.transition ?? "" : pick(data.transition, base?.transition ?? ""),
+      includesHeading: useApprovedFullTransformation || useApprovedMoveAndGrow ? base?.includesHeading ?? "" : pick(data.includesHeading, base?.includesHeading ?? ""),
+      includes: useApprovedFullTransformation || useApprovedMoveAndGrow ? base?.includes ?? [] : legacyFullTransformation ? base?.includes ?? [] : pick(data.includes, base?.includes ?? []),
+      includesDetails: useApprovedFullTransformation || useApprovedMoveAndGrow || legacyFullTransformation || !present(data.includes?.[locale]) ? base?.includesDetails : undefined,
       howHeading: useApprovedFullTransformation ? base?.howHeading ?? "" : pick(data.howHeading, base?.howHeading ?? ""),
       howSteps: useApprovedFullTransformation ? base?.howSteps ?? [] : legacyFullTransformation ? base?.howSteps ?? [] : pick(data.howSteps, base?.howSteps ?? []),
       howClosing: useApprovedFullTransformation ? base?.howClosing ?? "" : pick(data.howClosing, base?.howClosing ?? ""),
