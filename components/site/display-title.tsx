@@ -26,24 +26,13 @@ type Props = {
  * Single-word titles are rendered solid; a lone hollow word is a logo, not
  * a heading.
  */
-export function DisplayTitle({ children, className, onDark = false, plain = false, as: Heading = "h2" }: Props) {
+export function DisplayTitle({ children, className, as: Heading = "h2" }: Props) {
   const words = children.trim().split(" ");
   const [first, ...rest] = words;
-  const hollow = !plain && words.length > 1;
 
   return (
     <Heading className={cn("display-title", className)}>
-      <span
-        className={
-          hollow
-            ? onDark
-              ? "display-hollow-light"
-              : "display-hollow"
-            : undefined
-        }
-      >
-        {first}
-      </span>
+      <span>{first}</span>
       {rest.length > 0 && ` ${rest.join(" ")}`}
     </Heading>
   );

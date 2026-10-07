@@ -48,28 +48,7 @@ function HeroCopy({ t, content }: { t: ReturnType<typeof useTranslations<"hero">
         className={`animate-rise font-display leading-[1.08] font-normal ${managed && headline && headline.length > 70 ? "text-[2.35rem] sm:text-[2.7rem] md:text-[clamp(2.8rem,3.6vw,4.4rem)]" : "text-[2.8rem] sm:text-[3.1rem] md:text-[clamp(3.4rem,5.6vw,5.6rem)]"}`}
         style={{ animationDelay: "80ms" }}
       >
-        {managed ? headline : t.rich("headline", {
-          em: (chunks) => (
-            <span className="relative inline-block whitespace-nowrap">
-              <em className="not-italic font-display italic">{chunks}</em>
-              <svg
-                aria-hidden
-                viewBox="0 0 420 32"
-                className="absolute left-0 -bottom-2 h-[0.3em] w-full"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M4 22 C 70 8, 160 6, 230 14 S 380 26, 416 12"
-                  fill="none"
-                  stroke="var(--clay)"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  className="underline-draw"
-                />
-              </svg>
-            </span>
-          ),
-        })}
+        {managed ? headline : t.rich("headline", { em: (chunks) => <>{chunks}</> })}
       </h1>}
 
       {/* mt-8 -> mt-5 on mobile (md:mt-8 restores desktop exactly); base

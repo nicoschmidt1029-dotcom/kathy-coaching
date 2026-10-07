@@ -138,7 +138,7 @@ export const TEMP_PHOTOS: Record<
   // raised feet or her face — neither acceptable. kathy-08-stretch.jpg
   // (the previous photo here) stays in the repo, unused.
   approachTrain: {
-    url: "/images/kathy/kathy-16-approach-train-no-fence.png",
+    url: "/images/kathy/kathy-08-stretch-no-fence.png",
     alt: "Katey in a shoulder-stand leg raise on an outdoor sports court, smiling",
   },
   // Katey's own — running track, seated, relaxed, looking off into the
