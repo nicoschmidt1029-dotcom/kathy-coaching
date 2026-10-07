@@ -216,6 +216,7 @@ export const PROGRAMS: readonly Program[] = [
     content: {
       en: {
         title: "Move and Grow",
+        intro: "This program is for people who want expert training to get fit and strong, but the progress is also in your hands, because all the rest is up to you.",
         targetHeading: "This program is for:",
         targetAudience: [
           "For people who just need help with workouts.",
@@ -235,6 +236,7 @@ export const PROGRAMS: readonly Program[] = [
       },
       de: {
         title: "Move and Grow",
+        intro: "Dieses Programm ist für Menschen, die professionelles Training möchten, um fit und stark zu werden. Dein Fortschritt liegt aber auch in deinen Händen, denn alles Weitere hängt von dir ab.",
         targetHeading: "Dieses Programm ist für:",
         targetAudience: [
           "Menschen, die vor allem Unterstützung beim Training benötigen.",
@@ -254,6 +256,7 @@ export const PROGRAMS: readonly Program[] = [
       },
       sk: {
         title: "Move and Grow",
+        intro: "Tento program je pre ľudí, ktorí chcú odborný tréning, aby sa dostali do formy a zosilneli. Pokrok je však aj v tvojich rukách, pretože všetko ostatné závisí od teba.",
         targetHeading: "Tento program je pre:",
         targetAudience: [
           "Pre ľudí, ktorí potrebujú pomoc najmä s cvičením.",

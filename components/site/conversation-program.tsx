@@ -18,7 +18,7 @@ export function ConversationProgram({ program, showBackLink = false }: { program
         <div className={program.image ? "grid items-start gap-10 md:grid-cols-12 md:gap-16" : ""}>
           <div className={program.image ? "md:col-span-7" : "max-w-3xl md:ml-[8.333%]"}>
             <p className="eyebrow">{program.label}</p>
-            <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.8rem,6vw,5.5rem)] leading-[0.98] tracking-[-0.025em] text-[var(--plum)]">{program.title}</h1>
+            <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.2rem,5vw,4.6rem)] leading-[0.98] tracking-[-0.025em] text-[var(--plum)]">{program.title}</h1>
             {program.intro && <p className="mt-8 max-w-2xl font-display text-xl leading-[1.55] text-foreground/82 sm:text-2xl">{program.intro}</p>}
             <div className="mt-9 max-w-2xl space-y-6 md:mt-11 md:space-y-7">
               {(program.paragraphs ?? []).map((paragraph, index) => <p key={`${index}-${paragraph}`} className={index === (program.paragraphs?.length ?? 0) - 1 ? "font-display text-xl italic leading-[1.55] text-foreground/86 sm:text-2xl" : "text-[1.02rem] leading-[1.8] text-foreground/72 sm:text-lg"}>{paragraph}</p>)}

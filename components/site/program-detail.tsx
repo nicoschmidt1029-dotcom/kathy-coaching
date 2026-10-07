@@ -16,7 +16,7 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
   const consultation = isFullTransformation
     ? { href: "https://calendly.com/katey-coaching-newlife/30min", label: t("fullTransformationConsultation") }
     : isMoveAndGrow
-      ? { href: "https://calendly.com/katey-coaching-newlife/first-consultation-for-move-and-grow", label: t("moveAndGrowConsultation") }
+      ? { href: "/kontakt", label: t("moveAndGrowConsultation") }
       : null;
 
   return (
@@ -27,7 +27,7 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
           <p className="eyebrow">{program.label}</p>
           <div className="mt-4 grid items-end gap-6 md:grid-cols-12 md:gap-10">
             <div className="md:col-span-9 lg:col-span-8">
-              <h1 className="max-w-5xl font-display text-[clamp(2.65rem,6.2vw,5.6rem)] leading-[0.98] tracking-[-0.025em] text-[var(--plum)]">{program.title}</h1>
+              <h1 className="max-w-5xl font-display text-[clamp(2.2rem,5vw,4.6rem)] leading-[0.98] tracking-[-0.025em] text-[var(--plum)]">{program.title}</h1>
               {program.intro && <p className="mt-5 max-w-2xl whitespace-pre-line text-lg leading-relaxed text-foreground/68">{program.intro}</p>}
             </div>
             <p className="font-display text-2xl italic text-foreground/72 md:col-span-3 md:pb-2 lg:col-span-4 lg:text-3xl">{program.duration}</p>
@@ -77,7 +77,7 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
           <div className="md:flex md:items-end md:justify-between md:gap-10">
             <div>
               <p className="text-xs font-medium uppercase tracking-[0.22em] text-white/62">{t("price")}</p><p className="mt-3 font-display text-[clamp(2.4rem,5vw,4.5rem)] leading-none">{program.price} {program.currency}</p><p className="mt-3 text-base text-white/68">{program.duration}</p>
-              {consultation ? <Button asChild size="lg" className="mt-6 min-h-12 h-auto w-full justify-between whitespace-normal bg-[var(--clay)] px-5 py-3 text-left leading-snug text-white hover:bg-[var(--clay)]/90 md:w-auto md:min-w-64"><a href={consultation.href} target="_blank" rel="noopener noreferrer"><span>{consultation.label}</span><ArrowRight className="ml-3 size-4 shrink-0" /></a></Button> : null}
+              {consultation ? <Button asChild size="lg" className="mt-6 min-h-12 h-auto w-full justify-between whitespace-normal bg-[var(--clay)] px-5 py-3 text-left leading-snug text-white hover:bg-[var(--clay)]/90 md:w-auto md:min-w-64"><a href={consultation.href} target={consultation.href.startsWith("http") ? "_blank" : undefined} rel={consultation.href.startsWith("http") ? "noopener noreferrer" : undefined}><span>{consultation.label}</span><ArrowRight className="ml-3 size-4 shrink-0" /></a></Button> : null}
             </div>
             {program.paymentOptions && program.paymentOptions.length > 0 ? <div className="mt-8 grid w-full gap-3 md:mt-0 md:max-w-md">
               <p className="mb-1 text-xs font-medium uppercase tracking-[0.18em] text-white/62">{t("pricingOptions")}</p>
