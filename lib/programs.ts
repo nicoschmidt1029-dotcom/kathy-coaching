@@ -234,7 +234,7 @@ export const PROGRAMS: readonly Program[] = [
           "Warm-up and mobility guidance, to keep your joints healthy, your body moving freely and your training safe.",
           "Ongoing support via WhatsApp messages, so you can write to me with questions throughout the programme.",
         ],
-        duration: "month",
+        duration: "monthly subscription",
         paymentOptions: ["200 CHF per month"],
       },
       de: {
@@ -257,7 +257,7 @@ export const PROGRAMS: readonly Program[] = [
           "Anleitung zu Aufwärmen und Mobilität, damit deine Gelenke gesund bleiben, sich dein Körper frei bewegt und du sicher trainierst.",
           "Laufende Unterstützung per WhatsApp, damit du mir während des gesamten Programms Fragen schreiben kannst.",
         ],
-        duration: "pro Monat",
+        duration: "monatliches Abonnement",
         paymentOptions: ["CHF 200 pro Monat"],
       },
       sk: {
@@ -280,7 +280,7 @@ export const PROGRAMS: readonly Program[] = [
           "Usmernenie k rozcvičke a mobilite, aby zostali tvoje kĺby zdravé, telo sa voľne hýbalo a tréning bol bezpečný.",
           "Priebežná podpora cez WhatsApp, takže mi môžeš počas programu písať svoje otázky.",
         ],
-        duration: "mesiac",
+        duration: "mesačné predplatné",
         paymentOptions: ["200 CHF mesačne"],
       },
     },
@@ -313,7 +313,7 @@ export const PROGRAMS: readonly Program[] = [
           "Healthy eating ideas, tips and recipes.",
           "Ongoing support via WhatsApp messages, so you can write to me with questions throughout the program.",
         ],
-        duration: "month",
+        duration: "monthly subscription",
         paymentOptions: ["200 CHF per month"],
       },
       de: {
@@ -336,7 +336,7 @@ export const PROGRAMS: readonly Program[] = [
           "Ideen, Tipps und Rezepte für eine gesunde Ernährung.",
           "Laufende Unterstützung per WhatsApp, damit du mir während des gesamten Programms Fragen schreiben kannst.",
         ],
-        duration: "pro Monat",
+        duration: "monatliches Abonnement",
         paymentOptions: ["CHF 200 pro Monat"],
       },
       sk: {
@@ -359,7 +359,7 @@ export const PROGRAMS: readonly Program[] = [
           "Nápady, tipy a recepty na zdravé stravovanie.",
           "Priebežná podpora cez WhatsApp, takže mi môžeš počas programu písať svoje otázky.",
         ],
-        duration: "mesiac",
+        duration: "mesačné predplatné",
         paymentOptions: ["200 CHF mesačne"],
       },
     },
