@@ -204,7 +204,8 @@
     "p2": "My first priority is always health, whether it is physical or mental.\nWe can be the most beautiful in the world, but what good is that if we can’t say the same about our inner self.\nThat’s why it’s important to not only exercise, but also eat well, think healthy, and maintain a healthy lifestyle.",
     "p3": "Let me tell you. It’s never too late.",
     "body": "We all have something that gives our life meaning, something that makes us feel alive.\nI am fulfilled when I can help improve the quality of life of people who desire it.\n\nMy first priority is always health, whether it is physical or mental.\nWe can be the most beautiful in the world, but what good is that if we can’t say the same about our inner self.\nThat’s why it’s important to not only exercise, but also eat well, think healthy, and maintain a healthy lifestyle.",
-    "p4": "And I will do my best to help you."
+    "p4": "And I will do my best to help you.",
+    "cta": "Explore the Programs"
   },
   "sampleNotice": {
     "_comment": "Shown next to the testimonials while TESTIMONIALS_ARE_REAL is false (lib/content-status.ts). Delete nothing here when real stories arrive — flip the flag.",

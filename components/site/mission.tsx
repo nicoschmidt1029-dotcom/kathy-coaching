@@ -2,6 +2,8 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { DisplayTitle } from "./display-title";
 import { TEMP_PHOTOS } from "@/lib/temp-photos";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 
 /**
  * Katey's mission, as one statement, with a Katarina photo opposite it.
@@ -90,6 +92,9 @@ export function Mission({ content }: { content?: EditableContent }) {
               {paragraph}
             </p>
           ))}
+          <Button asChild size="lg" className="h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90">
+            <Link href="/programme">{t("cta")}</Link>
+          </Button>
         </div>
       </div>
     </section>
