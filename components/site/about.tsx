@@ -133,8 +133,6 @@ export function About({ content }: { content?: EditableContent }) {
                   "storyFood",
                   "storyInnerHealth",
                   "storyEducation",
-                  "storyDream",
-                  "storyMission",
                 ] as const
               ).map((key) => (
                 <p
