@@ -13,9 +13,10 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
   const tAbout = await getTranslations({ locale, namespace: "about" });
   const isFullTransformation = program.slug === "personalised-online-fitness-coaching-90-days";
   const isMoveAndGrow = program.slug === "move-and-grow";
+  const isNourishAndGrow = program.slug === "nourish-and-grow";
   const consultation = isFullTransformation
     ? { href: "https://calendly.com/katey-coaching-newlife/30min", label: t("fullTransformationConsultation") }
-    : isMoveAndGrow
+    : isMoveAndGrow || isNourishAndGrow
       ? { href: "/kontakt", label: t("moveAndGrowConsultation") }
       : null;
 
