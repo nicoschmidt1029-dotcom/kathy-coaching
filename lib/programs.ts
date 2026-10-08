@@ -71,7 +71,7 @@ export const PROGRAMS: readonly Program[] = [
           "Bonus: Grocery Shopping",
         ],
         includesDetails: [
-          "Online via video call, using whichever platform works best for you, we'll talk through your goals, your current lifestyle, and what's been holding you back.",
+          "We'll meet in person somewhere quiet and private where we can talk one-on-one — at your home, in a calm spot in a park, or another place we agree on together. If meeting in person isn't possible, we'll meet online using whichever platform works best for you.",
           "To track your progress and make any adjustments to your training if needed.",
           "Your personalised training program, delivered through video demonstrations, updated weekly whenever adjustments are needed.",
           "A diet plan created specifically for you, tailored to your body, your goals, your lifestyle, your food preferences, and any dietary restrictions or health considerations you'd like to factor in. What works for you in week one may need to change by week six, so I'll adjust it with you as your body and your progress evolve.",
@@ -124,7 +124,7 @@ export const PROGRAMS: readonly Program[] = [
           "Bonus: Gemeinsamer Lebensmitteleinkauf",
         ],
         includesDetails: [
-          "Online per Videoanruf über die Plattform, die für dich am besten funktioniert. Wir sprechen über deine Ziele, deinen aktuellen Lebensstil und darüber, was dich bisher zurückgehalten hat.",
+          "Wir treffen uns persönlich an einem ruhigen und privaten Ort, an dem wir ungestört miteinander sprechen können – bei dir zu Hause, an einem ruhigen Platz im Park oder an einem anderen Ort, den wir gemeinsam vereinbaren. Wenn ein persönliches Treffen nicht möglich ist, treffen wir uns online über die Plattform, die für dich am besten funktioniert.",
           "Wir verfolgen deine Fortschritte und passen dein Training bei Bedarf an.",
           "Dein persönlicher Trainingsplan wird mit Video-Demonstrationen vermittelt und bei Bedarf wöchentlich angepasst.",
           "Ein Ernährungsplan, der speziell auf deinen Körper, deine Ziele, deinen Alltag, deine Vorlieben beim Essen und mögliche Einschränkungen oder gesundheitliche Aspekte abgestimmt ist, die du berücksichtigen möchtest. Was in der ersten Woche funktioniert, muss vielleicht in der sechsten Woche angepasst werden. Deshalb passe ich den Plan gemeinsam mit dir an, wenn sich dein Körper und deine Fortschritte verändern.",
@@ -177,7 +177,7 @@ export const PROGRAMS: readonly Program[] = [
           "Bonus: Spoločný nákup potravín",
         ],
         includesDetails: [
-          "Online prostredníctvom videohovoru na platforme, ktorá ti najviac vyhovuje. Porozprávame sa o tvojich cieľoch, súčasnom životnom štýle a o tom, čo ťa doteraz brzdilo.",
+          "Stretneme sa osobne na pokojnom a súkromnom mieste, kde sa môžeme nerušene porozprávať – u teba doma, na pokojnom mieste v parku alebo na inom mieste, na ktorom sa spoločne dohodneme. Ak osobné stretnutie nebude možné, stretneme sa online cez platformu, ktorá ti najviac vyhovuje.",
           "Budeme sledovať tvoj pokrok a podľa potreby upravovať tréning.",
           "Tvoj personalizovaný tréningový program dostaneš spolu s video ukážkami. Ak budú potrebné úpravy, program budem každý týždeň aktualizovať.",
           "Stravovací plán vytvorený špeciálne pre teba, prispôsobený tvojmu telu, cieľom, životnému štýlu, obľúbeným jedlám a akýmkoľvek stravovacím obmedzeniam či zdravotným okolnostiam, ktoré chceš zohľadniť. To, čo funguje v prvom týždni, sa možno bude musieť do šiesteho týždňa zmeniť. Preto ho spolu upravíme podľa toho, ako sa bude vyvíjať tvoje telo a pokrok.",
