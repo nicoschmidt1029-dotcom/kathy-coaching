@@ -152,9 +152,11 @@ export function About({ content }: { content?: EditableContent }) {
         </div>
         <div className="mt-12 max-w-2xl sm:mt-16">
           <p className="max-w-xl font-display text-[1.35rem] italic leading-snug text-foreground/88 sm:text-[1.65rem]">{t("missionClosing")}</p>
-          <Button asChild size="lg" className="mt-6 ml-auto block h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-white hover:bg-[var(--plum)]/90">
-            <Link href="/mission">{t("missionCta")}</Link>
-          </Button>
+          <div className="mt-6 flex justify-end">
+            <Button asChild size="lg" className="h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-white hover:bg-[var(--plum)]/90">
+              <Link href="/mission">{t("missionCta")}</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
