@@ -27,7 +27,7 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
           <p className="eyebrow">{program.label}</p>
           <div className="mt-4 grid items-end gap-6 md:grid-cols-12 md:gap-10">
             <div className="md:col-span-9 lg:col-span-8">
-              <h1 className="max-w-5xl font-display text-[clamp(2.2rem,5vw,4.6rem)] leading-[0.98] tracking-[-0.025em] text-[var(--plum)]">{program.title}</h1>
+              <h1 className="display-title max-w-5xl">{program.title}</h1>
               {program.intro && <p className="mt-5 max-w-2xl whitespace-pre-line text-lg leading-relaxed text-foreground/68">{program.intro}</p>}
             </div>
             <p className="font-display text-2xl italic text-foreground/72 md:col-span-3 md:pb-2 lg:col-span-4 lg:text-3xl">{program.duration}</p>
