@@ -381,7 +381,7 @@ export const PROGRAMS: readonly Program[] = [
         transition: "",
         includesHeading: "",
         includes: [],
-        duration: "per hour",
+        duration: "60-minute session",
         paragraphs: [
           "Sometimes it's new but sometimes we live with it for so long that we've kind of accepted it even though we don't have to.",
           "It happened - no one can change that.",
@@ -403,7 +403,7 @@ export const PROGRAMS: readonly Program[] = [
         transition: "",
         includesHeading: "",
         includes: [],
-        duration: "pro Stunde",
+        duration: "60-minütige Sitzung",
         paragraphs: [
           "Manches ist neu. Mit anderem leben wir schon so lange, dass wir es beinahe akzeptiert haben – obwohl wir das nicht müssen.",
           "Es ist geschehen – das kann niemand ändern.",
@@ -425,7 +425,7 @@ export const PROGRAMS: readonly Program[] = [
         transition: "",
         includesHeading: "",
         includes: [],
-        duration: "za hodinu",
+        duration: "60-minútové stretnutie",
         paragraphs: [
           "Niekedy je to nové, inokedy s tým žijeme tak dlho, že sme to akosi prijali, hoci nemusíme.",
           "Stalo sa to – a to už nikto nezmení.",
