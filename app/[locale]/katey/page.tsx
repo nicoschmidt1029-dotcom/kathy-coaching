@@ -53,7 +53,6 @@ export default async function KateyPage({
   // (and currently contains a blank English body). Use the shipped baseline
   // until Katey publishes a newer admin edit; headings and portrait remain
   // independently CMS-managed throughout.
-  const biographyManaged = Boolean(entry && Date.parse(entry.updated_at) >= APPROVED_BIOGRAPHY_AT);
   const localizedCalling = details?.calling?.[locale];
   const localizedBody = data?.body?.[locale];
   // Keep Katarina's approved Slovak corrections visible even while the older
@@ -63,6 +62,8 @@ export default async function KateyPage({
     : locale === "sk"
       ? localizedBody?.replace("vlastných skúseností", "životných skúseností").replace("v zivote", "v živote")
       : localizedBody?.replace("meinen eigenen Erfahrungen", "Lebenserfahrungen");
+  const biographyParagraphs = correctedBody?.split(/\n\s*\n/).filter(Boolean) ?? [];
+  const biographyManaged = Boolean(entry && Date.parse(entry.updated_at) >= APPROVED_BIOGRAPHY_AT && biographyParagraphs.length >= 4);
   const content = entry || detailsEntry ? { mainManaged: Boolean(entry), biographyManaged, callingManaged: Boolean(localizedCalling?.trim()), eyebrow: data?.eyebrow?.[locale], headline: data?.headline?.[locale], body: correctedBody, calling: localizedCalling, image: entry?.image_path } : undefined;
 
   return <>{(previewMain || previewDetails) && <DraftPreviewBanner backHref="/admin/about" />}<About content={content} /></>;
