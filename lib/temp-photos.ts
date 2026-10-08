@@ -167,8 +167,8 @@ export const TEMP_PHOTOS: Record<
   // forward. Previous photo here (kathy-02.jpg, seated from behind) stays
   // in the repo, unused.
     homeBand: {
-      url: "/images/kathy/kathy-11-mission-bottle-no-fence.png",
-      alt: "Katey drinking from a water bottle on an outdoor sports court",
+      url: "/images/kathy/kathy-mission-stretch-20261003.jpeg",
+      alt: "Katey stretching on an outdoor sports court",
   },
   // Katey's own — running track, seated, looking off. Was the full-bleed
   // band under the Programs pricing cards; Katarina asked for that band
