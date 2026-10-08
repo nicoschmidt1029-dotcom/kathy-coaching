@@ -28,7 +28,7 @@ export function HomeIntro() {
   return (
     <section ref={sectionRef} className="section-pad overflow-hidden bg-[var(--sand)]/35 pt-8 sm:pt-10">
       <div className="container-page">
-        <div className="mx-auto max-w-3xl space-y-7 text-pretty text-center sm:space-y-8">
+        <div className="ml-auto max-w-3xl space-y-7 text-pretty text-right sm:space-y-8">
           {PARAGRAPHS.map((key, index) => (
             <p
               key={key}
@@ -38,9 +38,9 @@ export function HomeIntro() {
               {t(key)}
             </p>
           ))}
-          <div className={`mx-auto max-w-2xl transition-[opacity,transform] duration-700 ease-out ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`} style={{ transitionDelay: visible ? `${(PARAGRAPHS.length + 1) * 110}ms` : "0ms" }}>
+          <div className={`ml-auto max-w-2xl transition-[opacity,transform] duration-700 ease-out ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`} style={{ transitionDelay: visible ? `${(PARAGRAPHS.length + 1) * 110}ms` : "0ms" }}>
             <p className="text-base leading-[1.8] text-foreground/72 sm:text-lg">{t("meetKateyLine")}</p>
-            <Button asChild size="lg" className="mt-5 h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90">
+            <Button asChild size="lg" className="mt-5 h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] hover:bg-[var(--plum)]/90">
               <Link href="/katey">{t("meetKatey")}</Link>
             </Button>
           </div>
