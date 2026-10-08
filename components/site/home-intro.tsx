@@ -9,6 +9,7 @@ const PARAGRAPHS = ["p1", "p2", "p3", "p4", "p5", "p6", "p7"] as const;
 
 export function HomeIntro() {
   const t = useTranslations("homeIntro");
+  const healthPhrase = t("healthPhrase");
   const sectionRef = React.useRef<HTMLElement>(null);
   const [visible, setVisible] = React.useState(false);
 
@@ -35,7 +36,7 @@ export function HomeIntro() {
               className={`transition-[opacity,transform] duration-700 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"} text-base leading-[1.8] text-foreground/72 sm:text-lg`}
               style={{ transitionDelay: visible ? `${index * 110}ms` : "0ms" }}
             >
-              {key === "p1" ? t.rich(key, { highlight: (chunks) => <span className="font-semibold">{chunks}</span> }) : t(key)}
+              {key === "p2" ? (() => { const [before, after = ""] = t(key).split(healthPhrase); return <>{before}<span className="font-semibold">{healthPhrase}</span>{after}</>; })() : t(key)}
             </p>
           ))}
           <div className={`mx-auto max-w-2xl transition-[opacity,transform] duration-700 ease-out ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`} style={{ transitionDelay: visible ? `${(PARAGRAPHS.length + 1) * 110}ms` : "0ms" }}>
