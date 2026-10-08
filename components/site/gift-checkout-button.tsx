@@ -8,7 +8,7 @@ import type { Locale } from "@/i18n/routing";
 export function GiftCheckoutButton({ locale, label, amountLabel, amountHint, loadingLabel, errorLabel }: { locale: Locale; label: string; amountLabel: string; amountHint: string; loadingLabel: string; errorLabel: string }) {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(false);
-  const [amount, setAmount] = React.useState("25");
+  const [amount, setAmount] = React.useState("");
 
   async function startCheckout() {
     if (loading) return;

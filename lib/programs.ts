@@ -61,7 +61,7 @@ export const PROGRAMS: readonly Program[] = [
         transition: "Then this program is for you.",
         includesHeading: "This program includes:",
         includes: [
-          "First Consultation (Approx. 60 Min.)",
+          "First Consultation (Approx. 90 Min.)",
           "Weekly Check-Ins (15 to 45 Min.)",
           "Personalised Training Program with Video Demonstrations",
           "Diet Plan",
@@ -114,7 +114,7 @@ export const PROGRAMS: readonly Program[] = [
         transition: "Dann ist dieses Programm für dich.",
         includesHeading: "Das Programm beinhaltet:",
         includes: [
-          "Erstberatung (ca. 60 Min.)",
+          "Erstberatung (ca. 90 Min.)",
           "Wöchentliche Check-ins (15 bis 45 Min.)",
           "Persönlicher Trainingsplan mit Video-Demonstrationen",
           "Ernährungsplan",
@@ -167,7 +167,7 @@ export const PROGRAMS: readonly Program[] = [
         transition: "Tak potom tento program je pre teba.",
         includesHeading: "Tento program zahŕňa:",
         includes: [
-          "Prvá konzultácia (cca 60 min.)",
+          "Prvá konzultácia (cca 90 min.)",
           "Týždenné konzultácie (15 až 45 min.)",
           "Personalizovaný tréningový program + video ukážky",
           "Stravovací plán",
