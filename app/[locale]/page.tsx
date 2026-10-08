@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/site/hero";
 import { HomeIntro } from "@/components/site/home-intro";
+import { Faq } from "@/components/site/faq";
 import { DraftPreviewBanner } from "@/components/admin/draft-preview-banner";
 import { getAdminPreviewEntry, getPublicWebsiteEntry } from "@/lib/cms";
 
@@ -33,5 +34,5 @@ export default async function Home({
     ? { headline: data?.headline?.[locale], body: data?.body?.[locale], ctaLabel: data?.ctaLabel?.[locale], ctaHref: data?.ctaHref }
     : { headline: t("shortHeadline") };
 
-  return <>{isPreview && <DraftPreviewBanner backHref="/admin/homepage" />}<Hero content={previewContent} /><HomeIntro /></>;
+  return <>{isPreview && <DraftPreviewBanner backHref="/admin/homepage" />}<Hero content={previewContent} /><HomeIntro /><Faq /></>;
 }
