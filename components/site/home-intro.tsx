@@ -39,7 +39,7 @@ export function HomeIntro() {
             </p>
           ))}
           <div className={`mx-auto max-w-2xl transition-[opacity,transform] duration-700 ease-out ${visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"}`} style={{ transitionDelay: visible ? `${(PARAGRAPHS.length + 1) * 110}ms` : "0ms" }}>
-            <p className="text-lg font-medium leading-[1.7] text-foreground/80 sm:text-xl">{t("meetKateyLine")}</p>
+            <p className="text-base leading-[1.8] text-foreground/72 sm:text-lg">{t("meetKateyLine")}</p>
             <Button asChild size="lg" className="mt-5 h-12 bg-[var(--plum)] px-7 text-[0.95rem] text-[var(--primary-foreground)] ring-1 ring-[var(--primary-foreground)]/15 hover:bg-[var(--plum)]/90">
               <Link href="/katey">{t("meetKatey")}</Link>
             </Button>
