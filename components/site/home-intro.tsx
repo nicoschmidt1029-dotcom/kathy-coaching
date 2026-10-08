@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
-const PARAGRAPHS = ["p1", "p2", "p3", "p5", "p6"] as const;
+const PARAGRAPHS = ["p1", "p2", "p3", "p4", "p5", "p6", "p7"] as const;
 
 export function HomeIntro() {
   const t = useTranslations("homeIntro");
