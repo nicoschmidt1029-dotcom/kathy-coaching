@@ -287,7 +287,7 @@ export const PROGRAMS: readonly Program[] = [
   },
   {
     slug: "nourish-and-grow",
-    label: "Program D",
+    label: "Program C",
     image: "/images/kathy/nutrition-program-smile.jpeg",
     imageAlt: "Katey smiling outdoors",
     price: 200,
@@ -366,7 +366,7 @@ export const PROGRAMS: readonly Program[] = [
   },
   {
     slug: "find-your-way-through",
-    label: "Program C",
+    label: "Program D",
     image: "/images/kathy/find-your-way-white-heart.jpeg",
     imageAlt: "Katey smiling warmly",
     price: 80,
