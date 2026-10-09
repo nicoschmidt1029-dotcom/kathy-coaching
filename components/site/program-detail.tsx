@@ -30,6 +30,11 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
             <div className="md:col-span-9 lg:col-span-8">
               <h1 className="display-title max-w-5xl">{program.title}</h1>
               {program.intro && <p className="mt-5 max-w-2xl whitespace-pre-line text-lg leading-relaxed text-foreground/68">{program.intro}</p>}
+              {program.offerLine && <div className="mt-6 max-w-2xl rounded-2xl border border-[var(--clay)]/35 bg-[var(--sand)]/55 px-5 py-4">
+                {program.offerTag && <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--clay)]">{program.offerTag}</p>}
+                <p className="mt-2 text-base leading-relaxed text-foreground/78">{program.offerLine}</p>
+                {program.originalPrice && program.launchPrice && <p className="mt-3 flex items-baseline gap-3 text-xl text-[var(--plum)]"><s className="text-foreground/45">{program.originalPrice.toLocaleString()} {program.currency}</s><strong className="text-2xl">{program.launchPrice.toLocaleString()} {program.currency}</strong></p>}
+              </div>}
             </div>
             <p className="font-display text-2xl italic text-foreground/72 md:col-span-3 md:pb-2 lg:col-span-4 lg:text-3xl">{program.duration}</p>
           </div>
@@ -76,8 +81,8 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
       <section className="container-page mt-16 md:mt-[5.5rem]">
         <div className="rounded-[1.75rem] bg-[var(--plum)] px-6 py-9 text-white sm:px-10 md:px-12 md:py-11">
           <div className="md:flex md:items-end md:justify-between md:gap-10">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.22em] text-white/62">{t("price")}</p><p className="mt-3 font-display text-[clamp(2.4rem,5vw,4.5rem)] leading-none">{program.price} {program.currency}</p><p className="mt-3 text-base text-white/68">{program.duration}</p>
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-white/62">{t("price")}</p>{program.originalPrice && program.launchPrice ? <p className="mt-3 font-display text-[clamp(2.4rem,5vw,4.5rem)] leading-none"><s className="mr-3 text-white/45">{program.originalPrice.toLocaleString()} {program.currency}</s><span>{program.launchPrice.toLocaleString()} {program.currency}</span></p> : <p className="mt-3 font-display text-[clamp(2.4rem,5vw,4.5rem)] leading-none">{program.price} {program.currency}</p>}<p className="mt-3 text-base text-white/68">{program.duration}</p>
               {consultation ? <Button asChild size="lg" className="mt-6 min-h-12 h-auto w-full justify-between whitespace-normal bg-[var(--clay)] px-5 py-3 text-left leading-snug text-white hover:bg-[var(--clay)]/90 md:w-auto md:min-w-64"><a href={consultation.href} target={consultation.href.startsWith("http") ? "_blank" : undefined} rel={consultation.href.startsWith("http") ? "noopener noreferrer" : undefined}><span>{consultation.label}</span><ArrowRight className="ml-3 size-4 shrink-0" /></a></Button> : null}
             </div>
             {program.paymentOptions && program.paymentOptions.length > 0 ? <div className="mt-8 grid w-full gap-3 md:mt-0 md:max-w-md">

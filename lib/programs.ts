@@ -18,6 +18,10 @@ export type ProgramLocaleContent = {
   ctaHref?: string;
   paymentOptions?: readonly string[];
   paragraphs?: readonly string[];
+  offerLine?: string;
+  offerTag?: string;
+  originalPrice?: number;
+  launchPrice?: number;
   secondaryCtaLabel?: string;
   secondaryCtaHref?: string;
 };
@@ -48,6 +52,10 @@ export const PROGRAMS: readonly Program[] = [
     content: {
       en: {
         title: "The Full Transformation",
+        offerLine: "Become one of my founding clients. For the launch of Katey Coaching, I'm offering 20% off the Full Transformation until the end of November.",
+        offerTag: "Launch offer – 20% off",
+        originalPrice: 1290,
+        launchPrice: 1032,
         intro: "Imagine waking up with energy, excited to live. Feeling strong and confident in your own skin. Whatever your goal, we will get there together.\n\nYou are in charge of your body, and with the right training, nutrition and mindset, we can achieve amazing things.\n\nFrom our first consultation, I will create a training plan for you, for home or gym, whichever you decide. I will also create an eating plan made just for you, adapted throughout the programme in the way that works best for you and your goals.\n\nThis is not something that simply ends after three months. It is a beginning. I will teach you how to keep what we build together, so this becomes the beginning of a new season in your life.",
         targetHeading: "This program is for:",
         targetAudience: [
@@ -100,6 +108,10 @@ export const PROGRAMS: readonly Program[] = [
       },
       de: {
         title: "The Full Transformation",
+        offerLine: "Werde eine meiner Gründungskundinnen. Zum Start von Katey Coaching biete ich bis Ende November 20 % Rabatt auf die Full Transformation an.",
+        offerTag: "Launch-Angebot – 20 % Rabatt",
+        originalPrice: 1290,
+        launchPrice: 1032,
         intro: "Stell dir vor, du wachst voller Energie auf und freust dich auf dein Leben. Du fühlst dich stark und selbstbewusst in deinem eigenen Körper. Was auch immer dein Ziel ist – wir erreichen es gemeinsam.\n\nDu hast deinen Körper selbst in der Hand. Mit dem richtigen Training, der passenden Ernährung und der richtigen Einstellung können wir Großartiges erreichen.\n\nBei unserer Erstberatung erstelle ich einen Trainingsplan für dich – für zu Hause oder das Fitnessstudio, ganz wie du möchtest. Dazu kommt ein Ernährungsplan, der genau auf dich zugeschnitten und während der gesamten Programmlaufzeit an deine Ziele und das angepasst wird, was für dich am besten funktioniert.\n\nDieses Programm endet nicht einfach nach drei Monaten. Es ist ein Anfang. Ich zeige dir, wie du das, was wir gemeinsam aufbauen, ein Leben lang beibehalten kannst – als Beginn einer neuen Lebensphase.",
         imageAlt: "Katarina beim Dehnen auf einer hellblauen Laufbahn",
         targetHeading: "Dieses Programm ist für dich, wenn:",
@@ -153,6 +165,10 @@ export const PROGRAMS: readonly Program[] = [
       },
       sk: {
         title: "Kompletná premena",
+        offerLine: "Staň sa jednou z mojich prvých klientok. Pri spustení Katey Coaching ponúkam do konca novembra 20 % zľavu na program Full Transformation.",
+        offerTag: "Úvodná ponuka – zľava 20 %",
+        originalPrice: 1290,
+        launchPrice: 1032,
         intro: "Predstav si, že sa zobúdzaš plná energie a tešíš sa zo života. Cítiš sa silná a sebavedomá vo svojom tele. Nech je tvoj cieľ akýkoľvek, dosiahneme ho spolu.\n\nSvoje telo máš vo vlastných rukách. So správnym tréningom, výživou a nastavením mysle môžeme dosiahnuť úžasné veci.\n\nPočas prvej konzultácie ti vytvorím tréningový plán na doma alebo do posilňovne – podľa toho, čo si vyberieš. Vytvorím ti aj stravovací plán prispôsobený tebe, ktorý budeme počas programu upravovať podľa toho, čo najlepšie funguje pre tvoje ciele.\n\nTento program sa nekončí po troch mesiacoch. Je to začiatok. Naučím ťa, ako si udržať to, čo spolu vybudujeme, aby sa toto stalo začiatkom novej etapy tvojho života.",
         imageAlt: "Katarina sa naťahuje na svetlomodrej bežeckej dráhe",
         targetHeading: "Tento program je pre:",
