@@ -144,6 +144,10 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       paragraphs?: Partial<Record<Locale, readonly string[]>>;
       secondaryCtaLabel?: Partial<Record<Locale, string>>;
       secondaryCtaHref?: string;
+      offerLine?: Partial<Record<Locale, string>>;
+      offerTag?: Partial<Record<Locale, string>>;
+      originalPrice?: number;
+      launchPrice?: number;
     };
     const present = <T>(value: T | undefined) =>
       Array.isArray(value) ? value.length > 0 : typeof value === "string" ? value.length > 0 : value !== undefined;
@@ -201,6 +205,10 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       paragraphs: pick(data.paragraphs, base?.paragraphs ?? []),
       secondaryCtaLabel: pick(data.secondaryCtaLabel, base?.secondaryCtaLabel ?? ""),
       secondaryCtaHref: data.secondaryCtaHref ?? base?.secondaryCtaHref,
+      offerLine: pick(data.offerLine, base?.offerLine ?? ""),
+      offerTag: pick(data.offerTag, base?.offerTag ?? ""),
+      originalPrice: data.originalPrice ?? base?.originalPrice,
+      launchPrice: data.launchPrice ?? base?.launchPrice,
     };
   } catch {
     return null;
