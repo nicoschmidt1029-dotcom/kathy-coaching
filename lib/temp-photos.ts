@@ -244,9 +244,11 @@ export const TEMP_HERO_VIDEO: TempVideo = {
   // 2026-10-22: rebuilt from the original 25MB HQ portrait master; the five
   // WhatsApp inserts received only conservative cleanup to avoid fake detail.
   // Final: 47.1s, 512x910/30fps, silent H.264/faststart, approximately 8.1MB.
-  // 2026-10-22: mobile now uses the same approved v7 cut and complete frames,
-  // presented over a softly filled 9:16 background. Final: 20.8s,
-  // 512x910/30fps, silent H.264/faststart, approximately 2.4MB.
+  // 2026-10-22: replaced with the supplied native portrait master,
+  // katarina_mobile_v7_originalclips (1).mp4. Its approved cut and framing
+  // are unchanged. Final: 20.8s, 540x960/30fps, silent H.264/faststart,
+  // approximately 5.2MB.
   // Versioned so phones do not reuse the pre-cut clip from browser/CDN cache.
-  srcMobile: "/videos/katarina-hero-mobile-refined.mp4?v=20261022-v7-clean",
+  srcMobile:
+    "/videos/katarina-hero-mobile-refined.mp4?v=20261022-mobile-v7-original",
 };
