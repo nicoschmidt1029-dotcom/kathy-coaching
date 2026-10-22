@@ -206,11 +206,24 @@ export const TEMP_PHOTOS: Record<
 // 2026-08-19: desktop clip swapped to katarina-hero-refined.mp4 (her own
 // "refined/shorter/HQ" re-edit of the background footage). Re-encoded from
 // her 1280x720/37s/38.7MB source — audio stripped (the <video> element is
-// always muted, so the AAC track was dead weight), libx264 CRF 20/faststart,
-// same treatment as the previous encode. 17.4MB, still 1280x720/30fps.
+// always muted, so the AAC track was dead weight), libx264 CRF 26/slow/faststart,
+// same treatment as the previous encode. 6.7MB, still 1280x720/30fps.
 // workout-hero.mp4 (the previous desktop clip) stays in the repo, unused.
+// 2026-10-19: five client-selected portrait workout shots were intercut with
+// the approved base edit. Portrait inserts use the full sharp frame over a
+// softly filled 16:9 background so the movement is not cropped on desktop.
+// The rejected take and all source audio were removed. The final loop is
+// 46.8s, 1280x720/30fps, H.264/faststart, approximately 7.2MB.
+// 2026-10-22: rebuilt from Katarina's original 38.7MB HQ landscape master
+// instead of the compressed website copy. The five portrait inserts retain
+// their full WhatsApp-source frames with light denoising/sharpening. Final:
+// 46.8s, 1280x720/30fps, silent H.264/faststart, approximately 12.4MB.
+// 2026-10-22: replaced with the client-approved
+// katarina_website_originals_clean_same_cut_v7.mp4. The cut and image content
+// are unchanged; it was web-encoded without audio to 20.8s, 1280x720/30fps,
+// H.264/faststart, approximately 10.5MB.
 export const TEMP_HERO_VIDEO: TempVideo = {
-  src: "/videos/katarina-hero-refined.mp4",
+  src: "/videos/katarina-hero-refined.mp4?v=20261022-v7-clean",
   // Swapped 2026-08-18 to a different clip Katarina sent specifically for
   // mobile: a genuine portrait-shot (9:16) workout video, not a crop of
   // the landscape desktop clip. Re-encoded from her 512x910/49.5MB original
@@ -223,8 +236,17 @@ export const TEMP_HERO_VIDEO: TempVideo = {
   // "refined/HQ" re-edit — same 512x910 portrait framing as the previous
   // mobile clip, so no crop/positioning changes needed. Re-encoded from
   // her 512x910/37.9s/25MB source the same way (audio stripped, libx264
-  // CRF 24/faststart) to 6.8MB. workout-hero-mobile.mp4 (the previous
+  // CRF 28/slow/faststart) to 3.0MB. workout-hero-mobile.mp4 (the previous
   // mobile clip) stays in the repo, unused. Desktop `src` is untouched.
+  // 2026-10-19: the same five approved shots were added in their native
+  // portrait framing. The final silent loop is 47.1s, 512x910/30fps,
+  // H.264/faststart, approximately 3.7MB.
+  // 2026-10-22: rebuilt from the original 25MB HQ portrait master; the five
+  // WhatsApp inserts received only conservative cleanup to avoid fake detail.
+  // Final: 47.1s, 512x910/30fps, silent H.264/faststart, approximately 8.1MB.
+  // 2026-10-22: mobile now uses the same approved v7 cut and complete frames,
+  // presented over a softly filled 9:16 background. Final: 20.8s,
+  // 512x910/30fps, silent H.264/faststart, approximately 2.4MB.
   // Versioned so phones do not reuse the pre-cut clip from browser/CDN cache.
-  srcMobile: "/videos/katarina-hero-mobile-refined.mp4?v=20260910-pushup-cut",
+  srcMobile: "/videos/katarina-hero-mobile-refined.mp4?v=20261022-v7-clean",
 };
