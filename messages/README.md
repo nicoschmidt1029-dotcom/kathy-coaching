@@ -1,21 +1,20 @@
 # Translations — EN / DE / SK
 
-`en.json` is the **complete reference version**. Every key the site renders
-exists there. `de.json` and `sk.json` only contain what has actually been
-translated; anything missing falls back to the English value at request time
-(`i18n/request.ts` merges English underneath). So `/de` and `/sk` always render
-a complete page — untranslated sections just show up in English.
+`en.json` is the **reference version**. German and Slovak are complete locale
+files and are loaded independently; the public site never falls back to
+English inside `/de` or `/sk`. Keep the visible key sets in sync whenever copy
+is added.
 
 ## How to translate a section
 
 1. Find the key path in `en.json` (e.g. `faq.believer.q`).
-2. Recreate that path in `de.json` / `sk.json` and put the translation in.
-3. Update the `_status` block in that file.
+2. Add the translated key to both `de.json` and `sk.json` in the same change.
+3. Update the `_status` block in each file when review status changes.
 
 Rules:
 
-- **Never leave a key as an empty string** — that overrides the English with
-  nothing. Delete the key instead.
+- **Never leave a visitor-facing key missing or empty.** Missing translations
+  fail visibly instead of silently showing English.
 - Keep the `<em>` / `<strong>` tags where they appear. They carry the
   typographic accent (italic display cut, emphasis) and are rendered as real
   markup, not printed as text.
@@ -74,9 +73,9 @@ language mid-document would be worse than a missing button label.
 All three versions rest on the same Swiss basis (Art. 3 lit. s UWG for the
 imprint, nDSG plus GDPR for the privacy notice) — **not the German TMG**. The
 article citations are identical across languages on purpose; only the prose
-around them is translated. Every fact Katey has to supply is a `<Todo>`
-placeholder in every language, and no version invents an address, UID,
-insurer or email.
+around them is translated. Katey's supplied business address and public email
+are repeated consistently in every language; facts she has not supplied remain
+explicit placeholders rather than invented data.
 
 The labels around the documents (eyebrow, title, draft badge, placeholder
 wording) *are* message keys, under `legal`.

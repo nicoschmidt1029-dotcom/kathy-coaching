@@ -3,8 +3,8 @@
     "siteName": "Katey Coaching",
     "titleDefault": "Katey Coaching — Faith-rooted training, nutrition & mentoring",
     "titleTemplate": "%s · Katey Coaching",
-    "description": "Katey Coaching.",
-    "ogDescription": "Katey Coaching."
+    "description": "Personalised online coaching for training, nutrition and faith, designed to help you build lasting strength, health and confidence.",
+    "ogDescription": "Personalised coaching for lasting strength, health and confidence — through training, nutrition and faith."
   },
   "pages": {
     "about": {
@@ -17,7 +17,7 @@
     },
     "programs": {
       "title": "Programs",
-      "description": "The Full Transformation / 90 days."
+      "description": "Personalised coaching for training, nutrition and faith: a 90-day transformation, monthly movement or nutrition support, and one-to-one mentoring sessions."
     },
     "recipes": {
       "title": "Recipes",
@@ -33,7 +33,7 @@
     },
     "imprint": {
       "title": "Imprint",
-      "description": "Legal notice (Impressum) for Katey Coaching, Ettingen (BL), Switzerland."
+      "description": "Legal notice (Impressum) for Katey Coaching, Altendorf (SZ), Switzerland."
     },
     "privacy": {
       "title": "Privacy",
@@ -249,6 +249,7 @@
     "fullTransformationConsultation": "First Consultation for Full Transformation",
     "moveAndGrowConsultation": "Get started",
     "pricingOptions": "Pricing options",
+    "selectPayment": "Select",
     "quickQuestion": "Have a quick question? Write to me instead.",
     "learnMore": "Learn More",
     "tellMeHelp": "Tell me what you need help with",
@@ -427,6 +428,13 @@
     "submit": "Send message",
     "submitting": "Sending…",
     "genericError": "Something went wrong. Please try again.",
+    "validationError": "Please fill in your name, email address, and message.",
+    "emailError": "Please enter a valid email address.",
+    "tooLongError": "Your message is too long. Please shorten it and try again.",
+    "rateFast": "Please wait a few seconds before sending another message.",
+    "rateLimit": "You have sent several messages already. Please try again later.",
+    "formUnavailable": "The contact form is temporarily unavailable. Please try again later.",
+    "sendFailed": "Your message could not be sent. Please try again in a moment.",
     "networkError": "Network error. Please try again in a moment.",
     "sentTitle": "Thank you — I got it.",
     "sentBody": "Your message was sent.",

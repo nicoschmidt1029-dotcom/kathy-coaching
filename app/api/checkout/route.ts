@@ -8,6 +8,7 @@ const plans = {
   "a-2": { priceEnv: "STRIPE_PRICE_2_PAYMENTS", mode: "subscription", cancelPath: "/programme/personalised-online-fitness-coaching-90-days", installments: 2 },
   "a-3": { priceEnv: "STRIPE_PRICE_3_PAYMENTS", mode: "subscription", cancelPath: "/programme/personalised-online-fitness-coaching-90-days", installments: 3 },
   "b-month": { priceEnv: "STRIPE_PRICE_MOVE_AND_GROW", mode: "subscription", cancelPath: "/programme/move-and-grow" },
+  "d-month": { priceEnv: "STRIPE_PRICE_NOURISH_AND_GROW", mode: "subscription", cancelPath: "/programme/nourish-and-grow" },
   "c-hour": { priceEnv: "STRIPE_PRICE_SINGLE_SESSION", mode: "payment", cancelPath: "/programme/find-your-way-through" },
 } as const;
 

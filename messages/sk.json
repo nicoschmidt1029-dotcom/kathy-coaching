@@ -22,8 +22,8 @@
     "siteName": "Katey Coaching",
     "titleDefault": "Katey Coaching — tréning, výživa a mentoring zakorenené vo viere",
     "titleTemplate": "%s · Katey Coaching",
-    "description": "Katey Coaching.",
-    "ogDescription": "Katey Coaching."
+    "description": "Osobný online koučing v oblasti tréningu, výživy a viery pre trvalú silu, zdravie a sebavedomie.",
+    "ogDescription": "Osobný koučing pre trvalú silu, zdravie a sebavedomie — prostredníctvom tréningu, výživy a viery."
   },
   "pages": {
     "about": {
@@ -36,7 +36,7 @@
     },
     "programs": {
       "title": "Programy",
-      "description": "Tri šesťtýždňové programy, jeden na jedného. Len tréning, tréning + výživa, alebo celá cesta s duchovným mentoringom. Poctivé ceny."
+      "description": "Osobný koučing v oblasti tréningu, výživy a viery: 90-dňová Full Transformation, mesačná pohybová alebo výživová podpora a individuálny mentoring."
     },
     "recipes": {
       "title": "Recepty",
@@ -52,7 +52,7 @@
     },
     "imprint": {
       "title": "Právne informácie",
-      "description": "Právne informácie pre Katey Coaching, Ettingen (BL), Švajčiarsko."
+      "description": "Právne informácie pre Katey Coaching, Altendorf (SZ), Švajčiarsko."
     },
     "privacy": {
       "title": "Ochrana údajov",
@@ -262,6 +262,7 @@
     "fullTransformationConsultation": "Prvá konzultácia pre Full Transformation",
     "moveAndGrowConsultation": "Začať",
     "pricingOptions": "Cenové možnosti",
+    "selectPayment": "Vybrať",
     "quickQuestion": "Máš krátku otázku? Namiesto toho mi napíš.",
     "learnMore": "Zistiť viac",
     "tellMeHelp": "Povedz mi, s čím potrebuješ pomôcť",
@@ -440,6 +441,13 @@
     "submit": "Odoslať správu",
     "submitting": "Odosiela sa…",
     "genericError": "Niečo sa pokazilo. Skús to prosím znova.",
+    "validationError": "Vyplň prosím svoje meno, e-mailovú adresu a správu.",
+    "emailError": "Zadaj prosím platnú e-mailovú adresu.",
+    "tooLongError": "Tvoja správa je príliš dlhá. Skráť ju prosím a skús to znova.",
+    "rateFast": "Pred odoslaním ďalšej správy počkaj prosím niekoľko sekúnd.",
+    "rateLimit": "Už si odoslal/a niekoľko správ. Skús to prosím neskôr.",
+    "formUnavailable": "Kontaktný formulár je dočasne nedostupný. Skús to prosím neskôr.",
+    "sendFailed": "Tvoju správu sa nepodarilo odoslať. Skús to prosím o chvíľu znova.",
     "networkError": "Chyba siete. Skús to prosím o chvíľu znova.",
     "sentTitle": "Ďakujem — dorazilo to.",
     "sentBody": "Tvoja správa bola odoslaná.",

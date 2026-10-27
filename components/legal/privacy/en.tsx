@@ -17,8 +17,8 @@ import { SITE_HOST } from "@/lib/site-url";
  *
  * Swiss law first (nDSG), GDPR additionally for EU visitors. Keep the article
  * citations byte-identical across the three languages; only the surrounding
- * prose is translated. No real data anywhere — every fact Katey has to supply
- * stays a <Todo>.
+ * prose is translated. Supplied controller details are kept in sync; facts
+ * Katey has not supplied stay explicit placeholders.
  */
 export function PrivacyBodyEn() {
   return (
@@ -44,7 +44,13 @@ export function PrivacyBodyEn() {
       <p>
         Katarina Gröflin
         <br />
-        [FULL BUSINESS ADDRESS REQUIRED]
+        Katey Coaching
+        <br />
+        c/o JL Consulting Group GmbH#1882
+        <br />
+        Zürcherstrasse 84
+        <br />
+        8852 Altendorf, Switzerland
         <br />
         Email: katey.coaching.newlife@gmail.com
       </p>

@@ -24,8 +24,8 @@
  *
  * Švajčiarske právo, nie nemecké TMG: základom je čl. 3 písm. s UWG.
  * Odkazy na články sú zámerne totožné s anglickou verziou — prekladá sa len
- * vysvetľujúci text, nikdy právny základ. Všetky skutočné údaje zostávajú
- * ako <Todo> zástupné miesta.
+ * vysvetľujúci text, nikdy právny základ. Dodané údaje prevádzkovateľky sa
+ * udržiavajú zhodné; nedodané fakty zostávajú zástupnými miestami.
  */
 export function ImprintBodySk() {
   return (
@@ -39,7 +39,15 @@ export function ImprintBodySk() {
       <p>
         Katarína Gröflin
         <br />
-        [VYŽADUJE SA ÚPLNÁ FIREMNÁ ADRESA]
+        Katey Coaching
+        <br />
+        c/o JL Consulting Group GmbH#1882
+        <br />
+        Zürcherstrasse 84
+        <br />
+        8852 Altendorf
+        <br />
+        Švajčiarsko
       </p>
 
       <h2>Kontakt</h2>

@@ -10,7 +10,8 @@ export function GiftCheckoutButton({ locale, label, amountLabel, amountHint, loa
   const [error, setError] = React.useState(false);
   const [amount, setAmount] = React.useState("");
 
-  async function startCheckout() {
+  async function startCheckout(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     if (loading) return;
     setLoading(true);
     setError(false);
@@ -30,17 +31,17 @@ export function GiftCheckoutButton({ locale, label, amountLabel, amountHint, loa
     }
   }
 
-  return <div className="max-w-xs">
+  return <form onSubmit={startCheckout} className="max-w-xs">
     <label htmlFor="gift-amount" className="mb-2 block text-sm font-medium text-[var(--plum)]">{amountLabel}</label>
     <div className="mb-3 flex h-12 items-center rounded-lg border border-[var(--plum)]/20 bg-white px-4 focus-within:ring-2 focus-within:ring-[var(--plum)]/25">
       <span className="mr-2 text-sm font-medium text-foreground/60">CHF</span>
-      <input id="gift-amount" type="number" min="5" max="100000" step="1" inputMode="decimal" required value={amount} onChange={(event) => setAmount(event.target.value)} className="h-full min-w-0 flex-1 bg-transparent text-lg text-foreground outline-none" />
+      <input id="gift-amount" aria-describedby="gift-amount-hint" type="number" min="5" max="100000" step="1" inputMode="decimal" required value={amount} onChange={(event) => setAmount(event.target.value)} className="h-full min-w-0 flex-1 bg-transparent text-lg text-foreground outline-none" />
     </div>
-    <p className="mb-4 text-xs leading-relaxed text-foreground/55">{amountHint}</p>
-    <Button type="button" size="lg" disabled={loading} onClick={startCheckout} className="h-12 bg-[var(--plum)] px-7 text-white hover:bg-[var(--plum)]/90">
+    <p id="gift-amount-hint" className="mb-4 text-xs leading-relaxed text-foreground/55">{amountHint}</p>
+    <Button type="submit" size="lg" disabled={loading} className="h-12 bg-[var(--plum)] px-7 text-white hover:bg-[var(--plum)]/90">
       <span>{loading ? loadingLabel : label}</span>
       {loading ? <LoaderCircle className="ml-2 size-4 animate-spin" /> : <ArrowRight className="ml-2 size-4" />}
     </Button>
     {error && <p role="alert" className="mt-3 text-sm text-red-800">{errorLabel}</p>}
-  </div>;
+  </form>;
 }

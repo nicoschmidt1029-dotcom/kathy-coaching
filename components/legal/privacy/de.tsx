@@ -17,8 +17,9 @@ import { SITE_HOST } from "@/lib/site-url";
  *
  * Schweizer Recht zuerst (nDSG), DSGVO zusätzlich für Besuchende aus der EU.
  * Die Artikelverweise sind absichtlich wortgleich mit der englischen Fassung
- * — übersetzt wird nur der erklärende Text, nie die Rechtsgrundlage. Alle
- * echten Angaben bleiben <Todo>-Platzhalter.
+ * — übersetzt wird nur der erklärende Text, nie die Rechtsgrundlage. Gelieferte
+ * Verantwortlichenangaben werden synchron gehalten; offene Fakten bleiben
+ * Platzhalter.
  */
 export function PrivacyBodyDe() {
   return (
@@ -45,7 +46,13 @@ export function PrivacyBodyDe() {
       <p>
         Katarina Gröflin
         <br />
-        [VOLLSTÄNDIGE GESCHÄFTSADRESSE ERFORDERLICH]
+        Katey Coaching
+        <br />
+        c/o JL Consulting Group GmbH#1882
+        <br />
+        Zürcherstrasse 84
+        <br />
+        8852 Altendorf, Schweiz
         <br />
         E-Mail: katey.coaching.newlife@gmail.com
       </p>

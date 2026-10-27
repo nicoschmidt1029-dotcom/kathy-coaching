@@ -3,10 +3,9 @@ import { defineRouting } from "next-intl/routing";
 /**
  * Locale routing for the site.
  *
- * English is the default and the complete reference version — de.json and
- * sk.json fall back to it key by key, so an untranslated section renders in
- * English rather than breaking. See messages/README.md for what still needs
- * translating.
+ * English is the default reference version. German and Slovak are complete
+ * locale files and are loaded independently so visitors never see a mixed-
+ * language page.
  *
  * `localePrefix: "always"` means every URL carries its locale (/en, /de, /sk)
  * and `/` redirects to `/en`. That keeps the three language versions

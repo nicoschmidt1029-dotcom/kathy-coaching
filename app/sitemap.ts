@@ -13,6 +13,7 @@ const ROUTES = [
   { path: "/programme", changeFrequency: "monthly", priority: 0.9 },
   { path: "/recipes", changeFrequency: "monthly", priority: 0.8 },
   { path: "/kontakt", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/support-my-work", changeFrequency: "monthly", priority: 0.5 },
   { path: "/imprint", changeFrequency: "yearly", priority: 0.3, legal: true },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3, legal: true },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3, legal: true },
@@ -45,12 +46,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
-  const [recipes, programs] = await Promise.all([
-    getPublicRecipes("en"),
-    getPublicPrograms("en"),
+  const [recipesByLocale, programsByLocale] = await Promise.all([
+    Promise.all(routing.locales.map(async (locale) => [locale, await getPublicRecipes(locale)] as const)),
+    Promise.all(routing.locales.map(async (locale) => [locale, await getPublicPrograms(locale)] as const)),
   ]);
-  const recipePages = recipes.flatMap((recipe) =>
-    routing.locales.map((locale) => {
+  const recipePages = recipesByLocale.flatMap(([locale, recipes]) =>
+    recipes.map((recipe) => {
       const path = `/recipes/${recipe.slug}`;
       return {
         url: `${BASE_URL}/${locale}${path}`,
@@ -59,15 +60,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.7,
         alternates: {
           languages: Object.fromEntries(
-            routing.locales.map((l) => [l, `${BASE_URL}/${l}${path}`])
+            recipesByLocale
+              .filter(([, localizedRecipes]) => localizedRecipes.some((item) => item.slug === recipe.slug))
+              .map(([availableLocale]) => [availableLocale, `${BASE_URL}/${availableLocale}${path}`])
           ),
         },
       };
     })
   );
 
-  const programPages = programs.flatMap((program) =>
-    routing.locales.map((locale) => {
+  const programPages = programsByLocale.flatMap(([locale, programs]) =>
+    programs.map((program) => {
       const path = `/programme/${program.slug}`;
       return {
         url: `${BASE_URL}/${locale}${path}`,
@@ -76,7 +79,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
         alternates: {
           languages: Object.fromEntries(
-            routing.locales.map((l) => [l, `${BASE_URL}/${l}${path}`])
+            programsByLocale
+              .filter(([, localizedPrograms]) => localizedPrograms.some((item) => item.slug === program.slug))
+              .map(([availableLocale]) => [availableLocale, `${BASE_URL}/${availableLocale}${path}`])
           ),
         },
       };

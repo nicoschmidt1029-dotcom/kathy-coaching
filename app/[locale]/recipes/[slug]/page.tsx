@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { RecipeDetail } from "@/components/site/recipe-detail";
 import { DraftPreviewBanner } from "@/components/admin/draft-preview-banner";
-import { alternatesFor } from "@/i18n/metadata";
+import { pageMetadata } from "@/i18n/metadata";
 import { routing, type Locale } from "@/i18n/routing";
 import { PUBLIC_RECIPE_SLUGS } from "@/lib/recipes";
 import { getAdminPreviewRecipe, getPublicRecipe } from "@/lib/cms";
@@ -24,11 +24,11 @@ export async function generateMetadata({
   if (!recipe) return {};
   const t = await getTranslations({ locale, namespace: "recipes" });
 
+  const metadata = pageMetadata(locale, `/recipes/${slug}`, recipe.title, recipe.shortDescription);
   return {
-    title: recipe.title,
-    description: recipe.shortDescription,
-    alternates: alternatesFor(locale, `/recipes/${slug}`),
+    ...metadata,
     openGraph: {
+      ...metadata.openGraph,
       title: recipe.title,
       description: recipe.shortDescription,
       images: [{ url: recipe.image, alt: recipe.imageAlt }],

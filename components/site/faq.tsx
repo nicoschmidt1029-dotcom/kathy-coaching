@@ -21,7 +21,7 @@ export function Faq({ content }: { content?: FaqContent }) {
         {/* Head across the full width. Beside the accordion, the display
             title had four columns to live in and broke every other word. */}
         <p className="eyebrow">{t("eyebrow")}</p>
-        <DisplayTitle className="mt-6 max-w-[16ch]">{content?.headline || t("title")}</DisplayTitle>
+        <DisplayTitle as="h2" className="mt-6 max-w-[16ch]">{content?.headline || t("title")}</DisplayTitle>
         <p className="section-lede">{content?.body || t("intro")}</p>
 
         <div className="mt-14">

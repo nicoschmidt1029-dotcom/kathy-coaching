@@ -15,6 +15,10 @@ const confirmationCopy = {
     greeting: "Thank you for your purchase. Your payment has been confirmed.",
     next: "Katey will contact you separately with the next step.",
     terms: "Terms",
+    privacy: "Privacy",
+    imprint: "Imprint",
+    version: "Terms version: 6 October 2026",
+    withdrawal: "Withdrawal information and model form",
     portal: "Manage subscription and invoices",
     selection: "Your selection",
     plans: {
@@ -31,6 +35,10 @@ const confirmationCopy = {
     greeting: "Vielen Dank für deinen Kauf. Deine Zahlung wurde bestätigt.",
     next: "Katey meldet sich separat mit dem nächsten Schritt.",
     terms: "AGB",
+    privacy: "Datenschutzerklärung",
+    imprint: "Impressum",
+    version: "Fassung der AGB: 6. Oktober 2026",
+    withdrawal: "Widerrufsinformationen und Musterformular",
     portal: "Abo und Rechnungen verwalten",
     selection: "Deine Auswahl",
     plans: {
@@ -47,6 +55,10 @@ const confirmationCopy = {
     greeting: "Ďakujeme za nákup. Tvoja platba bola potvrdená.",
     next: "Katey ťa bude samostatne kontaktovať s ďalším krokom.",
     terms: "Obchodné podmienky",
+    privacy: "Ochrana osobných údajov",
+    imprint: "Právne informácie",
+    version: "Verzia obchodných podmienok: 6. októbra 2026",
+    withdrawal: "Informácie o odstúpení a vzorový formulár",
     portal: "Spravovať predplatné a faktúry",
     selection: "Tvoj výber",
     plans: {
@@ -104,10 +116,10 @@ async function sendConfirmation(session: Stripe.Checkout.Session) {
     copy.next,
     "",
     `${copy.terms}: https://kateycoaching.com/${language}/terms`,
-    `Privacy: https://kateycoaching.com/${language}/privacy`,
-    `Imprint: https://kateycoaching.com/${language}/imprint`,
-    "Terms version: 30 September 2026",
-    `Withdrawal information and model form: https://kateycoaching.com/${language}/terms#withdrawal`,
+    `${copy.privacy}: https://kateycoaching.com/${language}/privacy`,
+    `${copy.imprint}: https://kateycoaching.com/${language}/imprint`,
+    copy.version,
+    `${copy.withdrawal}: https://kateycoaching.com/${language}/terms#withdrawal`,
   ];
   if (session.mode === "subscription" && portalUrl) {
     lines.push(`${copy.portal}: ${portalUrl}`);

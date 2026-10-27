@@ -21,6 +21,11 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
     : isMoveAndGrow || isNourishAndGrow
       ? { href: "/kontakt", label: t("moveAndGrowConsultation") }
       : null;
+  const checkoutPlans = isFullTransformation
+    ? (["a-1", "a-2", "a-3"] as const)
+    : isMoveAndGrow
+      ? (["b-month"] as const)
+      : [];
 
   return (
     <article className="overflow-hidden pb-14 md:pb-20">
@@ -89,7 +94,10 @@ export async function ProgramDetail({ program, locale, showBackLink = true }: { 
             {program.paymentOptions && program.paymentOptions.length > 0 ? <div className="mt-8 grid w-full gap-3 md:mt-0 md:max-w-md">
               <p className="mb-1 text-xs font-medium uppercase tracking-[0.18em] text-white/62">{t("pricingOptions")}</p>
               <ul className="border-t border-white/20">
-                {program.paymentOptions.map((option) => <li key={option} className="grid grid-cols-[0.5rem_1fr] gap-3 border-b border-white/20 py-3 text-sm leading-snug text-white/88"><span aria-hidden className="mt-[0.45rem] size-1.5 rounded-full bg-[var(--clay)]" /><span>{option}</span></li>)}
+                {program.paymentOptions.map((option, index) => {
+                  const plan = checkoutPlans[index];
+                  return <li key={option} className="border-b border-white/20 py-3 text-sm leading-snug text-white/88">{plan ? <Link href={`/kontakt?plan=${plan}`} className="group flex min-h-11 items-center justify-between gap-4 rounded-md px-2 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"><span>{option}</span><span className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-white">{t("selectPayment")}<ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" /></span></Link> : <span className="grid grid-cols-[0.5rem_1fr] gap-3 px-2"><span aria-hidden className="mt-[0.45rem] size-1.5 rounded-full bg-[var(--clay)]" /><span>{option}</span></span>}</li>;
+                })}
               </ul>
             </div> : <Button asChild size="lg" className="mt-8 h-12 bg-white px-7 text-[var(--plum)] hover:bg-white/90 md:mt-0"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel || t("contactFirst")}<ArrowRight className="ml-1 size-4" /></Link></Button>}
           </div>

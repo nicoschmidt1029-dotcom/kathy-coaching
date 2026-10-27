@@ -232,6 +232,7 @@ export const PROGRAMS: readonly Program[] = [
     content: {
       en: {
         title: "Move and Grow",
+        imageAlt: "Katey smiling warmly outdoors",
         intro: "This program is for people who want expert training to get fit and strong, but the progress is also in your hands, because all the rest is up to you.\n\nMovement is longevity. Aging doesn't have to be something we fear — with movement, it can become one of life's great privileges. Add movement to your life, and you add life to your years.",
         targetHeading: "This program is for:",
         targetAudience: [
@@ -255,6 +256,7 @@ export const PROGRAMS: readonly Program[] = [
       },
       de: {
         title: "Move and Grow",
+        imageAlt: "Katey lächelt draußen freundlich in die Kamera",
         intro: "Dieses Programm ist für Menschen, die professionelles Training möchten, um fit und stark zu werden. Dein Fortschritt liegt aber auch in deinen Händen, denn alles Weitere hängt von dir ab.\n\nBewegung bedeutet Langlebigkeit. Älterwerden muss nichts sein, wovor wir uns fürchten — mit Bewegung kann es zu einem großen Privileg des Lebens werden. Wenn du Bewegung in dein Leben bringst, schenkst du deinen Jahren mehr Leben.",
         targetHeading: "Dieses Programm ist für:",
         targetAudience: [
@@ -278,6 +280,7 @@ export const PROGRAMS: readonly Program[] = [
       },
       sk: {
         title: "Move and Grow",
+        imageAlt: "Katey sa vonku prívetivo usmieva",
         intro: "Tento program je pre ľudí, ktorí chcú odborný tréning, aby sa dostali do formy a zosilneli. Pokrok je však aj v tvojich rukách, pretože všetko ostatné závisí od teba.\n\nPohyb podporuje dlhovekosť. Starnutia sa nemusíme báť — vďaka pohybu sa môže stať jedným z veľkých životných privilégií. Keď do svojho života pridáš pohyb, pridáš život aj svojim rokom.",
         targetHeading: "Tento program je pre:",
         targetAudience: [
@@ -311,6 +314,7 @@ export const PROGRAMS: readonly Program[] = [
     content: {
       en: {
         title: "Nourish and Grow",
+        imageAlt: "Katey smiling outdoors",
         intro: "Nourish and Grow is for people who are ready to change the way they eat. Food isn't the enemy — it's the fuel for a stronger, healthier, happier you. In fact, when it comes to looking and feeling your best, around 80% comes down to what you eat, and only 20% to how you move. Anyone who's trained hard knows it: you can't out-train poor eating. This is where real, lasting change begins — on your plate.\n\nNutrition is always evolving. What we believed fifty years ago — remember when eggs were the enemy? — often looks different today, as new studies teach us more. That's not a reason to feel lost. It's simply a reminder to stay open, to keep learning and never cling too tightly to what we think we know.",
         targetHeading: "This program is for:",
         targetAudience: [
@@ -334,6 +338,7 @@ export const PROGRAMS: readonly Program[] = [
       },
       de: {
         title: "Nourish and Grow",
+        imageAlt: "Katey lächelt draußen in die Kamera",
         intro: "Nourish and Grow ist für Menschen, die bereit sind, ihre Ernährung zu verändern. Essen ist nicht der Feind — es ist der Treibstoff für ein stärkeres, gesünderes und glücklicheres Leben. Wenn es darum geht, gut auszusehen und sich gut zu fühlen, hängen etwa 80 % davon ab, was du isst, und nur 20 % davon, wie du dich bewegst. Wer hart trainiert, weiß: Schlechte Ernährung kann man nicht wegtrainieren. Hier beginnt echte, nachhaltige Veränderung — auf deinem Teller.\n\nErnährung entwickelt sich ständig weiter. Was wir vor fünfzig Jahren geglaubt haben — denk nur daran, als Eier als ungesund galten — sieht heute oft anders aus, weil neue Studien uns mehr lehren. Das ist kein Grund, dich verloren zu fühlen. Es ist eine Erinnerung daran, offen zu bleiben, weiterzulernen und nicht zu fest an dem festzuhalten, was wir zu wissen glauben.",
         targetHeading: "Dieses Programm ist für:",
         targetAudience: [
@@ -357,6 +362,7 @@ export const PROGRAMS: readonly Program[] = [
       },
       sk: {
         title: "Nourish and Grow",
+        imageAlt: "Katey sa vonku usmieva",
         intro: "Nourish and Grow je pre ľudí, ktorí sú pripravení zmeniť spôsob svojho stravovania. Jedlo nie je nepriateľ — je palivom pre silnejšie, zdravšie a šťastnejšie ja. Keď ide o to, aby si vyzeral/a a cítil/a sa čo najlepšie, približne 80 % závisí od toho, čo ješ, a iba 20 % od toho, ako sa hýbeš. Každý, kto tvrdo trénoval, to pozná: zlú stravu neprecvičíš. Tu sa začína skutočná a trvalá zmena — na tvojom tanieri.\n\nVýživa sa neustále vyvíja. To, čomu sme verili pred päťdesiatimi rokmi — spomeň si, keď boli vajcia nepriateľom — dnes často vyzerá inak, pretože nové štúdie nás učia viac. Nie je to dôvod cítiť sa stratený/stratená. Je to len pripomienka, aby sme zostali otvorení, stále sa učili a príliš sa neupínali na to, čo si myslíme, že vieme.",
         targetHeading: "Tento program je pre:",
         targetAudience: [
@@ -391,6 +397,7 @@ export const PROGRAMS: readonly Program[] = [
     content: {
       en: {
         title: "Find Your Way Through",
+        imageAlt: "Katey smiling warmly",
         intro: "Pain, shame, sin, your past, hatred, abuse, curses, mistakes, distrust, doubts, self-doubt",
         targetHeading: "",
         targetAudience: [],
@@ -413,6 +420,7 @@ export const PROGRAMS: readonly Program[] = [
       },
       de: {
         title: "Find Your Way Through",
+        imageAlt: "Katey lächelt freundlich in die Kamera",
         intro: "Schmerz, Scham, Sünde, deine Vergangenheit, Hass, Missbrauch, Flüche, Fehler, Misstrauen, Zweifel und Selbstzweifel",
         targetHeading: "",
         targetAudience: [],
@@ -435,6 +443,7 @@ export const PROGRAMS: readonly Program[] = [
       },
       sk: {
         title: "Find Your Way Through",
+        imageAlt: "Katey sa prívetivo usmieva",
         intro: "Bolesť, hanba, hriech, tvoja minulosť, nenávisť, zneužitie, prekliatia, chyby, nedôvera, pochybnosti, nesebavedomie",
         targetHeading: "",
         targetAudience: [],

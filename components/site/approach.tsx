@@ -88,7 +88,7 @@ export function Approach() {
       <div className="container-page">
         <div className="max-w-3xl">
           <p className="eyebrow">{t("systemName")}</p>
-          <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
+          <DisplayTitle as="h2" className="mt-6">{t("title")}</DisplayTitle>
           <p className="section-lede mt-8">{t("definition")}</p>
           <p className="mt-4 max-w-xl text-pretty text-foreground/65 sm:text-[1.05rem] sm:leading-[1.7]">
             {t("intro")}

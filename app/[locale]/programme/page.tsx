@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { alternatesFor } from "@/i18n/metadata";
+import { pageMetadata } from "@/i18n/metadata";
 import { Programs } from "@/components/site/programs";
 import type { Locale } from "@/i18n/routing";
 
@@ -27,11 +27,7 @@ export async function generateMetadata({
     getTranslations({ locale, namespace: "programs" }),
     getTranslations({ locale, namespace: "pages.programs" }),
   ]);
-  return {
-    title: t("realTitle"),
-    description: page("description"),
-    alternates: alternatesFor(locale, "/programme"),
-  };
+  return pageMetadata(locale, "/programme", t("realTitle"), page("description"));
 }
 
 export default async function ProgrammePage({

@@ -26,7 +26,7 @@ type Props = {
  * Single-word titles are rendered solid; a lone hollow word is a logo, not
  * a heading.
  */
-export function DisplayTitle({ children, className, as: Heading = "h2" }: Props) {
+export function DisplayTitle({ children, className, as: Heading = "h1" }: Props) {
   const words = children.trim().split(" ");
   const [first, ...rest] = words;
 

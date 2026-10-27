@@ -14,7 +14,7 @@ import { CheckoutButton } from "./checkout-button";
 import { DisplayTitle } from "./display-title";
 
 type FormState = { status: "idle" | "sending" | "sent" } | { status: "error"; message: string };
-type CheckoutPlan = "a-1" | "a-2" | "a-3" | "b-month" | "c-hour";
+export type CheckoutPlan = "a-1" | "a-2" | "a-3" | "b-month" | "d-month" | "c-hour";
 type Props = { content?: { eyebrow?: string; headline?: string; body?: string; submitLabel?: string; image?: string | null }; selectedPayment?: string; checkoutPlan?: CheckoutPlan; locale?: Locale };
 
 export function Contact({ content, selectedPayment, checkoutPlan, locale }: Props = {}) {
@@ -32,7 +32,21 @@ export function Contact({ content, selectedPayment, checkoutPlan, locale }: Prop
     try {
       const response = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name: String(data.get("name") ?? ""), email: String(data.get("email") ?? ""), program: String(data.get("program") ?? ""), message: String(data.get("message") ?? ""), website: String(data.get("website") ?? "") }) });
       const result = await response.json().catch(() => ({})) as { ok?: boolean; error?: string };
-      if (!response.ok || !result.ok) return setState({ status: "error", message: result.error ?? t("genericError") });
+      const errorKeys = {
+        too_fast: "rateFast",
+        hourly_limit: "rateLimit",
+        missing_fields: "validationError",
+        invalid_email: "emailError",
+        too_long: "tooLongError",
+        not_configured: "formUnavailable",
+        send_failed: "sendFailed",
+      } as const;
+      if (!response.ok || !result.ok) {
+        const errorKey = result.error && result.error in errorKeys
+          ? errorKeys[result.error as keyof typeof errorKeys]
+          : "genericError";
+        return setState({ status: "error", message: t(errorKey) });
+      }
       form.reset();
       setState({ status: "sent" });
     } catch { setState({ status: "error", message: t("networkError") }); }

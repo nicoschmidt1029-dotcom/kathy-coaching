@@ -21,9 +21,9 @@ async function fetchGoogleFont(family: string, params: string) {
 }
 
 const copy = {
-  en: { line1: "Sometimes you just need", line2: "the right direction.", body: "Personal training · nutrition guidance · faith-rooted mentoring.", meta: "Three programs · personal guidance" },
-  de: { line1: "Manchmal brauchst du nur", line2: "die richtige Richtung.", body: "Persönliches Training · Ernährungsbegleitung · glaubensbasiertes Mentoring.", meta: "Drei Programme · persönliche Begleitung" },
-  sk: { line1: "Niekedy potrebuješ len", line2: "správny smer.", body: "Osobný tréning · poradenstvo vo výžive · mentoring zakorenený vo viere.", meta: "Tri programy · osobné vedenie" },
+  en: { line1: "Sometimes you just need", line2: "the right direction.", body: "Personal training · nutrition guidance · faith-rooted mentoring.", meta: "Four coaching options · personal guidance" },
+  de: { line1: "Manchmal brauchst du nur", line2: "die richtige Richtung.", body: "Persönliches Training · Ernährungsbegleitung · glaubensbasiertes Mentoring.", meta: "Vier Coaching-Angebote · persönliche Begleitung" },
+  sk: { line1: "Niekedy potrebuješ len", line2: "správny smer.", body: "Osobný tréning · poradenstvo vo výžive · mentoring zakorenený vo viere.", meta: "Štyri možnosti koučingu · osobné vedenie" },
 } as const;
 
 export default async function Image({ params }: { params: Promise<{ locale: string }> }) {

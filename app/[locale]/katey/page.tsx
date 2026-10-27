@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { alternatesFor } from "@/i18n/metadata";
+import { pageMetadata } from "@/i18n/metadata";
 import { About } from "@/components/site/about";
 import { DraftPreviewBanner } from "@/components/admin/draft-preview-banner";
 import { getAdminPreviewEntry, getPublicWebsiteEntry } from "@/lib/cms";
@@ -24,11 +24,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pages.about" });
-  return {
-    title: t("title"),
-    description: t("description"),
-    alternates: alternatesFor(locale, "/katey"),
-  };
+  return pageMetadata(locale, "/katey", t("title"), t("description"));
 }
 
 export default async function KateyPage({

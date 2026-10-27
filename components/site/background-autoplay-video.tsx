@@ -21,6 +21,12 @@ export function BackgroundAutoplayVideo({
   React.useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (reducedMotion.matches) {
+      video.pause();
+      return;
+    }
 
     const play = () => {
       video.defaultMuted = true;
@@ -54,11 +60,10 @@ export function BackgroundAutoplayVideo({
     <video
       ref={videoRef}
       src={src}
-      autoPlay
       muted
       loop
       playsInline
-      preload="auto"
+      preload="metadata"
       aria-hidden
       className={className}
     />

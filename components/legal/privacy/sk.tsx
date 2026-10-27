@@ -26,8 +26,8 @@ import { SITE_HOST } from "@/lib/site-url";
  *
  * Najprv švajčiarske právo (nDSG), GDPR dodatočne pre návštevníkov z EÚ.
  * Odkazy na články sú zámerne totožné s anglickou verziou — prekladá sa len
- * vysvetľujúci text, nikdy právny základ. Všetky skutočné údaje zostávajú
- * ako <Todo> zástupné miesta.
+ * vysvetľujúci text, nikdy právny základ. Dodané údaje prevádzkovateľky sa
+ * udržiavajú zhodné; nedodané fakty zostávajú zástupnými miestami.
  */
 export function PrivacyBodySk() {
   return (
@@ -53,7 +53,13 @@ export function PrivacyBodySk() {
       <p>
         Katarína Gröflin
         <br />
-        [VYŽADUJE SA ÚPLNÁ FIREMNÁ ADRESA]
+        Katey Coaching
+        <br />
+        c/o JL Consulting Group GmbH#1882
+        <br />
+        Zürcherstrasse 84
+        <br />
+        8852 Altendorf, Švajčiarsko
         <br />
         E-mail: katey.coaching.newlife@gmail.com
       </p>

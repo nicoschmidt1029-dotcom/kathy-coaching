@@ -1,19 +1,22 @@
 {
   "_status": {
     "translated": "vollständig — alle Namespaces übersetzt",
-    "note": "Bio und Mission stammen wörtlich von Nico, der Rest ist übersetzt und darf frei überschrieben werden. Keys, die hier fehlen, fallen auf messages/en.json zurück — bewusst weggelassen sind nur meta.siteName, wordmark.name/tagline (Marke), about.qual*Issuer (Eigennamen der Institutionen) und contact.languagesValue (Sprachnamen stehen in ihrer eigenen Sprache). Keys niemals leer lassen: ein leerer String überschreibt das Englische mit nichts.",
+    "note": "Bio und Mission stammen wörtlich von Nico, der Rest ist übersetzt und darf frei überschrieben werden. Besuchertexte fallen nicht auf Englisch zurück; sichtbare Keys müssen in allen drei Sprachdateien vollständig bleiben.",
     "openQuestions": [
       "approach.systemName ist hier als „Der Drei-Fäden-Ansatz\" übersetzt statt den englischen Markenbegriff stehen zu lassen — Katey entscheidet, was ihr lieber ist.",
       "Rechtstexte /imprint und /privacy sind übersetzt, liegen aber als Komponenten in components/legal/ (siehe README) — und sind juristisch ungeprüft.",
       "Das OG-Bild ist für alle Sprachen Englisch."
     ]
   },
+  "translationNotice": {
+    "draft": "Diese Übersetzung wird noch geprüft. Die englische Version ist das Original."
+  },
   "meta": {
     "siteName": "Katey Coaching",
     "titleDefault": "Katey Coaching — Training, Ernährung & Mentoring, im Glauben verwurzelt",
     "titleTemplate": "%s · Katey Coaching",
-    "description": "Katey Coaching.",
-    "ogDescription": "Katey Coaching."
+    "description": "Persönliches Online-Coaching für Training, Ernährung und Glauben — für nachhaltige Stärke, Gesundheit und Selbstvertrauen.",
+    "ogDescription": "Persönliches Coaching für nachhaltige Stärke, Gesundheit und Selbstvertrauen — mit Training, Ernährung und Glauben."
   },
   "pages": {
     "about": {
@@ -26,7 +29,7 @@
     },
     "programs": {
       "title": "Programme",
-      "description": "Drei Sechs-Wochen-Programme, eins zu eins. Nur Training, Training + Ernährung, oder der ganze Weg mit geistlichem Mentoring. Ehrliche Preise."
+      "description": "Persönliches Coaching für Training, Ernährung und Glauben: 90 Tage Full Transformation, monatliche Bewegungs- oder Ernährungsbegleitung und Einzel-Mentoring."
     },
     "recipes": {
       "title": "Rezepte",
@@ -42,7 +45,7 @@
     },
     "imprint": {
       "title": "Impressum",
-      "description": "Impressum für Katey Coaching, Ettingen (BL), Schweiz."
+      "description": "Impressum für Katey Coaching, Altendorf (SZ), Schweiz."
     },
     "privacy": {
       "title": "Datenschutz",
@@ -252,6 +255,7 @@
     "fullTransformationConsultation": "Erstberatung für Full Transformation",
     "moveAndGrowConsultation": "Jetzt starten",
     "pricingOptions": "Preisoptionen",
+    "selectPayment": "Auswählen",
     "quickQuestion": "Hast du eine kurze Frage? Schreib mir stattdessen.",
     "learnMore": "Mehr erfahren",
     "tellMeHelp": "Erzähl mir, wobei du Hilfe brauchst",
@@ -430,6 +434,13 @@
     "submit": "Nachricht senden",
     "submitting": "Wird gesendet…",
     "genericError": "Da ist etwas schiefgelaufen. Bitte versuch es noch einmal.",
+    "validationError": "Bitte fülle deinen Namen, deine E-Mail-Adresse und deine Nachricht aus.",
+    "emailError": "Bitte gib eine gültige E-Mail-Adresse ein.",
+    "tooLongError": "Deine Nachricht ist zu lang. Bitte kürze sie und versuch es erneut.",
+    "rateFast": "Bitte warte ein paar Sekunden, bevor du eine weitere Nachricht sendest.",
+    "rateLimit": "Du hast bereits mehrere Nachrichten gesendet. Bitte versuch es später noch einmal.",
+    "formUnavailable": "Das Kontaktformular ist vorübergehend nicht verfügbar. Bitte versuch es später noch einmal.",
+    "sendFailed": "Deine Nachricht konnte nicht gesendet werden. Bitte versuch es gleich noch einmal.",
     "networkError": "Netzwerkfehler. Bitte versuch es gleich noch einmal.",
     "sentTitle": "Danke — ist angekommen.",
     "sentBody": "Deine Nachricht wurde gesendet.",

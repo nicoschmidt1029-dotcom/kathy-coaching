@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import type { Locale } from "@/i18n/routing";
 
 type Props = {
-  plan: "a-1" | "a-2" | "a-3" | "b-month" | "c-hour";
+  plan: "a-1" | "a-2" | "a-3" | "b-month" | "d-month" | "c-hour";
   locale: Locale;
   label: string;
   loadingLabel: string;

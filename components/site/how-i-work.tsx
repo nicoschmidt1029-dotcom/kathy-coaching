@@ -29,7 +29,7 @@ export function HowIWork() {
       <div className="container-page">
         <div className="max-w-2xl">
           <p className="eyebrow">{t("eyebrow")}</p>
-          <DisplayTitle className="mt-6">{t("title")}</DisplayTitle>
+          <DisplayTitle as="h2" className="mt-6">{t("title")}</DisplayTitle>
           <p className="section-lede">{t("intro")}</p>
         </div>
 

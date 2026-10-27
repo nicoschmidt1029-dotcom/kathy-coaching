@@ -31,7 +31,5 @@ export const TESTIMONIALS_ARE_REAL = false;
  *   - about.tsx qualifications: exact certificate designations for the SNF
  *     Academy trainer/nutrition certs, and the Awakening School of Ministry
  *     graduation year
- *   - imprint page: street address, postal code, public email, phone (or
- *     confirmation none will be published) — see components/legal
  *   - legal texts generally: unreviewed, see LEGAL_REVIEWED above
  */

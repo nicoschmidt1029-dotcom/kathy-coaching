@@ -70,12 +70,8 @@ export async function POST(req: Request) {
   const ip = clientIp(req);
   const rl = checkLimit(ip);
   if (!rl.ok) {
-    const message =
-      rl.reason === "too_fast"
-        ? "Just a moment — please wait a few seconds before sending again."
-        : "You’ve sent several messages already. Please try again later.";
     return NextResponse.json(
-      { ok: false, error: message },
+      { ok: false, error: rl.reason },
       {
         status: 429,
         headers: { "Retry-After": String(rl.retryInSec) },
@@ -88,7 +84,7 @@ export async function POST(req: Request) {
     body = (await req.json()) as Body;
   } catch {
     return NextResponse.json(
-      { ok: false, error: "Invalid request." },
+      { ok: false, error: "invalid_request" },
       { status: 400 }
     );
   }
@@ -105,19 +101,19 @@ export async function POST(req: Request) {
 
   if (!name || !email || !message) {
     return NextResponse.json(
-      { ok: false, error: "Please fill in name, email, and message." },
+      { ok: false, error: "missing_fields" },
       { status: 400 }
     );
   }
   if (name.length > 200 || message.length > 5000) {
     return NextResponse.json(
-      { ok: false, error: "Message is too long." },
+      { ok: false, error: "too_long" },
       { status: 400 }
     );
   }
   if (!EMAIL_RE.test(email)) {
     return NextResponse.json(
-      { ok: false, error: "That email address doesn’t look right." },
+      { ok: false, error: "invalid_email" },
       { status: 400 }
     );
   }
@@ -131,8 +127,7 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         ok: false,
-        error:
-          "The contact form isn’t connected yet. Please email Katey directly for now.",
+        error: "not_configured",
       },
       { status: 503 }
     );
@@ -159,7 +154,7 @@ export async function POST(req: Request) {
     if (error) {
       console.error("resend error", error);
       return NextResponse.json(
-        { ok: false, error: "Sending failed. Please try again in a moment." },
+        { ok: false, error: "send_failed" },
         { status: 502 }
       );
     }
@@ -167,7 +162,7 @@ export async function POST(req: Request) {
   } catch (err) {
     console.error("send failure", err);
     return NextResponse.json(
-      { ok: false, error: "Sending failed. Please try again in a moment." },
+      { ok: false, error: "send_failed" },
       { status: 500 }
     );
   }

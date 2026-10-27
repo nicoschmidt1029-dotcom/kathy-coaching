@@ -19,3 +19,19 @@ export function alternatesFor(locale: string, path = ""): Metadata["alternates"]
     ),
   };
 }
+
+/** Complete per-page search and sharing metadata for a localized route. */
+export function pageMetadata(
+  locale: string,
+  path: string,
+  title: string,
+  description: string,
+): Metadata {
+  return {
+    title,
+    description,
+    alternates: alternatesFor(locale, path),
+    openGraph: { title, description, type: "website", url: `/${locale}${path}`, locale },
+    twitter: { card: "summary_large_image", title, description },
+  };
+}

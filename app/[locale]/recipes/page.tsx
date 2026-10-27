@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { RecipesIndex } from "@/components/site/recipes-index";
 import { DraftPreviewBanner } from "@/components/admin/draft-preview-banner";
-import { alternatesFor } from "@/i18n/metadata";
+import { pageMetadata } from "@/i18n/metadata";
 import { routing, type Locale } from "@/i18n/routing";
 import { getAdminPreviewEntry, getPublicWebsiteEntry } from "@/lib/cms";
 
@@ -16,11 +16,7 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "pages.recipes" });
-  return {
-    title: t("title"),
-    description: t("description"),
-    alternates: alternatesFor(locale, "/recipes"),
-  };
+  return pageMetadata(locale, "/recipes", t("title"), t("description"));
 }
 
 export default async function RecipesPage({

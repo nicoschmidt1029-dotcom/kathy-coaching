@@ -15,8 +15,8 @@
  *
  * Swiss law throughout: Art. 3 lit. s UWG, not the German TMG. Keep the
  * article citations byte-identical across the three languages; only the
- * surrounding prose is translated. No real data anywhere — every fact Katey
- * has to supply stays a <Todo>.
+ * surrounding prose is translated. Supplied operator details are kept in
+ * sync; facts Katey has not supplied stay explicit placeholders.
  */
 export function ImprintBodyEn() {
   return (
@@ -30,7 +30,15 @@ export function ImprintBodyEn() {
       <p>
         Katarina Gröflin
         <br />
-        [FULL BUSINESS ADDRESS REQUIRED]
+        Katey Coaching
+        <br />
+        c/o JL Consulting Group GmbH#1882
+        <br />
+        Zürcherstrasse 84
+        <br />
+        8852 Altendorf
+        <br />
+        Switzerland
       </p>
 
       <h2>Contact</h2>

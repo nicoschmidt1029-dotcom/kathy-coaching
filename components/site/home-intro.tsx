@@ -5,7 +5,9 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
-const PARAGRAPHS = ["p1", "p2", "p3", "p4", "p5", "p6", "p7"] as const;
+// p1 repeats the hero headline in every locale, so the continuation begins
+// with the next thought instead of echoing the sentence visitors just read.
+const PARAGRAPHS = ["p2", "p3", "p4", "p5", "p6", "p7"] as const;
 
 export function HomeIntro() {
   const t = useTranslations("homeIntro");

@@ -28,7 +28,7 @@ export function ConversationProgram({ program, showBackLink = false }: { program
               <div className="mt-7 grid w-full gap-3 sm:mt-0 sm:max-w-xs">
                 {!showBackLink && <Button asChild size="lg" className="h-auto min-h-12 w-full bg-white px-7 py-3 text-[var(--plum)] hover:bg-white/90"><Link href="/programme/find-your-way-through">{programs("learnMore")}<ArrowRight className="ml-1 size-4" /></Link></Button>}
                 <p className="mt-1 text-sm leading-relaxed text-white/72">{programs("tellMeHelp")}</p>
-                <Button asChild size="lg" className="h-auto min-h-12 w-full bg-[var(--clay)] px-7 py-3 text-white hover:bg-[var(--clay)]/90"><Link href="/kontakt">{programs("talkToMe")}<ArrowRight className="ml-1 size-4" /></Link></Button>
+                <Button asChild size="lg" className="h-auto min-h-12 w-full bg-[var(--clay)] px-7 py-3 text-white hover:bg-[var(--clay)]/90"><Link href="/kontakt?plan=c-hour">{programs("talkToMe")}<ArrowRight className="ml-1 size-4" /></Link></Button>
               </div>
             </div> : <div className="mt-10"><Button asChild size="lg" className="h-12 bg-[var(--plum)] px-7 text-white hover:bg-[var(--plum)]/90"><Link href={program.ctaHref || "/kontakt"}>{program.ctaLabel || nav("contact")}<ArrowRight className="ml-1 size-4" /></Link></Button></div>}
           </div>

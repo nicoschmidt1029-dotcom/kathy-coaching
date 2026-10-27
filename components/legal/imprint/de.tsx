@@ -16,8 +16,8 @@
  *
  * Schweizer Recht, nicht deutsches TMG: Grundlage ist Art. 3 lit. s UWG.
  * Die Artikelverweise sind absichtlich wortgleich mit der englischen Fassung
- * — übersetzt wird nur der erklärende Text, nie die Rechtsgrundlage. Alle
- * echten Angaben bleiben <Todo>-Platzhalter.
+ * — übersetzt wird nur der erklärende Text, nie die Rechtsgrundlage. Gelieferte
+ * Betreiberangaben werden synchron gehalten; offene Fakten bleiben Platzhalter.
  */
 export function ImprintBodyDe() {
   return (
@@ -31,7 +31,15 @@ export function ImprintBodyDe() {
       <p>
         Katarina Gröflin
         <br />
-        [VOLLSTÄNDIGE GESCHÄFTSADRESSE ERFORDERLICH]
+        Katey Coaching
+        <br />
+        c/o JL Consulting Group GmbH#1882
+        <br />
+        Zürcherstrasse 84
+        <br />
+        8852 Altendorf
+        <br />
+        Schweiz
       </p>
 
       <h2>Kontakt</h2>
