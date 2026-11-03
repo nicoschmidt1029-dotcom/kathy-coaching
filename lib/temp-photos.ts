@@ -203,16 +203,11 @@ export const TEMP_PHOTOS: Record<
 // portrait, per her request to show her actually training instead of a
 // posed shot. kathy-video-2.mp4 stays in the repo, unused, for later reuse.
 //
-// 2026-08-19: desktop clip swapped to katarina-hero-refined.mp4 (her own
-// "refined/shorter/HQ" re-edit of the background footage). Re-encoded from
-// her 1280x720/37s/38.7MB source — audio stripped (the <video> element is
-// always muted, so the AAC track was dead weight), libx264 CRF 26/slow/faststart,
-// same treatment as the previous encode. 6.7MB, still 1280x720/30fps.
-// workout-hero.mp4 (the previous desktop clip) stays in the repo, unused.
-// 2026-11-03: restored the long-running September 10 cut at the client's
-// request, replacing the shorter v7 edit on both desktop and mobile.
+// 2026-11-03: restored the explicitly archived ALT desktop video after the
+// client clarified that the refined September cut was not the intended one.
+// Its hash matches Home-Page-Video-ALT-und-NEU/ALT/ALT-Desktop.mp4.
 export const TEMP_HERO_VIDEO: TempVideo = {
-  src: "/videos/katarina-hero-refined.mp4?v=20261103-restored-september",
+  src: "/videos/workout-hero.mp4?v=20261103-restored-long-running",
   // Swapped 2026-08-18 to a different clip Katarina sent specifically for
   // mobile: a genuine portrait-shot (9:16) workout video, not a crop of
   // the landscape desktop clip. Re-encoded from her 512x910/49.5MB original
@@ -221,13 +216,8 @@ export const TEMP_HERO_VIDEO: TempVideo = {
   // source footage (near-identical aspect to a phone screen, so the
   // full-bleed mobile hero needs almost no cropping).
   //
-  // 2026-08-19: swapped again to katarina-hero-mobile-refined.mp4, her
-  // "refined/HQ" re-edit — same 512x910 portrait framing as the previous
-  // mobile clip, so no crop/positioning changes needed. Re-encoded from
-  // her 512x910/37.9s/25MB source the same way (audio stripped, libx264
-  // CRF 28/slow/faststart) to 3.0MB. workout-hero-mobile.mp4 (the previous
-  // mobile clip) stays in the repo, unused. Desktop `src` is untouched.
-  // Versioned so phones do not reuse the v7 clip from browser/CDN cache.
+  // Restored from the matching archived ALT mobile video. Versioned so
+  // phones do not reuse either of the newer clips from browser/CDN cache.
   srcMobile:
-    "/videos/katarina-hero-mobile-refined.mp4?v=20261103-restored-september",
+    "/videos/workout-hero-mobile.mp4?v=20261103-restored-long-running",
 };
