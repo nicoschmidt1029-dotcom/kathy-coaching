@@ -99,11 +99,8 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
 
   return (
     <section className="relative isolate overflow-hidden">
-      {/* Desktop/tablet: keep every source frame visible. `object-cover`
-          cropped the top and bottom differently at each viewport ratio, so
-          several shots showed only a head or arms. The deep-petrol stage and
-          existing gradients absorb any side space left by `object-contain`
-          without decoding a second blurred copy of the video. */}
+      {/* Desktop/tablet: the restored landscape cut was prepared for this
+          full-bleed hero, so it can fill the stage without side bars. */}
       {/* Full-screen landing view now that Home is only this section —
           fills the viewport below the sticky header (h-16/h-20) so video +
           headline + nav is the entire first view, nothing else competing
@@ -114,11 +111,11 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
           moved with it. */}
       <div className="relative hidden min-h-[calc(100svh-17rem)] items-center py-20 md:flex">
         {(video || photo) && (
-          <div className="absolute inset-0 -z-10 bg-[var(--petrol-deep)]">
+          <div className="absolute inset-0 -z-10">
             {video ? (
               <BackgroundAutoplayVideo
                 src={video.src}
-                className="absolute inset-0 h-full w-full object-contain object-center"
+                className="absolute inset-0 h-full w-full object-cover object-center"
               />
             ) : (
               photo && (
@@ -163,17 +160,17 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
           leave a jump). */}
       <div className="relative flex min-h-[calc(100svh-16.75rem)] flex-col justify-center overflow-hidden py-16 md:hidden">
         {(video || photo) && (
-          <div className="absolute inset-0 -z-10 bg-[var(--petrol-deep)]">
+          <div className="absolute inset-0 -z-10">
             {video ? (
               <BackgroundAutoplayVideo
                 // Lighter mobile-specific re-encode (see lib/temp-photos.ts)
                 // — falls back to the same file desktop uses if srcMobile
                 // isn't set. Source is now a genuine portrait (9:16) clip,
                 // not a landscape crop, so it needs barely any cropping
-                // against a phone-shaped hero. `object-contain` is deliberate:
-                // short phone viewports otherwise crop her head, arms or feet.
+                // against a phone-shaped hero — plain object-center holds
+                // her in frame through the whole movement.
                 src={video.srcMobile ?? video.src}
-                className="absolute inset-0 h-full w-full object-contain object-center"
+                className="absolute inset-0 h-full w-full object-cover object-center"
               />
             ) : (
               photo && (
