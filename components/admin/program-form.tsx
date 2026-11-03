@@ -26,6 +26,7 @@ export type ProgramData = {
   howSteps?: Record<string, readonly string[]>;
   howClosing?: Record<string, string>;
   paragraphs?: Record<string, readonly string[]>;
+  detailParagraphs?: Record<string, readonly string[]>;
   duration?: Record<string, string>;
   ctaLabel?: Record<string, string>;
   paymentOptions?: Record<string, readonly string[]>;
@@ -102,13 +103,22 @@ export function ProgramForm({
             rows={3}
           />
           {data.kind === "conversation" ? (
-            <RepeatableList
-              label="Program text paragraphs"
-              name={`paragraphs_${locale}`}
-              initialItems={data.paragraphs?.[locale]}
-              addLabel="Add paragraph"
-              multiline
-            />
+            <>
+              <RepeatableList
+                label="Overview text before Learn More"
+                name={`paragraphs_${locale}`}
+                initialItems={data.paragraphs?.[locale]}
+                addLabel="Add overview paragraph"
+                multiline
+              />
+              <RepeatableList
+                label="Detail-page text after Learn More"
+                name={`detail_paragraphs_${locale}`}
+                initialItems={data.detailParagraphs?.[locale]}
+                addLabel="Add detail paragraph"
+                multiline
+              />
+            </>
           ) : (
             <>
               <Field

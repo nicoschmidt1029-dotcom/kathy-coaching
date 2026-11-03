@@ -22,6 +22,7 @@ export default async function EditProgram({ params }: { params: Promise<{ key: s
     howSteps: Object.fromEntries(Object.entries(program.content).map(([locale, content]) => [locale, content.howSteps ?? []])),
     howClosing: Object.fromEntries(Object.entries(program.content).map(([locale, content]) => [locale, content.howClosing ?? ""])),
     paragraphs: Object.fromEntries(Object.entries(program.content).map(([locale, content]) => [locale, content.paragraphs ?? []])),
+    detailParagraphs: Object.fromEntries(Object.entries(program.content).map(([locale, content]) => [locale, content.detailParagraphs ?? []])),
     duration: Object.fromEntries(Object.entries(program.content).map(([locale, content]) => [locale, content.duration])),
     ctaLabel: Object.fromEntries(Object.entries(program.content).map(([locale, content]) => [locale, content.ctaLabel ?? ""])),
     paymentOptions: Object.fromEntries(Object.entries(program.content).map(([locale, content]) => [locale, content.paymentOptions ?? []])),

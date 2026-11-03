@@ -247,6 +247,7 @@ export async function saveProgram(formData: FormData) {
     howSteps: localizedLines("how_steps"),
     howClosing: localized("how_closing"),
     paragraphs: localizedLines("paragraphs"),
+    detailParagraphs: localizedLines("detail_paragraphs"),
     duration: localized("duration"),
     ctaLabel: localized("cta_label"),
     paymentOptions: localizedLines("payment_options"),

@@ -10,6 +10,8 @@ export function ConversationProgram({ program, showBackLink = false }: { program
   const programs = useTranslations("programs");
   const about = useTranslations("about");
   const nav = useTranslations("nav");
+  const detailCopy = showBackLink && (program.detailParagraphs?.length ?? 0) > 0;
+  const paragraphs = detailCopy ? program.detailParagraphs ?? [] : program.paragraphs ?? [];
 
   return (
     <article className="border-t border-foreground/10 py-14 md:py-20">
@@ -19,14 +21,13 @@ export function ConversationProgram({ program, showBackLink = false }: { program
           <div className={program.image ? "md:col-span-7" : "max-w-3xl md:ml-[8.333%]"}>
             <p className="eyebrow">{program.label}</p>
             <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.2rem,5vw,4.6rem)] leading-[0.98] tracking-[-0.025em] text-[var(--plum)]">{program.title}</h1>
-            {program.intro && <p className="mt-8 max-w-2xl font-display text-xl leading-[1.55] text-foreground/82 sm:text-2xl">{program.intro}</p>}
+            {!detailCopy && program.intro && <p className="mt-8 max-w-2xl font-display text-xl leading-[1.55] text-foreground/82 sm:text-2xl">{program.intro}</p>}
             <div className="mt-9 max-w-2xl space-y-6 md:mt-11 md:space-y-7">
-              {(program.paragraphs ?? []).map((paragraph, index) => <p key={`${index}-${paragraph}`} className={index === (program.paragraphs?.length ?? 0) - 1 ? "font-display text-xl italic leading-[1.55] text-foreground/86 sm:text-2xl" : "text-[1.02rem] leading-[1.8] text-foreground/72 sm:text-lg"}>{paragraph}</p>)}
+              {paragraphs.map((paragraph, index) => <p key={`${index}-${paragraph}`} className={index === paragraphs.length - 1 ? "font-display text-xl italic leading-[1.55] text-foreground/86 sm:text-2xl" : "text-[1.02rem] leading-[1.8] text-foreground/72 sm:text-lg"}>{paragraph}</p>)}
             </div>
-            {program.price > 0 ? <div className="mt-10 rounded-[1.75rem] bg-[var(--plum)] px-6 py-7 text-white sm:flex sm:items-end sm:justify-between sm:gap-8 sm:px-8">
+            {!showBackLink ? <div className="mt-10"><Button asChild size="lg" className="h-auto min-h-12 bg-[var(--plum)] px-7 py-3 text-white hover:bg-[var(--plum)]/90"><Link href={program.secondaryCtaHref || "/programme/find-your-way-through"}>{program.secondaryCtaLabel || programs("learnMore")}<ArrowRight className="ml-1 size-4" /></Link></Button></div> : program.price > 0 ? <div className="mt-10 rounded-[1.75rem] bg-[var(--plum)] px-6 py-7 text-white sm:flex sm:items-end sm:justify-between sm:gap-8 sm:px-8">
               <div><p className="text-xs font-medium uppercase tracking-[0.22em] text-white/62">{programs("price")}</p><p className="mt-3 font-display text-[clamp(2.25rem,5vw,3.75rem)] leading-none">{program.price} {program.currency}</p>{program.duration && <p className="mt-3 text-sm text-white/68">{program.duration}</p>}</div>
               <div className="mt-7 grid w-full gap-3 sm:mt-0 sm:max-w-xs">
-                {!showBackLink && <Button asChild size="lg" className="h-auto min-h-12 w-full bg-white px-7 py-3 text-[var(--plum)] hover:bg-white/90"><Link href="/programme/find-your-way-through">{programs("learnMore")}<ArrowRight className="ml-1 size-4" /></Link></Button>}
                 <p className="mt-1 text-sm leading-relaxed text-white/72">{programs("tellMeHelp")}</p>
                 <Button asChild size="lg" className="h-auto min-h-12 w-full bg-[var(--clay)] px-7 py-3 text-white hover:bg-[var(--clay)]/90"><Link href="/kontakt?plan=c-hour">{programs("talkToMe")}<ArrowRight className="ml-1 size-4" /></Link></Button>
               </div>

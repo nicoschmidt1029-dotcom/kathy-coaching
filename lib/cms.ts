@@ -142,6 +142,7 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       currency?: string;
       kind?: "coaching" | "conversation";
       paragraphs?: Partial<Record<Locale, readonly string[]>>;
+      detailParagraphs?: Partial<Record<Locale, readonly string[]>>;
       secondaryCtaLabel?: Partial<Record<Locale, string>>;
       secondaryCtaHref?: string;
       offerLine?: Partial<Record<Locale, string>>;
@@ -173,6 +174,7 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
     // replaced through the admin editor.
     const useApprovedFullTransformation = entry.content_key === "personalised-online-fitness-coaching-90-days";
     const useApprovedMoveAndGrow = entry.content_key === "move-and-grow";
+    const useApprovedFindYourWay = entry.content_key === "find-your-way-through";
     const title = pick(data.title, base?.title ?? "");
     if (!title) return null;
     return {
@@ -188,7 +190,7 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       currency: data.currency ?? base?.currency ?? "CHF",
       kind: data.kind ?? base?.kind ?? "coaching",
       title,
-      intro: useApprovedFullTransformation || useApprovedMoveAndGrow ? base?.intro ?? "" : pick(data.intro, base?.intro ?? ""),
+      intro: useApprovedFullTransformation || useApprovedMoveAndGrow || useApprovedFindYourWay ? base?.intro ?? "" : pick(data.intro, base?.intro ?? ""),
       targetHeading: useApprovedFullTransformation || useApprovedMoveAndGrow ? base?.targetHeading ?? "" : pick(data.targetHeading, base?.targetHeading ?? ""),
       targetAudience: useApprovedFullTransformation || useApprovedMoveAndGrow ? base?.targetAudience ?? [] : pick(data.targetAudience, base?.targetAudience ?? []),
       transition: useApprovedFullTransformation || useApprovedMoveAndGrow ? base?.transition ?? "" : pick(data.transition, base?.transition ?? ""),
@@ -202,7 +204,8 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       ctaLabel: pick(data.ctaLabel, base?.ctaLabel ?? ""),
       paymentOptions: pick(data.paymentOptions, base?.paymentOptions ?? []),
       ctaHref: data.ctaHref ?? base?.ctaHref ?? "/kontakt",
-      paragraphs: pick(data.paragraphs, base?.paragraphs ?? []),
+      paragraphs: useApprovedFindYourWay ? base?.paragraphs ?? [] : pick(data.paragraphs, base?.paragraphs ?? []),
+      detailParagraphs: useApprovedFindYourWay ? base?.detailParagraphs ?? [] : pick(data.detailParagraphs, base?.detailParagraphs ?? []),
       secondaryCtaLabel: pick(data.secondaryCtaLabel, base?.secondaryCtaLabel ?? ""),
       secondaryCtaHref: data.secondaryCtaHref ?? base?.secondaryCtaHref,
       offerLine: pick(data.offerLine, base?.offerLine ?? ""),
