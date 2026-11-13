@@ -167,7 +167,8 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
                 // against a phone-shaped hero — plain object-center holds
                 // her in frame through the whole movement.
                 src={video.srcMobile ?? video.src}
-                className="absolute inset-0 h-full w-full object-cover object-center"
+                poster="/images/homepage-mobile-video-poster.jpg"
+                className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
               />
             ) : (
               photo && (

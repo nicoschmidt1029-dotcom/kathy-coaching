@@ -58,6 +58,17 @@
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Decorative autoplay backgrounds must never expose Safari's native player
+   chrome. When iOS blocks autoplay (for example in Low Power Mode), the
+   poster remains visible instead of a large start-playback button. */
+.background-autoplay-video::-webkit-media-controls,
+.background-autoplay-video::-webkit-media-controls-enclosure,
+.background-autoplay-video::-webkit-media-controls-panel,
+.background-autoplay-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
 :root {
   /*
    * Minimal ivory + warm-gray + charcoal palette — Katarina's own request

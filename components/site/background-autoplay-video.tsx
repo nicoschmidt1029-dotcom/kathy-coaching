@@ -4,6 +4,7 @@ import * as React from "react";
 
 type BackgroundAutoplayVideoProps = {
   src: string;
+  poster?: string;
   className?: string;
 };
 
@@ -14,6 +15,7 @@ type BackgroundAutoplayVideoProps = {
  */
 export function BackgroundAutoplayVideo({
   src,
+  poster,
   className,
 }: BackgroundAutoplayVideoProps) {
   const videoRef = React.useRef<HTMLVideoElement>(null);
@@ -54,15 +56,19 @@ export function BackgroundAutoplayVideo({
     <video
       ref={videoRef}
       src={src}
+      poster={poster}
       autoPlay
       muted
       loop
       playsInline
       controls={false}
       disablePictureInPicture
-      preload="metadata"
+      disableRemotePlayback
+      preload="auto"
       aria-hidden
-      className={className}
+      className={["background-autoplay-video", className]
+        .filter(Boolean)
+        .join(" ")}
     />
   );
 }
