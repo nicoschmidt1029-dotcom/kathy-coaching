@@ -203,11 +203,11 @@ export const TEMP_PHOTOS: Record<
 // portrait, per her request to show her actually training instead of a
 // posed shot. kathy-video-2.mp4 stays in the repo, unused, for later reuse.
 //
-// 2026-11-03: restored the explicitly archived ALT desktop video after the
-// client clarified that the refined September cut was not the intended one.
-// Its hash matches Home-Page-Video-ALT-und-NEU/ALT/ALT-Desktop.mp4.
+// 2026-11-13: replaced the archived desktop cut with a 16:9 crop of the
+// approved three-scene loop. Each portrait scene is reframed independently
+// so the full-bleed desktop hero has no letterboxing or stretched footage.
 export const TEMP_HERO_VIDEO: TempVideo = {
-  src: "/videos/workout-hero.mp4?v=20261103-restored-long-running",
+  src: "/videos/workout-hero-desktop-20261113.mp4",
   // Swapped 2026-08-18 to a different clip Katarina sent specifically for
   // mobile: a genuine portrait-shot (9:16) workout video, not a crop of
   // the landscape desktop clip. Re-encoded from her 512x910/49.5MB original
