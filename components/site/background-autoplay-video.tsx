@@ -60,6 +60,7 @@ export function BackgroundAutoplayVideo({
     <video
       ref={videoRef}
       src={src}
+      autoPlay
       muted
       loop
       playsInline

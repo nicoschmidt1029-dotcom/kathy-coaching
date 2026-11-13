@@ -220,5 +220,5 @@ export const TEMP_HERO_VIDEO: TempVideo = {
   // mobile loop. Versioned so phones do not reuse the previous long cut
   // from browser/CDN cache.
   srcMobile:
-    "/videos/workout-hero-mobile.mp4?v=20261113-three-scene-loop",
+    "/videos/workout-hero-mobile.mp4?v=20261113-three-scene-loop-hd",
 };
