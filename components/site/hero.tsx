@@ -152,13 +152,10 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
           an article rather than a hero, and pushed the CTA below the fold
           on short phones.
 
-          min-h accounts for the actual mobile header: logo is 136px wide
-          at a ~0.86 h/w ratio (~117px tall) inside a py-2.5 (20px) row
-          plus its 1px hairline border, so 8.75rem (140px) subtracted from
-          100svh clears the sticky header without leaving a dead gap
-          (svh/dvh, not vh, so mobile browser chrome resizing doesn't
-          leave a jump). */}
-      <div className="relative flex min-h-[calc(100svh-16.75rem)] flex-col justify-center overflow-hidden py-16 md:hidden">
+          The approved mobile source is a true 9:16 portrait video. Keep the
+          hero itself at 9:16 as well so object-cover does not crop it into a
+          shorter, wider band on phones. */}
+      <div className="relative flex aspect-[9/16] flex-col justify-center overflow-hidden py-16 md:hidden">
         {(video || photo) && (
           <div className="absolute inset-0 -z-10">
             {video ? (
