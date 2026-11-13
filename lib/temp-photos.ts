@@ -216,8 +216,9 @@ export const TEMP_HERO_VIDEO: TempVideo = {
   // source footage (near-identical aspect to a phone screen, so the
   // full-bleed mobile hero needs almost no cropping).
   //
-  // Restored from the matching archived ALT mobile video. Versioned so
-  // phones do not reuse either of the newer clips from browser/CDN cache.
+  // 2026-11-13: replaced with Katarina's approved 6.7-second three-scene
+  // mobile loop. Versioned so phones do not reuse the previous long cut
+  // from browser/CDN cache.
   srcMobile:
-    "/videos/workout-hero-mobile.mp4?v=20261103-restored-long-running",
+    "/videos/workout-hero-mobile.mp4?v=20261113-three-scene-loop",
 };
