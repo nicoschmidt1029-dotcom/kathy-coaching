@@ -152,23 +152,23 @@ export function Hero({ content }: { content?: HeroContent } = {}) {
           an article rather than a hero, and pushed the CTA below the fold
           on short phones.
 
-          The approved mobile source is a true 9:16 portrait video. Keep the
+          The approved mobile source is a true 9:16 portrait clip. Keep the
           hero itself at 9:16 as well so object-cover does not crop it into a
-          shorter, wider band on phones. */}
+          shorter, wider band on phones. The animated WebP avoids mobile
+          browser autoplay restrictions and native video controls. */}
       <div className="relative flex aspect-[9/16] flex-col justify-center overflow-hidden py-16 md:hidden">
         {(video || photo) && (
           <div className="absolute inset-0 -z-10">
             {video ? (
-              <BackgroundAutoplayVideo
-                // Lighter mobile-specific re-encode (see lib/temp-photos.ts)
-                // — falls back to the same file desktop uses if srcMobile
-                // isn't set. Source is now a genuine portrait (9:16) clip,
-                // not a landscape crop, so it needs barely any cropping
-                // against a phone-shaped hero — plain object-center holds
-                // her in frame through the whole movement.
-                src={video.srcMobile ?? video.src}
-                poster="/images/homepage-mobile-video-poster.jpg"
-                className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+              <Image
+                src="/images/homepage-mobile-loop-20261113.webp"
+                alt=""
+                fill
+                unoptimized
+                loading="eager"
+                sizes="100vw"
+                aria-hidden
+                className="pointer-events-none object-cover object-center"
               />
             ) : (
               photo && (
