@@ -428,7 +428,7 @@ export const PROGRAMS: readonly Program[] = [
         ctaLabel: "Book and pay",
         ctaHref: "/kontakt",
         secondaryCtaLabel: "Learn more",
-        secondaryCtaHref: "/programme/find-your-way-through",
+        secondaryCtaHref: "/programme/find-your-way-through?learnMore=true",
       },
       de: {
         title: "Find Your Way Through",
@@ -462,7 +462,7 @@ export const PROGRAMS: readonly Program[] = [
         ctaLabel: "Buchen und bezahlen",
         ctaHref: "/kontakt",
         secondaryCtaLabel: "Mehr erfahren",
-        secondaryCtaHref: "/programme/find-your-way-through",
+        secondaryCtaHref: "/programme/find-your-way-through?learnMore=true",
       },
       sk: {
         title: "Find Your Way Through",
@@ -496,7 +496,7 @@ export const PROGRAMS: readonly Program[] = [
         ctaLabel: "Rezervovať a zaplatiť",
         ctaHref: "/kontakt",
         secondaryCtaLabel: "Zistiť viac",
-        secondaryCtaHref: "/programme/find-your-way-through",
+        secondaryCtaHref: "/programme/find-your-way-through?learnMore=true",
       },
     },
   },

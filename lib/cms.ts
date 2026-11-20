@@ -207,7 +207,7 @@ function localizeCmsProgram(entry: CmsEntry, locale: Locale): LocalizedProgram |
       paragraphs: useApprovedFindYourWay ? base?.paragraphs ?? [] : pick(data.paragraphs, base?.paragraphs ?? []),
       detailParagraphs: useApprovedFindYourWay ? base?.detailParagraphs ?? [] : pick(data.detailParagraphs, base?.detailParagraphs ?? []),
       secondaryCtaLabel: pick(data.secondaryCtaLabel, base?.secondaryCtaLabel ?? ""),
-      secondaryCtaHref: data.secondaryCtaHref ?? base?.secondaryCtaHref,
+      secondaryCtaHref: useApprovedFindYourWay ? base?.secondaryCtaHref : data.secondaryCtaHref ?? base?.secondaryCtaHref,
       offerLine: pick(data.offerLine, base?.offerLine ?? ""),
       offerTag: pick(data.offerTag, base?.offerTag ?? ""),
       originalPrice: data.originalPrice ?? base?.originalPrice,

@@ -23,13 +23,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return { ...metadata, openGraph: { ...metadata.openGraph, images: [{ url: program.image, alt: program.imageAlt }] } };
 }
 
-export default async function ProgramPage({ params, searchParams }: { params: Promise<{ locale: string; slug: string }>; searchParams: Promise<{ adminPreview?: string }> }) {
+export default async function ProgramPage({ params, searchParams }: { params: Promise<{ locale: string; slug: string }>; searchParams: Promise<{ adminPreview?: string; learnMore?: string }> }) {
   const { locale, slug } = await params;
-  const { adminPreview } = await searchParams;
+  const { adminPreview, learnMore } = await searchParams;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const isPreview = adminPreview === "program";
   const program = isPreview ? await getAdminPreviewProgram(slug, locale as Locale) : await getPublicProgram(slug, locale as Locale);
   if (!program) notFound();
-  return <>{isPreview && <DraftPreviewBanner backHref={`/admin/programs/${slug}`} />}<ProgramDetail program={program} locale={locale as Locale} /></>;
+  const showConversationDetails = program.kind === "conversation" && learnMore === "true";
+  return <>{isPreview && <DraftPreviewBanner backHref={`/admin/programs/${slug}`} />}<ProgramDetail program={program} locale={locale as Locale} showConversationDetails={showConversationDetails} /></>;
 }

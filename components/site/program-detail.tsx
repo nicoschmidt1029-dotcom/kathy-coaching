@@ -7,8 +7,8 @@ import type { Locale } from "@/i18n/routing";
 import type { LocalizedProgram } from "@/lib/programs";
 import { ConversationProgram } from "@/components/site/conversation-program";
 
-export async function ProgramDetail({ program, locale, showBackLink = true }: { program: LocalizedProgram; locale: Locale; showBackLink?: boolean }) {
-  if (program.kind === "conversation") return <ConversationProgram program={program} locale={locale} showBackLink={showBackLink} />;
+export async function ProgramDetail({ program, locale, showBackLink = true, showConversationDetails = showBackLink }: { program: LocalizedProgram; locale: Locale; showBackLink?: boolean; showConversationDetails?: boolean }) {
+  if (program.kind === "conversation") return <ConversationProgram program={program} locale={locale} showBackLink={showBackLink} showDetailCopy={showConversationDetails} />;
   const t = await getTranslations({ locale, namespace: "programs" });
   const tAbout = await getTranslations({ locale, namespace: "about" });
   const isFullTransformation = program.slug === "personalised-online-fitness-coaching-90-days";

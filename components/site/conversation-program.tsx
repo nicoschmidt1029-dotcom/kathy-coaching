@@ -6,11 +6,11 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import type { LocalizedProgram } from "@/lib/programs";
 
-export function ConversationProgram({ program, showBackLink = false }: { program: LocalizedProgram; locale: Locale; showBackLink?: boolean }) {
+export function ConversationProgram({ program, showBackLink = false, showDetailCopy = showBackLink }: { program: LocalizedProgram; locale: Locale; showBackLink?: boolean; showDetailCopy?: boolean }) {
   const programs = useTranslations("programs");
   const about = useTranslations("about");
   const nav = useTranslations("nav");
-  const detailCopy = showBackLink && (program.detailParagraphs?.length ?? 0) > 0;
+  const detailCopy = showDetailCopy && (program.detailParagraphs?.length ?? 0) > 0;
   const paragraphs = detailCopy ? program.detailParagraphs ?? [] : program.paragraphs ?? [];
 
   return (
@@ -28,7 +28,7 @@ export function ConversationProgram({ program, showBackLink = false }: { program
             {program.price > 0 ? <div className="mt-10 rounded-[1.75rem] bg-[var(--plum)] px-6 py-7 text-white sm:flex sm:items-end sm:justify-between sm:gap-8 sm:px-8">
               <div><p className="text-xs font-medium uppercase tracking-[0.22em] text-white/62">{programs("price")}</p><p className="mt-3 font-display text-[clamp(2.25rem,5vw,3.75rem)] leading-none">{program.price} {program.currency}</p>{program.duration && <p className="mt-3 text-sm text-white/68">{program.duration}</p>}</div>
               <div className="mt-7 grid w-full gap-3 sm:mt-0 sm:max-w-xs">
-                {!showBackLink && <Button asChild size="lg" className="h-auto min-h-12 w-full bg-white px-7 py-3 text-[var(--plum)] hover:bg-white/90"><Link href={program.secondaryCtaHref || "/programme/find-your-way-through"}>{program.secondaryCtaLabel || programs("learnMore")}<ArrowRight className="ml-1 size-4" /></Link></Button>}
+                {!detailCopy && <Button asChild size="lg" className="h-auto min-h-12 w-full bg-white px-7 py-3 text-[var(--plum)] hover:bg-white/90"><Link href={program.secondaryCtaHref || "/programme/find-your-way-through?learnMore=true"}>{program.secondaryCtaLabel || programs("learnMore")}<ArrowRight className="ml-1 size-4" /></Link></Button>}
                 <p className="mt-1 text-sm leading-relaxed text-white/72">{programs("tellMeHelp")}</p>
                 <Button asChild size="lg" className="h-auto min-h-12 w-full bg-[var(--clay)] px-7 py-3 text-white hover:bg-[var(--clay)]/90"><Link href="/kontakt?plan=c-hour">{programs("talkToMe")}<ArrowRight className="ml-1 size-4" /></Link></Button>
               </div>
