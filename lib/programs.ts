@@ -399,7 +399,7 @@ export const PROGRAMS: readonly Program[] = [
       en: {
         title: "Find Your Way Through",
         imageAlt: "Katey smiling warmly",
-        intro: "Pain, shame, sin, your past, hatred, abuse, curses, mistakes, distrust, doubts, self-doubt — whatever you carry.",
+        intro: "Pain, shame, sin, your past, hatred, abuse, curses, mistakes, distrust, doubts, self-doubt",
         targetHeading: "",
         targetAudience: [],
         transition: "",
@@ -407,12 +407,11 @@ export const PROGRAMS: readonly Program[] = [
         includes: [],
         duration: "60-minute session",
         paragraphs: [
-          "Sometimes it's new, but sometimes we've lived with it for so long that we've kind of accepted it and learned to live with it. But we must not, because it's a chain that keeps us from the freedom we were made for.",
-          "It doesn't have to have any impact on us in the future. Whether it happened yesterday or sixty years ago. You don't need to live with this anymore.",
-          "Even if we sometimes feel powerless to change it, once we truly understand what is happening, why it's happening, and what it's taking from us, it becomes so much easier to break free and leave it behind.",
-          "The most important thing is to truly want it, to be willing to accept the truth, to learn, and to be open to change. Healing begins when the desire to be free is stronger than anything else.",
+          "Sometimes it's new but sometimes we live with it for so long that we've kind of accepted it even though we don't have to.",
+          "It happened - no one can change that.",
+          "But what we can do is separate it completely from our person. It doesn't have to have any impact on us in the future. Whether it happened yesterday or forty years ago. You don't need to live with this anymore. Only one thing is needed, you have to really want it.",
           "In this one-on-one conversation, we sit down together and talk honestly about what you're facing.",
-          "We will look together at your struggle through a biblical lens, because God is the true and everlasting healer. He doesn't just put a plaster on the wound. He heals it completely.",
+          "We will look together at every struggle through a biblical lens, not my opinion, not the world's opinion, no doctor's opinion, but what God says about your situation.",
           "There are wounds only God can reach, and there is pain only God can heal.",
         ],
         detailParagraphs: [
@@ -434,7 +433,7 @@ export const PROGRAMS: readonly Program[] = [
       de: {
         title: "Find Your Way Through",
         imageAlt: "Katey lächelt freundlich in die Kamera",
-        intro: "Schmerz, Scham, Sünde, deine Vergangenheit, Hass, Missbrauch, Flüche, Fehler, Misstrauen, Zweifel, Selbstzweifel – was auch immer du trägst.",
+        intro: "Schmerz, Scham, Sünde, deine Vergangenheit, Hass, Missbrauch, Flüche, Fehler, Misstrauen, Zweifel und Selbstzweifel",
         targetHeading: "",
         targetAudience: [],
         transition: "",
@@ -442,12 +441,11 @@ export const PROGRAMS: readonly Program[] = [
         includes: [],
         duration: "60-minütige Sitzung",
         paragraphs: [
-          "Manches ist neu. Mit anderem leben wir schon so lange, dass wir es irgendwie akzeptiert und gelernt haben, damit zu leben. Aber das müssen wir nicht, denn es ist eine Kette, die uns von der Freiheit fernhält, für die wir geschaffen wurden.",
-          "Es muss unsere Zukunft nicht weiter beeinflussen – egal, ob es gestern oder vor sechzig Jahren geschehen ist. Du musst nicht länger damit leben.",
-          "Auch wenn wir uns manchmal machtlos fühlen, etwas daran zu verändern, wird es viel leichter, frei zu werden und es hinter uns zu lassen, sobald wir wirklich verstehen, was geschieht, warum es geschieht und was es uns nimmt.",
-          "Das Wichtigste ist, es wirklich zu wollen, bereit zu sein, die Wahrheit anzunehmen, zu lernen und offen für Veränderung zu sein. Heilung beginnt, wenn der Wunsch nach Freiheit stärker ist als alles andere.",
+          "Manches ist neu. Mit anderem leben wir schon so lange, dass wir es beinahe akzeptiert haben – obwohl wir das nicht müssen.",
+          "Es ist geschehen – das kann niemand ändern.",
+          "Aber wir können es vollständig von unserer Person trennen. Es muss unsere Zukunft nicht bestimmen – egal, ob es gestern oder vor vierzig Jahren geschehen ist. Du musst nicht weiter damit leben. Entscheidend ist, dass du Veränderung wirklich möchtest.",
           "In diesem persönlichen Gespräch setzen wir uns zusammen und sprechen ehrlich über das, womit du gerade konfrontiert bist.",
-          "Wir betrachten deinen Kampf gemeinsam aus einer biblischen Perspektive, denn Gott ist der wahre und ewige Heiler. Er klebt nicht nur ein Pflaster auf die Wunde. Er heilt sie vollständig.",
+          "Wir betrachten deine Situation gemeinsam aus einer biblischen Perspektive: nicht nach meiner Meinung oder der Meinung der Welt, sondern danach, was Gott über deine Situation sagt.",
           "Es gibt Wunden, die nur Gott erreichen kann, und Schmerzen, die nur Gott heilen kann.",
         ],
         detailParagraphs: [
@@ -469,7 +467,7 @@ export const PROGRAMS: readonly Program[] = [
       sk: {
         title: "Find Your Way Through",
         imageAlt: "Katey sa prívetivo usmieva",
-        intro: "Bolesť, hanba, hriech, tvoja minulosť, nenávisť, zneužívanie, kliatby, chyby, nedôvera, pochybnosti, pochybnosti o sebe – čokoľvek si nesieš.",
+        intro: "Bolesť, hanba, hriech, tvoja minulosť, nenávisť, zneužitie, prekliatia, chyby, nedôvera, pochybnosti, nesebavedomie",
         targetHeading: "",
         targetAudience: [],
         transition: "",
@@ -477,12 +475,11 @@ export const PROGRAMS: readonly Program[] = [
         includes: [],
         duration: "60-minútové stretnutie",
         paragraphs: [
-          "Niekedy je to nové, inokedy s tým žijeme tak dlho, že sme to akosi prijali a naučili sa s tým žiť. Nemusíme však, pretože je to reťaz, ktorá nás drží ďaleko od slobody, pre ktorú sme boli stvorení.",
-          "Nemusí to mať žiadny vplyv na našu budúcnosť – či sa to stalo včera, alebo pred šesťdesiatimi rokmi. Už s tým nemusíš žiť.",
-          "Aj keď sa niekedy cítime bezmocní niečo zmeniť, keď skutočne pochopíme, čo sa deje, prečo sa to deje a čo nám to berie, je oveľa jednoduchšie oslobodiť sa a nechať to za sebou.",
-          "Najdôležitejšie je naozaj to chcieť, byť ochotný prijať pravdu, učiť sa a byť otvorený zmene. Uzdravenie sa začína vtedy, keď je túžba po slobode silnejšia než čokoľvek iné.",
+          "Niekedy je to nové, inokedy s tým žijeme tak dlho, že sme to akosi prijali, hoci nemusíme.",
+          "Stalo sa to – a to už nikto nezmení.",
+          "Môžeme to však úplne oddeliť od toho, kým sme. Nemusí to ovplyvňovať našu budúcnosť, či sa to stalo včera, alebo pred štyridsiatimi rokmi. Už s tým nemusíš žiť. Potrebné je jediné: skutočne chcieť zmenu.",
           "V tomto osobnom rozhovore si spolu sadneme a úprimne sa porozprávame o tom, čomu čelíš.",
-          "Na tvoj zápas sa spolu pozrieme cez biblickú perspektívu, pretože Boh je pravý a večný uzdravovateľ. Nedá na ranu iba náplasť. Uzdraví ju úplne.",
+          "Na každý zápas sa spolu pozrieme cez biblickú perspektívu – nie podľa môjho názoru ani názoru sveta, ale podľa toho, čo o tvojej situácii hovorí Boh.",
           "Sú rany, ku ktorým sa môže dostať iba Boh, a existuje bolesť, ktorú môže uzdraviť iba Boh.",
         ],
         detailParagraphs: [
